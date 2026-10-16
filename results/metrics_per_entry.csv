@@ -1,0 +1,1 @@
+pdb_id,emdb_id,method,status,runtime_min,gpu,tm_score,aligned_ca_length,ca_rmsd,seq_identity,ca_match,seq_match,ca_quality_score,residue_coverage

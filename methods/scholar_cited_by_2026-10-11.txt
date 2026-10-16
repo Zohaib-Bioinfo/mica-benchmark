@@ -1,0 +1,92 @@
+Multimodal deep learning integration of cryo-EM and AlphaFold3 for high-accuracy protein structure determination (9 results)
+
+ 1) Artificial intelligence for the identification and structure determination of macromolecules in cryo-electron microscopy and tomography
+ https://mospace.umsystem.edu/items/649954fd-149d-42a2-9ec1-c524755b131c 
+ 2) Structural Basis of Gap Junction Plaque Organization and Isoform-Specific Gating Mechanism in Human Connexins
+ https://helda.helsinki.fi/server/api/core/bitstreams/12d76f93-276c-464e-aff6-284f33e54e38/content
+ 3) AI‐Physics‐Experiment Trinity for Integrated Protein Dynamics Modeling
+ https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/advs.76023
+ 4) XL-MS-Guided Structure Prediction of Disordered Encephalitozoon hellem Proteins
+ https://www.biorxiv.org/content/10.64898/2026.06.11.731626.abstract
+ 5) TomoSwin3D: a Swin3D Transformer for the Identification and Classification of Macromolecules in 3D Cryo-ET Tomograms
+ https://pmc.ncbi.nlm.nih.gov/articles/PMC13131780/
+ 6) AI tools for cryo-EM: Protein particle picking, density map enhancement, and atomic model building
+ https://pubmed.ncbi.nlm.nih.gov/42463260/
+ 7) Cryo-EM structure determination of amyloid fibrils: Methodology, insights, and practical tools.
+ https://europepmc.org/article/med/42055641
+ 8) Fine-tuning AlphaFold with limited cryo-EM observations
+ https://www.nature.com/articles/s42004-026-01899-7
+ 9) Deep learning–based postprocessing and model building for cryo-electron microscopy maps
+ https://www.sciencedirect.com/science/article/pii/S0959440X25002143
+
+
+
+
+CryoAtom improves model building for cryo-EM (About 34 results)
+
+ 1) EM3DFold: accurate de novo protein and nucleic acid model building for cryo-EM maps using language model-powered deep learning
+ https://www.biorxiv.org/content/10.64898/2026.09.16.752067.abstract
+ 2) CryoForge: A Self-Correcting Agent for Cryo-EM Model Building That Learns When to Act and When to Stop
+ https://www.biorxiv.org/content/10.64898/2026.08.15.745007.abstract
+ 3) CryoNet. Discovery identifies protein structures from cryo-EM density maps across resolutions through cross-modal recognition
+ https://langtaosha.org.cn/lts/en/preprint/view/296
+ 4) Structure Determination Reveals the Mechanistic Basis of Mannose-6-P Signal Generation by the Dimeric Lysosomal Uncovering Enzyme NAGPA
+ https://www.sciencedirect.com/science/article/pii/S0021925826022015
+ 5) CryoACE: An Atom-centric Framework for Accurate and Automated Model Building in Cryo-EM
+ https://arxiv.org/abs/2606.31332
+ 6) Direct Detection and Atomic Modeling of Ligands in Cryo-EM Maps Using Deep Learning.
+ https://europepmc.org/article/med/42282590
+ 7) Benchmarking deep learning methods for Cα atom prediction in cryo-EM density maps
+ https://academic.oup.com/bioinformatics/article-abstract/42/6/btag350/8700507
+ 8) CryoAtom2: inverse folding-inspired deep learning enables accurate model building of protein-nucleic acid complexes in cryo-EM
+ https://langtaosha.org.cn/lts/preprint/view/185
+ 9) Deep learning–based postprocessing and model building for cryo-electron microscopy maps
+ https://www.sciencedirect.com/science/article/pii/S0959440X25002143
+
+
+
+
+EMProt improves structure determination from cryo-EM maps (9 results)
+
+ 1) CryoCodex: learning discrete structural representations for cryo-EM map post-processing
+ https://www.biorxiv.org/content/10.64898/2026.09.30.755675.abstract
+ 2) EM3DFold: accurate de novo protein and nucleic acid model building for cryo-EM maps using language model-powered deep learning
+ https://www.biorxiv.org/content/10.64898/2026.09.16.752067.abstract
+ 3) HDOCK-Multimer: integrating docking and combinatorial assembly for structure prediction of large protein complexes
+ https://www.biorxiv.org/content/10.64898/2026.08.06.736029.abstract
+ 4) EMAlign: accurate alignment of cryo-EM maps through main-chain probability using deep learning
+ https://www.biorxiv.org/content/10.64898/2026.06.21.733642.abstract
+ 5) CryoAtom2: inverse folding-inspired deep learning enables accurate model building of protein-nucleic acid complexes in cryo-EM
+ https://langtaosha.org.cn/lts/preprint/view/185
+ 6) Deep learning–based postprocessing and model building for cryo-electron microscopy maps
+ https://www.sciencedirect.com/science/article/pii/S0959440X25002143
+
+
+
+
+End-to-end cryo-EM complex structure determination with high accuracy and ultra-fast speed (9 results)
+
+ 1) EM3DFold: accurate de novo protein and nucleic acid model building for cryo-EM maps using language model-powered deep learning
+ https://www.biorxiv.org/content/10.64898/2026.09.16.752067.abstract
+ 2) CryoForge: A Self-Correcting Agent for Cryo-EM Model Building That Learns When to Act and When to Stop
+ https://www.biorxiv.org/content/10.64898/2026.08.15.745007.abstract
+ 3) CryoACE: An Atom-centric Framework for Accurate and Automated Model Building in Cryo-EM
+ https://arxiv.org/abs/2606.31332
+ 4) Trends in the use of amphipathic environments and future perspectives for determining the structure of membrane proteins by cryo-EM
+ https://www.sciencedirect.com/science/article/pii/S0959440X26000254
+ 5) DeepSRFusion: a point cloud deep learning framework for super-resolution particle fusion
+ https://www.biorxiv.org/content/10.64898/2026.02.26.708405.abstract
+ 6) Accurate Macromolecular Complex Modeling for Cryo-EM with CryoZeta
+ https://pmc.ncbi.nlm.nih.gov/articles/PMC12934688/
+ 7) Deep learning–based postprocessing and model building for cryo-electron microscopy maps
+ https://www.sciencedirect.com/science/article/pii/S0959440X25002143
+
+
+
+
+Improved model building for cryo-EM maps using local attention and 3D rotary position embedding (2 results)
+
+ 1) Cryo-EM structures of mycobacterial MCC reveal carrier-domain translocation between catalytic sites
+ https://www.biorxiv.org/content/10.64898/2026.03.23.713199.abstract
+ 2) Molecular basis of oocyte cytoplasmic lattice assembly
+ https://www.nature.com/articles/s41586-026-10360-7
