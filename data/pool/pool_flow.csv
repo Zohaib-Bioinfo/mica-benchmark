@@ -1,0 +1,12 @@
+step,description,n_remaining,n_removed_at_this_step
+all_cryoem,Cryo-EM entries released in the window (RCSB search),6116,
+file_size,mmCIF file of at most 40 MB compressed (a larger file holds far more than 700 residues),6115,1
+window,PDB model released inside the window,6115,0
+single_particle,Single-particle reconstruction,5700,415
+resolution,Resolution at most 4.0 A,5219,481
+protein_only,Protein only (every polymer entity is polypeptide(L)),3977,1242
+modeled_residues,1 to 700 modeled residues in total,567,3410
+unique_sequences,At most 3 unique chain sequences,548,19
+unk_fraction,At most 5% UNK residues,548,0
+one_emdb_map,Exactly one EMDB map linked to the entry,485,63
+emdb_map_released,EMDB map released inside the window (EMDB API),484,1

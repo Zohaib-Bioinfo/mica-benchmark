@@ -1,0 +1,35 @@
+[07:19:42] pull_pool 1.0 | gemmi 0.7.5 | python 3.13.16 | window 2026-01-01 to 2026-10-12 inclusive
+[07:19:43] canary 5A1A: method=SINGLE PARTICLE resolution=2.2 EMDB=EMD-2984 entities=1 polymer_types=polypeptide(L) modeled_residues=4088 unique_seq=1 released=2015-05-06
+[07:19:43] canary 6VXX: method=SINGLE PARTICLE resolution=2.8 EMDB=EMD-21452;EMD-21457 entities=1 polymer_types=polypeptide(L) modeled_residues=2916 unique_seq=1 released=2020-03-11
+[07:19:43] canary OK
+[07:19:44] search query form: method attribute 0, date format 0, request options 0 (6116 cryo-EM entries in the window)
+[07:19:52] probe week 2026-05-21 to 2026-05-28: 237 cryo-EM entries
+[07:19:53] search prefilters kept: single_particle, resolution, protein_only, residues
+[07:20:01] search: 6116 cryo-EM entries in 41 weekly windows; 666 after the server-side prefilters
+[07:20:01] note: no cryo-EM entries in the weeks starting 2026-10-08
+[07:20:05] parsed 100/666 entries (25.7/s, 0 errors)
+[07:20:07] parsed 200/666 entries (31.1/s, 0 errors)
+[07:20:11] parsed 300/666 entries (30.4/s, 0 errors)
+[07:20:14] parsed 400/666 entries (29.4/s, 0 errors)
+[07:20:17] parsed 500/666 entries (31.1/s, 0 errors)
+[07:20:20] parsed 600/666 entries (31.7/s, 0 errors)
+[07:20:22] parsed 666/666 entries (30.9/s, 0 errors)
+[07:20:22] prefilter audit: checking 100 of the 5450 entries removed by the prefilters
+[07:20:33] WARNING: 1 of 100 sampled entries removed by the prefilters pass every file-based filter (9VH3). Run again with --no-prefilter.
+[07:20:33] 454 entries pass every file-based filter; checking their EMDB maps
+[07:21:02] ---- flow ----
+[07:21:02] all_cryoem         remaining   6116  removed         Cryo-EM entries released in the window (RCSB search, no prefilters)
+[07:21:02] server_prefilter   remaining    666  removed   5450  Removed by the server-side prefilters (audited on a random sample)
+[07:21:02] window             remaining    666  removed      0  PDB model released inside the window
+[07:21:02] single_particle    remaining    666  removed      0  Single-particle reconstruction
+[07:21:02] resolution         remaining    655  removed     11  Resolution at most 4.0 A
+[07:21:02] protein_only       remaining    655  removed      0  Protein only (every polymer entity is polypeptide(L))
+[07:21:02] modeled_residues   remaining    529  removed    126  1 to 700 modeled residues in total
+[07:21:02] unique_sequences   remaining    511  removed     18  At most 3 unique chain sequences
+[07:21:02] unk_fraction       remaining    511  removed      0  At most 5% UNK residues
+[07:21:02] one_emdb_map       remaining    454  removed     57  Exactly one EMDB map linked to the entry
+[07:21:02] emdb_map_released  remaining    453  removed      1  EMDB map released inside the window (EMDB API)
+[07:21:02] candidates: 453 (<=3.0 A: 159, 3.0-4.0 A: 294)
+[07:21:02] pool_ids_all_cryoem.txt sha256: dca391ef5d0db171e4ded15d00a73472dc0b24e48d986f5f6dd639698aabc86c
+[07:21:02] pool_ids.txt sha256: 408e18ab55557d1fcfa67e97bfe97e248b31e22739e54e67a0bfb4f18262a536
+[07:21:02] DONE

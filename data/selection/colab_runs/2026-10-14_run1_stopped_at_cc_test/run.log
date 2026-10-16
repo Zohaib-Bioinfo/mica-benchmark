@@ -1,0 +1,149 @@
+python 3.13.16 | Linux-6.6.122+-x86_64-with-glibc2.39 | 2 CPU cores | 12.7 GB RAM | 94 GB free disk
+This is Colab.
+all 7 files written and checked (hashes match)
+  downloaded 0 MB
+  downloaded 250 MB
+  downloaded 500 MB
+  downloaded 750 MB
+  downloaded 1000 MB
+  downloaded 1250 MB
+  downloaded 1500 MB
+  downloaded 1750 MB
+  downloaded 2000 MB
+  downloaded 2250 MB
+  downloaded 2500 MB
+  downloaded 2750 MB
+  downloaded 3000 MB
+  downloaded 3250 MB
+  downloaded 3500 MB
+installer sha256: e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885
+installing Phenix (15 to 25 minutes; a line is printed now and then) ...
+PREFIX=/content/phenix-2.2.1-6174
+Unpacking bootstrapper...
+Unpacking payload...
+
+Installing base environment...
+  /content/phenix-2.2.1-6174/phenix_bin/boost_adaptbx.show_platform_info created
+  /content/phenix-2.2.1-6174/phenix_bin/cctbx.riso created
+  /content/phenix-2.2.1-6174/phenix_bin/cctbx.xfel.merge created
+  /content/phenix-2.2.1-6174/phenix_bin/cctbx_website.extract_script_from_html_cctbx_doc created
+  /content/phenix-2.2.1-6174/phenix_bin/csegment_library created
+  /content/phenix-2.2.1-6174/phenix_bin/cxi.get_next_trial_id created
+  /content/phenix-2.2.1-6174/phenix_bin/cxi.stream_to_pickle created
+  /content/phenix-2.2.1-6174/phenix_bin/dials.cluster_unit_cell created
+  /content/phenix-2.2.1-6174/phenix_bin/dials.import_xds created
+  /content/phenix-2.2.1-6174/phenix_bin/dials.rs_mapper created
+  /content/phenix-2.2.1-6174/phenix_bin/diffBragg.hopper_process created
+  /content/phenix-2.2.1-6174/phenix_bin/dxtbx.show_dist_paths created
+  /content/phenix-2.2.1-6174/phenix_bin/elbow.mogul created
+  /content/phenix-2.2.1-6174/phenix_bin/hopper created
+  /content/phenix-2.2.1-6174/phenix_bin/iotbx.get_pubmed_citation created
+  /content/phenix-2.2.1-6174/phenix_bin/iotbx.reflection_file_reader created
+  /content/phenix-2.2.1-6174/phenix_bin/labelit.grep_adsc created
+  /content/phenix-2.2.1-6174/phenix_bin/labelit.spot_index_xds created
+  /content/phenix-2.2.1-6174/phenix_bin/libtbx.create_install_script_bat created
+  /content/phenix-2.2.1-6174/phenix_bin/libtbx.latex created
+  /content/phenix-2.2.1-6174/phenix_bin/libtbx.sh created
+  /content/phenix-2.2.1-6174/phenix_bin/libtbx.wait_for_file created
+  /content/phenix-2.2.1-6174/phenix_bin/mmtbx.pdb_statistics created
+  /content/phenix-2.2.1-6174/phenix_bin/mmtbx.verify_mon_lib_data created
+  /content/phenix-2.2.1-6174/phenix_bin/muscle.python created
+  /content/phenix-2.2.1-6174/phenix_bin/phaser.benchmark_score_suite created
+  /content/phenix-2.2.1-6174/phenix_bin/phaser_regression.show_build_path created
+  /content/phenix-2.2.1-6174/phenix_bin/phasertng.xtricorder created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.build_index_html created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.development.carbo_load created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.fake_f_obs created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.get_cc_mtz_mtz created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.ligandfit created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.model_model_distances created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.pathwalker created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.python created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.replace_side_chains created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.setup_tutorial created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.twin_map_utils created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.voyager.rmsd_to_bfactor created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix_regression.python created
+  /content/phenix-2.2.1-6174/phenix_bin/prime.mpi_run created
+  /content/phenix-2.2.1-6174/phenix_bin/qr.fqm_mopac created
+  /content/phenix-2.2.1-6174/phenix_bin/rstbx.python created
+  /content/phenix-2.2.1-6174/phenix_bin/smtbx.benchmark_refinement created
+  /content/phenix-2.2.1-6174/phenix_bin/wxtbx.python created
+  /content/phenix-2.2.1-6174/phenix_bin/xia2.html created
+  /content/phenix-2.2.1-6174/phenix_bin/xpp.jobs_sentinel created
+/content/phenix-2.2.1-6174/phenix_bin/cctbx.show_build_path already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/cctbx_website.python already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/cxi.hist_finalise already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/dials.combine_experiments already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/dials.scale already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/dxtbx.show_mask_info already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/iota already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/iotbx.shelx.as_cif already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/labelit.spotfinder_adsc already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/libtbx.line_count already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/mmtbx.TAAM_minus_IAM already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/mmtbx.where_is_that_cif_file already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phaser.benchmark_score_test already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.development.gainful already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.get_cc_mtz_pdb already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.model_statistics already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.query_docs already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.shift_model_to_match_map already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.voyager.scotty already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/prime.mpi_scale already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/rstbx.show_build_path already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/wxtbx.show_build_path already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/xpp.progress_bar already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/cctbx.space_group_info already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/cextract_segment already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/cxi.lsf already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/dials.correlation_matrix already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/dials.show_build_path already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/elbow.become_novice already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/iota.show_build_path already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/iotbx.show_distances already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/labelit.store_crystal_orientation already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/libtbx.make_sphinx_html already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/mmtbx.clashscore2 already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/molprobity.cbetadev already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phaser.extract_alignments already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.TAAM_minus_IAM already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.development.phi_psi_2 already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.get_solution already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.models_as_chains already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.read_ncs_from_pdb already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.simple_ncs_from_pdb already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.where_mon_lib_list_cif already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/prime.python already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/rstbx.simage.wx_display already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/xcif.show_build_path already exists, skipping
+
+    reciprocal_space_arrays.txt
+    converting /content/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/local_resolution.txt to /content/phenix-2.2.1-6174/share/phenix/doc/reference/local_resolution.html
+    converting /content/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/chain_comparison.txt to /content/phenix-2.2.1-6174/share/phenix/doc/reference/chain_comparison.html
+    converting /content/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/cablam_training.txt to /content/phenix-2.2.1-6174/share/phenix/doc/reference/cablam_training.html
+    converting /content/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/qi_histidine.txt to /content/phenix-2.2.1-6174/share/phenix/doc/reference/qi_histidine.html
+
+Phenix installed in 11 minutes: ------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1
+=== first round of the selection rule ===
+decisions: {'needs_cc': 2, 'not_evaluated': 482}
+CC_mask is needed for 32 entries (cc_todo.csv). Compute it, add it to the cc_mask file, and run select again.
+
+=== test: CC_mask for the first two entries, with Phenix's own output ===
+compute_cc_mask 1.0: 32 entries in the list, 0 already done, 2 to do now
+Phenix: Version: 2.2.1
+[1/2] 9T5K  le3.0  2.6 A  map 250.0 MB: FAILED: phenix.map_model_cc exited with 1: Sorry: phenix.map_model_cc and phenix.model_map_cc are replaced by phenix.map_correlations Add the keyword '--force' to use anyway  (99 s)
+    | $ phenix.map_model_cc 9T5K.cif emd_55586.map resolution=2.6 ignore_symmetry_conflicts=True
+    | [exit code 1]
+[2/2] 22FX  le3.0  1.24 A  map 75.2 MB: FAILED: phenix.map_model_cc exited with 1: Sorry: phenix.map_model_cc and phenix.model_map_cc are replaced by phenix.map_correlations Add the keyword '--force' to use anyway  (222 s)
+    | $ phenix.map_model_cc 22FX.cif emd_68251.map resolution=1.24 ignore_symmetry_conflicts=True
+    | [exit code 1]
+done: 0 ok, 2 failed (rejected), 0 not done
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+STOPPED: Phenix gave no CC_mask for either of the two test entries (reasons: phenix.map_model_cc exited with 1: Sorry: phenix.map_model_cc and phenix.model_map_cc are replaced by phenix.map_correla; phenix.map_model_cc exited with 1: Sorry: phenix.map_model_cc and phenix.model_map_cc are replaced by phenix.map_correla). Send me the zip: its folder cc_logs has the full Phenix output.
+The steps below are skipped. The last step still packs a zip with the log: send it to me.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+skipped: an earlier step stopped
+skipped: the selection is not final

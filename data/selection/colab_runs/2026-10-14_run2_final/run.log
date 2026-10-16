@@ -1,0 +1,244 @@
+python 3.13.16 | Linux-6.6.122+-x86_64-with-glibc2.39 | 2 CPU cores | 12.7 GB RAM | 94 GB free disk
+This is Colab.
+all 7 files written and checked (hashes match)
+  downloaded 0 MB
+  downloaded 250 MB
+  downloaded 500 MB
+  downloaded 750 MB
+  downloaded 1000 MB
+  downloaded 1250 MB
+  downloaded 1500 MB
+  downloaded 1750 MB
+  downloaded 2000 MB
+  downloaded 2250 MB
+  downloaded 2500 MB
+  downloaded 2750 MB
+  downloaded 3000 MB
+  downloaded 3250 MB
+  downloaded 3500 MB
+installer sha256: e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885
+installing Phenix (15 to 25 minutes; a line is printed now and then) ...
+PREFIX=/content/phenix-2.2.1-6174
+Unpacking bootstrapper...
+Unpacking payload...
+
+Installing base environment...
+  /content/phenix-2.2.1-6174/phenix_bin/boost_adaptbx.show_platform_info created
+  /content/phenix-2.2.1-6174/phenix_bin/cctbx.riso created
+  /content/phenix-2.2.1-6174/phenix_bin/cctbx.xfel.merge created
+  /content/phenix-2.2.1-6174/phenix_bin/cctbx_website.extract_script_from_html_cctbx_doc created
+  /content/phenix-2.2.1-6174/phenix_bin/csegment_library created
+  /content/phenix-2.2.1-6174/phenix_bin/cxi.get_next_trial_id created
+  /content/phenix-2.2.1-6174/phenix_bin/cxi.stream_to_pickle created
+  /content/phenix-2.2.1-6174/phenix_bin/dials.cluster_unit_cell created
+  /content/phenix-2.2.1-6174/phenix_bin/dials.import_xds created
+  /content/phenix-2.2.1-6174/phenix_bin/dials.rs_mapper created
+  /content/phenix-2.2.1-6174/phenix_bin/diffBragg.hopper_process created
+  /content/phenix-2.2.1-6174/phenix_bin/dxtbx.show_dist_paths created
+  /content/phenix-2.2.1-6174/phenix_bin/elbow.mogul created
+  /content/phenix-2.2.1-6174/phenix_bin/hopper created
+  /content/phenix-2.2.1-6174/phenix_bin/iotbx.get_pubmed_citation created
+  /content/phenix-2.2.1-6174/phenix_bin/iotbx.reflection_file_reader created
+  /content/phenix-2.2.1-6174/phenix_bin/labelit.grep_adsc created
+  /content/phenix-2.2.1-6174/phenix_bin/labelit.spot_index_xds created
+  /content/phenix-2.2.1-6174/phenix_bin/libtbx.create_install_script_bat created
+  /content/phenix-2.2.1-6174/phenix_bin/libtbx.latex created
+  /content/phenix-2.2.1-6174/phenix_bin/libtbx.sh created
+  /content/phenix-2.2.1-6174/phenix_bin/libtbx.wait_for_file created
+  /content/phenix-2.2.1-6174/phenix_bin/mmtbx.pdb_statistics created
+  /content/phenix-2.2.1-6174/phenix_bin/mmtbx.verify_mon_lib_data created
+  /content/phenix-2.2.1-6174/phenix_bin/muscle.python created
+  /content/phenix-2.2.1-6174/phenix_bin/phaser.benchmark_score_suite created
+  /content/phenix-2.2.1-6174/phenix_bin/phaser_regression.show_build_path created
+  /content/phenix-2.2.1-6174/phenix_bin/phasertng.xtricorder created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.build_index_html created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.development.carbo_load created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.fake_f_obs created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.get_cc_mtz_mtz created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.ligandfit created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.model_model_distances created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.pathwalker created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.python created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.replace_side_chains created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.setup_tutorial created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.twin_map_utils created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix.voyager.rmsd_to_bfactor created
+  /content/phenix-2.2.1-6174/phenix_bin/phenix_regression.python created
+  /content/phenix-2.2.1-6174/phenix_bin/prime.mpi_run created
+  /content/phenix-2.2.1-6174/phenix_bin/qr.fqm_mopac created
+  /content/phenix-2.2.1-6174/phenix_bin/rstbx.python created
+  /content/phenix-2.2.1-6174/phenix_bin/smtbx.benchmark_refinement created
+  /content/phenix-2.2.1-6174/phenix_bin/wxtbx.python created
+  /content/phenix-2.2.1-6174/phenix_bin/xia2.html created
+  /content/phenix-2.2.1-6174/phenix_bin/xpp.jobs_sentinel created
+/content/phenix-2.2.1-6174/phenix_bin/cctbx.show_build_path already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/cctbx_website.python already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/cxi.hist_finalise already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/dials.combine_experiments already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/dials.scale already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/dxtbx.show_mask_info already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/iota already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/iotbx.shelx.as_cif already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/labelit.spotfinder_adsc already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/libtbx.line_count already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/mmtbx.TAAM_minus_IAM already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/mmtbx.where_is_that_cif_file already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phaser.benchmark_score_test already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.development.gainful already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.get_cc_mtz_pdb already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.model_statistics already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.query_docs already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.shift_model_to_match_map already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.voyager.scotty already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/prime.mpi_scale already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/rstbx.show_build_path already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/wxtbx.show_build_path already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/xpp.progress_bar already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/cctbx.space_group_info already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/cextract_segment already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/cxi.lsf already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/dials.correlation_matrix already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/dials.show_build_path already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/elbow.become_novice already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/iota.show_build_path already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/iotbx.show_distances already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/labelit.store_crystal_orientation already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/libtbx.make_sphinx_html already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/mmtbx.clashscore2 already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/molprobity.cbetadev already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phaser.extract_alignments already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.TAAM_minus_IAM already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.development.phi_psi_2 already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.get_solution already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.models_as_chains already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.read_ncs_from_pdb already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.simple_ncs_from_pdb already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/phenix.where_mon_lib_list_cif already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/prime.python already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/rstbx.simage.wx_display already exists, skipping
+/content/phenix-2.2.1-6174/phenix_bin/xcif.show_build_path already exists, skipping
+
+    reciprocal_space_arrays.txt
+    converting /content/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/local_resolution.txt to /content/phenix-2.2.1-6174/share/phenix/doc/reference/local_resolution.html
+    converting /content/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/chain_comparison.txt to /content/phenix-2.2.1-6174/share/phenix/doc/reference/chain_comparison.html
+    converting /content/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/cablam_training.txt to /content/phenix-2.2.1-6174/share/phenix/doc/reference/cablam_training.html
+    converting /content/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/qi_histidine.txt to /content/phenix-2.2.1-6174/share/phenix/doc/reference/qi_histidine.html
+
+Phenix installed in 10 minutes: ------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1
+=== first round of the selection rule ===
+decisions: {'needs_cc': 2, 'not_evaluated': 482}
+CC_mask is needed for 32 entries (cc_todo.csv). Compute it, add it to the cc_mask file, and run select again.
+
+=== test: CC_mask for the first two entries, with Phenix's own output ===
+compute_cc_mask 1.1: 32 entries in the list, 0 already done, 2 to do now
+Phenix: Version: 2.2.1
+[1/2] 9T5K  le3.0  2.6 A  map 250.0 MB: CC_mask 0.8200 [map_model_cc --force]  (122 s, of which 116 s waiting for the files)
+    | $ phenix.map_model_cc 9T5K.cif emd_55586.map resolution=2.6 ignore_symmetry_conflicts=True --force
+    |   CC_mask  : 0.8200
+    | [exit code 0]
+    | => map_model_cc --force: CC_mask 0.82
+[2/2] 22FX  le3.0  1.24 A  map 75.2 MB: CC_mask 0.7388 [map_model_cc --force]  (292 s, of which 182 s waiting for the files)
+    | $ phenix.map_model_cc 22FX.cif emd_68251.map resolution=1.24 ignore_symmetry_conflicts=True --force
+    |   CC_mask  : 0.7388
+    | [exit code 0]
+    | => map_model_cc --force: CC_mask 0.7388
+done: 2 ok, 0 failed (rejected), 0 not done
+
+The test worked: 9T5K CC_mask 0.8200 [map_model_cc --force], 22FX CC_mask 0.7388 [map_model_cc --force]
+
+=== round 1: apply the selection rule ===
+decisions: {'selected': 2, 'needs_cc': 2, 'not_evaluated': 480}
+CC_mask is needed for 32 entries (cc_todo.csv). Compute it, add it to the cc_mask file, and run select again.
+32 entries need a CC_mask now
+compute_cc_mask 1.1: 32 entries in the list, 0 already done, 32 to do now
+Phenix: Version: 2.2.1
+variant of the earlier results (used for every entry): map_model_cc --force
+[1/32] 9JKK  le3.0  3.0 A  map 65.5 MB: CC_mask 0.8420 [map_model_cc --force]  (51 s, of which 46 s waiting for the files)
+[2/32] 9TKA  le3.0  2.7 A  map 182.3 MB: CC_mask 0.7625 [map_model_cc --force]  (110 s, of which 104 s waiting for the files)
+[3/32] 9WFL  le3.0  2.75 A  map 65.5 MB: CC_mask 0.8396 [map_model_cc --force]  (9 s, of which 0 s waiting for the files)
+[4/32] 9VI4  le3.0  1.8 A  map 1024.0 MB: CC_mask 0.8749 [map_model_cc --force]  (746 s, of which 720 s waiting for the files)
+[5/32] 9ZLH  le3.0  2.14 A  map 65.5 MB: CC_mask 0.8468 [map_model_cc --force]  (4 s, of which 0 s waiting for the files)
+[6/32] 9VUH  le3.0  2.7 A  map 128.0 MB: CC_mask 0.7439 [map_model_cc --force]  (17 s, of which 0 s waiting for the files)
+[7/32] 9WNG  le3.0  2.98 A  map 68.7 MB: FAILED: phenix exited with 1: Sorry: The model contains atoms which are not in the scattering table "electron". | Unknown atom types:  (30 s, of which 27 s waiting for the files)
+[8/32] 9OC0  le3.0  2.97 A  map 332.8 MB: CC_mask 0.8262 [map_model_cc --force]  (175 s, of which 166 s waiting for the files)
+[9/32] 13BD  le3.0  2.65 A  map 281.2 MB: CC_mask 0.8841 [map_model_cc --force]  (9 s, of which 0 s waiting for the files)
+[10/32] 11JF  le3.0  2.85 A  map 65.5 MB: CC_mask 0.8053 [map_model_cc --force]  (13 s, of which 0 s waiting for the files)
+[11/32] 9I8C  le3.0  2.7 A  map 65.5 MB: CC_mask 0.8187 [map_model_cc --force]  (34 s, of which 28 s waiting for the files)
+[12/32] 12IY  le3.0  2.94 A  map 65.5 MB: CC_mask 0.7966 [map_model_cc --force]  (4 s, of which 0 s waiting for the files)
+[13/32] 23WN  le3.0  2.98 A  map 314.9 MB: FAILED: phenix exited with 1: Sorry: The model contains atoms which are not in the scattering table "electron". | Unknown atom types:  (135 s, of which 131 s waiting for the files)
+[14/32] 9Z1X  le3.0  3.0 A  map 221.2 MB: CC_mask 0.8848 [map_model_cc --force]  (8 s, of which 0 s waiting for the files)
+[15/32] 11ZV  le3.0  2.84 A  map 93.3 MB: CC_mask 0.8488 [map_model_cc --force]  (4 s, of which 0 s waiting for the files)
+[16/32] 9VH3  le3.0  2.72 A  map 128.0 MB: CC_mask 0.6453 [map_model_cc --force]  (57 s, of which 43 s waiting for the files)
+[17/32] 9XQN  gt3.0_le4.0  3.91 A  map 182.3 MB: FAILED: phenix exited with 1: Sorry: The model contains atoms which are not in the scattering table "electron". | Unknown atom types:  (64 s, of which 61 s waiting for the files)
+[18/32] 9QP4  gt3.0_le4.0  3.06 A  map 432.0 MB: CC_mask 0.6738 [map_model_cc --force]  (410 s, of which 393 s waiting for the files)
+[19/32] 9ZBV  gt3.0_le4.0  3.2 A  map 65.5 MB: CC_mask 0.6825 [map_model_cc --force]  (5 s, of which 0 s waiting for the files)
+[20/32] 9WQ6  gt3.0_le4.0  3.4 A  map 128.0 MB: CC_mask 0.7629 [map_model_cc --force]  (6 s, of which 0 s waiting for the files)
+[21/32] 9V4D  gt3.0_le4.0  3.07 A  map 54.0 MB: CC_mask 0.8202 [map_model_cc --force]  (3 s, of which 0 s waiting for the files)
+[22/32] 9XZX  gt3.0_le4.0  3.1 A  map 31.3 MB: CC_mask 0.5832 [map_model_cc --force]  (9 s, of which 3 s waiting for the files)
+[23/32] 9OTA  gt3.0_le4.0  3.2 A  map 68.7 MB: CC_mask 0.8452 [map_model_cc --force]  (55 s, of which 49 s waiting for the files)
+[24/32] 9KQM  gt3.0_le4.0  3.5 A  map 65.5 MB: CC_mask 0.7874 [map_model_cc --force]  (11 s, of which 6 s waiting for the files)
+[25/32] 9WME  gt3.0_le4.0  3.2 A  map 22.8 MB: CC_mask 0.7050 [map_model_cc --force]  (9 s, of which 5 s waiting for the files)
+[26/32] 9K8Y  gt3.0_le4.0  3.76 A  map 65.5 MB: CC_mask 0.5525 [map_model_cc --force]  (40 s, of which 37 s waiting for the files)
+[27/32] 9WFC  gt3.0_le4.0  3.33 A  map 65.5 MB: CC_mask 0.7884 [map_model_cc --force]  (20 s, of which 9 s waiting for the files)
+[28/32] 23IG  gt3.0_le4.0  3.7 A  map 182.3 MB: CC_mask 0.6926 [map_model_cc --force]  (119 s, of which 113 s waiting for the files)
+[29/32] 9VBD  gt3.0_le4.0  3.26 A  map 128.0 MB: CC_mask 0.7685 [map_model_cc --force]  (7 s, of which 0 s waiting for the files)
+[30/32] 9RWS  gt3.0_le4.0  3.28 A  map 128.0 MB: CC_mask 0.8467 [map_model_cc --force]  (112 s, of which 92 s waiting for the files)
+[31/32] 9WTX  gt3.0_le4.0  3.37 A  map 128.0 MB: CC_mask 0.7238 [map_model_cc --force]  (9 s, of which 0 s waiting for the files)
+[32/32] 9Z24  gt3.0_le4.0  3.1 A  map 221.2 MB: CC_mask 0.8749 [map_model_cc --force]  (8 s, of which 0 s waiting for the files)
+done: 29 ok, 3 failed (rejected), 0 not done
+elapsed since the start: 57 minutes
+
+=== round 2: apply the selection rule ===
+decisions: {'selected': 15, 'skip_cluster_used': 2, 'reject_cc_failed': 2, 'not_reached': 168, 'reject_cc_mask': 4, 'needs_cc': 1, 'not_evaluated': 292}
+CC_mask is needed for 9 entries (cc_todo.csv). Compute it, add it to the cc_mask file, and run select again.
+9 entries need a CC_mask now
+compute_cc_mask 1.1: 9 entries in the list, 0 already done, 9 to do now
+Phenix: Version: 2.2.1
+variant of the earlier results (used for every entry): map_model_cc --force
+[1/9] 9IBW  gt3.0_le4.0  3.22 A  map 432.0 MB: CC_mask 0.6711 [map_model_cc --force]  (423 s, of which 406 s waiting for the files)
+[2/9] 26DK  gt3.0_le4.0  3.5 A  map 16.0 MB: CC_mask 0.7407 [map_model_cc --force]  (2 s, of which 0 s waiting for the files)
+[3/9] 26QJ  gt3.0_le4.0  3.34 A  map 65.5 MB: CC_mask 0.7302 [map_model_cc --force]  (6 s, of which 0 s waiting for the files)
+[4/9] 9JZN  gt3.0_le4.0  3.15 A  map 2.5 MB: CC_mask 0.7933 [map_model_cc --force]  (5 s, of which 0 s waiting for the files)
+[5/9] 9VXT  gt3.0_le4.0  3.9 A  map 11.7 MB: CC_mask 0.5960 [map_model_cc --force]  (3 s, of which 0 s waiting for the files)
+[6/9] 9VND  gt3.0_le4.0  3.3 A  map 31.3 MB: CC_mask 0.6834 [map_model_cc --force]  (21 s, of which 17 s waiting for the files)
+[7/9] 21VL  gt3.0_le4.0  3.3 A  map 250.0 MB: CC_mask 0.7684 [map_model_cc --force]  (180 s, of which 171 s waiting for the files)
+[8/9] 9K7S  gt3.0_le4.0  3.69 A  map 65.5 MB: CC_mask 0.5403 [map_model_cc --force]  (3 s, of which 0 s waiting for the files)
+[9/9] 9VJ3  gt3.0_le4.0  3.4 A  map 93.3 MB: FAILED: phenix exited with 1: Sorry: The model contains atoms which are not in the scattering table "electron". | Unknown atom types:  (2 s, of which 0 s waiting for the files)
+done: 8 ok, 1 failed (rejected), 0 not done
+elapsed since the start: 68 minutes
+
+=== round 3: apply the selection rule ===
+decisions: {'selected': 20, 'skip_cluster_used': 3, 'reject_cc_failed': 2, 'not_reached': 453, 'reject_cc_mask': 6}
+wrote sel_out/entries_2026.csv
+FINAL: 20 entries selected (le3.0: 10, gt3.0_le4.0: 10)
+
+SELECTED ENTRIES (20)
+PDB   EMDB       stratum      res A  residues CC_mask clus.size  map MB
+9T5K  EMD-55586  le3.0          2.6       381  0.8200         1   250.0
+22FX  EMD-68251  le3.0         1.24       173  0.7388         1    75.2
+9JKK  EMD-61564  le3.0          3.0       530  0.8420        39    65.5
+9TKA  EMD-56022  le3.0          2.7       247  0.7625         3   182.3
+9WFL  EMD-65930  le3.0         2.75       682  0.8396         6    65.5
+9VI4  EMD-65077  le3.0          1.8       516  0.8749         9  1024.0
+9ZLH  EMD-74403  le3.0         2.14       206  0.8468         7    65.5
+9VUH  EMD-65363  le3.0          2.7       634  0.7439         1   128.0
+9OC0  EMD-70305  le3.0         2.97       512  0.8262         8   332.8
+13BD  EMD-76936  le3.0         2.65       461  0.8841        25   281.2
+9WQ6  EMD-66160  gt3.0_le4.0    3.4       261  0.7629        11   128.0
+9V4D  EMD-64777  gt3.0_le4.0   3.07       276  0.8202         6    54.0
+9OTA  EMD-70828  gt3.0_le4.0    3.2       534  0.8452         2    68.7
+9KQM  EMD-62507  gt3.0_le4.0    3.5       403  0.7874         9    65.5
+9WME  EMD-66088  gt3.0_le4.0    3.2       446  0.7050         1    22.8
+9VBD  EMD-64920  gt3.0_le4.0   3.26       521  0.7685         2   128.0
+9RWS  EMD-54346  gt3.0_le4.0   3.28       512  0.8467         1   128.0
+9WTX  EMD-66226  gt3.0_le4.0   3.37       500  0.7238         3   128.0
+9Z24  EMD-73762  gt3.0_le4.0    3.1       338  0.8749         4   221.2
+26DK  EMD-80558  gt3.0_le4.0    3.5       191  0.7407         2    16.0
+
+CC_mask was computed for 43 entries: 29 at 0.70 or more, 10 below 0.70, 4 without a number (Phenix failed)
+20 entries, 26 distinct chain sequences to search
+RCSB: 14077 entries released from 2026-01-01 to 2026-10-21 (all methods): they are left out of the reference
+downloading pdb_seqres.txt.gz ...
+reference: 177158 distinct protein sequences (1108124 protein chains in pdb_seqres, 95400 of them from 2026 entries)
+novelty: 20 entries; highest identity to a pre-2026 PDB chain (>=50% of the chain covered): min 0.00, median 1.00, max 1.00; 3 entries at or below 0.30

@@ -1,0 +1,179 @@
+{
+  "script_version": "1.1",
+  "parser_version": "1",
+  "started_utc": "2026-10-12T11:26:45.553274+00:00",
+  "python": "3.13.16",
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+  "gemmi": "0.7.5",
+  "requests": "2.32.4",
+  "spec": {
+    "window_start": "2026-01-01",
+    "freeze": "2026-10-12",
+    "max_resolution": 4.0,
+    "max_modeled_residues": 700,
+    "max_unique_sequences": 3,
+    "max_unk_fraction": 0.05
+  },
+  "spec_values_locked": true,
+  "args": {
+    "start": "2026-01-01",
+    "freeze": "2026-10-12",
+    "out": "pool_out_full",
+    "cache": null,
+    "threads": 8,
+    "emdb_threads": 4,
+    "search_url": "https://search.rcsb.org/rcsbsearch/v2/query",
+    "cif_url": null,
+    "emdb_url": "https://www.ebi.ac.uk/emdb/api/entry/{EMD}",
+    "no_canary": false,
+    "skip_emdb": false,
+    "limit": 0,
+    "prefilter": false,
+    "audit_n": 100,
+    "max_resolution": 4.0,
+    "max_modeled_residues": 700,
+    "max_unique_sequences": 3,
+    "max_unk_fraction": 0.05
+  },
+  "script_sha256": "1b466057b679ba5ccbc57299f863116e879dc72daec2c0e4faa0fe3c56b1f6a7",
+  "canary": [
+    "5A1A: method=SINGLE PARTICLE resolution=2.2 EMDB=EMD-2984 entities=1 polymer_types=polypeptide(L) modeled_residues=4088 unique_seq=1 released=2015-05-06",
+    "6VXX: method=SINGLE PARTICLE resolution=2.8 EMDB=EMD-21452;EMD-21457 entities=1 polymer_types=polypeptide(L) modeled_residues=2916 unique_seq=1 released=2020-03-11"
+  ],
+  "search_config": {
+    "date": 0,
+    "method": 0,
+    "ro": 0
+  },
+  "search_prefilters_kept": [],
+  "search_prefilters_dropped": [],
+  "example_query": {
+    "query": {
+      "type": "group",
+      "logical_operator": "and",
+      "nodes": [
+        {
+          "type": "terminal",
+          "service": "text",
+          "parameters": {
+            "attribute": "rcsb_accession_info.initial_release_date",
+            "operator": "greater_or_equal",
+            "value": "2026-05-21"
+          }
+        },
+        {
+          "type": "terminal",
+          "service": "text",
+          "parameters": {
+            "attribute": "rcsb_accession_info.initial_release_date",
+            "operator": "less",
+            "value": "2026-05-28"
+          }
+        },
+        {
+          "type": "terminal",
+          "service": "text",
+          "parameters": {
+            "attribute": "exptl.method",
+            "operator": "exact_match",
+            "value": "ELECTRON MICROSCOPY"
+          }
+        }
+      ]
+    },
+    "return_type": "entry",
+    "request_options": {
+      "paginate": {
+        "start": 0,
+        "rows": 1000
+      },
+      "results_content_type": [
+        "experimental"
+      ]
+    }
+  },
+  "n_cryoem_in_window": 6116,
+  "n_after_prefilters": 6116,
+  "pool_ids_all_cryoem_sha256": "dca391ef5d0db171e4ded15d00a73472dc0b24e48d986f5f6dd639698aabc86c",
+  "pool_ids_sha256": "dca391ef5d0db171e4ded15d00a73472dc0b24e48d986f5f6dd639698aabc86c",
+  "n_cached": 0,
+  "n_errors": 0,
+  "release_date_week_mismatches": 0,
+  "n_emdb_unverified": 0,
+  "n_candidates": 484,
+  "candidates_per_stratum": {
+    "le3.0": 180,
+    "gt3.0_le4.0": 304
+  },
+  "flow": [
+    [
+      "all_cryoem",
+      "Cryo-EM entries released in the window (RCSB search)",
+      6116,
+      ""
+    ],
+    [
+      "file_size",
+      "mmCIF file of at most 40 MB compressed (a larger file holds far more than 700 residues)",
+      6115,
+      1
+    ],
+    [
+      "window",
+      "PDB model released inside the window",
+      6115,
+      0
+    ],
+    [
+      "single_particle",
+      "Single-particle reconstruction",
+      5700,
+      415
+    ],
+    [
+      "resolution",
+      "Resolution at most 4.0 A",
+      5219,
+      481
+    ],
+    [
+      "protein_only",
+      "Protein only (every polymer entity is polypeptide(L))",
+      3977,
+      1242
+    ],
+    [
+      "modeled_residues",
+      "1 to 700 modeled residues in total",
+      567,
+      3410
+    ],
+    [
+      "unique_sequences",
+      "At most 3 unique chain sequences",
+      548,
+      19
+    ],
+    [
+      "unk_fraction",
+      "At most 5% UNK residues",
+      548,
+      0
+    ],
+    [
+      "one_emdb_map",
+      "Exactly one EMDB map linked to the entry",
+      485,
+      63
+    ],
+    [
+      "emdb_map_released",
+      "EMDB map released inside the window (EMDB API)",
+      484,
+      1
+    ]
+  ],
+  "n_file_size_skipped": 1,
+  "peak_memory_mb": 3204,
+  "finished_utc": "2026-10-12T11:39:12.148361+00:00"
+}

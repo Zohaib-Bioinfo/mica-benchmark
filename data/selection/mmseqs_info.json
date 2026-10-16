@@ -1,0 +1,42 @@
+{
+  "script_version": "1.0",
+  "mmseqs_version": "8cc5ce367b5638c4306c2d7cfc652dd099a4643f",
+  "command_template": [
+    "<tmp>/mmseqs",
+    "easy-cluster",
+    "<tmp>/longest_chains.fasta",
+    "<tmp>/clu",
+    "<tmp>/work",
+    "--min-seq-id",
+    "0.3",
+    "-c",
+    "0.8",
+    "--cov-mode",
+    "1",
+    "--threads",
+    "1",
+    "-v",
+    "1"
+  ],
+  "min_seq_id": 0.3,
+  "coverage": 0.8,
+  "cov_mode": 1,
+  "threads": 1,
+  "n_sequences": 484,
+  "n_clusters": 179,
+  "largest_clusters": [
+    39,
+    25,
+    15,
+    14,
+    12,
+    11,
+    10,
+    9,
+    9,
+    8
+  ],
+  "pool_candidates_sha256": "4bba9e1e1ab497a7ffdf6713fff6aed697245730f76a1637b19d3acf050737c3",
+  "fasta_sha256": "c914ce06feb39e07f3e60cdedc6a422d586c378097c2b938cb306494b7819795",
+  "python": "3.13.16"
+}

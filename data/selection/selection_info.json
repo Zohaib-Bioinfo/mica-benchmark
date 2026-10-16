@@ -1,0 +1,40 @@
+{
+  "script_version": "1.0",
+  "python": "3.13.16",
+  "seed": 2026,
+  "quota_per_stratum": 10,
+  "cc_min": 0.7,
+  "batch": 16,
+  "final": true,
+  "decisions": {
+    "selected": 20,
+    "skip_cluster_used": 3,
+    "reject_cc_failed": 2,
+    "not_reached": 453,
+    "reject_cc_mask": 6
+  },
+  "selected_per_stratum": {
+    "le3.0": 10,
+    "gt3.0_le4.0": 10
+  },
+  "n_cc_requested": 0,
+  "pool_candidates_sha256": "4bba9e1e1ab497a7ffdf6713fff6aed697245730f76a1637b19d3acf050737c3",
+  "clusters_sha256": "7e73cb8dfae5bced1c8c187613719bbfee45abdcccf8cc86ed9d1d7bb83bb53f",
+  "cc_file_sha256": "1b35b862c52e14369e314447953f005154a67861bd4e457c10212dc58663345d",
+  "first_in_walk": {
+    "le3.0": [
+      "9T5K",
+      "22FX",
+      "9JKK",
+      "9TKA",
+      "9WFL"
+    ],
+    "gt3.0_le4.0": [
+      "9XQN",
+      "9QP4",
+      "9ZBV",
+      "9WQ6",
+      "9V4D"
+    ]
+  }
+}

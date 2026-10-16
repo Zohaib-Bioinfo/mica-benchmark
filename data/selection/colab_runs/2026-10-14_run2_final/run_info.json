@@ -1,0 +1,29 @@
+{
+  "notebook": "select_colab",
+  "started_utc": "2026-10-14T10:55:19.838775+00:00",
+  "finished_utc": "2026-10-14T12:04:42.942024+00:00",
+  "elapsed_minutes": 69,
+  "final": true,
+  "rounds": 3,
+  "problem": "",
+  "python": "3.13.16",
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+  "in_colab": true,
+  "phenix_installer": "Phenix-2.2.1-6174-Linux-x86_64.sh",
+  "phenix_installer_sha256": "e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885",
+  "phenix_version_output": "------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1",
+  "mmseqs_version": "8cc5ce367b5638c4306c2d7cfc652dd099a4643f",
+  "novelty": "done",
+  "batch": 16,
+  "input_sha256": {
+    "select_entries.py": "cd77d03a2ee62837a61e5aab482c0d747fe5d5532150c86d86abcadfde00c9f2",
+    "compute_cc_mask.py": "44d3e43e0c1dd7f3e460570da550f2a78072f96052cf52e73e6af17a8da70fac",
+    "novelty_check.py": "3819d7792235f7b026a27847747e253dd7625b69c2118a1d4332011dbe37e406",
+    "data/pool/pool_candidates.csv": "4bba9e1e1ab497a7ffdf6713fff6aed697245730f76a1637b19d3acf050737c3",
+    "data/pool/pool_candidate_sequences.fasta": "c914ce06feb39e07f3e60cdedc6a422d586c378097c2b938cb306494b7819795",
+    "data/pool/pool_ids_all_cryoem.txt": "dca391ef5d0db171e4ded15d00a73472dc0b24e48d986f5f6dd639698aabc86c",
+    "data/selection/candidate_clusters.csv": "7e73cb8dfae5bced1c8c187613719bbfee45abdcccf8cc86ed9d1d7bb83bb53f"
+  },
+  "cc_mask_rows": 43,
+  "cc_mask_ok": 39
+}

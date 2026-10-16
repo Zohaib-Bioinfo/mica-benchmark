@@ -1,0 +1,12 @@
+step,description,n_remaining,n_removed_at_this_step
+all_cryoem,"Cryo-EM entries released in the window (RCSB search, no prefilters)",6116,
+server_prefilter,Removed by the server-side prefilters (audited on a random sample),666,5450
+window,PDB model released inside the window,666,0
+single_particle,Single-particle reconstruction,666,0
+resolution,Resolution at most 4.0 A,655,11
+protein_only,Protein only (every polymer entity is polypeptide(L)),655,0
+modeled_residues,1 to 700 modeled residues in total,529,126
+unique_sequences,At most 3 unique chain sequences,511,18
+unk_fraction,At most 5% UNK residues,511,0
+one_emdb_map,Exactly one EMDB map linked to the entry,454,57
+emdb_map_released,EMDB map released inside the window (EMDB API),453,1

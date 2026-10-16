@@ -1,0 +1,8 @@
+entry 9T5K (EMD-55586), stratum le3.0, resolution 2.6 A
+script compute_cc_mask 1.0, Version: 2.2.1
+result: {'status': 'failed', 'cc_mask': '', 'variant': 'ignore_symmetry_conflicts=True', 'note': "phenix.map_model_cc exited with 1: Sorry: phenix.map_model_cc and phenix.model_map_cc are replaced by phenix.map_correlations Add the keyword '--force' to use anyway"}
+
+$ phenix.map_model_cc 9T5K.cif emd_55586.map resolution=2.6 ignore_symmetry_conflicts=True
+Sorry: phenix.map_model_cc and phenix.model_map_cc are replaced by phenix.map_correlations Add the keyword '--force' to use anyway
+
+[exit code 1]

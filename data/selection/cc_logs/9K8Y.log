@@ -1,0 +1,106 @@
+entry 9K8Y (EMD-62182), stratum gt3.0_le4.0, resolution 3.76 A
+script compute_cc_mask 1.1, Version: 2.2.1
+result: {'status': 'ok', 'cc_mask': '0.5525', 'variant': 'map_model_cc --force', 'note': ''}
+
+$ phenix.map_model_cc 9K8Y.cif emd_62182.map resolution=3.76 ignore_symmetry_conflicts=True --force
+Starting phenix.map_model_cc
+on Wed Oct 14 11:48:28 2026 by root
+===============================================================================
+
+Processing files:
+-------------------------------------------------------------------------------
+
+  Found model, 9K8Y.cif
+  Found real_map, emd_62182.map
+
+Processing PHIL parameters:
+-------------------------------------------------------------------------------
+
+  Adding command-line PHIL:
+  -------------------------
+    resolution=3.76
+    ignore_symmetry_conflicts=True
+
+Final processed PHIL parameters:
+-------------------------------------------------------------------------------
+  data_manager {
+    real_map_files = "emd_62182.map"
+    default_real_map = "emd_62182.map"
+    model {
+      file = "9K8Y.cif"
+    }
+    default_model = "9K8Y.cif"
+  }
+  map_model_cc {
+    resolution = 3.76
+    ignore_symmetry_conflicts = True
+  }
+
+
+Starting job
+===============================================================================
+Validating inputs
+-------------------------------------------------------------------------------
+Box info
+********
+Unit cell: (281.6, 281.6, 281.6, 90, 90, 90)
+Space group: P 1 (No. 1)
+-------------------------------------------------------------------------------
+Input map:
+**********
+  header_min:  -1.0484822988510132
+  header_max:  1.325148344039917
+  header_mean: 0.0003650219878181815
+  header_rms:  0.028178242966532707
+
+  Information about FULL UNIT CELL:
+  unit cell grid: (256, 256, 256)
+  unit cell parameters: (281.6000061035156, 281.6000061035156, 281.6000061035156, 90.0, 90.0, 90.0)
+  space group number:   1
+
+  Information about the PART OF MAP THAT IS PRESENT:
+  map cell grid: (256, 256, 256)
+  map cell parameters: (281.6000061035156, 281.6000061035156, 281.6000061035156, 90.0, 90.0, 90.0)
+  map origin: (0, 0, 0)
+  pixel size: (1.1000, 1.1000, 1.1000) 
+  Shift (grid units) to place origin at original position: (0, 0, 0)
+  Wrapping (using unit_cell_translations to get map values) allowed: False
+NOTE: ignoring map unit cell and using Box info
+-------------------------------------------------------------------------------
+Map resolution:
+***************
+  Resolution: 3.76
+-------------------------------------------------------------------------------
+Map-model CC (overall)
+**********************
+  CC_mask  : 0.5525
+  CC_volume: 0.5512
+  CC_peaks : 0.3116
+  CC_box   : 0.4428
+-------------------------------------------------------------------------------
+Model-map FSC
+*************
+  saved to: map_model_fsc.log
+-------------------------------------------------------------------------------
+Map-model CC (local)
+********************
+Per chain:
+chain ID  CC       <B>    <occ>   N atoms
+A         0.5204   89.388 1.00    2869
+A         0.6624   20.000 1.00    19
+Main chain:
+ CC       <B>    <occ>   N atoms
+ 0.5402   89.667 1.00    1784
+Side chain:
+ CC       <B>    <occ>   N atoms
+ 0.5136   87.744 1.00    1104
+Per residue:
+  saved to: cc_per_residue.log
+
+===============================================================================
+Job complete
+usr+sys time: 3.20 seconds
+wall clock time: 3.20 seconds
+
+[exit code 0]
+=> map_model_cc --force: CC_mask 0.5525

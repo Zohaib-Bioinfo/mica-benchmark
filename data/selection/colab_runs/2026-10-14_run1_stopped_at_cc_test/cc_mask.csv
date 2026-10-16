@@ -1,0 +1,3 @@
+pdb_id,emdb_id,status,cc_mask,resolution_used,seconds,variant,phenix_version,note
+9T5K,EMD-55586,failed,,2.6,99,ignore_symmetry_conflicts=True,Version: 2.2.1,phenix.map_model_cc exited with 1: Sorry: phenix.map_model_cc and phenix.model_map_cc are replaced by phenix.map_correlations Add the keyword '--force' to use anyway
+22FX,EMD-68251,failed,,1.24,222,ignore_symmetry_conflicts=True,Version: 2.2.1,phenix.map_model_cc exited with 1: Sorry: phenix.map_model_cc and phenix.model_map_cc are replaced by phenix.map_correlations Add the keyword '--force' to use anyway
