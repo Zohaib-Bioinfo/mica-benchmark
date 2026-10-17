@@ -2,6 +2,25 @@
 
 Newest entry first. One entry per working day: what was done, what was decided, what broke, and the next actions.
 
+## 2026-10-17: The MICA pilot notebook is built and tested (Phase 4)
+
+**Done**
+- GitHub repo of Zohaib checked against package v9: 104 files, all identical. `.gitignore` is missing there because the web upload drops files that start with a dot; he adds it by hand (Add file, Create new file, name `.gitignore`).
+- `scripts/mica_inputs.py` (10 tests) builds the folder that MICA reads for one entry: the FASTA file with MICA's header format (`>26DK_1|Chains A|...`, chain letters run through the entry) and `AF3_results/<pdb>_<k>/fold_<pdb>_<k>_model_0.cif` from the files of AlphaFold Server. `scripts/evaluate_models.py` 0.1 (7 tests) scores a model with US-align (`-mol protein -outfmt 2`): TM-score normalised by the deposited model, C-alpha RMSD, aligned length, sequence identity, coverage.
+- MICA environment without conda: `env/mica_requirements.txt` has 171 exact pins (Python 3.8.20 managed by `uv` 0.13.1, PyPI wheels; torch 1.8.1 from PyPI is the CUDA 10.2 build). Rebuilt here from that file in 65 s (wheels cached): the imports of MICA's own modules work, `run.py --help` works, MICA's bundled pulchra runs, and MICA's first program (domain split with Merizo) ran on the real 26DK prediction and gave 2 domains. US-align compiled from the pinned commit (`746ad8a`, version 20261012) in 45 s with `g++ -O3 -ffast-math -o USalign USalign.cpp -lm`.
+- `scripts/make_pilot_notebook.py` builds `scripts/pilot_mica.ipynb` (35 tests, one of them builds the real Python environment with `uv`; with the earlier tests 213 pass). Its end-to-end tests run the whole notebook as a script against stand-ins: a Phenix download server with user name and password, a fake Phenix installer, a local git repository that plays MICA (programs with MICA's command lines), and local servers for the map, the deposited model, the weights and the Zenodo listing; they cover a complete run, a wrong password, a missing secret, a failing MICA program, a silent refinement failure, a failing `chain_comparison` and a second run in the same folders.
+- Phenix documentation for the scoring tool (page "Comparison of CA positions in two models"): `phenix.chain_comparison target.pdb query.pdb`, the target first; `max_dist = 3.` (Angstrom) by default, `chain_type = PROTEIN`. It counts how many CA atoms of one model match CA atoms of the other (within `max_dist`), how many of them point in the same direction and how many residue names agree. The page does not describe an RMSD or a "sequence match" line; the pilot saves the raw output so that the parser is written from real output.
+
+**Decided** (no locked value of the spec changes)
+- The pilot runs MICA exactly as `MICA_pipeline.sh` does: the same three programs with the same arguments (the `python` of the MICA environment instead of the one on the PATH). Contour level and resolution come from MICA's own `utils/emdb_extractor.py` (EMDB API), with the EMDB header file as the second way; the values are recorded.
+- The pilot scores every model MICA writes (C-alpha model, all-atom model, Phenix-refined model) and two controls: the AlphaFold prediction alone and the docked AlphaFold model. Which of MICA's files counts as its model in the benchmark is decided after the pilot.
+- Time, GPU memory peak and lowest free RAM are recorded for each of MICA's three programs (decision 10 and the GPU-fit item of section 4 of the spec).
+
+**Next actions**
+- [ ] Zohaib: add `.gitignore`; run `scripts/pilot_mica.ipynb` on Kaggle (GPU, Internet on, two Phenix secrets, the AlphaFold zip as a private dataset) and send the result zip.
+- [ ] After the pilot: fix what it shows; pin the MICA protocol and the evaluation commands by 2026-10-18; pilots for ModelAngelo, EModelX(+AF), CryoAtom, EMProt and E3-CryoFold; write the parser for `chain_comparison` and fix the C-alpha quality score.
+- [ ] Recheck EM3DFold (tag, licence, journal status).
+
 ## 2026-10-16: The 26 AlphaFold Server predictions are back and checked (Phase 4 input complete)
 
 **Done**

@@ -2,7 +2,7 @@
 
 A benchmark of MICA against ModelAngelo, EModelX(+AF) and three newer deep-learning methods that build protein models from cryo-EM maps (CryoAtom, EMProt, E3-CryoFold). The test entries are EMDB maps and PDB models released in 2026, so none of them can be in the training data of the three baseline methods. Everything runs on free compute.
 
-**Status:** Phase 0 done (scope locked 2026-10-10). Phase 2 done (newer methods chosen 2026-10-11). Phase 3 done: the candidate pool is frozen (484 entries, `data/pool/`) and the entry list is frozen (`data/entries_2026.csv`: 20 entries, 10 up to 3.0 A and 10 above 3.0 to 4.0 A, chosen on 2026-10-14 by `scripts/select_colab.ipynb`, CC_mask and novelty included). Phase 4 has started: the 26 AlphaFold Server predictions came back on 2026-10-16 and passed `scripts/check_af3_results.py`; method setup and the pilot run are next. The locked decisions are in [docs/SPEC.md](docs/SPEC.md); the dated work log is [LOG.md](LOG.md).
+**Status:** Phase 0 done (scope locked 2026-10-10). Phase 2 done (newer methods chosen 2026-10-11). Phase 3 done: the candidate pool is frozen (484 entries, `data/pool/`) and the entry list is frozen (`data/entries_2026.csv`: 20 entries, 10 up to 3.0 A and 10 above 3.0 to 4.0 A, chosen on 2026-10-14 by `scripts/select_colab.ipynb`, CC_mask and novelty included). Phase 4 has started: the 26 AlphaFold Server predictions came back on 2026-10-16 and passed `scripts/check_af3_results.py`; the MICA pilot notebook (`scripts/pilot_mica.ipynb`, entry 26DK) is built and tested, its first real run is next. The locked decisions are in [docs/SPEC.md](docs/SPEC.md); the dated work log is [LOG.md](LOG.md).
 
 ## Layout
 
@@ -11,8 +11,8 @@ A benchmark of MICA against ModelAngelo, EModelX(+AF) and three newer deep-learn
 | `docs/SPEC.md` | Locked scope: methods, data rules, metrics, statistics, compute plan, failure handling |
 | `data/` | The frozen entry list (`entries_2026.csv`), the candidate pool it was drawn from (`pool/`), the clusters and the selection logs (`selection/`), the AlphaFold Server job files and the check of the returned predictions (`af3/`; the predictions themselves are not committed) |
 | `methods/` | Methods considered, with versions, inputs and the reason each was included or excluded (`methods_table.csv`), and how the search ran (`SEARCH_LOG.md`) |
-| `scripts/` | Phase 3: `pull_pool.py` (candidate pool from RCSB and EMDB), `select_entries.py` (clusters and the seeded selection rule), `compute_cc_mask.py` (Phenix CC_mask), `novelty_check.py` (identity to pre-2026 PDB chains), `make_af3_jobs.py` (AlphaFold Server jobs for the frozen list), `check_af3_results.py` (checks the returned predictions against the submitted sequences), the Colab notebooks that run them (`pull_pool_colab.ipynb`, `select_colab.ipynb`, built by `make_colab_notebook.py` and `make_select_notebook.py`) and a `test_*.py` for each; later: run wrappers, evaluation and analysis |
-| `env/` | Environment files, one per method |
+| `scripts/` | Phase 3: `pull_pool.py` (candidate pool from RCSB and EMDB), `select_entries.py` (clusters and the seeded selection rule), `compute_cc_mask.py` (Phenix CC_mask), `novelty_check.py` (identity to pre-2026 PDB chains), `make_af3_jobs.py` (AlphaFold Server jobs for the frozen list), `check_af3_results.py` (checks the returned predictions against the submitted sequences); Phase 4: `mica_inputs.py` (MICA's input folder), `evaluate_models.py` (US-align scores), `make_pilot_notebook.py` (builds `pilot_mica.ipynb`, the MICA pilot for Kaggle or Colab); the Colab notebooks that run them (`pull_pool_colab.ipynb`, `select_colab.ipynb`, built by `make_colab_notebook.py` and `make_select_notebook.py`) and a `test_*.py` for each; later: run wrappers, evaluation and analysis |
+| `env/` | Environment files, one per method (so far `mica_requirements.txt`: Python 3.8.20, 171 exact pins, PyPI wheels, installed with `uv`) |
 | `results/` | Raw per-entry metrics and summary tables |
 | `report/` | Report source and the final PDF |
 | `LOG.md` | Dated log, newest entry first |
@@ -44,6 +44,15 @@ python scripts/novelty_check.py --entries data/entries_2026.csv --fasta data/poo
 ```
 
 `compute_cc_mask.py` calls `phenix.map_model_cc ... --force` (Phenix 2.2.1 refuses it without `--force` and points to `phenix.map_correlations`); if that does not give a CC_mask it tries `phenix.map_correlations` and keeps the first variant that works for every later entry (column `variant` of `cc_mask.csv`). `select` exits with code 3 and writes `cc_todo.csv` while it still needs CC_mask values; run `compute_cc_mask.py`, then `select` again, until it exits with 0 (the first call without `--cc` is the first round). Tests (offline; MMseqs2 for the clustering and novelty tests via the `MMSEQS` variable or the PATH, otherwise those tests are skipped): `python scripts/test_select_entries.py`, `test_compute_cc_mask.py`, `test_novelty_check.py`, `test_select_notebook.py` (needs nbformat, nbclient and ipykernel). Rebuild the notebook after any change to its scripts or data with `python scripts/make_select_notebook.py`. The Phenix password is never stored in the repo, the notebook or the results.
+
+## MICA pilot (Phase 4)
+
+`scripts/pilot_mica.ipynb` runs MICA on one entry (default 26DK) on a free Kaggle or Colab GPU session and scores every model it writes:
+machine and GPU check, Phenix install (user name and password from Kaggle or Colab Secrets, never stored), Python 3.8 environment from `env/mica_requirements.txt`,
+MICA at its pinned commit (726d1bb) with its weights from Zenodo (MD5 compared with the one Zenodo lists), the entry's input folder (your own AlphaFold Server
+predictions, the EMDB map), MICA's three programs with the arguments of `MICA_pipeline.sh`, then US-align (pinned commit) and Phenix `chain_comparison` on every model,
+and one result zip with logs, timings, GPU memory peaks and the raw output of each tool. Rebuild it with `python scripts/make_pilot_notebook.py [--entries 26DK 9OC0]`;
+test it with `python scripts/test_pilot_notebook.py` (stand-ins for Phenix, MICA and the servers; the end-to-end tests need `MICA_TEST_ENV_PYTHON`, `MICA_TEST_AF3_DIR` and `USALIGN`, see the file).
 
 ## Reproduce
 
