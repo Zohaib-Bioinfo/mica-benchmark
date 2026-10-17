@@ -1,0 +1,33 @@
+# Large data and structure files: fetch them with the scripts, never commit them.
+# Use `git add -f <file>` for the few small files you want to share.
+*.map
+*.map.gz
+*.mrc
+*.ccp4
+*.cif
+*.cif.gz
+*.pdb
+*.tar.gz
+*.zip
+raw/
+inputs/
+outputs/
+work/
+
+# Secrets: never commit
+kaggle.json
+.env
+*.key
+phenix_credentials*
+*password*
+
+# Python and notebooks
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.venv/
+
+# AlphaFold Server predictions: the terms allow non-commercial research use only, so they stay private.
+# The check table and the file hashes in data/af3/ are public.
+af3_models/
+fold_*
