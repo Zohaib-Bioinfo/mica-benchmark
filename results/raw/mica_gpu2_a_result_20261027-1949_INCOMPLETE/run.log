@@ -1,0 +1,632 @@
+platform kaggle | python 3.13.15 | Linux-6.18.55+-x86_64-with-glibc2.39 | 4 CPU cores (Intel(R) Xeon(R) CPU @ 2.00GHz) | 31.3 GB RAM
+large files go to /tmp/mica_pilot (1126 GB free); results to /kaggle/working/pilot (21 GB free)
+GPU: Tesla T4, 15360 MiB, 580.178.04 | Tesla T4, 15360 MiB, 580.178.04
+checking the internet:
+  reachable: PyPI      200
+  reachable: GitHub    200
+  reachable: Zenodo    200
+  reachable: EBI FTP   200
+  reachable: RCSB      200
+  reachable: EMDB API  200
+  reachable: Phenix    200
+all 8 files written and checked (hashes match)
+processors: os.cpu_count 4 | multiprocessing.cpu_count 4 | usable 4 | nproc 4 | cgroup 400000 100000 | cgroup cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory | MICA's 2
+progress lines, state.json and the partial zip (/kaggle/working/mica_gpu2_a_partial.zip) are ready
+  downloaded 0 MB
+  downloaded 250 MB
+  downloaded 500 MB
+  downloaded 750 MB
+  downloaded 1000 MB
+  downloaded 1250 MB
+  downloaded 1500 MB
+  downloaded 1750 MB
+  downloaded 2000 MB
+  downloaded 2250 MB
+  downloaded 2500 MB
+  downloaded 2750 MB
+  downloaded 3000 MB
+  downloaded 3250 MB
+  downloaded 3500 MB
+installer sha256: e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885
+installing Phenix (15 to 25 minutes; a line is printed now and then) ...
+PREFIX=/tmp/mica_pilot/phenix-2.2.1-6174
+Unpacking bootstrapper...
+Unpacking payload...
+
+Installing base environment...
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/boost_adaptbx.show_platform_info created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.riso created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.xfel.merge created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx_website.extract_script_from_html_cctbx_doc created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/csegment_library created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.get_next_trial_id created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.stream_to_pickle created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.cluster_unit_cell created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.import_xds created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.rs_mapper created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/diffBragg.hopper_process created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dxtbx.show_dist_paths created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/elbow.mogul created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/hopper created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.get_pubmed_citation created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.reflection_file_reader created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.grep_adsc created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.spot_index_xds created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.create_install_script_bat created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.latex created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.sh created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.wait_for_file created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.pdb_statistics created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.verify_mon_lib_data created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/muscle.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser.benchmark_score_suite created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser_regression.show_build_path created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phasertng.xtricorder created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.build_index_html created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.development.carbo_load created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.fake_f_obs created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.get_cc_mtz_mtz created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.ligandfit created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.model_model_distances created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.pathwalker created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.replace_side_chains created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.setup_tutorial created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.twin_map_utils created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.voyager.rmsd_to_bfactor created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix_regression.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/prime.mpi_run created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/qr.fqm_mopac created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/rstbx.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/smtbx.benchmark_refinement created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/wxtbx.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xia2.html created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xpp.jobs_sentinel created
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx_website.python already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.hist_finalise already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.combine_experiments already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.scale already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dxtbx.show_mask_info already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iota already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.shelx.as_cif already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.spotfinder_adsc already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.line_count already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.TAAM_minus_IAM already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.where_is_that_cif_file already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser.benchmark_score_test already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.development.gainful already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.get_cc_mtz_pdb already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.model_statistics already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.query_docs already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.shift_model_to_match_map already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.voyager.scotty already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/prime.mpi_scale already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/rstbx.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/wxtbx.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xpp.progress_bar already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.space_group_info already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cextract_segment already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.lsf already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.correlation_matrix already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/elbow.become_novice already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iota.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.show_distances already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.store_crystal_orientation already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.make_sphinx_html already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.clashscore2 already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/molprobity.cbetadev already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser.extract_alignments already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.TAAM_minus_IAM already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.development.phi_psi_2 already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.get_solution already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.models_as_chains already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.read_ncs_from_pdb already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.simple_ncs_from_pdb already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.where_mon_lib_list_cif already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/prime.python already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/rstbx.simage.wx_display already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xcif.show_build_path already exists, skipping
+
+    reciprocal_space_arrays.txt
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/density_modification.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/reference/density_modification.html
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/guess_molecular_centers.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/reference/guess_molecular_centers.html
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/phaser_ep.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/reference/phaser_ep.html
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/tutorials/cryo_fit_gui.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/tutorials/cryo_fit_gui.html
+
+Phenix installed in 7 minutes: ------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1
+phenix.dock_in_map: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+phenix.real_space_refine: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.real_space_refine
+phenix.chain_comparison: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.chain_comparison
+phenix.version: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.version
+
+-------------------------------------------------------------------------------
+  Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography
+  Version: 2.2.1
+uv: uv 0.13.1 (x86_64-unknown-linux-gnu)
+installing Python 3.8.20 ...
+Downloading cpython-3.8.20-linux-x86_64-gnu (download) (19.9MiB)
+ Downloaded cpython-3.8.20-linux-x86_64-gnu (download)
+Installed Python 3.8.20 in 941ms
+ + cpython-3.8.20-linux-x86_64-gnu (python3.8)
+warning: `/root/.local/bin` is not on your PATH. To use installed Python executables, run `export PATH="/root/.local/bin:$PATH"` or `uv python update-shell`.
+installing the virtual environment ...
+warning: The `--system` flag has no effect, `uv venv` always ignores virtual environments when finding a Python interpreter; did you mean `--no-managed-python`?
+Using CPython 3.8.20
+Creating virtual environment at: /tmp/mica_pilot/mica_env
+Activate with: source /tmp/mica_pilot/mica_env/bin/activate
+installing the 171 packages (a few minutes; PyTorch alone is about 800 MB) ...
+Using Python 3.8.20 environment at: /tmp/mica_pilot/mica_env
+Resolved 171 packages in 728ms
+Downloading jedi (1.5MiB)
+Downloading pygments (1.2MiB)
+Downloading open3d (286.8MiB)
+Downloading setuptools (1.2MiB)
+ Downloaded pydantic-core
+ Downloaded scikit-image
+ + backcall==0.2.0
+ + einops==0.8.1
+ + isoduration==20.11.0
+ + jupyterlab-widgets==3.0.17
+ + numexpr==2.8.6
+ + ptyprocess==0.7.0
+ + rotary-embedding-torch==0.3.6
+ + tomlkit==0.13.3
+python 3.8.20 | torch 1.8.1+cu102 | cuda 10.2 | numpy 1.19.1 | open3d 0.13.0
+cuda available: True
+gpu: Tesla T4 | 14.6 GB | capability 7.5 | this PyTorch is compiled for ['sm_37', 'sm_50', 'sm_60', 'sm_70']
+3D convolution and matrix product on the GPU work
+installed packages: 171; differences to env/mica_requirements.txt: 0 
+MICA at commit 726d1bb14be04887a43b7f5aefcff0d843761d01
+  downloaded 4 MB
+downloaded the weights: 154 MB
+weights archive: md5 a952451652294ca299ff5636f79524f7 (equals the one Zenodo lists)
+weights file: /tmp/mica_pilot/MICA/trained_models/MICA_best_model.pth (169 MB, sha256 b95fc62cb3698da5)
+MICA modules import
+US-align: /tmp/mica_pilot/USalign_src/USalign (* US-align (Version 20261012)                                      *)
+stages (3,) | 3 entries at a time | program 3 on the CUDA | 2 GPU(s) | budget 3.5 hours (until 3.2 hours after the start of the notebook)
+the private AlphaFold files of 5 entries are here and match the checked list
+MICA's utils/predict.py: batch_threshold raised from 200 to 1000000 (every map is predicted one window at a time)
+
+========================================================================
+lane 0 9WQ6 (EMDB EMD-66160, 3.4 A, 261 modeled residues)
+queue: 4 waiting; 1 running; 0.2 of 3.5 hours used
+========================================================================
+
+========================================================================
+lane 1 9V4D (EMDB EMD-64777, 3.07 A, 276 modeled residues)
+queue: 3 waiting; 2 running; 0.2 of 3.5 hours used
+========================================================================
+
+========================================================================
+lane 2 9T5K (EMDB EMD-55586, 2.6 A, 381 modeled residues)
+queue: 2 waiting; 3 running; 0.2 of 3.5 hours used
+========================================================================
+AlphaFold Server files of 9WQ6: found in /kaggle/input, hashes match the checked list
+map grid (320, 320, 320) voxel size [0.832, 0.832, 0.832] min -1.193 max 1.836 mean -0.000374 std 0.01905
+9WQ6: contour level 0.2 and resolution 3.4 from emdb_extractor.py (resolution in data/entries_2026.csv: 3.4)
+AlphaFold Server files of 9V4D: found in /kaggle/input, hashes match the checked list
+lane 0 9WQ6: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-b/mica_state/9WQ6
+lane 0 9WQ6: map grid [320, 320, 320], voxel [0.8319999575614929, 0.8319999575614929, 0.8319999575614929] A, box [266.2, 266.2, 266.2] A -> 216 windows of 64^3 for MICA's network; about 1.006 million reflections for Phaser at 3.4 A
+lane 0 9WQ6: restored docking state: 1 of 1 domains docked (full)
+
+=== lane 0 9WQ6: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9WQ6/emd_66160.map -f /tmp/mica_pilot/MICA/input/9WQ6/9wq6.fasta -a /tmp/mica_pilot/MICA/input/9WQ6/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+map grid (240, 240, 240) voxel size [1.1067, 1.1067, 1.1067] min -0.789 max 1.197 mean 0.0005147 std 0.0162
+9V4D: contour level 0.0586 and resolution 3.07 from emdb_extractor.py (resolution in data/entries_2026.csv: 3.07)
+AlphaFold Server files of 9T5K: found in /kaggle/input, hashes match the checked list
+lane 1 9V4D: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-d/mica_state/9V4D
+lane 1 9V4D: map grid [240, 240, 240], voxel [1.106699824333191, 1.106699824333191, 1.106699824333191] A, box [265.6, 265.6, 265.6] A -> 216 windows of 64^3 for MICA's network; about 1.356 million reflections for Phaser at 3.07 A
+lane 1 9V4D: restored docking state: 1 of 1 domains docked (full)
+map grid (400, 400, 400) voxel size [0.92, 0.92, 0.92] min -1.153 max 1.659 mean 0.0007268 std 0.01707
+9T5K: contour level 0.15 and resolution 2.6 from emdb_extractor.py (resolution in data/entries_2026.csv: 2.6)
+lane 2 9T5K: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-a/mica_state/9T5K
+lane 2 9T5K: map grid [400, 400, 400], voxel [0.9200000166893005, 0.9200000166893005, 0.9200000166893005] A, box [368.0, 368.0, 368.0] A -> 512 windows of 64^3 for MICA's network; about 5.939 million reflections for Phaser at 2.6 A
+lane 2 9T5K: restored docking state: 1 of 2 domains docked (partial)
+[lane 0 9WQ6 3_build] running for 2 min | load 3.0 | free RAM 27.2 GB | busiest: python 64.0% (120s), python3 3.1% (1048s), python3 0.5% (1060s) | 9WQ6_3_build.log: 12992 bytes, changed 2 s ago, last line: Processing samples:   7%|▋         | 15/216 [00:42<09:32,  2.85s/it]
+[lane 0 9WQ6 3_build] running for 4 min | load 3.0 | free RAM 27.2 GB | busiest: python 81.9% (240s), python3 2.8% (1168s), python3 0.4% (1180s) | 9WQ6_3_build.log: 15614 bytes, changed 2 s ago, last line: Processing samples:  24%|██▎       | 51/216 [02:41<09:11,  3.34s/it]
+[lane 0 9WQ6 3_build] running for 6 min | load 1.9 | free RAM 27.2 GB | busiest: python 87.8% (360s), python3 2.5% (1288s), nvidia-smi 0.4% (1300s) | 9WQ6_3_build.log: 18354 bytes, changed 1 s ago, last line: Processing samples:  40%|████      | 87/216 [04:43<07:14,  3.37s/it]
+[lane 0 9WQ6 3_build] running for 8 min | load 1.2 | free RAM 27.2 GB | busiest: python 90.8% (480s), python3 2.3% (1408s), nvidia-smi 0.4% (1420s) | 9WQ6_3_build.log: 21162 bytes, changed 1 s ago, last line: Processing samples:  56%|█████▋    | 122/216 [06:42<05:21,  3.42s/it]
+[lane 0 9WQ6 3_build] running for 10 min | load 1.2 | free RAM 27.2 GB | busiest: python 92.6% (600s), python3 2.1% (1528s), nvidia-smi 0.4% (1540s) | 9WQ6_3_build.log: 24090 bytes, changed 2 s ago, last line: Processing samples:  73%|███████▎  | 157/216 [08:42<03:21,  3.42s/it]
+[lane 0 9WQ6 3_build] running for 12 min | load 1.1 | free RAM 27.2 GB | busiest: python 93.7% (720s), python3 2.0% (1648s), nvidia-smi 0.4% (1660s) | 9WQ6_3_build.log: 27134 bytes, changed 2 s ago, last line: Processing samples:  89%|████████▉ | 192/216 [10:41<01:21,  3.39s/it]
+[lane 0 9WQ6 3_build] running for 14 min | load 1.4 | free RAM 25.1 GB | busiest: python 100% (22s), python 99.6% (22s), python 92.2% (840s) | 9WQ6_3_build.log: 34315 bytes, changed 23 s ago, last line: 2026-10-27 17:03:35 - INFO - Generated 4250 local traces
+[lane 0 9WQ6 3_build] running for 16 min | load 1.9 | free RAM 24.9 GB | busiest: python 99.9% (142s), python 99.8% (142s), python 81.2% (960s) | 9WQ6_3_build.log: 34315 bytes, changed 2 min ago, last line: 2026-10-27 17:03:35 - INFO - Generated 4250 local traces
+lane 0 9WQ6: 3_build finished: exit code 0, 1061 s, lowest free RAM 24.84 GB; output written
+lane 1 9V4D: waited 1056 s for the program 3 of another entry
+
+=== lane 1 9V4D: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9V4D/emd_64777.map -f /tmp/mica_pilot/MICA/input/9V4D/9v4d.fasta -a /tmp/mica_pilot/MICA/input/9V4D/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+lane 0 9WQ6: waited 15 s for MICA's own Phenix refinement; refined model not found
+the all-atom model exists but the refined model does not: running phenix.real_space_refine again, with its output kept
+Starting phenix.real_space_refine
+on Tue Oct 27 17:07:56 2026 by root
+===============================================================================
+
+Processing files:
+  Found phil, /tmp/mica_pilot/MICA/modules/phenix.eff
+  Adding PHIL files:
+  -------------------------
+    run_program(real_space_refine.Program)
+    self.process_phil(self.namespace.phil)
+    result_object = master_object.fetch(
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+RuntimeError: Incompatible parameter objects: scope "cdl_nucleotides" (input line 2068) vs. definition "cdl_nucleotides" (file "/tmp/mica_pilot/MICA/modules/phenix.eff", line 107)
+phenix.real_space_refine exit code 0
+phenix.chain_comparison (66160_9wq6_MICA(init)_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.96  170      7    161       0       9   65.1   0.68    87.1        0.57   17.0          5               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 2.30 seconds
+wall clock time: 2.36 seconds
+phenix.chain_comparison (66160_9wq6_MICA_all_atom_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 1.05  249     59    208       6      35   95.4   0.90    77.5        0.74   13.1          3               7
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 2.87 seconds
+wall clock time: 2.87 seconds
+phenix.chain_comparison (66160_9wq6_MICA_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 1.05  251     59    208       6      37   96.2   0.91    77.7        0.75   13.2          4               7
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.80 seconds
+wall clock time: 1.81 seconds
+phenix.chain_comparison (9WQ6_af3_docked.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 2.14   74    222     18      13      43   28.4   0.13     8.1        0.02    5.3          2              13
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 2.09 seconds
+wall clock time: 2.09 seconds
+phenix.chain_comparison (fold_9wq6_1_model_0.cif) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.00    0    339      0       0       0    0.0   0.00     0.0        0.00    0.0          1               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 2.76 seconds
+wall clock time: 2.77 seconds
+
+========================================================================
+lane 0 9OC0 (EMDB EMD-70305, 2.97 A, 512 modeled residues)
+queue: 1 waiting; 1 ok, 3 running; 0.6 of 3.5 hours used
+========================================================================
+AlphaFold Server files of 9OC0: found in /kaggle/input, hashes match the checked list
+[lane 1 9V4D 3_build] running for 2 min | load 2.4 | free RAM 27.1 GB | busiest: python 74.4% (120s), python3 1.6% (2109s), nvidia-smi 0.4% (2120s) | 9V4D_3_build.log: 13468 bytes, changed 0 s ago, last line: Processing samples:  10%|▉         | 21/216 [00:56<08:48,  2.71s/it]
+[lane 1 9V4D 3_build] running for 4 min | load 1.2 | free RAM 27.1 GB | busiest: python 87.7% (240s), python3 1.5% (2229s), nvidia-smi 0.4% (2240s) | 9V4D_3_build.log: 16564 bytes, changed 2 s ago, last line: Processing samples:  29%|██▉       | 63/216 [02:55<07:10,  2.82s/it]
+map grid (440, 440, 440) voxel size [0.84, 0.84, 0.84] min -0.4103 max 0.6851 mean -0.000327 std 0.01153
+9OC0: contour level 0.066 and resolution 2.97 from emdb_extractor.py (resolution in data/entries_2026.csv: 2.97)
+lane 0 9OC0: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-b/mica_state/9OC0
+lane 0 9OC0: map grid [440, 440, 440], voxel [0.8399999737739563, 0.8399999737739563, 0.8399999737739563] A, box [369.6, 369.6, 369.6] A -> 512 windows of 64^3 for MICA's network; about 4.036 million reflections for Phaser at 2.97 A
+lane 0 9OC0: restored docking state: 3 of 7 domains docked (partial)
+[lane 1 9V4D 3_build] running for 6 min | load 1.1 | free RAM 27.1 GB | busiest: python 92.1% (360s), python3 1.6% (2349s), nvidia-smi 0.4% (2361s) | 9V4D_3_build.log: 19828 bytes, changed 3 s ago, last line: Processing samples:  49%|████▊     | 105/216 [04:54<05:14,  2.84s/it]
+[lane 1 9V4D 3_build] running for 8 min | load 1.0 | free RAM 27.1 GB | busiest: python 94.4% (480s), python3 1.5% (2469s), nvidia-smi 0.4% (2481s) | 9V4D_3_build.log: 23376 bytes, changed 1 s ago, last line: Processing samples:  69%|██████▊   | 148/216 [06:56<03:12,  2.83s/it]
+[lane 1 9V4D 3_build] running for 10 min | load 1.0 | free RAM 27.1 GB | busiest: python 95.7% (600s), python3 1.4% (2589s), nvidia-smi 0.4% (2601s) | 9V4D_3_build.log: 27008 bytes, changed 1 s ago, last line: Processing samples:  88%|████████▊ | 190/216 [08:55<01:13,  2.84s/it]
+[lane 1 9V4D 3_build] running for 12 min | load 1.6 | free RAM 25.3 GB | busiest: python 99.7% (34s), python 99.7% (34s), python 91.9% (720s) | 9V4D_3_build.log: 34353 bytes, changed 35 s ago, last line: 2026-10-27 17:19:04 - INFO - Generated 1773 local traces
+lane 1 9V4D: 3_build finished: exit code 0, 817 s, lowest free RAM 25.05 GB; output written
+lane 2 9T5K: waited 1803 s for the program 3 of another entry
+
+=== lane 2 9T5K: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9T5K/emd_55586.map -f /tmp/mica_pilot/MICA/input/9T5K/9t5k.fasta -a /tmp/mica_pilot/MICA/input/9T5K/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+lane 1 9V4D: waited 15 s for MICA's own Phenix refinement; refined model not found
+the all-atom model exists but the refined model does not: running phenix.real_space_refine again, with its output kept
+Starting phenix.real_space_refine
+on Tue Oct 27 17:21:32 2026 by root
+===============================================================================
+
+Processing files:
+  Found phil, /tmp/mica_pilot/MICA/modules/phenix.eff
+  Adding PHIL files:
+  -------------------------
+    run_program(real_space_refine.Program)
+    self.process_phil(self.namespace.phil)
+    result_object = master_object.fetch(
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+RuntimeError: Incompatible parameter objects: scope "cdl_nucleotides" (input line 2068) vs. definition "cdl_nucleotides" (file "/tmp/mica_pilot/MICA/modules/phenix.eff", line 107)
+phenix.real_space_refine exit code 0
+phenix.chain_comparison (64777_9v4d_MICA(init)_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.75  193      1    189       0       4   70.4   0.93    99.5        0.70   38.6          3               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.40 seconds
+wall clock time: 1.40 seconds
+phenix.chain_comparison (64777_9v4d_MICA_all_atom_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.88  259     16    253       0       6   94.5   1.08    98.5        0.93   64.8          1               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.44 seconds
+wall clock time: 1.44 seconds
+phenix.chain_comparison (64777_9v4d_MICA_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.88  259     16    253       0       6   94.5   1.08    98.5        0.93   64.8          1               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.36 seconds
+wall clock time: 1.36 seconds
+phenix.chain_comparison (9V4D_af3_docked.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 2.23   91    188     20      17      54   33.2   0.15     4.4        0.01    5.1          1              19
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.47 seconds
+wall clock time: 1.47 seconds
+
+========================================================================
+lane 1 9VI4 (EMDB EMD-65077, 1.8 A, 516 modeled residues)
+queue: 0 waiting; 2 ok, 3 running; 0.8 of 3.5 hours used
+========================================================================
+AlphaFold Server files of 9VI4: found in /kaggle/input, hashes match the checked list
+[lane 2 9T5K 3_build] running for 2 min | load 4.2 | free RAM 28.6 GB | busiest: python 62.5% (40s), python 62.0% (40s), python 49.0% (120s) | 9T5K_3_build.log: 8286 bytes, changed 2 s ago, last line: 2026-10-27 17:23:13 - INFO - Creating grids for PRO_encoding.mrc with shape: (368, 368, 368)
+[lane 2 9T5K 3_build] running for 4 min | load 2.1 | free RAM 27.2 GB | busiest: python 60.3% (240s), python3 1.3% (3046s), nvidia-smi 0.4% (3058s) | 9T5K_3_build.log: 13949 bytes, changed 1 s ago, last line: Processing samples:   5%|▌         | 27/512 [01:16<24:52,  3.08s/it]
+[lane 2 9T5K 3_build] running for 6 min | load 1.1 | free RAM 27.2 GB | busiest: python 73.5% (360s), python3 1.3% (3166s), nvidia-smi 0.4% (3178s) | 9T5K_3_build.log: 16444 bytes, changed 3 s ago, last line: Processing samples:  12%|█▏        | 62/512 [03:14<24:55,  3.32s/it]
+[lane 2 9T5K 3_build] running for 8 min | load 1.1 | free RAM 27.2 GB | busiest: python 80.0% (480s), python3 1.3% (3286s), nvidia-smi 0.4% (3298s) | 9T5K_3_build.log: 19072 bytes, changed 1 s ago, last line: Processing samples:  19%|█▉        | 98/512 [05:16<23:33,  3.42s/it]
+[lane 2 9T5K 3_build] running for 10 min | load 1.4 | free RAM 27.2 GB | busiest: python 83.9% (600s), python3 1.3% (3406s), nvidia-smi 0.4% (3418s) | 9T5K_3_build.log: 21711 bytes, changed 3 s ago, last line: Processing samples:  26%|██▌       | 133/512 [07:14<21:35,  3.42s/it]
+map grid (640, 640, 640) voxel size [0.6573, 0.6573, 0.6573] min -1.267 max 2.881 mean 0.003527 std 0.1109
+9VI4: contour level 0.35 and resolution 1.8 from emdb_extractor.py (resolution in data/entries_2026.csv: 1.8)
+lane 1 9VI4: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-b/mica_state/9VI4
+lane 1 9VI4: map grid [640, 640, 640], voxel [0.6572999954223633, 0.6572999954223633, 0.6572999954223633] A, box [420.7, 420.7, 420.7] A -> 729 windows of 64^3 for MICA's network; about 26.735 million reflections for Phaser at 1.8 A
+lane 1 9VI4: restored docking state: 0 of 3 domains docked (none)
+[lane 2 9T5K 3_build] running for 12 min | load 1.4 | free RAM 27.2 GB | busiest: python 86.1% (720s), python3 1.5% (3526s), nvidia-smi 0.4% (3538s) | 9T5K_3_build.log: 24389 bytes, changed 1 s ago, last line: Processing samples:  33%|███▎      | 168/512 [09:17<20:31,  3.58s/it]
+[lane 2 9T5K 3_build] running for 14 min | load 1.1 | free RAM 27.2 GB | busiest: python 87.9% (840s), python3 1.5% (3646s), nvidia-smi 0.4% (3658s) | 9T5K_3_build.log: 27119 bytes, changed 1 s ago, last line: Processing samples:  40%|███▉      | 203/512 [11:16<17:35,  3.41s/it]
+[lane 2 9T5K 3_build] running for 16 min | load 1.4 | free RAM 27.2 GB | busiest: python 89.3% (960s), python3 1.4% (3766s), nvidia-smi 0.4% (3778s) | 9T5K_3_build.log: 29903 bytes, changed 2 s ago, last line: Processing samples:  46%|████▋     | 238/512 [13:15<15:19,  3.36s/it]
+[lane 2 9T5K 3_build] running for 18 min | load 1.1 | free RAM 27.2 GB | busiest: python 90.3% (1080s), python3 1.4% (3886s), nvidia-smi 0.4% (3898s) | 9T5K_3_build.log: 32725 bytes, changed 3 s ago, last line: Processing samples:  53%|█████▎    | 273/512 [15:14<13:33,  3.40s/it]
+[lane 2 9T5K 3_build] running for 20 min | load 1.0 | free RAM 27.2 GB | busiest: python 91.2% (1200s), python3 1.3% (4006s), nvidia-smi 0.4% (4018s) | 9T5K_3_build.log: 35677 bytes, changed 0 s ago, last line: Processing samples:  60%|██████    | 309/512 [17:17<11:27,  3.39s/it]
+[lane 2 9T5K 3_build] running for 22 min | load 1.1 | free RAM 27.2 GB | busiest: python 91.8% (1320s), python3 1.3% (4126s), nvidia-smi 0.4% (4138s) | 9T5K_3_build.log: 38609 bytes, changed 0 s ago, last line: Processing samples:  67%|██████▋   | 344/512 [19:17<09:48,  3.50s/it]
+[lane 2 9T5K 3_build] running for 24 min | load 1.0 | free RAM 27.2 GB | busiest: python 92.4% (1440s), python3 1.3% (4246s), nvidia-smi 0.4% (4258s) | 9T5K_3_build.log: 41579 bytes, changed 1 s ago, last line: Processing samples:  74%|███████▍  | 379/512 [21:16<07:31,  3.40s/it]
+[lane 2 9T5K 3_build] running for 26 min | load 1.1 | free RAM 27.2 GB | busiest: python 92.9% (1560s), python3 1.2% (4366s), nvidia-smi 0.4% (4378s) | 9T5K_3_build.log: 44589 bytes, changed 2 s ago, last line: Processing samples:  81%|████████  | 414/512 [23:15<05:34,  3.42s/it]
+[lane 2 9T5K 3_build] running for 28 min | load 1.2 | free RAM 27.1 GB | busiest: python 93.4% (1680s), python3 1.2% (4486s), nvidia-smi 0.4% (4498s) | 9T5K_3_build.log: 47667 bytes, changed 3 s ago, last line: Processing samples:  88%|████████▊ | 449/512 [25:15<03:34,  3.41s/it]
+[lane 2 9T5K 3_build] running for 30 min | load 1.2 | free RAM 27.2 GB | busiest: python 93.7% (1800s), python3 1.2% (4606s), nvidia-smi 0.4% (4618s) | 9T5K_3_build.log: 50781 bytes, changed 3 s ago, last line: Processing samples:  95%|█████████▍| 484/512 [27:14<01:35,  3.41s/it]
+[lane 2 9T5K 3_build] running for 32 min | load 1.4 | free RAM 23.0 GB | busiest: python 93.5% (1920s), python3 1.1% (4726s), nvidia-smi 0.4% (4738s) | 9T5K_3_build.log: 54127 bytes, changed 20 s ago, last line: 2026-10-27 17:52:56 - INFO - Reconstructing amino_acid_probability from 512 grids
+[lane 2 9T5K 3_build] running for 34 min | load 1.1 | free RAM 22.0 GB | busiest: python 93.7% (2040s), python3 1.1% (4847s), nvidia-smi 0.4% (4858s) | 9T5K_3_build.log: 57322 bytes, changed 67 s ago, last line: 2026-10-27 17:54:09 - INFO - Reducing fragments from 508 to 41
+[lane 2 9T5K 3_build] running for 36 min | load 1.9 | free RAM 19.1 GB | busiest: python 100% (72s), python 99.7% (72s), python 90.9% (2160s) | 9T5K_3_build.log: 58344 bytes, changed 73 s ago, last line: 2026-10-27 17:56:03 - INFO - Generated 15801 local traces
+[lane 2 9T5K 3_build] running for 38 min | load 2.0 | free RAM 18.9 GB | busiest: python 99.9% (192s), python 99.6% (192s), python 86.4% (2280s) | 9T5K_3_build.log: 58344 bytes, changed 3 min ago, last line: 2026-10-27 17:56:03 - INFO - Generated 15801 local traces
+[lane 2 9T5K 3_build] running for 40 min | load 2.0 | free RAM 18.7 GB | busiest: python 99.8% (312s), python 99.7% (312s), python 82.2% (2400s) | 9T5K_3_build.log: 58344 bytes, changed 5 min ago, last line: 2026-10-27 17:56:03 - INFO - Generated 15801 local traces
+[lane 2 9T5K 3_build] running for 42 min | load 2.0 | free RAM 18.5 GB | busiest: python 99.8% (432s), python 99.8% (432s), python 78.5% (2520s) | 9T5K_3_build.log: 58344 bytes, changed 7 min ago, last line: 2026-10-27 17:56:03 - INFO - Generated 15801 local traces
+[lane 2 9T5K 3_build] running for 44 min | load 2.0 | free RAM 18.3 GB | busiest: python 99.8% (552s), python 99.8% (552s), python 75.1% (2640s) | 9T5K_3_build.log: 58344 bytes, changed 9 min ago, last line: 2026-10-27 17:56:03 - INFO - Generated 15801 local traces
+[lane 2 9T5K 3_build] running for 46 min | load 2.1 | free RAM 18.0 GB | busiest: python 99.8% (672s), python 99.8% (672s), python 72.0% (2760s) | 9T5K_3_build.log: 58344 bytes, changed 11 min ago, last line: 2026-10-27 17:56:03 - INFO - Generated 15801 local traces
+[lane 2 9T5K 3_build] running for 48 min | load 1.7 | free RAM 18.0 GB | busiest: python 70.1% (2880s), python3 0.9% (5687s), nvidia-smi 0.4% (5698s) | 9T5K_3_build.log: 58344 bytes, changed 13 min ago, last line: 2026-10-27 17:56:03 - INFO - Generated 15801 local traces
+lane 2 9T5K: 3_build finished: exit code 0, 2983 s, lowest free RAM 17.88 GB; output written
+lane 0 9OC0: waited 3544 s for the program 3 of another entry
+
+=== lane 0 9OC0: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9OC0/emd_70305.map -f /tmp/mica_pilot/MICA/input/9OC0/9oc0.fasta -a /tmp/mica_pilot/MICA/input/9OC0/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+lane 2 9T5K: waited 15 s for MICA's own Phenix refinement; refined model not found
+the all-atom model exists but the refined model does not: running phenix.real_space_refine again, with its output kept
+Starting phenix.real_space_refine
+on Tue Oct 27 18:11:16 2026 by root
+===============================================================================
+
+Processing files:
+  Found phil, /tmp/mica_pilot/MICA/modules/phenix.eff
+  Adding PHIL files:
+  -------------------------
+    run_program(real_space_refine.Program)
+    self.process_phil(self.namespace.phil)
+    result_object = master_object.fetch(
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+RuntimeError: Incompatible parameter objects: scope "cdl_nucleotides" (input line 2068) vs. definition "cdl_nucleotides" (file "/tmp/mica_pilot/MICA/modules/phenix.eff", line 107)
+phenix.real_space_refine exit code 0
+phenix.chain_comparison (55586_9t5k_MICA(init)_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.43  240     65    237       0       3   63.0   1.47   100.0        0.63   60.0          4               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.44 seconds
+wall clock time: 1.45 seconds
+phenix.chain_comparison (55586_9t5k_MICA_all_atom_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.45  304    105    299       0       5   79.8   1.78    99.3        0.79   76.0          3               1
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.44 seconds
+wall clock time: 1.43 seconds
+phenix.chain_comparison (55586_9t5k_MICA_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.45  304    105    299       0       5   79.8   1.78    99.3        0.79   76.0          3               1
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.40 seconds
+wall clock time: 1.40 seconds
+phenix.chain_comparison (9T5K_af3_docked.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 2.19   37    191      7       4      26    9.7   0.04     2.7        0.00    7.4          1               5
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.42 seconds
+wall clock time: 1.42 seconds
+phenix.chain_comparison (fold_9t5k_1_model_0.cif) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.00    0    453      0       0       0    0.0   0.00     0.0        0.00    0.0          1               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.52 seconds
+wall clock time: 1.52 seconds
+[lane 0 9OC0 3_build] running for 2 min | load 4.3 | free RAM 28.6 GB | 9OC0_3_build.log: 9834 bytes, changed 0 s ago, last line: 2026-10-27 18:13:21 - INFO - Creating grids for ALA_encoding.mrc with shape: (370, 370, 370)
+[lane 0 9OC0 3_build] running for 5 min | load 1.8 | free RAM 27.1 GB | busiest: python 65.8% (271s), python3 0.9% (6060s), nvidia-smi 0.4% (6072s) | 9OC0_3_build.log: 15259 bytes, changed 0 s ago, last line: Processing samples:   7%|▋         | 34/512 [01:51<27:34,  3.46s/it]
+[lane 0 9OC0 3_build] running for 7 min | load 1.4 | free RAM 27.1 GB | busiest: python 76.3% (391s), python3 0.9% (6180s), nvidia-smi 0.4% (6192s) | 9OC0_3_build.log: 17768 bytes, changed 2 s ago, last line: Processing samples:  13%|█▎        | 69/512 [03:49<24:53,  3.37s/it]
+[lane 0 9OC0 3_build] running for 9 min | load 1.2 | free RAM 27.1 GB | busiest: python 81.8% (511s), python3 0.9% (6300s), nvidia-smi 0.4% (6312s) | 9OC0_3_build.log: 20328 bytes, changed 3 s ago, last line: Processing samples:  20%|██        | 104/512 [05:48<23:02,  3.39s/it]
+[lane 0 9OC0 3_build] running for 11 min | load 1.1 | free RAM 27.2 GB | busiest: python 85.2% (631s), python3 0.8% (6420s), nvidia-smi 0.4% (6432s) | 9OC0_3_build.log: 23056 bytes, changed 1 s ago, last line: Processing samples:  27%|██▋       | 140/512 [07:50<21:10,  3.42s/it]
+[lane 0 9OC0 3_build] running for 13 min | load 1.1 | free RAM 27.1 GB | busiest: python 87.5% (751s), python3 0.8% (6541s), nvidia-smi 0.4% (6552s) | 9OC0_3_build.log: 25748 bytes, changed 1 s ago, last line: Processing samples:  34%|███▍      | 175/512 [09:50<19:14,  3.43s/it]
+[lane 0 9OC0 3_build] running for 15 min | load 1.1 | free RAM 27.2 GB | busiest: python 89.1% (871s), python3 0.8% (6661s), nvidia-smi 0.4% (6672s) | 9OC0_3_build.log: 28478 bytes, changed 1 s ago, last line: Processing samples:  41%|████      | 210/512 [11:51<17:16,  3.43s/it]
+[lane 0 9OC0 3_build] running for 17 min | load 1.1 | free RAM 27.2 GB | busiest: python 90.3% (991s), python3 0.8% (6781s), nvidia-smi 0.4% (6792s) | 9OC0_3_build.log: 31276 bytes, changed 0 s ago, last line: Processing samples:  48%|████▊     | 245/512 [13:51<15:16,  3.43s/it]
+[lane 0 9OC0 3_build] running for 19 min | load 1.1 | free RAM 27.1 GB | busiest: python 91.2% (1111s), python3 0.8% (6901s), nvidia-smi 0.4% (6912s) | 9OC0_3_build.log: 34030 bytes, changed 3 s ago, last line: Processing samples:  54%|█████▍    | 279/512 [15:48<13:21,  3.44s/it]
+[lane 0 9OC0 3_build] running for 21 min | load 1.2 | free RAM 27.2 GB | busiest: python 92.0% (1231s), python3 0.8% (7021s), nvidia-smi 0.4% (7032s) | 9OC0_3_build.log: 36902 bytes, changed 3 s ago, last line: Processing samples:  61%|██████▏   | 314/512 [17:48<11:19,  3.43s/it]
+[lane 0 9OC0 3_build] running for 23 min | load 1.1 | free RAM 27.1 GB | busiest: python 92.6% (1351s), python3 0.8% (7141s), nvidia-smi 0.4% (7152s) | 9OC0_3_build.log: 39842 bytes, changed 3 s ago, last line: Processing samples:  68%|██████▊   | 349/512 [19:48<09:19,  3.43s/it]
+[lane 0 9OC0 3_build] running for 25 min | load 1.1 | free RAM 27.2 GB | busiest: python 93.1% (1471s), python3 0.7% (7261s), nvidia-smi 0.4% (7272s) | 9OC0_3_build.log: 42822 bytes, changed 2 s ago, last line: Processing samples:  75%|███████▌  | 384/512 [21:49<07:27,  3.50s/it]
+[lane 0 9OC0 3_build] running for 27 min | load 1.0 | free RAM 27.2 GB | busiest: python 93.6% (1591s), python3 0.7% (7381s), nvidia-smi 0.4% (7392s) | 9OC0_3_build.log: 45840 bytes, changed 1 s ago, last line: Processing samples:  82%|████████▏ | 419/512 [23:50<05:20,  3.45s/it]
+[lane 0 9OC0 3_build] running for 29 min | load 1.2 | free RAM 27.1 GB | busiest: python 94.0% (1711s), python3 0.7% (7501s), nvidia-smi 0.4% (7512s) | 9OC0_3_build.log: 48920 bytes, changed 1 s ago, last line: Processing samples:  89%|████████▊ | 454/512 [25:50<03:19,  3.43s/it]
+[lane 0 9OC0 3_build] running for 31 min | load 1.2 | free RAM 27.2 GB | busiest: python 94.3% (1831s), python3 0.7% (7621s), nvidia-smi 0.4% (7632s) | 9OC0_3_build.log: 52044 bytes, changed 1 s ago, last line: Processing samples:  96%|█████████▌| 489/512 [27:51<01:19,  3.45s/it]
+[lane 0 9OC0 3_build] running for 33 min | load 1.6 | free RAM 22.9 GB | busiest: python 93.8% (1951s), python3 0.7% (7741s), nvidia-smi 0.4% (7752s) | 9OC0_3_build.log: 54940 bytes, changed 33 s ago, last line: 2026-10-27 18:42:57 - INFO - Reconstructing amino_acid_probability from 512 grids
+[lane 0 9OC0 3_build] running for 35 min | load 1.1 | free RAM 21.9 GB | busiest: python 94.3% (2071s), python3 0.7% (7861s), nvidia-smi 0.4% (7872s) | 9OC0_3_build.log: 58135 bytes, changed 79 s ago, last line: 2026-10-27 18:44:12 - INFO - Reducing fragments from 541 to 35
+[lane 0 9OC0 3_build] running for 37 min | load 1.7 | free RAM 19.6 GB | busiest: python 100% (59s), python 99.3% (59s), python 92.1% (2191s) | 9OC0_3_build.log: 59157 bytes, changed 60 s ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 39 min | load 2.0 | free RAM 19.4 GB | busiest: python 99.9% (179s), python 99.7% (179s), python 87.5% (2311s) | 9OC0_3_build.log: 59157 bytes, changed 3 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 41 min | load 2.1 | free RAM 19.2 GB | busiest: python 99.9% (299s), python 99.7% (299s), python 83.4% (2431s) | 9OC0_3_build.log: 59157 bytes, changed 5 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 43 min | load 2.2 | free RAM 19.0 GB | busiest: python 99.8% (419s), python 99.6% (419s), python 79.7% (2551s) | 9OC0_3_build.log: 59157 bytes, changed 7 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 45 min | load 2.1 | free RAM 18.7 GB | busiest: python 99.8% (539s), python 99.6% (539s), python 76.3% (2671s) | 9OC0_3_build.log: 59157 bytes, changed 9 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 47 min | load 2.1 | free RAM 18.5 GB | busiest: python 99.8% (659s), python 99.5% (659s), python 73.2% (2791s) | 9OC0_3_build.log: 59157 bytes, changed 11 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 49 min | load 2.0 | free RAM 18.3 GB | busiest: python 99.8% (779s), python 99.6% (779s), python 70.3% (2911s) | 9OC0_3_build.log: 59157 bytes, changed 13 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 51 min | load 2.0 | free RAM 18.0 GB | busiest: python 99.8% (899s), python 99.4% (899s), python 67.8% (3031s) | 9OC0_3_build.log: 59157 bytes, changed 15 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 53 min | load 2.0 | free RAM 17.8 GB | busiest: python 99.8% (1020s), python 99.5% (1019s), python 65.3% (3151s) | 9OC0_3_build.log: 59157 bytes, changed 17 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 55 min | load 2.2 | free RAM 17.6 GB | busiest: python 99.8% (1140s), python 99.5% (1139s), python 63.1% (3271s) | 9OC0_3_build.log: 59157 bytes, changed 19 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 57 min | load 2.1 | free RAM 17.4 GB | busiest: python 99.8% (1260s), python 99.5% (1259s), python 60.9% (3391s) | 9OC0_3_build.log: 59157 bytes, changed 21 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 59 min | load 2.0 | free RAM 17.1 GB | busiest: python 99.8% (1380s), python 99.6% (1379s), python 59.1% (3511s) | 9OC0_3_build.log: 59157 bytes, changed 23 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 61 min | load 1.4 | free RAM 17.2 GB | busiest: python 58.7% (3631s), python3 0.6% (9421s), nvidia-smi 0.4% (9433s) | 9OC0_3_build.log: 59157 bytes, changed 25 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 63 min | load 1.9 | free RAM 16.9 GB | busiest: python 99.9% (102s), python 99.9% (102s), python 57.4% (3751s) | 9OC0_3_build.log: 59157 bytes, changed 27 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 65 min | load 2.1 | free RAM 15.8 GB | busiest: python 97.8% (222s), python 97.4% (222s), python 55.9% (3871s) | 9OC0_3_build.log: 59157 bytes, changed 29 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 67 min | load 2.0 | free RAM 15.6 GB | busiest: python 98.6% (342s), python 98.3% (342s), python 54.3% (3991s) | 9OC0_3_build.log: 59157 bytes, changed 31 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 69 min | load 2.1 | free RAM 14.5 GB | busiest: python 98.9% (462s), python 98.7% (462s), python 52.7% (4111s) | 9OC0_3_build.log: 59157 bytes, changed 33 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 71 min | load 2.1 | free RAM 14.3 GB | busiest: python 99.1% (582s), python 98.9% (582s), python 51.3% (4231s) | 9OC0_3_build.log: 59157 bytes, changed 35 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 73 min | load 2.0 | free RAM 14.1 GB | busiest: python 98.5% (702s), python 98.2% (703s), python 50.1% (4351s) | 9OC0_3_build.log: 59157 bytes, changed 37 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 75 min | load 2.0 | free RAM 13.9 GB | busiest: python 98.7% (822s), python 98.5% (823s), python 48.9% (4471s) | 9OC0_3_build.log: 59157 bytes, changed 39 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 77 min | load 2.0 | free RAM 13.6 GB | busiest: python 98.9% (942s), python 98.7% (943s), python 47.7% (4591s) | 9OC0_3_build.log: 59157 bytes, changed 41 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 79 min | load 2.1 | free RAM 13.4 GB | busiest: python 99.0% (1062s), python 98.8% (1063s), python 46.5% (4711s) | 9OC0_3_build.log: 59157 bytes, changed 43 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 81 min | load 2.1 | free RAM 13.2 GB | busiest: python 98.6% (1182s), python 98.2% (1183s), python 45.6% (4831s) | 9OC0_3_build.log: 59157 bytes, changed 45 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 83 min | load 2.0 | free RAM 13.0 GB | busiest: python 98.7% (1303s), python 98.4% (1303s), python 44.6% (4951s) | 9OC0_3_build.log: 59157 bytes, changed 47 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 85 min | load 2.1 | free RAM 12.8 GB | busiest: python 98.8% (1423s), python 98.5% (1423s), python 43.6% (5071s) | 9OC0_3_build.log: 59157 bytes, changed 49 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 87 min | load 1.4 | free RAM 17.1 GB | busiest: python 43.5% (5192s), python3 0.5% (10981s), nvidia-smi 0.4% (10993s) | 9OC0_3_build.log: 59157 bytes, changed 51 min ago, last line: 2026-10-27 18:46:30 - INFO - Generated 15714 local traces
+[lane 0 9OC0 3_build] running for 89 min | load 1.9 | free RAM 19.7 GB | busiest: python 100% (74s), python 99.9% (74s), python 44.0% (5312s) | 9OC0_3_build.log: 59290 bytes, changed 75 s ago, last line: 2026-10-27 19:38:16 - INFO - Computing register scores for 9OC0_1...
+[lane 0 9OC0 3_build] running for 91 min | load 2.0 | free RAM 19.6 GB | busiest: python 100% (90s), python 99.9% (90s), python 43.0% (5432s) | 9OC0_3_build.log: 59422 bytes, changed 91 s ago, last line: 2026-10-27 19:40:00 - INFO - Computing register scores for 9OC0_2...
+[lane 0 9OC0 3_build] running for 93 min | load 1.9 | free RAM 19.6 GB | busiest: python 42.3% (5552s), python3 0.5% (11341s), nvidia-smi 0.4% (11353s) | 9OC0_3_build.log: 59671 bytes, changed 109 s ago, last line: 2026-10-27 19:41:42 - INFO - Processing sequence 9OC0_2 with 862 residues, 2 chains
+[lane 0 9OC0 3_build] running for 95 min | load 1.9 | free RAM 19.5 GB | busiest: python 100% (90s), python 99.9% (91s), python 41.9% (5672s) | 9OC0_3_build.log: 59842 bytes, changed 91 s ago, last line: 2026-10-27 19:44:00 - INFO - Processing sequence 9OC0_1 with 847 residues, 2 chains
+[lane 0 9OC0 3_build] running for 97 min | load 1.3 | free RAM 19.6 GB | busiest: python 43.4% (5792s), python3 0.5% (11582s), nvidia-smi 0.4% (11593s) | 9OC0_3_build.log: 61910 bytes, changed 61 s ago, last line: 2026-10-27 19:46:30 - INFO - Processing gap 12/13: positions -1->511
+[lane 0 9OC0 3_build] running for 99 min | load 1.1 | free RAM 19.6 GB | busiest: python 44.6% (5912s), python3 0.5% (11702s), nvidia-smi 0.4% (11713s) | 9OC0_3_build.log: 61910 bytes, changed 3 min ago, last line: 2026-10-27 19:46:30 - INFO - Processing gap 12/13: positions -1->511
+lane 0 9OC0: 3_build finished: exit code -9, 5913 s (STOPPED at its limit), lowest free RAM 12.63 GB; output NOT written
+lane 1 9VI4: waited 8230 s for the program 3 of another entry
+
+entry status       stopped in     windows   domains    dock s program 3 s   total s  note
+9WQ6  ok                              216       1/1                1061      1203  
+9V4D  ok                              216       1/1                 817      2012  
+9T5K  ok                              512       1/2                2983      5000  
+9OC0  interrupted  3_build            512       3/7                5913      9683  cut by the end of the time budget during 3_build
+9VI4  interrupted  3_build            729       0/3                          8874  the time budget ended before 3_build could start
+
+entry model               TM  aligned    RMSD  coverage   seq id  chain_comparison
+9WQ6  mica_init_ca    0.6473      173    1.13    0.6782    0.867  ok
+9WQ6  mica_all_atom   0.9042      252    2.19    1.1801    0.813  ok
+9WQ6  mica_ca         0.9124      254    2.15    1.1877    0.811  ok
+9WQ6  af3_docked      0.9379      261    1.78    1.1341    0.893  ok
+9WQ6  af3_model_0     0.9379      261    1.78    1.2989    0.893  ok
+9V4D  mica_init_ca    0.7166      194    0.79    0.7029      1.0  ok
+9V4D  mica_all_atom   0.9635      265    1.44    0.9964    0.974  ok
+9V4D  mica_ca         0.9635      265    1.44    0.9964    0.974  ok
+9V4D  af3_docked      0.9017      261    1.96    1.0109    0.985  ok
+9T5K  mica_init_ca    0.6322      244     1.2    0.8005    0.984  ok
+9T5K  mica_all_atom   0.7993      309    1.25    1.0735    0.987  ok
+9T5K  mica_ca         0.7993      309    1.25    1.0735    0.987  ok
+9T5K  af3_docked      0.5538      214    0.92    0.5984    0.986  ok
+9T5K  af3_model_0     0.9406      381    1.97     1.189    0.992  ok
+
+TO DO IN A LATER SESSION (pending.csv): 9OC0, 9VI4

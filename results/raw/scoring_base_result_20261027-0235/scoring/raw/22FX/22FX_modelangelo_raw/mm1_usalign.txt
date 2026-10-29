@@ -1,0 +1,3 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/22FX/22FX_modelangelo_raw.cif /kaggle/working/pilot/native/ca/22FX_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/22FX/22FX_modelangelo_raw/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/22FX/22FX_modelangelo_raw.cif:M:A:B:C:D:E:F:G:H:I:J:K:L:N:O:P:Q:R:S:T:U:V:W:X:Y	/kaggle/working/pilot/native/ca/22FX_native_ca.pdb:A::::::::::::::::::::::::	0.0417	0.9989	0.16	0.041	0.994	0.994	4151	173	173

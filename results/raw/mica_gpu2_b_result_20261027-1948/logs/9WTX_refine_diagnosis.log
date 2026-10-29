@@ -1,0 +1,45 @@
+Starting phenix.real_space_refine
+on Tue Oct 27 17:56:55 2026 by root
+===============================================================================
+
+Processing files:
+-------------------------------------------------------------------------------
+
+  Found model, /tmp/mica_pilot/MICA/output/66226_9wtx_MICA_all_atom_model.pdb
+  Found real_map, /tmp/mica_pilot/MICA/input/9WTX/emd_66226.map
+  Found phil, /tmp/mica_pilot/MICA/modules/phenix.eff
+
+Processing PHIL parameters:
+-------------------------------------------------------------------------------
+
+  Adding PHIL files:
+  ------------------
+    /tmp/mica_pilot/MICA/modules/phenix.eff
+
+  Adding command-line PHIL:
+  -------------------------
+    resolution=3.37
+
+Traceback (most recent call last):
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix/command_line/real_space_refine.py", line 9, in <module>
+    run_program(real_space_refine.Program)
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/iotbx/cli_parser.py", line 965, in run_program
+    namespace = parser.parse_args(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/iotbx/cli_parser.py", line 377, in parse_args
+    self.process_phil(self.namespace.phil)
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/iotbx/cli_parser.py", line 651, in process_phil
+    self.working_phil, more_unused_phil = self.master_phil.fetch(
+                                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+    result_object = master_object.fetch(
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+    result_object = master_object.fetch(
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+    result_object = master_object.fetch(
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1852, in fetch
+    raise RuntimeError(
+RuntimeError: Incompatible parameter objects: scope "cdl_nucleotides" (input line 2068) vs. definition "cdl_nucleotides" (file "/tmp/mica_pilot/MICA/modules/phenix.eff", line 107)

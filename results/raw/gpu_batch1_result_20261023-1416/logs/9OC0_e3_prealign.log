@@ -1,0 +1,43 @@
+Seed set to 42
+starting... emid: 70305, pdbid: 9oc0
+Cryo Model loaded successfully!
+Loaded from cache
+Loaded from cache
+All models loaded successfully
+/tmp/mica_pilot/input/9OC0/9oc0.fasta
+AFDB searching...
+The process typically requires between 5 to 10 minutes to complete when no same search hits before.
+Waiting over 1000s would be recognized as search failed
+Check your fasta inputs, the fasta parser can only handle standard fasta inputs and only protein sequences would be parsed:
+Your sequence 1 name: 9OC0_1, Chains that belong to this sequence:
+A B 
+Your sequence: 
+MSTMHLLTFALLFSCSFARAASDPKIVNIGAVLSTRKHEQMFREAVNQANKRHGSWKIQLQATSVTHKPNAIQMALSVCEDLISSQVYAILVSHPPTPNDHFTPTPVSYTAGFYRIPVLGLTTRMSIYSDKSIHLSFLRTVPPYSHQSSVWFEMMRVYNWNHIILLVSDDHEGRAAQKRLETLLEERESKAEKVLQFDPGTKNVTALLMEARELEARVIILSASEDDAATVYRAAAMLDMTGSGYVWLVGEREISGNALRYAPDGIIGLQLINGKNESAHISDAVGVVAQAVHELLEKENITDPPRGCVGNTNIWKTGPLFKRVLMSSKYADGVTGRVEFNEDGDRKFAQYSIMNLQNRKLVQVGIYNGTHVIPNDRKIIWPGGETEKPRGYQMSTRLKIVTIHQEPFVYVKPTMSDGTCKEEFTVNGDPVKKVICTGPNDTSPGSPRHTVPQCCYGFCIDLLIKLARTMQFTYEVHLVADGKFGTQERVQNSNKKEWNGMMGELLSGQADMIVAPLTINNERAQYIEFSKPFKYQGLTILVKKEIPRSTLDSFMQPFQSTLWLLVGLSVHVVAVMLYLLDRFSPFGRFKVNSEEEEEDA ...
+Your sequence 2 name: 9OC0_2, Chains that belong to this sequence:
+C D 
+Your sequence: 
+GWSHPQFEKGGGSGGGSGGSAWSHPQFEKGALVPRGRSQKSPPSIGIAVILVGTSDEVAIKDAHEKDDFHHLSVVPRVELVAMNETDPKSIITRICDLMSDRKIQGVVFADDTDQEAIAQILDFISAQTLTPILGIHGGSSMIMADKDESSMFFQFGPSIEQQASVMLNIMEEYDWYIFSIVTTYFPGYQDFVNKIRSTIENSFVGWELEEVLLLDMSLDDGDSKIQNQLKKLQSPIILLYCTKEEATYIFEVANSVGLTGYGYTWIVPSLVAGDTDTVPSEFPTGLISVSYDEWDYGLPARVRDGIAIITTAASDMLSEHSFIPEPKSSCYNTHEKRIYQSNMLNRYLINVTFEGRNLSFSEDGYQMHPKLVIILLNKERKWERVGKWKDKSLQMKYYVWPRMCPETEEQEDDHLSIVTLEEAPFVIVESVDPLSGTCMRNTVPCQKRIISENKTDEEPGYIKKCCKGFCIDILKKISKSVKFTYDLYLVTNGKHGKKINGTWNGMIGEVVMKRAYMAVGSLTINEERSEVVDFSVPFIETGISVMVSRSNGTVSPSAFLEPFSADVWVMMFVMLLIVSAVAVFVFEYFSPVGYNRCLA ...
+preprocessEM...
+preprocessEM finished in 9 seconds
+nnPred...
+nnPred finished in 283 seconds
+clustering...
+clustering finished in 32 seconds
+fragModeling...
+seq_free trace_num: 31
+fragModeling finished in 73 seconds
+seqStructureAlign...
+seqStructureAlign finished in 45 seconds
+initialModeling...
+Traceback (most recent call last):
+  File "/tmp/mica_pilot/src_e3/inference.py", line 50, in <module>
+    main()
+  File "/tmp/mica_pilot/src_e3/inference.py", line 42, in main
+    protein = model.infer(t=args.t, spatial_conditioner=args.spatial_condition, sequence_conditioner=args.sequence_condition)
+  File "/tmp/mica_pilot/src_e3/E3CryoFold2.py", line 42, in infer
+    X, C, S = self.cryo_processer.mapping()
+  File "/tmp/mica_pilot/src_e3/cryo_module/AutoEM.py", line 443, in mapping
+    self.initialModeling()
+  File "/tmp/mica_pilot/src_e3/cryo_module/AutoEM.py", line 707, in initialModeling
+    rmsd_mat[i,j] = superpose3d.Superpose3D(val_coords,occ_coords)[0][0]
+IndexError: invalid index to scalar variable.

@@ -158,6 +158,7 @@ def run(cmd, env=None, every=1, cwd=None, log_file=None, timeout=None, quiet=Fal
             n += 1
             if lf:
                 lf.write(line + "\n")
+                lf.flush()                                  # a program that is silent for an hour must not hide its last lines in a buffer
             if "%|" in line:
                 bars += 1
                 show = bars % 100 == 1
@@ -330,10 +331,9 @@ elif REQUIRE_GPU:
 if STATE["ok"]:
     log("checking the internet:")
     missing = check_internet() if NET_HOSTS else []
-    if "PyPI" in missing or "GitHub" in missing:
-        fail("the internet is off. Kaggle: open Session options on the right and switch Internet on (the account must be phone-verified), then Run all again.")
-    elif missing:
-        log("WARNING: %s cannot be reached from here; the step that needs it will tell you." % ", ".join(missing))
+    if missing:                                    # a site that the notebook needs (required in NET_HOSTS): stop now, before any hour is spent
+        fail("the internet is off, or a site that this notebook needs cannot be reached (%s). Kaggle: open Session options on the right and switch Internet on "
+             "(the account must be phone-verified), then Run all again. If Internet is on, the site may be down: run again in a few minutes." % ", ".join(missing))
 '''
 
 STEP2_MD = """\

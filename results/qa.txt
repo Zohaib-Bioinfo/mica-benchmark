@@ -1,0 +1,17 @@
+OK    20 entries in the frozen list, all different
+OK    status tables: every entry is in the frozen list
+OK    status tables: every method is known
+OK    scores: every entry is in the frozen list
+OK    scores: every method is known
+OK    scores: one primary model per method and entry
+CHECK status: no entry has both an ok and a failed result (mica/9V4D, mica/22FX, mica/9WQ6)
+OK    status: every method has a row for every entry
+OK    scores: no model of a run that is not ok
+OK    outcomes: no run that is ok but unscorable
+INFO  MICA         model 17, failed  3, unscorable  0, not run  0
+INFO  ModelAngelo  model 19, failed  1, unscorable  0, not run  0
+INFO  EModelX(+AF) model 18, failed  2, unscorable  0, not run  0
+INFO  EMProt       model 19, failed  1, unscorable  0, not run  0
+INFO  E3-CryoFold  model 15, failed  5, unscorable  0, not run  0
+
+1 point(s) to look at

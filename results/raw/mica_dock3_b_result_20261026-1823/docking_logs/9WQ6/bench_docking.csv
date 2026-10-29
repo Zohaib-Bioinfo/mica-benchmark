@@ -1,0 +1,2 @@
+model,attempt,setting,settings,timeout_s,seconds,rc,timed_out,skipped,docked,local_cc,log
+fold_9wq6_1_model_0_chain_A_domain_01.pdb,1,res6_quick,"{""dock_with_mr"": ""False"", ""quick"": ""True"", ""resolution"": ""6.0""}",2400,1798,0,False,False,True,0.03,phenix_fold_9wq6_1_model_0_chain_A_domain_01.pdb_20261026_133452.log

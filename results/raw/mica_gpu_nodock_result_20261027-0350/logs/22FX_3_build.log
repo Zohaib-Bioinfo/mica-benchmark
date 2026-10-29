@@ -1,0 +1,108 @@
+2026-10-27 03:30:21 - INFO - 🚀 Starting MICA - Map ID: 68251, PDB ID: 22fx
+================================================================================
+🧬 MICA PIPELINE STARTING
+================================================================================
+2026-10-27 03:30:21 - INFO - Using MICA with AF3 structures
+2026-10-27 03:30:21 - INFO - Parsing FASTA file...
+2026-10-27 03:30:21 - INFO - Processing 1 sequences with multiprocessing...
+2026-10-27 03:30:21 - INFO - FASTA parsing completed successfully:
+2026-10-27 03:30:21 - INFO -    Sequence 1: 22FX_1
+2026-10-27 03:30:21 - INFO -    Chains: A
+2026-10-27 03:30:21 - INFO -    Sequence: MTTASPSQVRQNYHQDAEAAINRQINLELYASYVYLSMSCYFDRDDVALKNFAKYFLHQSHEEREHAEKLMKLQNQRGGRIFLQDIKKPDRDDWESGLNAMECALHLEKSVNQSLLELHKLATDKNDPHLCDFIETYYLSEQVKSIKELGDHVTNLRKMGAPEAGMAEYLFDKHTLGHGDES
+
+================================================================================
+🚀 STARTING DEEP LEARNING PREDICTION
+================================================================================
+📊 System Information:
+   🖥️  Device: cuda
+   🧠 CPU Cores: 2 physical, 4 logical
+   💾 System Memory: 31.3 GB
+   🎮 GPU Memory: 14.6 GB
+
+2026-10-27 03:30:21 - INFO - Starting data preprocessing...
+
+================================================================================
+🗺️  DENSITY MAP RESAMPLING AND NORMALIZATION
+================================================================================
+2026-10-27 03:30:21 - INFO - Processing density map: emd_68251.map
+2026-10-27 03:30:22 - INFO - Original map shape: (440, 440, 440)
+2026-10-27 03:30:22 - INFO - Resampling with zoom factors: [0.569527268409729, 0.569527268409729, 0.569527268409729]
+2026-10-27 03:30:31 - INFO - ✓ Resampled map shape: (251, 251, 251)
+2026-10-27 03:30:31 - INFO - Normalizing density map...
+2026-10-27 03:30:32 - INFO - ✓ Normalized map shape: (251, 251, 251)
+2026-10-27 03:30:32 - INFO - ✓ Normalized map saved: resampled_normalized_map.mrc
+
+🎯 Map Processing Results:
+   ✅ Map successfully resampled to 1.0 A and normalized to [0, 1] range.
+   📁 Normalized map path: /tmp/mica_pilot/MICA/input/22FX/resampled_normalized_map.mrc
+
+
+================================================================================
+🗺️  CREATING GRIDS FOR NORMALIZED MAP
+================================================================================
+2026-10-27 03:30:32 - INFO - Processing normalized map: resampled_normalized_map.mrc
+2026-10-27 03:30:32 - INFO - Output directory: /tmp/mica_pilot/MICA/input/22FX/grids/normalized_map_grids
+2026-10-27 03:30:32 - INFO - Grid size: 48, Padding: 8
+2026-10-27 03:30:32 - INFO - Creating grids for resampled_normalized_map.mrc with shape: (251, 251, 251)
+2026-10-27 03:30:33 - INFO - ✓ Created 216 grids from resampled_normalized_map.mrc
+
+🎯 Grid Creation Results:
+   ✅ Successfully created: 216 grids
+   📁 Output directory: normalized_map_grids
+   ⏱️  Processing time: 1.21 seconds
+
+============================================================
+🏁 CREATING GRIDS COMPLETE
+============================================================
+
+2026-10-27 03:30:33 - INFO - Cryo-EM map and AF3 results processed. Map Offset: [0.0, 0.0, 0.0]
+2026-10-27 03:30:33 - INFO - ✓ Data preprocessing completed in 12.06 seconds
+2026-10-27 03:30:33 - INFO - Starting Deep Learning prediction...
+2026-10-27 03:30:33 - INFO - Starting prediction pipeline at 2026-10-27 03:30:33
+
+================================================================================
+🧭 PROCESSING STRATEGY SELECTION
+================================================================================
+📊 Dataset Analysis:
+   🔢 Total samples: 216
+   🎯 Batch threshold: 200
+You may change batch threshold parameter: 200 to lower value if run on your local machine by changing its value in: utils/predict.py
+   ✅ Strategy: OPTIMIZED BATCH PROCESSING
+   📦 Batch size: 8
+
+================================================================================
+🤖 MODEL LOADING
+================================================================================
+2026-10-27 03:30:33 - INFO - Loading model from: MICA_best_model.pth
+2026-10-27 03:30:38 - INFO - Model loaded successfully
+🎯 Results:
+   ✅ Model loaded successfully
+   ⏱️  Loading time: 4.64s
+
+================================================================================
+📊 DATA PREPARATION
+================================================================================
+2026-10-27 03:30:38 - INFO - Dataset prepared with 216 samples
+🎯 Results:
+   ✅ Dataset prepared successfully
+   🔢 Total samples: 216
+   📦 Batch size: 8
+   ⏱️  Preparation time: 0.00s
+
+================================================================================
+🚀 RUNNING OPTIMIZED BATCH INFERENCE
+================================================================================
+📊 Configuration:
+   🔢 Total batches: 27
+   📦 Batch size: 8
+
+
+Processing samples:   0%|          | 0/27 [00:00<?, ?it/s]
+Processing samples:   0%|          | 0/27 [00:09<?, ?it/s]
+2026-10-27 03:30:47 - ERROR - Inference failed: CUDA out of memory. Tried to allocate 2.00 GiB (GPU 0; 14.56 GiB total capacity; 11.25 GiB already allocated; 1.27 GiB free; 12.28 GiB reserved in total by PyTorch)
+   ❌ Inference failed
+
+❌ Inference failed
+2026-10-27 03:30:47 - ERROR - Unexpected error: 'amino_acid_prediction'
+
+❌ Unexpected error: 'amino_acid_prediction'

@@ -1,0 +1,15 @@
+method,entry,model_kind,model_file,status,note,tm_score,tm_score_pred_norm,ca_rmsd,aligned_ca_length,seq_identity,pred_residues,native_residues,coverage,chain_comparison
+mica,9WQ6,mica_init_ca,66160_9wq6_MICA(init)_ca_model.pdb,ok,,0.6473,0.9464,1.13,173,0.867,177,261,0.6782,ok
+mica,9WQ6,mica_all_atom,66160_9wq6_MICA_all_atom_model.pdb,ok,,0.9042,0.7709,2.19,252,0.813,308,261,1.1801,ok
+mica,9WQ6,mica_ca,66160_9wq6_MICA_ca_model.pdb,ok,,0.9124,0.773,2.15,254,0.811,310,261,1.1877,ok
+mica,9WQ6,af3_docked,9WQ6_af3_docked.pdb,ok,,0.9379,0.8317,1.78,261,0.893,296,261,1.1341,ok
+mica,9WQ6,af3_model_0,fold_9wq6_1_model_0.cif,ok,,0.9379,0.7302,1.78,261,0.893,339,261,1.2989,ok
+mica,9V4D,mica_init_ca,64777_9v4d_MICA(init)_ca_model.pdb,ok,,0.7166,0.9822,0.79,194,1.0,194,267,0.7029,ok
+mica,9V4D,mica_all_atom,64777_9v4d_MICA_all_atom_model.pdb,ok,,0.9635,0.936,1.44,265,0.974,275,267,0.9964,ok
+mica,9V4D,mica_ca,64777_9v4d_MICA_ca_model.pdb,ok,,0.9635,0.936,1.44,265,0.974,275,267,0.9964,ok
+mica,9V4D,af3_docked,9V4D_af3_docked.pdb,ok,,0.9017,0.8652,1.96,261,0.985,279,267,1.0109,ok
+mica,9T5K,mica_init_ca,55586_9t5k_MICA(init)_ca_model.pdb,ok,,0.6322,0.7886,1.2,244,0.984,305,381,0.8005,ok
+mica,9T5K,mica_all_atom,55586_9t5k_MICA_all_atom_model.pdb,ok,,0.7993,0.7449,1.25,309,0.987,409,381,1.0735,ok
+mica,9T5K,mica_ca,55586_9t5k_MICA_ca_model.pdb,ok,,0.7993,0.7449,1.25,309,0.987,409,381,1.0735,ok
+mica,9T5K,af3_docked,9T5K_af3_docked.pdb,ok,,0.5538,0.9191,0.92,214,0.986,228,381,0.5984,ok
+mica,9T5K,af3_model_0,fold_9t5k_1_model_0.cif,ok,,0.9406,0.7966,1.97,381,0.992,453,381,1.189,ok

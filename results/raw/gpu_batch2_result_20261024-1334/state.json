@@ -1,0 +1,432 @@
+{
+ "ok": true,
+ "problem": "",
+ "t0": 1792824295.2082548,
+ "started": "2026-10-24T06:44:55.208257+00:00",
+ "phenix_env": null,
+ "phenix_version": "",
+ "installer_sha256": "",
+ "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+ "usalign_version": "* US-align (Version 20261012)                                      *",
+ "weights": {},
+ "env": {},
+ "entries": {},
+ "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+ "cpu_facts": {
+  "os.cpu_count": 4,
+  "multiprocessing.cpu_count": 4,
+  "usable (sched_getaffinity)": 4,
+  "nproc": "4",
+  "cgroup v2 cpu.max": "400000 100000",
+  "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+  "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+ },
+ "methods": {
+  "modelangelo": {
+   "key": "modelangelo",
+   "label": "ModelAngelo",
+   "commit": "994945bdfa6e5368e0d62349a47792f4864eebc3",
+   "status": "ready",
+   "failed_step": "",
+   "note": "",
+   "setup_seconds": 705,
+   "entries": {
+    "9VI4": {
+     "entry": "9VI4",
+     "method": "modelangelo",
+     "status": "failed",
+     "failed_step": "build",
+     "note": "timeout: the run limit of 10800 s; the model file 9VI4_modelangelo.cif was not written",
+     "runs": {
+      "build": {
+       "peak_gpu_mb": 5537,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 18.67,
+       "samples": 2142,
+       "rc": -9,
+       "seconds": 10800,
+       "timed_out": true,
+       "started": 1792825980.1623642,
+       "ended": 1792836780.5836375,
+       "gpu": 0,
+       "limit_s": 10800,
+       "other_gpu_busy": false,
+       "started_utc": "2026-10-24T07:13:00Z",
+       "ended_utc": "2026-10-24T10:13:00Z"
+      }
+     },
+     "models": [],
+     "gpu": 0,
+     "attempt": 1,
+     "started_utc": "2026-10-24T07:06:23Z",
+     "seconds": 11197
+    },
+    "13BD": {
+     "entry": "13BD",
+     "method": "modelangelo",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "",
+     "note": "not started: not enough time left in the session"
+    },
+    "26DK": {
+     "entry": "26DK",
+     "method": "modelangelo",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "",
+     "note": "not started: not enough time left in the session"
+    }
+   },
+   "version": "ModelAngelo 1.0.18",
+   "weights": {
+    "torch_home/hub/checkpoints/esm1b_t33_650M_UR50S.pt": 7828576466,
+    "torch_home/hub/checkpoints/model_angelo_v1.0/nucleotides/c_alpha/chkpt.torch": 734237153,
+    "torch_home/hub/checkpoints/model_angelo_v1.0/nucleotides/gnn/chkpt_483863.torch": 1603440621
+   }
+  },
+  "e3": {
+   "key": "e3",
+   "label": "E3-CryoFold",
+   "commit": "241cef48da83b96519e62ab02cccd9db96d8e68b",
+   "status": "ready",
+   "failed_step": "",
+   "note": "",
+   "setup_seconds": 297,
+   "entries": {
+    "9VI4": {
+     "entry": "9VI4",
+     "method": "e3",
+     "status": "failed",
+     "failed_step": "prealign",
+     "note": "killed by the system (exit code -9, probably out of memory); the model file 9VI4_e3_prealign.pdb was not written",
+     "runs": {
+      "prealign": {
+       "peak_gpu_mb": 5075,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 4.22,
+       "samples": 139,
+       "rc": -9,
+       "seconds": 1216,
+       "timed_out": false,
+       "started": 1792836780.6054032,
+       "ended": 1792837996.1634715,
+       "gpu": 0,
+       "limit_s": 10800,
+       "other_gpu_busy": false,
+       "started_utc": "2026-10-24T10:13:00Z",
+       "ended_utc": "2026-10-24T10:33:16Z"
+      }
+     },
+     "models": [],
+     "gpu": 0,
+     "attempt": 1,
+     "started_utc": "2026-10-24T10:13:00Z",
+     "seconds": 1216
+    },
+    "26DK": {
+     "entry": "26DK",
+     "method": "e3",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "",
+     "note": "not started: not enough time left in the session"
+    }
+   },
+   "weights": {
+    "src_e3/models/structure_model.pth": 239971852,
+    "src_e3/models/model_weight.pth": 1401618067
+   }
+  },
+  "emprot": {
+   "key": "emprot",
+   "label": "EMProt",
+   "commit": "9489d52e7fdc81c85ba82e386abcfa05bac2b9d1",
+   "status": "ready",
+   "failed_step": "",
+   "note": "",
+   "setup_seconds": 127,
+   "entries": {
+    "9VI4": {
+     "entry": "9VI4",
+     "method": "emprot",
+     "status": "failed",
+     "failed_step": "build",
+     "note": "killed by the system (exit code -9, probably out of memory); the model file output.cif was not written",
+     "runs": {
+      "build": {
+       "peak_gpu_mb": 8857,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 4.18,
+       "samples": 561,
+       "rc": -9,
+       "seconds": 2824,
+       "timed_out": false,
+       "started": 1792837996.9920166,
+       "ended": 1792840821.1146958,
+       "gpu": 0,
+       "limit_s": 10800,
+       "other_gpu_busy": false,
+       "started_utc": "2026-10-24T10:33:16Z",
+       "ended_utc": "2026-10-24T11:20:21Z"
+      }
+     },
+     "models": [],
+     "gpu": 0,
+     "attempt": 1,
+     "started_utc": "2026-10-24T10:33:16Z",
+     "seconds": 2825
+    },
+    "9OC0": {
+     "entry": "9OC0",
+     "method": "emprot",
+     "status": "ok",
+     "failed_step": "",
+     "note": "",
+     "runs": {
+      "build": {
+       "peak_gpu_mb": 8853,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 3.72,
+       "samples": 695,
+       "rc": 0,
+       "seconds": 3508,
+       "timed_out": false,
+       "started": 1792841833.807426,
+       "ended": 1792845341.8118374,
+       "gpu": 0,
+       "limit_s": 7061,
+       "other_gpu_busy": false,
+       "started_utc": "2026-10-24T11:37:13Z",
+       "ended_utc": "2026-10-24T12:35:41Z"
+      }
+     },
+     "models": [
+      {
+       "status": "ok",
+       "note": "",
+       "tm_score": 0.8627,
+       "tm_score_pred_norm": 0.2632,
+       "ca_rmsd": 1.94,
+       "aligned_ca_length": 124,
+       "seq_identity": 0.306,
+       "pred_residues": 446,
+       "native_residues": 124,
+       "coverage": 0.8711,
+       "method": "emprot",
+       "entry": "9OC0",
+       "model_kind": "emprot",
+       "model_file": "output.cif"
+      },
+      {
+       "status": "ok",
+       "note": "",
+       "tm_score": 0.9776,
+       "tm_score_pred_norm": 0.4807,
+       "ca_rmsd": 0.33,
+       "aligned_ca_length": 122,
+       "seq_identity": 1.0,
+       "pred_residues": 253,
+       "native_residues": 124,
+       "coverage": 0.4941,
+       "method": "emprot",
+       "entry": "9OC0",
+       "model_kind": "emprot_denovo",
+       "model_file": "output_denovo.cif"
+      },
+      {
+       "status": "ok",
+       "note": "",
+       "tm_score": 0.6658,
+       "tm_score_pred_norm": 0.1083,
+       "ca_rmsd": 2.51,
+       "aligned_ca_length": 98,
+       "seq_identity": 0.306,
+       "pred_residues": 862,
+       "native_residues": 124,
+       "coverage": 1.6836,
+       "method": "emprot",
+       "entry": "9OC0",
+       "model_kind": "emprot_fit",
+       "model_file": "output_fit.cif"
+      }
+     ],
+     "gpu": 0,
+     "attempt": 1,
+     "started_utc": "2026-10-24T11:32:59Z",
+     "seconds": 3763
+    },
+    "13BD": {
+     "entry": "13BD",
+     "method": "emprot",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "",
+     "note": "not started: not enough time left in the session"
+    },
+    "26DK": {
+     "entry": "26DK",
+     "method": "emprot",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "",
+     "note": "not started: not enough time left in the session"
+    }
+   },
+   "weights": {
+    "src_emprot/emprot/bin/USalign": 2580159,
+    "src_emprot/emprot/bin/unidoc_frag": 9235980,
+    "src_emprot/emprot/bin/stride": 1098276,
+    "src_emprot/emprot/bin/NWalign": 1000500,
+    "src_emprot/emprot/bin/getp": 1793843,
+    "src_emprot/emprot/bin/dockx": 4386343,
+    "src_emprot/emprot/bin/domasgx": 1812226,
+    "src_emprot/emprot/bin/TMalign": 1888059,
+    "src_emprot/emprot/weights/model_all_atom": 152286626,
+    "src_emprot/emprot/weights/model_aa": 19124029,
+    "src_emprot/emprot/weights/model_mc": 19065277
+   }
+  },
+  "emodelx": {
+   "key": "emodelx",
+   "label": "EModelX(+AF)",
+   "commit": "53713cf820d10d78b1ca6669ef197850cf907843",
+   "status": "ready",
+   "failed_step": "",
+   "note": "",
+   "setup_seconds": 104,
+   "entries": {
+    "9VI4": {
+     "entry": "9VI4",
+     "method": "emodelx",
+     "status": "failed",
+     "failed_step": "temp_flex",
+     "note": "killed by the system (exit code -9, probably out of memory); the model file 9vi4_EModelX(+AF)_all_atom_model.pdb was not written",
+     "runs": {
+      "temp_flex": {
+       "peak_gpu_mb": 5935,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 3.96,
+       "samples": 151,
+       "rc": -9,
+       "seconds": 757,
+       "timed_out": false,
+       "started": 1792840822.298725,
+       "ended": 1792841579.5820587,
+       "gpu": 0,
+       "limit_s": 8073,
+       "other_gpu_busy": false,
+       "started_utc": "2026-10-24T11:20:22Z",
+       "ended_utc": "2026-10-24T11:32:59Z"
+      }
+     },
+     "models": [],
+     "gpu": 0,
+     "attempt": 1,
+     "started_utc": "2026-10-24T11:20:21Z",
+     "seconds": 758
+    },
+    "9OC0": {
+     "entry": "9OC0",
+     "method": "emodelx",
+     "status": "interrupted",
+     "failed_step": "temp_flex",
+     "note": "stopped by the end of the session after 3552 s; run again in the next session",
+     "runs": {
+      "temp_flex": {
+       "peak_gpu_mb": 5583,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 6.77,
+       "samples": 681,
+       "rc": -9,
+       "seconds": 3552,
+       "timed_out": true,
+       "started": 1792845344.144035,
+       "ended": 1792848896.3401937,
+       "gpu": 0,
+       "limit_s": 3551,
+       "other_gpu_busy": false,
+       "started_utc": "2026-10-24T12:35:44Z",
+       "ended_utc": "2026-10-24T13:34:56Z"
+      }
+     },
+     "models": [],
+     "gpu": 0,
+     "attempt": 1,
+     "started_utc": "2026-10-24T12:35:42Z"
+    },
+    "13BD": {
+     "entry": "13BD",
+     "method": "emodelx",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "",
+     "note": "not started: not enough time left in the session"
+    },
+    "26DK": {
+     "entry": "26DK",
+     "method": "emodelx",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "",
+     "note": "not started: not enough time left in the session"
+    }
+   },
+   "weights": {
+    "src_emodelx/models/best_AA_model.ckpt": 423942088,
+    "src_emodelx/models/best_CA_model.ckpt": 423942088,
+    "src_emodelx/models/best_BB_model.ckpt": 423942088
+   }
+  }
+ },
+ "complete": true,
+ "pending": [
+  [
+   "13BD",
+   "modelangelo",
+   "not run"
+  ],
+  [
+   "26DK",
+   "modelangelo",
+   "not run"
+  ],
+  [
+   "26DK",
+   "e3",
+   "not run"
+  ],
+  [
+   "13BD",
+   "emprot",
+   "not run"
+  ],
+  [
+   "26DK",
+   "emprot",
+   "not run"
+  ],
+  [
+   "9OC0",
+   "emodelx",
+   "interrupted"
+  ],
+  [
+   "13BD",
+   "emodelx",
+   "not run"
+  ],
+  [
+   "26DK",
+   "emodelx",
+   "not run"
+  ]
+ ]
+}

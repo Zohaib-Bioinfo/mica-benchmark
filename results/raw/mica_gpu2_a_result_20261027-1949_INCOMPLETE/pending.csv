@@ -1,0 +1,3 @@
+entry,status,failed_step,note
+9OC0,interrupted,3_build,cut by the end of the time budget during 3_build
+9VI4,interrupted,3_build,the time budget ended before 3_build could start

@@ -1,0 +1,68 @@
+2026-10-26 10:58:41 - INFO - PHENIX DOCKING TOOL - SESSION STARTED
+2026-10-26 10:58:41 - INFO - Timestamp: 20261026_105841
+2026-10-26 10:58:41 - INFO - Testing Phenix environment...
+2026-10-26 10:58:41 - INFO - ✓ Phenix environment activated successfully
+2026-10-26 10:58:41 - INFO - ✓ phenix.dock_in_map found at: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+2026-10-26 10:58:41 - INFO - STARTING DOCKING PROCESS
+2026-10-26 10:58:41 - INFO - Density map: /tmp/mica_pilot/MICA/input/9WME/emd_66088.map
+2026-10-26 10:58:41 - INFO - Contour level: 0.26
+2026-10-26 10:58:41 - INFO - Resolution: 3.2 Å
+2026-10-26 10:58:41 - INFO - FASTA file: /tmp/mica_pilot/MICA/input/9WME/9wme.fasta
+2026-10-26 10:58:41 - INFO - Dock type: domainwise
+2026-10-26 10:58:41 - INFO - Processing initial map with contour level 0.26
+2026-10-26 10:58:42 - INFO - Initial map processed and saved to: /tmp/mica_pilot/MICA/input/9WME/temp_maps/initial_processed.mrc
+2026-10-26 10:58:42 - INFO - PHENIX COMMAND for fold_9wme_1_model_0_chain_A_domain_01.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9WME/AF3_domains/fold_9wme_1_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9WME/temp_maps/initial_processed.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9WME/AF3_docked_models/fold_9wme_1_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9WME/9wme.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 11:21:39 - INFO - PHENIX SUCCESS: Docking completed for fold_9wme_1_model_0_chain_A_domain_01.pdb (attempt 1, res6_quick, 1378 s, local CC 0.18)
+2026-10-26 11:21:39 - INFO - Identified 1 domains in fold_9wme_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 11:21:39 - INFO - Domain 1 (residues 1-147): 588 atoms, 235 selected for masking, centroid at [96.33, 106.02, 134.92]
+2026-10-26 11:21:40 - INFO - Successfully processed 1 domains from fold_9wme_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 11:21:40 - INFO - PHENIX COMMAND for fold_9wme_1_model_0_chain_A_domain_02.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9WME/AF3_domains/fold_9wme_1_model_0_chain_A_domain_02.pdb map_file=/tmp/mica_pilot/MICA/input/9WME/temp_maps/map_after_fold_9wme_1_model_0_chain_A_domain_01.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9WME/AF3_docked_models/fold_9wme_1_model_0_chain_A_domain_02_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9WME/9wme.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 11:34:14 - INFO - PHENIX SUCCESS: Docking completed for fold_9wme_1_model_0_chain_A_domain_02.pdb (attempt 1, res6_quick, 754 s, local CC 0.16)
+2026-10-26 11:34:14 - INFO - Identified 1 domains in fold_9wme_1_model_0_chain_A_domain_02_docked.pdb
+2026-10-26 11:34:14 - INFO - Domain 1 (residues 148-308): 644 atoms, 257 selected for masking, centroid at [100.47, 103.02, 62.84]
+2026-10-26 11:34:15 - INFO - Successfully processed 1 domains from fold_9wme_1_model_0_chain_A_domain_02_docked.pdb
+2026-10-26 11:34:15 - INFO - PHENIX COMMAND for fold_9wme_1_model_0_chain_A_domain_03.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9WME/AF3_domains/fold_9wme_1_model_0_chain_A_domain_03.pdb map_file=/tmp/mica_pilot/MICA/input/9WME/temp_maps/map_after_fold_9wme_1_model_0_chain_A_domain_02.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9WME/AF3_docked_models/fold_9wme_1_model_0_chain_A_domain_03_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9WME/9wme.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 11:57:43 - INFO - PHENIX SUCCESS: Docking completed for fold_9wme_1_model_0_chain_A_domain_03.pdb (attempt 1, res6_quick, 1408 s, local CC 0.11)
+2026-10-26 11:57:43 - INFO - Identified 1 domains in fold_9wme_1_model_0_chain_A_domain_03_docked.pdb
+2026-10-26 11:57:43 - INFO - Domain 1 (residues 309-453): 580 atoms, 232 selected for masking, centroid at [96.17, 93.42, 102.35]
+2026-10-26 11:57:45 - INFO - Successfully processed 1 domains from fold_9wme_1_model_0_chain_A_domain_03_docked.pdb
+2026-10-26 11:57:45 - INFO - PHENIX COMMAND for fold_9wme_2_model_0_chain_A_domain_01.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9WME/AF3_domains/fold_9wme_2_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9WME/temp_maps/map_after_fold_9wme_1_model_0_chain_A_domain_03.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9WME/AF3_docked_models/fold_9wme_2_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9WME/9wme.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 12:11:40 - ERROR - PHENIX FAILED: fold_9wme_2_model_0_chain_A_domain_01.pdb - return code 0 (attempt 1, res6_quick)
+2026-10-26 12:11:40 - INFO - PHENIX COMMAND for fold_9wme_2_model_0_chain_A_domain_01.pdb (benchmark attempt 2 of 2, res10_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9WME/AF3_domains/fold_9wme_2_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9WME/temp_maps/map_after_fold_9wme_1_model_0_chain_A_domain_03.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9WME/AF3_docked_models/fold_9wme_2_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9WME/9wme.fasta dock_with_mr=False quick=True resolution=10.0'
+2026-10-26 12:13:35 - INFO - PHENIX SUCCESS: Docking completed for fold_9wme_2_model_0_chain_A_domain_01.pdb (attempt 2, res10_quick, 115 s, local CC 0.08)
+2026-10-26 12:13:35 - INFO - Identified 1 domains in fold_9wme_2_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 12:13:35 - INFO - Domain 1 (residues 8-139): 528 atoms, 211 selected for masking, centroid at [98.08, 95.74, 89.44]
+2026-10-26 12:13:36 - INFO - Successfully processed 1 domains from fold_9wme_2_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 12:13:36 - INFO - PHENIX COMMAND for fold_9wme_2_model_0_chain_A_domain_02.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9WME/AF3_domains/fold_9wme_2_model_0_chain_A_domain_02.pdb map_file=/tmp/mica_pilot/MICA/input/9WME/temp_maps/map_after_fold_9wme_2_model_0_chain_A_domain_01.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9WME/AF3_docked_models/fold_9wme_2_model_0_chain_A_domain_02_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9WME/9wme.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 12:29:48 - INFO - PHENIX SUCCESS: Docking completed for fold_9wme_2_model_0_chain_A_domain_02.pdb (attempt 1, res6_quick, 972 s, local CC 0.04)
+2026-10-26 12:29:48 - INFO - Identified 1 domains in fold_9wme_2_model_0_chain_A_domain_02_docked.pdb
+2026-10-26 12:29:48 - INFO - Domain 1 (residues 140-420): 1124 atoms, 449 selected for masking, centroid at [95.58, 103.83, 48.41]
+2026-10-26 12:29:50 - INFO - Successfully processed 1 domains from fold_9wme_2_model_0_chain_A_domain_02_docked.pdb
+2026-10-26 12:29:50 - INFO - PHENIX COMMAND for fold_9wme_2_model_0_chain_A_domain_03.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9WME/AF3_domains/fold_9wme_2_model_0_chain_A_domain_03.pdb map_file=/tmp/mica_pilot/MICA/input/9WME/temp_maps/map_after_fold_9wme_2_model_0_chain_A_domain_02.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9WME/AF3_docked_models/fold_9wme_2_model_0_chain_A_domain_03_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9WME/9wme.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 12:40:49 - ERROR - PHENIX FAILED: fold_9wme_2_model_0_chain_A_domain_03.pdb - return code 0 (attempt 1, res6_quick)
+2026-10-26 12:40:49 - INFO - PHENIX COMMAND for fold_9wme_2_model_0_chain_A_domain_03.pdb (benchmark attempt 2 of 2, res10_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9WME/AF3_domains/fold_9wme_2_model_0_chain_A_domain_03.pdb map_file=/tmp/mica_pilot/MICA/input/9WME/temp_maps/map_after_fold_9wme_2_model_0_chain_A_domain_02.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9WME/AF3_docked_models/fold_9wme_2_model_0_chain_A_domain_03_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9WME/9wme.fasta dock_with_mr=False quick=True resolution=10.0'
+2026-10-26 12:45:28 - INFO - PHENIX SUCCESS: Docking completed for fold_9wme_2_model_0_chain_A_domain_03.pdb (attempt 2, res10_quick, 279 s, local CC 0.08)
+2026-10-26 12:45:28 - INFO - Identified 1 domains in fold_9wme_2_model_0_chain_A_domain_03_docked.pdb
+2026-10-26 12:45:28 - INFO - Domain 1 (residues 421-522): 408 atoms, 163 selected for masking, centroid at [96.96, 97.50, 125.18]
+2026-10-26 12:45:29 - INFO - Successfully processed 1 domains from fold_9wme_2_model_0_chain_A_domain_03_docked.pdb
+2026-10-26 12:45:29 - INFO - PHENIX COMMAND for fold_9wme_2_model_0_chain_A_domain_04.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9WME/AF3_domains/fold_9wme_2_model_0_chain_A_domain_04.pdb map_file=/tmp/mica_pilot/MICA/input/9WME/temp_maps/map_after_fold_9wme_2_model_0_chain_A_domain_03.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9WME/AF3_docked_models/fold_9wme_2_model_0_chain_A_domain_04_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9WME/9wme.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 12:56:53 - ERROR - PHENIX FAILED: fold_9wme_2_model_0_chain_A_domain_04.pdb - return code 0 (attempt 1, res6_quick)
+2026-10-26 12:56:53 - INFO - PHENIX COMMAND for fold_9wme_2_model_0_chain_A_domain_04.pdb (benchmark attempt 2 of 2, res10_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9WME/AF3_domains/fold_9wme_2_model_0_chain_A_domain_04.pdb map_file=/tmp/mica_pilot/MICA/input/9WME/temp_maps/map_after_fold_9wme_2_model_0_chain_A_domain_03.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9WME/AF3_docked_models/fold_9wme_2_model_0_chain_A_domain_04_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9WME/9wme.fasta dock_with_mr=False quick=True resolution=10.0'
+2026-10-26 13:03:35 - INFO - PHENIX SUCCESS: Docking completed for fold_9wme_2_model_0_chain_A_domain_04.pdb (attempt 2, res10_quick, 403 s, local CC 0.08)
+2026-10-26 13:03:35 - INFO - Identified 1 domains in fold_9wme_2_model_0_chain_A_domain_04_docked.pdb
+2026-10-26 13:03:35 - INFO - Domain 1 (residues 523-657): 540 atoms, 216 selected for masking, centroid at [98.32, 88.25, 98.47]
+2026-10-26 13:03:36 - INFO - Successfully processed 1 domains from fold_9wme_2_model_0_chain_A_domain_04_docked.pdb
+2026-10-26 13:03:36 - INFO - FINAL SUMMARY:
+2026-10-26 13:03:36 - INFO - Total: 7, Success: 7, Failed: 0
+2026-10-26 13:03:36 - INFO - Processing docked AF3 structures from: /tmp/mica_pilot/MICA/input/9WME/AF3_docked_models
+2026-10-26 13:03:36 - INFO - Found 7 PDB files to combine
+2026-10-26 13:03:36 - INFO - Starting combination of 7 PDB files
+2026-10-26 13:03:37 - INFO - ✓ Added 1 chain from fold_9wme_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 13:03:37 - INFO - ✓ Added 1 chain from fold_9wme_1_model_0_chain_A_domain_02_docked.pdb
+2026-10-26 13:03:37 - INFO - ✓ Added 1 chain from fold_9wme_1_model_0_chain_A_domain_03_docked.pdb
+2026-10-26 13:03:37 - INFO - ✓ Added 1 chain from fold_9wme_2_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 13:03:37 - INFO - ✓ Added 1 chain from fold_9wme_2_model_0_chain_A_domain_02_docked.pdb
+2026-10-26 13:03:37 - INFO - ✓ Added 1 chain from fold_9wme_2_model_0_chain_A_domain_03_docked.pdb
+2026-10-26 13:03:37 - INFO - ✓ Added 1 chain from fold_9wme_2_model_0_chain_A_domain_04_docked.pdb
+2026-10-26 13:03:37 - INFO - ✓ Combined PDB saved to: 9WME_af3_docked.pdb
+2026-10-26 13:03:37 - INFO - ✓ Total chains: 7, Files processed: 7

@@ -1,0 +1,306 @@
+ [ASGDOM] This chain has  3 domain(s). 
+
+ [ASGDOM] This chain has  2 domain(s). 
+
+ [ASGDOM] This chain has  1 domain(s). 
+
+ [ASGDOM] This chain has  1 domain(s). 
+
+ [ASGDOM] This chain has  1 domain(s). 
+
+ [ASGDOM] This chain has  3 domain(s). 
+
+ [ASGDOM] This chain has  3 domain(s). 
+
+ [ASGDOM] This chain has  2 domain(s). 
+
+ [ASGDOM] This chain has  1 domain(s). 
+
+ [ASGDOM] This chain has  1 domain(s). 
+
+ [ASGDOM] This chain has  1 domain(s). 
+
+ [ASGDOM] This chain has  3 domain(s). 
+
+ [EMBuild] Input MC map: 'mc.mrc'
+ [EMBuild] Input PDB models: 'xxx_all.pdb'
+ [EMBuild] resolution:  5.000
+ [EMBuild] Output PDB file: 'transform.pdb'
+ [EMBuild] threshold=   10.00000    
+ [EMBuild] rshift=   10.00000    
+ [EMBuild] rmerge=  0.5000000    
+ [EMBuild] filter=  0.0000000E+00
+ [EMBuild] angle_step=   18.00000    
+ [EMBuild] fgrid=   5.000000    
+ [EMBuild] sgrid=   2.000000    
+ [EMBuild] rmsdcut1=   2.500000    
+ [EMBuild] rmsdcut2=   5.000000    
+ [EMBuild] stacksize=                   128
+ [EMBuild] nt=           4
+ [EMBuild] ntrans=           8
+ [EMBuild] mcycle=           4
+ [EMBuild] iseed=        1024
+ [EMBuild] stride=/usr/bin/stride
+ [ReadPDB] Input structure has 12 chain(s).
+ [ReadPDB] Chain #01 has  3 domain(s).
+ [ReadPDB] Chain #02 has  2 domain(s).
+ [ReadPDB] Chain #03 has  1 domain(s).
+ [ReadPDB] Chain #04 has  1 domain(s).
+ [ReadPDB] Chain #05 has  1 domain(s).
+ [ReadPDB] Chain #06 has  3 domain(s).
+ [ReadPDB] Chain #07 has  3 domain(s).
+ [ReadPDB] Chain #08 has  2 domain(s).
+ [ReadPDB] Chain #09 has  1 domain(s).
+ [ReadPDB] Chain #10 has  1 domain(s).
+ [ReadPDB] Chain #11 has  1 domain(s).
+ [ReadPDB] Chain #12 has  3 domain(s).
+ [EMBuild] Number of valid grid points=   12720
+ [Meanshift] Number of main-chain points (MCP) =         1453
+ [MeanShift] The actual time consumption:   0.8795040    
+------------------------------------------------------------
+        Cycle #00, 0/12 chains assigned
+        Assigned chains: 
+------------------------------------------------------------
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.7979350    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    12.06783    
+ [Refinement] The total time consumption:   0.5632470    
+ [EMBuild] Keep  4 top scored poses for chain #01
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.8063560    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    12.24744    
+ [Refinement] The total time consumption:   0.8415070    
+ [EMBuild] Keep 15 top scored poses for chain #02
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.6893020    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    6.061829    
+ [EMBuild] Keep 30 top scored poses for chain #03
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.9001380    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    16.91126    
+ [EMBuild] Keep 30 top scored poses for chain #04
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.6570800    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    3.738015    
+ [EMBuild] Keep 30 top scored poses for chain #05
+ [FTMatch] The dimension of the FFT grid is:    28   28   28
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:    1.091916    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    5.274262    
+ [Refinement] The total time consumption:    1.044580    
+ [EMBuild] Keep 30 top scored poses for chain #06
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.8346130    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    12.02641    
+ [Refinement] The total time consumption:   0.5898330    
+ [EMBuild] Keep  4 top scored poses for chain #07
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.8160400    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    12.23203    
+ [Refinement] The total time consumption:   0.7571960    
+ [EMBuild] Keep 15 top scored poses for chain #08
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.6949110    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    6.082250    
+ [EMBuild] Keep 30 top scored poses for chain #09
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.8972500    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    16.69225    
+ [EMBuild] Keep 30 top scored poses for chain #10
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.6476160    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    3.735685    
+ [EMBuild] Keep 30 top scored poses for chain #11
+ [FTMatch] The dimension of the FFT grid is:    28   28   28
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:    1.032039    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    5.219660    
+ [Refinement] The total time consumption:    1.043691    
+ [EMBuild] Keep 30 top scored poses for chain #12
+------------------------------------------------------------
+        Cycle #01, 2/12 chains assigned
+        Assigned chains:  02 07
+------------------------------------------------------------
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.7993840    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    12.05958    
+ [Refinement] The total time consumption:    2.377159    
+ [EMBuild] Keep 19 top scored poses for chain #01
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.6981120    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    6.015377    
+ [EMBuild] Keep 30 top scored poses for chain #03
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.8841140    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    16.68018    
+ [EMBuild] Keep 30 top scored poses for chain #04
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.6572780    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    3.723398    
+ [EMBuild] Keep 30 top scored poses for chain #05
+ [FTMatch] The dimension of the FFT grid is:    28   28   28
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:    1.017073    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    5.058468    
+ [Refinement] The total time consumption:   0.9778290    
+ [EMBuild] Keep 30 top scored poses for chain #06
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.8231760    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    12.33568    
+ [Refinement] The total time consumption:    1.220452    
+ [EMBuild] Keep 25 top scored poses for chain #08
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.6737460    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    6.009107    
+ [EMBuild] Keep 30 top scored poses for chain #09
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.8843700    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    16.71618    
+ [EMBuild] Keep 30 top scored poses for chain #10
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.6641140    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    3.699950    
+ [EMBuild] Keep 30 top scored poses for chain #11
+ [FTMatch] The dimension of the FFT grid is:    28   28   28
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:    1.022686    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    5.069424    
+ [Refinement] The total time consumption:   0.9811000    
+ [EMBuild] Keep 30 top scored poses for chain #12
+------------------------------------------------------------
+        Cycle #02, 7/12 chains assigned
+        Assigned chains:  01 02 05 06 07 11 12
+------------------------------------------------------------
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.6999070    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    5.994924    
+ [EMBuild] Keep 30 top scored poses for chain #03
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.9025120    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    16.73539    
+ [EMBuild] Keep 30 top scored poses for chain #04
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.8217870    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    12.15954    
+ [Refinement] The total time consumption:    1.210259    
+ [EMBuild] Keep 23 top scored poses for chain #08
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.6868930    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    6.040146    
+ [EMBuild] Keep 30 top scored poses for chain #09
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.8869450    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    16.52739    
+ [EMBuild] Keep 30 top scored poses for chain #10
+------------------------------------------------------------
+        Cycle #03, 7/12 chains assigned
+        Assigned chains:  01 02 05 06 07 11 12
+------------------------------------------------------------
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.6923540    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    5.940760    
+ [EMBuild] Keep 30 top scored poses for chain #03
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.8836340    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    16.62211    
+ [EMBuild] Keep 30 top scored poses for chain #04
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.8179000    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    12.14206    
+ [Refinement] The total time consumption:    1.377877    
+ [EMBuild] Keep 23 top scored poses for chain #08
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.7125800    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    5.977035    
+ [EMBuild] Keep 30 top scored poses for chain #09
+ [FTMatch] The dimension of the FFT grid is:    24   25   27
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:   0.8877100    
+ [Simplex] The dimension of the refinement grid is:    53   60   64
+ [Simplex] The actual time consumption:    16.62969    
+ [EMBuild] Keep 30 top scored poses for chain #10
+------------------------------------------------------------
+        Finish EMBuild with 04 cycles,  7/12 chains assigned
+        Unassigned chains:  03 04 08 09 10
+------------------------------------------------------------
+ [EMBuild] Clash scores between chain #01 and #02 are  0.0000000 and  0.0000000
+ [EMBuild] Clash scores between chain #01 and #05 are  0.0000000 and  0.0000000
+ [EMBuild] Clash scores between chain #01 and #06 are  0.0000000 and  0.0000000
+ [EMBuild] Clash scores between chain #01 and #07 are  0.0058377 and  0.0056560
+ [EMBuild] Clash scores between chain #01 and #11 are  0.0000000 and  0.0000000
+ [EMBuild] Clash scores between chain #01 and #12 are  0.0214426 and  0.0385399
+ [EMBuild] Clash scores between chain #02 and #05 are  0.0000000 and  0.0000000
+ [EMBuild] Clash scores between chain #02 and #06 are  0.0000000 and  0.0000000
+ [EMBuild] Clash scores between chain #02 and #07 are  0.0004716 and  0.0006856
+ [EMBuild] Clash scores between chain #02 and #11 are  0.0021229 and  0.0072241
+ [EMBuild] Clash scores between chain #02 and #12 are  0.0000000 and  0.0000000
+ [EMBuild] Clash scores between chain #05 and #06 are  0.0408277 and  0.0245384
+ [EMBuild] Clash scores between chain #05 and #07 are  0.0000000 and  0.0000000
+ [EMBuild] Clash scores between chain #05 and #11 are  0.0028779 and  0.0043450
+ [EMBuild] Clash scores between chain #05 and #12 are  0.0323015 and  0.0193732
+ [EMBuild] Clash scores between chain #06 and #07 are  0.0001647 and  0.0000766
+ [EMBuild] Clash scores between chain #06 and #11 are  0.0468259 and  0.0621746
+ [EMBuild] Clash scores between chain #06 and #12 are  0.0502020 and  0.0643188
+ [EMBuild] Clash scores between chain #07 and #11 are  0.0000000 and  0.0000000
+ [EMBuild] Clash scores between chain #07 and #12 are  0.0020698 and  0.0047287
+ [EMBuild] Clash scores between chain #11 and #12 are  0.0641930 and  0.0401299
+ [EMBuild] The total time consumption:    437.6262    
+

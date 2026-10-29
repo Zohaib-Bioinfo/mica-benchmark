@@ -1,0 +1,27 @@
+# USalign /tmp/mica_pilot/MICA/output/56022_9tka_MICA_ca_model.pdb /kaggle/working/pilot/native/9TKA.cif -mol protein
+
+ ********************************************************************
+ * US-align (Version 20261012)                                      *
+ * Universal Structure Alignment of Proteins and Nucleic Acids      *
+ * Reference: C Zhang, L Freddolino, Y Zhang. (2026) Nat Protoc     *
+ *            C Zhang, M Shine, AM Pyle, Y Zhang. (2022) Nat Methods*
+ *            C Zhang, AM Pyle (2022) iScience.                     *
+ * Please email comments and suggestions to zhanglab@zhanggroup.org *
+ ********************************************************************
+
+Name of Structure_1: /tmp/mica_pilot/MICA/output/56022_9tka_MICA_ca_model.pdb:A (to be superimposed onto Structure_2)
+Name of Structure_2: /kaggle/working/pilot/native/9TKA.cif:B
+Length of Structure_1: 259 residues
+Length of Structure_2: 247 residues
+
+Aligned length= 247, RMSD=   0.49, Seq_ID=n_identical/n_aligned= 1.000
+TM-score= 0.94749 (normalized by length of Structure_1: L=259, d0=5.95)
+TM-score= 0.99324 (normalized by length of Structure_2: L=247, d0=5.82)
+(You should use TM-score normalized by length of the reference structure)
+
+(":" denotes residue pairs of d < 5.0 Angstrom, "." denotes other aligned residues)
+ASDGGTSESIFDLDYASWGIRSTLMVAGFVFYLGVFVVCHQLSSSLNATYRSLVAREKVFWDLAATRAVFGVQSTAAGLWALLGDPVLHADKARGQQNWCWFHITTATGFFCFENVAVHLSNLIFRTFDLFLVIHHLFAFLGFLGCLVNLQAGHYLAMTTLLLEMSTPFTCVSWMLLKAGWSESLFWKLNQWLMIHMFHCRMVLTYHMWWVCFWHWDGLVSSLYLPHLTLFLVGLALLTLIINPYWTHKKTQQLLNPVD
+          :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  
+----------FDLDYASWGIRSTLMVAGFVFYLGVFVVCHQLSSSLNATYRSLVAREKVFWDLAATRAVFGVQSTAAGLWALLGDPVLHADKARGQQNWCWFHITTATGFFCFENVAVHLSNLIFRTFDLFLVIHHLFAFLGFLGCLVNLQAGHYLAMTTLLLEMSTPFTCVSWMLLKAGWSESLFWKLNQWLMIHMFHCRMVLTYHMWWVCFWHWDGLVSSLYLPHLTLFLVGLALLTLIINPYWTHKKTQQLLNP--
+
+#Total CPU time is  0.13 seconds

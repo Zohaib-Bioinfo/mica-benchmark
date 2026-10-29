@@ -1,0 +1,557 @@
+2026-10-27 16:50:00 - INFO - 🚀 Starting MICA - Map ID: 66160, PDB ID: 9wq6
+================================================================================
+🧬 MICA PIPELINE STARTING
+================================================================================
+2026-10-27 16:50:00 - INFO - Using MICA with AF3 structures
+2026-10-27 16:50:00 - INFO - Parsing FASTA file...
+2026-10-27 16:50:00 - INFO - Processing 1 sequences with multiprocessing...
+2026-10-27 16:50:00 - INFO - FASTA parsing completed successfully:
+2026-10-27 16:50:00 - INFO -    Sequence 1: 9WQ6_1
+2026-10-27 16:50:00 - INFO -    Chains: A
+2026-10-27 16:50:00 - INFO -    Sequence: LSLLHLQEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLMSLAIADMLLGFLVMPVSMLTILYGYRWPLPSKLCAVWIYLDVLFSTASIMHLCAISLDRYVAIQNPIHHSRFNSRTKAFLKIIAVWTISVGISMPIPVFGLQDDSKVFKEGSCLLADDNFVLIGSFVSFFIPLTIMVITYFLTIKSLQKEATLCVSDLGTRAKLASFSFLPQSSLSSEKLFQRSIHREPGSYTGRRTMQSISNEQKACKVLGIVFFLFVVMWCPFFITNIMAVICKESCNEDVIGALLNVFVWIGYLSSAVNPLVYTLFNKTYRSAFSRYIQCQYKENKK
+
+================================================================================
+🚀 STARTING DEEP LEARNING PREDICTION
+================================================================================
+📊 System Information:
+   🖥️  Device: cuda
+   🧠 CPU Cores: 2 physical, 4 logical
+   💾 System Memory: 31.3 GB
+   🎮 GPU Memory: 14.6 GB
+
+2026-10-27 16:50:00 - INFO - Starting data preprocessing...
+
+================================================================================
+🗺️  DENSITY MAP RESAMPLING AND NORMALIZATION
+================================================================================
+2026-10-27 16:50:00 - INFO - Processing density map: emd_66160.map
+2026-10-27 16:50:00 - INFO - Original map shape: (320, 320, 320)
+2026-10-27 16:50:00 - INFO - Resampling with zoom factors: [0.8319999575614929, 0.8319999575614929, 0.8319999575614929]
+2026-10-27 16:50:09 - INFO - ✓ Resampled map shape: (266, 266, 266)
+2026-10-27 16:50:09 - INFO - Normalizing density map...
+2026-10-27 16:50:10 - INFO - ✓ Normalized map shape: (266, 266, 266)
+2026-10-27 16:50:10 - INFO - ✓ Normalized map saved: resampled_normalized_map.mrc
+
+🎯 Map Processing Results:
+   ✅ Map successfully resampled to 1.0 A and normalized to [0, 1] range.
+   📁 Normalized map path: /tmp/mica_pilot/MICA/input/9WQ6/resampled_normalized_map.mrc
+
+
+================================================================================
+🧬 AF3 FEATURES ENCODING
+================================================================================
+2026-10-27 16:50:10 - INFO - Creating AF3 encodings...
+2026-10-27 16:50:10 - INFO - Using reference map: resampled_normalized_map.mrc
+2026-10-27 16:50:10 - INFO - Reference map shape: (266, 266, 266)
+2026-10-27 16:50:10 - INFO - Creating 24 feature channels
+2026-10-27 16:50:10 - INFO - ✓ Processed 296 residues, 1184 atoms
+2026-10-27 16:50:10 - INFO - Saving 24 channels encodings using 2 CPU cores in parallel
+2026-10-27 16:50:29 - INFO - ✓ Saved CA encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved N encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved C encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved O encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved ALA encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved CYS encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved ASP encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved GLU encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved PHE encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved GLY encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved HIS encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved ILE encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved LYS encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved LEU encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved MET encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved ASN encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved PRO encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved GLN encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved ARG encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved SER encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved THR encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved VAL encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved TRP encoding
+2026-10-27 16:50:29 - INFO - ✓ Saved TYR encoding
+
+🎯 Encoding Results:
+   ✅ Feature encoding successful
+   🧬 Channels created: 24/24
+   🔬 Residues processed: 296
+   ⚛️  Atoms processed: 1184
+   📁 AF3 encodings directory: /tmp/mica_pilot/MICA/input/9WQ6/AF3_encodings
+
+
+================================================================================
+🗺️  CREATING GRIDS FOR NORMALIZED MAP
+================================================================================
+2026-10-27 16:50:29 - INFO - Processing normalized map: resampled_normalized_map.mrc
+2026-10-27 16:50:29 - INFO - Output directory: /tmp/mica_pilot/MICA/input/9WQ6/grids/normalized_map_grids
+2026-10-27 16:50:29 - INFO - Grid size: 48, Padding: 8
+2026-10-27 16:50:29 - INFO - Creating grids for resampled_normalized_map.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:30 - INFO - ✓ Created 216 grids from resampled_normalized_map.mrc
+
+🎯 Grid Creation Results:
+   ✅ Successfully created: 216 grids
+   📁 Output directory: normalized_map_grids
+   ⏱️  Processing time: 1.25 seconds
+
+
+================================================================================
+🧬 CREATING GRIDS FOR AF3 ENCODINGS
+================================================================================
+2026-10-27 16:50:30 - INFO - Found 24 AF3 encoding files
+2026-10-27 16:50:30 - INFO - Output directory: /tmp/mica_pilot/MICA/input/9WQ6/grids/AF3_encoding_grids
+2026-10-27 16:50:30 - INFO - Processing 24 channels using 2 CPU cores in parallel
+2026-10-27 16:50:30 - INFO - Creating grids for HIS_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:30 - INFO - Creating grids for ASP_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:31 - INFO - ✓ Created 216 grids from HIS_encoding.mrc
+2026-10-27 16:50:32 - INFO - Creating grids for N_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:32 - INFO - ✓ Created 216 grids from ASP_encoding.mrc
+2026-10-27 16:50:32 - INFO - Creating grids for TYR_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:33 - INFO - ✓ Created 216 grids from N_encoding.mrc
+2026-10-27 16:50:33 - INFO - Creating grids for PHE_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:33 - INFO - ✓ Created 216 grids from TYR_encoding.mrc
+2026-10-27 16:50:33 - INFO - Creating grids for ASN_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:34 - INFO - ✓ Created 216 grids from PHE_encoding.mrc
+2026-10-27 16:50:34 - INFO - Creating grids for THR_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:34 - INFO - ✓ Created 216 grids from ASN_encoding.mrc
+2026-10-27 16:50:35 - INFO - Creating grids for MET_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:36 - INFO - ✓ Created 216 grids from THR_encoding.mrc
+2026-10-27 16:50:36 - INFO - Creating grids for O_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:37 - INFO - ✓ Created 216 grids from MET_encoding.mrc
+2026-10-27 16:50:37 - INFO - Creating grids for VAL_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:38 - INFO - ✓ Created 216 grids from O_encoding.mrc
+2026-10-27 16:50:38 - INFO - Creating grids for GLU_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:38 - INFO - ✓ Created 216 grids from VAL_encoding.mrc
+2026-10-27 16:50:38 - INFO - Creating grids for GLY_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:44 - INFO - ✓ Created 216 grids from GLU_encoding.mrc
+2026-10-27 16:50:44 - INFO - Creating grids for SER_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:44 - INFO - ✓ Created 216 grids from GLY_encoding.mrc
+2026-10-27 16:50:44 - INFO - Creating grids for CA_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:45 - INFO - ✓ Created 216 grids from SER_encoding.mrc
+2026-10-27 16:50:45 - INFO - Creating grids for C_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:45 - INFO - ✓ Created 216 grids from CA_encoding.mrc
+2026-10-27 16:50:45 - INFO - Creating grids for PRO_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:46 - INFO - ✓ Created 216 grids from C_encoding.mrc
+2026-10-27 16:50:46 - INFO - Creating grids for CYS_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:47 - INFO - ✓ Created 216 grids from PRO_encoding.mrc
+2026-10-27 16:50:47 - INFO - Creating grids for TRP_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:48 - INFO - ✓ Created 216 grids from CYS_encoding.mrc
+2026-10-27 16:50:48 - INFO - Creating grids for LEU_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:49 - INFO - ✓ Created 216 grids from TRP_encoding.mrc
+2026-10-27 16:50:49 - INFO - Creating grids for ILE_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:50 - INFO - ✓ Created 216 grids from LEU_encoding.mrc
+2026-10-27 16:50:50 - INFO - Creating grids for GLN_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:51 - INFO - ✓ Created 216 grids from ILE_encoding.mrc
+2026-10-27 16:50:51 - INFO - Creating grids for ARG_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:53 - INFO - ✓ Created 216 grids from GLN_encoding.mrc
+2026-10-27 16:50:53 - INFO - Creating grids for ALA_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:54 - INFO - ✓ Created 216 grids from ARG_encoding.mrc
+2026-10-27 16:50:54 - INFO - Creating grids for LYS_encoding.mrc with shape: (266, 266, 266)
+2026-10-27 16:50:55 - INFO - ✓ Created 216 grids from ALA_encoding.mrc
+2026-10-27 16:50:56 - INFO - ✓ Created 216 grids from LYS_encoding.mrc
+
+🎯 AF3 Encoding Grid Results:
+   ✅ Successfully processed: 24/24 channels
+   🔢 Total grids created: 5184
+   📁 Output directory: /tmp/mica_pilot/MICA/input/9WQ6/grids/AF3_encoding_grids
+   ⏱️  Processing time: 25.50 seconds
+
+============================================================
+🏁 CREATING GRIDS COMPLETE
+============================================================
+
+2026-10-27 16:50:56 - INFO - Cryo-EM map and AF3 results processed. Map Offset: [0.0, 0.0, 0.0]
+2026-10-27 16:50:56 - INFO - ✓ Data preprocessing completed in 55.72 seconds
+2026-10-27 16:50:56 - INFO - Starting Deep Learning prediction...
+2026-10-27 16:50:56 - INFO - Starting prediction pipeline at 2026-10-27 16:50:56
+
+================================================================================
+🧭 PROCESSING STRATEGY SELECTION
+================================================================================
+📊 Dataset Analysis:
+   🔢 Total samples: 216
+   🎯 Batch threshold: 1000000
+You may change batch threshold parameter: 1000000 to lower value if run on your local machine by changing its value in: utils/predict.py
+   ✅ Strategy: SINGLE SAMPLE PROCESSING
+   📦 Batch size: 1
+
+================================================================================
+🤖 MODEL LOADING
+================================================================================
+2026-10-27 16:50:56 - INFO - Loading model from: MICA_best_model.pth
+2026-10-27 16:51:10 - INFO - Model loaded successfully
+🎯 Results:
+   ✅ Model loaded successfully
+   ⏱️  Loading time: 14.84s
+
+================================================================================
+📊 DATA PREPARATION
+================================================================================
+2026-10-27 16:51:10 - INFO - Dataset prepared with 216 samples
+🎯 Results:
+   ✅ Dataset prepared successfully
+   🔢 Total samples: 216
+   📦 Batch size: 1
+   ⏱️  Preparation time: 0.00s
+
+================================================================================
+🚀 RUNNING SINGLE SAMPLE INFERENCE
+================================================================================
+📊 Configuration:
+   🔢 Total batches: 216
+   📦 Batch size: 1
+
+
+Processing samples:   0%|          | 0/216 [00:00<?, ?it/s]
+Processing samples:   0%|          | 1/216 [00:02<10:00,  2.79s/it]
+Processing samples:   1%|          | 2/216 [00:05<09:43,  2.73s/it]
+Processing samples:   1%|▏         | 3/216 [00:08<09:37,  2.71s/it]
+Processing samples:   2%|▏         | 4/216 [00:10<09:31,  2.70s/it]
+Processing samples:   2%|▏         | 5/216 [00:13<09:30,  2.71s/it]
+Processing samples:   3%|▎         | 6/216 [00:17<10:27,  2.99s/it]
+Processing samples:   3%|▎         | 7/216 [00:19<10:08,  2.91s/it]
+Processing samples:   4%|▎         | 8/216 [00:22<09:55,  2.86s/it]
+Processing samples:   4%|▍         | 9/216 [00:25<09:50,  2.85s/it]
+Processing samples:   5%|▍         | 10/216 [00:28<09:44,  2.84s/it]
+Processing samples:   5%|▌         | 11/216 [00:31<09:40,  2.83s/it]
+Processing samples:   6%|▌         | 12/216 [00:33<09:39,  2.84s/it]
+Processing samples:   6%|▌         | 13/216 [00:36<09:39,  2.85s/it]
+Processing samples:   6%|▋         | 14/216 [00:39<09:33,  2.84s/it]
+Processing samples:   7%|▋         | 15/216 [00:42<09:32,  2.85s/it]
+Processing samples:   7%|▋         | 16/216 [00:45<09:31,  2.86s/it]
+Processing samples:   8%|▊         | 17/216 [00:48<09:33,  2.88s/it]
+Processing samples:   8%|▊         | 18/216 [00:51<09:35,  2.91s/it]
+Processing samples:   9%|▉         | 19/216 [00:54<09:37,  2.93s/it]
+Processing samples:   9%|▉         | 20/216 [00:57<09:43,  2.98s/it]
+Processing samples:  10%|▉         | 21/216 [01:00<09:43,  2.99s/it]
+Processing samples:  10%|█         | 22/216 [01:03<09:44,  3.01s/it]
+Processing samples:  11%|█         | 23/216 [01:06<09:47,  3.05s/it]
+Processing samples:  11%|█         | 24/216 [01:09<09:49,  3.07s/it]
+Processing samples:  12%|█▏        | 25/216 [01:12<09:51,  3.10s/it]
+Processing samples:  12%|█▏        | 26/216 [01:15<09:51,  3.11s/it]
+Processing samples:  12%|█▎        | 27/216 [01:19<09:58,  3.17s/it]
+Processing samples:  13%|█▎        | 28/216 [01:22<09:56,  3.17s/it]
+Processing samples:  13%|█▎        | 29/216 [01:25<09:59,  3.20s/it]
+Processing samples:  14%|█▍        | 30/216 [01:29<09:58,  3.22s/it]
+Processing samples:  14%|█▍        | 31/216 [01:32<10:03,  3.26s/it]
+Processing samples:  15%|█▍        | 32/216 [01:35<10:04,  3.29s/it]
+Processing samples:  15%|█▌        | 33/216 [01:39<10:07,  3.32s/it]
+Processing samples:  16%|█▌        | 34/216 [01:42<10:11,  3.36s/it]
+Processing samples:  16%|█▌        | 35/216 [01:46<10:15,  3.40s/it]
+Processing samples:  17%|█▋        | 36/216 [01:49<10:22,  3.46s/it]
+Processing samples:  17%|█▋        | 37/216 [01:53<10:24,  3.49s/it]
+Processing samples:  18%|█▊        | 38/216 [01:56<10:26,  3.52s/it]
+Processing samples:  18%|█▊        | 39/216 [02:00<10:28,  3.55s/it]
+Processing samples:  19%|█▊        | 40/216 [02:03<10:24,  3.55s/it]
+Processing samples:  19%|█▉        | 41/216 [02:07<10:21,  3.55s/it]
+Processing samples:  19%|█▉        | 42/216 [02:10<10:13,  3.52s/it]
+Processing samples:  20%|█▉        | 43/216 [02:14<10:05,  3.50s/it]
+Processing samples:  20%|██        | 44/216 [02:17<09:56,  3.47s/it]
+Processing samples:  21%|██        | 45/216 [02:21<09:50,  3.45s/it]
+Processing samples:  21%|██▏       | 46/216 [02:24<09:44,  3.44s/it]
+Processing samples:  22%|██▏       | 47/216 [02:28<09:39,  3.43s/it]
+Processing samples:  22%|██▏       | 48/216 [02:31<09:31,  3.40s/it]
+Processing samples:  23%|██▎       | 49/216 [02:34<09:24,  3.38s/it]
+Processing samples:  23%|██▎       | 50/216 [02:38<09:18,  3.36s/it]
+Processing samples:  24%|██▎       | 51/216 [02:41<09:11,  3.34s/it]
+Processing samples:  24%|██▍       | 52/216 [02:44<09:06,  3.33s/it]
+Processing samples:  25%|██▍       | 53/216 [02:47<09:02,  3.33s/it]
+Processing samples:  25%|██▌       | 54/216 [02:51<08:59,  3.33s/it]
+Processing samples:  25%|██▌       | 55/216 [02:54<08:56,  3.33s/it]
+Processing samples:  26%|██▌       | 56/216 [02:57<08:53,  3.33s/it]
+Processing samples:  26%|██▋       | 57/216 [03:01<08:50,  3.34s/it]
+Processing samples:  27%|██▋       | 58/216 [03:04<08:48,  3.34s/it]
+Processing samples:  27%|██▋       | 59/216 [03:08<08:47,  3.36s/it]
+Processing samples:  28%|██▊       | 60/216 [03:11<08:45,  3.37s/it]
+Processing samples:  28%|██▊       | 61/216 [03:14<08:45,  3.39s/it]
+Processing samples:  29%|██▊       | 62/216 [03:18<08:44,  3.40s/it]
+Processing samples:  29%|██▉       | 63/216 [03:21<08:41,  3.41s/it]
+Processing samples:  30%|██▉       | 64/216 [03:25<08:38,  3.41s/it]
+Processing samples:  30%|███       | 65/216 [03:28<08:38,  3.44s/it]
+Processing samples:  31%|███       | 66/216 [03:32<08:32,  3.42s/it]
+Processing samples:  31%|███       | 67/216 [03:35<08:29,  3.42s/it]
+Processing samples:  31%|███▏      | 68/216 [03:38<08:24,  3.41s/it]
+Processing samples:  32%|███▏      | 69/216 [03:42<08:19,  3.40s/it]
+Processing samples:  32%|███▏      | 70/216 [03:45<08:16,  3.40s/it]
+Processing samples:  33%|███▎      | 71/216 [03:49<08:15,  3.42s/it]
+Processing samples:  33%|███▎      | 72/216 [03:52<08:10,  3.41s/it]
+Processing samples:  34%|███▍      | 73/216 [03:55<08:05,  3.39s/it]
+Processing samples:  34%|███▍      | 74/216 [03:59<08:01,  3.39s/it]
+Processing samples:  35%|███▍      | 75/216 [04:02<07:57,  3.39s/it]
+Processing samples:  35%|███▌      | 76/216 [04:05<07:51,  3.37s/it]
+Processing samples:  36%|███▌      | 77/216 [04:09<07:48,  3.37s/it]
+Processing samples:  36%|███▌      | 78/216 [04:12<07:45,  3.37s/it]
+Processing samples:  37%|███▋      | 79/216 [04:16<07:43,  3.38s/it]
+Processing samples:  37%|███▋      | 80/216 [04:19<07:39,  3.38s/it]
+Processing samples:  38%|███▊      | 81/216 [04:22<07:37,  3.39s/it]
+Processing samples:  38%|███▊      | 82/216 [04:26<07:33,  3.39s/it]
+Processing samples:  38%|███▊      | 83/216 [04:29<07:30,  3.39s/it]
+Processing samples:  39%|███▉      | 84/216 [04:32<07:25,  3.38s/it]
+Processing samples:  39%|███▉      | 85/216 [04:36<07:21,  3.37s/it]
+Processing samples:  40%|███▉      | 86/216 [04:39<07:17,  3.36s/it]
+Processing samples:  40%|████      | 87/216 [04:43<07:14,  3.37s/it]
+Processing samples:  41%|████      | 88/216 [04:46<07:11,  3.37s/it]
+Processing samples:  41%|████      | 89/216 [04:49<07:10,  3.39s/it]
+Processing samples:  42%|████▏     | 90/216 [04:53<07:07,  3.39s/it]
+Processing samples:  42%|████▏     | 91/216 [04:56<07:05,  3.41s/it]
+Processing samples:  43%|████▎     | 92/216 [05:00<07:02,  3.41s/it]
+Processing samples:  43%|████▎     | 93/216 [05:03<06:58,  3.40s/it]
+Processing samples:  44%|████▎     | 94/216 [05:06<06:54,  3.40s/it]
+Processing samples:  44%|████▍     | 95/216 [05:10<06:52,  3.41s/it]
+Processing samples:  44%|████▍     | 96/216 [05:13<06:48,  3.40s/it]
+Processing samples:  45%|████▍     | 97/216 [05:17<06:44,  3.40s/it]
+Processing samples:  45%|████▌     | 98/216 [05:20<06:40,  3.39s/it]
+Processing samples:  46%|████▌     | 99/216 [05:23<06:38,  3.40s/it]
+Processing samples:  46%|████▋     | 100/216 [05:27<06:33,  3.40s/it]
+Processing samples:  47%|████▋     | 101/216 [05:30<06:32,  3.41s/it]
+Processing samples:  47%|████▋     | 102/216 [05:34<06:28,  3.41s/it]
+Processing samples:  48%|████▊     | 103/216 [05:37<06:25,  3.42s/it]
+Processing samples:  48%|████▊     | 104/216 [05:41<06:22,  3.41s/it]
+Processing samples:  49%|████▊     | 105/216 [05:44<06:19,  3.42s/it]
+Processing samples:  49%|████▉     | 106/216 [05:47<06:15,  3.41s/it]
+Processing samples:  50%|████▉     | 107/216 [05:51<06:11,  3.41s/it]
+Processing samples:  50%|█████     | 108/216 [05:54<06:07,  3.40s/it]
+Processing samples:  50%|█████     | 109/216 [05:58<06:05,  3.42s/it]
+Processing samples:  51%|█████     | 110/216 [06:01<06:02,  3.42s/it]
+Processing samples:  51%|█████▏    | 111/216 [06:04<05:58,  3.42s/it]
+Processing samples:  52%|█████▏    | 112/216 [06:08<05:55,  3.42s/it]
+Processing samples:  52%|█████▏    | 113/216 [06:11<05:51,  3.42s/it]
+Processing samples:  53%|█████▎    | 114/216 [06:15<05:47,  3.41s/it]
+Processing samples:  53%|█████▎    | 115/216 [06:18<05:43,  3.40s/it]
+Processing samples:  54%|█████▎    | 116/216 [06:21<05:38,  3.39s/it]
+Processing samples:  54%|█████▍    | 117/216 [06:25<05:37,  3.41s/it]
+Processing samples:  55%|█████▍    | 118/216 [06:28<05:33,  3.41s/it]
+Processing samples:  55%|█████▌    | 119/216 [06:32<05:30,  3.41s/it]
+Processing samples:  56%|█████▌    | 120/216 [06:35<05:25,  3.39s/it]
+Processing samples:  56%|█████▌    | 121/216 [06:38<05:22,  3.39s/it]
+Processing samples:  56%|█████▋    | 122/216 [06:42<05:21,  3.42s/it]
+Processing samples:  57%|█████▋    | 123/216 [06:45<05:17,  3.41s/it]
+Processing samples:  57%|█████▋    | 124/216 [06:49<05:13,  3.41s/it]
+Processing samples:  58%|█████▊    | 125/216 [06:52<05:11,  3.42s/it]
+Processing samples:  58%|█████▊    | 126/216 [06:56<05:07,  3.42s/it]
+Processing samples:  59%|█████▉    | 127/216 [06:59<05:05,  3.43s/it]
+Processing samples:  59%|█████▉    | 128/216 [07:02<05:02,  3.44s/it]
+Processing samples:  60%|█████▉    | 129/216 [07:06<04:59,  3.44s/it]
+Processing samples:  60%|██████    | 130/216 [07:09<04:53,  3.42s/it]
+Processing samples:  61%|██████    | 131/216 [07:13<04:51,  3.43s/it]
+Processing samples:  61%|██████    | 132/216 [07:16<04:49,  3.44s/it]
+Processing samples:  62%|██████▏   | 133/216 [07:20<04:45,  3.44s/it]
+Processing samples:  62%|██████▏   | 134/216 [07:23<04:41,  3.43s/it]
+Processing samples:  62%|██████▎   | 135/216 [07:26<04:38,  3.44s/it]
+Processing samples:  63%|██████▎   | 136/216 [07:30<04:33,  3.42s/it]
+Processing samples:  63%|██████▎   | 137/216 [07:33<04:29,  3.41s/it]
+Processing samples:  64%|██████▍   | 138/216 [07:37<04:28,  3.44s/it]
+Processing samples:  64%|██████▍   | 139/216 [07:40<04:24,  3.44s/it]
+Processing samples:  65%|██████▍   | 140/216 [07:44<04:19,  3.42s/it]
+Processing samples:  65%|██████▌   | 141/216 [07:47<04:17,  3.43s/it]
+Processing samples:  66%|██████▌   | 142/216 [07:50<04:12,  3.41s/it]
+Processing samples:  66%|██████▌   | 143/216 [07:54<04:10,  3.43s/it]
+Processing samples:  67%|██████▋   | 144/216 [07:57<04:06,  3.42s/it]
+Processing samples:  67%|██████▋   | 145/216 [08:01<04:02,  3.41s/it]
+Processing samples:  68%|██████▊   | 146/216 [08:04<03:58,  3.40s/it]
+Processing samples:  68%|██████▊   | 147/216 [08:07<03:55,  3.42s/it]
+Processing samples:  69%|██████▊   | 148/216 [08:11<03:51,  3.40s/it]
+Processing samples:  69%|██████▉   | 149/216 [08:14<03:48,  3.40s/it]
+Processing samples:  69%|██████▉   | 150/216 [08:18<03:43,  3.39s/it]
+Processing samples:  70%|██████▉   | 151/216 [08:21<03:41,  3.41s/it]
+Processing samples:  70%|███████   | 152/216 [08:24<03:37,  3.40s/it]
+Processing samples:  71%|███████   | 153/216 [08:28<03:35,  3.41s/it]
+Processing samples:  71%|███████▏  | 154/216 [08:31<03:30,  3.40s/it]
+Processing samples:  72%|███████▏  | 155/216 [08:35<03:28,  3.42s/it]
+Processing samples:  72%|███████▏  | 156/216 [08:38<03:25,  3.42s/it]
+Processing samples:  73%|███████▎  | 157/216 [08:42<03:21,  3.42s/it]
+Processing samples:  73%|███████▎  | 158/216 [08:45<03:17,  3.41s/it]
+Processing samples:  74%|███████▎  | 159/216 [08:48<03:14,  3.42s/it]
+Processing samples:  74%|███████▍  | 160/216 [08:52<03:12,  3.43s/it]
+Processing samples:  75%|███████▍  | 161/216 [08:55<03:08,  3.43s/it]
+Processing samples:  75%|███████▌  | 162/216 [08:59<03:04,  3.42s/it]
+Processing samples:  75%|███████▌  | 163/216 [09:02<03:01,  3.42s/it]
+Processing samples:  76%|███████▌  | 164/216 [09:05<02:56,  3.40s/it]
+Processing samples:  76%|███████▋  | 165/216 [09:09<02:53,  3.40s/it]
+Processing samples:  77%|███████▋  | 166/216 [09:12<02:49,  3.39s/it]
+Processing samples:  77%|███████▋  | 167/216 [09:16<02:47,  3.42s/it]
+Processing samples:  78%|███████▊  | 168/216 [09:19<02:43,  3.41s/it]
+Processing samples:  78%|███████▊  | 169/216 [09:23<02:40,  3.41s/it]
+Processing samples:  79%|███████▊  | 170/216 [09:26<02:36,  3.40s/it]
+Processing samples:  79%|███████▉  | 171/216 [09:29<02:33,  3.41s/it]
+Processing samples:  80%|███████▉  | 172/216 [09:33<02:29,  3.41s/it]
+Processing samples:  80%|████████  | 173/216 [09:36<02:26,  3.41s/it]
+Processing samples:  81%|████████  | 174/216 [09:39<02:22,  3.39s/it]
+Processing samples:  81%|████████  | 175/216 [09:43<02:19,  3.40s/it]
+Processing samples:  81%|████████▏ | 176/216 [09:46<02:15,  3.40s/it]
+Processing samples:  82%|████████▏ | 177/216 [09:50<02:12,  3.41s/it]
+Processing samples:  82%|████████▏ | 178/216 [09:53<02:08,  3.39s/it]
+Processing samples:  83%|████████▎ | 179/216 [09:56<02:05,  3.39s/it]
+Processing samples:  83%|████████▎ | 180/216 [10:00<02:02,  3.39s/it]
+Processing samples:  84%|████████▍ | 181/216 [10:03<01:58,  3.39s/it]
+Processing samples:  84%|████████▍ | 182/216 [10:07<01:55,  3.41s/it]
+Processing samples:  85%|████████▍ | 183/216 [10:10<01:52,  3.42s/it]
+Processing samples:  85%|████████▌ | 184/216 [10:14<01:49,  3.42s/it]
+Processing samples:  86%|████████▌ | 185/216 [10:17<01:46,  3.42s/it]
+Processing samples:  86%|████████▌ | 186/216 [10:20<01:42,  3.41s/it]
+Processing samples:  87%|████████▋ | 187/216 [10:24<01:38,  3.41s/it]
+Processing samples:  87%|████████▋ | 188/216 [10:27<01:35,  3.42s/it]
+Processing samples:  88%|████████▊ | 189/216 [10:31<01:32,  3.42s/it]
+Processing samples:  88%|████████▊ | 190/216 [10:34<01:28,  3.40s/it]
+Processing samples:  88%|████████▊ | 191/216 [10:37<01:25,  3.40s/it]
+Processing samples:  89%|████████▉ | 192/216 [10:41<01:21,  3.39s/it]
+Processing samples:  89%|████████▉ | 193/216 [10:44<01:18,  3.40s/it]
+Processing samples:  90%|████████▉ | 194/216 [10:48<01:14,  3.40s/it]
+Processing samples:  90%|█████████ | 195/216 [10:51<01:11,  3.42s/it]
+Processing samples:  91%|█████████ | 196/216 [10:54<01:08,  3.42s/it]
+Processing samples:  91%|█████████ | 197/216 [10:58<01:04,  3.42s/it]
+Processing samples:  92%|█████████▏| 198/216 [11:01<01:01,  3.41s/it]
+Processing samples:  92%|█████████▏| 199/216 [11:05<00:58,  3.41s/it]
+Processing samples:  93%|█████████▎| 200/216 [11:08<00:54,  3.41s/it]
+Processing samples:  93%|█████████▎| 201/216 [11:12<00:51,  3.42s/it]
+Processing samples:  94%|█████████▎| 202/216 [11:15<00:47,  3.42s/it]
+Processing samples:  94%|█████████▍| 203/216 [11:18<00:44,  3.44s/it]
+Processing samples:  94%|█████████▍| 204/216 [11:22<00:41,  3.44s/it]
+Processing samples:  95%|█████████▍| 205/216 [11:25<00:37,  3.44s/it]
+Processing samples:  95%|█████████▌| 206/216 [11:29<00:34,  3.45s/it]
+Processing samples:  96%|█████████▌| 207/216 [11:32<00:30,  3.43s/it]
+Processing samples:  96%|█████████▋| 208/216 [11:36<00:27,  3.42s/it]
+Processing samples:  97%|█████████▋| 209/216 [11:39<00:23,  3.42s/it]
+Processing samples:  97%|█████████▋| 210/216 [11:42<00:20,  3.43s/it]
+Processing samples:  98%|█████████▊| 211/216 [11:46<00:17,  3.45s/it]
+Processing samples:  98%|█████████▊| 212/216 [11:49<00:13,  3.44s/it]
+Processing samples:  99%|█████████▊| 213/216 [11:53<00:10,  3.42s/it]
+Processing samples:  99%|█████████▉| 214/216 [11:56<00:06,  3.42s/it]
+Processing samples: 100%|█████████▉| 215/216 [12:00<00:03,  3.43s/it]
+Processing samples: 100%|██████████| 216/216 [12:03<00:00,  3.42s/it]
+Processing samples: 100%|██████████| 216/216 [12:03<00:00,  3.35s/it]
+2026-10-27 17:03:14 - INFO - Inference completed successfully
+🎯 Results:
+   ✅ Inference completed successfully
+   🔢 Samples processed: 216
+   ⏱️  Inference time: 723.56s
+   ⚡ Throughput: 0.30 samples/sec
+
+================================================================================
+🔧 VOLUME RECONSTRUCTION
+================================================================================
+2026-10-27 17:03:14 - INFO - Reconstructing backbone_probability from 216 grids
+2026-10-27 17:03:15 - INFO - Reconstructing carbon_alpha_probability from 216 grids
+2026-10-27 17:03:15 - INFO - Reconstructing amino_acid_prediction from 216 grids
+2026-10-27 17:03:16 - INFO - Reconstructing amino_acid_probability from 216 grids
+🎯 Results:
+   ✅ Reconstruction completed successfully
+   🗺️  Volumes created: 4/4
+   ⏱️  Reconstruction time: 11.84s
+
+================================================================================
+📊 DEEP LEARNING PREDICTION SUMMARY
+================================================================================
+🎯 Overall Results:
+   ✅ Pipeline completed successfully
+   📊 Processing strategy: Single sample
+   🔢 Total samples: 216
+   ⏱️  Total time: 750.25s
+⚡ Performance:
+   📈 Throughput: 0.30 samples/sec
+   ⏱️  Average per sample: 3.350s
+
+================================================================================
+🚀 DEEP LEARNING PREDICTION COMPLETE
+================================================================================
+2026-10-27 17:03:26 - INFO - ✓ Deep Learning predictions completed...
+2026-10-27 17:03:26 - INFO -    📊 Amino acid prediction shape: (266, 266, 266)
+2026-10-27 17:03:26 - INFO -    📊 Amino acid probability shape: (20, 266, 266, 266)
+2026-10-27 17:03:26 - INFO -    📊 Backbone probability shape: (266, 266, 266)
+2026-10-27 17:03:26 - INFO -    📊 CA probability shape: (266, 266, 266)
+2026-10-27 17:03:26 - INFO - Deleting all grids, normalized density map and AF3 encodings for disk space saving...
+2026-10-27 17:03:26 - INFO - ✓ Deleted all grids, normalized density map and AF3 encodings for disk space saving...
+2026-10-27 17:03:26 - INFO - ✓ Deep Learning prediction completed in 750.85 seconds
+
+================================================================================
+🔗 CLUSTERING CANDIDATES
+================================================================================
+2026-10-27 17:03:26 - INFO - Starting candidate clustering...
+2026-10-27 17:03:26 - INFO - Starting clustering with eps=10, min_points=10
+2026-10-27 17:03:26 - INFO - CA score threshold: 0.3
+2026-10-27 17:03:29 - INFO - Initial point cloud size: 40123
+2026-10-27 17:03:29 - INFO - Number of clusters found: 1
+2026-10-27 17:03:29 - INFO - Valid clusters selected: 40123 points from 40123
+2026-10-27 17:03:30 - INFO - Processing 40123 candidate positions...
+2026-10-27 17:03:31 - INFO - Final CA candidates: 1535
+2026-10-27 17:03:32 - INFO - Building neighbor lists...
+2026-10-27 17:03:32 - INFO - Computing neighbor scoring matrix...
+2026-10-27 17:03:32 - INFO - ✓ Clustering completed - 1535 candidates with neighbors
+2026-10-27 17:03:32 - INFO - ✓ Clustering completed in 5.61 seconds
+================================================================================
+🧩 GENERATING INITIAL FRAGMENTS
+================================================================================
+2026-10-27 17:03:32 - INFO - Starting fragment modeling...
+2026-10-27 17:03:32 - INFO - Starting fragment modeling with protocol: AF3_struct
+2026-10-27 17:03:32 - INFO - CA candidates shape: (1535, 3)
+2026-10-27 17:03:32 - INFO - Neighbors 2to6 length: 1535
+2026-10-27 17:03:32 - INFO - Neighbor matrix shape: (1535, 1535)
+2026-10-27 17:03:32 - INFO - Initial edge list: 5727 edges
+2026-10-27 17:03:32 - INFO - Initial fragments generated: 129
+2026-10-27 17:03:32 - INFO - Reducing fragments from 129 to 11
+2026-10-27 17:03:34 - INFO - Final fragment count: 11
+2026-10-27 17:03:34 - INFO - ✓ Fragment modeling completed in 1.57 seconds
+================================================================================
+🔗 Cα-SEQUENCE ALIGNMENT
+================================================================================
+2026-10-27 17:03:34 - INFO - Sequence candidate AA matrix shape: (1, 339, 1535)
+2026-10-27 17:03:34 - INFO - CA candidates AA probability shape: (20, 1535)
+2026-10-27 17:03:34 - INFO - Starting Cα-sequence alignment with AF3 structure...
+2026-10-27 17:03:34 - INFO - Starting Cα-sequence alignment with AF3 structures...
+2026-10-27 17:03:34 - INFO - Starting sequence register scoring...
+2026-10-27 17:03:34 - INFO - Starting Cα-sequence scoring...
+2026-10-27 17:03:34 - INFO - Computing N-hop matrix with n_hop=6
+2026-10-27 17:03:35 - INFO - ✓ N-hop matrix computation completed
+2026-10-27 17:03:35 - INFO - Generating local traces...
+2026-10-27 17:03:35 - INFO - Generated 4250 local traces
+2026-10-27 17:06:15 - INFO - ✓ Cα-sequence scoring completed
+2026-10-27 17:06:16 - INFO - Computing register scores for 9WQ6_1...
+2026-10-27 17:06:38 - INFO - Register score for 9WQ6_1: 132.75
+2026-10-27 17:06:38 - INFO - Processing sequences in order of register scores: [132.74585]
+2026-10-27 17:06:38 - INFO - Processing sequence 9WQ6_1 with 339 residues, 1 chains
+2026-10-27 17:07:08 - INFO - AF3 matching results: 333 matches, total score: 26453.50
+2026-10-27 17:07:08 - INFO - ✓ AF3 structure-based alignment completed in 214.08 seconds
+================================================================================
+🏗️  BUILDING INITIAL MODEL
+================================================================================
+2026-10-27 17:07:08 - INFO - Starting initial modeling...
+2026-10-27 17:07:08 - INFO - Starting initial model building with 1 aligned fragments
+2026-10-27 17:07:08 - INFO - Processing 339 traces for sequence 9WQ6_1
+2026-10-27 17:07:08 - INFO - Chain list: ['A']
+2026-10-27 17:07:08 - INFO - Saving initial model: output/66160_9wq6_MICA(init)_ca_model.pdb
+2026-10-27 17:07:08 - INFO - ✓ Initial model building completed in 0.02 seconds
+================================================================================
+🧵 RUNNING GAP FILLING
+================================================================================
+2026-10-27 17:07:08 - INFO - Starting gap filling...
+2026-10-27 17:07:08 - INFO - Starting gap filling process...
+2026-10-27 17:07:08 - INFO - Processing gap 1/6: positions 67->81
+2026-10-27 17:07:10 - INFO - Processing gap 2/6: positions 283->297
+2026-10-27 17:07:11 - INFO - Processing gap 3/6: positions -1->16
+2026-10-27 17:07:12 - INFO - Processing gap 4/6: positions 143->172
+2026-10-27 17:07:16 - INFO - Processing gap 5/6: positions 309->339
+2026-10-27 17:07:20 - INFO - Processing gap 6/6: positions 191->255
+2026-10-27 17:07:36 - INFO - Saving gap filled model: output/66160_9wq6_MICA_ca_model.pdb
+2026-10-27 17:07:36 - INFO - ✓ Gap filling completed in 28.34 seconds
+================================================================================
+🔧 RUNNING PULCHRA
+================================================================================
+2026-10-27 17:07:36 - INFO - Starting Pulchra reconstruction...
+2026-10-27 17:07:36 - INFO - Starting Pulchra processing for PDB file: output/66160_9wq6_MICA_ca_model.pdb
+2026-10-27 17:07:36 - INFO - Splitting PDB file by chains...
+2026-10-27 17:07:36 - INFO - Running Pulchra reconstruction on chain fragments...
+2026-10-27 17:07:37 - INFO - Combining rebuilt chains into all-atom model...
+2026-10-27 17:07:37 - INFO - ✓ Pulchra processing completed. All-atom model saved: output/66160_9wq6_MICA_all_atom_model.pdb
+2026-10-27 17:07:37 - INFO - ✓ Pulchra completed in 0.85 seconds
+================================================================================
+⚡ RUNNING PHENIX REFINEMENT
+================================================================================
+2026-10-27 17:07:37 - INFO - Starting Phenix refinement...
+2026-10-27 17:07:37 - INFO - Executing Phenix command: bash modules/phenix.sh /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh /tmp/mica_pilot/MICA/output "phenix.real_space_refine /tmp/mica_pilot/MICA/output/66160_9wq6_MICA_all_atom_model.pdb /tmp/mica_pilot/MICA/input/9WQ6/emd_66160.map /tmp/mica_pilot/MICA/modules/phenix.eff resolution=3.4"
+2026-10-27 17:07:37 - INFO - ✓ Phenix refinement completed in 0.16 seconds
+2026-10-27 17:07:37 - INFO - Recording timing information: output/time_cost_66160_9wq6_MICA.csv
+================================================================================
+🎉 MICA PIPELINE COMPLETED SUCCESSFULLY
+================================================================================
+📊 Total processing time: 1057.18 seconds
+📁 Final model saved: output/66160_9wq6_MICA_all_atom_model.pdb
+

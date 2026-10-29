@@ -1,0 +1,326 @@
+group,method,metric,metric_label,n_entries,n_model,n,mean,sd,median,q1,q3,min,max,mean_ci_low,mean_ci_high
+pooled,mica,tm_score,TM-score,20,8,8,0.935925,0.045598,0.9355,0.91175,0.963325,0.8557,0.9942,0.9058,0.964852
+pooled,mica,aligned_ca_length,Aligned C-alpha length,20,8,8,468.75,139.235,491.5,409.5,544.5,206,653,375.75,553.75
+pooled,mica,seq_identity,Sequence identity of aligned residues (%),20,8,8,98.2875,2.51762,99.15,98.4,99.575,92.3,100,96.45,99.4875
+pooled,mica,ca_rmsd,C-alpha RMSD of aligned residues (A),20,8,8,1.18,0.632546,1.12,0.7125,1.5075,0.41,2.25,0.79375,1.6075
+pooled,mica,ca_match,C-alpha match (%),20,8,8,97.18,1.95092,96.6915,96.1103,98.8445,94.156,100,95.9268,98.4346
+pooled,mica,seq_match,Sequence match (%),20,8,8,95.8625,5.23639,97.5,95.45,98.675,83.6,100,92.025,98.4625
+pooled,mica,ca_quality,C-alpha quality score (%),20,8,8,95.8214,3.27008,95.406,94.174,98.4368,91.482,100,93.7205,97.911
+pooled,mica,coverage,Residue coverage,20,8,8,0.986112,0.0306314,0.9906,0.976175,0.9967,0.927,1.0358,0.965525,1.0052
+pooled,mica,tm_score_fns,"TM-score, fragment-agnostic",20,8,8,0.95775,0.0285548,0.95265,0.94115,0.982325,0.9168,0.9942,0.939438,0.976087
+pooled,mica,ca_match_ff,"C-alpha match, model in its own frame (%)",20,8,8,97.128,1.98844,96.5645,96.1103,98.8445,93.994,100,95.845,98.4132
+pooled,mica,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",20,8,8,95.7706,3.30969,95.406,93.988,98.4368,91.324,100,93.6197,97.8208
+pooled,mica,ca_found,Deposited residues found (%),20,8,8,95.8125,3.25552,95.4,94.15,98.4,91.5,100,93.7375,97.925
+pooled,mica,own_ca_match,"C-alpha match, own count (%)",20,8,8,98.158,1.50608,98.2205,96.8217,99.4963,96.171,100,97.1687,99.1287
+pooled,modelangelo,tm_score,TM-score,20,19,19,0.794979,0.254585,0.9089,0.666,0.99415,0.2367,0.9989,0.678329,0.89997
+pooled,modelangelo,aligned_ca_length,Aligned C-alpha length,20,19,19,324.895,163.201,306,179,467.5,125,681,257.788,397.58
+pooled,modelangelo,seq_identity,Sequence identity of aligned residues (%),20,19,19,94.8579,17.8717,99.5,98.3,99.9,21.3,100,86.2947,99.4105
+pooled,modelangelo,ca_rmsd,C-alpha RMSD of aligned residues (A),20,19,19,0.774737,0.650926,0.63,0.385,0.945,0.16,3.06,0.534737,1.09053
+pooled,modelangelo,ca_match,C-alpha match (%),20,19,19,71.7819,35.921,91.065,47.9655,98.529,4.193,100,55.7928,86.448
+pooled,modelangelo,seq_match,Sequence match (%),20,19,19,93.9895,20.3781,98.8,98.1,99.85,10.1,100,84.3,99.1632
+pooled,modelangelo,ca_quality,C-alpha quality score (%),20,19,19,87.9235,15.6194,96.683,80.468,99.4995,56.705,100,80.7121,94.3018
+pooled,modelangelo,coverage,Residue coverage,20,19,19,3.48084,6.12537,1.0148,0.88715,2.0638,0.6009,23.8497,1.24278,6.58008
+pooled,modelangelo,tm_score_fns,"TM-score, fragment-agnostic",20,19,19,0.890258,0.138433,0.9632,0.81685,0.99435,0.5917,0.9989,0.825068,0.947002
+pooled,modelangelo,ca_match_ff,"C-alpha match, model in its own frame (%)",20,19,19,72.6226,36.5015,91.065,47.9655,98.529,0,100,55.894,87.8241
+pooled,modelangelo,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",20,19,19,83.8941,24.5458,96.365,76.427,99.43,0,100,71.8807,93.0895
+pooled,modelangelo,ca_found,Deposited residues found (%),20,19,19,87.9316,15.6169,96.7,80.5,99.5,56.7,100,80.7733,94.4264
+pooled,modelangelo,own_ca_match,"C-alpha match, own count (%)",20,19,19,72.6406,35.9983,91.753,48.297,99.2795,4.193,100,55.7274,87.5361
+pooled,emodelx,tm_score,TM-score,20,18,18,0.935056,0.0501121,0.93605,0.90675,0.982125,0.841,0.9944,0.912092,0.956989
+pooled,emodelx,aligned_ca_length,Aligned C-alpha length,20,18,18,405.5,140.239,427.5,276,501.25,170,653,342.944,467.668
+pooled,emodelx,seq_identity,Sequence identity of aligned residues (%),20,18,18,93.4611,16.4069,98.65,96.35,99.6,29.9,100,85.3276,98.5
+pooled,emodelx,ca_rmsd,C-alpha RMSD of aligned residues (A),20,18,18,1.31056,0.811618,1.025,0.775,1.655,0.44,3.2,0.968875,1.68833
+pooled,emodelx,ca_match,C-alpha match (%),20,18,18,83.0008,27.0818,94.051,90.1153,97.627,12.549,100,69.6815,93.8638
+pooled,emodelx,seq_match,Sequence match (%),20,18,18,90.6778,16.3946,97.4,87.325,99.375,31.1,100,82.3661,96.4614
+pooled,emodelx,ca_quality,C-alpha quality score (%),20,18,18,91.6239,12.5526,94.6675,91.429,98.1305,47.189,100,85.0339,96.1856
+pooled,emodelx,coverage,Residue coverage,20,18,18,1.4999,1.42614,1.01235,0.9831,1.04038,0.9419,5.9609,1.00386,2.25414
+pooled,emodelx,tm_score_fns,"TM-score, fragment-agnostic",20,18,18,0.957839,0.0280509,0.95225,0.934925,0.985,0.9054,0.9944,0.945044,0.970639
+pooled,emodelx,ca_match_ff,"C-alpha match, model in its own frame (%)",20,18,18,71.6284,38.682,92.252,56.7805,97.1118,0,100,52.9468,87.6922
+pooled,emodelx,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",20,18,18,76.8784,33.3595,92.8705,59.328,96.5907,0,100,60.8176,90.441
+pooled,emodelx,ca_found,Deposited residues found (%),20,18,18,94.2444,5.8796,94.65,92.225,98.15,74.8,100,91.3611,96.5389
+pooled,emodelx,own_ca_match,"C-alpha match, own count (%)",20,18,18,87.0127,25.7823,96.7255,93.012,98.4925,13.86,100,74.0698,96.6958
+pooled,emprot,tm_score,TM-score,20,19,19,0.959321,0.0745001,0.9821,0.95515,0.9924,0.6675,0.9988,0.921872,0.983191
+pooled,emprot,aligned_ca_length,Aligned C-alpha length,20,19,19,400.158,150.344,393,260,513,173,678,333.999,466.001
+pooled,emprot,seq_identity,Sequence identity of aligned residues (%),20,19,19,94.7316,16.0872,99.5,97.5,100,29.2,100,86.9947,99.1791
+pooled,emprot,ca_rmsd,C-alpha RMSD of aligned residues (A),20,19,19,1.02316,0.722342,0.92,0.41,1.3,0.24,2.83,0.721579,1.35686
+pooled,emprot,ca_match,C-alpha match (%),20,19,19,55.0066,33.9018,57.366,21.8075,90.25,3.983,100,39.8225,69.393
+pooled,emprot,seq_match,Sequence match (%),20,19,19,93.9421,15.8114,98.5,96.5,99.7,30.5,100,86.1157,98.6212
+pooled,emprot,ca_quality,C-alpha quality score (%),20,19,19,93.8585,12.3404,98.2,94.591,99.6605,48.128,100.001,87.5793,98.056
+pooled,emprot,coverage,Residue coverage,20,19,19,4.27028,6.33214,1.4473,1.07635,4.59425,0.9951,25.1098,1.93693,7.43907
+pooled,emprot,tm_score_fns,"TM-score, fragment-agnostic",20,19,19,0.979126,0.0205616,0.9859,0.9751,0.9927,0.9216,0.9988,0.969395,0.987427
+pooled,emprot,ca_match_ff,"C-alpha match, model in its own frame (%)",20,19,19,54.7991,34.2403,57.366,21.85,90.25,3.983,100,39.7876,69.8313
+pooled,emprot,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",20,19,19,92.4696,15.5773,98.2,94.9395,99.6605,48.502,100.001,84.7058,98.0754
+pooled,emprot,ca_found,Deposited residues found (%),20,19,19,96.4,5.43712,98.2,95.35,99.65,76.8,100,93.6421,98.3421
+pooled,emprot,own_ca_match,"C-alpha match, own count (%)",20,19,19,58.5845,35.3011,67.588,22.9115,92.322,3.983,100,42.8106,73.7977
+pooled,e3,tm_score,TM-score,20,15,15,0.86316,0.138076,0.9073,0.7665,0.9686,0.5989,0.9828,0.79205,0.926708
+pooled,e3,aligned_ca_length,Aligned C-alpha length,20,15,15,363.067,146.071,309,252.5,469.5,173,682,295.997,437.868
+pooled,e3,seq_identity,Sequence identity of aligned residues (%),20,15,15,93.4333,8.89837,98.3,86.2,99.75,75.1,100,88.7997,97.52
+pooled,e3,ca_rmsd,C-alpha RMSD of aligned residues (A),20,15,15,1.81133,1.01387,1.44,1.055,2.395,0.84,4.13,1.35397,2.33733
+pooled,e3,ca_match,C-alpha match (%),20,15,15,83.0669,13.7353,80.882,69.213,96.885,62.085,99.029,76.2311,89.778
+pooled,e3,seq_match,Sequence match (%),20,15,15,86.8133,16.7511,96,75.55,98.35,51.4,100,78.3398,94.3933
+pooled,e3,ca_quality,C-alpha quality score (%),20,15,15,89.2979,11.194,91.998,80.033,98.855,68.766,100.001,83.6526,94.5537
+pooled,e3,coverage,Residue coverage,20,15,15,1.08843,0.139063,1.0302,0.99705,1.15915,0.9193,1.4107,1.02543,1.15932
+pooled,e3,tm_score_fns,"TM-score, fragment-agnostic",20,15,15,0.900987,0.0902124,0.9325,0.8404,0.97075,0.69,0.9829,0.855025,0.94282
+pooled,e3,ca_match_ff,"C-alpha match, model in its own frame (%)",20,15,15,72.2053,32.128,79.756,67.464,96.8765,0,99.029,54.6192,86.4176
+pooled,e3,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",20,15,15,76.9977,33.2031,91.808,73.26,98.782,0,99.998,59.4557,91.2732
+pooled,e3,ca_found,Deposited residues found (%),20,15,15,89.3067,11.1848,92,80.05,98.85,68.8,100,83.6332,94.48
+pooled,e3,own_ca_match,"C-alpha match, own count (%)",20,15,15,92.0975,11.3699,96.897,94.25,98.145,62.559,100,86.0156,96.9955
+le3.0,mica,tm_score,TM-score,10,4,4,0.961975,0.0399659,0.97255,0.942725,0.9918,0.9086,0.9942,0.9292,0.9926
+le3.0,mica,aligned_ca_length,Aligned C-alpha length,10,4,4,494.75,199.045,560,448.25,606.5,206,653,302.25,622
+le3.0,mica,seq_identity,Sequence identity of aligned residues (%),10,4,4,99.025,0.910586,99.15,98.775,99.4,97.8,100,98.15,99.775
+le3.0,mica,ca_rmsd,C-alpha RMSD of aligned residues (A),10,4,4,0.8875,0.645723,0.655,0.5075,1.035,0.41,1.83,0.475,1.5075
+le3.0,mica,ca_match,C-alpha match (%),10,4,4,96.6255,2.44235,96.173,95.6673,97.1312,94.156,100,94.6608,99.0427
+le3.0,mica,seq_match,Sequence match (%),10,4,4,98.175,2.2036,98.85,97.625,99.4,95,100,96.05,99.625
+le3.0,mica,ca_quality,C-alpha quality score (%),10,4,4,96.712,3.9807,97.683,94.6815,99.7135,91.482,100,93.516,99.809
+le3.0,mica,coverage,Residue coverage,10,4,4,1.00075,0.0264909,0.9978,0.9896,1.00895,0.9716,1.0358,0.9787,1.02575
+le3.0,mica,tm_score_fns,"TM-score, fragment-agnostic",10,4,4,0.967475,0.0316476,0.97335,0.947825,0.993,0.929,0.9942,0.94155,0.9934
+le3.0,mica,ca_match_ff,"C-alpha match, model in its own frame (%)",10,4,4,96.585,2.49767,96.173,95.6268,97.1312,93.994,100,94.5393,99.0427
+le3.0,mica,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",10,4,4,96.6725,4.05008,97.683,94.642,99.7135,91.324,100,93.3975,99.809
+le3.0,mica,ca_found,Deposited residues found (%),10,4,4,96.7,3.9724,97.65,94.65,99.7,91.5,100,93.525,99.8
+le3.0,mica,own_ca_match,"C-alpha match, own count (%)",10,4,4,97.4065,1.75555,96.7275,96.447,97.687,96.171,100,96.355,99.1347
+le3.0,modelangelo,tm_score,TM-score,10,9,9,0.943756,0.100164,0.9949,0.9799,0.9972,0.7537,0.9989,0.871688,0.995433
+le3.0,modelangelo,aligned_ca_length,Aligned C-alpha length,10,9,9,395.222,164.939,407,247,481,173,681,297.111,500.667
+le3.0,modelangelo,seq_identity,Sequence identity of aligned residues (%),10,9,9,99.2444,1.69345,100,99.4,100,94.8,100,98.0889,99.9333
+le3.0,modelangelo,ca_rmsd,C-alpha RMSD of aligned residues (A),10,9,9,0.538889,0.423392,0.44,0.28,0.57,0.16,1.55,0.32,0.827806
+le3.0,modelangelo,ca_match,C-alpha match (%),10,9,9,58.3002,38.7837,49.499,22.376,97.839,4.193,98.874,34.1868,81.7521
+le3.0,modelangelo,seq_match,Sequence match (%),10,9,9,99.3444,0.893184,100,98.2,100,98.1,100,98.7667,99.8
+le3.0,modelangelo,ca_quality,C-alpha quality score (%),10,9,9,96.6343,8.12606,99.561,98.048,99.998,75.076,100,91.0896,99.72
+le3.0,modelangelo,coverage,Residue coverage,10,9,9,4.69601,7.3999,2.0202,1.0176,4.3818,0.7618,23.8497,1.43285,9.79802
+le3.0,modelangelo,tm_score_fns,"TM-score, fragment-agnostic",10,9,9,0.966856,0.0798476,0.9953,0.9841,0.9973,0.7545,0.9989,0.912666,0.996078
+le3.0,modelangelo,ca_match_ff,"C-alpha match, model in its own frame (%)",10,9,9,58.2976,38.7878,49.499,22.376,97.839,4.169,98.874,34.6567,82.1641
+le3.0,modelangelo,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",10,9,9,96.5701,8.09837,99.438,98.048,99.737,75.076,100,91.0494,99.6352
+le3.0,modelangelo,ca_found,Deposited residues found (%),10,9,9,96.6333,8.1165,99.6,98,100,75.1,100,91.0889,99.7222
+le3.0,modelangelo,own_ca_match,"C-alpha match, own count (%)",10,9,9,58.4587,38.8243,49.699,22.475,97.839,4.193,99.172,34.8193,82.0666
+le3.0,emodelx,tm_score,TM-score,10,9,9,0.953889,0.0486593,0.9723,0.9223,0.9922,0.8552,0.9944,0.922066,0.981778
+le3.0,emodelx,aligned_ca_length,Aligned C-alpha length,10,9,9,413.222,173.081,455,247,529,170,653,306.328,516.114
+le3.0,emodelx,seq_identity,Sequence identity of aligned residues (%),10,9,9,91.0333,23.0223,99.6,97.1,99.8,29.9,100,75.1444,99.6336
+le3.0,emodelx,ca_rmsd,C-alpha RMSD of aligned residues (A),10,9,9,1.17333,0.967962,0.77,0.55,1.22,0.44,3.2,0.654444,1.80889
+le3.0,emodelx,ca_match,C-alpha match (%),10,9,9,78.3001,35.6224,95.153,92.233,97.778,12.549,100,52.0963,96.7733
+le3.0,emodelx,seq_match,Sequence match (%),10,9,9,89.3,22.5996,99.5,92.9,99.6,31.1,100,73.9667,99.2889
+le3.0,emodelx,ca_quality,C-alpha quality score (%),10,9,9,94.5024,8.18903,97.691,92.898,99.741,74.804,100,88.8704,98.6371
+le3.0,emodelx,coverage,Residue coverage,10,9,9,1.9876,1.94462,1.0202,1,1.0814,0.9763,5.9609,1.01143,3.36676
+le3.0,emodelx,tm_score_fns,"TM-score, fragment-agnostic",10,9,9,0.972478,0.0248503,0.9817,0.954,0.9931,0.9345,0.9944,0.956156,0.986856
+le3.0,emodelx,ca_match_ff,"C-alpha match, model in its own frame (%)",10,9,9,55.5002,48.4918,92.233,8.191,96.313,0,100,24.7433,85.891
+le3.0,emodelx,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",10,9,9,64.9577,42.3501,92.741,47.939,99.626,0,100,37.799,88.0156
+le3.0,emodelx,ca_found,Deposited residues found (%),10,9,9,94.4889,8.18634,97.7,92.9,99.7,74.8,100,88.7111,98.6333
+le3.0,emodelx,own_ca_match,"C-alpha match, own count (%)",10,9,9,79.116,35.1366,96.46,92.476,98.413,13.86,100,53.3952,97.4292
+le3.0,emprot,tm_score,TM-score,10,9,9,0.956456,0.108613,0.9928,0.9915,0.9975,0.6675,0.9988,0.883033,0.995878
+le3.0,emprot,aligned_ca_length,Aligned C-alpha length,10,9,9,408.778,181.358,381,247,529,173,678,297.886,520.444
+le3.0,emprot,seq_identity,Sequence identity of aligned residues (%),10,9,9,91.5667,23.4136,100,98,100,29.2,100,75.7333,99.9556
+le3.0,emprot,ca_rmsd,C-alpha RMSD of aligned residues (A),10,9,9,0.771111,0.876747,0.4,0.26,0.72,0.24,2.83,0.328889,1.37778
+le3.0,emprot,ca_match,C-alpha match (%),10,9,9,49.5001,38.9636,42.295,15.979,90.738,3.983,100,26.1643,73.7541
+le3.0,emprot,seq_match,Sequence match (%),10,9,9,91.8667,23.0203,99.9,98.7,100,30.5,100,76.3886,99.8222
+le3.0,emprot,ca_quality,C-alpha quality score (%),10,9,9,96.725,7.59828,99.51,99.132,99.999,76.758,100.001,91.5602,99.7738
+le3.0,emprot,coverage,Residue coverage,10,9,9,5.52793,7.67362,2.3644,1.1,5.7793,0.9951,25.1098,1.97365,10.8875
+le3.0,emprot,tm_score_fns,"TM-score, fragment-agnostic",10,9,9,0.992656,0.00651385,0.9928,0.992,0.9975,0.9777,0.9988,0.988211,0.996144
+le3.0,emprot,ca_match_ff,"C-alpha match, model in its own frame (%)",10,9,9,48.9667,39.5491,42.295,15.944,90.738,3.983,100,25.496,73.1849
+le3.0,emprot,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",10,9,9,93.641,16.7086,99.51,98.915,99.999,49.219,100.001,82.3874,99.7707
+le3.0,emprot,ca_found,Deposited residues found (%),10,9,9,96.7222,7.58136,99.5,99.1,100,76.8,100,91.5333,99.7667
+le3.0,emprot,own_ca_match,"C-alpha match, own count (%)",10,9,9,49.7059,38.8533,42.295,16.049,90.738,3.983,100,26.2643,73.5279
+le3.0,e3,tm_score,TM-score,10,7,7,0.883757,0.157197,0.9692,0.8218,0.9805,0.6297,0.9828,0.766062,0.977214
+le3.0,e3,aligned_ca_length,Aligned C-alpha length,10,7,7,362.429,190.371,267,226.5,481,173,682,239.282,499.143
+le3.0,e3,seq_identity,Sequence identity of aligned residues (%),10,7,7,97.3,5.94587,99.6,98.85,99.95,83.9,100,92.7429,99.8571
+le3.0,e3,ca_rmsd,C-alpha RMSD of aligned residues (A),10,7,7,1.45286,0.914653,1.06,0.955,1.475,0.84,3.41,0.965714,2.15
+le3.0,e3,ca_match,C-alpha match (%),10,7,7,89.8294,13.7146,96.52,87.902,97.684,62.085,99.029,79.6324,97.4994
+le3.0,e3,seq_match,Sequence match (%),10,7,7,93.2,14.2804,98.7,96.75,99.6,61,100,82.2429,99.4
+le3.0,e3,ca_quality,C-alpha quality score (%),10,7,7,91.998,12.9808,99.029,88.3785,99.7165,68.766,100.001,82.7409,99.5607
+le3.0,e3,coverage,Residue coverage,10,7,7,1.02716,0.0432504,1.0243,1.01155,1.0349,0.9653,1.1076,0.998571,1.05737
+le3.0,e3,tm_score_fns,"TM-score, fragment-agnostic",10,7,7,0.9153,0.111819,0.9692,0.9014,0.9811,0.69,0.9829,0.832843,0.977416
+le3.0,e3,ca_match_ff,"C-alpha match, model in its own frame (%)",10,7,7,89.6829,13.7233,96.52,87.5865,97.4865,62.085,99.029,79.5681,97.4013
+le3.0,e3,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",10,7,7,91.8517,13.0128,99.029,88.069,99.5155,68.766,99.998,82.5299,99.4421
+le3.0,e3,ca_found,Deposited residues found (%),10,7,7,92,12.9621,99,88.4,99.7,68.8,100,82.6868,99.5571
+le3.0,e3,own_ca_match,"C-alpha match, own count (%)",10,7,7,92.8783,13.4427,97.985,96.2425,98.5595,62.559,100,82.5514,98.6879
+gt3.0_le4.0,mica,tm_score,TM-score,10,4,4,0.909875,0.0380072,0.92105,0.898525,0.9324,0.8557,0.9417,0.8741,0.9355
+gt3.0_le4.0,mica,aligned_ca_length,Aligned C-alpha length,10,4,4,442.75,61.7542,457,409.5,490.25,363,494,394,491.5
+gt3.0_le4.0,mica,seq_identity,Sequence identity of aligned residues (%),10,4,4,97.55,3.53695,99.05,97.025,99.575,92.3,99.8,94.1,99.65
+gt3.0_le4.0,mica,ca_rmsd,C-alpha RMSD of aligned residues (A),10,4,4,1.4725,0.537114,1.29,1.15,1.6125,1.06,2.25,1.12,1.9825
+gt3.0_le4.0,mica,ca_match,C-alpha match (%),10,4,4,97.7345,1.44771,97.998,96.888,98.8445,95.928,99.014,96.568,98.901
+gt3.0_le4.0,mica,seq_match,Sequence match (%),10,4,4,93.55,6.69801,96.4,92.6,97.35,83.6,97.8,87,97.5
+gt3.0_le4.0,mica,ca_quality,C-alpha quality score (%),10,4,4,94.9307,2.64387,95.052,94.174,95.8088,91.576,98.043,92.448,97.2923
+gt3.0_le4.0,mica,coverage,Residue coverage,10,4,4,0.971475,0.0302689,0.98395,0.965025,0.9904,0.927,0.991,0.9428,0.9906
+gt3.0_le4.0,mica,tm_score_fns,"TM-score, fragment-agnostic",10,4,4,0.948025,0.0254711,0.9482,0.9381,0.958125,0.9168,0.9789,0.9254,0.970475
+gt3.0_le4.0,mica,ca_match_ff,"C-alpha match, model in its own frame (%)",10,4,4,97.671,1.48363,97.871,96.6975,98.8445,95.928,99.014,96.441,98.901
+gt3.0_le4.0,mica,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",10,4,4,94.8688,2.64336,94.928,93.988,95.8088,91.576,98.043,92.448,97.2303
+gt3.0_le4.0,mica,ca_found,Deposited residues found (%),10,4,4,94.925,2.61709,95.05,94.15,95.825,91.6,98,92.475,97.25
+gt3.0_le4.0,mica,own_ca_match,"C-alpha match, own count (%)",10,4,4,98.9095,0.839466,98.9355,98.3487,99.4963,97.964,99.803,98.2205,99.5985
+gt3.0_le4.0,modelangelo,tm_score,TM-score,10,10,10,0.66108,0.280452,0.6832,0.474925,0.90745,0.2367,0.9673,0.4931,0.820107
+gt3.0_le4.0,modelangelo,aligned_ca_length,Aligned C-alpha length,10,10,10,261.6,140.319,219,146.25,315.75,125,498,184.3,347.202
+gt3.0_le4.0,modelangelo,seq_identity,Sequence identity of aligned residues (%),10,10,10,90.91,24.4885,99,97.575,99.575,21.3,99.7,75.31,99.2
+gt3.0_le4.0,modelangelo,ca_rmsd,C-alpha RMSD of aligned residues (A),10,10,10,0.987,0.763138,0.845,0.655,0.965,0.33,3.06,0.650975,1.497
+gt3.0_le4.0,modelangelo,ca_match,C-alpha match (%),10,10,10,83.9155,29.9709,98.3415,89.676,98.8768,5.981,100,64.4474,97.6695
+gt3.0_le4.0,modelangelo,seq_match,Sequence match (%),10,10,10,89.17,27.8449,98.25,97.25,98.875,10.1,99.7,71.28,98.77
+gt3.0_le4.0,modelangelo,ca_quality,C-alpha quality score (%),10,10,10,80.0838,16.884,87.966,62.742,94.907,56.705,96.859,69.8334,89.5577
+gt3.0_le4.0,modelangelo,coverage,Residue coverage,10,10,10,2.38719,4.85391,0.93295,0.72855,1.00525,0.6009,16.1937,0.777347,5.49254
+gt3.0_le4.0,modelangelo,tm_score_fns,"TM-score, fragment-agnostic",10,10,10,0.82132,0.146672,0.87905,0.703625,0.941825,0.5917,0.9692,0.733468,0.902391
+gt3.0_le4.0,modelangelo,ca_match_ff,"C-alpha match, model in its own frame (%)",10,10,10,85.5152,30.6185,98.3415,89.676,98.7267,0,100,65.5283,97.7899
+gt3.0_le4.0,modelangelo,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",10,10,10,72.4857,29.0069,81.819,62.742,90.4177,0,96.488,53.3917,86.8586
+gt3.0_le4.0,modelangelo,ca_found,Deposited residues found (%),10,10,10,80.1,16.8923,88,62.75,94.925,56.7,96.9,70.07,89.7702
+gt3.0_le4.0,modelangelo,own_ca_match,"C-alpha match, own count (%)",10,10,10,85.4043,29.492,99.2735,90.0662,99.6202,5.981,100,65.8992,98.4832
+gt3.0_le4.0,emodelx,tm_score,TM-score,10,9,9,0.916222,0.0465892,0.9283,0.8939,0.9416,0.841,0.9854,0.887143,0.944333
+gt3.0_le4.0,emodelx,aligned_ca_length,Aligned C-alpha length,10,9,9,397.778,108.171,400,309,499,246,520,333,463.225
+gt3.0_le4.0,emodelx,seq_identity,Sequence identity of aligned residues (%),10,9,9,95.8889,5.36014,98.4,96.1,98.8,82.9,99.4,92.1886,98.5444
+gt3.0_le4.0,emodelx,ca_rmsd,C-alpha RMSD of aligned residues (A),10,9,9,1.44778,0.648436,1.21,0.98,1.71,0.79,2.83,1.08222,1.88556
+gt3.0_le4.0,emodelx,ca_match,C-alpha match (%),10,9,9,87.7014,15.4873,92.271,89.423,97.378,50.099,98.608,77.1579,95.3617
+gt3.0_le4.0,emodelx,seq_match,Sequence match (%),10,9,9,92.0556,7.49335,96.2,86.1,97.6,77.5,99,87.1328,96.3114
+gt3.0_le4.0,emodelx,ca_quality,C-alpha quality score (%),10,9,9,88.7453,15.7838,93,91.255,94.79,47.189,98.277,77.9318,95.1721
+gt3.0_le4.0,emodelx,coverage,Residue coverage,10,9,9,1.0122,0.0724636,0.9852,0.9709,1.0273,0.9419,1.1877,0.975477,1.06378
+gt3.0_le4.0,emodelx,tm_score_fns,"TM-score, fragment-agnostic",10,9,9,0.9432,0.023924,0.9414,0.9312,0.9505,0.9054,0.9861,0.929278,0.958301
+gt3.0_le4.0,emodelx,ca_match_ff,"C-alpha match, model in its own frame (%)",10,9,9,87.7566,15.5855,92.271,89.423,97.378,49.901,98.608,76.7851,95.4415
+gt3.0_le4.0,emodelx,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",10,9,9,88.7991,15.8607,93,91.927,94.79,47.001,98.277,77.9439,95.2381
+gt3.0_le4.0,emodelx,ca_found,Deposited residues found (%),10,9,9,94,2.51197,94.4,92,94.8,90.8,98.3,92.5111,95.6
+gt3.0_le4.0,emodelx,own_ca_match,"C-alpha match, own count (%)",10,9,9,94.9094,6.1372,96.991,93.393,98.855,80,99.801,90.705,97.9359
+gt3.0_le4.0,emprot,tm_score,TM-score,10,10,10,0.9619,0.0244724,0.9666,0.951625,0.9817,0.9099,0.9861,0.946499,0.97514
+gt3.0_le4.0,emprot,aligned_ca_length,Aligned C-alpha length,10,10,10,392.4,125.815,416.5,281.25,504.75,191,532,318.3,465.002
+gt3.0_le4.0,emprot,seq_identity,Sequence identity of aligned residues (%),10,10,10,97.58,3.35817,99,96.775,99.725,89.7,100,95.33,99.3
+gt3.0_le4.0,emprot,ca_rmsd,C-alpha RMSD of aligned residues (A),10,10,10,1.25,0.489467,1.145,0.9575,1.32,0.7,2.41,0.998,1.563
+gt3.0_le4.0,emprot,ca_match,C-alpha match (%),10,10,10,59.9625,29.8593,61.9745,44.2278,86.047,5.829,97.471,42.0452,77.1738
+gt3.0_le4.0,emprot,seq_match,Sequence match (%),10,10,10,95.81,4.55642,97,96.175,98.325,84.5,99.5,92.86,98.03
+gt3.0_le4.0,emprot,ca_quality,C-alpha quality score (%),10,10,10,91.2787,15.4156,95.5765,94.0018,98.1128,48.128,100,81.0431,97.3419
+gt3.0_le4.0,emprot,coverage,Residue coverage,10,10,10,3.13839,4.98448,1.3564,1.04937,2.07455,1.0039,17.1571,1.24285,6.41987
+gt3.0_le4.0,emprot,tm_score_fns,"TM-score, fragment-agnostic",10,10,10,0.96695,0.0214491,0.9758,0.9575,0.9823,0.9216,0.9868,0.9532,0.978491
+gt3.0_le4.0,emprot,ca_match_ff,"C-alpha match, model in its own frame (%)",10,10,10,60.0482,29.8301,61.9745,44.4742,86.096,5.829,97.471,41.7926,76.5948
+gt3.0_le4.0,emprot,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",10,10,10,91.4153,15.3148,95.701,94.1137,98.1128,48.502,100,81.3746,97.3796
+gt3.0_le4.0,emprot,ca_found,Deposited residues found (%),10,10,10,96.11,2.79938,96.35,94.5,98.125,90.5,100,94.39,97.6602
+gt3.0_le4.0,emprot,own_ca_match,"C-alpha match, own count (%)",10,10,10,66.5752,31.6339,71.833,50.9008,93.5975,5.89,98.638,47.0865,84.2092
+gt3.0_le4.0,e3,tm_score,TM-score,10,8,8,0.845137,0.127097,0.89555,0.7829,0.921175,0.5989,0.968,0.756032,0.919302
+gt3.0_le4.0,e3,aligned_ca_length,Aligned C-alpha length,10,8,8,363.625,107.744,346.5,295.5,423.25,229,520,295.875,435.875
+gt3.0_le4.0,e3,seq_identity,Sequence identity of aligned residues (%),10,8,8,90.05,10.0013,93.35,81.775,98.325,75.1,100,83.35,96.3
+gt3.0_le4.0,e3,ca_rmsd,C-alpha RMSD of aligned residues (A),10,8,8,2.125,1.04777,1.935,1.3775,2.535,1.05,4.13,1.515,2.84
+gt3.0_le4.0,e3,ca_match,C-alpha match (%),10,8,8,77.1497,11.4171,72.5415,68.298,82.2933,67.722,97.25,70.3195,85.1072
+gt3.0_le4.0,e3,seq_match,Sequence match (%),10,8,8,81.225,17.6046,86.45,68.95,96.3,51.4,97.7,69.7125,91.8625
+gt3.0_le4.0,e3,ca_quality,C-alpha quality score (%),10,8,8,86.9354,9.61837,91.195,79.8425,93.038,72.871,96.676,80.1986,92.6745
+gt3.0_le4.0,e3,coverage,Residue coverage,10,8,8,1.14205,0.173302,1.14235,0.9941,1.24378,0.9193,1.4107,1.0318,1.25831
+gt3.0_le4.0,e3,tm_score_fns,"TM-score, fragment-agnostic",10,8,8,0.888462,0.071938,0.9025,0.833375,0.941375,0.7796,0.9723,0.840825,0.933
+gt3.0_le4.0,e3,ca_match_ff,"C-alpha match, model in its own frame (%)",10,8,8,56.9125,36.4726,68.1595,50.079,76.3413,0,97.25,33.732,78.3364
+gt3.0_le4.0,e3,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",10,8,8,64.0004,40.5714,77.0805,54.9,92.8955,0,96.676,36.2519,87.689
+gt3.0_le4.0,e3,ca_found,Deposited residues found (%),10,8,8,86.95,9.622,91.2,79.85,93.05,72.9,96.7,80.45,92.8125
+gt3.0_le4.0,e3,own_ca_match,"C-alpha match, own count (%)",10,8,8,91.4144,10.1251,95.843,89.9613,97.7165,71.191,99.411,84.2363,97.1783
+novel_le30,mica,tm_score,TM-score,3,0,0,,,,,,,,,
+novel_le30,mica,aligned_ca_length,Aligned C-alpha length,3,0,0,,,,,,,,,
+novel_le30,mica,seq_identity,Sequence identity of aligned residues (%),3,0,0,,,,,,,,,
+novel_le30,mica,ca_rmsd,C-alpha RMSD of aligned residues (A),3,0,0,,,,,,,,,
+novel_le30,mica,ca_match,C-alpha match (%),3,0,0,,,,,,,,,
+novel_le30,mica,seq_match,Sequence match (%),3,0,0,,,,,,,,,
+novel_le30,mica,ca_quality,C-alpha quality score (%),3,0,0,,,,,,,,,
+novel_le30,mica,coverage,Residue coverage,3,0,0,,,,,,,,,
+novel_le30,mica,tm_score_fns,"TM-score, fragment-agnostic",3,0,0,,,,,,,,,
+novel_le30,mica,ca_match_ff,"C-alpha match, model in its own frame (%)",3,0,0,,,,,,,,,
+novel_le30,mica,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",3,0,0,,,,,,,,,
+novel_le30,mica,ca_found,Deposited residues found (%),3,0,0,,,,,,,,,
+novel_le30,mica,own_ca_match,"C-alpha match, own count (%)",3,0,0,,,,,,,,,
+novel_le30,modelangelo,tm_score,TM-score,3,3,3,0.728233,0.426345,0.9502,0.59345,0.974,0.2367,0.9978,0.2367,0.9978
+novel_le30,modelangelo,aligned_ca_length,Aligned C-alpha length,3,3,3,185.667,61.0027,185,155,216,125,247,125,247
+novel_le30,modelangelo,seq_identity,Sequence identity of aligned residues (%),3,3,3,99.5667,0.404145,99.5,99.35,99.75,99.2,100,99.2,100
+novel_le30,modelangelo,ca_rmsd,C-alpha RMSD of aligned residues (A),3,3,3,0.68,0.377492,0.73,0.505,0.88,0.28,1.03,0.28,1.03
+novel_le30,modelangelo,ca_match,C-alpha match (%),3,3,3,51.2663,46.1944,49.499,27.74,73.909,5.981,98.319,5.981,98.319
+novel_le30,modelangelo,seq_match,Sequence match (%),3,3,3,99.1,0.818535,98.9,98.65,99.45,98.4,100,98.4,100
+novel_le30,modelangelo,ca_quality,C-alpha quality score (%),3,3,3,88.075,18.0013,96.859,82.1135,98.4285,67.368,99.998,67.368,99.998
+novel_le30,modelangelo,coverage,Residue coverage,3,3,3,6.2997,8.59442,2.0202,1.3527,9.10695,0.6852,16.1937,0.6852,16.1937
+novel_le30,modelangelo,tm_score_fns,"TM-score, fragment-agnostic",3,3,3,0.876367,0.172749,0.9527,0.81565,0.97525,0.6786,0.9978,0.6786,0.9978
+novel_le30,modelangelo,ca_match_ff,"C-alpha match, model in its own frame (%)",3,3,3,49.2727,49.1599,49.499,24.7495,73.909,0,98.319,0,98.319
+novel_le30,modelangelo,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",3,3,3,55.7887,50.9947,67.368,33.684,83.683,0,99.998,0,99.998
+novel_le30,modelangelo,ca_found,Deposited residues found (%),3,3,3,88.1,17.9936,96.9,82.15,98.45,67.4,100,67.4,100
+novel_le30,modelangelo,own_ca_match,"C-alpha match, own count (%)",3,3,3,51.6133,46.619,49.699,27.84,74.4295,5.981,99.16,5.981,99.16
+novel_le30,emodelx,tm_score,TM-score,3,2,2,0.9899,0.00636396,0.9899,0.98765,0.99215,0.9854,0.9944,0.9854,0.9944
+novel_le30,emodelx,aligned_ca_length,Aligned C-alpha length,3,2,2,383.5,193.04,383.5,315.25,451.75,247,520,247,520
+novel_le30,emodelx,seq_identity,Sequence identity of aligned residues (%),3,2,2,99.4,0.282843,99.4,99.3,99.5,99.2,99.6,99.2,99.6
+novel_le30,emodelx,ca_rmsd,C-alpha RMSD of aligned residues (A),3,2,2,0.7,0.367696,0.7,0.57,0.83,0.44,0.96,0.44,0.96
+novel_le30,emodelx,ca_match,C-alpha match (%),3,2,2,97.863,0.216375,97.863,97.7865,97.9395,97.71,98.016,97.71,98.016
+novel_le30,emodelx,seq_match,Sequence match (%),3,2,2,98.9,0.989949,98.9,98.55,99.25,98.2,99.6,98.2,99.6
+novel_le30,emodelx,ca_quality,C-alpha quality score (%),3,2,2,99.1365,1.21552,99.1365,98.7067,99.5662,98.277,99.996,98.277,99.996
+novel_le30,emodelx,coverage,Residue coverage,3,2,2,1.013,0.0101823,1.013,1.0094,1.0166,1.0058,1.0202,1.0058,1.0202
+novel_le30,emodelx,tm_score_fns,"TM-score, fragment-agnostic",3,2,2,0.99025,0.00586899,0.99025,0.988175,0.992325,0.9861,0.9944,0.9861,0.9944
+novel_le30,emodelx,ca_match_ff,"C-alpha match, model in its own frame (%)",3,2,2,48.855,69.0914,48.855,24.4275,73.2825,0,97.71,0,97.71
+novel_le30,emodelx,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",3,2,2,49.1385,69.4923,49.1385,24.5693,73.7078,0,98.277,0,98.277
+novel_le30,emodelx,ca_found,Deposited residues found (%),3,2,2,99.15,1.20208,99.15,98.725,99.575,98.3,100,98.3,100
+novel_le30,emodelx,own_ca_match,"C-alpha match, own count (%)",3,2,2,98.634,0.312541,98.634,98.5235,98.7445,98.413,98.855,98.413,98.855
+novel_le30,emprot,tm_score,TM-score,3,3,3,0.988967,0.00799521,0.9861,0.98445,0.99205,0.9828,0.998,0.9828,0.998
+novel_le30,emprot,aligned_ca_length,Aligned C-alpha length,3,3,3,319,175.454,247,219,383,191,519,191,519
+novel_le30,emprot,seq_identity,Sequence identity of aligned residues (%),3,3,3,99.5667,0.750555,100,99.35,100,98.7,100,98.7,100
+novel_le30,emprot,ca_rmsd,C-alpha RMSD of aligned residues (A),3,3,3,0.606667,0.301054,0.7,0.485,0.775,0.27,0.85,0.27,0.85
+novel_le30,emprot,ca_match,C-alpha match (%),3,3,3,35.1633,26.4983,42.295,24.062,49.8305,5.829,57.366,5.829,57.366
+novel_le30,emprot,seq_match,Sequence match (%),3,3,3,99.2,0.984886,99.5,98.8,99.75,98.1,100,98.1,100
+novel_le30,emprot,ca_quality,C-alpha quality score (%),3,3,3,99.553,0.775093,100,99.329,100.001,98.658,100.001,98.658,100.001
+novel_le30,emprot,coverage,Residue coverage,3,3,3,7.08043,8.7326,2.3644,2.0421,9.76075,1.7198,17.1571,1.7198,17.1571
+novel_le30,emprot,tm_score_fns,"TM-score, fragment-agnostic",3,3,3,0.9892,0.00787909,0.9868,0.9848,0.9924,0.9828,0.998,0.9828,0.998
+novel_le30,emprot,ca_match_ff,"C-alpha match, model in its own frame (%)",3,3,3,35.1633,26.4983,42.295,24.062,49.8305,5.829,57.366,5.829,57.366
+novel_le30,emprot,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",3,3,3,99.553,0.775093,100,99.329,100.001,98.658,100.001,98.658,100.001
+novel_le30,emprot,ca_found,Deposited residues found (%),3,3,3,99.5667,0.750555,100,99.35,100,98.7,100,98.7,100
+novel_le30,emprot,own_ca_match,"C-alpha match, own count (%)",3,3,3,35.6673,27.0788,42.295,24.0925,50.556,5.89,58.817,5.89,58.817
+novel_le30,e3,tm_score,TM-score,3,2,2,0.97395,0.00841457,0.97395,0.970975,0.976925,0.968,0.9799,0.968,0.9799
+novel_le30,e3,aligned_ca_length,Aligned C-alpha length,3,2,2,383.5,193.04,383.5,315.25,451.75,247,520,247,520
+novel_le30,e3,seq_identity,Sequence identity of aligned residues (%),3,2,2,98.95,0.919239,98.95,98.625,99.275,98.3,99.6,98.3,99.6
+novel_le30,e3,ca_rmsd,C-alpha RMSD of aligned residues (A),3,2,2,1.165,0.459619,1.165,1.0025,1.3275,0.84,1.49,0.84,1.49
+novel_le30,e3,ca_match,C-alpha match (%),3,2,2,82.8955,20.8349,82.8955,75.5292,90.2618,68.163,97.628,68.163,97.628
+novel_le30,e3,seq_match,Sequence match (%),3,2,2,96,5.09117,96,94.2,97.8,92.4,99.6,92.4,99.6
+novel_le30,e3,ca_quality,C-alpha quality score (%),3,2,2,98.0795,2.71741,98.0795,97.1188,99.0403,96.158,100.001,96.158,100.001
+novel_le30,e3,coverage,Residue coverage,3,2,2,1.2175,0.273226,1.2175,1.1209,1.3141,1.0243,1.4107,1.0243,1.4107
+novel_le30,e3,tm_score_fns,"TM-score, fragment-agnostic",3,2,2,0.9761,0.00537401,0.9761,0.9742,0.978,0.9723,0.9799,0.9723,0.9799
+novel_le30,e3,ca_match_ff,"C-alpha match, model in its own frame (%)",3,2,2,82.698,20.5556,82.698,75.4305,89.9655,68.163,97.233,68.163,97.233
+novel_le30,e3,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",3,2,2,97.877,2.43103,97.877,97.0175,98.7365,96.158,99.596,96.158,99.596
+novel_le30,e3,ca_found,Deposited residues found (%),3,2,2,98.1,2.68701,98.1,97.15,99.05,96.2,100,96.2,100
+novel_le30,e3,own_ca_match,"C-alpha match, own count (%)",3,2,2,98.2505,0.796909,98.2505,97.9688,98.5322,97.687,98.814,97.687,98.814
+mica_nodock,mica,tm_score,TM-score,20,8,8,0.935925,0.045598,0.9355,0.91175,0.963325,0.8557,0.9942,0.9062,0.96445
+mica_nodock,mica,aligned_ca_length,Aligned C-alpha length,20,8,8,468.75,139.235,491.5,409.5,544.5,206,653,372.25,553.125
+mica_nodock,mica,seq_identity,Sequence identity of aligned residues (%),20,8,8,98.2875,2.51762,99.15,98.4,99.575,92.3,100,96.4375,99.4875
+mica_nodock,mica,ca_rmsd,C-alpha RMSD of aligned residues (A),20,8,8,1.18,0.632546,1.12,0.7125,1.5075,0.41,2.25,0.78875,1.595
+mica_nodock,mica,ca_match,C-alpha match (%),20,8,8,97.18,1.95092,96.6915,96.1103,98.8445,94.156,100,95.8949,98.4911
+mica_nodock,mica,seq_match,Sequence match (%),20,8,8,95.8625,5.23639,97.5,95.45,98.675,83.6,100,92.025,98.5125
+mica_nodock,mica,ca_quality,C-alpha quality score (%),20,8,8,95.8214,3.27008,95.406,94.174,98.4368,91.482,100,93.7396,97.9307
+mica_nodock,mica,coverage,Residue coverage,20,8,8,0.986112,0.0306314,0.9906,0.976175,0.9967,0.927,1.0358,0.96571,1.0052
+mica_nodock,mica,tm_score_fns,"TM-score, fragment-agnostic",20,8,8,0.95775,0.0285548,0.95265,0.94115,0.982325,0.9168,0.9942,0.939763,0.976487
+mica_nodock,mica,ca_match_ff,"C-alpha match, model in its own frame (%)",20,8,8,97.128,1.98844,96.5645,96.1103,98.8445,93.994,100,95.8709,98.3872
+mica_nodock,mica,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",20,8,8,95.7706,3.30969,95.406,93.988,98.4368,91.324,100,93.6469,97.8982
+mica_nodock,mica,ca_found,Deposited residues found (%),20,8,8,95.8125,3.25552,95.4,94.15,98.4,91.5,100,93.725,97.9125
+mica_nodock,mica,own_ca_match,"C-alpha match, own count (%)",20,8,8,98.158,1.50608,98.2205,96.8217,99.4963,96.171,100,97.1776,99.1154
+mica_nodock,modelangelo,tm_score,TM-score,20,19,19,0.794979,0.254585,0.9089,0.666,0.99415,0.2367,0.9989,0.678078,0.899238
+mica_nodock,modelangelo,aligned_ca_length,Aligned C-alpha length,20,19,19,324.895,163.201,306,179,467.5,125,681,256.259,397.158
+mica_nodock,modelangelo,seq_identity,Sequence identity of aligned residues (%),20,19,19,94.8579,17.8717,99.5,98.3,99.9,21.3,100,86.2579,99.4105
+mica_nodock,modelangelo,ca_rmsd,C-alpha RMSD of aligned residues (A),20,19,19,0.774737,0.650926,0.63,0.385,0.945,0.16,3.06,0.533671,1.10212
+mica_nodock,modelangelo,ca_match,C-alpha match (%),20,19,19,71.7819,35.921,91.065,47.9655,98.529,4.193,100,55.068,86.6357
+mica_nodock,modelangelo,seq_match,Sequence match (%),20,19,19,93.9895,20.3781,98.8,98.1,99.85,10.1,100,84.3474,99.1579
+mica_nodock,modelangelo,ca_quality,C-alpha quality score (%),20,19,19,87.9235,15.6194,96.683,80.468,99.4995,56.705,100,80.8764,94.2668
+mica_nodock,modelangelo,coverage,Residue coverage,20,19,19,3.48084,6.12537,1.0148,0.88715,2.0638,0.6009,23.8497,1.26151,6.5707
+mica_nodock,modelangelo,tm_score_fns,"TM-score, fragment-agnostic",20,19,19,0.890258,0.138433,0.9632,0.81685,0.99435,0.5917,0.9989,0.826888,0.946978
+mica_nodock,modelangelo,ca_match_ff,"C-alpha match, model in its own frame (%)",20,19,19,72.6226,36.5015,91.065,47.9655,98.529,0,100,55.8213,87.3
+mica_nodock,modelangelo,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",20,19,19,83.8941,24.5458,96.365,76.427,99.43,0,100,71.7156,93.1391
+mica_nodock,modelangelo,ca_found,Deposited residues found (%),20,19,19,87.9316,15.6169,96.7,80.5,99.5,56.7,100,80.7472,94.4476
+mica_nodock,modelangelo,own_ca_match,"C-alpha match, own count (%)",20,19,19,72.6406,35.9983,91.753,48.297,99.2795,4.193,100,56.3032,87.4724
+mica_nodock,emodelx,tm_score,TM-score,20,18,18,0.935056,0.0501121,0.93605,0.90675,0.982125,0.841,0.9944,0.912316,0.956912
+mica_nodock,emodelx,aligned_ca_length,Aligned C-alpha length,20,18,18,405.5,140.239,427.5,276,501.25,170,653,343.61,467
+mica_nodock,emodelx,seq_identity,Sequence identity of aligned residues (%),20,18,18,93.4611,16.4069,98.65,96.35,99.6,29.9,100,85,98.5444
+mica_nodock,emodelx,ca_rmsd,C-alpha RMSD of aligned residues (A),20,18,18,1.31056,0.811618,1.025,0.775,1.655,0.44,3.2,0.973889,1.69279
+mica_nodock,emodelx,ca_match,C-alpha match (%),20,18,18,83.0008,27.0818,94.051,90.1153,97.627,12.549,100,69.6809,93.9325
+mica_nodock,emodelx,seq_match,Sequence match (%),20,18,18,90.6778,16.3946,97.4,87.325,99.375,31.1,100,82.3888,96.45
+mica_nodock,emodelx,ca_quality,C-alpha quality score (%),20,18,18,91.6239,12.5526,94.6675,91.429,98.1305,47.189,100,85.36,96.1711
+mica_nodock,emodelx,coverage,Residue coverage,20,18,18,1.4999,1.42614,1.01235,0.9831,1.04038,0.9419,5.9609,1.00437,2.24944
+mica_nodock,emodelx,tm_score_fns,"TM-score, fragment-agnostic",20,18,18,0.957839,0.0280509,0.95225,0.934925,0.985,0.9054,0.9944,0.945189,0.970145
+mica_nodock,emodelx,ca_match_ff,"C-alpha match, model in its own frame (%)",20,18,18,71.6284,38.682,92.252,56.7805,97.1118,0,100,53.0581,87.9953
+mica_nodock,emodelx,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",20,18,18,76.8784,33.3595,92.8705,59.328,96.5907,0,100,60.8968,90.3099
+mica_nodock,emodelx,ca_found,Deposited residues found (%),20,18,18,94.2444,5.8796,94.65,92.225,98.15,74.8,100,91.35,96.5222
+mica_nodock,emodelx,own_ca_match,"C-alpha match, own count (%)",20,18,18,87.0127,25.7823,96.7255,93.012,98.4925,13.86,100,74.0185,96.6926
+mica_nodock,emprot,tm_score,TM-score,20,19,19,0.959321,0.0745001,0.9821,0.95515,0.9924,0.6675,0.9988,0.922,0.9832
+mica_nodock,emprot,aligned_ca_length,Aligned C-alpha length,20,19,19,400.158,150.344,393,260,513,173,678,332.946,466.263
+mica_nodock,emprot,seq_identity,Sequence identity of aligned residues (%),20,19,19,94.7316,16.0872,99.5,97.5,100,29.2,100,86.8421,99.2053
+mica_nodock,emprot,ca_rmsd,C-alpha RMSD of aligned residues (A),20,19,19,1.02316,0.722342,0.92,0.41,1.3,0.24,2.83,0.727355,1.36368
+mica_nodock,emprot,ca_match,C-alpha match (%),20,19,19,55.0066,33.9018,57.366,21.8075,90.25,3.983,100,40.0671,69.3548
+mica_nodock,emprot,seq_match,Sequence match (%),20,19,19,93.9421,15.8114,98.5,96.5,99.7,30.5,100,86.1999,98.6263
+mica_nodock,emprot,ca_quality,C-alpha quality score (%),20,19,19,93.8585,12.3404,98.2,94.591,99.6605,48.128,100.001,87.6555,98.1181
+mica_nodock,emprot,coverage,Residue coverage,20,19,19,4.27028,6.33214,1.4473,1.07635,4.59425,0.9951,25.1098,1.9719,7.37588
+mica_nodock,emprot,tm_score_fns,"TM-score, fragment-agnostic",20,19,19,0.979126,0.0205616,0.9859,0.9751,0.9927,0.9216,0.9988,0.969484,0.987537
+mica_nodock,emprot,ca_match_ff,"C-alpha match, model in its own frame (%)",20,19,19,54.7991,34.2403,57.366,21.85,90.25,3.983,100,39.4382,69.5462
+mica_nodock,emprot,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",20,19,19,92.4696,15.5773,98.2,94.9395,99.6605,48.502,100.001,84.7676,98.1076
+mica_nodock,emprot,ca_found,Deposited residues found (%),20,19,19,96.4,5.43712,98.2,95.35,99.65,76.8,100,93.6578,98.3263
+mica_nodock,emprot,own_ca_match,"C-alpha match, own count (%)",20,19,19,58.5845,35.3011,67.588,22.9115,92.322,3.983,100,42.8778,73.7009
+mica_nodock,e3,tm_score,TM-score,20,15,15,0.86316,0.138076,0.9073,0.7665,0.9686,0.5989,0.9828,0.793839,0.926047
+mica_nodock,e3,aligned_ca_length,Aligned C-alpha length,20,15,15,363.067,146.071,309,252.5,469.5,173,682,294.732,437.935
+mica_nodock,e3,seq_identity,Sequence identity of aligned residues (%),20,15,15,93.4333,8.89837,98.3,86.2,99.75,75.1,100,88.7933,97.5333
+mica_nodock,e3,ca_rmsd,C-alpha RMSD of aligned residues (A),20,15,15,1.81133,1.01387,1.44,1.055,2.395,0.84,4.13,1.34933,2.33933
+mica_nodock,e3,ca_match,C-alpha match (%),20,15,15,83.0669,13.7353,80.882,69.213,96.885,62.085,99.029,76.3014,89.6147
+mica_nodock,e3,seq_match,Sequence match (%),20,15,15,86.8133,16.7511,96,75.55,98.35,51.4,100,77.9933,94.4937
+mica_nodock,e3,ca_quality,C-alpha quality score (%),20,15,15,89.2979,11.194,91.998,80.033,98.855,68.766,100.001,83.5723,94.5308
+mica_nodock,e3,coverage,Residue coverage,20,15,15,1.08843,0.139063,1.0302,0.99705,1.15915,0.9193,1.4107,1.02627,1.16078
+mica_nodock,e3,tm_score_fns,"TM-score, fragment-agnostic",20,15,15,0.900987,0.0902124,0.9325,0.8404,0.97075,0.69,0.9829,0.855073,0.94214
+mica_nodock,e3,ca_match_ff,"C-alpha match, model in its own frame (%)",20,15,15,72.2053,32.128,79.756,67.464,96.8765,0,99.029,55.3424,86.1486
+mica_nodock,e3,ca_quality_ff,"C-alpha quality score, model in its own frame (%)",20,15,15,76.9977,33.2031,91.808,73.26,98.782,0,99.998,58.6498,91.0239
+mica_nodock,e3,ca_found,Deposited residues found (%),20,15,15,89.3067,11.1848,92,80.05,98.85,68.8,100,83.6932,94.4
+mica_nodock,e3,own_ca_match,"C-alpha match, own count (%)",20,15,15,92.0975,11.3699,96.897,94.25,98.145,62.559,100,85.8822,97.1186

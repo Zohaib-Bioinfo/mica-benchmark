@@ -1,0 +1,36 @@
+2026-10-26 11:52:22 - INFO - PHENIX DOCKING TOOL - SESSION STARTED
+2026-10-26 11:52:22 - INFO - Timestamp: 20261026_115222
+2026-10-26 11:52:22 - INFO - Testing Phenix environment...
+2026-10-26 11:52:22 - INFO - ✓ Phenix environment activated successfully
+2026-10-26 11:52:22 - INFO - ✓ phenix.dock_in_map found at: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+2026-10-26 11:52:22 - INFO - STARTING DOCKING PROCESS
+2026-10-26 11:52:22 - INFO - Density map: /tmp/mica_pilot/MICA/input/9ZLH/emd_74403.map
+2026-10-26 11:52:22 - INFO - Contour level: 0.8
+2026-10-26 11:52:22 - INFO - Resolution: 2.14 Å
+2026-10-26 11:52:22 - INFO - FASTA file: /tmp/mica_pilot/MICA/input/9ZLH/9zlh.fasta
+2026-10-26 11:52:22 - INFO - Dock type: domainwise
+2026-10-26 11:52:22 - INFO - Processing initial map with contour level 0.8
+2026-10-26 11:52:22 - INFO - Initial map processed and saved to: /tmp/mica_pilot/MICA/input/9ZLH/temp_maps/initial_processed.mrc
+2026-10-26 11:52:22 - INFO - PHENIX COMMAND for fold_9zlh_1_model_0_chain_A_domain_01.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9ZLH/AF3_domains/fold_9zlh_1_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9ZLH/temp_maps/initial_processed.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9ZLH/AF3_docked_models/fold_9zlh_1_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9ZLH/9zlh.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 12:07:55 - INFO - PHENIX SUCCESS: Docking completed for fold_9zlh_1_model_0_chain_A_domain_01.pdb (attempt 1, res6_quick, 933 s, local CC 0.14)
+2026-10-26 12:07:55 - INFO - Domain break detected: gap of 23 between residues 87 and 110
+2026-10-26 12:07:55 - INFO - Identified 2 domains in fold_9zlh_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 12:07:55 - INFO - Domain 1 (residues 1-87): 348 atoms, 139 selected for masking, centroid at [64.79, 105.70, 108.40]
+2026-10-26 12:07:55 - INFO - Domain 2 (residues 110-121): 48 atoms, 19 selected for masking, centroid at [68.02, 117.08, 95.55]
+2026-10-26 12:08:00 - INFO - Successfully processed 2 domains from fold_9zlh_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 12:08:00 - INFO - PHENIX COMMAND for fold_9zlh_1_model_0_chain_A_domain_02.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9ZLH/AF3_domains/fold_9zlh_1_model_0_chain_A_domain_02.pdb map_file=/tmp/mica_pilot/MICA/input/9ZLH/temp_maps/map_after_fold_9zlh_1_model_0_chain_A_domain_01.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9ZLH/AF3_docked_models/fold_9zlh_1_model_0_chain_A_domain_02_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9ZLH/9zlh.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 12:21:48 - INFO - PHENIX SUCCESS: Docking completed for fold_9zlh_1_model_0_chain_A_domain_02.pdb (attempt 1, res6_quick, 828 s, local CC 0.05)
+2026-10-26 12:21:48 - INFO - Domain break detected: gap of 13 between residues 109 and 122
+2026-10-26 12:21:48 - INFO - Identified 2 domains in fold_9zlh_1_model_0_chain_A_domain_02_docked.pdb
+2026-10-26 12:21:48 - INFO - Domain 1 (residues 88-109): 88 atoms, 35 selected for masking, centroid at [109.36, 117.04, 96.81]
+2026-10-26 12:21:48 - INFO - Domain 2 (residues 122-206): 340 atoms, 136 selected for masking, centroid at [103.40, 137.78, 111.65]
+2026-10-26 12:21:52 - INFO - Successfully processed 2 domains from fold_9zlh_1_model_0_chain_A_domain_02_docked.pdb
+2026-10-26 12:21:52 - INFO - FINAL SUMMARY:
+2026-10-26 12:21:52 - INFO - Total: 2, Success: 2, Failed: 0
+2026-10-26 12:21:52 - INFO - Processing docked AF3 structures from: /tmp/mica_pilot/MICA/input/9ZLH/AF3_docked_models
+2026-10-26 12:21:52 - INFO - Found 2 PDB files to combine
+2026-10-26 12:21:52 - INFO - Starting combination of 2 PDB files
+2026-10-26 12:21:52 - INFO - ✓ Added 1 chain from fold_9zlh_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 12:21:52 - INFO - ✓ Added 1 chain from fold_9zlh_1_model_0_chain_A_domain_02_docked.pdb
+2026-10-26 12:21:52 - INFO - ✓ Combined PDB saved to: 9ZLH_af3_docked.pdb
+2026-10-26 12:21:52 - INFO - ✓ Total chains: 2, Files processed: 2

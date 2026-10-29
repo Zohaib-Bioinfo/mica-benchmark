@@ -1,0 +1,7 @@
+model,attempt,setting,settings,timeout_s,seconds,rc,timed_out,skipped,docked,local_cc,log
+fold_9wtx_1_model_0_chain_A_domain_01.pdb,1,no_mr_quick,"{""dock_with_mr"": ""False"", ""quick"": ""True""}",2700,2700,-9,True,False,False,,phenix_fold_9wtx_1_model_0_chain_A_domain_01.pdb_20261024_091417.log
+fold_9wtx_1_model_0_chain_A_domain_01.pdb,2,no_mr_thorough,"{""dock_with_mr"": ""False"", ""quick"": ""False""}",3600,0,,False,True,False,,
+fold_9wtx_1_model_0_chain_A_domain_02.pdb,1,no_mr_quick,"{""dock_with_mr"": ""False"", ""quick"": ""True""}",2700,2700,-9,True,False,False,,phenix_fold_9wtx_1_model_0_chain_A_domain_02.pdb_20261024_091417.log
+fold_9wtx_1_model_0_chain_A_domain_02.pdb,2,no_mr_thorough,"{""dock_with_mr"": ""False"", ""quick"": ""False""}",3600,0,,False,True,False,,
+fold_9wtx_1_model_0_chain_A_domain_03.pdb,1,no_mr_quick,"{""dock_with_mr"": ""False"", ""quick"": ""True""}",2700,2700,-9,True,False,False,,phenix_fold_9wtx_1_model_0_chain_A_domain_03.pdb_20261024_091417.log
+fold_9wtx_1_model_0_chain_A_domain_03.pdb,2,no_mr_thorough,"{""dock_with_mr"": ""False"", ""quick"": ""False""}",3600,0,,False,True,False,,

@@ -1,0 +1,116 @@
+# Job start at 2026-10-23 12:44:05.197748
+# Output dir set to /tmp/mica_pilot/runs/emprot/9OC0
+# Temp   dir set to /tmp/mica_pilot/runs/emprot/9OC0/temp
+Write formatted seq to /tmp/mica_pilot/runs/emprot/9OC0/temp/format_seq.fasta
+User input 4 single-chain structure templates
+Using single-chain structure as templates
+Rewrite template 0 from single-chain to /tmp/mica_pilot/runs/emprot/9OC0/temp/chain_templs/templ_0.pdb
+Rewrite template 1 from single-chain to /tmp/mica_pilot/runs/emprot/9OC0/temp/chain_templs/templ_1.pdb
+Rewrite template 2 from single-chain to /tmp/mica_pilot/runs/emprot/9OC0/temp/chain_templs/templ_2.pdb
+Rewrite template 3 from single-chain to /tmp/mica_pilot/runs/emprot/9OC0/temp/chain_templs/templ_3.pdb
+# Has chain   template = True
+# has complex template = False
+# No complex template, use chain from single as template
+# Rescale voxel size from [0.84 0.84 0.84] to [1. 1. 1.], shift origin by None
+# Write formated map to /tmp/mica_pilot/runs/emprot/9OC0/temp/format_map.mrc
+# Time consupmtion 19.6319 seconds. Done preprocess
+# Script dir is /tmp/mica_pilot/src_emprot/emprot/pipeline
+# Specify model path to /tmp/mica_pilot/src_emprot/emprot/weights
+# Making directory /tmp/mica_pilot/runs/emprot/9OC0/temp/ncac
+# Start inference
+# Select map contour at 0.000001
+# Running on device cuda:0
+# Load map data from /tmp/mica_pilot/runs/emprot/9OC0/temp/format_map.mrc
+# Map dimensions = [369 369 369]
+# Start processing
+
+|##--------------------------------------| 5% 40.7580 seconds elapsed
+
+|####------------------------------------| 10% 78.8942 seconds elapsed
+
+|######----------------------------------| 15% 117.5979 seconds elapsed
+
+|########--------------------------------| 20% 159.1168 seconds elapsed
+
+|##########------------------------------| 25% 198.4301 seconds elapsed
+
+|############----------------------------| 30% 238.0387 seconds elapsed
+
+|##############--------------------------| 35% 277.9051 seconds elapsed
+
+|################------------------------| 40% 320.1287 seconds elapsed
+
+|##################----------------------| 45% 360.0122 seconds elapsed
+
+|####################--------------------| 50% 400.1087 seconds elapsed
+
+|######################------------------| 55% 442.4906 seconds elapsed
+
+|########################----------------| 60% 482.4655 seconds elapsed
+
+|##########################--------------| 65% 522.5956 seconds elapsed
+
+|############################------------| 70% 562.5650 seconds elapsed
+
+|##############################----------| 75% 604.8967 seconds elapsed
+
+|################################--------| 80% 644.9207 seconds elapsed
+
+|##################################------| 85% 684.8567 seconds elapsed
+
+|####################################----| 90% 727.1698 seconds elapsed
+
+|######################################--| 95% 767.2133 seconds elapsed
+
+|########################################| 100% 806.9420 seconds elapsed
+# Write map to /tmp/mica_pilot/runs/emprot/9OC0/temp/ncac/n.mrc
+# Write map to /tmp/mica_pilot/runs/emprot/9OC0/temp/ncac/ca.mrc
+# Write map to /tmp/mica_pilot/runs/emprot/9OC0/temp/ncac/c.mrc
+# Write map to /tmp/mica_pilot/runs/emprot/9OC0/temp/ncac/mc.mrc
+# Done  inference
+# Start inference
+# Select map contour at 0.000001
+# Running on device cuda:0
+# Load map data from /tmp/mica_pilot/runs/emprot/9OC0/temp/format_map.mrc
+# Map dimensions = [369 369 369]
+# Start processing
+
+|##--------------------------------------| 5% 67.4900 seconds elapsed
+
+|####------------------------------------| 10% 116.4166 seconds elapsed
+
+|######----------------------------------| 15% 165.6485 seconds elapsed
+
+|########--------------------------------| 20% 218.0535 seconds elapsed
+
+|##########------------------------------| 25% 267.0983 seconds elapsed
+
+|############----------------------------| 30% 316.7529 seconds elapsed
+
+|##############--------------------------| 35% 365.7993 seconds elapsed
+
+|################------------------------| 40% 417.9340 seconds elapsed
+
+|##################----------------------| 45% 467.3401 seconds elapsed
+
+|####################--------------------| 50% 516.4588 seconds elapsed
+
+|######################------------------| 55% 569.1272 seconds elapsed
+
+|########################----------------| 60% 618.2809 seconds elapsed
+
+|##########################--------------| 65% 667.7455 seconds elapsed
+
+|############################------------| 70% 716.9049 seconds elapsed
+
+|##############################----------| 75% 768.9939 seconds elapsed
+
+|################################--------| 80% 818.4707 seconds elapsed
+
+|##################################------| 85% 867.3421 seconds elapsed
+
+|####################################----| 90% 919.8041 seconds elapsed
+
+|######################################--| 95% 969.2707 seconds elapsed
+
+|########################################| 100% 1019.1663 seconds elapsed

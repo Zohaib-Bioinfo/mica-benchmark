@@ -1,0 +1,24 @@
+2026-10-25 20:29:00 - INFO - PHENIX DOCKING TOOL - SESSION STARTED
+2026-10-25 20:29:00 - INFO - Timestamp: 20261025_202900
+2026-10-25 20:29:00 - INFO - Testing Phenix environment...
+2026-10-25 20:29:00 - INFO - ✓ Phenix environment activated successfully
+2026-10-25 20:29:00 - INFO - ✓ phenix.dock_in_map found at: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+2026-10-25 20:29:00 - INFO - STARTING DOCKING PROCESS
+2026-10-25 20:29:00 - INFO - Density map: /tmp/mica_pilot/MICA/input/9WQ6/emd_66160.map
+2026-10-25 20:29:00 - INFO - Contour level: 0.2
+2026-10-25 20:29:00 - INFO - Resolution: 3.4 Å
+2026-10-25 20:29:00 - INFO - FASTA file: /tmp/mica_pilot/MICA/input/9WQ6/9wq6.fasta
+2026-10-25 20:29:00 - INFO - Dock type: domainwise
+2026-10-25 20:29:00 - INFO - Processing initial map with contour level 0.2
+2026-10-25 20:29:01 - INFO - Initial map processed and saved to: /tmp/mica_pilot/MICA/input/9WQ6/temp_maps/initial_processed.mrc
+2026-10-25 20:29:01 - INFO - PHENIX COMMAND for fold_9wq6_1_model_0_chain_A_domain_01.pdb (benchmark attempt 1 of 3, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9WQ6/AF3_domains/fold_9wq6_1_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9WQ6/temp_maps/initial_processed.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9WQ6/AF3_docked_models/fold_9wq6_1_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9WQ6/9wq6.fasta dock_with_mr=False quick=True resolution=6.0 rigid_body_refinement_resolution=3.4 density_radius=20.40'
+2026-10-25 20:29:03 - ERROR - PHENIX FAILED: fold_9wq6_1_model_0_chain_A_domain_01.pdb - return code 1 (attempt 1, res6_quick)
+2026-10-25 20:29:03 - ERROR - PHENIX ERROR: raise RuntimeError(
+2026-10-25 20:29:03 - INFO - PHENIX COMMAND for fold_9wq6_1_model_0_chain_A_domain_01.pdb (benchmark attempt 2 of 3, res10_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9WQ6/AF3_domains/fold_9wq6_1_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9WQ6/temp_maps/initial_processed.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9WQ6/AF3_docked_models/fold_9wq6_1_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9WQ6/9wq6.fasta dock_with_mr=False quick=True resolution=10.0 rigid_body_refinement_resolution=3.4 density_radius=20.40'
+2026-10-25 20:29:04 - ERROR - PHENIX FAILED: fold_9wq6_1_model_0_chain_A_domain_01.pdb - return code 1 (attempt 2, res10_quick)
+2026-10-25 20:29:04 - ERROR - PHENIX ERROR: raise RuntimeError(
+2026-10-25 20:29:04 - INFO - PHENIX COMMAND for fold_9wq6_1_model_0_chain_A_domain_01.pdb (benchmark attempt 3 of 3, plain_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9WQ6/AF3_domains/fold_9wq6_1_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9WQ6/temp_maps/initial_processed.mrc nproc=2 resolution=3.4 pdb_out=/tmp/mica_pilot/MICA/input/9WQ6/AF3_docked_models/fold_9wq6_1_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9WQ6/9wq6.fasta dock_with_mr=False quick=True'
+2026-10-25 21:14:04 - ERROR - PHENIX TIMEOUT: Docking for fold_9wq6_1_model_0_chain_A_domain_01.pdb took longer than 2700 s (attempt 3, plain_quick)
+2026-10-25 21:14:04 - INFO - FINAL SUMMARY:
+2026-10-25 21:14:04 - INFO - Total: 1, Success: 0, Failed: 1
+2026-10-25 21:14:04 - WARNING - Failed models: ['fold_9wq6_1_model_0_chain_A_domain_01.pdb']

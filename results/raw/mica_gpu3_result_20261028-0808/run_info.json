@@ -1,0 +1,289 @@
+{
+  "notebook": "mica_gpu3",
+  "started_utc": "2026-10-28T05:02:51.176792+00:00",
+  "finished_utc": "2026-10-28T08:08:44.207848+00:00",
+  "elapsed_minutes": 186,
+  "problem": "",
+  "complete": true,
+  "platform": "kaggle",
+  "python": "3.13.15",
+  "os": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+  "cpu_cores": 4,
+  "ram_gb": 31.3,
+  "state": {
+    "ok": true,
+    "problem": "",
+    "t0": 1793163771.1767898,
+    "started": "2026-10-28T05:02:51.176792+00:00",
+    "phenix_env": "/tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh",
+    "phenix_version": "------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1",
+    "installer_sha256": "e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885",
+    "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+    "usalign_version": "* US-align (Version 20261012)                                      *",
+    "weights": {
+      "url": "https://zenodo.org/records/15756654/files/trained_models.tar.gz?download=1",
+      "size_bytes": 154685007,
+      "md5": "a952451652294ca299ff5636f79524f7",
+      "md5_listed_by_zenodo": "a952451652294ca299ff5636f79524f7",
+      "file": "/tmp/mica_pilot/MICA/trained_models/MICA_best_model.pth",
+      "file_size_bytes": 169779898,
+      "file_sha256": "b95fc62cb3698da5492a8c9ba4f7a2f194b319dcf418d037fdf15faa0b8e4d43"
+    },
+    "env": {
+      "python_version": "3.8.20",
+      "uv_version": "0.13.1",
+      "packages": 171,
+      "differences_to_pinned_list": []
+    },
+    "entries": {
+      "9OC0": {
+        "entry": "9OC0",
+        "status": "failed",
+        "failed_step": "3_build",
+        "note": "timeout after 7200 s; the output of 3_build was not written",
+        "steps": {
+          "3_build": {
+            "peak_gpu_mb": 4455,
+            "peak_gpu_util_pct": 100,
+            "min_ram_available_gb": 12.73,
+            "samples": 1427,
+            "rc": -9,
+            "seconds": 7201,
+            "timed_out": true,
+            "limit_s": 7200,
+            "started_utc": "2026-10-28T06:08:38Z",
+            "device": "cuda"
+          }
+        },
+        "models": [
+          {
+            "status": "ok",
+            "note": "",
+            "tm_score": 0.786,
+            "tm_score_pred_norm": 0.4012,
+            "ca_rmsd": 0.68,
+            "aligned_ca_length": 100,
+            "seq_identity": 1.0,
+            "pred_residues": 246,
+            "native_residues": 124,
+            "coverage": 0.4805,
+            "entry": "9OC0",
+            "model_kind": "mica_init_ca",
+            "model_file": "70305_9oc0_MICA(init)_ca_model.pdb",
+            "chain_comparison": "ok"
+          },
+          {
+            "status": "ok",
+            "note": "",
+            "tm_score": 0.3268,
+            "tm_score_pred_norm": 0.245,
+            "ca_rmsd": 3.33,
+            "aligned_ca_length": 53,
+            "seq_identity": 0.057,
+            "pred_residues": 174,
+            "native_residues": 124,
+            "coverage": 0.3398,
+            "entry": "9OC0",
+            "model_kind": "af3_docked",
+            "model_file": "9OC0_af3_docked.pdb",
+            "chain_comparison": "ok"
+          }
+        ],
+        "lane": 0,
+        "stages": [
+          3
+        ],
+        "device": "cuda",
+        "started_utc": "2026-10-28T05:16:15Z",
+        "map_sha256": "7f01ae5544d71a4b0331e7d6d5c57273004ddacb76f087883342a13afbe29f48",
+        "contour": 0.066,
+        "resolution": 2.97,
+        "parameters_from": "emdb_extractor.py",
+        "resolution_in_table": "2.97",
+        "restored_from": "/kaggle/input/notebooks/faltuaccounts/mica-dock3-b/mica_state/9OC0",
+        "grid": [
+          440,
+          440,
+          440
+        ],
+        "voxel_A": [
+          0.8399999737739563,
+          0.8399999737739563,
+          0.8399999737739563
+        ],
+        "box_A": [
+          369.6,
+          369.6,
+          369.6
+        ],
+        "resampled_grid": [
+          370,
+          370,
+          370
+        ],
+        "windows": 512,
+        "reflections_M": 4.036,
+        "dock_profile": "pass3",
+        "docking": {
+          "domains": 7,
+          "docked": 3,
+          "seconds": ""
+        },
+        "dock_mode": "partial",
+        "models_kept": [
+          "70305_9oc0_MICA(init)_ca_model.pdb"
+        ],
+        "seconds": 10348
+      },
+      "9VI4": {
+        "entry": "9VI4",
+        "status": "failed",
+        "failed_step": "3_build",
+        "note": "exit code -9; the output of 3_build was not written",
+        "steps": {
+          "3_build": {
+            "peak_gpu_mb": 4529,
+            "peak_gpu_util_pct": 100,
+            "min_ram_available_gb": 2.36,
+            "samples": 516,
+            "rc": -9,
+            "seconds": 2599,
+            "timed_out": false,
+            "limit_s": 7200,
+            "started_utc": "2026-10-28T05:25:19Z",
+            "device": "cuda"
+          }
+        },
+        "models": [
+          {
+            "status": "ok",
+            "note": "",
+            "tm_score": 0.9955,
+            "tm_score_pred_norm": 0.9955,
+            "ca_rmsd": 0.54,
+            "aligned_ca_length": 516,
+            "seq_identity": 1.0,
+            "pred_residues": 516,
+            "native_residues": 516,
+            "coverage": 1.0,
+            "entry": "9VI4",
+            "model_kind": "af3_model_0",
+            "model_file": "fold_9vi4_1_model_0.cif",
+            "chain_comparison": "ok"
+          }
+        ],
+        "lane": 1,
+        "stages": [
+          3
+        ],
+        "device": "cuda",
+        "started_utc": "2026-10-28T05:16:15Z",
+        "map_sha256": "645dccdc247631f8560a2afc7605f65700d09696ba7381561d2638bc3284e9e7",
+        "contour": 0.35,
+        "resolution": 1.8,
+        "parameters_from": "emdb_extractor.py",
+        "resolution_in_table": "1.8",
+        "restored_from": "/kaggle/input/notebooks/faltuaccounts/mica-dock3-b/mica_state/9VI4",
+        "grid": [
+          640,
+          640,
+          640
+        ],
+        "voxel_A": [
+          0.6572999954223633,
+          0.6572999954223633,
+          0.6572999954223633
+        ],
+        "box_A": [
+          420.7,
+          420.7,
+          420.7
+        ],
+        "resampled_grid": [
+          421,
+          421,
+          421
+        ],
+        "windows": 729,
+        "reflections_M": 26.735,
+        "dock_profile": "pass3",
+        "docking": {
+          "domains": 3,
+          "docked": 0,
+          "seconds": ""
+        },
+        "dock_mode": "none",
+        "models_kept": [],
+        "seconds": 3149
+      }
+    },
+    "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+    "cpu_facts": {
+      "os.cpu_count": 4,
+      "multiprocessing.cpu_count": 4,
+      "usable (sched_getaffinity)": 4,
+      "nproc": "4",
+      "cgroup v2 cpu.max": "400000 100000",
+      "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+      "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+    },
+    "complete": true
+  },
+  "mica_commit": "726d1bb14be04887a43b7f5aefcff0d843761d01",
+  "phenix_installer": "Phenix-2.2.1-6174-Linux-x86_64.sh",
+  "phenix_installer_sha256": "e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885",
+  "phenix_version_output": "------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1",
+  "usalign_commit": "746ad8a2a4dea9f317075cc482df0ecb5440bdea",
+  "usalign_version": "* US-align (Version 20261012)                                      *",
+  "input_sha256": {
+    "scripts/nbtools.py": "9bda95fce7f7fbe0c373e315740f555fc27942a08971ce2fe1b5cae6af6d748d",
+    "scripts/mica_inputs.py": "87b7f5e43b86671e09e673e8bb07abb20496ad92264528dfd9994b88bded417f",
+    "scripts/evaluate_models.py": "8c235732d2595f8ad2014d70a278b44097205aff2417c9b5761f55dfe4974250",
+    "scripts/mica_dock_driver.py": "c09a9bb23115c38d2dddd9a3c004b3ed53c2b0fb36bd5a8d4c217f1904e3d611",
+    "data/af3/af3_jobs.csv": "b43068ffed7e3843d0d9c5cfa509d8f1ba9900527a1a0cad9e74aa69573cd4b0",
+    "data/af3/af3_files_sha256.txt": "c131836802f9469c2073cc8c0bbb495e906854ffb223100cf30750714e2e3a4f",
+    "data/entries_2026.csv": "cb695bb04ef09bf48f8c2848f91a2580c0b3c15f2a8f1e580659d86f0097a5da",
+    "env/mica_requirements.txt": "2907179af22bde80f7b0b554740d3972a0cb62d407b0eb382c59a9b7916cc56a"
+  },
+  "weights": {
+    "url": "https://zenodo.org/records/15756654/files/trained_models.tar.gz?download=1",
+    "size_bytes": 154685007,
+    "md5": "a952451652294ca299ff5636f79524f7",
+    "md5_listed_by_zenodo": "a952451652294ca299ff5636f79524f7",
+    "file": "/tmp/mica_pilot/MICA/trained_models/MICA_best_model.pth",
+    "file_size_bytes": 169779898,
+    "file_sha256": "b95fc62cb3698da5492a8c9ba4f7a2f194b319dcf418d037fdf15faa0b8e4d43"
+  },
+  "batch_threshold": 1000000,
+  "stages": [
+    3
+  ],
+  "lanes": 3,
+  "program_3_device": "cuda",
+  "hours_setting": 4.2,
+  "dock_attempts": [
+    {
+      "name": "res6_quick",
+      "set": {
+        "dock_with_mr": "False",
+        "quick": "True"
+      },
+      "search_resolution": 6.0,
+      "timeout_s": 2400
+    },
+    {
+      "name": "res10_quick",
+      "set": {
+        "dock_with_mr": "False",
+        "quick": "True"
+      },
+      "search_resolution": 10.0,
+      "timeout_s": 1500
+    }
+  ],
+  "entries_in_this_notebook": [
+    "9OC0",
+    "9VI4"
+  ]
+}

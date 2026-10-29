@@ -1,0 +1,34 @@
+starting... emid: 68251, pdbid: 22fx
+You are using EModelX(+AF).
+We will replace your fasta sequence as AlphaFold sequence (or the most similar one in AFDB).
+AFDB searching...
+The process typically requires between 5 to 10 minutes to complete when no same search hits before.
+Waiting over 1000s would be recognized as search failed
+Replacing 22FX_1:
+	"MTTASPSQVRQNYHQDAEAAINRQINLELYASYVYLSMSCYFDRDDVALKNFAKYFLHQSHEEREHAEKLMKLQNQRGGRIFLQDIKKPDRDDWESGLNAMECALHLEKSVNQSLLELHKLATDKNDPHLCDFIETYYLSEQVKSIKELGDHVTNLRKMGAPEAGMAEYLFDKHTLGHGDES"
+as	"MTTASPSQVRQNYHQDAEAAINRQINLELYASYVYLSMSCYFDRDDVALKNFAKYFLHQSHEEREHAEKLMKLQNQRGGRIFLQDIKKPDRDDWESGLNAMECALHLEKSVNQSLLELHKLATDKNDPHLCDFIETYYLSEQVKSIKELGDHVTNLRKMGAPEAGMAEYLFDKHTLGHGDES"
+Check your fasta inputs, the fasta parser can only handle standard fasta inputs and only protein sequences would be parsed:
+Your sequence 1 name: 22FX_1, Chains that belong to this sequence:
+A 
+Your sequence: 
+MTTASPSQVRQNYHQDAEAAINRQINLELYASYVYLSMSCYFDRDDVALKNFAKYFLHQSHEEREHAEKLMKLQNQRGGRIFLQDIKKPDRDDWESGLNAMECALHLEKSVNQSLLELHKLATDKNDPHLCDFIETYYLSEQVKSIKELGDHVTNLRKMGAPEAGMAEYLFDKHTLGHGDES
+preprocessEM...
+preprocessEM finished in 5 seconds
+nnPred...
+nnPred finished in 158 seconds
+clustering...
+clustering finished in 13 seconds
+fragModeling...
+seq_free trace_num: 29
+fragModeling finished in 0 seconds
+seqStructAlignWithTemplate...
+traces:  8855
+seqStructAlignWithTemplate finished in 229 seconds
+initialModeling...
+initialModeling finished in 0 seconds
+gapThreading...
+0 / 2 172 182
+1 / 2 -1 10
+gapThreading finished in 2 seconds
+running pulchra...
+run_pulchra finished in 0 seconds

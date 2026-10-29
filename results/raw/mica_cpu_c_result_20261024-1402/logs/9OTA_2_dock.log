@@ -1,0 +1,64 @@
+
+🧬 Phenix Docking Tool for Cryo-EM Map
+================================================================================
+🔍 VALIDATING INPUTS...
+✅ Input validation passed
+
+
+🧬 PHENIX DOCKING TOOL
+⏰ Session started: 2026-10-24 07:04:40
+📄 Log file: /tmp/mica_pilot/MICA/input/9OTA/docking_logs/phenix_docking_20261024_070440.log
+
+================================================================================
+🔧 TESTING PHENIX ENVIRONMENT
+================================================================================
+✅ Phenix environment test PASSED
+   📍 dock_in_map location: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+
+================================================================================
+🎯 DOCKING PROCESS STARTING
+================================================================================
+📊 DOCKING PARAMETERS:
+   🗺️  Density map: emd_70828.map
+   📏 Contour level: 0.14
+   🔍 Resolution: 3.2 Å
+   🧬 FASTA file: 9ota.fasta
+   ⚙️  Dock type: domainwise
+   📁 Models directory: /tmp/mica_pilot/MICA/input/9OTA/AF3_domains
+   🎯 Found 2 models to dock
+
+🔄 Processing initial density map...
+✅ Initial map processing complete
+
+================================================================================
+🚀 STARTING ITERATIVE DOCKING
+================================================================================
+
+📍 [1/2] Processing: fold_9ota_1_model_0_chain_A_domain_01.pdb
+   🎯 Running Phenix dock_in_map...
+2026-10-24 07:49:41 - ERROR - PHENIX TIMEOUT: Docking for fold_9ota_1_model_0_chain_A_domain_01.pdb took longer than 2700 s (attempt 1, no_mr_quick)
+   ❌ Docking failed
+
+📍 [2/2] Processing: fold_9ota_1_model_0_chain_A_domain_02.pdb
+   🎯 Running Phenix dock_in_map...
+2026-10-24 08:34:41 - ERROR - PHENIX TIMEOUT: Docking for fold_9ota_1_model_0_chain_A_domain_02.pdb took longer than 2700 s (attempt 1, no_mr_quick)
+   ❌ Docking failed
+
+🧹 Cleaning up temporary files...
+✅ Cleaned up temporary directory
+
+================================================================================
+🏁 DOCKING COMPLETE
+================================================================================
+📊 Total models processed: 2
+✅ Successfully docked: 0
+❌ Failed: 2
+📁 Results saved to: /tmp/mica_pilot/MICA/input/9OTA/AF3_docked_models
+📄 Log files saved to: /tmp/mica_pilot/MICA/input/9OTA/docking_logs
+
+❌ Failed models:
+   • fold_9ota_1_model_0_chain_A_domain_01.pdb
+   • fold_9ota_1_model_0_chain_A_domain_02.pdb
+2026-10-24 08:34:41 - WARNING - Failed models: ['fold_9ota_1_model_0_chain_A_domain_01.pdb', 'fold_9ota_1_model_0_chain_A_domain_02.pdb']
+================================================================================
+

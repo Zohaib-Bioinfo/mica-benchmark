@@ -1,0 +1,77 @@
+
+🧬 Phenix Docking Tool for Cryo-EM Map
+================================================================================
+🔍 VALIDATING INPUTS...
+✅ Input validation passed
+
+
+🧬 PHENIX DOCKING TOOL
+⏰ Session started: 2026-10-25 19:45:11
+📄 Log file: /tmp/mica_pilot/MICA/input/26DK/docking_logs/phenix_docking_20261025_194511.log
+
+================================================================================
+🔧 TESTING PHENIX ENVIRONMENT
+================================================================================
+✅ Phenix environment test PASSED
+   📍 dock_in_map location: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+
+================================================================================
+🎯 DOCKING PROCESS STARTING
+================================================================================
+📊 DOCKING PARAMETERS:
+   🗺️  Density map: emd_80558.map
+   📏 Contour level: 1.3
+   🔍 Resolution: 3.5 Å
+   🧬 FASTA file: 26dk.fasta
+   ⚙️  Dock type: domainwise
+   📁 Models directory: /tmp/mica_pilot/MICA/input/26DK/AF3_domains
+   🎯 Found 2 models to dock
+
+🔄 Processing initial density map...
+✅ Initial map processing complete
+
+================================================================================
+🚀 STARTING ITERATIVE DOCKING
+================================================================================
+
+📍 [1/2] Processing: fold_26dk_1_model_0_chain_A_domain_01.pdb
+   🎯 Running Phenix dock_in_map...
+2026-10-25 19:45:13 - ERROR - PHENIX FAILED: fold_26dk_1_model_0_chain_A_domain_01.pdb - return code 1 (attempt 1, res6_quick)
+2026-10-25 19:45:13 - ERROR - PHENIX ERROR: raise RuntimeError(
+2026-10-25 19:45:14 - ERROR - PHENIX FAILED: fold_26dk_1_model_0_chain_A_domain_01.pdb - return code 1 (attempt 2, res10_quick)
+2026-10-25 19:45:14 - ERROR - PHENIX ERROR: raise RuntimeError(
+   🗺️  Updating density map...
+   ✅ Model docked successfully and map updated
+
+📍 [2/2] Processing: fold_26dk_1_model_0_chain_A_domain_02.pdb
+   🎯 Running Phenix dock_in_map...
+2026-10-25 19:53:06 - ERROR - PHENIX FAILED: fold_26dk_1_model_0_chain_A_domain_02.pdb - return code 1 (attempt 1, res6_quick)
+2026-10-25 19:53:06 - ERROR - PHENIX ERROR: raise RuntimeError(
+2026-10-25 19:53:07 - ERROR - PHENIX FAILED: fold_26dk_1_model_0_chain_A_domain_02.pdb - return code 1 (attempt 2, res10_quick)
+2026-10-25 19:53:07 - ERROR - PHENIX ERROR: raise RuntimeError(
+   🗺️  Updating density map...
+   ✅ Model docked successfully and map updated
+
+🧹 Cleaning up temporary files...
+✅ Cleaned up temporary directory
+
+================================================================================
+🏁 DOCKING COMPLETE
+================================================================================
+📊 Total models processed: 2
+✅ Successfully docked: 2
+❌ Failed: 0
+📁 Results saved to: /tmp/mica_pilot/MICA/input/26DK/AF3_docked_models
+📄 Log files saved to: /tmp/mica_pilot/MICA/input/26DK/docking_logs
+================================================================================
+
+
+================================================================================
+🔗 AF3 DOCKED STRUCTURES COMBINING
+================================================================================
+
+🎯 Combination Results:
+   ✅ Successfully combined: 2/2 files
+   🔗 Total chains: 2
+   📁 Output file: 26DK_af3_docked.pdb
+

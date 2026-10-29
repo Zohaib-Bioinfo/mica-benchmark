@@ -1,0 +1,199 @@
+\renewcommand{\thetable}{A\arabic{table}}
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{table}{0}\setcounter{figure}{0}
+
+\section{Tables and figures that the text refers to}\label{sec:appendix}
+This appendix holds the longer tables and the further figures. Every one of them is written by a script of the repository from the unpacked session outputs in \texttt{results/raw/} (Section~\ref{sec:repro}); the tables are \texttt{report/generated/tab\_*.tex} and the figures \texttt{report/figures/}. Tables and figures of the appendix are numbered A1, A2, \ldots
+
+\subsection{Methods and entries}
+Table~\ref{tab:screen} lists every method that the screen of the newer methods considered, Table~\ref{tab:flow} the filters that led to the pool of candidates, Table~\ref{tab:entries} the twenty entries and Table~\ref{tab:pins} the pinned versions.
+
+\begin{center}\small
+\captionof{table}{Screen of newer methods (spec decision~2). \emph{Included}: \emph{baseline}, the method under test or one of the two baselines of its paper; \emph{passed}, passed the screen (CryoAtom was then dropped by the first scope cut, Section~\ref{sec:screen}); \emph{reserve}, kept in reserve and not used; \emph{no}, excluded for the reason given. The reasons are the notes written at the time of the search (to 11~October 2026).}\label{tab:screen}
+\input{generated/tab_methods_screen.tex}
+\end{center}
+\addtocounter{table}{-1}% the longtable steps the table counter once more
+
+\begin{table}[tbp]
+\centering\small
+\caption{From the pool of cryo-EM entries released from 1~January to 12~October 2026 to the candidates. The map--model correlation rule and the clustering (Section~\ref{sec:datasets}) are applied to the \PoolFinal{} candidates of the last row.}
+\label{tab:flow}
+\fitwidth{\input{generated/tab_pool_flow.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{The twenty entries. \emph{Residues}: modelled residues of the deposit. \emph{Unique / all chains}: unique chain sequences and chains of the deposit. \emph{CC\_mask}: map--model correlation (Phenix \texttt{map\_model\_cc}, at the resolution of the entry). \emph{Max.\ identity}: highest sequence identity of any chain to a chain of a PDB entry released before 2026 (MMseqs2; 0 = no hit). \emph{AF3 pLDDT}: mean pLDDT of the AF3 predictions of the entry, weighted by residues. \emph{Map}: size of the EMDB map file.}
+\label{tab:entries}
+\fitwidth{\input{generated/tab_entries.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{Pinned versions of the methods and the tools, as recorded in the run information of the sessions.}
+\label{tab:pins}
+\fitwidth{\input{generated/tab_pins.tex}}
+\end{table}
+
+\subsection{Sessions, docking and failures}
+Table~\ref{tab:sessions} lists the sessions, Table~\ref{tab:docking} the docking of every entry in the three passes, Table~\ref{tab:modes} MICA's outcome by entry and Table~\ref{tab:failures} every failed run.
+
+\begin{table}[tbp]
+\centering\small
+\caption{The \NSessions{} Kaggle sessions that produced results (CPU sessions have no GPU). Status of the entries of a session: \emph{ok}, finished with its output; \emph{docked}, programs 1 and 2 of MICA finished and the docked state was saved for a GPU session; \emph{failed}, ended without the output of its step; \emph{deferred}, program 3 of MICA was switched off after two failures in a row and the entry waits; \emph{interrupted}, cut by the end of the session; \emph{killed\_corun}, a baseline killed by the system while the other GPU was busy (it ran again alone, Section~\ref{sec:procedure}); \emph{not run}, no work was started. The baseline sessions count runs (method $\times$ entry), the MICA sessions count entries, and the scoring sessions the models that they scored. The result of \texttt{mica\_cpu\_c} for 9VUH (pass~1) is not used: every MICA result comes from the pass-3 set-up.}
+\label{tab:sessions}
+\fitwidth{\input{generated/tab_sessions.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{Docking of the AF3 domains in the three passes (Section~\ref{sec:dockprocedure}): domains docked of the domains found by Merizo, and the median local correlation (CC) of the docked domains. The correlations of pass~1 and pass~3 are not comparable (pass~3 is measured at 6~\AA{} after a coarse refinement). \emph{Mode}: docking mode of the entry in pass~3. The last row sums the domains of the 20 entries; its CC is the median over all docked domains of the pass.}
+\label{tab:docking}
+\fitwidth{\input{generated/tab_docking.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{MICA by entry: domains, domains docked in pass~3, docking mode, outcome of program~3 (\emph{failed $\to$ ok}: the first attempt failed with a GPU out-of-memory error and the rerun with the memory patch built the model) and TM-score of the model (F: no model).}
+\label{tab:modes}
+\fitwidth{\input{generated/tab_mica_modes.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{Every run that ended without a scored model, with the reason recorded by the notebook. Exit code $-9$ is a kill by the system.}
+\label{tab:failures}
+\fitwidth{\input{generated/tab_failures.tex}}
+\end{table}
+
+\subsection{Further results}
+Tables~\ref{tab:zero} and~\ref{tab:dockeffect} belong to Sections~\ref{sec:results} (failures as zero) and~\ref{sec:dockresults} (docked input); the other tables give the TM-score of every method on every entry (Table~\ref{tab:perentry}), all measures (Tables~\ref{tab:allmetrics}, \ref{tab:strata} and~\ref{tab:fns}), the other output files of the methods (Table~\ref{tab:variants}), the correlations (Table~\ref{tab:corr}), the run times (Table~\ref{tab:runtime}) and the comparison with MICA without docked input (Table~\ref{tab:pairednodock}).
+
+\begin{table}[tbp]
+\centering\small
+\caption{Failed runs scored as zero: mean TM-score over all 20 entries and the paired comparison with MICA. The two policies give the same means and tests because every run was either scored or failed; the intervals can differ in the last digit because the bootstrap draws differ.}
+\label{tab:zero}
+\fitwidth{\input{generated/tab_zero.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{MICA with and without docked AF3 input on the entries that ran in both set-ups (difference = docked minus no docked input).}
+\label{tab:dockeffect}
+\fitwidth{\input{generated/tab_dock_effect.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{TM-score of every method on every entry (normalised by the deposited model; F: failed run).}
+\label{tab:perentry}
+\fitwidth{\input{generated/tab_per_entry.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{Median (interquartile range) of every measure (Table~\ref{tab:metrics}) over the scored models of each method. The sets of entries differ between methods.}
+\label{tab:allmetrics}
+\fitwidth{\input{generated/tab_summary_all.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{TM-score by resolution stratum: entries, scored models, median (interquartile range) and mean with 95\,\% bootstrap CI.}
+\label{tab:strata}
+\fitwidth{\input{generated/tab_summary_strata.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{Fragment-agnostic TM-score (US-align \texttt{-mm 5}): median (interquartile range) over the scored models, and the paired comparison with MICA on the entries where both built a model (method minus MICA; Wilcoxon $p$ and its Holm correction over the four methods).}
+\label{tab:fns}
+\fitwidth{\input{generated/tab_fns.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{Further output files of each method, scored with the same protocol next to the file of the main comparison (marked \emph{scored}); $n$ is the number of entries with the file. Only the file marked \emph{scored} is used in the comparisons.}
+\label{tab:variants}
+\fitwidth{\input{generated/tab_variants.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{Spearman rank correlation (two-sided $p$ in brackets, not corrected for multiple tests) of the TM-score with the resolution of the map, the number of modelled residues and the highest identity to older PDB entries; $n$ is the number of scored models.}
+\label{tab:corr}
+\fitwidth{\input{generated/tab_corr.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{Wall-clock time per run (failed runs included). For MICA it is the time of programs 1 to 3 including docking; the baselines ran with another program on the second GPU of the session, so the times are indicative.}
+\label{tab:runtime}
+\fitwidth{\input{generated/tab_runtime.tex}}
+\end{table}
+
+\begin{table}[tbp]
+\centering\small
+\caption{Paired comparison of the TM-score with MICA run without docked input, on the entries where that run and the method both have a model (method minus MICA; as Table~\ref{tab:paired}).}
+\label{tab:pairednodock}
+\fitwidth{\input{generated/tab_paired_nodock.tex}}
+\end{table}
+
+\subsection{Further figures}
+The figures show the distributions of the measures (Figures~\ref{fig:dist} and~\ref{fig:allmetrics}), the pairs of TM-scores (Figure~\ref{fig:pairs}), the outcomes and the run times (Figures~\ref{fig:outcomes} and~\ref{fig:runtime}), and the checks with the fragment-agnostic score and the resolution (Figures~\ref{fig:frag}, \ref{fig:res} and~\ref{fig:pairedfns}).
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig4_distributions.pdf}
+\caption{Four measures over the scored models of each method (one dot per entry; black bar: median; grey bar: interquartile range).}
+\label{fig:dist}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig3_tm_score_pairs.pdf}
+\caption{TM-score of each method against that of MICA on the same entry (the line is equality; entries that differ by 0.3 or more are labelled, at most three per panel).}
+\label{fig:pairs}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/fig5_outcomes.pdf}
+\caption{Outcome of the 20 runs of each method.}
+\label{fig:outcomes}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig6_runtime.pdf}
+\caption{Run time of every run (failed runs included; logarithmic axis); the bar is the median.}
+\label{fig:runtime}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figA1_all_metrics.pdf}
+\caption{All measures over the scored models of each method (as Figure~\ref{fig:dist}).}
+\label{fig:allmetrics}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figA2_fragmentation.pdf}
+\caption{TM-score chain by chain (the primary measure) against the fragment-agnostic TM-score. A point above the line is a model whose primary score is lowered by fragmentation or by extra chains.}
+\label{fig:frag}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figA3_resolution.pdf}
+\caption{TM-score of each method against the resolution of the map.}
+\label{fig:res}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figA4_paired_differences_fragment_agnostic.pdf}
+\caption{Difference between each method and MICA in the fragment-agnostic TM-score (as Figure~\ref{fig:paired}).}
+\label{fig:pairedfns}
+\end{figure}

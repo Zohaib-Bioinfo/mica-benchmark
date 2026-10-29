@@ -1,0 +1,441 @@
+Starting phenix.dock_in_map
+on Mon Oct 26 11:33:44 2026 by root
+===============================================================================
+
+Processing files:
+-------------------------------------------------------------------------------
+
+  No files found
+
+Processing PHIL parameters:
+-------------------------------------------------------------------------------
+
+  Adding command-line PHIL:
+  -------------------------
+    search_model=/tmp/mica_pilot/MICA/input/9WTX/AF3_domains/fold_9wtx_1_model_0_chain_A_domain_02.pdb
+    map_file=/tmp/mica_pilot/MICA/input/9WTX/temp_maps/map_after_fold_9wtx_1_model_0_chain_A_domain_01.mrc
+    nproc=2
+    pdb_out=/tmp/mica_pilot/MICA/input/9WTX/AF3_docked_models/fold_9wtx_1_model_0_chain_A_domain_02_docked.pdb
+    dock_chains_individually=True
+    sequence=/tmp/mica_pilot/MICA/input/9WTX/9wtx.fasta
+    dock_with_mr=False
+    quick=True
+    resolution=6.0
+
+Processing files from PHIL:
+-------------------------------------------------------------------------------
+
+  Found real_map, /tmp/mica_pilot/MICA/input/9WTX/temp_maps/map_after_fold_9wtx_1_model_0_chain_A_domain_01.mrc
+  Found model, /tmp/mica_pilot/MICA/input/9WTX/AF3_domains/fold_9wtx_1_model_0_chain_A_domain_02.pdb
+
+Final processed PHIL parameters:
+-------------------------------------------------------------------------------
+  data_manager {
+    model {
+      file = "/tmp/mica_pilot/MICA/input/9WTX/AF3_domains/fold_9wtx_1_model_0_chain_A_domain_02.pdb"
+    }
+    default_model = "/tmp/mica_pilot/MICA/input/9WTX/AF3_domains/fold_9wtx_1_model_0_chain_A_domain_02.pdb"
+    real_map_files = "/tmp/mica_pilot/MICA/input/9WTX/temp_maps/map_after_fold_9wtx_1_model_0_chain_A_domain_01.mrc"
+    default_real_map = "/tmp/mica_pilot/MICA/input/9WTX/temp_maps/map_after_fold_9wtx_1_model_0_chain_A_domain_01.mrc"
+  }
+  input_files {
+    map_file = /tmp/mica_pilot/MICA/input/9WTX/temp_maps/map_after_fold_9wtx_1_model_0_chain_A_domain_01.mrc
+    search_model = /tmp/mica_pilot/MICA/input/9WTX/AF3_domains/fold_9wtx_1_model_0_chain_A_domain_02.pdb
+  }
+  output_files {
+    pdb_out = /tmp/mica_pilot/MICA/input/9WTX/AF3_docked_models/fold_9wtx_1_model_0_chain_A_domain_02_docked.pdb
+  }
+  crystal_info {
+    resolution = 6.0
+    sequence = /tmp/mica_pilot/MICA/input/9WTX/9wtx.fasta
+  }
+  search {
+    dock_chains_individually = True
+    dock_with_mr = False
+  }
+  control {
+    nproc = 2
+  }
+
+
+Starting job
+===============================================================================
+Validating inputs
+Creating unique chains from all docked chains at end
+Weighting sequential fragments by distance from neighbors
+
+************************************************************
+          PHENIX dock_in_map  Mon Oct 26 11:33:45 2026
+************************************************************
+
+Working directory:  /tmp/mica_pilot/MICA 
+
+PHENIX VERSION:  2.2.1-6174 
+
+
+Reading input data
+
+Setting ssm_search to False (default for dock_in_map)
+
+Map file read from /tmp/mica_pilot/MICA/input/9WTX/temp_maps/map_after_fold_9wtx_1_model_0_chain_A_domain_01.mrc
+header_min:  0.0
+header_max:  1.1109598875045776
+header_mean: 0.0004271208308637142
+header_rms:  0.011233370751142502
+
+Information about FULL UNIT CELL:
+unit cell grid: (320, 320, 320)
+unit cell parameters: (265.6000061035156, 265.6000061035156, 265.6000061035156, 90.0, 90.0, 90.0)
+space group number:   1
+
+Information about the PART OF MAP THAT IS PRESENT:
+map cell grid: (320, 320, 320)
+map cell parameters: (265.6000061035156, 265.6000061035156, 265.6000061035156, 90.0, 90.0, 90.0)
+map origin: (0, 0, 0)
+pixel size: (0.8300, 0.8300, 0.8300) 
+Shift (grid units) to place origin at original position: (0, 0, 0)
+Wrapping (using unit_cell_translations to get map values) allowed: False
+
+
+
+
+
+
+Split /tmp/mica_pilot/MICA/input/9WTX/AF3_domains/fold_9wtx_1_model_0_chain_A_domain_02.pdb into chains: A
+
+
+Sequence has 1 chains and 42 residues 
+Density radius set to: 36.0 A
+
+Input parameters for dock_in_map:
+
+input_files {
+  map_file = "/tmp/mica_pilot/MICA/input/9WTX/temp_maps/map_after_fold_9wtx_1_model_0_chain_A_domain_01.mrc"
+  seq_file = None
+  search_model = "/tmp/mica_pilot/MICA/input/9WTX/AF3_domains/fold_9wtx_1_model_0_chain_A_domain_02_A"
+  search_map_file = None
+  search_model_copies = 1
+  search_map_copies = None
+  fixed_model = None
+  target_model = None
+  symmetry_file = None
+}
+output_files {
+  pdb_out = "/tmp/mica_pilot/MICA/input/9WTX/AF3_docked_models/fold_9wtx_1_model_0_chain_A_domain_02_docked.pdb"
+  superposed_map_file = "superposed_map.ccp4"
+  skip_fixed_model_in_pdb_out = True
+  temp_dir = None
+}
+crystal_info {
+  resolution = 6
+  scattering_table = n_gaussian wk1995 it1992 *electron neutron
+  sequence = "/tmp/mica_pilot/MICA/input/9WTX/9wtx.fasta"
+  chain_type = *PROTEIN DNA RNA
+  wrapping = None
+}
+search {
+  dock_chains_individually = True
+  create_unique_chain_at_end = True
+  minimum_cc_to_keep_domain = 0.2
+  weight_sequential_fragments_by_distance = True
+  choose_better_of_individual_and_group_docking = None
+  low_res_search = True
+  dock_with_mr = False
+  ssm_search = False
+  refine_cycles = 3
+  ssm_search_min_cc = 0.3
+  backup_resolution_cutoff_searches = 2
+  backup_resolution_ratio = 1.67
+  resolution_radius_scale = 0.5
+  align_moments = False
+  max_radius_ratio = 2
+  radius_scale = 1.5
+  use_symmetry = True
+  skip_if_low_cc = True
+  rigid_body_refinement = True
+  rigid_body_refinement_single_unit = True
+  rigid_body_refinement_split_method = *chain_id segid
+  rigid_body_refinement_resolution = None
+  append_to_fixed_model = True
+  min_cc = 0.4
+  run_in_boxes = True
+  target_box_size = 60
+  target_boxes = 2
+  box_to_run = None
+  box_overlap_scale = 1
+  edge_ratio = 10
+  density_radius = 36
+  model_radius = 3
+  zero_value = 0
+  density_peaks = 20
+  delta_phi = 20
+  max_rot = None
+  rotz_only = None
+  single_positions_to_try = 10
+  max_position_shift_frac = 0.05
+  min_relative_cc = 0.67
+  sieve_fit = None
+  ncs_copies_max = None
+  start_rot = None
+  search_center = None
+  search_center_selection = None
+  target_search_center = None
+  model_search_position = None
+  target_search_position = None
+  search_position_radius = None
+  rot_id_n = None
+  rot_id_group = None
+  map_box = True
+  fix_search_position = False
+  search_box_size = None
+  lower_bounds = None
+  upper_bounds = None
+  keep_search_order = None
+  remove_water = False
+}
+control {
+  nproc = 2
+  random_seed = 171731
+  verbose = False
+  quick = True
+}
+job_title = None
+gui {
+  output_dir = None
+}
+
+Running dock-in-map at overall resolution of 6.0 A
+Placing model in map
+
+Map has been not been offset 
+New cell after running map_box: (265.60, 265.60, 265.60, 90.00, 90.00, 90.00)
+Target boxes set to 2
+
+Choosing local part of search model to use in search...
+
+Shifting search model coordinates (33.1, 2.1, -11.8)  to origin 
+and creating search map coefficients
+
+Running low-resolution search 
+
+Radius of molecule: 16.5 A.
+Resolution for low-res search will be 8.2 A 
+
+Skipping low-res search as it is similar to specified resolution
+
+Running low-resolution search 
+
+Radius of molecule: 16.5 A.
+Resolution for low-res search will be 8.2 A 
+
+Skipping low-res search as it is similar to specified resolution
+
+================================================================================
+ -------- Running in boxes ----------
+         Resolution = 6.0 A 
+================================================================================
+
+Running translation-only search before full search
+
+Setting up about 2 boxes
+Cell grid: (320, 320, 320) 
+Box dimensions: (319, 319, 319) 
+Overlaps : (0, 0, 0) 
+Boxes: (1, 1, 1) 
+
+Starting with set of boxes with no rotations
+
+
+Running with Rotations = False
+
+Running 1 search
+
+Best local CC so far: 0.25
+
+
+Running with Rotations = True
+
+Running 1 search
+
+Best local CC so far: 0.54
+
+
+Quick run and CC (0.54) > min_cc (0.40) ...ending search
+
+Best fit in density search with CC = 0.54 
+
+Transformation of original search model to match original map: 
+
+ROTA 1:    0.7942   -0.4193   -0.4398
+ROTA 2:   -0.4800   -0.8768   -0.0309
+ROTA 3:   -0.3726    0.2356   -0.8976
+TRANS:   134.8348  132.8738  132.0093
+
+Optimizing position with local searches
+
+Running 10 local optimizations in parallel on 2 processors 
+Set max_position_shift_frac to 0.05 to keep 10 results
+Skipped 4 local searches with low local CC 
+
+
+Average correlation after optimization: 0.7 
+Optimizing position (rmsd = 4.4 A) 
+    XYZ (original)          XYZ (target)           XYZ (fitted)      CC
+
+  101.4  153.4  138.4    105.4  157.3  131.5    101.5  157.5  133.5  0.61
+   92.8  153.3  134.4     96.8  159.3  124.9     93.9  159.6  128.1  0.76
+  101.0  157.5  129.7    102.0  160.4  125.6    103.4  159.2  124.1  0.66
+   87.8  162.0  135.6     93.2  170.2  123.0     92.7  169.5  126.7  0.81
+   90.9  159.5  121.9     91.0  163.2  116.9     95.6  162.7  114.5  0.78
+  106.8  158.0  139.0    106.9  158.1  139.0    108.3  159.9  134.0  0.58
+
+Local search RMSD: 4.4 A  N: 6 
+
+Optimized position based on 6 local searches  with mean CC of 0.70 
+CC value for local transformation: 0.01
+
+ Overall final transformation applied to input search model: 
+
+ROTA 1:    0.7942   -0.4193   -0.4398
+ROTA 2:   -0.4800   -0.8768   -0.0309
+ROTA 3:   -0.3726    0.2356   -0.8976
+TRANS:   134.8348  132.8738  132.0093
+
+================================================================================
+Running rigid-body refinement at resolution of 6.0 A
+================================================================================
+
+Starting map-model cc (CC_mask): 0.191 
+Skipping as CC_mask is < 1/2 min_cc
+
+Wrote placed model with CC_mask (local CC) = -1.00 to /tmp/mica_pilot/MICA/input/9WTX/AF3_docked_models/fold_9wtx_1_model_0_chain_A_domain_02_docked.pdb
+One chain created at end with chain id of 'A' 
+
+Dock in map failed...trying at resolution of 10.02 with min_cc=0.10
+
+Running dock-in-map at overall resolution of 10.0 A
+Placing model in map
+
+Map has been not been offset 
+New cell after running map_box: (265.60, 265.60, 265.60, 90.00, 90.00, 90.00)
+Target boxes set to 2
+
+Choosing local part of search model to use in search...
+
+Shifting search model coordinates (33.1, 2.1, -11.8)  to origin 
+and creating search map coefficients
+
+Running low-resolution search 
+
+Radius of molecule: 16.5 A.
+Resolution for low-res search will be 8.2 A 
+
+Skipping low-res search as it is similar to specified resolution
+
+Running low-resolution search 
+
+Radius of molecule: 16.5 A.
+Resolution for low-res search will be 8.2 A 
+
+Skipping low-res search as it is similar to specified resolution
+
+================================================================================
+ -------- Running in boxes ----------
+         Resolution = 10.0 A 
+================================================================================
+
+Running translation-only search before full search
+
+Setting up about 2 boxes
+Cell grid: (320, 320, 320) 
+Box dimensions: (319, 319, 319) 
+Overlaps : (0, 0, 0) 
+Boxes: (1, 1, 1) 
+
+Starting with set of boxes with no rotations
+
+
+Running with Rotations = False
+
+Running 1 search
+
+Best local CC so far: 0.34
+
+
+Quick run and CC (0.34) > min_cc (0.10) ...ending search
+
+Best fit in density search with CC = 0.34 
+
+Transformation of original search model to match original map: 
+
+ROTA 1:    0.9962   -0.0151    0.0859
+ROTA 2:   -0.0000    0.9848    0.1737
+ROTA 3:   -0.0871   -0.1729    0.9810
+TRANS:   160.2117  135.3454  118.4824
+
+Optimizing position with local searches
+
+Running 10 local optimizations in parallel on 2 processors 
+Set max_position_shift_frac to 0.05 to keep 7 results
+
+Average correlation after optimization: 0.4 
+Optimizing position (rmsd = 8.3 A) 
+    XYZ (original)          XYZ (target)           XYZ (fitted)      CC
+
+  144.1  139.0  118.6    130.4  137.7  131.1    138.7  136.5  122.5  0.41
+  117.7  138.3  137.7    107.4  138.3  148.5    113.9  137.3  143.7  0.39
+  141.3  140.1  142.4    141.7  139.9  143.1    138.0  138.3  146.4  0.38
+  124.0  130.4  139.0    116.3  127.8  148.1    120.1  129.2  144.8  0.34
+  118.9  132.9  150.6    121.3  134.2  151.0    116.1  132.2  156.6  0.43
+  124.0  127.7  128.4    124.1  126.9  125.4    119.1  126.2  134.2  0.38
+  135.6  144.1  120.2    135.3  137.0  125.6    130.6  142.0  124.7  0.42
+
+Local search RMSD: 8.3 A  N: 7 
+
+Optimized position based on 7 local searches  with mean CC of 0.39 
+CC value for local transformation: 0.13
+
+ Overall final transformation applied to input search model: 
+
+ROTA 1:    0.9962   -0.0151    0.0859
+ROTA 2:   -0.0000    0.9848    0.1737
+ROTA 3:   -0.0871   -0.1729    0.9810
+TRANS:   160.2117  135.3454  118.4824
+
+================================================================================
+Running rigid-body refinement at resolution of 10.0 A
+================================================================================
+
+Starting map-model cc (CC_mask): 0.087 
+
+Final map-model cc (CC_mask): 0.086 
+
+Transformation for final_model -> final_model_refined:  
+
+ROTA 1:    0.9846   -0.1659   -0.0558
+ROTA 2:    0.1716    0.9777    0.1210
+ROTA 3:    0.0345   -0.1287    0.9911
+TRANS:    35.8688  -35.1300   14.1772
+
+Transformation for input model -> final_model_refined:  
+
+ROTA 1:    0.9857   -0.1686    0.0009
+ROTA 2:    0.1604    0.9393    0.3032
+ROTA 3:   -0.0520   -0.2987    0.9529
+TRANS:   164.5421  139.0257  119.7108
+
+Updated final transformation: 
+
+ROTA 1:    0.9857   -0.1686    0.0009
+ROTA 2:    0.1604    0.9393    0.3032
+ROTA 3:   -0.0520   -0.2987    0.9529
+TRANS:   164.5421  139.0257  119.7108
+
+Wrote placed model with CC_mask (local CC) = 0.09 to /tmp/mica_pilot/MICA/input/9WTX/AF3_docked_models/fold_9wtx_1_model_0_chain_A_domain_02_docked.pdb
+One chain created at end with chain id of 'A' 
+Finished with dock_in_map
+
+===============================================================================
+Job complete
+usr+sys time: 876.64 seconds
+wall clock time: 19 minutes 21.99 seconds (1161.99 seconds total)

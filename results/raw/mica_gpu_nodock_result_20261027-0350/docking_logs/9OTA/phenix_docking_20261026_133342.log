@@ -1,0 +1,34 @@
+2026-10-26 13:33:42 - INFO - PHENIX DOCKING TOOL - SESSION STARTED
+2026-10-26 13:33:42 - INFO - Timestamp: 20261026_133342
+2026-10-26 13:33:42 - INFO - Testing Phenix environment...
+2026-10-26 13:33:42 - INFO - ✓ Phenix environment activated successfully
+2026-10-26 13:33:42 - INFO - ✓ phenix.dock_in_map found at: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+2026-10-26 13:33:42 - INFO - STARTING DOCKING PROCESS
+2026-10-26 13:33:42 - INFO - Density map: /tmp/mica_pilot/MICA/input/9OTA/emd_70828.map
+2026-10-26 13:33:42 - INFO - Contour level: 0.14
+2026-10-26 13:33:42 - INFO - Resolution: 3.2 Å
+2026-10-26 13:33:42 - INFO - FASTA file: /tmp/mica_pilot/MICA/input/9OTA/9ota.fasta
+2026-10-26 13:33:42 - INFO - Dock type: domainwise
+2026-10-26 13:33:42 - INFO - Processing initial map with contour level 0.14
+2026-10-26 13:33:43 - INFO - Initial map processed and saved to: /tmp/mica_pilot/MICA/input/9OTA/temp_maps/initial_processed.mrc
+2026-10-26 13:33:43 - INFO - PHENIX COMMAND for fold_9ota_1_model_0_chain_A_domain_01.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9OTA/AF3_domains/fold_9ota_1_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9OTA/temp_maps/initial_processed.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9OTA/AF3_docked_models/fold_9ota_1_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9OTA/9ota.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 13:47:55 - ERROR - PHENIX FAILED: fold_9ota_1_model_0_chain_A_domain_01.pdb - return code 0 (attempt 1, res6_quick)
+2026-10-26 13:47:55 - INFO - PHENIX COMMAND for fold_9ota_1_model_0_chain_A_domain_01.pdb (benchmark attempt 2 of 2, res10_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9OTA/AF3_domains/fold_9ota_1_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9OTA/temp_maps/initial_processed.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9OTA/AF3_docked_models/fold_9ota_1_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9OTA/9ota.fasta dock_with_mr=False quick=True resolution=10.0'
+2026-10-26 13:59:45 - INFO - PHENIX SUCCESS: Docking completed for fold_9ota_1_model_0_chain_A_domain_01.pdb (attempt 2, res10_quick, 710 s, local CC 0.12)
+2026-10-26 13:59:45 - INFO - Identified 1 domains in fold_9ota_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 13:59:45 - INFO - Domain 1 (residues 1-87): 348 atoms, 139 selected for masking, centroid at [107.31, 115.50, 100.16]
+2026-10-26 13:59:49 - INFO - Successfully processed 1 domains from fold_9ota_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 13:59:49 - INFO - PHENIX COMMAND for fold_9ota_1_model_0_chain_A_domain_02.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9OTA/AF3_domains/fold_9ota_1_model_0_chain_A_domain_02.pdb map_file=/tmp/mica_pilot/MICA/input/9OTA/temp_maps/map_after_fold_9ota_1_model_0_chain_A_domain_01.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/9OTA/AF3_docked_models/fold_9ota_1_model_0_chain_A_domain_02_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9OTA/9ota.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 14:35:08 - INFO - PHENIX SUCCESS: Docking completed for fold_9ota_1_model_0_chain_A_domain_02.pdb (attempt 1, res6_quick, 2118 s, local CC 0.09)
+2026-10-26 14:35:08 - INFO - Identified 1 domains in fold_9ota_1_model_0_chain_A_domain_02_docked.pdb
+2026-10-26 14:35:08 - INFO - Domain 1 (residues 88-270): 732 atoms, 292 selected for masking, centroid at [111.30, 96.51, 108.62]
+2026-10-26 14:35:13 - INFO - Successfully processed 1 domains from fold_9ota_1_model_0_chain_A_domain_02_docked.pdb
+2026-10-26 14:35:13 - INFO - FINAL SUMMARY:
+2026-10-26 14:35:13 - INFO - Total: 2, Success: 2, Failed: 0
+2026-10-26 14:35:13 - INFO - Processing docked AF3 structures from: /tmp/mica_pilot/MICA/input/9OTA/AF3_docked_models
+2026-10-26 14:35:13 - INFO - Found 2 PDB files to combine
+2026-10-26 14:35:13 - INFO - Starting combination of 2 PDB files
+2026-10-26 14:35:13 - INFO - ✓ Added 1 chain from fold_9ota_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 14:35:13 - INFO - ✓ Added 1 chain from fold_9ota_1_model_0_chain_A_domain_02_docked.pdb
+2026-10-26 14:35:13 - INFO - ✓ Combined PDB saved to: 9OTA_af3_docked.pdb
+2026-10-26 14:35:13 - INFO - ✓ Total chains: 2, Files processed: 2

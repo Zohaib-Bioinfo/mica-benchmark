@@ -1,0 +1,212 @@
+2026-10-27 03:43:22 - INFO - 🚀 Starting MICA - Map ID: 68251, PDB ID: 22fx
+================================================================================
+🧬 MICA PIPELINE STARTING
+================================================================================
+2026-10-27 03:43:22 - INFO - Using MICA with AF3 structures
+2026-10-27 03:43:22 - INFO - Parsing FASTA file...
+2026-10-27 03:43:22 - INFO - Processing 1 sequences with multiprocessing...
+2026-10-27 03:43:22 - INFO - FASTA parsing completed successfully:
+2026-10-27 03:43:22 - INFO -    Sequence 1: 22FX_1
+2026-10-27 03:43:22 - INFO -    Chains: A
+2026-10-27 03:43:22 - INFO -    Sequence: MTTASPSQVRQNYHQDAEAAINRQINLELYASYVYLSMSCYFDRDDVALKNFAKYFLHQSHEEREHAEKLMKLQNQRGGRIFLQDIKKPDRDDWESGLNAMECALHLEKSVNQSLLELHKLATDKNDPHLCDFIETYYLSEQVKSIKELGDHVTNLRKMGAPEAGMAEYLFDKHTLGHGDES
+
+================================================================================
+🚀 STARTING DEEP LEARNING PREDICTION
+================================================================================
+📊 System Information:
+   🖥️  Device: cuda
+   🧠 CPU Cores: 2 physical, 4 logical
+   💾 System Memory: 31.3 GB
+   🎮 GPU Memory: 14.6 GB
+
+2026-10-27 03:43:22 - INFO - Starting data preprocessing...
+
+================================================================================
+🗺️  DENSITY MAP RESAMPLING AND NORMALIZATION
+================================================================================
+2026-10-27 03:43:22 - INFO - Processing density map: emd_68251.map
+2026-10-27 03:43:23 - INFO - Original map shape: (440, 440, 440)
+2026-10-27 03:43:23 - INFO - Resampling with zoom factors: [0.569527268409729, 0.569527268409729, 0.569527268409729]
+2026-10-27 03:43:32 - INFO - ✓ Resampled map shape: (251, 251, 251)
+2026-10-27 03:43:32 - INFO - Normalizing density map...
+2026-10-27 03:43:33 - INFO - ✓ Normalized map shape: (251, 251, 251)
+2026-10-27 03:43:33 - INFO - ✓ Normalized map saved: resampled_normalized_map.mrc
+
+🎯 Map Processing Results:
+   ✅ Map successfully resampled to 1.0 A and normalized to [0, 1] range.
+   📁 Normalized map path: /tmp/mica_pilot/MICA/input/22FX/resampled_normalized_map.mrc
+
+
+================================================================================
+🧬 AF3 FEATURES ENCODING
+================================================================================
+2026-10-27 03:43:33 - INFO - Creating AF3 encodings...
+2026-10-27 03:43:33 - INFO - Using reference map: resampled_normalized_map.mrc
+2026-10-27 03:43:33 - INFO - Reference map shape: (251, 251, 251)
+2026-10-27 03:43:33 - INFO - Creating 24 feature channels
+2026-10-27 03:43:33 - INFO - ✓ Processed 74 residues, 296 atoms
+2026-10-27 03:43:33 - INFO - Saving 24 channels encodings using 2 CPU cores in parallel
+2026-10-27 03:43:49 - INFO - ✓ Saved CA encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved N encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved C encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved O encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved ALA encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved CYS encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved ASP encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved GLU encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved PHE encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved GLY encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved HIS encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved ILE encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved LYS encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved LEU encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved MET encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved ASN encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved PRO encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved GLN encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved ARG encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved SER encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved THR encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved VAL encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved TRP encoding
+2026-10-27 03:43:49 - INFO - ✓ Saved TYR encoding
+
+🎯 Encoding Results:
+   ✅ Feature encoding successful
+   🧬 Channels created: 24/24
+   🔬 Residues processed: 74
+   ⚛️  Atoms processed: 296
+   📁 AF3 encodings directory: /tmp/mica_pilot/MICA/input/22FX/AF3_encodings
+
+
+================================================================================
+🗺️  CREATING GRIDS FOR NORMALIZED MAP
+================================================================================
+2026-10-27 03:43:49 - INFO - Processing normalized map: resampled_normalized_map.mrc
+2026-10-27 03:43:49 - INFO - Output directory: /tmp/mica_pilot/MICA/input/22FX/grids/normalized_map_grids
+2026-10-27 03:43:49 - INFO - Grid size: 48, Padding: 8
+2026-10-27 03:43:50 - INFO - Creating grids for resampled_normalized_map.mrc with shape: (251, 251, 251)
+2026-10-27 03:43:52 - INFO - ✓ Created 216 grids from resampled_normalized_map.mrc
+
+🎯 Grid Creation Results:
+   ✅ Successfully created: 216 grids
+   📁 Output directory: normalized_map_grids
+   ⏱️  Processing time: 3.00 seconds
+
+
+================================================================================
+🧬 CREATING GRIDS FOR AF3 ENCODINGS
+================================================================================
+2026-10-27 03:43:52 - INFO - Found 24 AF3 encoding files
+2026-10-27 03:43:52 - INFO - Output directory: /tmp/mica_pilot/MICA/input/22FX/grids/AF3_encoding_grids
+2026-10-27 03:43:52 - INFO - Processing 24 channels using 2 CPU cores in parallel
+2026-10-27 03:43:53 - INFO - Creating grids for ASP_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:43:53 - INFO - Creating grids for HIS_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:43:54 - INFO - ✓ Created 216 grids from ASP_encoding.mrc
+2026-10-27 03:43:54 - INFO - ✓ Created 216 grids from HIS_encoding.mrc
+2026-10-27 03:43:54 - INFO - Creating grids for N_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:43:54 - INFO - Creating grids for TYR_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:43:55 - INFO - ✓ Created 216 grids from N_encoding.mrc
+2026-10-27 03:43:55 - INFO - ✓ Created 216 grids from TYR_encoding.mrc
+2026-10-27 03:43:55 - INFO - Creating grids for PHE_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:43:55 - INFO - Creating grids for ASN_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:43:57 - INFO - ✓ Created 216 grids from ASN_encoding.mrc
+2026-10-27 03:43:57 - INFO - Creating grids for THR_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:43:57 - INFO - ✓ Created 216 grids from PHE_encoding.mrc
+2026-10-27 03:43:57 - INFO - Creating grids for MET_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:43:58 - INFO - ✓ Created 216 grids from THR_encoding.mrc
+2026-10-27 03:43:58 - INFO - Creating grids for O_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:43:58 - INFO - ✓ Created 216 grids from MET_encoding.mrc
+2026-10-27 03:43:58 - INFO - Creating grids for VAL_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:00 - INFO - ✓ Created 216 grids from O_encoding.mrc
+2026-10-27 03:44:00 - INFO - Creating grids for GLU_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:00 - INFO - ✓ Created 216 grids from VAL_encoding.mrc
+2026-10-27 03:44:00 - INFO - Creating grids for GLY_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:01 - INFO - ✓ Created 216 grids from GLU_encoding.mrc
+2026-10-27 03:44:01 - INFO - Creating grids for SER_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:01 - INFO - ✓ Created 216 grids from GLY_encoding.mrc
+2026-10-27 03:44:01 - INFO - Creating grids for CA_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:10 - INFO - ✓ Created 216 grids from SER_encoding.mrc
+2026-10-27 03:44:10 - INFO - Creating grids for C_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:10 - INFO - ✓ Created 216 grids from CA_encoding.mrc
+2026-10-27 03:44:10 - INFO - Creating grids for PRO_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:11 - INFO - ✓ Created 216 grids from C_encoding.mrc
+2026-10-27 03:44:11 - INFO - Creating grids for CYS_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:11 - INFO - ✓ Created 216 grids from PRO_encoding.mrc
+2026-10-27 03:44:11 - INFO - Creating grids for TRP_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:12 - INFO - ✓ Created 216 grids from CYS_encoding.mrc
+2026-10-27 03:44:12 - INFO - Creating grids for LEU_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:12 - INFO - ✓ Created 216 grids from TRP_encoding.mrc
+2026-10-27 03:44:13 - INFO - Creating grids for ILE_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:13 - INFO - ✓ Created 216 grids from LEU_encoding.mrc
+2026-10-27 03:44:14 - INFO - Creating grids for GLN_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:14 - INFO - ✓ Created 216 grids from ILE_encoding.mrc
+2026-10-27 03:44:14 - INFO - Creating grids for ARG_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:15 - INFO - ✓ Created 216 grids from GLN_encoding.mrc
+2026-10-27 03:44:15 - INFO - Creating grids for ALA_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:15 - INFO - ✓ Created 216 grids from ARG_encoding.mrc
+2026-10-27 03:44:16 - INFO - Creating grids for LYS_encoding.mrc with shape: (251, 251, 251)
+2026-10-27 03:44:26 - INFO - ✓ Created 216 grids from ALA_encoding.mrc
+2026-10-27 03:44:27 - INFO - ✓ Created 216 grids from LYS_encoding.mrc
+
+🎯 AF3 Encoding Grid Results:
+   ✅ Successfully processed: 24/24 channels
+   🔢 Total grids created: 5184
+   📁 Output directory: /tmp/mica_pilot/MICA/input/22FX/grids/AF3_encoding_grids
+   ⏱️  Processing time: 34.13 seconds
+
+============================================================
+🏁 CREATING GRIDS COMPLETE
+============================================================
+
+2026-10-27 03:44:27 - INFO - Cryo-EM map and AF3 results processed. Map Offset: [0.0, 0.0, 0.0]
+2026-10-27 03:44:27 - INFO - ✓ Data preprocessing completed in 64.38 seconds
+2026-10-27 03:44:27 - INFO - Starting Deep Learning prediction...
+2026-10-27 03:44:27 - INFO - Starting prediction pipeline at 2026-10-27 03:44:27
+
+================================================================================
+🧭 PROCESSING STRATEGY SELECTION
+================================================================================
+📊 Dataset Analysis:
+   🔢 Total samples: 216
+   🎯 Batch threshold: 200
+You may change batch threshold parameter: 200 to lower value if run on your local machine by changing its value in: utils/predict.py
+   ✅ Strategy: OPTIMIZED BATCH PROCESSING
+   📦 Batch size: 8
+
+================================================================================
+🤖 MODEL LOADING
+================================================================================
+2026-10-27 03:44:27 - INFO - Loading model from: MICA_best_model.pth
+2026-10-27 03:44:32 - INFO - Model loaded successfully
+🎯 Results:
+   ✅ Model loaded successfully
+   ⏱️  Loading time: 4.90s
+
+================================================================================
+📊 DATA PREPARATION
+================================================================================
+2026-10-27 03:44:32 - INFO - Dataset prepared with 216 samples
+🎯 Results:
+   ✅ Dataset prepared successfully
+   🔢 Total samples: 216
+   📦 Batch size: 8
+   ⏱️  Preparation time: 0.00s
+
+================================================================================
+🚀 RUNNING OPTIMIZED BATCH INFERENCE
+================================================================================
+📊 Configuration:
+   🔢 Total batches: 27
+   📦 Batch size: 8
+
+
+Processing samples:   0%|          | 0/27 [00:00<?, ?it/s]
+Processing samples:   0%|          | 0/27 [00:11<?, ?it/s]
+2026-10-27 03:44:43 - ERROR - Inference failed: CUDA out of memory. Tried to allocate 2.00 GiB (GPU 0; 14.56 GiB total capacity; 11.25 GiB already allocated; 1.27 GiB free; 12.28 GiB reserved in total by PyTorch)
+   ❌ Inference failed
+
+❌ Inference failed
+2026-10-27 03:44:43 - ERROR - Unexpected error: 'amino_acid_prediction'
+
+❌ Unexpected error: 'amino_acid_prediction'

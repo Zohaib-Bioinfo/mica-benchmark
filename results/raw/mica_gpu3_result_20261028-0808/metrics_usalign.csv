@@ -1,0 +1,4 @@
+method,entry,model_kind,model_file,status,note,tm_score,tm_score_pred_norm,ca_rmsd,aligned_ca_length,seq_identity,pred_residues,native_residues,coverage,chain_comparison
+mica,9OC0,mica_init_ca,70305_9oc0_MICA(init)_ca_model.pdb,ok,,0.786,0.4012,0.68,100,1.0,246,124,0.4805,ok
+mica,9OC0,af3_docked,9OC0_af3_docked.pdb,ok,,0.3268,0.245,3.33,53,0.057,174,124,0.3398,ok
+mica,9VI4,af3_model_0,fold_9vi4_1_model_0.cif,ok,,0.9955,0.9955,0.54,516,1.0,516,516,1.0,ok

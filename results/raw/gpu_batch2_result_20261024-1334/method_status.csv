@@ -1,0 +1,14 @@
+method,entry,status,failed_step,note,attempt,gpu,started_utc,seconds,peak_gpu_mb,min_ram_gb,other_gpu_busy,limit_s
+modelangelo,9VI4,failed,build,timeout: the run limit of 10800 s; the model file 9VI4_modelangelo.cif was not written,1,0,2026-10-24T07:06:23Z,10800,5537,18.67,False,10800
+modelangelo,13BD,not run,,not started: not enough time left in the session,,,,,,,,
+modelangelo,26DK,not run,,not started: not enough time left in the session,,,,,,,,
+e3,9VI4,failed,prealign,"killed by the system (exit code -9, probably out of memory); the model file 9VI4_e3_prealign.pdb was not written",1,0,2026-10-24T10:13:00Z,1216,5075,4.22,False,10800
+e3,26DK,not run,,not started: not enough time left in the session,,,,,,,,
+emprot,9VI4,failed,build,"killed by the system (exit code -9, probably out of memory); the model file output.cif was not written",1,0,2026-10-24T10:33:16Z,2824,8857,4.18,False,10800
+emprot,9OC0,ok,,,1,0,2026-10-24T11:32:59Z,3508,8853,3.72,False,7061
+emprot,13BD,not run,,not started: not enough time left in the session,,,,,,,,
+emprot,26DK,not run,,not started: not enough time left in the session,,,,,,,,
+emodelx,9VI4,failed,temp_flex,"killed by the system (exit code -9, probably out of memory); the model file 9vi4_EModelX(+AF)_all_atom_model.pdb was not written",1,0,2026-10-24T11:20:21Z,757,5935,3.96,False,8073
+emodelx,9OC0,interrupted,temp_flex,stopped by the end of the session after 3552 s; run again in the next session,1,0,2026-10-24T12:35:42Z,3552,5583,6.77,False,3551
+emodelx,13BD,not run,,not started: not enough time left in the session,,,,,,,,
+emodelx,26DK,not run,,not started: not enough time left in the session,,,,,,,,

@@ -1,0 +1,27 @@
+# USalign /tmp/mica_pilot/runs/emodelx/9WQ6/out/9wq6_EModelX(+AF)_ca_model.pdb /kaggle/working/pilot/native/9WQ6.cif -mol protein
+
+ ********************************************************************
+ * US-align (Version 20261012)                                      *
+ * Universal Structure Alignment of Proteins and Nucleic Acids      *
+ * Reference: C Zhang, L Freddolino, Y Zhang. (2026) Nat Protoc     *
+ *            C Zhang, M Shine, AM Pyle, Y Zhang. (2022) Nat Methods*
+ *            C Zhang, AM Pyle (2022) iScience.                     *
+ * Please email comments and suggestions to zhanglab@zhanggroup.org *
+ ********************************************************************
+
+Name of Structure_1: /tmp/mica_pilot/runs/emodelx/9WQ6/out/9wq6_EModelX(+AF)_ca_model.pdb:A (to be superimposed onto Structure_2)
+Name of Structure_2: /kaggle/working/pilot/native/9WQ6.cif:A
+Length of Structure_1: 312 residues
+Length of Structure_2: 261 residues
+
+Aligned length= 248, RMSD=   1.74, Seq_ID=n_identical/n_aligned= 0.831
+TM-score= 0.75700 (normalized by length of Structure_1: L=312, d0=6.47)
+TM-score= 0.89940 (normalized by length of Structure_2: L=261, d0=5.97)
+(You should use TM-score normalized by length of the reference structure)
+
+(":" denotes residue pairs of d < 5.0 Angstrom, "." denotes other aligned residues)
+LSLLHLQEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLMSLAIADMLLGFLVMPVSMLTILY------P-KLCAVWIYLDVLFSTASIMHLCAISLDRYVAIQNPIHHSRFNSRTKAFLKIIAVWTISVGISMPIPVF-LDD-SKVFKEGSCLLADDNFVLIGSFVSFFIPLTIMVITYFLTIKSLLCVSDLGTRAKLASFSFLPQSSLSSEKLFQRSIHREPQSI----SNEQKACKVLGIVFFLFVVMWCPFFITNIMAVICKESCNEDVIGALLNVFVWIGYLSSAVNPLVYTLFNSAFSRYIQCQYKENKK
+          .::::::::::::::::::::: ::::: ::: : :::::::::::::::::::::::::::      : :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: ::: :::::::::::::::::::::::::::::::::::::::::::                                            . ...::::::::::::::::::::::::::::      :::::::::::::::::::::::::::::   :::::::::::..:
+----------LTAVVIILTIAGNILVIMAVSL-EKKLQ-NAT-N-YFLMSLAIADMLLGFLVMPVSMLTILYGYRWPLPSKLCAVWIYLDVLFSTASIMHLCAISLDRYVAIQNPIHHSRFNSRTKAFLKIIAVWTISVGISMPIPVFGLQDDSKVFKEGSCLLADDNFVLIGSFVSFFIPLTIMVITYFLTIKSL----------------------------------------QKISN-EQKACKVLGIVFFLFVVMWCPFFITNIMAVI------EDVIGALLNVFVWIGYLSSAVNPLVYTLF---NKTYRSAFSRYIQC
+
+#Total CPU time is  0.09 seconds

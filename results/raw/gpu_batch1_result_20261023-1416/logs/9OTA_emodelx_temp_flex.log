@@ -1,0 +1,42 @@
+starting... emid: 70828, pdbid: 9ota
+You are using EModelX(+AF).
+We will replace your fasta sequence as AlphaFold sequence (or the most similar one in AFDB).
+AFDB searching...
+The process typically requires between 5 to 10 minutes to complete when no same search hits before.
+Waiting over 1000s would be recognized as search failed
+Replacing 9OTA_1:
+	"GALLAGALAAYAAYLVLGALLVARLEGPHEARLRAELETLRAQLLQRSPCVAAPALDAFVERVLAAGRLGRVVLANASGSANASDPAWDFASALFFASTLITTVGYGYTTPLTDAGKAFSIAFALLGVPTTMLLLTASAQRLSLLLTHVPLSWLSMRWGWDPRRAACWHLVALLGVVVTVCFLVPAVIFAHLEEAWSFLDAFYFCFISLSTIGLGDYVPGEAPGQPYRALYKVLVTVYLFLGLVAMVLVLQTFRHVSDLHGLTELILLPP"
+as	"GALLAGALAAYAAYLVLGALLVARLEGPHEARLRAELETLRAQLLQRSPCVAAPALDAFVERVLAAGRLGRVVLANASGSANASDPAWDFASALFFASTLITTVGYGYTTPLTDAGKAFSIAFALLGVPTTMLLLTASAQRLSLLLTHVPLSWLSMRWGWDPRRAACWHLVALLGVVVTVCFLVPAVIFAHLEEAWSFLDAFYFCFISLSTIGLGDYVPGEAPGQPYRALYKVLVTVYLFLGLVAMVLVLQTFRHVSDLHGLTELILLPP"
+Check your fasta inputs, the fasta parser can only handle standard fasta inputs and only protein sequences would be parsed:
+Your sequence 1 name: 9OTA_1, Chains that belong to this sequence:
+A B 
+Your sequence: 
+GALLAGALAAYAAYLVLGALLVARLEGPHEARLRAELETLRAQLLQRSPCVAAPALDAFVERVLAAGRLGRVVLANASGSANASDPAWDFASALFFASTLITTVGYGYTTPLTDAGKAFSIAFALLGVPTTMLLLTASAQRLSLLLTHVPLSWLSMRWGWDPRRAACWHLVALLGVVVTVCFLVPAVIFAHLEEAWSFLDAFYFCFISLSTIGLGDYVPGEAPGQPYRALYKVLVTVYLFLGLVAMVLVLQTFRHVSDLHGLTELILLPP
+preprocessEM...
+preprocessEM finished in 2 seconds
+nnPred...
+nnPred finished in 95 seconds
+clustering...
+clustering finished in 2 seconds
+fragModeling...
+seq_free trace_num: 6
+fragModeling finished in 0 seconds
+seqStructAlignWithTemplate...
+traces:  1813
+seqStructAlignWithTemplate finished in 83 seconds
+initialModeling...
+initialModeling finished in 0 seconds
+gapThreading...
+0 / 10 -1 7
+1 / 10 262 270
+2 / 10 -1 7
+3 / 10 262 270
+4 / 10 45 59
+5 / 10 45 59
+6 / 10 67 89
+7 / 10 67 90
+8 / 10 140 165
+9 / 10 140 166
+gapThreading finished in 4 seconds
+running pulchra...
+run_pulchra finished in 1 seconds

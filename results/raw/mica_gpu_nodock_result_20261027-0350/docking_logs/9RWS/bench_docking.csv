@@ -1,0 +1,4 @@
+model,attempt,setting,settings,timeout_s,seconds,rc,timed_out,skipped,docked,local_cc,log
+fold_9rws_1_model_0_chain_A_domain_01.pdb,1,res6_quick,"{""dock_with_mr"": ""False"", ""quick"": ""True"", ""resolution"": ""6.0""}",2400,1582,0,False,False,True,0.09,phenix_fold_9rws_1_model_0_chain_A_domain_01.pdb_20261026_121411.log
+fold_9rws_1_model_0_chain_A_domain_02.pdb,1,res6_quick,"{""dock_with_mr"": ""False"", ""quick"": ""True"", ""resolution"": ""6.0""}",2400,2208,0,False,False,True,-1.00,phenix_fold_9rws_1_model_0_chain_A_domain_02.pdb_20261026_121411.log
+fold_9rws_1_model_0_chain_A_domain_03.pdb,1,res6_quick,"{""dock_with_mr"": ""False"", ""quick"": ""True"", ""resolution"": ""6.0""}",2400,882,0,False,False,True,0.10,phenix_fold_9rws_1_model_0_chain_A_domain_03.pdb_20261026_121411.log

@@ -1,0 +1,474 @@
+# Job start at 2026-10-23 07:21:38.581278
+# Output dir set to /tmp/mica_pilot/runs/emprot/9WQ6
+# Temp   dir set to /tmp/mica_pilot/runs/emprot/9WQ6/temp
+Write formatted seq to /tmp/mica_pilot/runs/emprot/9WQ6/temp/format_seq.fasta
+User input 1 single-chain structure templates
+Using single-chain structure as templates
+Rewrite template 0 from single-chain to /tmp/mica_pilot/runs/emprot/9WQ6/temp/chain_templs/templ_0.pdb
+# Has chain   template = True
+# has complex template = False
+# No complex template, use chain from single as template
+# Rescale voxel size from [0.83199996 0.83199996 0.83199996] to [1. 1. 1.], shift origin by None
+# Write formated map to /tmp/mica_pilot/runs/emprot/9WQ6/temp/format_map.mrc
+# Time consupmtion 8.7788 seconds. Done preprocess
+# Script dir is /tmp/mica_pilot/src_emprot/emprot/pipeline
+# Specify model path to /tmp/mica_pilot/src_emprot/emprot/weights
+# Making directory /tmp/mica_pilot/runs/emprot/9WQ6/temp/ncac
+# Start inference
+# Select map contour at 0.000001
+# Running on device cuda:0
+# Load map data from /tmp/mica_pilot/runs/emprot/9WQ6/temp/format_map.mrc
+# Map dimensions = [266 266 266]
+# Start processing
+
+|##--------------------------------------| 5% 15.2989 seconds elapsed
+
+|####------------------------------------| 10% 28.9188 seconds elapsed
+
+|######----------------------------------| 15% 42.4493 seconds elapsed
+
+|########--------------------------------| 20% 56.0648 seconds elapsed
+
+|##########------------------------------| 25% 69.7583 seconds elapsed
+
+|############----------------------------| 30% 83.4929 seconds elapsed
+
+|##############--------------------------| 35% 97.2521 seconds elapsed
+
+|################------------------------| 40% 113.3591 seconds elapsed
+
+|##################----------------------| 45% 127.2168 seconds elapsed
+
+|####################--------------------| 50% 141.0901 seconds elapsed
+
+|######################------------------| 55% 154.9874 seconds elapsed
+
+|########################----------------| 60% 168.9222 seconds elapsed
+
+|##########################--------------| 65% 182.8975 seconds elapsed
+
+|############################------------| 70% 196.9598 seconds elapsed
+
+|##############################----------| 75% 213.2561 seconds elapsed
+
+|################################--------| 80% 227.2315 seconds elapsed
+
+|##################################------| 85% 241.2429 seconds elapsed
+
+|####################################----| 90% 255.2454 seconds elapsed
+
+|######################################--| 95% 269.2684 seconds elapsed
+
+|########################################| 100% 283.2645 seconds elapsed
+# Write map to /tmp/mica_pilot/runs/emprot/9WQ6/temp/ncac/n.mrc
+# Write map to /tmp/mica_pilot/runs/emprot/9WQ6/temp/ncac/ca.mrc
+# Write map to /tmp/mica_pilot/runs/emprot/9WQ6/temp/ncac/c.mrc
+# Write map to /tmp/mica_pilot/runs/emprot/9WQ6/temp/ncac/mc.mrc
+# Done  inference
+# Start inference
+# Select map contour at 0.000001
+# Running on device cuda:0
+# Load map data from /tmp/mica_pilot/runs/emprot/9WQ6/temp/format_map.mrc
+# Map dimensions = [266 266 266]
+# Start processing
+
+|##--------------------------------------| 5% 23.4284 seconds elapsed
+
+|####------------------------------------| 10% 41.7036 seconds elapsed
+
+|######----------------------------------| 15% 58.8743 seconds elapsed
+
+|########--------------------------------| 20% 76.0252 seconds elapsed
+
+|##########------------------------------| 25% 93.2131 seconds elapsed
+
+|############----------------------------| 30% 110.3943 seconds elapsed
+
+|##############--------------------------| 35% 127.6997 seconds elapsed
+
+|################------------------------| 40% 147.9342 seconds elapsed
+
+|##################----------------------| 45% 165.1703 seconds elapsed
+
+|####################--------------------| 50% 182.3320 seconds elapsed
+
+|######################------------------| 55% 199.5035 seconds elapsed
+
+|########################----------------| 60% 216.6712 seconds elapsed
+
+|##########################--------------| 65% 233.8453 seconds elapsed
+
+|############################------------| 70% 251.1588 seconds elapsed
+
+|##############################----------| 75% 271.3751 seconds elapsed
+
+|################################--------| 80% 288.5202 seconds elapsed
+
+|##################################------| 85% 306.0237 seconds elapsed
+
+|####################################----| 90% 323.8758 seconds elapsed
+
+|######################################--| 95% 342.1098 seconds elapsed
+
+|########################################| 100% 360.3820 seconds elapsed
+# Write aa logits npz file to /tmp/mica_pilot/runs/emprot/9WQ6/temp/ncac/aa_logits.npz
+# Done  inference
+# Clean CUDA cache
+# Time consuming 662.2743
+# Time consumption 664.0049 seconds. Done dl mc aa
+# Running getp with args res=6.0 thresh=10.0 nt=4
+# No   initial Ca positions are specified, shift on grids
+# Convert atom probability map to coords
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/getp --in /tmp/mica_pilot/runs/emprot/9WQ6/temp/ncac/ca.mrc --out /tmp/mica_pilot/runs/emprot/9WQ6/temp/ncac/raw_ca.pdb --thresh 10.0 --res 6.0 --nt 4 --filter 0.0 --dmerge 1.5
+# Time consumption 5.9475 seconds. Done pmap to ca
+# Load aa logits map
+# AA map shape = (20, 266, 266, 266)
+# Infer 1 / 3
+# Read structure from /tmp/mica_pilot/runs/emprot/9WQ6/temp/ncac/raw_ca.pdb
+# Use random affine
+
+  0%|          | 0/784 [00:00<?, ?it/s]
+  6%|▋         | 50/784 [00:03<00:50, 14.44it/s]
+ 13%|█▎        | 100/784 [00:04<00:30, 22.43it/s]
+ 19%|█▉        | 150/784 [00:06<00:23, 27.16it/s]
+ 26%|██▌       | 200/784 [00:07<00:19, 30.15it/s]
+ 32%|███▏      | 250/784 [00:08<00:16, 32.07it/s]
+ 38%|███▊      | 300/784 [00:10<00:14, 33.50it/s]
+ 45%|████▍     | 350/784 [00:11<00:12, 34.34it/s]
+ 51%|█████     | 398/784 [00:13<00:11, 34.48it/s]
+ 57%|█████▋    | 443/784 [00:14<00:10, 34.00it/s]
+ 62%|██████▏   | 487/784 [00:15<00:08, 33.13it/s]
+ 68%|██████▊   | 531/784 [00:17<00:07, 32.81it/s]
+ 73%|███████▎  | 574/784 [00:18<00:06, 32.20it/s]
+ 78%|███████▊  | 611/784 [00:20<00:05, 30.43it/s]
+ 82%|████████▏ | 639/784 [00:21<00:05, 27.26it/s]
+ 84%|████████▍ | 661/784 [00:22<00:05, 23.77it/s]
+ 87%|████████▋ | 682/784 [00:24<00:04, 21.08it/s]
+ 89%|████████▉ | 701/784 [00:25<00:04, 18.68it/s]
+ 91%|█████████▏| 717/784 [00:27<00:04, 16.35it/s]
+ 93%|█████████▎| 730/784 [00:28<00:03, 14.15it/s]
+ 95%|█████████▍| 741/784 [00:30<00:03, 12.16it/s]
+ 96%|█████████▌| 754/784 [00:31<00:02, 11.23it/s]
+ 98%|█████████▊| 767/784 [00:32<00:01, 10.60it/s]
+ 99%|█████████▊| 773/784 [00:34<00:01,  8.66it/s]
+ 99%|█████████▊| 774/784 [00:35<00:01,  6.25it/s]
+ 99%|█████████▉| 776/784 [00:37<00:01,  4.78it/s]
+ 99%|█████████▉| 778/784 [00:38<00:01,  3.76it/s]
+ 99%|█████████▉| 779/784 [00:41<00:02,  2.19it/s]
+ 99%|█████████▉| 780/784 [00:42<00:02,  1.82it/s]
+100%|█████████▉| 781/784 [00:44<00:01,  1.53it/s]
+100%|█████████▉| 783/784 [00:48<00:01,  1.03s/it]
+100%|██████████| 784/784 [00:50<00:00,  1.08s/it]
+100%|██████████| 784/784 [00:50<00:00, 15.66it/s]
+# Clean CUDA cache
+# Assign restype for denovo modeling
+# Setting output directory to /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_0
+# Setting HMM temp dir to /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_0/hmm
+# Found 1 sequences
+# Seq 0
+# LSLLHLQEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLMSLAIADMLLGFLVMPVSMLTILYGYRWPLPSKLCAVWIYLDVLFSTASIMHLCAISLDRYVAIQNPIHHSRFNSRTKAFLKIIAVWTISVGISMPIPVFGLQDDSKVFKEGSCLLADDNFVLIGSFVSFFIPLTIMVITYFLTIKSLQKEATLCVSDLGTRAKLASFSFLPQSSLSSEKLFQRSIHREPGSYTGRRTMQSISNEQKACKVLGIVFFLFVVMWCPFFITNIMAVICKESCNEDVIGALLNVFVWIGYLSSAVNPLVYTLFNKTYRSAFSRYIQCQYKENKK
+# Trace to 68 fragments a total of 784 CAs
+# Assign aa logits
+# Fixing gaps
+# Before prune and connect we have 39 chains
+# After  prune and connect we have 3 chains
+# Output individual chains to /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_0/denovo_chains/denovo_chain_*.pdb
+# Output denovo chains to /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_0/output.cif
+# Infer 2 / 3
+# Read structure from /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_0/output.cif
+# Use affine from file
+
+  0%|          | 0/246 [00:00<?, ?it/s]
+ 20%|██        | 50/246 [00:02<00:10, 18.49it/s]
+ 41%|████      | 100/246 [00:04<00:05, 26.01it/s]
+ 59%|█████▊    | 144/246 [00:05<00:03, 28.37it/s]
+ 76%|███████▌  | 186/246 [00:06<00:02, 29.40it/s]
+ 86%|████████▌ | 212/246 [00:08<00:01, 26.04it/s]
+ 91%|█████████ | 223/246 [00:09<00:01, 20.24it/s]
+ 94%|█████████▍| 232/246 [00:10<00:00, 15.97it/s]
+ 96%|█████████▌| 236/246 [00:12<00:00, 11.96it/s]
+ 98%|█████████▊| 241/246 [00:14<00:00,  7.22it/s]
+100%|██████████| 246/246 [00:16<00:00,  6.33it/s]
+100%|██████████| 246/246 [00:16<00:00, 15.15it/s]
+# Clean CUDA cache
+# Assign restype for denovo modeling
+# Setting output directory to /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_1
+# Setting HMM temp dir to /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_1/hmm
+# Found 1 sequences
+# Seq 0
+# LSLLHLQEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLMSLAIADMLLGFLVMPVSMLTILYGYRWPLPSKLCAVWIYLDVLFSTASIMHLCAISLDRYVAIQNPIHHSRFNSRTKAFLKIIAVWTISVGISMPIPVFGLQDDSKVFKEGSCLLADDNFVLIGSFVSFFIPLTIMVITYFLTIKSLQKEATLCVSDLGTRAKLASFSFLPQSSLSSEKLFQRSIHREPGSYTGRRTMQSISNEQKACKVLGIVFFLFVVMWCPFFITNIMAVICKESCNEDVIGALLNVFVWIGYLSSAVNPLVYTLFNKTYRSAFSRYIQCQYKENKK
+# Trace to 7 fragments a total of 246 CAs
+# Assign aa logits
+# Fixing gaps
+# Before prune and connect we have 7 chains
+# After  prune and connect we have 3 chains
+# Output individual chains to /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_1/denovo_chains/denovo_chain_*.pdb
+# Output denovo chains to /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_1/output.cif
+# Infer 3 / 3
+# Read structure from /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_1/output.cif
+# Use affine from file
+
+  0%|          | 0/245 [00:00<?, ?it/s]
+ 20%|██        | 50/245 [00:03<00:13, 14.37it/s]
+ 41%|████      | 100/245 [00:04<00:06, 22.47it/s]
+ 61%|██████    | 149/245 [00:06<00:03, 27.13it/s]
+ 76%|███████▌  | 186/245 [00:07<00:02, 27.27it/s]
+ 86%|████████▌ | 211/245 [00:08<00:01, 24.51it/s]
+ 93%|█████████▎| 228/245 [00:10<00:00, 20.83it/s]
+ 96%|█████████▋| 236/245 [00:11<00:00, 16.29it/s]
+ 98%|█████████▊| 241/245 [00:12<00:00, 12.39it/s]
+100%|█████████▉| 244/245 [00:14<00:00,  9.31it/s]
+100%|██████████| 245/245 [00:15<00:00,  6.72it/s]
+100%|██████████| 245/245 [00:15<00:00, 15.72it/s]
+# Clean CUDA cache
+# Assign restype for denovo modeling
+# Setting output directory to /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_2
+# Setting HMM temp dir to /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_2/hmm
+# Found 1 sequences
+# Seq 0
+# LSLLHLQEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLMSLAIADMLLGFLVMPVSMLTILYGYRWPLPSKLCAVWIYLDVLFSTASIMHLCAISLDRYVAIQNPIHHSRFNSRTKAFLKIIAVWTISVGISMPIPVFGLQDDSKVFKEGSCLLADDNFVLIGSFVSFFIPLTIMVITYFLTIKSLQKEATLCVSDLGTRAKLASFSFLPQSSLSSEKLFQRSIHREPGSYTGRRTMQSISNEQKACKVLGIVFFLFVVMWCPFFITNIMAVICKESCNEDVIGALLNVFVWIGYLSSAVNPLVYTLFNKTYRSAFSRYIQCQYKENKK
+# Trace to 7 fragments a total of 245 CAs
+# Assign aa logits
+# Fixing gaps
+# Before prune and connect we have 7 chains
+# After  prune and connect we have 2 chains
+# Output individual chains to /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_2/denovo_chains/denovo_chain_*.pdb
+# Output denovo chains to /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_2/output.cif
+# Done all rounds
+# Time consumption 90.2595 seconds. Done denovo
+Found 2 chains
+Found 1 templates
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_2/denovo_chains/denovo_chain_1.pdb is /tmp/mica_pilot/runs/emprot/9WQ6/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_2/denovo_chains/denovo_chain_0.pdb is /tmp/mica_pilot/runs/emprot/9WQ6/temp/templs/templ_0.pdb
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/9WQ6/temp/fix/alignments/templ_0_all.pdb 
+# Intend to write stride output to /tmp/mica_pilot/runs/emprot/9WQ6/temp/fix/alignments/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/9WQ6/temp/fix/alignments/templ_0_all.pdb A /tmp/mica_pilot/runs/emprot/9WQ6/temp/fix/alignments/stride.out
+Original domains [[[0, 40]], [[41, 164]], [[165, 218]], [[219, 338]]]
+Updated  domains [[[0, 40]], [[41, 164]], [[165, 218]], [[219, 338]]]
+--------------------------------------------------------------------------------
+Start searching for chain 0
+--------------------------------------------------------------------------------
+No good fragments on layer 0 node 0
+--------------------------------------------------------------------------------
+End searching for chain 0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 1
+--------------------------------------------------------------------------------
+Select domains [0, 1, 2]
+Re-align to refine transform
+--------------------------------------------------------------------------------
+End searching for chain 1
+--------------------------------------------------------------------------------
+Write fixed templates to /tmp/mica_pilot/runs/emprot/9WQ6/temp/fix/fix_templs.cif
+Total 241 denovo coords
+Write fixed templates to /tmp/mica_pilot/runs/emprot/9WQ6/temp/fix/fix_chains_templs.cif
+# Time consumption 0.8078 seconds. Done fix
+Found 1 seqs
+Input 2 chains
+Input 1 templates
+Best template fit for chain /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_2/denovo_chains/denovo_chain_1.pdb is /tmp/mica_pilot/runs/emprot/9WQ6/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_2/denovo_chains/denovo_chain_0.pdb is /tmp/mica_pilot/runs/emprot/9WQ6/temp/templs/templ_0.pdb
+--------------------------------------------------------------------------------
+Fix  chain 0 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 3.1250
+Gap ratio templ = 0.7375
+Gap ratio chain = 0.0125
+Gap ratio templ = 0.0029
+Intend to align 80 residues for fixing a gap with 1 residues
+RMSD between matched frags = 2.5484
+Ignore fix because RMSD is too large
+Gap ratio chain = 0.1000
+Gap ratio templ = 0.0236
+Fix terminal gap
+Intend to align 14 residues for fixing a gap with 8 residues
+RMSD between matched frags = 1.8505
+Do fix
+Done fix chain 0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 1 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 0.0807
+Gap ratio templ = 0.0383
+Fix terminal gap
+Intend to align 26 residues for fixing a gap with 13 residues
+RMSD between matched frags = 4.3409
+Ignore fix because RMSD is too large
+Gap ratio chain = 0.0062
+Gap ratio templ = 0.0029
+Intend to align 43 residues for fixing a gap with 1 residues
+RMSD between matched frags = 1.7664
+Do fix
+Gap ratio chain = 0.0062
+Gap ratio templ = 0.0029
+Intend to align 33 residues for fixing a gap with 1 residues
+RMSD between matched frags = 0.8208
+Do fix
+Gap ratio chain = 0.0062
+Gap ratio templ = 0.0029
+Intend to align 81 residues for fixing a gap with 1 residues
+RMSD between matched frags = 1.4428
+Do fix
+Gap ratio chain = 0.1304
+Gap ratio templ = 0.0619
+Intend to align 102 residues for fixing a gap with 21 residues
+RMSD between matched frags = 1.9941
+Do fix
+Gap ratio chain = 0.8758
+Gap ratio templ = 0.4159
+Done fix chain 1
+--------------------------------------------------------------------------------
+Found large Ca-Ca gap of distance = 6.1385
+Found large Ca-Ca gap of distance = 12.9540
+Write untrimmed chains to /tmp/mica_pilot/runs/emprot/9WQ6/temp/imp/imp_chains_untrimmed.cif
+Write trimmed chains to /tmp/mica_pilot/runs/emprot/9WQ6/temp/imp/imp_chains_trimmed.cif
+# Time consumption 0.4380 seconds. Done imp
+# Template type = chain
+Parsing larger domains
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/9WQ6/temp/templs/templ_0.pdb 
+# Intend to write stride output to /tmp/tmp4xvle3t8/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/9WQ6/temp/templs/templ_0.pdb A /tmp/tmp4xvle3t8/stride.out
+Before merging domains = [[[0, 338]]]
+Minimum domain res num = max(50, 16) = 50
+After  merging domains = [[[0, 338]]]
+Write dom 0 to /tmp/mica_pilot/runs/emprot/9WQ6/temp/templs/chain_templ_0_dom_0.pdb
+Docking args
+resolution -> 5.0
+mode -> fast
+nt -> 4
+thresh -> 10.0
+angle_step -> 18.0
+fgrid -> 5.0
+sgrid -> 2.0
+Renumber res idx for /tmp/mica_pilot/runs/emprot/9WQ6/temp/templs/chain_templ_0_dom_0.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/9WQ6/temp/templs/templ_0.pdb
+Docking in domain level
+Intend to dock 1 domains
+Parsing smaller domains for large domains
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/domain/renum_dom_0.pdb 
+# Intend to write stride output to /tmp/tmp4fglzgxc/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/domain/renum_dom_0.pdb A /tmp/tmp4fglzgxc/stride.out
+Running dock and refine 1/2
+# Log written to /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/domain/preprocess.log
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_0.pdb xxx_chain_0_sword.out xxx_chain_0.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Combine all marked chains into /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/domain/xxx_all.pdb
+# Log written to /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/domain/run.log
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/dockx mc.mrc xxx_all.pdb 5.0 transform.pdb -nt 4 -thresh 10.0 -angle_step 18.0 -fgrid 5.0 -sgrid 2.0
+Write fitted chain 0 to /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/domain/fitted_chain_0.pdb
+Write all fitted chains to /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/fitted_domains.cif
+Write docked pdbs to /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/fitted_domains.cif
+Docking in chain level
+Intend to dock 1 chains
+Parsing smaller domains for chains
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/chain/renum_chain_0.pdb 
+# Intend to write stride output to /tmp/tmp9aj2ws22/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/chain/renum_chain_0.pdb A /tmp/tmp9aj2ws22/stride.out
+Running dock and refine 2/2
+# Log written to /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/chain/preprocess.log
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_0.pdb xxx_chain_0_sword.out xxx_chain_0.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Combine all marked chains into /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/chain/xxx_all.pdb
+# Log written to /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/chain/run.log
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/dockx mc.mrc xxx_all.pdb 5.0 transform.pdb -nt 4 -thresh 10.0 -angle_step 18.0 -fgrid 5.0 -sgrid 2.0
+Write fitted chain 0 to /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/chain/fitted_chain_0.pdb
+Write all fitted chains to /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/fitted_chains.cif
+Write docked pdbs to /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/fitted_chains.cif
+Re-write fitted chain to /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/chain_to_domain/fitted_chain_0.pdb
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/chain_to_domain/fitted_chain_0.pdb 
+# Intend to write stride output to /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/chain_to_domain/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/chain_to_domain/fitted_chain_0.pdb A /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/chain_to_domain/stride.out
+Write docked pdbs to /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/fitted_chains_domains.cif
+# Time consumption 47.9058 seconds. Done dock
+Found seq
+LSLLHLQEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLMSLAIADMLLGFLVMPVSMLTILYGYRWPLPSKLCAVWIYLDVLFSTASIMHLCAISLDRYVAIQNPIHHSRFNSRTKAFLKIIAVWTISVGISMPIPVFGLQDDSKVFKEGSCLLADDNFVLIGSFVSFFIPLTIMVITYFLTIKSLQKEATLCVSDLGTRAKLASFSFLPQSSLSSEKLFQRSIHREPGSYTGRRTMQSISNEQKACKVLGIVFFLFVVMWCPFFITNIMAVICKESCNEDVIGALLNVFVWIGYLSSAVNPLVYTLFNKTYRSAFSRYIQCQYKENKK
+Intend to read structure from /tmp/mica_pilot/runs/emprot/9WQ6/temp/imp/imp_chains_trimmed.cif
+Read 2 chains from /tmp/mica_pilot/runs/emprot/9WQ6/temp/imp/imp_chains_trimmed.cif
+Intend to read structure from /tmp/mica_pilot/runs/emprot/9WQ6/temp/fix/fix_chains_templs.cif
+Read 1 chains from /tmp/mica_pilot/runs/emprot/9WQ6/temp/fix/fix_chains_templs.cif
+Intend to read structure from /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/fitted_domains.cif
+Read 1 chains from /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/fitted_domains.cif
+Intend to read structure from /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/fitted_chains_domains.cif
+Read 1 chains from /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/fitted_chains_domains.cif
+Found 5 input fragments
+Frag 0 best matches to seq 0
+Frag 1 best matches to seq 0
+Frag 2 best matches to seq 0
+Frag 3 best matches to seq 0
+Frag 4 best matches to seq 0
+Extract 5 new frags
+Split to 5 frags
+Reading map
+Normalize map
+Compute the score for each frag
+Compute the rst between frags
+Done calculating frags collision matrix shape = (5, 5) time = 1.7908 s
+Collision rate = 0.6400
+Preprocess 1/3 add decision variable
+Preprocess 2/3 add rst
+Preprocess 3/3 set objectives
+Solving
+Solution 0, time = 0.08 s, objective = 2546
+Result is [0, 1]
+Result has 2 nodes
+Write denovo part to /tmp/mica_pilot/runs/emprot/9WQ6/temp/assemble/assemble_denovo.cif
+Write dock part to /tmp/mica_pilot/runs/emprot/9WQ6/temp/assemble/assemble_dock.cif
+Write assembled fragments to /tmp/mica_pilot/runs/emprot/9WQ6/temp/assemble/assemble.cif
+# Time consumption 3.3013 seconds. Done assemble
+# Read 1 seqs from /tmp/mica_pilot/runs/emprot/9WQ6/temp/format_seq.fasta
+Found sequence of length 339
+LSLLHLQEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLMSLAIADMLLGFLVMPVSMLTILYGYRWPLPSKLCAVWIYLDVLFSTASIMHLCAISLDRYVAIQNPIHHSRFNSRTKAFLKIIAVWTISVGISMPIPVFGLQDDSKVFKEGSCLLADDNFVLIGSFVSFFIPLTIMVITYFLTIKSLQKEATLCVSDLGTRAKLASFSFLPQSSLSSEKLFQRSIHREPGSYTGRRTMQSISNEQKACKVLGIVFFLFVVMWCPFFITNIMAVICKESCNEDVIGALLNVFVWIGYLSSAVNPLVYTLFNKTYRSAFSRYIQCQYKENKK
+# Group 0 has 1 seqs 
+# Using chain guidance
+# Found 1 chain templates
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/9WQ6/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/9WQ6/temp/reorderx/nwalign/seq_b.fasta
+# Chain 0 match to seq 0
+# Input structure has 272 residues
+# Use template chain guidance True
+# Read 2 chains from /tmp/mica_pilot/runs/emprot/9WQ6/temp/assemble/assemble.cif
+# Split chain 0 into 1 frags
+# Split chain 1 into 2 frags
+###################################
+# Split 2 chains to 3 fragments #
+###################################
+# Hetero groups
+# Process seq 0
+# Write frag for seq 0 to /tmp/mica_pilot/runs/emprot/9WQ6/temp/reorderx/usalign/frags_for_seq_0.cif
+# Align /tmp/mica_pilot/runs/emprot/9WQ6/temp/reorderx/usalign/frags_for_seq_0.cif and /tmp/mica_pilot/runs/emprot/9WQ6/temp/templs/templ_0.pdb
+# Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/USalign /tmp/mica_pilot/runs/emprot/9WQ6/temp/templs/templ_0.pdb /tmp/mica_pilot/runs/emprot/9WQ6/temp/reorderx/usalign/frags_for_seq_0.cif -mol prot -mm 6 -fast
+# Frag 0 assigned to seq 0 with r = 0.9885
+# Frag 1 assigned to seq 0 with r = 1.0000
+# Frag 2 assigned to seq 0 with r = 0.9714
+0 [0, 1, 2]
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/9WQ6/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/9WQ6/temp/reorderx/nwalign/seq_b.fasta
+Sub ratio 0.7586
+Found frag  0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/9WQ6/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/9WQ6/temp/reorderx/nwalign/seq_b.fasta
+Sub ratio 1.0000
+Found frag  1
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/9WQ6/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/9WQ6/temp/reorderx/nwalign/seq_b.fasta
+Sub ratio 1.0000
+Found frag  2
+# Frag 0 is already assigned using USalign
+# Frag 1 is already assigned using USalign
+# Frag 2 is already assigned using USalign
+# Seq 0 frags
+[(0, 250, 338), (1, 14, 161), (2, 162, 196)]
+# Frags is assigned
+[True, True, True]
+# Homo groups
+# Frags is excluded
+[False, False, False]
+# Time consumption 1.3936
+# Output reordered chains to /tmp/mica_pilot/runs/emprot/9WQ6/temp/reorderx/reorder.cif
+# Time consumption 1.4253 seconds. Done reorder
+# Found model /tmp/mica_pilot/runs/emprot/9WQ6/temp/reorderx/reorder.cif
+# Found de novo model /tmp/mica_pilot/runs/emprot/9WQ6/temp/denovo/recycle_2/output.cif
+# Copy de novo model to /tmp/mica_pilot/runs/emprot/9WQ6/output_denovo.cif
+# Found fitting model /tmp/mica_pilot/runs/emprot/9WQ6/temp/dock/fitted_chains.cif
+# Copy fitting model to /tmp/mica_pilot/runs/emprot/9WQ6/output_fit.cif
+# Clean large temp files
+#####################
+# Modeling finished #
+#####################
+# Check the output model at /tmp/mica_pilot/runs/emprot/9WQ6
+
+# Job end   at 2026-10-23 07:35:21.452964

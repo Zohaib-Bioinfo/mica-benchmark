@@ -1,0 +1,44 @@
+\begin{longtable}{@{}p{3.0cm}p{0.9cm}p{1.5cm}p{9.0cm}@{}}
+\toprule
+Method & Year & Included & Reason \\
+\midrule
+\endfirsthead
+\toprule
+Method & Year & Included & Reason \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+MICA & 2025 & baseline & {\footnotesize Method under test.} \\
+ModelAngelo & 2024 & baseline & {\footnotesize One of the two methods tested in the MICA paper.} \\
+EModelX(+AF) & 2024 & baseline & {\footnotesize The other method tested in the MICA paper.} \\
+CryoAtom & 2025 & passed & {\footnotesize Newer than both baselines; deep learning; map + sequence to atomic model; public code and weights (MIT per README; the paper states no licence); defaults in one documented command; fits 16 GB on paper. Formerly CryFold. The CryoAtom2 preprint (proteins and nucleic acids) reports nucleic-acid results in its abstract; whether protein-only accuracy changed from v1 is not stated.} \\
+EMProt & 2025 & passed & {\footnotesize Newer than both baselines; deep learning; map + sequence to atomic model; accepts per-chain predicted models, so it can take the same AF3 inputs as MICA; public code and weights; fits 16 GB on paper. Licence wording differs: README says MIT, the paper says free for academic or noncommercial users. Read the LICENSE file before release.} \\
+E3-CryoFold & 2025 & passed & {\footnotesize Newer than both baselines; deep learning; map + sequence to atomic model; public code and weights (MIT per README; the paper states no licence); fits 16 GB on paper. Defaults to be taken verbatim from the README example. First excluded by mistake on an inferred link to EModelX; corrected 2026-10-11 after reading its own paper.} \\
+EM3DFold & 2026 & reserve & {\footnotesize First reserve. Newer, deep learning, map + sequence to atomic model (protein-only mode available), public code and downloadable weights, fits 16 GB on paper; licence not stated. A preprint ('in submission'), so under the tie-break the three peer-reviewed methods keep their places. From the same group as EMProt; the README does not say whether it supersedes EMProt. Training-data cutoff not read: check it before use, because the benchmark relies on the 2026 entries being unseen. Recheck on 2026-10-15 for a release tag, a licence and journal status.} \\
+CryoZeta & 2026 & reserve & {\footnotesize Newer, deep learning, public code and weights, but fails the 16 GB rule on paper (README: 32 GB or more) and needs MSAs from an outside tool. Second reserve, after EM3DFold: used only if EM3DFold has already replaced a method or cannot be run, and only after one pilot on the smallest entry shows it fits 16 GB.} \\
+CryoACE & 2026 & no & {\footnotesize Fails the 16 GB rule (\textasciitilde{}38 GB) and is not a map-plus-sequence builder with documented defaults: it needs a rough initial model aligned to each map plus resolution and threshold settings. Its paper compares against ModelAngelo, CryoAtom, E3-CryoFold, Boltz-1 and CryoBoltz.} \\
+CryoBoltz & 2025 & no & {\footnotesize Guided sampling of a Boltz model toward the map, with a pre-aligned starting model and per-map settings, not a map-plus-sequence builder with documented defaults. Also over 16 GB on the third-party figure.} \\
+CryoForge & 2026 & no & {\footnotesize A post-builder correction layer that repairs another builder's model; it is not a map-plus-sequence builder. No code or weights stated.} \\
+CryoNet.Discovery & 2026 & no & {\footnotesize Identifies known structures by matching map and structure embeddings (retrieval), so it does not build a model. No code or weights stated. Compared with ModelAngelo, cryoID and DomainFit.} \\
+CoCoFold & 2026 & no & {\footnotesize Not a map-based builder (the input is raw particle images) and peak GPU memory is far above 16 GB. Its paper compares against DiffModeler, DeepMainmast, EModelX, MICA and ModelAngelo.} \\
+Cryo2Struct & 2024 & no & {\footnotesize Not newer: published before EModelX (Nat. Commun. 15, 8808, same volume). Earlier method from the Cheng lab (Giri and Cheng); its evaluation code is checked in Phase 1 for the metric definitions.} \\
+DeepMainmast & -- & no & {\footnotesize Not newer: first published online in 2023, before the ModelAngelo paper (2024).} \\
+EMBuild & 2022 & no & {\footnotesize Not newer (2022).} \\
+DiffModeler & 2024 & no & {\footnotesize Built for low-resolution maps; outside the <=4.0 A test range.} \\
+DMcloud & 2025 & no & {\footnotesize Built for medium- to low-resolution maps; outside the <=4.0 A test range.} \\
+DeepTracer (family) & -- & no & {\footnotesize Earlier family of methods; no 2025-2026 release found.} \\
+CryoREAD & -- & no & {\footnotesize Models DNA and RNA only; the benchmark is protein-only.} \\
+SMARTFold & 2023 & no & {\footnotesize Not newer: 2023 preprint.} \\
+CryoNet.Refine & 2026 & no & {\footnotesize Refines an existing model; does not build one from a map and sequence.} \\
+Cryosearch & 2026 & no & {\footnotesize Assembles components into complexes rather than building from a map and sequence; no public code found.} \\
+CryoSampler & 2026 & no & {\footnotesize Models conformational ensembles; no public code found.} \\
+Cryformer & -- & no & {\footnotesize Listed as its own entry in a bioRxiv review of Dec 2025 (10.64898/2025.12.28.696775; map + ESM-2 embeddings), but the name matches the encoder module of the CryFold/CryoAtom network (Cry-Net), and no separate paper or code was found.} \\
+SEGEM++ & -- & no & {\footnotesize Listed in the Dec 2025 review as using AlphaFold2 output; no paper or code found under this name.} \\
+Cryo2Struct2 & -- & no & {\footnotesize Described in the Dec 2025 review as map + ESM embeddings with AlphaFold3 refining its output; no paper, code or weights found under this name. How it relates to MICA is not established.} \\
+CryoCodex & 2026 & no & {\footnotesize Screened by title only: map post-processing, not model building.} \\
+EMAlign & 2026 & no & {\footnotesize Screened by title only: aligns cryo-EM maps, does not build models.} \\
+HDOCK-Multimer & 2026 & no & {\footnotesize Screened by title only: predicts large complexes by docking and assembly; the title names no map input.} \\
+Ligand-modelling paper & -- & no & {\footnotesize Screened by title only: models ligands, not protein chains.} \\
+TomoSwin3D & -- & no & {\footnotesize Screened by title only: identifies and classifies macromolecules in cryo-ET tomograms, does not build models.} \\
+\end{longtable}

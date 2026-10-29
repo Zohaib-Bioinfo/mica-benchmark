@@ -1,0 +1,5 @@
+entry,status,failed_step,note
+9T5K,deferred,,program 3 needs a GPU session: 512 windows of 64^3 would take about 4.3 hours on this CPU (limit 120 windows)
+9TKA,deferred,,program 3 needs a GPU session: 216 windows of 64^3 would take about 1.8 hours on this CPU (limit 120 windows)
+9WME,deferred,,program 3 needs a GPU session: 125 windows of 64^3 would take about 1.0 hours on this CPU (limit 120 windows)
+13BD,deferred,,program 3 needs a GPU session: 512 windows of 64^3 would take about 4.3 hours on this CPU (limit 120 windows)

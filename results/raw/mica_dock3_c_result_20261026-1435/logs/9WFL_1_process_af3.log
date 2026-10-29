@@ -1,0 +1,50 @@
+
+2026-10-26 11:03:34 - INFO - FASTA file: /tmp/mica_pilot/MICA/input/9WFL/9wfl.fasta
+2026-10-26 11:03:34 - INFO - AF3 results: /tmp/mica_pilot/MICA/input/9WFL/AF3_results
+
+================================================================================
+🔄 CIF TO PDB CONVERSION
+================================================================================
+2026-10-26 11:03:34 - INFO - Found 2 CIF files to convert
+2026-10-26 11:03:34 - INFO - Extracting protein information from FASTA content
+2026-10-26 11:03:34 - INFO - Found 2 proteins in FASTA file
+2026-10-26 11:03:34 - INFO - Protein 9WFL_1: 1 chains, 697 residues
+2026-10-26 11:03:34 - INFO - Protein 9WFL_2: 1 chains, 29 residues
+2026-10-26 11:03:35 - INFO - ✓ CIF converted: fold_9wfl_1_model_0.pdb
+2026-10-26 11:03:35 - INFO - Extracting protein information from FASTA content
+2026-10-26 11:03:35 - INFO - Found 2 proteins in FASTA file
+2026-10-26 11:03:35 - INFO - Protein 9WFL_1: 1 chains, 697 residues
+2026-10-26 11:03:35 - INFO - Protein 9WFL_2: 1 chains, 29 residues
+2026-10-26 11:03:35 - INFO - ✓ CIF converted: fold_9wfl_2_model_0.pdb
+
+🎯 CIF Conversion Results:
+   ✅ Successful: 2/2
+
+================================================================================
+⛓️  SPLITTING CHAINS
+================================================================================
+2026-10-26 11:03:35 - INFO - Processing 2 PDB files for chain splitting
+2026-10-26 11:03:35 - INFO - ✓ Split fold_9wfl_1_model_0.pdb: 1 chains
+2026-10-26 11:03:35 - INFO - ✓ Split fold_9wfl_2_model_0.pdb: 1 chains
+
+🎯 Chain Splitting Results:
+   🔗 Total chains extracted: 2
+   📁 Saved to: /tmp/mica_pilot/MICA/input/9WFL/AF3_chains
+
+================================================================================
+🧩 SPLITTING DOMAINS WITH MERIZO
+================================================================================
+⏳ This process may take some time - please be patient...
+
+2026-10-26 11:03:35 - INFO - Processing 2 chain files for domain splitting
+2026-10-26 11:03:39 - INFO - ✓ Domains split: fold_9wfl_2_model_0_chain_A.pdb
+2026-10-26 11:04:10 - INFO - ✓ Domains split: fold_9wfl_1_model_0_chain_A.pdb
+
+🎯 Domain Splitting Results:
+   🧩 Chains processed: 2/2
+   📁 Saved to: /tmp/mica_pilot/MICA/input/9WFL/AF3_domains
+
+================================================================================
+🏁 AF3 RESULTS PROCESSING COMPLETE
+================================================================================
+

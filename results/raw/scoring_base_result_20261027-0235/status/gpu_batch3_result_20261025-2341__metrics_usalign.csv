@@ -1,0 +1,15 @@
+method,entry,model_kind,model_file,status,note,tm_score,tm_score_pred_norm,ca_rmsd,aligned_ca_length,seq_identity,pred_residues,native_residues,coverage
+emodelx,9OC0,emodelx_af_all_atom,9oc0_EModelX(+AF)_all_atom_model.pdb,ok,,0.9562,0.16,0.61,121,0.992,753,124,1.4707
+emodelx,9OC0,emodelx_af_ca,9oc0_EModelX(+AF)_ca_model.pdb,ok,,0.9562,0.1598,0.61,121,0.992,754,124,1.4727
+modelangelo,13BD,modelangelo,13BD_modelangelo.cif,ok,,0.6043,0.281,0.65,142,0.986,502,232,1.0889
+modelangelo,13BD,modelangelo_raw,13BD_modelangelo_raw.cif,ok,,0.1133,0.2629,4.24,37,0.081,66,232,0.1432
+emprot,13BD,emprot,output.cif,ok,,0.2747,0.1339,6.39,119,0.067,623,232,1.3514
+emprot,13BD,emprot_denovo,output_denovo.cif,ok,,0.241,0.1586,6.72,111,0.054,430,232,0.9328
+emprot,13BD,emprot_fit,output_fit.cif,ok,,0.9658,0.1804,1.36,232,0.983,1271,232,2.757
+emodelx,13BD,emodelx_af_all_atom,13bd_EModelX(+AF)_all_atom_model.pdb,ok,,0.8847,0.1937,1.32,210,0.957,1073,232,2.3275
+emodelx,13BD,emodelx_af_ca,13bd_EModelX(+AF)_ca_model.pdb,ok,,0.8934,0.195,1.46,213,0.944,1079,232,2.3406
+modelangelo,26DK,modelangelo,26DK_modelangelo.cif,ok,,0.9358,0.9758,0.83,183,1.0,183,191,0.9581
+modelangelo,26DK,modelangelo_raw,26DK_modelangelo_raw.cif,ok,,0.5788,0.978,0.59,112,1.0,112,191,0.5864
+emprot,26DK,emprot,output.cif,ok,,0.9828,0.0587,0.7,191,1.0,3247,191,17.0
+emprot,26DK,emprot_denovo,output_denovo.cif,ok,,0.9614,0.9566,1.04,190,0.995,192,191,1.0052
+emprot,26DK,emprot_fit,output_fit.cif,ok,,0.8947,0.8697,1.87,190,0.947,197,191,1.0314

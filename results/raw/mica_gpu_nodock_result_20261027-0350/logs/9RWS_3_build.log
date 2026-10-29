@@ -1,0 +1,361 @@
+2026-10-27 03:21:46 - INFO - 🚀 Starting MICA - Map ID: 54346, PDB ID: 9rws
+================================================================================
+🧬 MICA PIPELINE STARTING
+================================================================================
+2026-10-27 03:21:46 - INFO - Using MICA with AF3 structures
+2026-10-27 03:21:46 - INFO - Parsing FASTA file...
+2026-10-27 03:21:46 - INFO - Processing 1 sequences with multiprocessing...
+2026-10-27 03:21:46 - INFO - FASTA parsing completed successfully:
+2026-10-27 03:21:46 - INFO -    Sequence 1: 9RWS_1
+2026-10-27 03:21:46 - INFO -    Chains: A
+2026-10-27 03:21:46 - INFO -    Sequence: MQPQPSATPDRKQDNKNKNYEKAGLLGFIGLLLVVAVYVAFTGNDVNWGALVFMFISYAIIFYIGSVTAGKKSDSASDMMVAGRSMPLWVAMFTMTATWVGGGYIAGTAETTFASGVVWAQAPWGYGLSLIIGGIFYARKMRRYEFTTMLDPLEVRFGKKVAGVLYLPALLGELFWSAAILVALGTTFGLILGLDFTTSIIISAIIAVAYTFVGGMWSVALTDVAQIIMIIIGMFLVVPFALSEVGGLGQAWGAYKEGMAGFTNLLPPLDGWNHPDWGNYYWNWWDYALLLIFGGIPWQVYFQRVLSAKNEKTAMWLSIAAGFLCIILAVPAVMIGVAGFSADWASYGIEGPGAASEILAYVVNYMSPYLVAIVALGAIAAAVMSSMDSSILSASSMAAWNIYRPLVKPKANGRDIKRTIRVSIILIGLAATIVALNIDSVYTLWYLCADLVYCMLFPQLTTALFDKKANTYGAIAGLSVSLFLRLGGGEPALGLPAFLPYPMIEDGVVLFPFRTLAMVSGLLTIIVVSRLTQKSCPPQPLRKLKTEMQDE
+
+================================================================================
+🚀 STARTING DEEP LEARNING PREDICTION
+================================================================================
+📊 System Information:
+   🖥️  Device: cuda
+   🧠 CPU Cores: 2 physical, 4 logical
+   💾 System Memory: 31.3 GB
+   🎮 GPU Memory: 14.6 GB
+
+2026-10-27 03:21:47 - INFO - Starting data preprocessing...
+
+================================================================================
+🗺️  DENSITY MAP RESAMPLING AND NORMALIZATION
+================================================================================
+2026-10-27 03:21:47 - INFO - Processing density map: emd_54346.map
+2026-10-27 03:21:47 - INFO - Original map shape: (320, 320, 320)
+2026-10-27 03:21:47 - INFO - Resampling with zoom factors: [0.6462000012397766, 0.6462000012397766, 0.6462000012397766]
+2026-10-27 03:21:51 - INFO - ✓ Resampled map shape: (207, 207, 207)
+2026-10-27 03:21:51 - INFO - Normalizing density map...
+2026-10-27 03:21:52 - INFO - ✓ Normalized map shape: (207, 207, 207)
+2026-10-27 03:21:52 - INFO - ✓ Normalized map saved: resampled_normalized_map.mrc
+
+🎯 Map Processing Results:
+   ✅ Map successfully resampled to 1.0 A and normalized to [0, 1] range.
+   📁 Normalized map path: /tmp/mica_pilot/MICA/input/9RWS/resampled_normalized_map.mrc
+
+
+================================================================================
+🗺️  CREATING GRIDS FOR NORMALIZED MAP
+================================================================================
+2026-10-27 03:21:52 - INFO - Processing normalized map: resampled_normalized_map.mrc
+2026-10-27 03:21:52 - INFO - Output directory: /tmp/mica_pilot/MICA/input/9RWS/grids/normalized_map_grids
+2026-10-27 03:21:52 - INFO - Grid size: 48, Padding: 8
+2026-10-27 03:21:52 - INFO - Creating grids for resampled_normalized_map.mrc with shape: (207, 207, 207)
+2026-10-27 03:21:53 - INFO - ✓ Created 125 grids from resampled_normalized_map.mrc
+
+🎯 Grid Creation Results:
+   ✅ Successfully created: 125 grids
+   📁 Output directory: normalized_map_grids
+   ⏱️  Processing time: 0.69 seconds
+
+============================================================
+🏁 CREATING GRIDS COMPLETE
+============================================================
+
+2026-10-27 03:21:53 - INFO - Cryo-EM map and AF3 results processed. Map Offset: [0.0, 0.0, 0.0]
+2026-10-27 03:21:53 - INFO - ✓ Data preprocessing completed in 6.27 seconds
+2026-10-27 03:21:53 - INFO - Starting Deep Learning prediction...
+2026-10-27 03:21:53 - INFO - Starting prediction pipeline at 2026-10-27 03:21:53
+
+================================================================================
+🧭 PROCESSING STRATEGY SELECTION
+================================================================================
+📊 Dataset Analysis:
+   🔢 Total samples: 125
+   🎯 Batch threshold: 200
+You may change batch threshold parameter: 200 to lower value if run on your local machine by changing its value in: utils/predict.py
+   ✅ Strategy: SINGLE SAMPLE PROCESSING
+   📦 Batch size: 1
+
+================================================================================
+🤖 MODEL LOADING
+================================================================================
+2026-10-27 03:21:53 - INFO - Loading model from: MICA_best_model.pth
+2026-10-27 03:21:57 - INFO - Model loaded successfully
+🎯 Results:
+   ✅ Model loaded successfully
+   ⏱️  Loading time: 4.71s
+
+================================================================================
+📊 DATA PREPARATION
+================================================================================
+2026-10-27 03:21:57 - INFO - Dataset prepared with 125 samples
+🎯 Results:
+   ✅ Dataset prepared successfully
+   🔢 Total samples: 125
+   📦 Batch size: 1
+   ⏱️  Preparation time: 0.00s
+
+================================================================================
+🚀 RUNNING SINGLE SAMPLE INFERENCE
+================================================================================
+📊 Configuration:
+   🔢 Total batches: 125
+   📦 Batch size: 1
+
+
+Processing samples:   0%|          | 0/125 [00:00<?, ?it/s]
+Processing samples:   1%|          | 1/125 [00:02<05:15,  2.54s/it]
+Processing samples:   2%|▏         | 2/125 [00:04<05:04,  2.47s/it]
+Processing samples:   2%|▏         | 3/125 [00:07<05:00,  2.46s/it]
+Processing samples:   3%|▎         | 4/125 [00:09<04:57,  2.46s/it]
+Processing samples:   4%|▍         | 5/125 [00:12<04:53,  2.45s/it]
+Processing samples:   5%|▍         | 6/125 [00:14<04:52,  2.46s/it]
+Processing samples:   6%|▌         | 7/125 [00:17<04:50,  2.46s/it]
+Processing samples:   6%|▋         | 8/125 [00:19<04:48,  2.46s/it]
+Processing samples:   7%|▋         | 9/125 [00:22<04:46,  2.47s/it]
+Processing samples:   8%|▊         | 10/125 [00:24<04:43,  2.47s/it]
+Processing samples:   9%|▉         | 11/125 [00:27<04:41,  2.47s/it]
+Processing samples:  10%|▉         | 12/125 [00:29<04:39,  2.48s/it]
+Processing samples:  10%|█         | 13/125 [00:32<04:37,  2.48s/it]
+Processing samples:  11%|█         | 14/125 [00:34<04:36,  2.49s/it]
+Processing samples:  12%|█▏        | 15/125 [00:37<04:34,  2.50s/it]
+Processing samples:  13%|█▎        | 16/125 [00:39<04:31,  2.50s/it]
+Processing samples:  14%|█▎        | 17/125 [00:42<04:30,  2.50s/it]
+Processing samples:  14%|█▍        | 18/125 [00:44<04:28,  2.51s/it]
+Processing samples:  15%|█▌        | 19/125 [00:47<04:26,  2.52s/it]
+Processing samples:  16%|█▌        | 20/125 [00:49<04:24,  2.52s/it]
+Processing samples:  17%|█▋        | 21/125 [00:52<04:22,  2.52s/it]
+Processing samples:  18%|█▊        | 22/125 [00:54<04:20,  2.53s/it]
+Processing samples:  18%|█▊        | 23/125 [00:57<04:19,  2.55s/it]
+Processing samples:  19%|█▉        | 24/125 [00:59<04:17,  2.55s/it]
+Processing samples:  20%|██        | 25/125 [01:02<04:15,  2.55s/it]
+Processing samples:  21%|██        | 26/125 [01:05<04:13,  2.56s/it]
+Processing samples:  22%|██▏       | 27/125 [01:07<04:11,  2.57s/it]
+Processing samples:  22%|██▏       | 28/125 [01:10<04:10,  2.59s/it]
+Processing samples:  23%|██▎       | 29/125 [01:12<04:09,  2.59s/it]
+Processing samples:  24%|██▍       | 30/125 [01:15<04:06,  2.60s/it]
+Processing samples:  25%|██▍       | 31/125 [01:18<04:04,  2.60s/it]
+Processing samples:  26%|██▌       | 32/125 [01:20<04:03,  2.61s/it]
+Processing samples:  26%|██▋       | 33/125 [01:23<04:00,  2.62s/it]
+Processing samples:  27%|██▋       | 34/125 [01:26<03:58,  2.62s/it]
+Processing samples:  28%|██▊       | 35/125 [01:28<03:56,  2.63s/it]
+Processing samples:  29%|██▉       | 36/125 [01:31<03:55,  2.64s/it]
+Processing samples:  30%|██▉       | 37/125 [01:33<03:52,  2.64s/it]
+Processing samples:  30%|███       | 38/125 [01:36<03:50,  2.65s/it]
+Processing samples:  31%|███       | 39/125 [01:39<03:48,  2.66s/it]
+Processing samples:  32%|███▏      | 40/125 [01:42<03:46,  2.67s/it]
+Processing samples:  33%|███▎      | 41/125 [01:44<03:44,  2.67s/it]
+Processing samples:  34%|███▎      | 42/125 [01:47<03:42,  2.68s/it]
+Processing samples:  34%|███▍      | 43/125 [01:50<03:39,  2.68s/it]
+Processing samples:  35%|███▌      | 44/125 [01:52<03:38,  2.70s/it]
+Processing samples:  36%|███▌      | 45/125 [01:55<03:36,  2.70s/it]
+Processing samples:  37%|███▋      | 46/125 [01:58<03:33,  2.71s/it]
+Processing samples:  38%|███▊      | 47/125 [02:01<03:32,  2.72s/it]
+Processing samples:  38%|███▊      | 48/125 [02:03<03:30,  2.74s/it]
+Processing samples:  39%|███▉      | 49/125 [02:06<03:27,  2.73s/it]
+Processing samples:  40%|████      | 50/125 [02:09<03:25,  2.74s/it]
+Processing samples:  41%|████      | 51/125 [02:11<03:22,  2.73s/it]
+Processing samples:  42%|████▏     | 52/125 [02:14<03:18,  2.72s/it]
+Processing samples:  42%|████▏     | 53/125 [02:17<03:15,  2.72s/it]
+Processing samples:  43%|████▎     | 54/125 [02:20<03:12,  2.71s/it]
+Processing samples:  44%|████▍     | 55/125 [02:22<03:09,  2.71s/it]
+Processing samples:  45%|████▍     | 56/125 [02:25<03:06,  2.70s/it]
+Processing samples:  46%|████▌     | 57/125 [02:28<03:03,  2.69s/it]
+Processing samples:  46%|████▋     | 58/125 [02:30<02:59,  2.68s/it]
+Processing samples:  47%|████▋     | 59/125 [02:33<02:56,  2.68s/it]
+Processing samples:  48%|████▊     | 60/125 [02:36<02:54,  2.68s/it]
+Processing samples:  49%|████▉     | 61/125 [02:38<02:51,  2.67s/it]
+Processing samples:  50%|████▉     | 62/125 [02:41<02:48,  2.67s/it]
+Processing samples:  50%|█████     | 63/125 [02:44<02:45,  2.67s/it]
+Processing samples:  51%|█████     | 64/125 [02:46<02:42,  2.67s/it]
+Processing samples:  52%|█████▏    | 65/125 [02:49<02:40,  2.67s/it]
+Processing samples:  53%|█████▎    | 66/125 [02:52<02:37,  2.67s/it]
+Processing samples:  54%|█████▎    | 67/125 [02:54<02:34,  2.67s/it]
+Processing samples:  54%|█████▍    | 68/125 [02:57<02:32,  2.67s/it]
+Processing samples:  55%|█████▌    | 69/125 [03:00<02:29,  2.67s/it]
+Processing samples:  56%|█████▌    | 70/125 [03:02<02:27,  2.67s/it]
+Processing samples:  57%|█████▋    | 71/125 [03:05<02:24,  2.68s/it]
+Processing samples:  58%|█████▊    | 72/125 [03:08<02:22,  2.68s/it]
+Processing samples:  58%|█████▊    | 73/125 [03:10<02:19,  2.68s/it]
+Processing samples:  59%|█████▉    | 74/125 [03:13<02:16,  2.69s/it]
+Processing samples:  60%|██████    | 75/125 [03:16<02:14,  2.68s/it]
+Processing samples:  61%|██████    | 76/125 [03:19<02:11,  2.69s/it]
+Processing samples:  62%|██████▏   | 77/125 [03:21<02:09,  2.69s/it]
+Processing samples:  62%|██████▏   | 78/125 [03:24<02:06,  2.70s/it]
+Processing samples:  63%|██████▎   | 79/125 [03:27<02:03,  2.69s/it]
+Processing samples:  64%|██████▍   | 80/125 [03:29<02:00,  2.69s/it]
+Processing samples:  65%|██████▍   | 81/125 [03:32<01:58,  2.68s/it]
+Processing samples:  66%|██████▌   | 82/125 [03:35<01:55,  2.69s/it]
+Processing samples:  66%|██████▋   | 83/125 [03:37<01:53,  2.69s/it]
+Processing samples:  67%|██████▋   | 84/125 [03:40<01:50,  2.70s/it]
+Processing samples:  68%|██████▊   | 85/125 [03:43<01:47,  2.69s/it]
+Processing samples:  69%|██████▉   | 86/125 [03:45<01:45,  2.70s/it]
+Processing samples:  70%|██████▉   | 87/125 [03:48<01:42,  2.69s/it]
+Processing samples:  70%|███████   | 88/125 [03:51<01:39,  2.69s/it]
+Processing samples:  71%|███████   | 89/125 [03:53<01:36,  2.68s/it]
+Processing samples:  72%|███████▏  | 90/125 [03:56<01:34,  2.69s/it]
+Processing samples:  73%|███████▎  | 91/125 [03:59<01:31,  2.68s/it]
+Processing samples:  74%|███████▎  | 92/125 [04:02<01:28,  2.69s/it]
+Processing samples:  74%|███████▍  | 93/125 [04:04<01:25,  2.69s/it]
+Processing samples:  75%|███████▌  | 94/125 [04:07<01:23,  2.68s/it]
+Processing samples:  76%|███████▌  | 95/125 [04:10<01:20,  2.68s/it]
+Processing samples:  77%|███████▋  | 96/125 [04:12<01:17,  2.68s/it]
+Processing samples:  78%|███████▊  | 97/125 [04:15<01:14,  2.68s/it]
+Processing samples:  78%|███████▊  | 98/125 [04:18<01:12,  2.68s/it]
+Processing samples:  79%|███████▉  | 99/125 [04:20<01:09,  2.68s/it]
+Processing samples:  80%|████████  | 100/125 [04:23<01:06,  2.68s/it]
+Processing samples:  81%|████████  | 101/125 [04:26<01:04,  2.67s/it]
+Processing samples:  82%|████████▏ | 102/125 [04:28<01:01,  2.68s/it]
+Processing samples:  82%|████████▏ | 103/125 [04:31<00:59,  2.68s/it]
+Processing samples:  83%|████████▎ | 104/125 [04:34<00:56,  2.69s/it]
+Processing samples:  84%|████████▍ | 105/125 [04:36<00:53,  2.69s/it]
+Processing samples:  85%|████████▍ | 106/125 [04:39<00:51,  2.69s/it]
+Processing samples:  86%|████████▌ | 107/125 [04:42<00:48,  2.69s/it]
+Processing samples:  86%|████████▋ | 108/125 [04:44<00:45,  2.69s/it]
+Processing samples:  87%|████████▋ | 109/125 [04:47<00:42,  2.68s/it]
+Processing samples:  88%|████████▊ | 110/125 [04:50<00:40,  2.68s/it]
+Processing samples:  89%|████████▉ | 111/125 [04:53<00:37,  2.69s/it]
+Processing samples:  90%|████████▉ | 112/125 [04:55<00:34,  2.69s/it]
+Processing samples:  90%|█████████ | 113/125 [04:58<00:32,  2.69s/it]
+Processing samples:  91%|█████████ | 114/125 [05:01<00:29,  2.69s/it]
+Processing samples:  92%|█████████▏| 115/125 [05:03<00:26,  2.69s/it]
+Processing samples:  93%|█████████▎| 116/125 [05:06<00:24,  2.69s/it]
+Processing samples:  94%|█████████▎| 117/125 [05:09<00:21,  2.69s/it]
+Processing samples:  94%|█████████▍| 118/125 [05:11<00:18,  2.69s/it]
+Processing samples:  95%|█████████▌| 119/125 [05:14<00:16,  2.70s/it]
+Processing samples:  96%|█████████▌| 120/125 [05:17<00:13,  2.70s/it]
+Processing samples:  97%|█████████▋| 121/125 [05:19<00:10,  2.69s/it]
+Processing samples:  98%|█████████▊| 122/125 [05:22<00:08,  2.69s/it]
+Processing samples:  98%|█████████▊| 123/125 [05:25<00:05,  2.69s/it]
+Processing samples:  99%|█████████▉| 124/125 [05:28<00:02,  2.69s/it]
+Processing samples: 100%|██████████| 125/125 [05:30<00:00,  2.69s/it]
+Processing samples: 100%|██████████| 125/125 [05:30<00:00,  2.65s/it]
+2026-10-27 03:27:28 - INFO - Inference completed successfully
+🎯 Results:
+   ✅ Inference completed successfully
+   🔢 Samples processed: 125
+   ⏱️  Inference time: 330.74s
+   ⚡ Throughput: 0.38 samples/sec
+
+================================================================================
+🔧 VOLUME RECONSTRUCTION
+================================================================================
+2026-10-27 03:27:28 - INFO - Reconstructing backbone_probability from 125 grids
+2026-10-27 03:27:28 - INFO - Reconstructing carbon_alpha_probability from 125 grids
+2026-10-27 03:27:29 - INFO - Reconstructing amino_acid_prediction from 125 grids
+2026-10-27 03:27:29 - INFO - Reconstructing amino_acid_probability from 125 grids
+🎯 Results:
+   ✅ Reconstruction completed successfully
+   🗺️  Volumes created: 4/4
+   ⏱️  Reconstruction time: 6.70s
+
+================================================================================
+📊 DEEP LEARNING PREDICTION SUMMARY
+================================================================================
+🎯 Overall Results:
+   ✅ Pipeline completed successfully
+   📊 Processing strategy: Single sample
+   🔢 Total samples: 125
+   ⏱️  Total time: 342.17s
+⚡ Performance:
+   📈 Throughput: 0.38 samples/sec
+   ⏱️  Average per sample: 2.646s
+
+================================================================================
+🚀 DEEP LEARNING PREDICTION COMPLETE
+================================================================================
+2026-10-27 03:27:35 - INFO - ✓ Deep Learning predictions completed...
+2026-10-27 03:27:35 - INFO -    📊 Amino acid prediction shape: (207, 207, 207)
+2026-10-27 03:27:35 - INFO -    📊 Amino acid probability shape: (20, 207, 207, 207)
+2026-10-27 03:27:35 - INFO -    📊 Backbone probability shape: (207, 207, 207)
+2026-10-27 03:27:35 - INFO -    📊 CA probability shape: (207, 207, 207)
+2026-10-27 03:27:35 - INFO - Deleting all grids, normalized density map and AF3 encodings for disk space saving...
+2026-10-27 03:27:35 - INFO - ❌ Failed to delete some temporary files. Continuing...
+2026-10-27 03:27:35 - INFO - ✓ Deep Learning prediction completed in 342.34 seconds
+
+================================================================================
+🔗 CLUSTERING CANDIDATES
+================================================================================
+2026-10-27 03:27:35 - INFO - Starting candidate clustering...
+2026-10-27 03:27:35 - INFO - Starting clustering with eps=10, min_points=10
+2026-10-27 03:27:35 - INFO - CA score threshold: 0.3
+2026-10-27 03:27:35 - INFO - Initial point cloud size: 8034
+2026-10-27 03:27:35 - INFO - Number of clusters found: 1
+2026-10-27 03:27:35 - INFO - Valid clusters selected: 8034 points from 8034
+2026-10-27 03:27:35 - INFO - Processing 8034 candidate positions...
+2026-10-27 03:27:35 - INFO - Final CA candidates: 544
+2026-10-27 03:27:36 - INFO - Building neighbor lists...
+2026-10-27 03:27:36 - INFO - Computing neighbor scoring matrix...
+2026-10-27 03:27:36 - INFO - ✓ Clustering completed - 544 candidates with neighbors
+2026-10-27 03:27:36 - INFO - ✓ Clustering completed in 0.68 seconds
+================================================================================
+🧩 GENERATING INITIAL FRAGMENTS
+================================================================================
+2026-10-27 03:27:36 - INFO - Starting fragment modeling...
+2026-10-27 03:27:36 - INFO - Starting fragment modeling with protocol: AF3_struct
+2026-10-27 03:27:36 - INFO - CA candidates shape: (544, 3)
+2026-10-27 03:27:36 - INFO - Neighbors 2to6 length: 544
+2026-10-27 03:27:36 - INFO - Neighbor matrix shape: (544, 544)
+2026-10-27 03:27:36 - INFO - Initial edge list: 1734 edges
+2026-10-27 03:27:36 - INFO - Initial fragments generated: 10
+2026-10-27 03:27:36 - INFO - Reducing fragments from 10 to 4
+2026-10-27 03:27:36 - INFO - Final fragment count: 4
+2026-10-27 03:27:36 - INFO - ✓ Fragment modeling completed in 0.03 seconds
+================================================================================
+🔗 Cα-SEQUENCE ALIGNMENT
+================================================================================
+2026-10-27 03:27:36 - INFO - Sequence candidate AA matrix shape: (1, 551, 544)
+2026-10-27 03:27:36 - INFO - CA candidates AA probability shape: (20, 544)
+2026-10-27 03:27:36 - INFO - Starting Cα-sequence alignment with AF3 structure...
+2026-10-27 03:27:36 - INFO - Starting Cα-sequence alignment with AF3 structures...
+2026-10-27 03:27:36 - INFO - Starting sequence register scoring...
+2026-10-27 03:27:36 - INFO - Starting Cα-sequence scoring...
+2026-10-27 03:27:36 - INFO - Computing N-hop matrix with n_hop=6
+2026-10-27 03:27:36 - INFO - ✓ N-hop matrix computation completed
+2026-10-27 03:27:36 - INFO - Generating local traces...
+2026-10-27 03:27:36 - INFO - Generated 1097 local traces
+2026-10-27 03:28:45 - INFO - ✓ Cα-sequence scoring completed
+2026-10-27 03:28:45 - INFO - Computing register scores for 9RWS_1...
+2026-10-27 03:28:58 - INFO - Register score for 9RWS_1: 268.82
+2026-10-27 03:28:58 - INFO - Processing sequences in order of register scores: [268.82062]
+2026-10-27 03:28:58 - INFO - Processing sequence 9RWS_1 with 551 residues, 1 chains
+2026-10-27 03:29:34 - INFO - AF3 matching results: 545 matches, total score: 91230.56
+2026-10-27 03:29:34 - INFO - ✓ AF3 structure-based alignment completed in 118.40 seconds
+================================================================================
+🏗️  BUILDING INITIAL MODEL
+================================================================================
+2026-10-27 03:29:34 - INFO - Starting initial modeling...
+2026-10-27 03:29:34 - INFO - Starting initial model building with 1 aligned fragments
+2026-10-27 03:29:34 - INFO - Processing 551 traces for sequence 9RWS_1
+2026-10-27 03:29:34 - INFO - Chain list: ['A']
+2026-10-27 03:29:34 - INFO - Saving initial model: output/54346_9rws_MICA(init)_ca_model.pdb
+2026-10-27 03:29:34 - INFO - ✓ Initial model building completed in 0.03 seconds
+================================================================================
+🧵 RUNNING GAP FILLING
+================================================================================
+2026-10-27 03:29:34 - INFO - Starting gap filling...
+2026-10-27 03:29:34 - INFO - Starting gap filling process...
+2026-10-27 03:29:34 - INFO - Processing gap 1/5: positions 482->495
+2026-10-27 03:29:35 - INFO - Processing gap 2/5: positions 538->551
+2026-10-27 03:29:35 - INFO - Processing gap 3/5: positions 200->223
+2026-10-27 03:29:38 - INFO - Processing gap 4/5: positions 61->103
+2026-10-27 03:29:42 - INFO - Processing gap 5/5: positions -1->43
+2026-10-27 03:29:48 - INFO - Saving gap filled model: output/54346_9rws_MICA_ca_model.pdb
+2026-10-27 03:29:48 - INFO - ✓ Gap filling completed in 13.86 seconds
+================================================================================
+🔧 RUNNING PULCHRA
+================================================================================
+2026-10-27 03:29:48 - INFO - Starting Pulchra reconstruction...
+2026-10-27 03:29:48 - INFO - Starting Pulchra processing for PDB file: output/54346_9rws_MICA_ca_model.pdb
+2026-10-27 03:29:48 - INFO - Splitting PDB file by chains...
+2026-10-27 03:29:48 - INFO - Running Pulchra reconstruction on chain fragments...
+2026-10-27 03:29:49 - INFO - Combining rebuilt chains into all-atom model...
+2026-10-27 03:29:49 - INFO - ✓ Pulchra processing completed. All-atom model saved: output/54346_9rws_MICA_all_atom_model.pdb
+2026-10-27 03:29:49 - INFO - ✓ Pulchra completed in 0.35 seconds
+================================================================================
+⚡ RUNNING PHENIX REFINEMENT
+================================================================================
+2026-10-27 03:29:49 - INFO - Starting Phenix refinement...
+2026-10-27 03:29:49 - INFO - Executing Phenix command: bash modules/phenix.sh /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh /tmp/mica_pilot/MICA/output "phenix.real_space_refine /tmp/mica_pilot/MICA/output/54346_9rws_MICA_all_atom_model.pdb /tmp/mica_pilot/MICA/input/9RWS/emd_54346.map /tmp/mica_pilot/MICA/modules/phenix.eff resolution=3.28"
+2026-10-27 03:29:49 - INFO - ✓ Phenix refinement completed in 0.11 seconds
+2026-10-27 03:29:49 - INFO - Recording timing information: output/time_cost_54346_9rws_MICA.csv
+================================================================================
+🎉 MICA PIPELINE COMPLETED SUCCESSFULLY
+================================================================================
+📊 Total processing time: 482.08 seconds
+📁 Final model saved: output/54346_9rws_MICA_all_atom_model.pdb
+

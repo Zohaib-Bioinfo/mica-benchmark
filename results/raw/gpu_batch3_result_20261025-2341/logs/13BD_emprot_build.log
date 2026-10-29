@@ -1,0 +1,1238 @@
+# Job start at 2026-10-25 19:43:04.407966
+# Output dir set to /tmp/mica_pilot/runs/emprot/13BD
+# Temp   dir set to /tmp/mica_pilot/runs/emprot/13BD/temp
+Write formatted seq to /tmp/mica_pilot/runs/emprot/13BD/temp/format_seq.fasta
+User input 2 single-chain structure templates
+Using single-chain structure as templates
+Rewrite template 0 from single-chain to /tmp/mica_pilot/runs/emprot/13BD/temp/chain_templs/templ_0.pdb
+Rewrite template 1 from single-chain to /tmp/mica_pilot/runs/emprot/13BD/temp/chain_templs/templ_1.pdb
+# Has chain   template = True
+# has complex template = False
+# No complex template, use chain from single as template
+# Rescale voxel size from [0.832 0.832 0.832] to [1. 1. 1.], shift origin by None
+# Write formated map to /tmp/mica_pilot/runs/emprot/13BD/temp/format_map.mrc
+# Time consupmtion 18.9063 seconds. Done preprocess
+# Script dir is /tmp/mica_pilot/src_emprot/emprot/pipeline
+# Specify model path to /tmp/mica_pilot/src_emprot/emprot/weights
+# Making directory /tmp/mica_pilot/runs/emprot/13BD/temp/ncac
+# Start inference
+# Select map contour at 0.000001
+# Running on device cuda:0
+# Load map data from /tmp/mica_pilot/runs/emprot/13BD/temp/format_map.mrc
+# Map dimensions = [346 346 346]
+# Start processing
+
+|##--------------------------------------| 5% 32.2090 seconds elapsed
+
+|####------------------------------------| 10% 63.1779 seconds elapsed
+
+|######----------------------------------| 15% 93.7619 seconds elapsed
+
+|########--------------------------------| 20% 126.4537 seconds elapsed
+
+|##########------------------------------| 25% 156.9914 seconds elapsed
+
+|############----------------------------| 30% 187.4928 seconds elapsed
+
+|##############--------------------------| 35% 220.2204 seconds elapsed
+
+|################------------------------| 40% 250.6962 seconds elapsed
+
+|##################----------------------| 45% 281.1351 seconds elapsed
+
+|####################--------------------| 50% 313.8171 seconds elapsed
+
+|######################------------------| 55% 344.2346 seconds elapsed
+
+|########################----------------| 60% 374.6527 seconds elapsed
+
+|##########################--------------| 65% 407.3348 seconds elapsed
+
+|############################------------| 70% 437.6471 seconds elapsed
+
+|##############################----------| 75% 467.9592 seconds elapsed
+
+|########################################| 100%
+# Write map to /tmp/mica_pilot/runs/emprot/13BD/temp/ncac/n.mrc
+# Write map to /tmp/mica_pilot/runs/emprot/13BD/temp/ncac/ca.mrc
+# Write map to /tmp/mica_pilot/runs/emprot/13BD/temp/ncac/c.mrc
+# Write map to /tmp/mica_pilot/runs/emprot/13BD/temp/ncac/mc.mrc
+# Done  inference
+# Start inference
+# Select map contour at 0.000001
+# Running on device cuda:0
+# Load map data from /tmp/mica_pilot/runs/emprot/13BD/temp/format_map.mrc
+# Map dimensions = [346 346 346]
+# Start processing
+
+|##--------------------------------------| 5% 46.8889 seconds elapsed
+
+|####------------------------------------| 10% 86.5822 seconds elapsed
+
+|######----------------------------------| 15% 125.3445 seconds elapsed
+
+|########--------------------------------| 20% 167.0644 seconds elapsed
+
+|##########------------------------------| 25% 205.1133 seconds elapsed
+
+|############----------------------------| 30% 243.0742 seconds elapsed
+
+|##############--------------------------| 35% 283.9101 seconds elapsed
+
+|################------------------------| 40% 321.7759 seconds elapsed
+
+|##################----------------------| 45% 359.5585 seconds elapsed
+
+|####################--------------------| 50% 400.3603 seconds elapsed
+
+|######################------------------| 55% 438.1854 seconds elapsed
+
+|########################----------------| 60% 476.0122 seconds elapsed
+
+|##########################--------------| 65% 516.8409 seconds elapsed
+
+|############################------------| 70% 554.7330 seconds elapsed
+
+|##############################----------| 75% 592.4646 seconds elapsed
+
+|########################################| 100%
+# Write aa logits npz file to /tmp/mica_pilot/runs/emprot/13BD/temp/ncac/aa_logits.npz
+# Done  inference
+# Clean CUDA cache
+# Time consuming 1147.3799
+# Time consumption 1160.0967 seconds. Done dl mc aa
+# Running getp with args res=6.0 thresh=10.0 nt=4
+# No   initial Ca positions are specified, shift on grids
+# Convert atom probability map to coords
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/getp --in /tmp/mica_pilot/runs/emprot/13BD/temp/ncac/ca.mrc --out /tmp/mica_pilot/runs/emprot/13BD/temp/ncac/raw_ca.pdb --thresh 10.0 --res 6.0 --nt 4 --filter 0.0 --dmerge 1.5
+# Time consumption 7.7481 seconds. Done pmap to ca
+# Load aa logits map
+# AA map shape = (20, 346, 346, 346)
+# Infer 1 / 3
+# Read structure from /tmp/mica_pilot/runs/emprot/13BD/temp/ncac/raw_ca.pdb
+# Use random affine
+
+  0%|          | 0/1963 [00:00<?, ?it/s]
+  3%|▎         | 50/1963 [00:03<01:55, 16.54it/s]
+  5%|▌         | 100/1963 [00:04<01:15, 24.75it/s]
+  8%|▊         | 150/1963 [00:05<01:01, 29.34it/s]
+ 10%|█         | 200/1963 [00:06<00:54, 32.12it/s]
+ 13%|█▎        | 250/1963 [00:08<00:50, 33.70it/s]
+ 15%|█▌        | 300/1963 [00:09<00:47, 34.90it/s]
+ 18%|█▊        | 350/1963 [00:11<00:45, 35.75it/s]
+ 20%|██        | 400/1963 [00:12<00:43, 36.28it/s]
+ 23%|██▎       | 450/1963 [00:13<00:41, 36.67it/s]
+ 25%|██▌       | 500/1963 [00:15<00:39, 36.91it/s]
+ 28%|██▊       | 550/1963 [00:16<00:38, 37.04it/s]
+ 31%|███       | 600/1963 [00:17<00:36, 37.14it/s]
+ 33%|███▎      | 650/1963 [00:19<00:35, 37.04it/s]
+ 36%|███▌      | 700/1963 [00:20<00:34, 37.03it/s]
+ 38%|███▊      | 750/1963 [00:21<00:32, 36.99it/s]
+ 41%|████      | 800/1963 [00:23<00:31, 36.99it/s]
+ 43%|████▎     | 850/1963 [00:24<00:30, 36.94it/s]
+ 46%|████▌     | 900/1963 [00:25<00:28, 36.91it/s]
+ 48%|████▊     | 950/1963 [00:27<00:27, 36.89it/s]
+ 51%|█████     | 1000/1963 [00:28<00:26, 36.86it/s]
+ 53%|█████▎    | 1050/1963 [00:29<00:24, 36.80it/s]
+ 56%|█████▌    | 1098/1963 [00:31<00:23, 36.39it/s]
+ 58%|█████▊    | 1144/1963 [00:32<00:22, 35.64it/s]
+ 61%|██████    | 1188/1963 [00:33<00:22, 34.63it/s]
+ 63%|██████▎   | 1232/1963 [00:35<00:21, 33.90it/s]
+ 65%|██████▍   | 1275/1963 [00:36<00:20, 33.19it/s]
+ 67%|██████▋   | 1318/1963 [00:38<00:19, 32.65it/s]
+ 69%|██████▉   | 1360/1963 [00:39<00:18, 32.04it/s]
+ 71%|███████▏  | 1401/1963 [00:40<00:17, 31.44it/s]
+ 73%|███████▎  | 1439/1963 [00:42<00:17, 30.33it/s]
+ 75%|███████▌  | 1474/1963 [00:43<00:16, 28.92it/s]
+ 77%|███████▋  | 1509/1963 [00:44<00:16, 27.95it/s]
+ 78%|███████▊  | 1538/1963 [00:46<00:16, 25.93it/s]
+ 80%|███████▉  | 1567/1963 [00:47<00:16, 24.50it/s]
+ 81%|████████▏ | 1595/1963 [00:49<00:15, 23.32it/s]
+ 83%|████████▎ | 1623/1963 [00:50<00:15, 22.49it/s]
+ 84%|████████▍ | 1647/1963 [00:51<00:15, 21.05it/s]
+ 85%|████████▌ | 1671/1963 [00:53<00:14, 20.04it/s]
+ 86%|████████▌ | 1692/1963 [00:54<00:14, 18.67it/s]
+ 87%|████████▋ | 1712/1963 [00:55<00:14, 17.43it/s]
+ 88%|████████▊ | 1731/1963 [00:57<00:14, 16.40it/s]
+ 89%|████████▉ | 1749/1963 [00:58<00:13, 15.47it/s]
+ 90%|████████▉ | 1765/1963 [00:59<00:13, 14.38it/s]
+ 91%|█████████ | 1782/1963 [01:01<00:13, 13.85it/s]
+ 92%|█████████▏| 1798/1963 [01:02<00:12, 13.26it/s]
+ 92%|█████████▏| 1815/1963 [01:03<00:11, 13.11it/s]
+ 93%|█████████▎| 1828/1963 [01:05<00:11, 12.07it/s]
+ 94%|█████████▎| 1837/1963 [01:06<00:12, 10.46it/s]
+ 94%|█████████▍| 1847/1963 [01:07<00:12,  9.54it/s]
+ 94%|█████████▍| 1855/1963 [01:09<00:12,  8.47it/s]
+ 95%|█████████▌| 1867/1963 [01:10<00:11,  8.61it/s]
+ 95%|█████████▌| 1874/1963 [01:11<00:11,  7.60it/s]
+ 96%|█████████▌| 1880/1963 [01:13<00:12,  6.67it/s]
+ 96%|█████████▋| 1890/1963 [01:14<00:10,  6.92it/s]
+ 97%|█████████▋| 1895/1963 [01:15<00:11,  5.96it/s]
+ 97%|█████████▋| 1900/1963 [01:17<00:11,  5.30it/s]
+ 97%|█████████▋| 1906/1963 [01:18<00:11,  5.06it/s]
+ 97%|█████████▋| 1907/1963 [01:19<00:14,  3.77it/s]
+ 98%|█████████▊| 1914/1963 [01:21<00:11,  4.20it/s]
+ 98%|█████████▊| 1916/1963 [01:22<00:13,  3.39it/s]
+ 98%|█████████▊| 1921/1963 [01:24<00:12,  3.50it/s]
+ 98%|█████████▊| 1925/1963 [01:26<00:14,  2.58it/s]
+ 98%|█████████▊| 1927/1963 [01:28<00:15,  2.30it/s]
+ 98%|█████████▊| 1933/1963 [01:30<00:13,  2.28it/s]
+ 99%|█████████▊| 1935/1963 [01:32<00:13,  2.10it/s]
+ 99%|█████████▊| 1937/1963 [01:33<00:13,  1.95it/s]
+ 99%|█████████▉| 1939/1963 [01:37<00:19,  1.20it/s]
+ 99%|█████████▉| 1944/1963 [01:38<00:11,  1.70it/s]
+ 99%|█████████▉| 1946/1963 [01:40<00:10,  1.65it/s]
+ 99%|█████████▉| 1951/1963 [01:42<00:06,  1.74it/s]
+ 99%|█████████▉| 1953/1963 [01:44<00:05,  1.68it/s]
+100%|█████████▉| 1954/1963 [01:45<00:06,  1.46it/s]
+100%|█████████▉| 1955/1963 [01:48<00:07,  1.02it/s]
+100%|█████████▉| 1956/1963 [01:57<00:17,  2.44s/it]
+100%|█████████▉| 1957/1963 [01:58<00:13,  2.22s/it]
+100%|█████████▉| 1958/1963 [02:00<00:10,  2.03s/it]
+100%|█████████▉| 1959/1963 [02:02<00:08,  2.19s/it]
+100%|█████████▉| 1960/1963 [02:05<00:06,  2.32s/it]
+100%|██████████| 1963/1963 [02:19<00:00,  3.47s/it]
+100%|██████████| 1963/1963 [02:19<00:00, 14.10it/s]
+# Clean CUDA cache
+# Assign restype for denovo modeling
+# Setting output directory to /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_0
+# Setting HMM temp dir to /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_0/hmm
+# Found 2 sequences
+# Seq 0
+# MFVFLVLLLLVSSQCVNLTTTTQLPLAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHVISGTNGTKRFDNPVLPFNDGVYFASIEKSNITRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFNNKSWMESESRVYSSAKNCTFEYVFQPFLMDLEGKQGNFTNLREFVFKNIDGYFKIYSKHTPIIVRDLPQGFSALEPLVDLPIGINITRFQTLLHRSYLTSGDSSSGWTAGAAAYYVGYLQPRTFLLKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESVVRFPNITNLCPFYEVFNATRFPSVYAWNRKRISNCVADYSVLYNFAPFFTFKCYGVSPTKLNDLCFTNVYADSFVIKGNEVSQIAPGQTGNIADYNYKLPDDFTGCVISWNSNRLDSKADGNYNYWYRLFRKSKLKPFERDISTEIYQAGNNPCNGVKGFNCYFPLQSYSFRPTYGVGYQPYRVVVLSFELLHAPATVCGPKQSTNLVKNKCVNFNFNGLTGTGVLTDSNKKFLPFQQFGRDIADTTDAVRDPQTLDILDITPCSFGGVSVITPGTNTSNQVAVLYQGV ...
+# Seq 1
+# MFVFLVLLLLVSSQCVNLTTTTQLPLAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHVISGTNGTKRFDNPVLPFNDGVYFASIEKSNITRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFNNKSWMESESRVYSSAKNCTFEYVFQPFLMDLEGKQGNFTNLREFVFKNIDGYFKIYSKHTPIIVRDLPQGFSALEPLVDLPIGINITRFQTLLHRSYLTSGDSSSGWTAGAAAYYVGYLQPRTFLLKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESVVRFPNITNLCPFYEVFNATRFPSVYAWNRKRISNCVADYSVLYNFAPFFTFKCYGVSPTKLNDLCFTNVYADSFVIKGNEVSQIAPGQTGNIADYNYKLPDDFTGCVISWNSNRLDSKADGNYNYWYRLFRKSKLKPFERDISTEIYQAGNNPCNGVKGFNCYFPLQSYSFRPTYGVGYQPYRVVVLSFELLHAPATVCGPKQSTNLVKNKCVNFNFNGLTGTGVLTDSNKKFLPFQQFGRDIADTTDAVRDPQTLDILDITPCSFGGVSVITPGTNTSNQVAVLYQGV ...
+# Trace to 98 fragments a total of 1963 CAs
+# Assign aa logits
+# Fixing gaps
+# Before prune and connect we have 76 chains
+# After  prune and connect we have 16 chains
+# Output individual chains to /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_0/denovo_chains/denovo_chain_*.pdb
+# Output denovo chains to /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_0/output.cif
+# Infer 2 / 3
+# Read structure from /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_0/output.cif
+# Use affine from file
+
+  0%|          | 0/1706 [00:00<?, ?it/s]
+  3%|▎         | 50/1706 [00:02<01:18, 21.07it/s]
+  6%|▌         | 100/1706 [00:03<00:56, 28.31it/s]
+  9%|▉         | 150/1706 [00:05<00:48, 31.84it/s]
+ 12%|█▏        | 200/1706 [00:06<00:44, 33.81it/s]
+ 15%|█▍        | 250/1706 [00:07<00:41, 34.97it/s]
+ 18%|█▊        | 300/1706 [00:09<00:39, 35.75it/s]
+ 21%|██        | 350/1706 [00:10<00:37, 36.23it/s]
+ 23%|██▎       | 400/1706 [00:11<00:35, 36.50it/s]
+ 26%|██▋       | 450/1706 [00:13<00:34, 36.72it/s]
+ 29%|██▉       | 500/1706 [00:14<00:32, 36.88it/s]
+ 32%|███▏      | 550/1706 [00:15<00:31, 36.99it/s]
+ 35%|███▌      | 600/1706 [00:17<00:29, 37.00it/s]
+ 38%|███▊      | 650/1706 [00:18<00:28, 37.00it/s]
+ 41%|████      | 700/1706 [00:19<00:27, 36.99it/s]
+ 44%|████▍     | 750/1706 [00:21<00:25, 37.00it/s]
+ 47%|████▋     | 800/1706 [00:22<00:24, 36.93it/s]
+ 50%|████▉     | 849/1706 [00:23<00:23, 36.67it/s]
+ 53%|█████▎    | 897/1706 [00:25<00:22, 36.29it/s]
+ 55%|█████▌    | 940/1706 [00:26<00:21, 34.91it/s]
+ 58%|█████▊    | 983/1706 [00:27<00:21, 33.96it/s]
+ 60%|██████    | 1025/1706 [00:29<00:20, 33.05it/s]
+ 62%|██████▏   | 1066/1706 [00:30<00:19, 32.21it/s]
+ 65%|██████▍   | 1106/1706 [00:32<00:19, 31.33it/s]
+ 67%|██████▋   | 1144/1706 [00:33<00:18, 30.35it/s]
+ 69%|██████▉   | 1182/1706 [00:34<00:17, 29.66it/s]
+ 71%|███████▏  | 1219/1706 [00:36<00:16, 28.95it/s]
+ 73%|███████▎  | 1251/1706 [00:37<00:16, 27.36it/s]
+ 75%|███████▌  | 1282/1706 [00:38<00:16, 26.03it/s]
+ 77%|███████▋  | 1312/1706 [00:40<00:15, 24.90it/s]
+ 79%|███████▊  | 1341/1706 [00:41<00:15, 23.75it/s]
+ 80%|████████  | 1369/1706 [00:42<00:14, 22.76it/s]
+ 82%|████████▏ | 1395/1706 [00:44<00:14, 21.70it/s]
+ 83%|████████▎ | 1421/1706 [00:45<00:13, 20.97it/s]
+ 85%|████████▍ | 1447/1706 [00:46<00:12, 20.46it/s]
+ 86%|████████▌ | 1471/1706 [00:48<00:11, 19.65it/s]
+ 88%|████████▊ | 1494/1706 [00:49<00:11, 18.88it/s]
+ 89%|████████▉ | 1516/1706 [00:51<00:10, 18.12it/s]
+ 90%|█████████ | 1536/1706 [00:52<00:09, 17.13it/s]
+ 91%|█████████▏| 1558/1706 [00:53<00:08, 16.90it/s]
+ 92%|█████████▏| 1570/1706 [00:55<00:09, 14.52it/s]
+ 93%|█████████▎| 1580/1706 [00:56<00:10, 12.40it/s]
+ 93%|█████████▎| 1589/1706 [00:57<00:10, 10.68it/s]
+ 94%|█████████▎| 1598/1706 [00:59<00:11,  9.47it/s]
+ 94%|█████████▍| 1610/1706 [01:00<00:10,  9.32it/s]
+ 95%|█████████▍| 1616/1706 [01:01<00:11,  7.87it/s]
+ 95%|█████████▌| 1625/1706 [01:03<00:10,  7.53it/s]
+ 96%|█████████▌| 1638/1706 [01:04<00:08,  8.18it/s]
+ 96%|█████████▋| 1645/1706 [01:05<00:08,  7.30it/s]
+ 97%|█████████▋| 1654/1706 [01:07<00:07,  7.12it/s]
+ 97%|█████████▋| 1662/1706 [01:08<00:06,  6.77it/s]
+ 98%|█████████▊| 1668/1706 [01:09<00:06,  6.08it/s]
+ 98%|█████████▊| 1672/1706 [01:11<00:06,  5.15it/s]
+ 98%|█████████▊| 1675/1706 [01:12<00:07,  4.27it/s]
+ 98%|█████████▊| 1679/1706 [01:13<00:06,  3.88it/s]
+ 99%|█████████▊| 1681/1706 [01:15<00:07,  3.17it/s]
+ 99%|█████████▉| 1685/1706 [01:17<00:08,  2.39it/s]
+ 99%|█████████▉| 1688/1706 [01:19<00:07,  2.35it/s]
+ 99%|█████████▉| 1690/1706 [01:20<00:07,  2.13it/s]
+ 99%|█████████▉| 1692/1706 [01:21<00:07,  1.95it/s]
+ 99%|█████████▉| 1694/1706 [01:23<00:06,  1.82it/s]
+ 99%|█████████▉| 1695/1706 [01:27<00:11,  1.04s/it]
+100%|█████████▉| 1699/1706 [01:28<00:05,  1.38it/s]
+100%|█████████▉| 1700/1706 [01:29<00:04,  1.24it/s]
+100%|█████████▉| 1701/1706 [01:32<00:05,  1.12s/it]
+100%|█████████▉| 1702/1706 [01:36<00:06,  1.67s/it]
+100%|█████████▉| 1703/1706 [01:42<00:07,  2.46s/it]
+100%|█████████▉| 1704/1706 [01:43<00:04,  2.20s/it]
+100%|█████████▉| 1705/1706 [01:48<00:02,  2.99s/it]
+100%|██████████| 1706/1706 [02:15<00:00,  9.30s/it]
+100%|██████████| 1706/1706 [02:15<00:00, 12.57it/s]
+# Clean CUDA cache
+# Assign restype for denovo modeling
+# Setting output directory to /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_1
+# Setting HMM temp dir to /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_1/hmm
+# Found 2 sequences
+# Seq 0
+# MFVFLVLLLLVSSQCVNLTTTTQLPLAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHVISGTNGTKRFDNPVLPFNDGVYFASIEKSNITRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFNNKSWMESESRVYSSAKNCTFEYVFQPFLMDLEGKQGNFTNLREFVFKNIDGYFKIYSKHTPIIVRDLPQGFSALEPLVDLPIGINITRFQTLLHRSYLTSGDSSSGWTAGAAAYYVGYLQPRTFLLKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESVVRFPNITNLCPFYEVFNATRFPSVYAWNRKRISNCVADYSVLYNFAPFFTFKCYGVSPTKLNDLCFTNVYADSFVIKGNEVSQIAPGQTGNIADYNYKLPDDFTGCVISWNSNRLDSKADGNYNYWYRLFRKSKLKPFERDISTEIYQAGNNPCNGVKGFNCYFPLQSYSFRPTYGVGYQPYRVVVLSFELLHAPATVCGPKQSTNLVKNKCVNFNFNGLTGTGVLTDSNKKFLPFQQFGRDIADTTDAVRDPQTLDILDITPCSFGGVSVITPGTNTSNQVAVLYQGV ...
+# Seq 1
+# MFVFLVLLLLVSSQCVNLTTTTQLPLAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHVISGTNGTKRFDNPVLPFNDGVYFASIEKSNITRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFNNKSWMESESRVYSSAKNCTFEYVFQPFLMDLEGKQGNFTNLREFVFKNIDGYFKIYSKHTPIIVRDLPQGFSALEPLVDLPIGINITRFQTLLHRSYLTSGDSSSGWTAGAAAYYVGYLQPRTFLLKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESVVRFPNITNLCPFYEVFNATRFPSVYAWNRKRISNCVADYSVLYNFAPFFTFKCYGVSPTKLNDLCFTNVYADSFVIKGNEVSQIAPGQTGNIADYNYKLPDDFTGCVISWNSNRLDSKADGNYNYWYRLFRKSKLKPFERDISTEIYQAGNNPCNGVKGFNCYFPLQSYSFRPTYGVGYQPYRVVVLSFELLHAPATVCGPKQSTNLVKNKCVNFNFNGLTGTGVLTDSNKKFLPFQQFGRDIADTTDAVRDPQTLDILDITPCSFGGVSVITPGTNTSNQVAVLYQGV ...
+# Trace to 40 fragments a total of 1706 CAs
+# Assign aa logits
+# Fixing gaps
+# Before prune and connect we have 33 chains
+# After  prune and connect we have 15 chains
+# Output individual chains to /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_1/denovo_chains/denovo_chain_*.pdb
+# Output denovo chains to /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_1/output.cif
+# Infer 3 / 3
+# Read structure from /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_1/output.cif
+# Use affine from file
+
+  0%|          | 0/1690 [00:00<?, ?it/s]
+  3%|▎         | 50/1690 [00:02<01:07, 24.33it/s]
+  6%|▌         | 100/1690 [00:03<00:51, 30.68it/s]
+  9%|▉         | 150/1690 [00:04<00:45, 33.49it/s]
+ 12%|█▏        | 200/1690 [00:06<00:42, 34.91it/s]
+ 15%|█▍        | 250/1690 [00:07<00:40, 35.76it/s]
+ 18%|█▊        | 300/1690 [00:08<00:38, 36.24it/s]
+ 21%|██        | 350/1690 [00:10<00:36, 36.48it/s]
+ 24%|██▎       | 400/1690 [00:11<00:35, 36.74it/s]
+ 27%|██▋       | 450/1690 [00:12<00:33, 36.90it/s]
+ 30%|██▉       | 500/1690 [00:14<00:32, 37.00it/s]
+ 33%|███▎      | 550/1690 [00:15<00:30, 37.09it/s]
+ 36%|███▌      | 600/1690 [00:16<00:29, 37.14it/s]
+ 38%|███▊      | 650/1690 [00:18<00:27, 37.15it/s]
+ 41%|████▏     | 700/1690 [00:19<00:26, 37.08it/s]
+ 44%|████▍     | 750/1690 [00:20<00:25, 36.96it/s]
+ 47%|████▋     | 800/1690 [00:22<00:24, 36.93it/s]
+ 50%|█████     | 849/1690 [00:23<00:22, 36.72it/s]
+ 53%|█████▎    | 897/1690 [00:24<00:21, 36.32it/s]
+ 56%|█████▌    | 943/1690 [00:26<00:20, 35.59it/s]
+ 59%|█████▊    | 989/1690 [00:27<00:19, 35.11it/s]
+ 61%|██████    | 1032/1690 [00:28<00:19, 34.11it/s]
+ 64%|██████▎   | 1074/1690 [00:30<00:18, 33.11it/s]
+ 66%|██████▌   | 1116/1690 [00:31<00:17, 32.46it/s]
+ 68%|██████▊   | 1157/1690 [00:33<00:16, 31.80it/s]
+ 71%|███████   | 1196/1690 [00:34<00:15, 30.91it/s]
+ 73%|███████▎  | 1235/1690 [00:35<00:15, 30.23it/s]
+ 75%|███████▌  | 1269/1690 [00:37<00:14, 28.71it/s]
+ 77%|███████▋  | 1301/1690 [00:38<00:14, 27.20it/s]
+ 79%|███████▊  | 1329/1690 [00:39<00:14, 25.27it/s]
+ 80%|████████  | 1355/1690 [00:41<00:14, 23.44it/s]
+ 82%|████████▏ | 1382/1690 [00:42<00:13, 22.39it/s]
+ 83%|████████▎ | 1405/1690 [00:43<00:13, 20.79it/s]
+ 84%|████████▍ | 1427/1690 [00:45<00:13, 19.44it/s]
+ 86%|████████▌ | 1449/1690 [00:46<00:13, 18.50it/s]
+ 87%|████████▋ | 1472/1690 [00:47<00:12, 18.06it/s]
+ 88%|████████▊ | 1494/1690 [00:49<00:11, 17.54it/s]
+ 89%|████████▉ | 1512/1690 [00:50<00:10, 16.24it/s]
+ 91%|█████████ | 1530/1690 [00:51<00:10, 15.39it/s]
+ 92%|█████████▏| 1547/1690 [00:53<00:09, 14.54it/s]
+ 92%|█████████▏| 1562/1690 [00:54<00:09, 13.52it/s]
+ 93%|█████████▎| 1577/1690 [00:56<00:08, 12.79it/s]
+ 94%|█████████▍| 1586/1690 [00:57<00:09, 10.97it/s]
+ 94%|█████████▍| 1595/1690 [00:58<00:09,  9.70it/s]
+ 95%|█████████▍| 1604/1690 [01:00<00:09,  8.78it/s]
+ 95%|█████████▌| 1608/1690 [01:01<00:11,  7.05it/s]
+ 96%|█████████▌| 1615/1690 [01:02<00:11,  6.50it/s]
+ 96%|█████████▌| 1622/1690 [01:04<00:11,  6.12it/s]
+ 96%|█████████▋| 1627/1690 [01:05<00:11,  5.41it/s]
+ 97%|█████████▋| 1631/1690 [01:06<00:12,  4.68it/s]
+ 97%|█████████▋| 1637/1690 [01:08<00:11,  4.62it/s]
+ 97%|█████████▋| 1644/1690 [01:09<00:09,  4.79it/s]
+ 97%|█████████▋| 1645/1690 [01:10<00:12,  3.58it/s]
+ 98%|█████████▊| 1650/1690 [01:12<00:11,  3.62it/s]
+ 98%|█████████▊| 1657/1690 [01:13<00:08,  4.10it/s]
+ 98%|█████████▊| 1660/1690 [01:14<00:08,  3.54it/s]
+ 98%|█████████▊| 1664/1690 [01:16<00:07,  3.38it/s]
+ 99%|█████████▉| 1670/1690 [01:17<00:05,  3.70it/s]
+ 99%|█████████▉| 1672/1690 [01:18<00:05,  3.04it/s]
+ 99%|█████████▉| 1675/1690 [01:20<00:05,  2.79it/s]
+ 99%|█████████▉| 1676/1690 [01:21<00:06,  2.18it/s]
+ 99%|█████████▉| 1679/1690 [01:22<00:05,  2.19it/s]
+ 99%|█████████▉| 1681/1690 [01:24<00:04,  1.98it/s]
+100%|█████████▉| 1682/1690 [01:33<00:13,  1.74s/it]
+100%|█████████▉| 1684/1690 [01:39<00:12,  2.01s/it]
+100%|█████████▉| 1685/1690 [01:43<00:11,  2.35s/it]
+100%|█████████▉| 1686/1690 [01:49<00:12,  3.20s/it]
+100%|█████████▉| 1687/1690 [01:56<00:11,  3.97s/it]
+100%|█████████▉| 1689/1690 [01:59<00:02,  2.96s/it]
+100%|██████████| 1690/1690 [02:03<00:00,  3.20s/it]
+100%|██████████| 1690/1690 [02:03<00:00, 13.71it/s]
+# Clean CUDA cache
+# Assign restype for denovo modeling
+# Setting output directory to /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2
+# Setting HMM temp dir to /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/hmm
+# Found 2 sequences
+# Seq 0
+# MFVFLVLLLLVSSQCVNLTTTTQLPLAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHVISGTNGTKRFDNPVLPFNDGVYFASIEKSNITRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFNNKSWMESESRVYSSAKNCTFEYVFQPFLMDLEGKQGNFTNLREFVFKNIDGYFKIYSKHTPIIVRDLPQGFSALEPLVDLPIGINITRFQTLLHRSYLTSGDSSSGWTAGAAAYYVGYLQPRTFLLKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESVVRFPNITNLCPFYEVFNATRFPSVYAWNRKRISNCVADYSVLYNFAPFFTFKCYGVSPTKLNDLCFTNVYADSFVIKGNEVSQIAPGQTGNIADYNYKLPDDFTGCVISWNSNRLDSKADGNYNYWYRLFRKSKLKPFERDISTEIYQAGNNPCNGVKGFNCYFPLQSYSFRPTYGVGYQPYRVVVLSFELLHAPATVCGPKQSTNLVKNKCVNFNFNGLTGTGVLTDSNKKFLPFQQFGRDIADTTDAVRDPQTLDILDITPCSFGGVSVITPGTNTSNQVAVLYQGV ...
+# Seq 1
+# MFVFLVLLLLVSSQCVNLTTTTQLPLAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHVISGTNGTKRFDNPVLPFNDGVYFASIEKSNITRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFNNKSWMESESRVYSSAKNCTFEYVFQPFLMDLEGKQGNFTNLREFVFKNIDGYFKIYSKHTPIIVRDLPQGFSALEPLVDLPIGINITRFQTLLHRSYLTSGDSSSGWTAGAAAYYVGYLQPRTFLLKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESVVRFPNITNLCPFYEVFNATRFPSVYAWNRKRISNCVADYSVLYNFAPFFTFKCYGVSPTKLNDLCFTNVYADSFVIKGNEVSQIAPGQTGNIADYNYKLPDDFTGCVISWNSNRLDSKADGNYNYWYRLFRKSKLKPFERDISTEIYQAGNNPCNGVKGFNCYFPLQSYSFRPTYGVGYQPYRVVVLSFELLHAPATVCGPKQSTNLVKNKCVNFNFNGLTGTGVLTDSNKKFLPFQQFGRDIADTTDAVRDPQTLDILDITPCSFGGVSVITPGTNTSNQVAVLYQGV ...
+# Trace to 36 fragments a total of 1690 CAs
+# Assign aa logits
+# Fixing gaps
+# Before prune and connect we have 30 chains
+# After  prune and connect we have 15 chains
+# Output individual chains to /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_*.pdb
+# Output denovo chains to /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/output.cif
+# Done all rounds
+# Time consumption 419.4953 seconds. Done denovo
+Found 15 chains
+Found 2 templates
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_13.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_1.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_2.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_5.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_14.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_7.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_6.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_10.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_0.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_4.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_3.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_12.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_11.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_9.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best sequence fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_8.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/fix/alignments/templ_0_all.pdb 
+# Intend to write stride output to /tmp/mica_pilot/runs/emprot/13BD/temp/fix/alignments/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/fix/alignments/templ_0_all.pdb A /tmp/mica_pilot/runs/emprot/13BD/temp/fix/alignments/stride.out
+Original domains [[[439, 472]], [[303, 438], [473, 536]], [[537, 572]], [[0, 29]], [[30, 275]], [[276, 302], [573, 682]], [[683, 1060]], [[1061, 1143]], [[1144, 1188]], [[1189, 1223]], [[1224, 1270]]]
+Updated  domains [[[439, 472]], [[303, 438], [473, 536]], [[537, 572]], [[0, 29]], [[30, 275]], [[276, 302], [573, 682]], [[683, 1060]], [[1061, 1143]], [[1144, 1188]], [[1189, 1223]], [[1224, 1270]]]
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/fix/alignments/templ_1_all.pdb 
+# Intend to write stride output to /tmp/mica_pilot/runs/emprot/13BD/temp/fix/alignments/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/fix/alignments/templ_1_all.pdb A /tmp/mica_pilot/runs/emprot/13BD/temp/fix/alignments/stride.out
+Original domains [[[439, 472]], [[303, 438], [473, 536]], [[537, 572]], [[0, 29]], [[30, 275]], [[276, 302], [573, 682]], [[683, 1060]], [[1061, 1143]], [[1144, 1188]], [[1189, 1223]], [[1224, 1270]]]
+Updated  domains [[[439, 472]], [[303, 438], [473, 536]], [[537, 572]], [[0, 29]], [[30, 275]], [[276, 302], [573, 682]], [[683, 1060]], [[1061, 1143]], [[1144, 1188]], [[1189, 1223]], [[1224, 1270]]]
+--------------------------------------------------------------------------------
+Start searching for chain 0
+--------------------------------------------------------------------------------
+Select domains [1]
+Re-align to refine transform
+--------------------------------------------------------------------------------
+End searching for chain 0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 1
+--------------------------------------------------------------------------------
+Select domains [4]
+Re-align to refine transform
+Select domains [4]
+Re-align to refine transform
+--------------------------------------------------------------------------------
+End searching for chain 1
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 2
+--------------------------------------------------------------------------------
+Select domains [0, 1]
+Re-align to refine transform
+--------------------------------------------------------------------------------
+End searching for chain 2
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 3
+--------------------------------------------------------------------------------
+Select domains [6]
+Re-align to refine transform
+--------------------------------------------------------------------------------
+End searching for chain 3
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 4
+--------------------------------------------------------------------------------
+No good fragments on layer 0 node 0
+--------------------------------------------------------------------------------
+End searching for chain 4
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 5
+--------------------------------------------------------------------------------
+Select domains [1]
+Re-align to refine transform
+--------------------------------------------------------------------------------
+End searching for chain 5
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 6
+--------------------------------------------------------------------------------
+Select domains [6]
+Re-align to refine transform
+--------------------------------------------------------------------------------
+End searching for chain 6
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 7
+--------------------------------------------------------------------------------
+Select domains [6]
+Re-align to refine transform
+--------------------------------------------------------------------------------
+End searching for chain 7
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 8
+--------------------------------------------------------------------------------
+Select domains [1, 2, 5]
+Re-align to refine transform
+Select domains [1, 4, 5]
+Re-align to refine transform
+--------------------------------------------------------------------------------
+End searching for chain 8
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 9
+--------------------------------------------------------------------------------
+Select domains [6]
+Re-align to refine transform
+No good fragments on layer 1 node 0
+--------------------------------------------------------------------------------
+End searching for chain 9
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 10
+--------------------------------------------------------------------------------
+Select domains [6]
+Re-align to refine transform
+No good fragments on layer 1 node 0
+--------------------------------------------------------------------------------
+End searching for chain 10
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 11
+--------------------------------------------------------------------------------
+Select domains [6]
+Re-align to refine transform
+--------------------------------------------------------------------------------
+End searching for chain 11
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 12
+--------------------------------------------------------------------------------
+Select domains [4]
+Re-align to refine transform
+--------------------------------------------------------------------------------
+End searching for chain 12
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 13
+--------------------------------------------------------------------------------
+Select domains [6]
+Re-align to refine transform
+--------------------------------------------------------------------------------
+End searching for chain 13
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Start searching for chain 14
+--------------------------------------------------------------------------------
+Select domains [5]
+Re-align to refine transform
+--------------------------------------------------------------------------------
+End searching for chain 14
+--------------------------------------------------------------------------------
+Write fixed templates to /tmp/mica_pilot/runs/emprot/13BD/temp/fix/fix_templs.cif
+Total 1689 denovo coords
+Write fixed templates to /tmp/mica_pilot/runs/emprot/13BD/temp/fix/fix_chains_templs.cif
+# Time consumption 19.5088 seconds. Done fix
+Found 2 seqs
+Input 15 chains
+Input 2 templates
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_13.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_1.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_2.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_5.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_14.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_7.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_6.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_10.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_0.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_4.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_3.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_12.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_11.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_9.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Best template fit for chain /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/denovo_chains/denovo_chain_8.pdb is /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+--------------------------------------------------------------------------------
+Fix  chain 0 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 18.2308
+Gap ratio templ = 0.3729
+Gap ratio chain = 29.6538
+Gap ratio templ = 0.6066
+Done fix chain 0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 1 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 0.1029
+Gap ratio templ = 0.0197
+Fix terminal gap
+Intend to align 44 residues for fixing a gap with 25 residues
+RMSD between matched frags = 0.7050
+Do fix
+Gap ratio chain = 0.0288
+Gap ratio templ = 0.0055
+Intend to align 105 residues for fixing a gap with 7 residues
+RMSD between matched frags = 1.4515
+Do fix
+Gap ratio chain = 0.0247
+Gap ratio templ = 0.0047
+Intend to align 79 residues for fixing a gap with 6 residues
+RMSD between matched frags = 1.6822
+Do fix
+Gap ratio chain = 0.0370
+Gap ratio templ = 0.0071
+Intend to align 77 residues for fixing a gap with 9 residues
+RMSD between matched frags = 1.3324
+Do fix
+Gap ratio chain = 0.0576
+Gap ratio templ = 0.0110
+Intend to align 120 residues for fixing a gap with 14 residues
+RMSD between matched frags = 2.2336
+Ignore fix because RMSD is too large
+Gap ratio chain = 3.9794
+Gap ratio templ = 0.7608
+Done fix chain 1
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 2 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 1.5545
+Gap ratio templ = 0.2470
+Gap ratio chain = 0.0297
+Gap ratio templ = 0.0047
+Intend to align 137 residues for fixing a gap with 6 residues
+RMSD between matched frags = 1.5461
+Do fix
+Gap ratio chain = 0.0644
+Gap ratio templ = 0.0102
+Intend to align 55 residues for fixing a gap with 13 residues
+RMSD between matched frags = 0.5834
+Do fix
+Gap ratio chain = 0.0792
+Gap ratio templ = 0.0126
+Intend to align 44 residues for fixing a gap with 16 residues
+RMSD between matched frags = 1.0507
+Do fix
+Gap ratio chain = 0.0495
+Gap ratio templ = 0.0079
+Intend to align 35 residues for fixing a gap with 10 residues
+RMSD between matched frags = 1.2894
+Do fix
+Gap ratio chain = 3.5149
+Gap ratio templ = 0.5586
+Done fix chain 2
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 3 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 9.3196
+Gap ratio templ = 0.7113
+Gap ratio chain = 0.1031
+Gap ratio templ = 0.0079
+Intend to align 97 residues for fixing a gap with 10 residues
+RMSD between matched frags = 0.7179
+Do fix
+Gap ratio chain = 2.6804
+Gap ratio templ = 0.2046
+Done fix chain 3
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 4 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 39.5714
+Gap ratio templ = 0.6538
+Gap ratio chain = 19.9524
+Gap ratio templ = 0.3297
+Done fix chain 4
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 5 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 4.1235
+Gap ratio templ = 0.2628
+Gap ratio chain = 0.0247
+Gap ratio templ = 0.0016
+Intend to align 59 residues for fixing a gap with 2 residues
+RMSD between matched frags = 2.2391
+Ignore fix because RMSD is too large
+Gap ratio chain = 0.1111
+Gap ratio templ = 0.0071
+Intend to align 60 residues for fixing a gap with 9 residues
+RMSD between matched frags = 1.6733
+Do fix
+Gap ratio chain = 10.4321
+Gap ratio templ = 0.6648
+Done fix chain 5
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 6 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 10.7791
+Gap ratio templ = 0.7293
+Gap ratio chain = 3.0000
+Gap ratio templ = 0.2030
+Done fix chain 6
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 7 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 12.4211
+Gap ratio templ = 0.5570
+Gap ratio chain = 8.8772
+Gap ratio templ = 0.3981
+Done fix chain 7
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 8 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 0.4070
+Gap ratio templ = 0.1377
+Fix terminal gap
+Intend to align 17 residues for fixing a gap with 175 residues
+RMSD between matched frags = 0.2472
+Do fix
+Gap ratio chain = 0.0326
+Gap ratio templ = 0.0110
+Intend to align 36 residues for fixing a gap with 14 residues
+RMSD between matched frags = 0.3403
+Do fix
+Gap ratio chain = 0.0535
+Gap ratio templ = 0.0181
+Intend to align 34 residues for fixing a gap with 23 residues
+RMSD between matched frags = 0.3934
+Do fix
+Gap ratio chain = 0.0023
+Gap ratio templ = 0.0008
+Intend to align 180 residues for fixing a gap with 1 residues
+RMSD between matched frags = 1.6671
+Do fix
+Gap ratio chain = 0.0047
+Gap ratio templ = 0.0016
+Intend to align 200 residues for fixing a gap with 2 residues
+RMSD between matched frags = 1.6829
+Do fix
+Gap ratio chain = 0.0023
+Gap ratio templ = 0.0008
+Intend to align 68 residues for fixing a gap with 1 residues
+RMSD between matched frags = 0.9842
+Do fix
+Gap ratio chain = 0.0023
+Gap ratio templ = 0.0008
+Intend to align 137 residues for fixing a gap with 1 residues
+RMSD between matched frags = 1.6536
+Do fix
+Gap ratio chain = 0.0186
+Gap ratio templ = 0.0063
+Intend to align 112 residues for fixing a gap with 8 residues
+RMSD between matched frags = 1.3038
+Do fix
+Gap ratio chain = 0.0023
+Gap ratio templ = 0.0008
+Intend to align 26 residues for fixing a gap with 1 residues
+RMSD between matched frags = 1.2630
+Do fix
+Gap ratio chain = 0.0023
+Gap ratio templ = 0.0008
+Intend to align 34 residues for fixing a gap with 1 residues
+RMSD between matched frags = 1.1207
+Do fix
+Gap ratio chain = 1.4279
+Gap ratio templ = 0.4831
+Done fix chain 8
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 9 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 5.8182
+Gap ratio templ = 0.5539
+Gap ratio chain = 0.2727
+Gap ratio templ = 0.0260
+Intend to align 76 residues for fixing a gap with 33 residues
+RMSD between matched frags = 1.1483
+Do fix
+Gap ratio chain = 0.0083
+Gap ratio templ = 0.0008
+Intend to align 29 residues for fixing a gap with 1 residues
+RMSD between matched frags = 6.9407
+Ignore fix because RMSD is too large
+Gap ratio chain = 0.0165
+Gap ratio templ = 0.0016
+Intend to align 45 residues for fixing a gap with 2 residues
+RMSD between matched frags = 8.4921
+Ignore fix because RMSD is too large
+Gap ratio chain = 3.3884
+Gap ratio templ = 0.3226
+Done fix chain 9
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 10 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 7.3496
+Gap ratio templ = 0.7113
+Gap ratio chain = 0.0244
+Gap ratio templ = 0.0024
+Intend to align 123 residues for fixing a gap with 3 residues
+RMSD between matched frags = 5.4753
+Ignore fix because RMSD is too large
+Gap ratio chain = 1.9593
+Gap ratio templ = 0.1896
+Done fix chain 10
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 11 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 25.9375
+Gap ratio templ = 0.6530
+Gap ratio chain = 12.7812
+Gap ratio templ = 0.3218
+Done fix chain 11
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 12 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 0.8974
+Gap ratio templ = 0.0275
+Gap ratio chain = 0.4359
+Gap ratio templ = 0.0134
+Intend to align 39 residues for fixing a gap with 17 residues
+RMSD between matched frags = 0.4733
+Do fix
+Gap ratio chain = 30.2564
+Gap ratio templ = 0.9284
+Done fix chain 12
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 13 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 11.9492
+Gap ratio templ = 0.5547
+Gap ratio chain = 8.5932
+Gap ratio templ = 0.3989
+Done fix chain 13
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Fix  chain 14 with seqid = 1.0000 seqcov = 1.0000
+Gap ratio chain = 7.9722
+Gap ratio templ = 0.4516
+Gap ratio chain = 0.0972
+Gap ratio templ = 0.0055
+Intend to align 39 residues for fixing a gap with 7 residues
+RMSD between matched frags = 0.7083
+Do fix
+Gap ratio chain = 0.0139
+Gap ratio templ = 0.0008
+Intend to align 18 residues for fixing a gap with 1 residues
+RMSD between matched frags = 1.2853
+Do fix
+Gap ratio chain = 0.0139
+Gap ratio templ = 0.0008
+Intend to align 20 residues for fixing a gap with 1 residues
+RMSD between matched frags = 1.3186
+Do fix
+Gap ratio chain = 0.0417
+Gap ratio templ = 0.0024
+Intend to align 25 residues for fixing a gap with 3 residues
+RMSD between matched frags = 0.4756
+Do fix
+Gap ratio chain = 8.5139
+Gap ratio templ = 0.4823
+Done fix chain 14
+--------------------------------------------------------------------------------
+Found large Ca-Ca gap of distance = 6.9908
+Found large Ca-Ca gap of distance = 10.8498
+Found large Ca-Ca gap of distance = 8.0486
+Found large Ca-Ca gap of distance = 7.7788
+Found large Ca-Ca gap of distance = 6.4379
+Found large Ca-Ca gap of distance = 9.4984
+Found large Ca-Ca gap of distance = 12.3762
+Found large Ca-Ca gap of distance = 6.9910
+Found large Ca-Ca gap of distance = 6.5296
+Found large Ca-Ca gap of distance = 9.5108
+Write untrimmed chains to /tmp/mica_pilot/runs/emprot/13BD/temp/imp/imp_chains_untrimmed.cif
+Write trimmed chains to /tmp/mica_pilot/runs/emprot/13BD/temp/imp/imp_chains_trimmed.cif
+# Time consumption 5.5298 seconds. Done imp
+# Template type = chain
+Parsing larger domains
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb 
+# Intend to write stride output to /tmp/tmpbezsz809/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb A /tmp/tmpbezsz809/stride.out
+Before merging domains = [[[1189, 1270]], [[303, 572]], [[0, 275]], [[276, 302], [573, 682]], [[683, 1060]], [[1061, 1143]], [[1144, 1188]]]
+Minimum domain res num = max(50, 63) = 63
+After  merging domains = [[[303, 572]], [[0, 275]], [[276, 302], [573, 682]], [[683, 1060]], [[1061, 1143]], [[1144, 1270]]]
+Write dom 0 to /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_0_dom_0.pdb
+Write dom 1 to /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_0_dom_1.pdb
+Write dom 2 to /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_0_dom_2.pdb
+Write dom 3 to /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_0_dom_3.pdb
+Write dom 4 to /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_0_dom_4.pdb
+Write dom 5 to /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_0_dom_5.pdb
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_1.pdb 
+# Intend to write stride output to /tmp/tmpgzf4rwnf/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_1.pdb A /tmp/tmpgzf4rwnf/stride.out
+Before merging domains = [[[1189, 1270]], [[303, 572]], [[0, 275]], [[276, 302], [573, 682]], [[683, 1060]], [[1061, 1143]], [[1144, 1188]]]
+Minimum domain res num = max(50, 63) = 63
+After  merging domains = [[[303, 572]], [[0, 275]], [[276, 302], [573, 682]], [[683, 1060]], [[1061, 1143]], [[1144, 1270]]]
+Write dom 0 to /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_1_dom_0.pdb
+Write dom 1 to /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_1_dom_1.pdb
+Write dom 2 to /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_1_dom_2.pdb
+Write dom 3 to /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_1_dom_3.pdb
+Write dom 4 to /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_1_dom_4.pdb
+Write dom 5 to /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_1_dom_5.pdb
+Docking args
+resolution -> 5.0
+mode -> fast
+nt -> 4
+thresh -> 10.0
+angle_step -> 18.0
+fgrid -> 5.0
+sgrid -> 2.0
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_0_dom_0.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_0_dom_1.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_0_dom_2.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_0_dom_3.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_0_dom_4.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_0_dom_5.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_1_dom_0.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_1_dom_1.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_1_dom_2.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_1_dom_3.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_1_dom_4.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/chain_templ_1_dom_5.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+Renumber res idx for /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_1.pdb
+Docking in domain level
+Intend to dock 12 domains
+Parsing smaller domains for large domains
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_0.pdb 
+# Intend to write stride output to /tmp/tmpvn3lf8el/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_0.pdb A /tmp/tmpvn3lf8el/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_1.pdb 
+# Intend to write stride output to /tmp/tmpk7o1tt3u/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_1.pdb A /tmp/tmpk7o1tt3u/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_2.pdb 
+# Intend to write stride output to /tmp/tmpd7m_cvc9/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_2.pdb A /tmp/tmpd7m_cvc9/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_3.pdb 
+# Intend to write stride output to /tmp/tmpjk2jlp0w/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_3.pdb A /tmp/tmpjk2jlp0w/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_4.pdb 
+# Intend to write stride output to /tmp/tmpq8g1pugq/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_4.pdb A /tmp/tmpq8g1pugq/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_5.pdb 
+# Intend to write stride output to /tmp/tmp3y0zxf6p/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_5.pdb A /tmp/tmp3y0zxf6p/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_6.pdb 
+# Intend to write stride output to /tmp/tmp_kvrkrw2/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_6.pdb A /tmp/tmp_kvrkrw2/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_7.pdb 
+# Intend to write stride output to /tmp/tmpylxezby8/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_7.pdb A /tmp/tmpylxezby8/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_8.pdb 
+# Intend to write stride output to /tmp/tmpss7ac0g7/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_8.pdb A /tmp/tmpss7ac0g7/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_9.pdb 
+# Intend to write stride output to /tmp/tmp2zrn8lx7/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_9.pdb A /tmp/tmp2zrn8lx7/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_10.pdb 
+# Intend to write stride output to /tmp/tmp5gporok4/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_10.pdb A /tmp/tmp5gporok4/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_11.pdb 
+# Intend to write stride output to /tmp/tmphmtefizg/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/renum_dom_11.pdb A /tmp/tmphmtefizg/stride.out
+Running dock and refine 1/2
+# Log written to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/preprocess.log
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_0.pdb xxx_chain_0_sword.out xxx_chain_0.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_1.pdb xxx_chain_1_sword.out xxx_chain_1.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_2.pdb xxx_chain_2_sword.out xxx_chain_2.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_3.pdb xxx_chain_3_sword.out xxx_chain_3.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_4.pdb xxx_chain_4_sword.out xxx_chain_4.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_5.pdb xxx_chain_5_sword.out xxx_chain_5.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_6.pdb xxx_chain_6_sword.out xxx_chain_6.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_7.pdb xxx_chain_7_sword.out xxx_chain_7.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_8.pdb xxx_chain_8_sword.out xxx_chain_8.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_9.pdb xxx_chain_9_sword.out xxx_chain_9.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_10.pdb xxx_chain_10_sword.out xxx_chain_10.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_11.pdb xxx_chain_11_sword.out xxx_chain_11.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Combine all marked chains into /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/xxx_all.pdb
+# Log written to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/run.log
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/dockx mc.mrc xxx_all.pdb 5.0 transform.pdb -nt 4 -thresh 10.0 -angle_step 18.0 -fgrid 5.0 -sgrid 2.0
+Chain 3 is not assigned
+Chain 4 is not assigned
+Chain 8 is not assigned
+Chain 8 is not assigned
+Chain 9 is not assigned
+Chain 10 is not assigned
+Write fitted chain 0 to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/fitted_chain_0.pdb
+Write fitted chain 1 to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/fitted_chain_1.pdb
+Write fitted chain 2 to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/fitted_chain_2.pdb
+Write fitted chain 3 to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/fitted_chain_3.pdb
+Write fitted chain 4 to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/fitted_chain_4.pdb
+Write fitted chain 5 to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/fitted_chain_5.pdb
+Write fitted chain 6 to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/domain/fitted_chain_6.pdb
+Write all fitted chains to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/fitted_domains.cif
+Write docked pdbs to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/fitted_domains.cif
+Docking in chain level
+Intend to dock 2 chains
+Parsing smaller domains for chains
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain/renum_chain_0.pdb 
+# Intend to write stride output to /tmp/tmp48tdk9f3/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain/renum_chain_0.pdb A /tmp/tmp48tdk9f3/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain/renum_chain_1.pdb 
+# Intend to write stride output to /tmp/tmp0ysqhc1u/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain/renum_chain_1.pdb A /tmp/tmp0ysqhc1u/stride.out
+Running dock and refine 2/2
+# Log written to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain/preprocess.log
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_0.pdb xxx_chain_0_sword.out xxx_chain_0.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/domasgx chain_1.pdb xxx_chain_1_sword.out xxx_chain_1.pdb -qs 3 -ms 150 -q 1 -m 30 -k 3.0
+# Combine all marked chains into /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain/xxx_all.pdb
+# Log written to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain/run.log
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/dockx mc.mrc xxx_all.pdb 5.0 transform.pdb -nt 4 -thresh 10.0 -angle_step 18.0 -fgrid 5.0 -sgrid 2.0
+Write fitted chain 0 to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain/fitted_chain_0.pdb
+Write fitted chain 1 to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain/fitted_chain_1.pdb
+Write all fitted chains to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/fitted_chains.cif
+Write docked pdbs to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/fitted_chains.cif
+Re-write fitted chain to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain_to_domain/fitted_chain_0.pdb
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain_to_domain/fitted_chain_0.pdb 
+# Intend to write stride output to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain_to_domain/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain_to_domain/fitted_chain_0.pdb A /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain_to_domain/stride.out
+Re-write fitted chain to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain_to_domain/fitted_chain_1.pdb
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/stride /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain_to_domain/fitted_chain_1.pdb 
+# Intend to write stride output to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain_to_domain/stride.out
+# Running command /tmp/mica_pilot/src_emprot/emprot/bin/unidoc_frag /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain_to_domain/fitted_chain_1.pdb A /tmp/mica_pilot/runs/emprot/13BD/temp/dock/chain_to_domain/stride.out
+Write docked pdbs to /tmp/mica_pilot/runs/emprot/13BD/temp/dock/fitted_chains_domains.cif
+# Time consumption 619.8933 seconds. Done dock
+Found seq
+MFVFLVLLLLVSSQCVNLTTTTQLPLAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHVISGTNGTKRFDNPVLPFNDGVYFASIEKSNITRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFNNKSWMESESRVYSSAKNCTFEYVFQPFLMDLEGKQGNFTNLREFVFKNIDGYFKIYSKHTPIIVRDLPQGFSALEPLVDLPIGINITRFQTLLHRSYLTSGDSSSGWTAGAAAYYVGYLQPRTFLLKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESVVRFPNITNLCPFYEVFNATRFPSVYAWNRKRISNCVADYSVLYNFAPFFTFKCYGVSPTKLNDLCFTNVYADSFVIKGNEVSQIAPGQTGNIADYNYKLPDDFTGCVISWNSNRLDSKADGNYNYWYRLFRKSKLKPFERDISTEIYQAGNNPCNGVKGFNCYFPLQSYSFRPTYGVGYQPYRVVVLSFELLHAPATVCGPKQSTNLVKNKCVNFNFNGLTGTGVLTDSNKKFLPFQQFGRDIADTTDAVRDPQTLDILDITPCSFGGVSVITPGTNTSNQVAVLYQGVNC ...
+Found seq
+MFVFLVLLLLVSSQCVNLTTTTQLPLAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHVISGTNGTKRFDNPVLPFNDGVYFASIEKSNITRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFNNKSWMESESRVYSSAKNCTFEYVFQPFLMDLEGKQGNFTNLREFVFKNIDGYFKIYSKHTPIIVRDLPQGFSALEPLVDLPIGINITRFQTLLHRSYLTSGDSSSGWTAGAAAYYVGYLQPRTFLLKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESVVRFPNITNLCPFYEVFNATRFPSVYAWNRKRISNCVADYSVLYNFAPFFTFKCYGVSPTKLNDLCFTNVYADSFVIKGNEVSQIAPGQTGNIADYNYKLPDDFTGCVISWNSNRLDSKADGNYNYWYRLFRKSKLKPFERDISTEIYQAGNNPCNGVKGFNCYFPLQSYSFRPTYGVGYQPYRVVVLSFELLHAPATVCGPKQSTNLVKNKCVNFNFNGLTGTGVLTDSNKKFLPFQQFGRDIADTTDAVRDPQTLDILDITPCSFGGVSVITPGTNTSNQVAVLYQGVNC ...
+Intend to read structure from /tmp/mica_pilot/runs/emprot/13BD/temp/imp/imp_chains_trimmed.cif
+Read 15 chains from /tmp/mica_pilot/runs/emprot/13BD/temp/imp/imp_chains_trimmed.cif
+Intend to read structure from /tmp/mica_pilot/runs/emprot/13BD/temp/fix/fix_chains_templs.cif
+Read 16 chains from /tmp/mica_pilot/runs/emprot/13BD/temp/fix/fix_chains_templs.cif
+Intend to read structure from /tmp/mica_pilot/runs/emprot/13BD/temp/dock/fitted_domains.cif
+Read 7 chains from /tmp/mica_pilot/runs/emprot/13BD/temp/dock/fitted_domains.cif
+Intend to read structure from /tmp/mica_pilot/runs/emprot/13BD/temp/dock/fitted_chains_domains.cif
+Read 14 chains from /tmp/mica_pilot/runs/emprot/13BD/temp/dock/fitted_chains_domains.cif
+Found 52 input fragments
+Frag 0 best matches to seq 0
+Frag 1 best matches to seq 0
+Frag 2 best matches to seq 0
+Frag 3 best matches to seq 0
+Frag 4 best matches to seq 0
+Frag 5 best matches to seq 0
+Frag 6 best matches to seq 0
+Frag 7 best matches to seq 0
+Frag 8 best matches to seq 0
+Frag 9 best matches to seq 0
+Frag 10 best matches to seq 0
+Frag 11 best matches to seq 0
+Frag 12 best matches to seq 0
+Frag 13 best matches to seq 0
+Frag 14 best matches to seq 0
+Frag 15 best matches to seq 0
+Frag 16 best matches to seq 0
+Frag 17 best matches to seq 0
+Frag 18 best matches to seq 0
+Frag 19 best matches to seq 0
+Frag 20 best matches to seq 0
+Frag 21 best matches to seq 0
+Frag 22 best matches to seq 0
+Frag 23 best matches to seq 0
+Frag 24 best matches to seq 0
+Frag 25 best matches to seq 0
+Frag 26 best matches to seq 0
+Frag 27 best matches to seq 0
+Frag 28 best matches to seq 0
+Frag 29 best matches to seq 0
+Frag 30 best matches to seq 0
+Frag 31 best matches to seq 0
+Frag 32 best matches to seq 0
+Frag 33 best matches to seq 0
+Frag 34 best matches to seq 0
+Frag 35 best matches to seq 0
+Frag 36 best matches to seq 0
+Frag 37 best matches to seq 0
+Frag 38 best matches to seq 0
+Frag 39 best matches to seq 0
+Frag 40 best matches to seq 0
+Frag 41 best matches to seq 0
+Frag 42 best matches to seq 0
+Frag 43 best matches to seq 0
+Frag 44 best matches to seq 0
+Frag 45 best matches to seq 0
+Frag 46 best matches to seq 0
+Frag 47 best matches to seq 0
+Frag 48 best matches to seq 0
+Frag 49 best matches to seq 0
+Frag 50 best matches to seq 0
+Frag 51 best matches to seq 0
+Extract 62 new frags
+Split to 62 frags
+Reading map
+Normalize map
+Compute the score for each frag
+Compute the rst between frags
+Done calculating frags collision matrix shape = (62, 62) time = 7.5937 s
+Collision rate = 0.0734
+Preprocess 1/3 add decision variable
+Preprocess 2/3 add rst
+Preprocess 3/3 set objectives
+Solving
+Solution 0, time = 0.07 s, objective = 20085
+Result is [1, 2, 3, 9, 10, 11, 21, 22, 23, 25, 37, 45, 51, 52, 53, 61]
+Result has 16 nodes
+Write denovo part to /tmp/mica_pilot/runs/emprot/13BD/temp/assemble/assemble_denovo.cif
+Write dock part to /tmp/mica_pilot/runs/emprot/13BD/temp/assemble/assemble_dock.cif
+Write assembled fragments to /tmp/mica_pilot/runs/emprot/13BD/temp/assemble/assemble.cif
+# Time consumption 22.2235 seconds. Done assemble
+# Read 2 seqs from /tmp/mica_pilot/runs/emprot/13BD/temp/format_seq.fasta
+Found sequence of length 1271
+MFVFLVLLLLVSSQCVNLTTTTQLPLAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHVISGTNGTKRFDNPVLPFNDGVYFASIEKSNITRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFNNKSWMESESRVYSSAKNCTFEYVFQPFLMDLEGKQGNFTNLREFVFKNIDGYFKIYSKHTPIIVRDLPQGFSALEPLVDLPIGINITRFQTLLHRSYLTSGDSSSGWTAGAAAYYVGYLQPRTFLLKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESVVRFPNITNLCPFYEVFNATRFPSVYAWNRKRISNCVADYSVLYNFAPFFTFKCYGVSPTKLNDLCFTNVYADSFVIKGNEVSQIAPGQTGNIADYNYKLPDDFTGCVISWNSNRLDSKADGNYNYWYRLFRKSKLKPFERDISTEIYQAGNNPCNGVKGFNCYFPLQSYSFRPTYGVGYQPYRVVVLSFELLHAPATVCGPKQSTNLVKNKCVNFNFNGLTGTGVLTDSNKKFLPFQQFGRDIADTTDAVRDPQTLDILDITPCSFGGVSVITPGTNTSNQVAVLYQGVNC ...
+Found sequence of length 1271
+MFVFLVLLLLVSSQCVNLTTTTQLPLAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHVISGTNGTKRFDNPVLPFNDGVYFASIEKSNITRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFNNKSWMESESRVYSSAKNCTFEYVFQPFLMDLEGKQGNFTNLREFVFKNIDGYFKIYSKHTPIIVRDLPQGFSALEPLVDLPIGINITRFQTLLHRSYLTSGDSSSGWTAGAAAYYVGYLQPRTFLLKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESVVRFPNITNLCPFYEVFNATRFPSVYAWNRKRISNCVADYSVLYNFAPFFTFKCYGVSPTKLNDLCFTNVYADSFVIKGNEVSQIAPGQTGNIADYNYKLPDDFTGCVISWNSNRLDSKADGNYNYWYRLFRKSKLKPFERDISTEIYQAGNNPCNGVKGFNCYFPLQSYSFRPTYGVGYQPYRVVVLSFELLHAPATVCGPKQSTNLVKNKCVNFNFNGLTGTGVLTDSNKKFLPFQQFGRDIADTTDAVRDPQTLDILDITPCSFGGVSVITPGTNTSNQVAVLYQGVNC ...
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Group 0 has 2 seqs 
+# Using chain guidance
+# Found 2 chain templates
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Chain 0 match to seq 0
+# Input structure has 2876 residues
+# Use template chain guidance True
+# Read 16 chains from /tmp/mica_pilot/runs/emprot/13BD/temp/assemble/assemble.cif
+# Split chain 0 into 3 frags
+# Split chain 1 into 1 frags
+# Split chain 2 into 1 frags
+# Split chain 3 into 1 frags
+# Split chain 4 into 1 frags
+# Split chain 5 into 2 frags
+# Split chain 6 into 1 frags
+# Split chain 7 into 1 frags
+# Split chain 8 into 1 frags
+# Split chain 9 into 1 frags
+# Split chain 10 into 1 frags
+# Split chain 11 into 1 frags
+# Split chain 12 into 1 frags
+# Split chain 13 into 1 frags
+# Split chain 14 into 1 frags
+# Split chain 15 into 1 frags
+###################################
+# Split 16 chains to 19 fragments #
+###################################
+# Hetero groups
+# Frags is assigned
+[False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+# Homo groups
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 0 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 2 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 3 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 4 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 5 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 6 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 7 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 8 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 9 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 10 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 11 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 12 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 13 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 14 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 15 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 16 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 17 best aligns to seq 0
+Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/NWalign /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_a.fasta /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/nwalign/seq_b.fasta
+# Frag 18 best aligns to seq 0
+# Frags is excluded
+[False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+##########################################################################
+# Searching for sequence 0
+# Homo frags
+[0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+# USalign on copy 0
+# Homo   idxs  [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+# Select idxs  [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+# Write frag for seq 0 to /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/usalign/frags_for_homo_seq_0_copy_0.cif
+# Align /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/usalign/frags_for_homo_seq_0_copy_0.cif and /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+# Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/USalign /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/usalign/frags_for_homo_seq_0_copy_0.cif -mol prot -mm 6 -fast
+# Frag 5 assigned to seq 0 copy 1 / 2 with r = 0.9954
+# Frag 9 assigned to seq 0 copy 1 / 2 with r = 0.9973
+# Frag 17 assigned to seq 0 copy 1 / 2 with r = 0.6296
+# Frag 18 assigned to seq 0 copy 1 / 2 with r = 0.6364
+[4, 8, 16, 17]
+# USalign on copy 1
+# Homo   idxs  [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+# Select idxs  [0, 2, 3, 4, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16]
+# Write frag for seq 0 to /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/usalign/frags_for_homo_seq_0_copy_1.cif
+# Align /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/usalign/frags_for_homo_seq_0_copy_1.cif and /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb
+# Running command /tmp/mica_pilot/src_emprot/emprot/pipeline/../bin/USalign /tmp/mica_pilot/runs/emprot/13BD/temp/templs/templ_0.pdb /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/usalign/frags_for_homo_seq_0_copy_1.cif -mol prot -mm 6 -fast
+# Frag 0 assigned to seq 0 copy 2 / 2 with r = 1.0000
+# Frag 2 assigned to seq 0 copy 2 / 2 with r = 1.0000
+# Frag 3 assigned to seq 0 copy 2 / 2 with r = 1.0000
+# Frag 6 assigned to seq 0 copy 2 / 2 with r = 0.8758
+# Frag 7 assigned to seq 0 copy 2 / 2 with r = 0.7778
+# Frag 10 assigned to seq 0 copy 2 / 2 with r = 1.0000
+# Frag 11 assigned to seq 0 copy 2 / 2 with r = 1.0000
+# Frag 13 assigned to seq 0 copy 2 / 2 with r = 0.9817
+# Frag 14 assigned to seq 0 copy 2 / 2 with r = 0.6790
+# Frag 15 assigned to seq 0 copy 2 / 2 with r = 1.0000
+# Frag 16 assigned to seq 0 copy 2 / 2 with r = 1.0000
+[0, 1, 2, 5, 6, 9, 10, 12, 13, 14, 15]
+# Residue counts
+[136  91  60 246 656 153  18 104 377 135  63 377 109  81  84  44  81  44]
+# Checking conflict table
+# Done checking conflict table
+# Start solving
+# Found solution n = 3
+# End solving
+# Num of frags = 18 initial n = 2 solved n = 3
+# Tracing with restraint
+# Adding restraints between 18 conflict pairs
+# Adding restraints between 61 same chain pairs
+{'routes': [[3, 11], [0, 1, 2, 9, 10, 12, 7, 5, 6, 14, 15, 13], [4, 8, 17, 16]], 'total_distance': 4140, 'residue_distribution': [246, 997, 1077], 'residue_imbalance': 831, 'avg_residues': 953.0}
+# Original route
+[3, 11]
+# Sorted route
+[3, 11]
+# Original route
+[0, 1, 2, 9, 10, 12, 7, 5, 6, 14, 15, 13]
+# Sorted route
+[0, 1, 2, 9, 10, 12, 5, 6, 7, 14, 15, 13]
+# Original route
+[4, 8, 17, 16]
+# Sorted route
+[4, 8, 17, 16]
+# End search
+##########################################################################
+# Time consumption 51.9861
+# Output reordered chains to /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/reorder.cif
+# Time consumption 52.0544 seconds. Done reorder
+# Found model /tmp/mica_pilot/runs/emprot/13BD/temp/reorderx/reorder.cif
+# Found de novo model /tmp/mica_pilot/runs/emprot/13BD/temp/denovo/recycle_2/output.cif
+# Copy de novo model to /tmp/mica_pilot/runs/emprot/13BD/output_denovo.cif
+# Found fitting model /tmp/mica_pilot/runs/emprot/13BD/temp/dock/fitted_chains.cif
+# Copy fitting model to /tmp/mica_pilot/runs/emprot/13BD/output_fit.cif
+# Clean large temp files
+#####################
+# Modeling finished #
+#####################
+# Check the output model at /tmp/mica_pilot/runs/emprot/13BD
+
+# Job end   at 2026-10-25 20:21:49.870496

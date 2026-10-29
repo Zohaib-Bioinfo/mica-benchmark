@@ -1,0 +1,461 @@
+{
+  "notebook": "mica_dock3_a",
+  "started_utc": "2026-10-26T10:42:20.123095+00:00",
+  "finished_utc": "2026-10-26T15:14:24.694504+00:00",
+  "elapsed_minutes": 272,
+  "problem": "",
+  "complete": true,
+  "platform": "kaggle",
+  "python": "3.13.15",
+  "os": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "gpu": "",
+  "cpu_cores": 4,
+  "ram_gb": 31.3,
+  "state": {
+    "ok": true,
+    "problem": "",
+    "t0": 1793011340.1230907,
+    "started": "2026-10-26T10:42:20.123095+00:00",
+    "phenix_env": "/tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh",
+    "phenix_version": "------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1",
+    "installer_sha256": "e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885",
+    "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+    "usalign_version": "* US-align (Version 20261012)                                      *",
+    "weights": {},
+    "env": {
+      "python_version": "3.8.20",
+      "uv_version": "0.13.1",
+      "packages": 171,
+      "differences_to_pinned_list": []
+    },
+    "entries": {
+      "9WME": {
+        "entry": "9WME",
+        "status": "docked",
+        "failed_step": "",
+        "note": "stages [1, 2] finished; program 3 is for another session",
+        "steps": {
+          "1_process_af3": {
+            "peak_gpu_mb": 0,
+            "peak_gpu_util_pct": 0,
+            "min_ram_available_gb": 28.31,
+            "samples": 8,
+            "rc": 0,
+            "seconds": 38,
+            "timed_out": false,
+            "limit_s": 1800,
+            "started_utc": "2026-10-26T10:58:03Z"
+          },
+          "2_dock": {
+            "peak_gpu_mb": 0,
+            "peak_gpu_util_pct": 0,
+            "min_ram_available_gb": 6.35,
+            "samples": 1499,
+            "rc": 0,
+            "seconds": 7496,
+            "timed_out": false,
+            "limit_s": 28800,
+            "started_utc": "2026-10-26T10:58:41Z"
+          }
+        },
+        "models": [],
+        "lane": 0,
+        "stages": [
+          1,
+          2
+        ],
+        "device": "",
+        "started_utc": "2026-10-26T10:57:47Z",
+        "map_sha256": "86c5dbaf4b86b0d099c44a7cca19b8c1b33d3b4fb6f1cb466cd58ead600add77",
+        "contour": 0.26,
+        "resolution": 3.2,
+        "parameters_from": "emdb_extractor.py",
+        "resolution_in_table": "3.2",
+        "grid": [
+          180,
+          180,
+          180
+        ],
+        "voxel_A": [
+          1.100000023841858,
+          1.100000023841858,
+          1.100000023841858
+        ],
+        "box_A": [
+          198.0,
+          198.0,
+          198.0
+        ],
+        "resampled_grid": [
+          198,
+          198,
+          198
+        ],
+        "windows": 125,
+        "reflections_M": 0.496,
+        "dock_profile": "pass3",
+        "docking": {
+          "domains": 7,
+          "docked": 7,
+          "seconds": 7487
+        },
+        "dock_mode": "full",
+        "seconds": 7550
+      },
+      "13BD": {
+        "entry": "13BD",
+        "status": "docked",
+        "failed_step": "",
+        "note": "stages [1, 2] finished; program 3 is for another session",
+        "steps": {
+          "1_process_af3": {
+            "peak_gpu_mb": 0,
+            "peak_gpu_util_pct": 0,
+            "min_ram_available_gb": 25.4,
+            "samples": 18,
+            "rc": 0,
+            "seconds": 89,
+            "timed_out": false,
+            "limit_s": 1800,
+            "started_utc": "2026-10-26T10:59:47Z"
+          },
+          "2_dock": {
+            "peak_gpu_mb": 0,
+            "peak_gpu_util_pct": 0,
+            "min_ram_available_gb": 6.39,
+            "samples": 2341,
+            "rc": 0,
+            "seconds": 11704,
+            "timed_out": false,
+            "limit_s": 28800,
+            "started_utc": "2026-10-26T11:01:16Z"
+          }
+        },
+        "models": [],
+        "lane": 1,
+        "stages": [
+          1,
+          2
+        ],
+        "device": "",
+        "started_utc": "2026-10-26T10:57:47Z",
+        "map_sha256": "c1bba4defcb1bb58dcf626ba35fee22a4c6005a2703c9b30fd515d940d36c653",
+        "contour": 0.13,
+        "resolution": 2.65,
+        "parameters_from": "emdb_extractor.py",
+        "resolution_in_table": "2.65",
+        "grid": [
+          416,
+          416,
+          416
+        ],
+        "voxel_A": [
+          0.8320000171661377,
+          0.8320000171661377,
+          0.8320000171661377
+        ],
+        "box_A": [
+          346.1,
+          346.1,
+          346.1
+        ],
+        "resampled_grid": [
+          346,
+          346,
+          346
+        ],
+        "windows": 512,
+        "reflections_M": 4.666,
+        "dock_profile": "pass3",
+        "docking": {
+          "domains": 3,
+          "docked": 1,
+          "seconds": 11663
+        },
+        "dock_mode": "partial",
+        "seconds": 11914
+      },
+      "9T5K": {
+        "entry": "9T5K",
+        "status": "docked",
+        "failed_step": "",
+        "note": "stages [1, 2] finished; program 3 is for another session",
+        "steps": {
+          "1_process_af3": {
+            "peak_gpu_mb": 0,
+            "peak_gpu_util_pct": 0,
+            "min_ram_available_gb": 25.79,
+            "samples": 5,
+            "rc": 0,
+            "seconds": 22,
+            "timed_out": false,
+            "limit_s": 1800,
+            "started_utc": "2026-10-26T13:04:54Z"
+          },
+          "2_dock": {
+            "peak_gpu_mb": 0,
+            "peak_gpu_util_pct": 0,
+            "min_ram_available_gb": 8.15,
+            "samples": 1457,
+            "rc": 0,
+            "seconds": 7286,
+            "timed_out": false,
+            "limit_s": 28323,
+            "started_utc": "2026-10-26T13:05:16Z"
+          }
+        },
+        "models": [],
+        "lane": 0,
+        "stages": [
+          1,
+          2
+        ],
+        "device": "",
+        "started_utc": "2026-10-26T13:03:37Z",
+        "map_sha256": "429037b122b08a1cc7b3da660ad4035f53f28b9f0acc184ddc02cde78cee87f0",
+        "contour": 0.15,
+        "resolution": 2.6,
+        "parameters_from": "emdb_extractor.py",
+        "resolution_in_table": "2.6",
+        "grid": [
+          400,
+          400,
+          400
+        ],
+        "voxel_A": [
+          0.9200000166893005,
+          0.9200000166893005,
+          0.9200000166893005
+        ],
+        "box_A": [
+          368.0,
+          368.0,
+          368.0
+        ],
+        "resampled_grid": [
+          368,
+          368,
+          368
+        ],
+        "windows": 512,
+        "reflections_M": 5.939,
+        "dock_profile": "pass3",
+        "docking": {
+          "domains": 2,
+          "docked": 1,
+          "seconds": 7263
+        },
+        "dock_mode": "partial",
+        "seconds": 7386
+      },
+      "26DK": {
+        "entry": "26DK",
+        "status": "docked",
+        "failed_step": "",
+        "note": "stages [1, 2] finished; program 3 is for another session",
+        "steps": {
+          "1_process_af3": {
+            "peak_gpu_mb": 0,
+            "peak_gpu_util_pct": 0,
+            "min_ram_available_gb": 24.14,
+            "samples": 2,
+            "rc": 0,
+            "seconds": 9,
+            "timed_out": false,
+            "limit_s": 1800,
+            "started_utc": "2026-10-26T14:16:46Z"
+          },
+          "2_dock": {
+            "peak_gpu_mb": 0,
+            "peak_gpu_util_pct": 0,
+            "min_ram_available_gb": 12.54,
+            "samples": 232,
+            "rc": 0,
+            "seconds": 1157,
+            "timed_out": false,
+            "limit_s": 24025,
+            "started_utc": "2026-10-26T14:16:55Z"
+          }
+        },
+        "models": [],
+        "lane": 1,
+        "stages": [
+          1,
+          2
+        ],
+        "device": "",
+        "started_utc": "2026-10-26T14:16:21Z",
+        "map_sha256": "0788f547b04f3fdddeed3b2d7b7119e47a4b580b51f90bf64444390ed948b82c",
+        "contour": 1.3,
+        "resolution": 3.5,
+        "parameters_from": "emdb_extractor.py",
+        "resolution_in_table": "3.5",
+        "grid": [
+          160,
+          160,
+          160
+        ],
+        "voxel_A": [
+          1.6600000858306885,
+          1.6600000858306885,
+          1.6600000858306885
+        ],
+        "box_A": [
+          265.6,
+          265.6,
+          265.6
+        ],
+        "resampled_grid": [
+          266,
+          266,
+          266
+        ],
+        "windows": 216,
+        "reflections_M": 0.915,
+        "dock_profile": "pass3",
+        "docking": {
+          "domains": 2,
+          "docked": 2,
+          "seconds": 1155
+        },
+        "dock_mode": "full",
+        "seconds": 1192
+      },
+      "9TKA": {
+        "entry": "9TKA",
+        "status": "docked",
+        "failed_step": "",
+        "note": "stages [1, 2] finished; program 3 is for another session",
+        "steps": {
+          "1_process_af3": {
+            "peak_gpu_mb": 0,
+            "peak_gpu_util_pct": 0,
+            "min_ram_available_gb": 26.18,
+            "samples": 3,
+            "rc": 0,
+            "seconds": 11,
+            "timed_out": false,
+            "limit_s": 1800,
+            "started_utc": "2026-10-26T14:38:38Z"
+          },
+          "2_dock": {
+            "peak_gpu_mb": 0,
+            "peak_gpu_util_pct": 0,
+            "min_ram_available_gb": 13.96,
+            "samples": 427,
+            "rc": 0,
+            "seconds": 2134,
+            "timed_out": false,
+            "limit_s": 22710,
+            "started_utc": "2026-10-26T14:38:50Z"
+          }
+        },
+        "models": [],
+        "lane": 1,
+        "stages": [
+          1,
+          2
+        ],
+        "device": "",
+        "started_utc": "2026-10-26T14:36:12Z",
+        "map_sha256": "2785ee22c3dbb0819bee7dc4cb45eb837050a7dd0ccb7f848e53520702930faa",
+        "contour": 0.169,
+        "resolution": 2.7,
+        "parameters_from": "emdb_extractor.py",
+        "resolution_in_table": "2.7",
+        "grid": [
+          360,
+          360,
+          360
+        ],
+        "voxel_A": [
+          0.7290000319480896,
+          0.7290000319480896,
+          0.7290000319480896
+        ],
+        "box_A": [
+          262.4,
+          262.4,
+          262.4
+        ],
+        "resampled_grid": [
+          262,
+          262,
+          262
+        ],
+        "windows": 216,
+        "reflections_M": 1.923,
+        "dock_profile": "pass3",
+        "docking": {
+          "domains": 1,
+          "docked": 1,
+          "seconds": 2118
+        },
+        "dock_mode": "full",
+        "seconds": 2292
+      }
+    },
+    "gpu": "",
+    "cpu_facts": {
+      "os.cpu_count": 4,
+      "multiprocessing.cpu_count": 4,
+      "usable (sched_getaffinity)": 4,
+      "nproc": "4",
+      "cgroup v2 cpu.max": "400000 100000",
+      "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+      "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+    },
+    "complete": true
+  },
+  "mica_commit": "726d1bb14be04887a43b7f5aefcff0d843761d01",
+  "phenix_installer": "Phenix-2.2.1-6174-Linux-x86_64.sh",
+  "phenix_installer_sha256": "e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885",
+  "phenix_version_output": "------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1",
+  "usalign_commit": "746ad8a2a4dea9f317075cc482df0ecb5440bdea",
+  "usalign_version": "* US-align (Version 20261012)                                      *",
+  "input_sha256": {
+    "scripts/nbtools.py": "9bda95fce7f7fbe0c373e315740f555fc27942a08971ce2fe1b5cae6af6d748d",
+    "scripts/mica_inputs.py": "87b7f5e43b86671e09e673e8bb07abb20496ad92264528dfd9994b88bded417f",
+    "scripts/evaluate_models.py": "8c235732d2595f8ad2014d70a278b44097205aff2417c9b5761f55dfe4974250",
+    "scripts/mica_dock_driver.py": "c09a9bb23115c38d2dddd9a3c004b3ed53c2b0fb36bd5a8d4c217f1904e3d611",
+    "data/af3/af3_jobs.csv": "b43068ffed7e3843d0d9c5cfa509d8f1ba9900527a1a0cad9e74aa69573cd4b0",
+    "data/af3/af3_files_sha256.txt": "c131836802f9469c2073cc8c0bbb495e906854ffb223100cf30750714e2e3a4f",
+    "data/entries_2026.csv": "cb695bb04ef09bf48f8c2848f91a2580c0b3c15f2a8f1e580659d86f0097a5da",
+    "env/mica_requirements.txt": "2907179af22bde80f7b0b554740d3972a0cb62d407b0eb382c59a9b7916cc56a"
+  },
+  "weights": {},
+  "stages": [
+    1,
+    2
+  ],
+  "lanes": 2,
+  "program_3_device": "cpu",
+  "hours_setting": 10.5,
+  "dock_attempts": [
+    {
+      "name": "res6_quick",
+      "set": {
+        "dock_with_mr": "False",
+        "quick": "True"
+      },
+      "search_resolution": 6.0,
+      "timeout_s": 2400
+    },
+    {
+      "name": "res10_quick",
+      "set": {
+        "dock_with_mr": "False",
+        "quick": "True"
+      },
+      "search_resolution": 10.0,
+      "timeout_s": 1500
+    }
+  ],
+  "entries_in_this_notebook": [
+    "9WME",
+    "13BD",
+    "9T5K",
+    "26DK",
+    "9TKA"
+  ]
+}

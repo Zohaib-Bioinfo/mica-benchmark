@@ -1,0 +1,1198 @@
+platform kaggle | python 3.13.15 | Linux-6.18.55+-x86_64-with-glibc2.39 | 4 CPU cores (Intel(R) Xeon(R) CPU @ 2.00GHz) | 31.3 GB RAM
+large files go to /tmp/mica_pilot (1126 GB free); results to /kaggle/working/pilot (21 GB free)
+GPU: Tesla T4, 15360 MiB, 580.178.04 | Tesla T4, 15360 MiB, 580.178.04
+checking the internet:
+  reachable: PyPI      200
+  reachable: GitHub    200
+  reachable: Zenodo    200
+  reachable: EBI FTP   200
+  reachable: RCSB      200
+  reachable: EMDB API  200
+  reachable: Phenix    200
+all 8 files written and checked (hashes match)
+processors: os.cpu_count 4 | multiprocessing.cpu_count 4 | usable 4 | nproc 4 | cgroup 400000 100000 | cgroup cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory | MICA's 2
+progress lines, state.json and the partial zip (/kaggle/working/mica_gpu_nodock_partial.zip) are ready
+  downloaded 0 MB
+  downloaded 250 MB
+  downloaded 500 MB
+  downloaded 750 MB
+  downloaded 1000 MB
+  downloaded 1250 MB
+  downloaded 1500 MB
+  downloaded 1750 MB
+  downloaded 2000 MB
+  downloaded 2250 MB
+  downloaded 2500 MB
+  downloaded 2750 MB
+  downloaded 3000 MB
+  downloaded 3250 MB
+  downloaded 3500 MB
+installer sha256: e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885
+installing Phenix (15 to 25 minutes; a line is printed now and then) ...
+PREFIX=/tmp/mica_pilot/phenix-2.2.1-6174
+Unpacking bootstrapper...
+Unpacking payload...
+
+Installing base environment...
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/boost_adaptbx.show_platform_info created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.riso created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.xfel.merge created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx_website.extract_script_from_html_cctbx_doc created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/csegment_library created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.get_next_trial_id created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.stream_to_pickle created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.cluster_unit_cell created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.import_xds created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.rs_mapper created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/diffBragg.hopper_process created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dxtbx.show_dist_paths created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/elbow.mogul created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/hopper created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.get_pubmed_citation created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.reflection_file_reader created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.grep_adsc created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.spot_index_xds created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.create_install_script_bat created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.latex created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.sh created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.wait_for_file created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.pdb_statistics created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.verify_mon_lib_data created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/muscle.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser.benchmark_score_suite created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser_regression.show_build_path created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phasertng.xtricorder created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.build_index_html created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.development.carbo_load created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.fake_f_obs created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.get_cc_mtz_mtz created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.ligandfit created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.model_model_distances created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.pathwalker created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.replace_side_chains created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.setup_tutorial created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.twin_map_utils created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.voyager.rmsd_to_bfactor created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix_regression.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/prime.mpi_run created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/qr.fqm_mopac created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/rstbx.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/smtbx.benchmark_refinement created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/wxtbx.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xia2.html created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xpp.jobs_sentinel created
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx_website.python already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.hist_finalise already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.combine_experiments already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.scale already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dxtbx.show_mask_info already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iota already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.shelx.as_cif already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.spotfinder_adsc already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.line_count already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.TAAM_minus_IAM already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.where_is_that_cif_file already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser.benchmark_score_test already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.development.gainful already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.get_cc_mtz_pdb already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.model_statistics already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.query_docs already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.shift_model_to_match_map already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.voyager.scotty already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/prime.mpi_scale already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/rstbx.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/wxtbx.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xpp.progress_bar already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.space_group_info already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cextract_segment already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.lsf already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.correlation_matrix already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/elbow.become_novice already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iota.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.show_distances already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.store_crystal_orientation already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.make_sphinx_html already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.clashscore2 already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/molprobity.cbetadev already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser.extract_alignments already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.TAAM_minus_IAM already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.development.phi_psi_2 already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.get_solution already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.models_as_chains already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.read_ncs_from_pdb already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.simple_ncs_from_pdb already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.where_mon_lib_list_cif already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/prime.python already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/rstbx.simage.wx_display already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xcif.show_build_path already exists, skipping
+
+    reciprocal_space_arrays.txt
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/density_modification.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/reference/density_modification.html
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/guess_molecular_centers.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/reference/guess_molecular_centers.html
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/phaser_ep.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/reference/phaser_ep.html
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/tutorials/cryo_fit_gui.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/tutorials/cryo_fit_gui.html
+
+Phenix installed in 8 minutes: ------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1
+phenix.dock_in_map: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+phenix.real_space_refine: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.real_space_refine
+phenix.chain_comparison: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.chain_comparison
+phenix.version: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.version
+
+-------------------------------------------------------------------------------
+  Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography
+  Version: 2.2.1
+uv: uv 0.13.1 (x86_64-unknown-linux-gnu)
+installing Python 3.8.20 ...
+Downloading cpython-3.8.20-linux-x86_64-gnu (download) (19.9MiB)
+ Downloaded cpython-3.8.20-linux-x86_64-gnu (download)
+Installed Python 3.8.20 in 831ms
+ + cpython-3.8.20-linux-x86_64-gnu (python3.8)
+warning: `/root/.local/bin` is not on your PATH. To use installed Python executables, run `export PATH="/root/.local/bin:$PATH"` or `uv python update-shell`.
+installing the virtual environment ...
+warning: The `--system` flag has no effect, `uv venv` always ignores virtual environments when finding a Python interpreter; did you mean `--no-managed-python`?
+Using CPython 3.8.20
+Creating virtual environment at: /tmp/mica_pilot/mica_env
+Activate with: source /tmp/mica_pilot/mica_env/bin/activate
+installing the 171 packages (a few minutes; PyTorch alone is about 800 MB) ...
+Using Python 3.8.20 environment at: /tmp/mica_pilot/mica_env
+Resolved 171 packages in 1.68s
+Downloading jedi (1.5MiB)
+Downloading pygments (1.2MiB)
+Downloading widgetsnbextension (2.1MiB)
+Downloading tables (6.2MiB)
+ Downloaded pydantic-core
+ Downloaded scikit-image
+ + backcall==0.2.0
+ + einops==0.8.1
+ + isoduration==20.11.0
+ + jupyterlab-widgets==3.0.17
+ + numexpr==2.8.6
+ + ptyprocess==0.7.0
+ + rotary-embedding-torch==0.3.6
+ + tomlkit==0.13.3
+python 3.8.20 | torch 1.8.1+cu102 | cuda 10.2 | numpy 1.19.1 | open3d 0.13.0
+cuda available: True
+gpu: Tesla T4 | 14.6 GB | capability 7.5 | this PyTorch is compiled for ['sm_37', 'sm_50', 'sm_60', 'sm_70']
+3D convolution and matrix product on the GPU work
+installed packages: 171; differences to env/mica_requirements.txt: 0 
+MICA at commit 726d1bb14be04887a43b7f5aefcff0d843761d01
+  downloaded 4 MB
+downloaded the weights: 154 MB
+weights archive: md5 a952451652294ca299ff5636f79524f7 (equals the one Zenodo lists)
+weights file: /tmp/mica_pilot/MICA/trained_models/MICA_best_model.pth (169 MB, sha256 b95fc62cb3698da5)
+MICA modules import
+US-align: /tmp/mica_pilot/USalign_src/USalign (* US-align (Version 20261012)                                      *)
+stages (3,) | 3 entries at a time | program 3 on the CUDA | 2 GPU(s) | budget 5.0 hours (until 4.8 hours after the start of the notebook)
+the private AlphaFold files of 20 entries are here and match the checked list
+
+========================================================================
+lane 1 9JKK (EMDB EMD-61564, 3.0 A, 530 modeled residues)
+queue: 18 waiting; 2 running; 0.2 of 5.0 hours used
+========================================================================
+
+========================================================================
+lane 2 9OTA (EMDB EMD-70828, 3.2 A, 534 modeled residues)
+queue: 17 waiting; 3 running; 0.2 of 5.0 hours used
+========================================================================
+
+========================================================================
+lane 0 9VUH (EMDB EMD-65363, 2.7 A, 634 modeled residues)
+queue: 19 waiting; 1 running; 0.2 of 5.0 hours used
+========================================================================
+AlphaFold Server files of 9JKK: found in /kaggle/input, hashes match the checked list
+map grid (256, 256, 256) voxel size [0.8433, 0.8433, 0.8433] min -3.116 max 3.955 mean -0.002632 std 0.1016
+9JKK: contour level 0.281 and resolution 3.0 from emdb_extractor.py (resolution in data/entries_2026.csv: 3.0)
+AlphaFold Server files of 9OTA: found in /kaggle/input, hashes match the checked list
+lane 1 9JKK: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-c/mica_state/9JKK
+lane 1 9JKK: map grid [256, 256, 256], voxel [0.8432999849319458, 0.8432999849319458, 0.8432999849319458] A, box [215.9, 215.9, 215.9] A -> 125 windows of 64^3 for MICA's network; about 0.78 million reflections for Phaser at 3.0 A
+lane 1 9JKK: restored docking state: 2 of 2 domains docked (full)
+lane 1 9JKK: sensitivity session: the docked AlphaFold models of the saved state (mode full, 3 files) were removed; program 3 ran without docked AlphaFold input
+
+=== lane 1 9JKK: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9JKK/emd_61564.map -f /tmp/mica_pilot/MICA/input/9JKK/9jkk.fasta -a /tmp/mica_pilot/MICA/input/9JKK/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+map grid (260, 260, 260) voxel size [0.835, 0.835, 0.835] min -1.549 max 2.469 mean 0.0001927 std 0.04753
+9OTA: contour level 0.14 and resolution 3.2 from emdb_extractor.py (resolution in data/entries_2026.csv: 3.2)
+AlphaFold Server files of 9VUH: found in /kaggle/input, hashes match the checked list
+lane 2 9OTA: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-c/mica_state/9OTA
+lane 2 9OTA: map grid [260, 260, 260], voxel [0.8349999785423279, 0.8349999785423279, 0.8349999785423279] A, box [217.1, 217.1, 217.1] A -> 125 windows of 64^3 for MICA's network; about 0.654 million reflections for Phaser at 3.2 A
+lane 2 9OTA: restored docking state: 2 of 2 domains docked (full)
+lane 2 9OTA: sensitivity session: the docked AlphaFold models of the saved state (mode full, 3 files) were removed; program 3 ran without docked AlphaFold input
+map grid (320, 320, 320) voxel size [0.57, 0.57, 0.57] min -0.06073 max 0.1037 mean -9.558e-05 std 0.002898
+9VUH: contour level 0.0144 and resolution 2.7 from emdb_extractor.py (resolution in data/entries_2026.csv: 2.7)
+lane 0 9VUH: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-d/mica_state/9VUH
+lane 0 9VUH: map grid [320, 320, 320], voxel [0.5699999928474426, 0.5699999928474426, 0.5699999928474426] A, box [182.4, 182.4, 182.4] A -> 64 windows of 64^3 for MICA's network; about 0.646 million reflections for Phaser at 2.7 A
+lane 0 9VUH: restored docking state: 4 of 4 domains docked (full)
+lane 0 9VUH: sensitivity session: the docked AlphaFold models of the saved state (mode full, 5 files) were removed; program 3 ran without docked AlphaFold input
+[lane 1 9JKK 3_build] running for 2 min | load 1.2 | free RAM 27.1 GB | busiest: python 102% (120s), python3 3.2% (976s), python3 0.5% (983s) | 9JKK_3_build.log: 8407 bytes, changed 1 s ago, last line: Processing samples:  33%|███▎      | 41/125 [01:43<03:41,  2.63s/it]
+[lane 1 9JKK 3_build] running for 4 min | load 1.5 | free RAM 27.2 GB | busiest: python 101% (240s), python3 2.9% (1096s), python3 0.5% (1103s) | 9JKK_3_build.log: 11840 bytes, changed 2 s ago, last line: Processing samples:  67%|██████▋   | 84/125 [03:42<01:54,  2.79s/it]
+[lane 1 9JKK 3_build] running for 6 min | load 1.2 | free RAM 26.2 GB | busiest: python 106% (1s), python 103% (1s), python 101% (360s) | 9JKK_3_build.log: 20393 bytes, changed 2 s ago, last line: 2026-10-27 02:25:27 - INFO - Generated 1185 local traces
+[lane 1 9JKK 3_build] running for 8 min | load 1.6 | free RAM 26.3 GB | busiest: python 82.3% (480s), python3 2.4% (1336s), nvidia-smi 0.4% (1343s) | 9JKK_3_build.log: 20764 bytes, changed 27 s ago, last line: 2026-10-27 02:27:02 - INFO - Processing sequence 9JKK_1 with 620 residues, 1 chains
+lane 1 9JKK: 3_build finished: exit code 0, 490 s, lowest free RAM 26.04 GB; output written
+lane 2 9OTA: waited 456 s for the program 3 of another entry
+
+=== lane 2 9OTA: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9OTA/emd_70828.map -f /tmp/mica_pilot/MICA/input/9OTA/9ota.fasta -a /tmp/mica_pilot/MICA/input/9OTA/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+lane 1 9JKK: waited 15 s for MICA's own Phenix refinement; refined model not found
+the all-atom model exists but the refined model does not: running phenix.real_space_refine again, with its output kept
+Starting phenix.real_space_refine
+on Tue Oct 27 02:27:56 2026 by root
+===============================================================================
+
+Processing files:
+  Found phil, /tmp/mica_pilot/MICA/modules/phenix.eff
+  Adding PHIL files:
+  -------------------------
+    run_program(real_space_refine.Program)
+    self.process_phil(self.namespace.phil)
+    result_object = master_object.fetch(
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+RuntimeError: Incompatible parameter objects: scope "cdl_nucleotides" (input line 2068) vs. definition "cdl_nucleotides" (file "/tmp/mica_pilot/MICA/modules/phenix.eff", line 107)
+phenix.real_space_refine exit code 0
+phenix.chain_comparison (61564_9jkk_MICA(init)_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.53  473      0    469       0       4   89.2   1.69   100.0        0.89   94.6          5               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.51 seconds
+wall clock time: 1.52 seconds
+phenix.chain_comparison (61564_9jkk_MICA_all_atom_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.57  528     21    517       3       8   99.6   1.76    98.5        0.98   88.0          2               3
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.59 seconds
+wall clock time: 1.59 seconds
+phenix.chain_comparison (61564_9jkk_MICA_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.57  528     22    517       3       8   99.6   1.76    98.5        0.98   88.0          3               3
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.55 seconds
+wall clock time: 1.55 seconds
+phenix.chain_comparison (fold_9jkk_1_model_0.cif) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.00    0    620      0       0       0    0.0   0.00     0.0        0.00    0.0          1               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.69 seconds
+wall clock time: 1.70 seconds
+
+========================================================================
+lane 1 9KQM (EMDB EMD-62507, 3.5 A, 403 modeled residues)
+queue: 16 waiting; 1 ok, 3 running; 0.4 of 5.0 hours used
+========================================================================
+AlphaFold Server files of 9KQM: found in /kaggle/input, hashes match the checked list
+map grid (256, 256, 256) voxel size [0.832, 0.832, 0.832] min -1.296 max 1.688 mean -0.0002029 std 0.03657
+9KQM: contour level 0.1 and resolution 3.5 from emdb_extractor.py (resolution in data/entries_2026.csv: 3.5)
+lane 1 9KQM: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-d/mica_state/9KQM
+lane 1 9KQM: map grid [256, 256, 256], voxel [0.8320000171661377, 0.8320000171661377, 0.8320000171661377] A, box [213.0, 213.0, 213.0] A -> 125 windows of 64^3 for MICA's network; about 0.472 million reflections for Phaser at 3.5 A
+lane 1 9KQM: restored docking state: 2 of 2 domains docked (full)
+lane 1 9KQM: sensitivity session: the docked AlphaFold models of the saved state (mode full, 3 files) were removed; program 3 ran without docked AlphaFold input
+[lane 2 9OTA 3_build] running for 2 min | load 1.3 | free RAM 27.1 GB | busiest: python 101% (120s), python3 2.2% (1466s), nvidia-smi 0.4% (1473s) | 9OTA_3_build.log: 8040 bytes, changed 3 s ago, last line: Processing samples:  32%|███▏      | 40/125 [01:41<03:45,  2.65s/it]
+[lane 2 9OTA 3_build] running for 4 min | load 1.1 | free RAM 27.2 GB | busiest: python 101% (240s), python3 2.1% (1586s), nvidia-smi 0.4% (1593s) | 9OTA_3_build.log: 11633 bytes, changed 1 s ago, last line: Processing samples:  68%|██████▊   | 85/125 [03:43<01:47,  2.70s/it]
+[lane 2 9OTA 3_build] running for 6 min | load 1.5 | free RAM 26.1 GB | busiest: python 101% (6s), python 99.9% (360s), python 98.2% (6s) | 9OTA_3_build.log: 20107 bytes, changed 7 s ago, last line: 2026-10-27 02:33:33 - INFO - Generated 1881 local traces
+lane 2 9OTA: 3_build finished: exit code 0, 445 s, lowest free RAM 26.02 GB; output written
+lane 0 9VUH: waited 867 s for the program 3 of another entry
+
+=== lane 0 9VUH: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9VUH/emd_65363.map -f /tmp/mica_pilot/MICA/input/9VUH/9vuh.fasta -a /tmp/mica_pilot/MICA/input/9VUH/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+lane 2 9OTA: waited 15 s for MICA's own Phenix refinement; refined model not found
+the all-atom model exists but the refined model does not: running phenix.real_space_refine again, with its output kept
+Starting phenix.real_space_refine
+on Tue Oct 27 02:35:21 2026 by root
+===============================================================================
+
+Processing files:
+  Found phil, /tmp/mica_pilot/MICA/modules/phenix.eff
+  Adding PHIL files:
+  -------------------------
+    run_program(real_space_refine.Program)
+    self.process_phil(self.namespace.phil)
+    result_object = master_object.fetch(
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+RuntimeError: Incompatible parameter objects: scope "cdl_nucleotides" (input line 2068) vs. definition "cdl_nucleotides" (file "/tmp/mica_pilot/MICA/modules/phenix.eff", line 107)
+phenix.real_space_refine exit code 0
+phenix.chain_comparison (70828_9ota_MICA(init)_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.69  208    207    206       0       2   77.9   1.13   100.0        0.78   69.3          6               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.48 seconds
+wall clock time: 1.48 seconds
+phenix.chain_comparison (70828_9ota_MICA_all_atom_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Entire_target 0.79  489      6    473       4      12   91.6   1.16    97.5        0.89   61.1          6               4
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.59 seconds
+wall clock time: 1.59 seconds
+phenix.chain_comparison (70828_9ota_MICA_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.80  250    250    237       6       7   93.6   1.16    96.4        0.90   41.7          7               4
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.62 seconds
+wall clock time: 1.61 seconds
+
+========================================================================
+lane 2 9WFL (EMDB EMD-65930, 2.75 A, 682 modeled residues)
+queue: 15 waiting; 2 ok, 3 running; 0.5 of 5.0 hours used
+========================================================================
+AlphaFold Server files of 9WFL: found in /kaggle/input, hashes match the checked list
+map grid (256, 256, 256) voxel size [0.82, 0.82, 0.82] min -1.407 max 2.032 mean -0.0007156 std 0.05323
+9WFL: contour level 0.244 and resolution 2.75 from emdb_extractor.py (resolution in data/entries_2026.csv: 2.75)
+lane 2 9WFL: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-c/mica_state/9WFL
+lane 2 9WFL: map grid [256, 256, 256], voxel [0.8199999928474426, 0.8199999928474426, 0.8199999928474426] A, box [209.9, 209.9, 209.9] A -> 125 windows of 64^3 for MICA's network; about 0.932 million reflections for Phaser at 2.75 A
+lane 2 9WFL: restored docking state: 5 of 5 domains docked (full)
+lane 2 9WFL: sensitivity session: the docked AlphaFold models of the saved state (mode full, 6 files) were removed; program 3 ran without docked AlphaFold input
+[lane 0 9VUH 3_build] running for 2 min | load 1.1 | free RAM 27.1 GB | busiest: python 101% (120s), python3 1.8% (1911s), nvidia-smi 0.4% (1918s) | 9VUH_3_build.log: 9054 bytes, changed 1 s ago, last line: Processing samples:  61%|██████    | 39/64 [01:45<01:07,  2.68s/it]
+[lane 0 9VUH 3_build] running for 4 min | load 1.7 | free RAM 26.4 GB | busiest: python 100% (50s), python 99.8% (50s), python 81.2% (240s) | 9VUH_3_build.log: 16158 bytes, changed 50 s ago, last line: 2026-10-27 02:38:14 - INFO - Generated 1709 local traces
+[lane 0 9VUH 3_build] running for 6 min | load 1.9 | free RAM 26.4 GB | busiest: python 100% (28s), python 100% (28s), python 57.2% (360s) | 9VUH_3_build.log: 16158 bytes, changed 3 min ago, last line: 2026-10-27 02:38:14 - INFO - Generated 1709 local traces
+[lane 0 9VUH 3_build] running for 8 min | load 1.8 | free RAM 26.6 GB | busiest: python 103% (2s), python 103% (2s), python 48.1% (480s) | 9VUH_3_build.log: 17154 bytes, changed 2 s ago, last line: 2026-10-27 02:43:02 - INFO - Processing sequence 9VUH_3 with 318 residues, 1 chains
+lane 0 9VUH: 3_build finished: exit code 0, 505 s, lowest free RAM 26.2 GB; output written
+lane 1 9KQM: waited 864 s for the program 3 of another entry
+
+=== lane 1 9KQM: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9KQM/emd_62507.map -f /tmp/mica_pilot/MICA/input/9KQM/9kqm.fasta -a /tmp/mica_pilot/MICA/input/9KQM/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+lane 0 9VUH: waited 15 s for MICA's own Phenix refinement; refined model not found
+the all-atom model exists but the refined model does not: running phenix.real_space_refine again, with its output kept
+Starting phenix.real_space_refine
+on Tue Oct 27 02:43:46 2026 by root
+===============================================================================
+
+Processing files:
+  Found phil, /tmp/mica_pilot/MICA/modules/phenix.eff
+  Adding PHIL files:
+  -------------------------
+    run_program(real_space_refine.Program)
+    self.process_phil(self.namespace.phil)
+    result_object = master_object.fetch(
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+RuntimeError: Incompatible parameter objects: scope "cdl_nucleotides" (input line 2068) vs. definition "cdl_nucleotides" (file "/tmp/mica_pilot/MICA/modules/phenix.eff", line 107)
+phenix.real_space_refine exit code 0
+phenix.chain_comparison (65363_9vuh_MICA(init)_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 1.08  497     13    481       0      16   78.6   0.73    98.6        0.78   33.1          9               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.59 seconds
+wall clock time: 1.60 seconds
+phenix.chain_comparison (65363_9vuh_MICA_all_atom_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 1.13  578     38    550       0      28   91.5   0.81    94.8        0.87   30.4          5               5
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.77 seconds
+wall clock time: 1.77 seconds
+phenix.chain_comparison (65363_9vuh_MICA_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 1.13  578     39    550       0      28   91.5   0.81    94.8        0.87   30.4          5               5
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.66 seconds
+wall clock time: 1.65 seconds
+
+========================================================================
+lane 0 9WME (EMDB EMD-66088, 3.2 A, 446 modeled residues)
+queue: 14 waiting; 3 ok, 3 running; 0.6 of 5.0 hours used
+========================================================================
+AlphaFold Server files of 9WME: found in /kaggle/input, hashes match the checked list
+map grid (180, 180, 180) voxel size [1.1, 1.1, 1.1] min -1.606 max 1.804 mean 0.001058 std 0.04177
+9WME: contour level 0.26 and resolution 3.2 from emdb_extractor.py (resolution in data/entries_2026.csv: 3.2)
+lane 0 9WME: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-a/mica_state/9WME
+lane 0 9WME: map grid [180, 180, 180], voxel [1.100000023841858, 1.100000023841858, 1.100000023841858] A, box [198.0, 198.0, 198.0] A -> 125 windows of 64^3 for MICA's network; about 0.496 million reflections for Phaser at 3.2 A
+lane 0 9WME: restored docking state: 7 of 7 domains docked (full)
+lane 0 9WME: sensitivity session: the docked AlphaFold models of the saved state (mode full, 8 files) were removed; program 3 ran without docked AlphaFold input
+[lane 1 9KQM 3_build] running for 2 min | load 1.3 | free RAM 27.1 GB | busiest: python 101% (120s), python3 1.4% (2416s), nvidia-smi 0.4% (2423s) | 9KQM_3_build.log: 8407 bytes, changed 1 s ago, last line: Processing samples:  33%|███▎      | 41/125 [01:43<03:41,  2.64s/it]
+[lane 1 9KQM 3_build] running for 4 min | load 1.4 | free RAM 27.1 GB | busiest: python 101% (240s), python3 1.4% (2536s), nvidia-smi 0.4% (2543s) | 9KQM_3_build.log: 11840 bytes, changed 2 s ago, last line: Processing samples:  67%|██████▋   | 84/125 [03:42<01:54,  2.79s/it]
+[lane 1 9KQM 3_build] running for 6 min | load 1.6 | free RAM 26.2 GB | busiest: python 105% (2s), python 101% (2s), python 101% (360s) | 9KQM_3_build.log: 20392 bytes, changed 2 s ago, last line: 2026-10-27 02:49:27 - INFO - Generated 956 local traces
+[lane 1 9KQM 3_build] running for 8 min | load 2.0 | free RAM 26.3 GB | busiest: python 100% (17s), python 100% (17s), python 77.4% (480s) | 9KQM_3_build.log: 20763 bytes, changed 18 s ago, last line: 2026-10-27 02:51:11 - INFO - Processing sequence 9KQM_1 with 637 residues, 1 chains
+lane 1 9KQM: 3_build finished: exit code 0, 525 s, lowest free RAM 26.08 GB; output written
+lane 2 9WFL: waited 972 s for the program 3 of another entry
+
+=== lane 2 9WFL: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9WFL/emd_65930.map -f /tmp/mica_pilot/MICA/input/9WFL/9wfl.fasta -a /tmp/mica_pilot/MICA/input/9WFL/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+lane 1 9KQM: waited 15 s for MICA's own Phenix refinement; refined model not found
+the all-atom model exists but the refined model does not: running phenix.real_space_refine again, with its output kept
+Starting phenix.real_space_refine
+on Tue Oct 27 02:52:31 2026 by root
+===============================================================================
+
+Processing files:
+  Found phil, /tmp/mica_pilot/MICA/modules/phenix.eff
+  Adding PHIL files:
+  -------------------------
+    run_program(real_space_refine.Program)
+    self.process_phil(self.namespace.phil)
+    result_object = master_object.fetch(
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+RuntimeError: Incompatible parameter objects: scope "cdl_nucleotides" (input line 2068) vs. definition "cdl_nucleotides" (file "/tmp/mica_pilot/MICA/modules/phenix.eff", line 107)
+phenix.real_space_refine exit code 0
+phenix.chain_comparison (62507_9kqm_MICA(init)_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.74  288      0    282       0       6   71.5   0.96   100.0        0.71   41.1          7               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.99 seconds
+wall clock time: 1.99 seconds
+phenix.chain_comparison (62507_9kqm_MICA_all_atom_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.85  382     12    321      22      39   94.8   1.12    83.2        0.79   16.6          5              14
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 2.09 seconds
+wall clock time: 2.09 seconds
+phenix.chain_comparison (62507_9kqm_MICA_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.85  383     12    322      22      39   95.0   1.12    83.3        0.79   16.7          5              14
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.99 seconds
+wall clock time: 2.00 seconds
+phenix.chain_comparison (fold_9kqm_1_model_0.cif) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.00    0    637      0       0       0    0.0   0.00     0.0        0.00    0.0          1               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 2.21 seconds
+wall clock time: 2.22 seconds
+
+========================================================================
+lane 1 9ZLH (EMDB EMD-74403, 2.14 A, 206 modeled residues)
+queue: 13 waiting; 4 ok, 3 running; 0.8 of 5.0 hours used
+========================================================================
+AlphaFold Server files of 9ZLH: found in /kaggle/input, hashes match the checked list
+map grid (256, 256, 256) voxel size [0.83, 0.83, 0.83] min -4.247 max 6.248 mean 0.0121 std 0.106
+9ZLH: contour level 0.8 and resolution 2.14 from emdb_extractor.py (resolution in data/entries_2026.csv: 2.14)
+lane 1 9ZLH: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-b/mica_state/9ZLH
+lane 1 9ZLH: map grid [256, 256, 256], voxel [0.8299999833106995, 0.8299999833106995, 0.8299999833106995] A, box [212.5, 212.5, 212.5] A -> 125 windows of 64^3 for MICA's network; about 2.05 million reflections for Phaser at 2.14 A
+lane 1 9ZLH: restored docking state: 2 of 2 domains docked (full)
+lane 1 9ZLH: sensitivity session: the docked AlphaFold models of the saved state (mode full, 3 files) were removed; program 3 ran without docked AlphaFold input
+[lane 2 9WFL 3_build] running for 2 min | load 1.2 | free RAM 27.2 GB | busiest: python 101% (120s), python3 1.2% (2941s), nvidia-smi 0.4% (2948s) | 9WFL_3_build.log: 8495 bytes, changed 2 s ago, last line: Processing samples:  32%|███▏      | 40/125 [01:42<03:47,  2.67s/it]
+[lane 2 9WFL 3_build] running for 4 min | load 1.1 | free RAM 27.1 GB | busiest: python 101% (240s), python3 1.2% (3061s), nvidia-smi 0.4% (3068s) | 9WFL_3_build.log: 12088 bytes, changed 1 s ago, last line: Processing samples:  68%|██████▊   | 85/125 [03:43<01:47,  2.68s/it]
+[lane 2 9WFL 3_build] running for 6 min | load 1.2 | free RAM 26.2 GB | busiest: python 101% (7s), python 100% (7s), python 99.6% (360s) | 9WFL_3_build.log: 20558 bytes, changed 7 s ago, last line: 2026-10-27 02:58:07 - INFO - Generated 1617 local traces
+[lane 2 9WFL 3_build] running for 8 min | load 1.8 | free RAM 26.1 GB | busiest: python 76.2% (480s), python3 1.1% (3301s), nvidia-smi 0.4% (3308s) | 9WFL_3_build.log: 20558 bytes, changed 2 min ago, last line: 2026-10-27 02:58:07 - INFO - Generated 1617 local traces
+lane 2 9WFL: 3_build finished: exit code 0, 557 s, lowest free RAM 25.95 GB; output written
+lane 0 9WME: waited 1040 s for the program 3 of another entry
+
+=== lane 0 9WME: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9WME/emd_66088.map -f /tmp/mica_pilot/MICA/input/9WME/9wme.fasta -a /tmp/mica_pilot/MICA/input/9WME/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+lane 2 9WFL: waited 15 s for MICA's own Phenix refinement; refined model not found
+the all-atom model exists but the refined model does not: running phenix.real_space_refine again, with its output kept
+Starting phenix.real_space_refine
+on Tue Oct 27 03:01:48 2026 by root
+===============================================================================
+
+Processing files:
+  Found phil, /tmp/mica_pilot/MICA/modules/phenix.eff
+  Adding PHIL files:
+  -------------------------
+    run_program(real_space_refine.Program)
+    self.process_phil(self.namespace.phil)
+    result_object = master_object.fetch(
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+RuntimeError: Incompatible parameter objects: scope "cdl_nucleotides" (input line 2068) vs. definition "cdl_nucleotides" (file "/tmp/mica_pilot/MICA/modules/phenix.eff", line 107)
+phenix.real_space_refine exit code 0
+phenix.chain_comparison (65930_9wfl_MICA(init)_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.53  629      0    627       0       2   92.2   1.73   100.0        0.92  209.7          2               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 2.47 seconds
+wall clock time: 2.47 seconds
+phenix.chain_comparison (65930_9wfl_MICA_all_atom_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.54  653     26    650       0       3   95.7   1.77    99.2        0.95  163.2          2               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 2.56 seconds
+wall clock time: 2.56 seconds
+phenix.chain_comparison (65930_9wfl_MICA_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.54  653     26    650       0       3   95.7   1.77    99.2        0.95  163.2          2               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 2.50 seconds
+wall clock time: 2.50 seconds
+
+========================================================================
+lane 2 9RWS (EMDB EMD-54346, 3.28 A, 512 modeled residues)
+queue: 12 waiting; 5 ok, 3 running; 0.9 of 5.0 hours used
+========================================================================
+AlphaFold Server files of 9RWS: found in /kaggle/input, hashes match the checked list
+map grid (320, 320, 320) voxel size [0.6462, 0.6462, 0.6462] min -0.702 max 1.083 mean 0.0008847 std 0.01965
+9RWS: contour level 0.126 and resolution 3.28 from emdb_extractor.py (resolution in data/entries_2026.csv: 3.28)
+lane 2 9RWS: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-c/mica_state/9RWS
+lane 2 9RWS: map grid [320, 320, 320], voxel [0.6462000012397766, 0.6462000012397766, 0.6462000012397766] A, box [206.8, 206.8, 206.8] A -> 125 windows of 64^3 for MICA's network; about 0.525 million reflections for Phaser at 3.28 A
+lane 2 9RWS: restored docking state: 3 of 3 domains docked (full)
+lane 2 9RWS: sensitivity session: the docked AlphaFold models of the saved state (mode full, 4 files) were removed; program 3 ran without docked AlphaFold input
+[lane 0 9WME 3_build] running for 2 min | load 1.2 | free RAM 27.0 GB | busiest: python 101% (120s), python3 1.1% (3498s), nvidia-smi 0.4% (3505s) | 9WME_3_build.log: 8839 bytes, changed 1 s ago, last line: Processing samples:  31%|███       | 39/125 [01:45<03:50,  2.69s/it]
+[lane 0 9WME 3_build] running for 4 min | load 1.2 | free RAM 27.1 GB | busiest: python 101% (240s), python3 1.0% (3618s), nvidia-smi 0.4% (3625s) | 9WME_3_build.log: 12343 bytes, changed 2 s ago, last line: Processing samples:  66%|██████▋   | 83/125 [03:43<01:53,  2.70s/it]
+[lane 0 9WME 3_build] running for 6 min | load 1.6 | free RAM 26.3 GB | busiest: python 103% (3s), python 101% (3s), python 100% (360s) | 9WME_3_build.log: 20983 bytes, changed 3 s ago, last line: 2026-10-27 03:07:28 - INFO - Generated 1418 local traces
+[lane 0 9WME 3_build] running for 8 min | load 1.9 | free RAM 26.0 GB | busiest: python 100% (46s), python 99.6% (46s), python 77.2% (480s) | 9WME_3_build.log: 20983 bytes, changed 2 min ago, last line: 2026-10-27 03:07:28 - INFO - Generated 1418 local traces
+[lane 0 9WME 3_build] running for 10 min | load 2.0 | free RAM 26.4 GB | busiest: python 100% (28s), python 100% (28s), python 63.4% (600s) | 9WME_3_build.log: 21248 bytes, changed 29 s ago, last line: 2026-10-27 03:11:02 - INFO - Computing register scores for 9WME_2...
+[lane 0 9WME 3_build] running for 12 min | load 1.9 | free RAM 26.3 GB | busiest: python 100% (50s), python 100% (51s), python 55.2% (720s) | 9WME_3_build.log: 21664 bytes, changed 51 s ago, last line: 2026-10-27 03:12:40 - INFO - Processing sequence 9WME_2 with 657 residues, 1 chains
+lane 0 9WME: 3_build finished: exit code 0, 737 s, lowest free RAM 25.89 GB; output written
+lane 1 9ZLH: waited 1233 s for the program 3 of another entry
+
+=== lane 1 9ZLH: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9ZLH/emd_74403.map -f /tmp/mica_pilot/MICA/input/9ZLH/9zlh.fasta -a /tmp/mica_pilot/MICA/input/9ZLH/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+lane 0 9WME: waited 15 s for MICA's own Phenix refinement; refined model not found
+the all-atom model exists but the refined model does not: running phenix.real_space_refine again, with its output kept
+Starting phenix.real_space_refine
+on Tue Oct 27 03:14:04 2026 by root
+===============================================================================
+
+Processing files:
+  Found phil, /tmp/mica_pilot/MICA/modules/phenix.eff
+  Adding PHIL files:
+  -------------------------
+    run_program(real_space_refine.Program)
+    self.process_phil(self.namespace.phil)
+    result_object = master_object.fetch(
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+RuntimeError: Incompatible parameter objects: scope "cdl_nucleotides" (input line 2068) vs. definition "cdl_nucleotides" (file "/tmp/mica_pilot/MICA/modules/phenix.eff", line 107)
+phenix.real_space_refine exit code 0
+phenix.chain_comparison (66088_9wme_MICA(init)_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 1.00  365      3    358       0       7   81.8   0.82    99.5        0.81   45.6          4               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.52 seconds
+wall clock time: 1.52 seconds
+phenix.chain_comparison (66088_9wme_MICA_all_atom_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 1.03  424     18    410       0      14   95.1   0.92    97.2        0.92   53.0          2               1
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.54 seconds
+wall clock time: 1.54 seconds
+phenix.chain_comparison (66088_9wme_MICA_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 1.03  425     19    411       0      14   95.3   0.92    97.2        0.93   53.1          2               1
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.49 seconds
+wall clock time: 1.50 seconds
+
+========================================================================
+lane 0 9WQ6 (EMDB EMD-66160, 3.4 A, 261 modeled residues)
+queue: 11 waiting; 6 ok, 3 running; 1.1 of 5.0 hours used
+========================================================================
+AlphaFold Server files of 9WQ6: found in /kaggle/input, hashes match the checked list
+map grid (320, 320, 320) voxel size [0.832, 0.832, 0.832] min -1.193 max 1.836 mean -0.000374 std 0.01905
+9WQ6: contour level 0.2 and resolution 3.4 from emdb_extractor.py (resolution in data/entries_2026.csv: 3.4)
+lane 0 9WQ6: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-b/mica_state/9WQ6
+lane 0 9WQ6: map grid [320, 320, 320], voxel [0.8319999575614929, 0.8319999575614929, 0.8319999575614929] A, box [266.2, 266.2, 266.2] A -> 216 windows of 64^3 for MICA's network; about 1.006 million reflections for Phaser at 3.4 A
+lane 0 9WQ6: restored docking state: 1 of 1 domains docked (full)
+lane 0 9WQ6: sensitivity session: the docked AlphaFold models of the saved state (mode full, 2 files) were removed; program 3 ran without docked AlphaFold input
+[lane 1 9ZLH 3_build] running for 2 min | load 1.1 | free RAM 27.1 GB | busiest: python 101% (120s), python3 0.9% (4235s), nvidia-smi 0.4% (4241s) | 9ZLH_3_build.log: 8051 bytes, changed 2 s ago, last line: Processing samples:  33%|███▎      | 41/125 [01:43<03:40,  2.62s/it]
+[lane 1 9ZLH 3_build] running for 4 min | load 1.4 | free RAM 27.1 GB | busiest: python 101% (240s), python3 0.9% (4355s), nvidia-smi 0.4% (4361s) | 9ZLH_3_build.log: 11567 bytes, changed 0 s ago, last line: Processing samples:  68%|██████▊   | 85/125 [03:44<01:51,  2.78s/it]
+[lane 1 9ZLH 3_build] running for 6 min | load 1.1 | free RAM 26.1 GB | busiest: python 101% (360s), python3 0.9% (4475s), nvidia-smi 0.4% (4481s) | 9ZLH_3_build.log: 18174 bytes, changed 0 s ago, last line: 2026-10-27 03:19:47 - INFO - Computing neighbor scoring matrix...
+lane 1 9ZLH: 3_build finished: exit code 0, 477 s, lowest free RAM 25.64 GB; output written
+lane 2 9RWS: waited 1098 s for the program 3 of another entry
+
+=== lane 2 9RWS: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9RWS/emd_54346.map -f /tmp/mica_pilot/MICA/input/9RWS/9rws.fasta -a /tmp/mica_pilot/MICA/input/9RWS/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+lane 1 9ZLH: waited 15 s for MICA's own Phenix refinement; refined model not found
+the all-atom model exists but the refined model does not: running phenix.real_space_refine again, with its output kept
+Starting phenix.real_space_refine
+on Tue Oct 27 03:22:01 2026 by root
+===============================================================================
+
+Processing files:
+  Found phil, /tmp/mica_pilot/MICA/modules/phenix.eff
+  Adding PHIL files:
+  -------------------------
+    run_program(real_space_refine.Program)
+    self.process_phil(self.namespace.phil)
+    result_object = master_object.fetch(
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+RuntimeError: Incompatible parameter objects: scope "cdl_nucleotides" (input line 2068) vs. definition "cdl_nucleotides" (file "/tmp/mica_pilot/MICA/modules/phenix.eff", line 107)
+phenix.real_space_refine exit code 0
+phenix.chain_comparison (74403_9zlh_MICA(init)_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.57  193      0    193       0       0   93.7   1.63   100.0        0.94  193.0          1               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.31 seconds
+wall clock time: 1.32 seconds
+phenix.chain_comparison (74403_9zlh_MICA_all_atom_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.58  206      0    206       0       0  100.0   1.74   100.0        1.00  206.0          1               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.31 seconds
+wall clock time: 1.31 seconds
+phenix.chain_comparison (74403_9zlh_MICA_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.58  206      0    206       0       0  100.0   1.74   100.0        1.00  206.0          1               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.32 seconds
+wall clock time: 1.32 seconds
+phenix.chain_comparison (fold_9zlh_1_model_0.cif) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.00    0    206      0       0       0    0.0   0.00     0.0        0.00    0.0          1               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.42 seconds
+wall clock time: 1.42 seconds
+
+========================================================================
+lane 1 22FX (EMDB EMD-68251, 1.24 A, 173 modeled residues)
+queue: 10 waiting; 7 ok, 3 running; 1.3 of 5.0 hours used
+========================================================================
+AlphaFold Server files of 22FX: found in /kaggle/input, hashes match the checked list
+[lane 2 9RWS 3_build] running for 2 min | load 1.2 | free RAM 27.1 GB | busiest: python 101% (120s), python3 0.9% (4711s), nvidia-smi 0.4% (4718s) | 9RWS_3_build.log: 8319 bytes, changed 2 s ago, last line: Processing samples:  32%|███▏      | 40/125 [01:42<03:46,  2.67s/it]
+[lane 2 9RWS 3_build] running for 4 min | load 1.5 | free RAM 27.1 GB | busiest: python 101% (240s), python3 0.9% (4831s), nvidia-smi 0.4% (4838s) | 9RWS_3_build.log: 11912 bytes, changed 1 s ago, last line: Processing samples:  68%|██████▊   | 85/125 [03:43<01:47,  2.69s/it]
+map grid (440, 440, 440) voxel size [0.5695, 0.5695, 0.5695] min -0.4399 max 1.379 mean -8.814e-05 std 0.02542
+22FX: contour level 0.1 and resolution 1.24 from emdb_extractor.py (resolution in data/entries_2026.csv: 1.24)
+lane 1 22FX: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-b/mica_state/22FX
+lane 1 22FX: map grid [440, 440, 440], voxel [0.569527268409729, 0.569527268409729, 0.569527268409729] A, box [250.6, 250.6, 250.6] A -> 216 windows of 64^3 for MICA's network; about 17.286 million reflections for Phaser at 1.24 A
+lane 1 22FX: restored docking state: 1 of 2 domains docked (partial)
+lane 1 22FX: sensitivity session: the docked AlphaFold models of the saved state (mode partial, 2 files) were removed; program 3 ran without docked AlphaFold input
+[lane 2 9RWS 3_build] running for 6 min | load 1.2 | free RAM 26.3 GB | busiest: python 100% (7s), python 100% (7s), python 99.5% (360s) | 9RWS_3_build.log: 20382 bytes, changed 8 s ago, last line: 2026-10-27 03:27:36 - INFO - Generated 1097 local traces
+[lane 2 9RWS 3_build] running for 8 min | load 1.4 | free RAM 26.3 GB | busiest: python 83.0% (480s), python3 0.9% (5071s), nvidia-smi 0.4% (5078s) | 9RWS_3_build.log: 22199 bytes, changed 2 s ago, last line: 2026-10-27 03:29:42 - INFO - Processing gap 5/5: positions -1->43
+lane 2 9RWS: 3_build finished: exit code 0, 485 s, lowest free RAM 26.14 GB; output written
+lane 0 9WQ6: waited 863 s for the program 3 of another entry
+
+=== lane 0 9WQ6: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9WQ6/emd_66160.map -f /tmp/mica_pilot/MICA/input/9WQ6/9wq6.fasta -a /tmp/mica_pilot/MICA/input/9WQ6/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+lane 2 9RWS: waited 15 s for MICA's own Phenix refinement; refined model not found
+the all-atom model exists but the refined model does not: running phenix.real_space_refine again, with its output kept
+Starting phenix.real_space_refine
+on Tue Oct 27 03:30:06 2026 by root
+===============================================================================
+
+Processing files:
+  Found phil, /tmp/mica_pilot/MICA/modules/phenix.eff
+  Adding PHIL files:
+  -------------------------
+    run_program(real_space_refine.Program)
+    self.process_phil(self.namespace.phil)
+    result_object = master_object.fetch(
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+RuntimeError: Incompatible parameter objects: scope "cdl_nucleotides" (input line 2068) vs. definition "cdl_nucleotides" (file "/tmp/mica_pilot/MICA/modules/phenix.eff", line 107)
+phenix.real_space_refine exit code 0
+phenix.chain_comparison (54346_9rws_MICA(init)_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.64  421      0    418       0       3   82.2   1.28   100.0        0.82  105.2          4               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.44 seconds
+wall clock time: 1.45 seconds
+phenix.chain_comparison (54346_9rws_MICA_all_atom_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.71  502      5    486       0      16   98.0   1.37    95.6        0.94   55.8          3               5
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.59 seconds
+wall clock time: 1.58 seconds
+phenix.chain_comparison (54346_9rws_MICA_ca_model.pdb) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.73  505      6    485       0      20   98.6   1.35    94.9        0.94   50.5          5               7
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.59 seconds
+wall clock time: 1.59 seconds
+phenix.chain_comparison (fold_9rws_1_model_0.cif) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.00    0    551      0       0       0    0.0   0.00     0.0        0.00    0.0          1               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.59 seconds
+wall clock time: 1.60 seconds
+
+========================================================================
+lane 2 9V4D (EMDB EMD-64777, 3.07 A, 276 modeled residues)
+queue: 9 waiting; 8 ok, 3 running; 1.4 of 5.0 hours used
+========================================================================
+AlphaFold Server files of 9V4D: found in /kaggle/input, hashes match the checked list
+lane 0 9WQ6: 3_build finished: exit code 1, 29 s, lowest free RAM 26.15 GB; output NOT written
+lane 0 9WQ6 STOPPED in 3_build: exit code 1; the output of 3_build was not written. The last lines of the program:
+================================================================================
+📊 Configuration:
+   🔢 Total batches: 27
+   📦 Batch size: 8
+
+
+Processing samples:   0%|          | 0/27 [00:00<?, ?it/s]
+Processing samples:   0%|          | 0/27 [00:10<?, ?it/s]
+2026-10-27 03:30:18 - ERROR - Inference failed: CUDA out of memory. Tried to allocate 2.00 GiB (GPU 0; 14.56 GiB total capacity; 11.25 GiB already allocated; 1.27 GiB free; 12.28 GiB reserved in total by PyTorch)
+   ❌ Inference failed
+
+❌ Inference failed
+2026-10-27 03:30:18 - ERROR - Unexpected error: 'amino_acid_prediction'
+
+❌ Unexpected error: 'amino_acid_prediction'
+lane 1 22FX: waited 269 s for the program 3 of another entry
+
+=== lane 1 22FX: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/22FX/emd_68251.map -f /tmp/mica_pilot/MICA/input/22FX/22fx.fasta -a /tmp/mica_pilot/MICA/input/22FX/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+map grid (240, 240, 240) voxel size [1.1067, 1.1067, 1.1067] min -0.789 max 1.197 mean 0.0005147 std 0.0162
+phenix.chain_comparison (fold_9wq6_1_model_0.cif) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.00    0    339      0       0       0    0.0   0.00     0.0        0.00    0.0          1               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 2.32 seconds
+wall clock time: 2.32 seconds
+
+========================================================================
+lane 0 9TKA (EMDB EMD-56022, 2.7 A, 247 modeled residues)
+queue: 8 waiting; 1 failed, 8 ok, 3 running; 1.4 of 5.0 hours used
+========================================================================
+9V4D: contour level 0.0586 and resolution 3.07 from emdb_extractor.py (resolution in data/entries_2026.csv: 3.07)
+AlphaFold Server files of 9TKA: found in /kaggle/input, hashes match the checked list
+lane 2 9V4D: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-d/mica_state/9V4D
+lane 2 9V4D: map grid [240, 240, 240], voxel [1.106699824333191, 1.106699824333191, 1.106699824333191] A, box [265.6, 265.6, 265.6] A -> 216 windows of 64^3 for MICA's network; about 1.356 million reflections for Phaser at 3.07 A
+lane 2 9V4D: restored docking state: 1 of 1 domains docked (full)
+lane 2 9V4D: sensitivity session: the docked AlphaFold models of the saved state (mode full, 2 files) were removed; program 3 ran without docked AlphaFold input
+lane 1 22FX: 3_build finished: exit code 1, 29 s, lowest free RAM 26.71 GB; output NOT written
+lane 1 22FX STOPPED in 3_build: exit code 1; the output of 3_build was not written. The last lines of the program:
+================================================================================
+📊 Configuration:
+   🔢 Total batches: 27
+   📦 Batch size: 8
+
+
+Processing samples:   0%|          | 0/27 [00:00<?, ?it/s]
+Processing samples:   0%|          | 0/27 [00:09<?, ?it/s]
+2026-10-27 03:30:47 - ERROR - Inference failed: CUDA out of memory. Tried to allocate 2.00 GiB (GPU 0; 14.56 GiB total capacity; 11.25 GiB already allocated; 1.27 GiB free; 12.28 GiB reserved in total by PyTorch)
+   ❌ Inference failed
+
+❌ Inference failed
+2026-10-27 03:30:47 - ERROR - Unexpected error: 'amino_acid_prediction'
+
+❌ Unexpected error: 'amino_acid_prediction'
+
+GUARD: program 3 failed on two entries in a row. Program 3 is switched off for the rest of this session (the docking goes on and the docked state is kept). Send me the zip before anything else is run: if the cause is the notebook and not MICA, program 3 is run again and the LOG says so.
+
+=== lane 2 9V4D: MICA program 3_build: run.py -m /tmp/mica_pilot/MICA/input/9V4D/emd_64777.map -f /tmp/mica_pilot/MICA/input/9V4D/9v4d.fasta -a /tmp/mica_pilot/MICA/input/9V4D/AF3_results --run_pulchra --pulchra_path=modules/pulchra304/src/pulchra --run_phenix --phenix_act=/tmp/mica_pilot/phenix-2.
+phenix.chain_comparison (fold_22fx_1_model_0.cif) says, last lines:
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.00    0    182      0       0       0    0.0   0.00     0.0        0.00    0.0          1               0
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 1.94 seconds
+wall clock time: 2.06 seconds
+
+========================================================================
+lane 1 9VBD (EMDB EMD-64920, 3.26 A, 521 modeled residues)
+queue: 7 waiting; 2 failed, 8 ok, 3 running; 1.4 of 5.0 hours used
+========================================================================
+lane 2 9V4D: 3_build finished: exit code 1, 27 s, lowest free RAM 26.68 GB; output NOT written
+lane 2 9V4D STOPPED in 3_build: exit code 1; the output of 3_build was not written. The last lines of the program:
+================================================================================
+📊 Configuration:
+   🔢 Total batches: 27
+   📦 Batch size: 8
+
+
+Processing samples:   0%|          | 0/27 [00:00<?, ?it/s]
+Processing samples:   0%|          | 0/27 [00:09<?, ?it/s]
+2026-10-27 03:31:15 - ERROR - Inference failed: CUDA out of memory. Tried to allocate 2.00 GiB (GPU 0; 14.56 GiB total capacity; 11.25 GiB already allocated; 1.27 GiB free; 12.28 GiB reserved in total by PyTorch)
+   ❌ Inference failed
+
+❌ Inference failed
+2026-10-27 03:31:15 - ERROR - Unexpected error: 'amino_acid_prediction'
+
+❌ Unexpected error: 'amino_acid_prediction'
+
+========================================================================
+lane 2 9WTX (EMDB EMD-66226, 3.37 A, 500 modeled residues)
+queue: 6 waiting; 3 failed, 8 ok, 3 running; 1.4 of 5.0 hours used
+========================================================================
+map grid (360, 360, 360) voxel size [0.729, 0.729, 0.729] min -0.9808 max 1.677 mean 0.0008564 std 0.02237
+9TKA: contour level 0.169 and resolution 2.7 from emdb_extractor.py (resolution in data/entries_2026.csv: 2.7)
+AlphaFold Server files of 9VBD: found in /kaggle/input, hashes match the checked list
+lane 0 9TKA: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-a/mica_state/9TKA
+lane 0 9TKA: map grid [360, 360, 360], voxel [0.7290000319480896, 0.7290000319480896, 0.7290000319480896] A, box [262.4, 262.4, 262.4] A -> 216 windows of 64^3 for MICA's network; about 1.923 million reflections for Phaser at 2.7 A
+lane 0 9TKA: restored docking state: 1 of 1 domains docked (full)
+lane 0 9TKA: sensitivity session: the docked AlphaFold models of the saved state (mode full, 2 files) were removed; program 3 ran without docked AlphaFold input
+lane 0 9TKA: DEFERRED. program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept
+
+========================================================================
+lane 0 26DK (EMDB EMD-80558, 3.5 A, 191 modeled residues)
+queue: 5 waiting; 1 deferred, 3 failed, 8 ok, 3 running; 1.4 of 5.0 hours used
+========================================================================
+map grid (320, 320, 320) voxel size [0.83, 0.83, 0.83] min -1.515 max 2.172 mean 0.0002382 std 0.03648
+9VBD: contour level 0.29 and resolution 3.26 from emdb_extractor.py (resolution in data/entries_2026.csv: 3.26)
+AlphaFold Server files of 9WTX: found in /kaggle/input, hashes match the checked list
+lane 1 9VBD: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-d/mica_state/9VBD
+lane 1 9VBD: map grid [320, 320, 320], voxel [0.8300000429153442, 0.8300000429153442, 0.8300000429153442] A, box [265.6, 265.6, 265.6] A -> 216 windows of 64^3 for MICA's network; about 1.133 million reflections for Phaser at 3.26 A
+lane 1 9VBD: restored docking state: 4 of 4 domains docked (full)
+lane 1 9VBD: sensitivity session: the docked AlphaFold models of the saved state (mode full, 5 files) were removed; program 3 ran without docked AlphaFold input
+lane 1 9VBD: DEFERRED. program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept
+
+========================================================================
+lane 1 9Z24 (EMDB EMD-73762, 3.1 A, 338 modeled residues)
+queue: 4 waiting; 2 deferred, 3 failed, 8 ok, 3 running; 1.5 of 5.0 hours used
+========================================================================
+map grid (320, 320, 320) voxel size [0.83, 0.83, 0.83] min -0.7263 max 1.111 mean 0.0003394 std 0.01811
+9WTX: contour level 0.105 and resolution 3.37 from emdb_extractor.py (resolution in data/entries_2026.csv: 3.37)
+AlphaFold Server files of 26DK: found in /kaggle/input, hashes match the checked list
+lane 2 9WTX: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-c/mica_state/9WTX
+lane 2 9WTX: map grid [320, 320, 320], voxel [0.8300000429153442, 0.8300000429153442, 0.8300000429153442] A, box [265.6, 265.6, 265.6] A -> 216 windows of 64^3 for MICA's network; about 1.025 million reflections for Phaser at 3.37 A
+lane 2 9WTX: restored docking state: 3 of 3 domains docked (full)
+lane 2 9WTX: sensitivity session: the docked AlphaFold models of the saved state (mode full, 4 files) were removed; program 3 ran without docked AlphaFold input
+lane 2 9WTX: DEFERRED. program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept
+
+========================================================================
+lane 2 9T5K (EMDB EMD-55586, 2.6 A, 381 modeled residues)
+queue: 3 waiting; 3 deferred, 3 failed, 8 ok, 3 running; 1.5 of 5.0 hours used
+========================================================================
+map grid (160, 160, 160) voxel size [1.66, 1.66, 1.66] min -8.153 max 15.2 mean 0.00731 std 1.108
+26DK: contour level 1.3 and resolution 3.5 from emdb_extractor.py (resolution in data/entries_2026.csv: 3.5)
+AlphaFold Server files of 9Z24: found in /kaggle/input, hashes match the checked list
+lane 0 26DK: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-a/mica_state/26DK
+lane 0 26DK: map grid [160, 160, 160], voxel [1.6600000858306885, 1.6600000858306885, 1.6600000858306885] A, box [265.6, 265.6, 265.6] A -> 216 windows of 64^3 for MICA's network; about 0.915 million reflections for Phaser at 3.5 A
+lane 0 26DK: restored docking state: 2 of 2 domains docked (full)
+lane 0 26DK: sensitivity session: the docked AlphaFold models of the saved state (mode full, 3 files) were removed; program 3 ran without docked AlphaFold input
+lane 0 26DK: DEFERRED. program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept
+
+========================================================================
+lane 0 9OC0 (EMDB EMD-70305, 2.97 A, 512 modeled residues)
+queue: 2 waiting; 4 deferred, 3 failed, 8 ok, 3 running; 1.5 of 5.0 hours used
+========================================================================
+map grid (384, 384, 384) voxel size [0.87, 0.87, 0.87] min -0.009707 max 0.02319 mean 5.5e-06 std 0.0002464
+9Z24: contour level 0.003 and resolution 3.1 from emdb_extractor.py (resolution in data/entries_2026.csv: 3.1)
+AlphaFold Server files of 9T5K: found in /kaggle/input, hashes match the checked list
+lane 1 9Z24: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-d/mica_state/9Z24
+lane 1 9Z24: map grid [384, 384, 384], voxel [0.8700000643730164, 0.8700000643730164, 0.8700000643730164] A, box [334.1, 334.1, 334.1] A -> 343 windows of 64^3 for MICA's network; about 2.621 million reflections for Phaser at 3.1 A
+lane 1 9Z24: restored docking state: 1 of 3 domains docked (partial)
+lane 1 9Z24: sensitivity session: the docked AlphaFold models of the saved state (mode partial, 2 files) were removed; program 3 ran without docked AlphaFold input
+lane 1 9Z24: DEFERRED. program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept
+
+========================================================================
+lane 1 13BD (EMDB EMD-76936, 2.65 A, 461 modeled residues)
+queue: 1 waiting; 5 deferred, 3 failed, 8 ok, 3 running; 1.5 of 5.0 hours used
+========================================================================
+map grid (400, 400, 400) voxel size [0.92, 0.92, 0.92] min -1.153 max 1.659 mean 0.0007268 std 0.01707
+9T5K: contour level 0.15 and resolution 2.6 from emdb_extractor.py (resolution in data/entries_2026.csv: 2.6)
+AlphaFold Server files of 9OC0: found in /kaggle/input, hashes match the checked list
+lane 2 9T5K: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-a/mica_state/9T5K
+lane 2 9T5K: map grid [400, 400, 400], voxel [0.9200000166893005, 0.9200000166893005, 0.9200000166893005] A, box [368.0, 368.0, 368.0] A -> 512 windows of 64^3 for MICA's network; about 5.939 million reflections for Phaser at 2.6 A
+lane 2 9T5K: restored docking state: 1 of 2 domains docked (partial)
+lane 2 9T5K: sensitivity session: the docked AlphaFold models of the saved state (mode partial, 2 files) were removed; program 3 ran without docked AlphaFold input
+lane 2 9T5K: DEFERRED. program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept
+
+========================================================================
+lane 2 9VI4 (EMDB EMD-65077, 1.8 A, 516 modeled residues)
+queue: 0 waiting; 6 deferred, 3 failed, 8 ok, 3 running; 1.5 of 5.0 hours used
+========================================================================
+map grid (440, 440, 440) voxel size [0.84, 0.84, 0.84] min -0.4103 max 0.6851 mean -0.000327 std 0.01153
+9OC0: contour level 0.066 and resolution 2.97 from emdb_extractor.py (resolution in data/entries_2026.csv: 2.97)
+AlphaFold Server files of 13BD: found in /kaggle/input, hashes match the checked list
+lane 0 9OC0: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-b/mica_state/9OC0
+lane 0 9OC0: map grid [440, 440, 440], voxel [0.8399999737739563, 0.8399999737739563, 0.8399999737739563] A, box [369.6, 369.6, 369.6] A -> 512 windows of 64^3 for MICA's network; about 4.036 million reflections for Phaser at 2.97 A
+lane 0 9OC0: restored docking state: 3 of 7 domains docked (partial)
+lane 0 9OC0: sensitivity session: the docked AlphaFold models of the saved state (mode partial, 4 files) were removed; program 3 ran without docked AlphaFold input
+lane 0 9OC0: DEFERRED. program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept
+map grid (416, 416, 416) voxel size [0.832, 0.832, 0.832] min -0.4046 max 0.8803 mean 0.0002196 std 0.0138
+13BD: contour level 0.13 and resolution 2.65 from emdb_extractor.py (resolution in data/entries_2026.csv: 2.65)
+AlphaFold Server files of 9VI4: found in /kaggle/input, hashes match the checked list
+lane 1 13BD: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-a/mica_state/13BD
+lane 1 13BD: map grid [416, 416, 416], voxel [0.8320000171661377, 0.8320000171661377, 0.8320000171661377] A, box [346.1, 346.1, 346.1] A -> 512 windows of 64^3 for MICA's network; about 4.666 million reflections for Phaser at 2.65 A
+lane 1 13BD: restored docking state: 1 of 3 domains docked (partial)
+lane 1 13BD: sensitivity session: the docked AlphaFold models of the saved state (mode partial, 2 files) were removed; program 3 ran without docked AlphaFold input
+lane 1 13BD: DEFERRED. program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept
+map grid (640, 640, 640) voxel size [0.6573, 0.6573, 0.6573] min -1.267 max 2.881 mean 0.003527 std 0.1109
+9VI4: contour level 0.35 and resolution 1.8 from emdb_extractor.py (resolution in data/entries_2026.csv: 1.8)
+lane 2 9VI4: the state of an earlier session was restored from /kaggle/input/notebooks/faltuaccounts/mica-dock3-b/mica_state/9VI4
+lane 2 9VI4: map grid [640, 640, 640], voxel [0.6572999954223633, 0.6572999954223633, 0.6572999954223633] A, box [420.7, 420.7, 420.7] A -> 729 windows of 64^3 for MICA's network; about 26.735 million reflections for Phaser at 1.8 A
+lane 2 9VI4: restored docking state: 0 of 3 domains docked (none)
+lane 2 9VI4: sensitivity session: the docked AlphaFold models of the saved state (mode none, 0 files) were removed; program 3 ran without docked AlphaFold input
+lane 2 9VI4: DEFERRED. program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept
+
+entry status       stopped in     windows   domains    dock s program 3 s   total s  note
+9VUH  ok                               64       0/4                 505      1511  sensitivity session: the docked AlphaFold models of the saved state (mode full, 5 files) w
+9JKK  ok                              125       0/2                 490       567  sensitivity session: the docked AlphaFold models of the saved state (mode full, 3 files) w
+9OTA  ok                              125       0/2                 445      1005  sensitivity session: the docked AlphaFold models of the saved state (mode full, 3 files) w
+9KQM  ok                              125       0/2                 525      1474  sensitivity session: the docked AlphaFold models of the saved state (mode full, 3 files) w
+9WFL  ok                              125       0/5                 557      1597  sensitivity session: the docked AlphaFold models of the saved state (mode full, 6 files) w
+9WME  ok                              125       0/7                 737      1819  sensitivity session: the docked AlphaFold models of the saved state (mode full, 8 files) w
+9ZLH  ok                              125       0/2                 477      1765  sensitivity session: the docked AlphaFold models of the saved state (mode full, 3 files) w
+9RWS  ok                              125       0/3                 485      1694  sensitivity session: the docked AlphaFold models of the saved state (mode full, 4 files) w
+9WQ6  failed       3_build            216       0/1                  29       971  exit code 1; the output of 3_build was not written
+22FX  failed       3_build            216       0/2                  29       523  exit code 1; the output of 3_build was not written
+9V4D  failed       3_build            216       0/1                  27        58  exit code 1; the output of 3_build was not written
+9TKA  deferred                        216       0/1                           101  program 3 was switched off in this session after two failures in a row (see the log); the 
+9VBD  deferred                        216       0/4                           152  program 3 was switched off in this session after two failures in a row (see the log); the 
+9WTX  deferred                        216       0/3                           215  program 3 was switched off in this session after two failures in a row (see the log); the 
+26DK  deferred                        216       0/2                           176  program 3 was switched off in this session after two failures in a row (see the log); the 
+9Z24  deferred                        343       0/3                           118  program 3 was switched off in this session after two failures in a row (see the log); the 
+9T5K  deferred                        512       0/2                           118  program 3 was switched off in this session after two failures in a row (see the log); the 
+9OC0  deferred                        512       0/7                           315  program 3 was switched off in this session after two failures in a row (see the log); the 
+13BD  deferred                        512       0/3                           380  program 3 was switched off in this session after two failures in a row (see the log); the 
+9VI4  deferred                        729       0/3                           803  program 3 was switched off in this session after two failures in a row (see the log); the 
+
+entry model               TM  aligned    RMSD  coverage   seq id  chain_comparison
+9VUH  mica_init_ca    0.8124      246    0.99    0.3991    0.996  ok
+9VUH  mica_all_atom   0.9552      293    1.46    0.4858    0.983  ok
+9VUH  mica_ca         0.9552      293    1.46    0.4858    0.983  ok
+9JKK  mica_init_ca    0.8888      473    0.52    0.8925      1.0  ok
+9JKK  mica_all_atom    0.991      529    0.77    1.0358    0.991  ok
+9JKK  mica_ca          0.991      529    0.77    1.0377    0.991  ok
+9JKK  af3_model_0     0.9457      530    2.11    1.1698    0.985  ok
+9OTA  mica_init_ca    0.7706      208    0.64    0.3895      1.0  ok
+9OTA  mica_all_atom   0.9075      248    1.08    0.4682    0.964  ok
+9OTA  mica_ca          0.915      251    1.23    0.4757    0.968  ok
+9KQM  mica_init_ca    0.7079      288    0.71    0.7146      1.0  ok
+9KQM  mica_all_atom   0.8557      363    2.25    0.9777    0.923  ok
+9KQM  mica_ca         0.8582      364    2.24    0.9801    0.923  ok
+9KQM  af3_model_0     0.9557      403    1.95    1.5806     0.98  ok
+9WFL  mica_init_ca    0.9599      629    0.53    0.9223      1.0  ok
+9WFL  mica_all_atom   0.9964      653    0.54    0.9956    0.992  ok
+9WFL  mica_ca         0.9964      653    0.54    0.9956    0.992  ok
+9WME  mica_init_ca    0.8232      368    1.03    0.8251      1.0  ok
+9WME  mica_all_atom   0.9438      425     1.4     0.991    0.995  ok
+9WME  mica_ca         0.9481      427     1.4    0.9955    0.995  ok
+9ZLH  mica_init_ca    0.9317      193     0.4    0.9369      1.0  ok
+9ZLH  mica_all_atom   0.9942      206    0.41       1.0      1.0  ok
+9ZLH  mica_ca         0.9942      206    0.41       1.0      1.0  ok
+9ZLH  af3_model_0     0.8674      203    2.45       1.0    0.911  ok
+9RWS  mica_init_ca    0.8174      421    0.62    0.8223      1.0  ok
+9RWS  mica_all_atom   0.9417      489    1.18    0.9902    0.998  ok
+9RWS  mica_ca         0.9441      492    1.42     0.998    0.992  ok
+9RWS  af3_model_0     0.9379      510    2.12    1.0762     0.99  ok
+9WQ6  af3_model_0     0.9379      261    1.78    1.2989    0.893  ok
+22FX  af3_model_0     0.9952      173    0.36     1.052      1.0  ok
+
+TO DO IN A LATER SESSION (pending.csv): 9TKA, 9VBD, 9WTX, 26DK, 9Z24, 9T5K, 9OC0, 13BD, 9VI4
+The entries marked deferred/docked need program 3 on a GPU: their state is in the output folder mica_state of this notebook (private). Add this notebook's output as an input of the GPU notebook.

@@ -1,0 +1,28 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif /kaggle/working/pilot/native/ca/9WTX_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/9WTX/9WTX_modelangelo_raw/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif:G:A:B:C:D:E:F:H:I:J:K:L:M:N:O:P:Q:R:S:T:U:V:W:X:Y:Z:a:b:c:d:e:f:g:h:i:j:k:l:m:n:o:p:q:r:s:t	/kaggle/working/pilot/native/ca/9WTX_native_ca.pdb:A:::::::::::::::::::::::::::::::::::::::::::::	0.1182	0.1296	1.12	0.104	0.114	0.864	549	500	66
+
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9WTX/9WTX_modelangelo_raw.cif

@@ -1,0 +1,58 @@
+
+🧬 Phenix Docking Tool for Cryo-EM Map
+================================================================================
+🔍 VALIDATING INPUTS...
+✅ Input validation passed
+
+
+🧬 PHENIX DOCKING TOOL
+⏰ Session started: 2026-10-24 06:56:06
+📄 Log file: /tmp/mica_pilot/MICA/input/9WQ6/docking_logs/phenix_docking_20261024_065606.log
+
+================================================================================
+🔧 TESTING PHENIX ENVIRONMENT
+================================================================================
+✅ Phenix environment test PASSED
+   📍 dock_in_map location: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+
+================================================================================
+🎯 DOCKING PROCESS STARTING
+================================================================================
+📊 DOCKING PARAMETERS:
+   🗺️  Density map: emd_66160.map
+   📏 Contour level: 0.2
+   🔍 Resolution: 3.4 Å
+   🧬 FASTA file: 9wq6.fasta
+   ⚙️  Dock type: domainwise
+   📁 Models directory: /tmp/mica_pilot/MICA/input/9WQ6/AF3_domains
+   🎯 Found 1 models to dock
+
+🔄 Processing initial density map...
+✅ Initial map processing complete
+
+================================================================================
+🚀 STARTING ITERATIVE DOCKING
+================================================================================
+
+📍 [1/1] Processing: fold_9wq6_1_model_0_chain_A_domain_01.pdb
+   🎯 Running Phenix dock_in_map...
+2026-10-24 07:41:07 - ERROR - PHENIX TIMEOUT: Docking for fold_9wq6_1_model_0_chain_A_domain_01.pdb took longer than 2700 s (attempt 1, no_mr_quick)
+   ❌ Docking failed
+
+🧹 Cleaning up temporary files...
+✅ Cleaned up temporary directory
+
+================================================================================
+🏁 DOCKING COMPLETE
+================================================================================
+📊 Total models processed: 1
+✅ Successfully docked: 0
+❌ Failed: 1
+📁 Results saved to: /tmp/mica_pilot/MICA/input/9WQ6/AF3_docked_models
+📄 Log files saved to: /tmp/mica_pilot/MICA/input/9WQ6/docking_logs
+
+❌ Failed models:
+   • fold_9wq6_1_model_0_chain_A_domain_01.pdb
+2026-10-24 07:41:07 - WARNING - Failed models: ['fold_9wq6_1_model_0_chain_A_domain_01.pdb']
+================================================================================
+

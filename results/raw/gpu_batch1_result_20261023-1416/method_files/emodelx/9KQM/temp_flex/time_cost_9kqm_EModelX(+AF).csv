@@ -1,0 +1,9 @@
+step,time
+preprocessEM,2
+nnPred,93
+clustering,1
+fragModeling,0
+seqStructAlignWithTemplate,144
+initialModeling,0
+gapThreading,32
+run_pulchra,2

@@ -1,0 +1,81 @@
+method,entry,status,failed_step,note,attempt,gpu,started_utc,seconds,peak_gpu_mb,min_ram_gb,other_gpu_busy,limit_s
+modelangelo,9T5K,ok,,,1,0,2026-10-23T05:55:37Z,4702,5585,1.85,True,10800
+modelangelo,9WQ6,ok,,,1,0,2026-10-23T07:15:13Z,1640,5585,9.82,True,10800
+modelangelo,22FX,ok,,,1,1,2026-10-23T07:42:25Z,1983,5587,13.31,True,10800
+modelangelo,9V4D,ok,,,1,1,2026-10-23T08:19:26Z,1163,5585,16.48,True,10800
+modelangelo,9JKK,ok,,,1,0,2026-10-23T08:34:41Z,642,5585,14.68,True,10800
+modelangelo,9OTA,ok,,,1,0,2026-10-23T08:50:20Z,638,5585,15.15,True,10800
+modelangelo,9TKA,ok,,,1,1,2026-10-23T09:03:29Z,831,5585,13.22,True,10800
+modelangelo,9KQM,ok,,,1,0,2026-10-23T09:23:02Z,476,5585,13.71,True,10800
+modelangelo,9WFL,ok,,,1,0,2026-10-23T09:36:55Z,589,5585,13.37,True,10800
+modelangelo,9WME,ok,,,1,1,2026-10-23T09:53:02Z,565,5585,13.57,True,10800
+modelangelo,9VI4,killed_corun,build,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",1,0,2026-10-23T10:11:55Z,651,5523,2.07,True,10800
+modelangelo,9VBD,ok,,,1,1,2026-10-23T10:48:07Z,1278,5585,2.13,True,10800
+modelangelo,9ZLH,ok,,,1,1,2026-10-23T11:18:04Z,619,5585,16.63,True,10800
+modelangelo,9RWS,ok,,,1,0,2026-10-23T11:38:23Z,522,5585,11.45,True,9915
+modelangelo,9VUH,ok,,,1,1,2026-10-23T11:50:49Z,534,5585,17.66,True,9187
+modelangelo,9WTX,ok,,,1,0,2026-10-23T12:08:19Z,1359,5585,12.05,True,8157
+modelangelo,9OC0,ok,,,1,0,2026-10-23T12:32:12Z,4268,5585,0.44,True,6571
+modelangelo,9Z24,ok,,,1,1,2026-10-23T13:30:24Z,2320,5585,5.75,True,3281
+modelangelo,13BD,not run,,not started: not enough time left in the session,,,,,,,,
+modelangelo,26DK,not run,,not started: not enough time left in the session,,,,,,,,
+e3,9T5K,ok,,,1,1,2026-10-23T05:55:37Z,1169,4737,12.01,True,10800
+e3,9WQ6,ok,,,1,1,2026-10-23T07:18:34Z,179,3949,23.4,True,10800
+e3,22FX,ok,,,1,0,2026-10-23T07:44:13Z,311,3949,21.71,True,10800
+e3,9V4D,ok,,,1,0,2026-10-23T08:26:37Z,60,3181,25.43,True,10800
+e3,9JKK,ok,,,1,1,2026-10-23T08:38:53Z,122,3901,25.27,True,10800
+e3,9OTA,failed,prealign,exit code 1; the model file 9OTA_e3_prealign.pdb was not written,1,1,2026-10-23T08:52:10Z,104,3519,25.24,True,10800
+e3,9TKA,ok,,,1,0,2026-10-23T09:05:16Z,172,3949,23.87,True,10800
+e3,9KQM,ok,,,1,1,2026-10-23T09:24:23Z,130,3565,25.43,True,10800
+e3,9WFL,ok,,,1,1,2026-10-23T09:37:35Z,132,4421,25.42,True,10800
+e3,9WME,ok,,,1,0,2026-10-23T09:53:43Z,122,3565,25.17,True,10800
+e3,9VI4,killed_corun,prealign,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",1,1,2026-10-23T10:12:00Z,653,5075,2.07,True,10800
+e3,9VBD,ok,,,1,0,2026-10-23T11:04:42Z,206,4837,13.38,True,10800
+e3,9ZLH,ok,,,1,0,2026-10-23T11:27:23Z,233,3565,19.66,True,10684
+e3,9RWS,ok,,,1,1,2026-10-23T11:39:54Z,129,3565,25.48,True,9915
+e3,9VUH,ok,,,1,0,2026-10-23T11:53:16Z,115,3921,17.74,True,9131
+e3,9WTX,ok,,,1,1,2026-10-23T12:08:42Z,185,3949,23.43,True,8157
+e3,9OC0,failed,prealign,exit code 1; the model file 9OC0_e3_prealign.pdb was not written,1,1,2026-10-23T12:33:49Z,482,4691,14.97,True,6571
+e3,9Z24,ok,,,1,0,2026-10-23T13:47:07Z,86,3181,25.61,True,2301
+e3,13BD,failed,prealign,exit code 1; the model file 13BD_e3_prealign.pdb was not written,1,0,2026-10-23T14:08:18Z,410,4691,17.88,False,943
+e3,26DK,not run,,not started: not enough time left in the session,,,,,,,,
+emprot,9T5K,ok,,,1,1,2026-10-23T06:16:20Z,1888,8857,3.79,True,10800
+emprot,9WQ6,ok,,,1,1,2026-10-23T07:21:34Z,837,8853,13.6,True,10800
+emprot,22FX,ok,,,1,0,2026-10-23T07:51:34Z,1657,8853,13.75,True,10800
+emprot,9V4D,ok,,,1,0,2026-10-23T08:27:38Z,277,8861,20.12,True,10800
+emprot,9JKK,ok,,,1,1,2026-10-23T08:40:57Z,667,8853,14.68,True,10800
+emprot,9OTA,ok,,,1,1,2026-10-23T08:53:56Z,572,8853,14.78,True,10800
+emprot,9TKA,ok,,,1,0,2026-10-23T09:08:46Z,854,8853,12.57,True,10800
+emprot,9KQM,ok,,,1,1,2026-10-23T09:26:35Z,656,8853,13.68,True,10800
+emprot,9WFL,ok,,,1,1,2026-10-23T09:40:05Z,767,8853,13.35,True,10800
+emprot,9WME,ok,,,1,0,2026-10-23T09:55:47Z,963,8853,15.41,True,10800
+emprot,9VI4,killed_corun,build,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",1,0,2026-10-23T10:35:52Z,1727,8857,1.02,True,10800
+emprot,9VBD,ok,,,1,0,2026-10-23T11:08:13Z,1142,8853,12.77,True,10800
+emprot,9ZLH,ok,,,1,1,2026-10-23T11:29:15Z,636,8853,15.03,True,10572
+emprot,9RWS,ok,,,1,1,2026-10-23T11:42:24Z,499,8853,11.25,True,9783
+emprot,9VUH,ok,,,1,0,2026-10-23T11:55:13Z,777,8853,17.79,True,9014
+emprot,9WTX,ok,,,1,1,2026-10-23T12:12:38Z,872,8853,16.17,True,7969
+emprot,9OC0,killed_corun,build,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",1,1,2026-10-23T12:44:01Z,1890,8853,0.75,True,6086
+emprot,9Z24,ok,,,1,0,2026-10-23T13:48:35Z,851,8853,9.87,True,2212
+emprot,13BD,not run,,not started: not enough time left in the session,,,,,,,,
+emprot,26DK,not run,,not started: not enough time left in the session,,,,,,,,
+emodelx,9T5K,ok,,,1,1,2026-10-23T06:47:58Z,1833,5583,1.85,True,10800
+emodelx,9WQ6,ok,,,1,1,2026-10-23T07:35:32Z,409,4687,10.09,True,10800
+emodelx,22FX,ok,,,1,0,2026-10-23T08:19:21Z,434,4687,18.27,True,10800
+emodelx,9V4D,ok,,,1,0,2026-10-23T08:32:17Z,141,4047,16.89,True,10800
+emodelx,9JKK,ok,,,1,0,2026-10-23T08:46:10Z,246,4367,17.15,True,10800
+emodelx,9OTA,ok,,,1,0,2026-10-23T09:01:45Z,209,4367,23.7,True,10800
+emodelx,9TKA,ok,,,1,1,2026-10-23T09:19:46Z,275,4687,13.84,True,10800
+emodelx,9KQM,ok,,,1,0,2026-10-23T09:32:01Z,290,4367,19.14,True,10800
+emodelx,9WFL,ok,,,1,0,2026-10-23T09:47:43Z,352,4367,22.87,True,10800
+emodelx,9WME,ok,,,1,1,2026-10-23T10:02:47Z,548,4367,23.04,True,10800
+emodelx,9VI4,killed_corun,temp_flex,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",1,1,2026-10-23T10:35:54Z,730,5935,3.0,True,10800
+emodelx,9VBD,ok,,,1,1,2026-10-23T11:10:47Z,432,4687,15.86,True,10800
+emodelx,9ZLH,ok,,,1,0,2026-10-23T11:31:18Z,422,4367,15.25,True,10449
+emodelx,9RWS,ok,,,1,0,2026-10-23T11:48:58Z,253,4367,23.44,True,9389
+emodelx,9VUH,ok,,,1,1,2026-10-23T12:01:17Z,441,4047,23.35,True,8649
+emodelx,9WTX,ok,,,1,1,2026-10-23T12:27:16Z,387,4687,13.01,True,7090
+emodelx,9OC0,killed_corun,temp_flex,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",1,1,2026-10-23T13:15:34Z,884,5583,0.35,True,4192
+emodelx,9Z24,ok,,,1,0,2026-10-23T14:02:57Z,317,4047,6.72,True,1349
+emodelx,13BD,not run,,not started: not enough time left in the session,,,,,,,,
+emodelx,26DK,not run,,not started: not enough time left in the session,,,,,,,,

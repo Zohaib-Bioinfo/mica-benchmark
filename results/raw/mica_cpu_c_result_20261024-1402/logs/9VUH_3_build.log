@@ -1,0 +1,423 @@
+2026-10-24 12:22:43 - INFO - 🚀 Starting MICA - Map ID: 65363, PDB ID: 9vuh
+================================================================================
+🧬 MICA PIPELINE STARTING
+================================================================================
+2026-10-24 12:22:43 - INFO - Using MICA with AF3 structures
+2026-10-24 12:22:43 - INFO - Parsing FASTA file...
+2026-10-24 12:22:43 - INFO - Processing 3 sequences with multiprocessing...
+2026-10-24 12:22:44 - INFO - FASTA parsing completed successfully:
+2026-10-24 12:22:44 - INFO -    Sequence 1: 9VUH_1
+2026-10-24 12:22:44 - INFO -    Chains: A
+2026-10-24 12:22:44 - INFO -    Sequence: MADYKDDDDKSGRGAMGALQGCRSVEEFQCLNRIEEGTYGVVYRAKDKKTDEIVALKRLKMEKEKEGFPITSLREINTILKAQHPNIVTVREIVVGSNMDKIYIVMNYVEHDLKSLMETMKQPFLPGEVKTLMIQLLRGVKHLHDNWILHRDLKTSNLLLSHAGILKVGDFGLAREYGSPLKAYTPVVVTLWYRAPELLLGAKEYSTAVDMWSVGCIFGELLTQKPLFPGKSEIDQINKVFKDLGTPSEKIWPGYSELPAVKKMTFSEHPYNNLRKRFGALLSDQGFDLMNKFLTYFPGRRISAEDGLKHEYFRETPLPIDPSMFPKLVEKY
+2026-10-24 12:22:44 - INFO -    Sequence 2: 9VUH_2
+2026-10-24 12:22:44 - INFO -    Chains: B
+2026-10-24 12:22:44 - INFO -    Sequence: MASGPHSTATAAAAASSAAPSAGGSSSGTTTTTTTTTGGILIGDRLYSEVSLTIDHSLIPEERLSPTPSMQDGLDLPSETDLRILGCELIQAAGILLRLPQVAMATGQVLFHRFFYSKSFVKHSFEIVAMACINLASKIEEAPRRIRDVINVFHHLRQLRGKRTPSPLILDQNYINTKNQVIKAERRVLKELGFCVHVKHPHKIIVMYLQVLECERNQTLVQTAWNYMNDSLRTNVFVRFQPETIACACIYLAARALQIPLPTRPHWFLLFGTTEEEIQEICIETLRLYTRKKPNYELLEKEVEKRKVALQEAKLKAKGLNPDGRIPGLIWSHPQFEKGGGSGGGGGSGGGSGGSSAWSHPQFEK
+2026-10-24 12:22:44 - INFO -    Sequence 3: 9VUH_3
+2026-10-24 12:22:44 - INFO -    Chains: C
+2026-10-24 12:22:44 - INFO -    Sequence: MGSENLYFQGMAGKKNVLSSLAVYAEDSEPESDGEAGIEAVGSTAEEKGGLVSDAYGEDDFSRLGGDEDGYEEEEDENSRQSEDDDSETEKPEADDPKDNTEAEKRDPQELVASFSERVRNMSPDEIKIPPEPPGRCSNHLQDKIQKLYERKIKEGMDMNYIIQRKKEFRNPSIYEKLIQFCAIDELGTNYPKDMFDPHGWSEDSYYEALAKAQKIEMDKLEKAKKERTKIEFVTGTKKGTTTNATSTTTTTASTAVADAQKRKSKWDSAIPVTTIAQPTILTTTATLPAVVTVTTSASGSKTTVISAVGTIVKNAKQ
+
+================================================================================
+🚀 STARTING DEEP LEARNING PREDICTION
+================================================================================
+📊 System Information:
+   🖥️  Device: cpu
+   🧠 CPU Cores: 2 physical, 4 logical
+   💾 System Memory: 31.3 GB
+
+2026-10-24 12:22:44 - INFO - Starting data preprocessing...
+
+================================================================================
+🗺️  DENSITY MAP RESAMPLING AND NORMALIZATION
+================================================================================
+2026-10-24 12:22:44 - INFO - Processing density map: emd_65363.map
+2026-10-24 12:22:44 - INFO - Original map shape: (320, 320, 320)
+2026-10-24 12:22:44 - INFO - Resampling with zoom factors: [0.5699999928474426, 0.5699999928474426, 0.5699999928474426]
+2026-10-24 12:22:50 - INFO - ✓ Resampled map shape: (182, 182, 182)
+2026-10-24 12:22:50 - INFO - Normalizing density map...
+2026-10-24 12:22:50 - INFO - ✓ Normalized map shape: (182, 182, 182)
+2026-10-24 12:22:50 - INFO - ✓ Normalized map saved: resampled_normalized_map.mrc
+
+🎯 Map Processing Results:
+   ✅ Map successfully resampled to 1.0 A and normalized to [0, 1] range.
+   📁 Normalized map path: /tmp/mica_pilot/MICA/input/9VUH/resampled_normalized_map.mrc
+
+
+================================================================================
+🧬 AF3 FEATURES ENCODING
+================================================================================
+2026-10-24 12:22:50 - INFO - Creating AF3 encodings...
+2026-10-24 12:22:50 - INFO - Using reference map: resampled_normalized_map.mrc
+2026-10-24 12:22:50 - INFO - Reference map shape: (182, 182, 182)
+2026-10-24 12:22:50 - INFO - Creating 24 feature channels
+2026-10-24 12:22:51 - INFO - ✓ Processed 674 residues, 2696 atoms
+2026-10-24 12:22:51 - INFO - Saving 24 channels encodings using 2 CPU cores in parallel
+2026-10-24 12:23:03 - INFO - ✓ Saved CA encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved N encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved C encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved O encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved ALA encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved CYS encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved ASP encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved GLU encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved PHE encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved GLY encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved HIS encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved ILE encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved LYS encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved LEU encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved MET encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved ASN encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved PRO encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved GLN encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved ARG encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved SER encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved THR encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved VAL encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved TRP encoding
+2026-10-24 12:23:03 - INFO - ✓ Saved TYR encoding
+
+🎯 Encoding Results:
+   ✅ Feature encoding successful
+   🧬 Channels created: 24/24
+   🔬 Residues processed: 674
+   ⚛️  Atoms processed: 2696
+   📁 AF3 encodings directory: /tmp/mica_pilot/MICA/input/9VUH/AF3_encodings
+
+
+================================================================================
+🗺️  CREATING GRIDS FOR NORMALIZED MAP
+================================================================================
+2026-10-24 12:23:03 - INFO - Processing normalized map: resampled_normalized_map.mrc
+2026-10-24 12:23:03 - INFO - Output directory: /tmp/mica_pilot/MICA/input/9VUH/grids/normalized_map_grids
+2026-10-24 12:23:03 - INFO - Grid size: 48, Padding: 8
+2026-10-24 12:23:03 - INFO - Creating grids for resampled_normalized_map.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:04 - INFO - ✓ Created 64 grids from resampled_normalized_map.mrc
+
+🎯 Grid Creation Results:
+   ✅ Successfully created: 64 grids
+   📁 Output directory: normalized_map_grids
+   ⏱️  Processing time: 0.73 seconds
+
+
+================================================================================
+🧬 CREATING GRIDS FOR AF3 ENCODINGS
+================================================================================
+2026-10-24 12:23:04 - INFO - Found 24 AF3 encoding files
+2026-10-24 12:23:04 - INFO - Output directory: /tmp/mica_pilot/MICA/input/9VUH/grids/AF3_encoding_grids
+2026-10-24 12:23:04 - INFO - Processing 24 channels using 2 CPU cores in parallel
+2026-10-24 12:23:04 - INFO - Creating grids for HIS_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:04 - INFO - Creating grids for ASP_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:04 - INFO - ✓ Created 64 grids from HIS_encoding.mrc
+2026-10-24 12:23:04 - INFO - Creating grids for N_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:05 - INFO - ✓ Created 64 grids from ASP_encoding.mrc
+2026-10-24 12:23:05 - INFO - Creating grids for TYR_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:05 - INFO - ✓ Created 64 grids from N_encoding.mrc
+2026-10-24 12:23:05 - INFO - Creating grids for PHE_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:05 - INFO - ✓ Created 64 grids from TYR_encoding.mrc
+2026-10-24 12:23:05 - INFO - Creating grids for ASN_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:05 - INFO - ✓ Created 64 grids from PHE_encoding.mrc
+2026-10-24 12:23:05 - INFO - Creating grids for THR_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:06 - INFO - ✓ Created 64 grids from ASN_encoding.mrc
+2026-10-24 12:23:06 - INFO - Creating grids for MET_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:06 - INFO - ✓ Created 64 grids from THR_encoding.mrc
+2026-10-24 12:23:06 - INFO - Creating grids for O_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:06 - INFO - ✓ Created 64 grids from MET_encoding.mrc
+2026-10-24 12:23:06 - INFO - Creating grids for VAL_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:06 - INFO - ✓ Created 64 grids from O_encoding.mrc
+2026-10-24 12:23:06 - INFO - Creating grids for GLU_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:07 - INFO - ✓ Created 64 grids from VAL_encoding.mrc
+2026-10-24 12:23:07 - INFO - Creating grids for GLY_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:07 - INFO - ✓ Created 64 grids from GLU_encoding.mrc
+2026-10-24 12:23:07 - INFO - Creating grids for SER_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:07 - INFO - ✓ Created 64 grids from GLY_encoding.mrc
+2026-10-24 12:23:07 - INFO - Creating grids for CA_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:07 - INFO - ✓ Created 64 grids from SER_encoding.mrc
+2026-10-24 12:23:07 - INFO - Creating grids for C_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:08 - INFO - ✓ Created 64 grids from CA_encoding.mrc
+2026-10-24 12:23:08 - INFO - Creating grids for PRO_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:08 - INFO - ✓ Created 64 grids from C_encoding.mrc
+2026-10-24 12:23:08 - INFO - Creating grids for CYS_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:08 - INFO - ✓ Created 64 grids from PRO_encoding.mrc
+2026-10-24 12:23:08 - INFO - Creating grids for TRP_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:09 - INFO - ✓ Created 64 grids from CYS_encoding.mrc
+2026-10-24 12:23:09 - INFO - Creating grids for LEU_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:09 - INFO - ✓ Created 64 grids from TRP_encoding.mrc
+2026-10-24 12:23:10 - INFO - Creating grids for ILE_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:10 - INFO - ✓ Created 64 grids from LEU_encoding.mrc
+2026-10-24 12:23:10 - INFO - Creating grids for GLN_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:10 - INFO - ✓ Created 64 grids from ILE_encoding.mrc
+2026-10-24 12:23:10 - INFO - Creating grids for ARG_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:10 - INFO - ✓ Created 64 grids from GLN_encoding.mrc
+2026-10-24 12:23:10 - INFO - Creating grids for ALA_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:11 - INFO - ✓ Created 64 grids from ARG_encoding.mrc
+2026-10-24 12:23:11 - INFO - Creating grids for LYS_encoding.mrc with shape: (182, 182, 182)
+2026-10-24 12:23:11 - INFO - ✓ Created 64 grids from ALA_encoding.mrc
+2026-10-24 12:23:11 - INFO - ✓ Created 64 grids from LYS_encoding.mrc
+
+🎯 AF3 Encoding Grid Results:
+   ✅ Successfully processed: 24/24 channels
+   🔢 Total grids created: 1536
+   📁 Output directory: /tmp/mica_pilot/MICA/input/9VUH/grids/AF3_encoding_grids
+   ⏱️  Processing time: 7.71 seconds
+
+============================================================
+🏁 CREATING GRIDS COMPLETE
+============================================================
+
+2026-10-24 12:23:11 - INFO - Cryo-EM map and AF3 results processed. Map Offset: [0.0, 0.0, 0.0]
+2026-10-24 12:23:11 - INFO - ✓ Data preprocessing completed in 27.51 seconds
+2026-10-24 12:23:11 - INFO - Starting Deep Learning prediction...
+2026-10-24 12:23:11 - INFO - Starting prediction pipeline at 2026-10-24 12:23:11
+
+================================================================================
+🧭 PROCESSING STRATEGY SELECTION
+================================================================================
+📊 Dataset Analysis:
+   🔢 Total samples: 64
+   🎯 Batch threshold: 200
+You may change batch threshold parameter: 200 to lower value if run on your local machine by changing its value in: utils/predict.py
+   ✅ Strategy: SINGLE SAMPLE PROCESSING
+   📦 Batch size: 1
+
+================================================================================
+🤖 MODEL LOADING
+================================================================================
+2026-10-24 12:23:11 - INFO - Loading model from: MICA_best_model.pth
+2026-10-24 12:23:16 - INFO - Model loaded successfully
+🎯 Results:
+   ✅ Model loaded successfully
+   ⏱️  Loading time: 4.97s
+
+================================================================================
+📊 DATA PREPARATION
+================================================================================
+2026-10-24 12:23:16 - INFO - Dataset prepared with 64 samples
+🎯 Results:
+   ✅ Dataset prepared successfully
+   🔢 Total samples: 64
+   📦 Batch size: 1
+   ⏱️  Preparation time: 0.00s
+
+================================================================================
+🚀 RUNNING SINGLE SAMPLE INFERENCE
+================================================================================
+📊 Configuration:
+   🔢 Total batches: 64
+   📦 Batch size: 1
+
+
+Processing samples:   0%|          | 0/64 [00:00<?, ?it/s]
+Processing samples:   2%|▏         | 1/64 [01:24<1:29:13, 84.98s/it]
+Processing samples:   3%|▎         | 2/64 [02:49<1:27:50, 85.00s/it]
+Processing samples:   5%|▍         | 3/64 [04:18<1:28:04, 86.63s/it]
+Processing samples:   6%|▋         | 4/64 [05:36<1:23:07, 83.13s/it]
+Processing samples:   8%|▊         | 5/64 [07:02<1:22:44, 84.14s/it]
+Processing samples:   9%|▉         | 6/64 [08:25<1:20:55, 83.71s/it]
+Processing samples:  11%|█         | 7/64 [09:42<1:17:27, 81.54s/it]
+Processing samples:  12%|█▎        | 8/64 [11:14<1:19:18, 84.97s/it]
+Processing samples:  14%|█▍        | 9/64 [12:43<1:18:57, 86.13s/it]
+Processing samples:  16%|█▌        | 10/64 [14:01<1:15:26, 83.82s/it]
+Processing samples:  17%|█▋        | 11/64 [15:25<1:14:02, 83.83s/it]
+Processing samples:  19%|█▉        | 12/64 [16:37<1:09:35, 80.29s/it]
+Processing samples:  20%|██        | 13/64 [17:54<1:07:13, 79.09s/it]
+Processing samples:  22%|██▏       | 14/64 [19:14<1:06:10, 79.40s/it]
+Processing samples:  23%|██▎       | 15/64 [20:51<1:09:09, 84.69s/it]
+Processing samples:  25%|██▌       | 16/64 [22:14<1:07:24, 84.26s/it]
+Processing samples:  27%|██▋       | 17/64 [23:35<1:05:12, 83.25s/it]
+Processing samples:  28%|██▊       | 18/64 [25:04<1:05:03, 84.85s/it]
+Processing samples:  30%|██▉       | 19/64 [26:25<1:02:59, 83.98s/it]
+Processing samples:  31%|███▏      | 20/64 [27:49<1:01:24, 83.74s/it]
+Processing samples:  33%|███▎      | 21/64 [29:15<1:00:30, 84.42s/it]
+Processing samples:  34%|███▍      | 22/64 [30:42<59:36, 85.16s/it]  
+Processing samples:  36%|███▌      | 23/64 [32:14<59:36, 87.24s/it]
+Processing samples:  38%|███▊      | 24/64 [33:35<57:02, 85.56s/it]
+Processing samples:  39%|███▉      | 25/64 [35:03<55:56, 86.06s/it]
+Processing samples:  41%|████      | 26/64 [36:30<54:41, 86.37s/it]
+Processing samples:  42%|████▏     | 27/64 [37:59<53:46, 87.19s/it]
+Processing samples:  44%|████▍     | 28/64 [39:24<52:02, 86.73s/it]
+Processing samples:  45%|████▌     | 29/64 [40:41<48:44, 83.55s/it]
+Processing samples:  47%|████▋     | 30/64 [42:06<47:41, 84.16s/it]
+Processing samples:  48%|████▊     | 31/64 [43:22<44:55, 81.68s/it]
+Processing samples:  50%|█████     | 32/64 [44:46<43:52, 82.26s/it]
+Processing samples:  52%|█████▏    | 33/64 [46:03<41:48, 80.93s/it]
+Processing samples:  53%|█████▎    | 34/64 [47:32<41:32, 83.10s/it]
+Processing samples:  55%|█████▍    | 35/64 [49:00<40:53, 84.61s/it]
+Processing samples:  56%|█████▋    | 36/64 [50:24<39:28, 84.58s/it]
+Processing samples:  58%|█████▊    | 37/64 [51:45<37:36, 83.56s/it]
+Processing samples:  59%|█████▉    | 38/64 [53:07<35:59, 83.08s/it]
+Processing samples:  61%|██████    | 39/64 [54:28<34:20, 82.41s/it]
+Processing samples:  62%|██████▎   | 40/64 [55:51<32:58, 82.45s/it]
+Processing samples:  64%|██████▍   | 41/64 [57:22<32:37, 85.09s/it]
+Processing samples:  66%|██████▌   | 42/64 [58:49<31:27, 85.79s/it]
+Processing samples:  67%|██████▋   | 43/64 [1:00:13<29:46, 85.07s/it]
+Processing samples:  69%|██████▉   | 44/64 [1:01:34<27:55, 83.79s/it]
+Processing samples:  70%|███████   | 45/64 [1:02:55<26:20, 83.19s/it]
+Processing samples:  72%|███████▏  | 46/64 [1:04:13<24:28, 81.60s/it]
+Processing samples:  73%|███████▎  | 47/64 [1:05:35<23:07, 81.64s/it]
+Processing samples:  75%|███████▌  | 48/64 [1:06:56<21:42, 81.43s/it]
+Processing samples:  77%|███████▋  | 49/64 [1:08:17<20:20, 81.35s/it]
+Processing samples:  78%|███████▊  | 50/64 [1:09:44<19:23, 83.09s/it]
+Processing samples:  80%|███████▉  | 51/64 [1:11:04<17:46, 82.05s/it]
+Processing samples:  81%|████████▏ | 52/64 [1:12:27<16:27, 82.32s/it]
+Processing samples:  83%|████████▎ | 53/64 [1:13:57<15:30, 84.60s/it]
+Processing samples:  84%|████████▍ | 54/64 [1:15:23<14:11, 85.10s/it]
+Processing samples:  86%|████████▌ | 55/64 [1:16:59<13:15, 88.44s/it]
+Processing samples:  88%|████████▊ | 56/64 [1:18:25<11:40, 87.56s/it]
+Processing samples:  89%|████████▉ | 57/64 [1:19:48<10:03, 86.24s/it]
+Processing samples:  91%|█████████ | 58/64 [1:21:13<08:35, 85.97s/it]
+Processing samples:  92%|█████████▏| 59/64 [1:22:42<07:13, 86.78s/it]
+Processing samples:  94%|█████████▍| 60/64 [1:24:09<05:47, 86.76s/it]
+Processing samples:  95%|█████████▌| 61/64 [1:25:36<04:20, 86.96s/it]
+Processing samples:  97%|█████████▋| 62/64 [1:27:05<02:55, 87.64s/it]
+Processing samples:  98%|█████████▊| 63/64 [1:28:33<01:27, 87.59s/it]
+Processing samples: 100%|██████████| 64/64 [1:29:57<00:00, 86.46s/it]
+Processing samples: 100%|██████████| 64/64 [1:29:57<00:00, 84.33s/it]
+2026-10-24 13:53:13 - INFO - Inference completed successfully
+🎯 Results:
+   ✅ Inference completed successfully
+   🔢 Samples processed: 64
+   ⏱️  Inference time: 5397.11s
+   ⚡ Throughput: 0.01 samples/sec
+
+================================================================================
+🔧 VOLUME RECONSTRUCTION
+================================================================================
+2026-10-24 13:53:13 - INFO - Reconstructing backbone_probability from 64 grids
+2026-10-24 13:53:14 - INFO - Reconstructing carbon_alpha_probability from 64 grids
+2026-10-24 13:53:15 - INFO - Reconstructing amino_acid_prediction from 64 grids
+2026-10-24 13:53:15 - INFO - Reconstructing amino_acid_probability from 64 grids
+🎯 Results:
+   ✅ Reconstruction completed successfully
+   🗺️  Volumes created: 4/4
+   ⏱️  Reconstruction time: 7.84s
+
+================================================================================
+📊 DEEP LEARNING PREDICTION SUMMARY
+================================================================================
+🎯 Overall Results:
+   ✅ Pipeline completed successfully
+   📊 Processing strategy: Single sample
+   🔢 Total samples: 64
+   ⏱️  Total time: 5409.94s
+⚡ Performance:
+   📈 Throughput: 0.01 samples/sec
+   ⏱️  Average per sample: 84.330s
+
+================================================================================
+🚀 DEEP LEARNING PREDICTION COMPLETE
+================================================================================
+2026-10-24 13:53:21 - INFO - ✓ Deep Learning predictions completed...
+2026-10-24 13:53:21 - INFO -    📊 Amino acid prediction shape: (182, 182, 182)
+2026-10-24 13:53:21 - INFO -    📊 Amino acid probability shape: (20, 182, 182, 182)
+2026-10-24 13:53:21 - INFO -    📊 Backbone probability shape: (182, 182, 182)
+2026-10-24 13:53:21 - INFO -    📊 CA probability shape: (182, 182, 182)
+2026-10-24 13:53:21 - INFO - Deleting all grids, normalized density map and AF3 encodings for disk space saving...
+2026-10-24 13:53:21 - INFO - ✓ Deleted all grids, normalized density map and AF3 encodings for disk space saving...
+2026-10-24 13:53:22 - INFO - ✓ Deep Learning prediction completed in 5410.19 seconds
+
+================================================================================
+🔗 CLUSTERING CANDIDATES
+================================================================================
+2026-10-24 13:53:22 - INFO - Starting candidate clustering...
+2026-10-24 13:53:22 - INFO - Starting clustering with eps=10, min_points=10
+2026-10-24 13:53:22 - INFO - CA score threshold: 0.3
+2026-10-24 13:53:22 - INFO - Initial point cloud size: 11840
+2026-10-24 13:53:22 - INFO - Number of clusters found: 1
+2026-10-24 13:53:22 - INFO - Valid clusters selected: 11840 points from 11840
+2026-10-24 13:53:22 - INFO - Processing 11840 candidate positions...
+2026-10-24 13:53:22 - INFO - Final CA candidates: 711
+2026-10-24 13:53:23 - INFO - Building neighbor lists...
+2026-10-24 13:53:23 - INFO - Computing neighbor scoring matrix...
+2026-10-24 13:53:23 - INFO - ✓ Clustering completed - 711 candidates with neighbors
+2026-10-24 13:53:23 - INFO - ✓ Clustering completed in 1.83 seconds
+================================================================================
+🧩 GENERATING INITIAL FRAGMENTS
+================================================================================
+2026-10-24 13:53:23 - INFO - Starting fragment modeling...
+2026-10-24 13:53:23 - INFO - Starting fragment modeling with protocol: AF3_struct
+2026-10-24 13:53:23 - INFO - CA candidates shape: (711, 3)
+2026-10-24 13:53:23 - INFO - Neighbors 2to6 length: 711
+2026-10-24 13:53:23 - INFO - Neighbor matrix shape: (711, 711)
+2026-10-24 13:53:23 - INFO - Initial edge list: 2122 edges
+2026-10-24 13:53:23 - INFO - Initial fragments generated: 25
+2026-10-24 13:53:23 - INFO - Reducing fragments from 25 to 5
+2026-10-24 13:53:23 - INFO - Final fragment count: 5
+2026-10-24 13:53:23 - INFO - ✓ Fragment modeling completed in 0.13 seconds
+================================================================================
+🔗 Cα-SEQUENCE ALIGNMENT
+================================================================================
+2026-10-24 13:53:23 - INFO - Sequence candidate AA matrix shape: (3, 365, 711)
+2026-10-24 13:53:23 - INFO - CA candidates AA probability shape: (20, 711)
+2026-10-24 13:53:24 - INFO - Starting Cα-sequence alignment with AF3 structure...
+2026-10-24 13:53:24 - INFO - Starting Cα-sequence alignment with AF3 structures...
+2026-10-24 13:53:24 - INFO - Starting sequence register scoring...
+2026-10-24 13:53:24 - INFO - Starting Cα-sequence scoring...
+2026-10-24 13:53:24 - INFO - Computing N-hop matrix with n_hop=6
+2026-10-24 13:53:25 - INFO - ✓ N-hop matrix computation completed
+2026-10-24 13:53:25 - INFO - Generating local traces...
+2026-10-24 13:53:25 - INFO - Generated 1608 local traces
+2026-10-24 13:56:49 - INFO - ✓ Cα-sequence scoring completed
+2026-10-24 13:56:49 - INFO - Computing register scores for 9VUH_1...
+2026-10-24 13:56:50 - INFO - Register score for 9VUH_1: 234.41
+2026-10-24 13:56:50 - INFO - Computing register scores for 9VUH_2...
+2026-10-24 13:56:53 - INFO - Register score for 9VUH_2: 184.69
+2026-10-24 13:56:53 - INFO - Computing register scores for 9VUH_3...
+2026-10-24 13:57:01 - INFO - Register score for 9VUH_3: 32.99
+2026-10-24 13:57:01 - INFO - Processing sequences in order of register scores: [234.4122, 184.68987, 32.99464]
+2026-10-24 13:57:01 - INFO - Processing sequence 9VUH_1 with 332 residues, 1 chains
+2026-10-24 13:57:18 - INFO - AF3 matching results: 326 matches, total score: 65841.64
+2026-10-24 13:57:18 - INFO - Processing sequence 9VUH_2 with 365 residues, 1 chains
+2026-10-24 13:57:32 - INFO - AF3 matching results: 358 matches, total score: 43323.30
+2026-10-24 13:57:32 - INFO - Processing sequence 9VUH_3 with 318 residues, 1 chains
+2026-10-24 13:57:42 - INFO - AF3 matching results: 312 matches, total score: 5027.01
+2026-10-24 13:57:42 - INFO - ✓ AF3 structure-based alignment completed in 257.46 seconds
+================================================================================
+🏗️  BUILDING INITIAL MODEL
+================================================================================
+2026-10-24 13:57:42 - INFO - Starting initial modeling...
+2026-10-24 13:57:42 - INFO - Starting initial model building with 3 aligned fragments
+2026-10-24 13:57:42 - INFO - Processing 332 traces for sequence 9VUH_1
+2026-10-24 13:57:42 - INFO - Chain list: ['A']
+2026-10-24 13:57:42 - INFO - Processing 365 traces for sequence 9VUH_2
+2026-10-24 13:57:42 - INFO - Chain list: ['B']
+2026-10-24 13:57:42 - INFO - Processing 318 traces for sequence 9VUH_3
+2026-10-24 13:57:42 - INFO - Chain list: ['C']
+2026-10-24 13:57:42 - INFO - Saving initial model: output/65363_9vuh_MICA(init)_ca_model.pdb
+2026-10-24 13:57:42 - INFO - ✓ Initial model building completed in 0.02 seconds
+================================================================================
+🧵 RUNNING GAP FILLING
+================================================================================
+2026-10-24 13:57:42 - INFO - Starting gap filling...
+2026-10-24 13:57:42 - INFO - Starting gap filling process...
+2026-10-24 13:57:42 - INFO - Processing gap 1/2: positions 323->332
+2026-10-24 13:57:42 - INFO - Processing gap 2/2: positions -1->25
+2026-10-24 13:57:42 - INFO - Processing gap 1/2: positions 289->365
+2026-10-24 13:57:42 - INFO - Processing gap 2/2: positions -1->82
+2026-10-24 13:57:43 - INFO - Processing gap 1/3: positions 164->180
+2026-10-24 13:57:44 - INFO - Processing gap 2/3: positions 219->318
+2026-10-24 13:57:44 - INFO - Processing gap 3/3: positions -1->139
+2026-10-24 13:57:45 - INFO - Saving gap filled model: output/65363_9vuh_MICA_ca_model.pdb
+2026-10-24 13:57:45 - INFO - ✓ Gap filling completed in 3.26 seconds
+================================================================================
+🔧 RUNNING PULCHRA
+================================================================================
+2026-10-24 13:57:45 - INFO - Starting Pulchra reconstruction...
+2026-10-24 13:57:45 - INFO - Starting Pulchra processing for PDB file: output/65363_9vuh_MICA_ca_model.pdb
+2026-10-24 13:57:45 - INFO - Splitting PDB file by chains...
+2026-10-24 13:57:45 - INFO - Running Pulchra reconstruction on chain fragments...
+2026-10-24 13:57:45 - INFO - Combining rebuilt chains into all-atom model...
+2026-10-24 13:57:45 - INFO - ✓ Pulchra processing completed. All-atom model saved: output/65363_9vuh_MICA_all_atom_model.pdb
+2026-10-24 13:57:45 - INFO - ✓ Pulchra completed in 0.25 seconds
+================================================================================
+⚡ RUNNING PHENIX REFINEMENT
+================================================================================
+2026-10-24 13:57:45 - INFO - Starting Phenix refinement...
+2026-10-24 13:57:45 - INFO - Executing Phenix command: bash modules/phenix.sh /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh /tmp/mica_pilot/MICA/output "phenix.real_space_refine /tmp/mica_pilot/MICA/output/65363_9vuh_MICA_all_atom_model.pdb /tmp/mica_pilot/MICA/input/9VUH/emd_65363.map /tmp/mica_pilot/MICA/modules/phenix.eff resolution=2.7"
+2026-10-24 13:57:45 - INFO - ✓ Phenix refinement completed in 0.06 seconds
+2026-10-24 13:57:45 - INFO - Recording timing information: output/time_cost_65363_9vuh_MICA.csv
+================================================================================
+🎉 MICA PIPELINE COMPLETED SUCCESSFULLY
+================================================================================
+📊 Total processing time: 5700.72 seconds
+📁 Final model saved: output/65363_9vuh_MICA_all_atom_model.pdb
+

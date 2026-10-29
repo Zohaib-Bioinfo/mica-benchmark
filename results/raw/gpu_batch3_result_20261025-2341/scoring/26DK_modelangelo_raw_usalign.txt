@@ -1,0 +1,27 @@
+# USalign /tmp/mica_pilot/runs/modelangelo/26DK/26DK_modelangelo/26DK_modelangelo_raw.cif /kaggle/working/pilot/native/26DK.cif -mol protein
+
+ ********************************************************************
+ * US-align (Version 20261012)                                      *
+ * Universal Structure Alignment of Proteins and Nucleic Acids      *
+ * Reference: C Zhang, L Freddolino, Y Zhang. (2026) Nat Protoc     *
+ *            C Zhang, M Shine, AM Pyle, Y Zhang. (2022) Nat Methods*
+ *            C Zhang, AM Pyle (2022) iScience.                     *
+ * Please email comments and suggestions to zhanglab@zhanggroup.org *
+ ********************************************************************
+
+Name of Structure_1: /tmp/mica_pilot/runs/modelangelo/26DK/26DK_modelangelo/26DK_modelangelo_raw.cif:A (to be superimposed onto Structure_2)
+Name of Structure_2: /kaggle/working/pilot/native/26DK.cif:M
+Length of Structure_1: 112 residues
+Length of Structure_2: 191 residues
+
+Aligned length= 112, RMSD=   0.59, Seq_ID=n_identical/n_aligned= 1.000
+TM-score= 0.97801 (normalized by length of Structure_1: L=112, d0=3.90)
+TM-score= 0.57883 (normalized by length of Structure_2: L=191, d0=5.15)
+(You should use TM-score normalized by length of the reference structure)
+
+(":" denotes residue pairs of d < 5.0 Angstrom, "." denotes other aligned residues)
+------QGKTFEFAFRWADPIKLYKPITGATAT-PVVLTVPGHGLSDGWPFEVQSVKAPPELNTQPGQFHLAKVLTPDSLELNDVNGIGFKAFG-AGTIVFYTPADLTGLAARFAIRRTP-----------------------------------------------------------------------
+      ::::::::::::::::::::::::::: :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: :::::::::::::::::::::::::                                                                       
+IDLQILQGKTFEFAFRWADPIKLYKPITGATATAPVVLTVPGHGLSDGWPFEVQSVKAPPELNTQPGQFHLAKVLTPDSLELNDVNGIGFKAFGGAGTIVFYTPADLTGLAARFAIRRTPGDADALLTGNTTDGRVVIDIPTSTISMLIGADVTATLDWNKALYDLELYDPTDVSVVYPVGSGRVTVTAEV
+
+#Total CPU time is  0.03 seconds

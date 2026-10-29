@@ -1,0 +1,617 @@
+{
+  "notebook": "gpu_batch2",
+  "started_utc": "2026-10-24T06:44:55.208257+00:00",
+  "finished_utc": "2026-10-24T13:34:56.982429+00:00",
+  "elapsed_minutes": 410,
+  "problem": "",
+  "complete": true,
+  "platform": "kaggle",
+  "python": "3.13.15",
+  "os": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+  "cpu_cores": 4,
+  "ram_gb": 31.3,
+  "state": {
+    "ok": true,
+    "problem": "",
+    "t0": 1792824295.2082548,
+    "started": "2026-10-24T06:44:55.208257+00:00",
+    "phenix_env": null,
+    "phenix_version": "",
+    "installer_sha256": "",
+    "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+    "usalign_version": "* US-align (Version 20261012)                                      *",
+    "weights": {},
+    "env": {},
+    "entries": {},
+    "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+    "cpu_facts": {
+      "os.cpu_count": 4,
+      "multiprocessing.cpu_count": 4,
+      "usable (sched_getaffinity)": 4,
+      "nproc": "4",
+      "cgroup v2 cpu.max": "400000 100000",
+      "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+      "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+    },
+    "methods": {
+      "modelangelo": {
+        "key": "modelangelo",
+        "label": "ModelAngelo",
+        "commit": "994945bdfa6e5368e0d62349a47792f4864eebc3",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 705,
+        "entries": {
+          "9VI4": {
+            "entry": "9VI4",
+            "method": "modelangelo",
+            "status": "failed",
+            "failed_step": "build",
+            "note": "timeout: the run limit of 10800 s; the model file 9VI4_modelangelo.cif was not written",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5537,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 18.67,
+                "samples": 2142,
+                "rc": -9,
+                "seconds": 10800,
+                "timed_out": true,
+                "started": 1792825980.1623642,
+                "ended": 1792836780.5836375,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-24T07:13:00Z",
+                "ended_utc": "2026-10-24T10:13:00Z"
+              }
+            },
+            "models": [],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-24T07:06:23Z",
+            "seconds": 11197
+          },
+          "13BD": {
+            "entry": "13BD",
+            "method": "modelangelo",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "26DK": {
+            "entry": "26DK",
+            "method": "modelangelo",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          }
+        },
+        "version": "ModelAngelo 1.0.18",
+        "weights": {
+          "torch_home/hub/checkpoints/esm1b_t33_650M_UR50S.pt": 7828576466,
+          "torch_home/hub/checkpoints/model_angelo_v1.0/nucleotides/c_alpha/chkpt.torch": 734237153,
+          "torch_home/hub/checkpoints/model_angelo_v1.0/nucleotides/gnn/chkpt_483863.torch": 1603440621
+        }
+      },
+      "e3": {
+        "key": "e3",
+        "label": "E3-CryoFold",
+        "commit": "241cef48da83b96519e62ab02cccd9db96d8e68b",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 297,
+        "entries": {
+          "9VI4": {
+            "entry": "9VI4",
+            "method": "e3",
+            "status": "failed",
+            "failed_step": "prealign",
+            "note": "killed by the system (exit code -9, probably out of memory); the model file 9VI4_e3_prealign.pdb was not written",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 5075,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 4.22,
+                "samples": 139,
+                "rc": -9,
+                "seconds": 1216,
+                "timed_out": false,
+                "started": 1792836780.6054032,
+                "ended": 1792837996.1634715,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-24T10:13:00Z",
+                "ended_utc": "2026-10-24T10:33:16Z"
+              }
+            },
+            "models": [],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-24T10:13:00Z",
+            "seconds": 1216
+          },
+          "26DK": {
+            "entry": "26DK",
+            "method": "e3",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          }
+        },
+        "weights": {
+          "src_e3/models/structure_model.pth": 239971852,
+          "src_e3/models/model_weight.pth": 1401618067
+        }
+      },
+      "emprot": {
+        "key": "emprot",
+        "label": "EMProt",
+        "commit": "9489d52e7fdc81c85ba82e386abcfa05bac2b9d1",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 127,
+        "entries": {
+          "9VI4": {
+            "entry": "9VI4",
+            "method": "emprot",
+            "status": "failed",
+            "failed_step": "build",
+            "note": "killed by the system (exit code -9, probably out of memory); the model file output.cif was not written",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8857,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 4.18,
+                "samples": 561,
+                "rc": -9,
+                "seconds": 2824,
+                "timed_out": false,
+                "started": 1792837996.9920166,
+                "ended": 1792840821.1146958,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-24T10:33:16Z",
+                "ended_utc": "2026-10-24T11:20:21Z"
+              }
+            },
+            "models": [],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-24T10:33:16Z",
+            "seconds": 2825
+          },
+          "9OC0": {
+            "entry": "9OC0",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 3.72,
+                "samples": 695,
+                "rc": 0,
+                "seconds": 3508,
+                "timed_out": false,
+                "started": 1792841833.807426,
+                "ended": 1792845341.8118374,
+                "gpu": 0,
+                "limit_s": 7061,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-24T11:37:13Z",
+                "ended_utc": "2026-10-24T12:35:41Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.8627,
+                "tm_score_pred_norm": 0.2632,
+                "ca_rmsd": 1.94,
+                "aligned_ca_length": 124,
+                "seq_identity": 0.306,
+                "pred_residues": 446,
+                "native_residues": 124,
+                "coverage": 0.8711,
+                "method": "emprot",
+                "entry": "9OC0",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9776,
+                "tm_score_pred_norm": 0.4807,
+                "ca_rmsd": 0.33,
+                "aligned_ca_length": 122,
+                "seq_identity": 1.0,
+                "pred_residues": 253,
+                "native_residues": 124,
+                "coverage": 0.4941,
+                "method": "emprot",
+                "entry": "9OC0",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.6658,
+                "tm_score_pred_norm": 0.1083,
+                "ca_rmsd": 2.51,
+                "aligned_ca_length": 98,
+                "seq_identity": 0.306,
+                "pred_residues": 862,
+                "native_residues": 124,
+                "coverage": 1.6836,
+                "method": "emprot",
+                "entry": "9OC0",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-24T11:32:59Z",
+            "seconds": 3763
+          },
+          "13BD": {
+            "entry": "13BD",
+            "method": "emprot",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "26DK": {
+            "entry": "26DK",
+            "method": "emprot",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          }
+        },
+        "weights": {
+          "src_emprot/emprot/bin/USalign": 2580159,
+          "src_emprot/emprot/bin/unidoc_frag": 9235980,
+          "src_emprot/emprot/bin/stride": 1098276,
+          "src_emprot/emprot/bin/NWalign": 1000500,
+          "src_emprot/emprot/bin/getp": 1793843,
+          "src_emprot/emprot/bin/dockx": 4386343,
+          "src_emprot/emprot/bin/domasgx": 1812226,
+          "src_emprot/emprot/bin/TMalign": 1888059,
+          "src_emprot/emprot/weights/model_all_atom": 152286626,
+          "src_emprot/emprot/weights/model_aa": 19124029,
+          "src_emprot/emprot/weights/model_mc": 19065277
+        }
+      },
+      "emodelx": {
+        "key": "emodelx",
+        "label": "EModelX(+AF)",
+        "commit": "53713cf820d10d78b1ca6669ef197850cf907843",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 104,
+        "entries": {
+          "9VI4": {
+            "entry": "9VI4",
+            "method": "emodelx",
+            "status": "failed",
+            "failed_step": "temp_flex",
+            "note": "killed by the system (exit code -9, probably out of memory); the model file 9vi4_EModelX(+AF)_all_atom_model.pdb was not written",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 5935,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 3.96,
+                "samples": 151,
+                "rc": -9,
+                "seconds": 757,
+                "timed_out": false,
+                "started": 1792840822.298725,
+                "ended": 1792841579.5820587,
+                "gpu": 0,
+                "limit_s": 8073,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-24T11:20:22Z",
+                "ended_utc": "2026-10-24T11:32:59Z"
+              }
+            },
+            "models": [],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-24T11:20:21Z",
+            "seconds": 758
+          },
+          "9OC0": {
+            "entry": "9OC0",
+            "method": "emodelx",
+            "status": "interrupted",
+            "failed_step": "temp_flex",
+            "note": "stopped by the end of the session after 3552 s; run again in the next session",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 5583,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 6.77,
+                "samples": 681,
+                "rc": -9,
+                "seconds": 3552,
+                "timed_out": true,
+                "started": 1792845344.144035,
+                "ended": 1792848896.3401937,
+                "gpu": 0,
+                "limit_s": 3551,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-24T12:35:44Z",
+                "ended_utc": "2026-10-24T13:34:56Z"
+              }
+            },
+            "models": [],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-24T12:35:42Z"
+          },
+          "13BD": {
+            "entry": "13BD",
+            "method": "emodelx",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "26DK": {
+            "entry": "26DK",
+            "method": "emodelx",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          }
+        },
+        "weights": {
+          "src_emodelx/models/best_AA_model.ckpt": 423942088,
+          "src_emodelx/models/best_CA_model.ckpt": 423942088,
+          "src_emodelx/models/best_BB_model.ckpt": 423942088
+        }
+      }
+    },
+    "complete": true,
+    "pending": [
+      [
+        "13BD",
+        "modelangelo",
+        "not run"
+      ],
+      [
+        "26DK",
+        "modelangelo",
+        "not run"
+      ],
+      [
+        "26DK",
+        "e3",
+        "not run"
+      ],
+      [
+        "13BD",
+        "emprot",
+        "not run"
+      ],
+      [
+        "26DK",
+        "emprot",
+        "not run"
+      ],
+      [
+        "9OC0",
+        "emodelx",
+        "interrupted"
+      ],
+      [
+        "13BD",
+        "emodelx",
+        "not run"
+      ],
+      [
+        "26DK",
+        "emodelx",
+        "not run"
+      ]
+    ]
+  },
+  "methods": {
+    "modelangelo": {
+      "label": "ModelAngelo",
+      "commit": "994945bdfa6e5368e0d62349a47792f4864eebc3",
+      "status": "ready",
+      "setup_seconds": 705,
+      "version": "ModelAngelo 1.0.18"
+    },
+    "e3": {
+      "label": "E3-CryoFold",
+      "commit": "241cef48da83b96519e62ab02cccd9db96d8e68b",
+      "status": "ready",
+      "setup_seconds": 297,
+      "version": ""
+    },
+    "emprot": {
+      "label": "EMProt",
+      "commit": "9489d52e7fdc81c85ba82e386abcfa05bac2b9d1",
+      "status": "ready",
+      "setup_seconds": 127,
+      "version": ""
+    },
+    "emodelx": {
+      "label": "EModelX(+AF)",
+      "commit": "53713cf820d10d78b1ca6669ef197850cf907843",
+      "status": "ready",
+      "setup_seconds": 104,
+      "version": ""
+    }
+  },
+  "specs": {
+    "modelangelo": {
+      "key": "modelangelo",
+      "label": "ModelAngelo",
+      "repo": "https://github.com/3dem/model-angelo",
+      "commit": "994945bdfa6e5368e0d62349a47792f4864eebc3",
+      "python": "3.11.14",
+      "req": "env/modelangelo_requirements.txt",
+      "timeout": 10800,
+      "uses_af3": false,
+      "bundle": "nucleotides",
+      "weights_url": null,
+      "weights_min_bytes": 0,
+      "gdrive_id": null,
+      "import_test": "import sys, torch, numpy, scipy, pandas, Bio, mrcfile, einops, esm, pyhmmer, loguru, psutil, matplotlib, matplotlib.pyplot; print('python', sys.version.split()[0], '| torch', torch.__version__, '| cuda', torch.version.cuda, '| numpy', numpy.__version__, '| pandas', pandas.__version__, '| biopython', Bio.__version__, '| pyhmmer', pyhmmer.__version__)",
+      "main_kind": "modelangelo"
+    },
+    "e3": {
+      "key": "e3",
+      "label": "E3-CryoFold",
+      "repo": "https://github.com/A4Bio/E3-CryoFold",
+      "commit": "241cef48da83b96519e62ab02cccd9db96d8e68b",
+      "python": "3.9.25",
+      "req": "env/e3cryofold_requirements.txt",
+      "timeout": 10800,
+      "uses_af3": false,
+      "weights_url": "https://github.com/A4Bio/E3-CryoFold/releases/download/checkpoint/models.zip",
+      "weights_min_bytes": 50000000,
+      "gdrive_id": null,
+      "import_test": "import sys, torch, pytorch_lightning, numpy, scipy, Bio, mrcfile, open3d, skimage, sklearn, superpose3d, esm, networkx, nglview, matplotlib, PIL, requests; from cryo_module.AutoEM import run_pulchra; from E3CryoFold2 import E3CryoFold2; print('python', sys.version.split()[0], '| torch', torch.__version__, '| cuda', torch.version.cuda, '| numpy', numpy.__version__, '| open3d', open3d.__version__)",
+      "main_kind": "e3_prealign"
+    },
+    "emprot": {
+      "key": "emprot",
+      "label": "EMProt",
+      "repo": "https://github.com/huang-laboratory/EMProt",
+      "commit": "9489d52e7fdc81c85ba82e386abcfa05bac2b9d1",
+      "python": "3.10.20",
+      "req": "env/emprot_requirements.txt",
+      "timeout": 10800,
+      "uses_af3": true,
+      "weights_url": "http://huanglab.phys.hust.edu.cn/EMProt/pretrained_weights/weights.tgz",
+      "weights_min_bytes": 1000000,
+      "gdrive_id": null,
+      "import_test": "import sys, torch, numpy, emprot, emprot.run, emprot.eval, emprot.clean, emprot.fit, emprot.refine; print('python', sys.version.split()[0], '| torch', torch.__version__, '| cuda', torch.version.cuda, '| numpy', numpy.__version__, '| emprot', emprot.__version__)",
+      "main_kind": "emprot"
+    },
+    "emodelx": {
+      "key": "emodelx",
+      "label": "EModelX(+AF)",
+      "repo": "https://github.com/biomed-AI/EModelX",
+      "commit": "53713cf820d10d78b1ca6669ef197850cf907843",
+      "python": "3.8.20",
+      "req": "env/emodelx_requirements.txt",
+      "timeout": 10800,
+      "uses_af3": true,
+      "ckpt_files": [
+        "best_BB_model.ckpt",
+        "best_CA_model.ckpt",
+        "best_AA_model.ckpt"
+      ],
+      "weights_url": null,
+      "weights_min_bytes": 50000000,
+      "gdrive_id": "13BKzEBfL0uubYgcJJTGSZ-PkO9hXAB9X",
+      "import_test": "import sys, torch, numpy, mrcfile, networkx, open3d, pandas, requests, skimage, superpose3d, Bio; from modules.AutoEM import Solver; from unet3d.emmodel import ResUNet3D4EM; print('python', sys.version.split()[0], '| torch', torch.__version__, '| open3d', open3d.__version__, '| numpy', numpy.__version__)",
+      "main_kind": "emodelx_af_all_atom"
+    }
+  },
+  "usalign_commit": "746ad8a2a4dea9f317075cc482df0ecb5440bdea",
+  "usalign_version": "* US-align (Version 20261012)                                      *",
+  "input_sha256": {
+    "scripts/nbtools.py": "9bda95fce7f7fbe0c373e315740f555fc27942a08971ce2fe1b5cae6af6d748d",
+    "scripts/mica_inputs.py": "87b7f5e43b86671e09e673e8bb07abb20496ad92264528dfd9994b88bded417f",
+    "scripts/evaluate_models.py": "8c235732d2595f8ad2014d70a278b44097205aff2417c9b5761f55dfe4974250",
+    "data/af3/af3_jobs.csv": "b43068ffed7e3843d0d9c5cfa509d8f1ba9900527a1a0cad9e74aa69573cd4b0",
+    "data/af3/af3_files_sha256.txt": "c131836802f9469c2073cc8c0bbb495e906854ffb223100cf30750714e2e3a4f",
+    "data/entries_2026.csv": "cb695bb04ef09bf48f8c2848f91a2580c0b3c15f2a8f1e580659d86f0097a5da",
+    "env/modelangelo_requirements.txt": "fb1e831ccc62aaa1633b2dff7e15dd904403e493e3fe0360e95bf349d1150d4a",
+    "env/e3cryofold_requirements.txt": "40afa3f8479e02c25ca55a6e9f958b985d00390df23c142a76b358ac55bb8505",
+    "env/emprot_requirements.txt": "1c2c4f4adf2d327357d5d6b83990e54b05db7817c910c0b89d5bf2c21b749092",
+    "env/emodelx_requirements.txt": "61fe9b6d878be2d227f469c031356066b5bc17c92fb7c868fe1fe34214a835c7"
+  },
+  "tasks": [
+    [
+      "9VI4",
+      "modelangelo"
+    ],
+    [
+      "9VI4",
+      "e3"
+    ],
+    [
+      "9VI4",
+      "emprot"
+    ],
+    [
+      "9VI4",
+      "emodelx"
+    ],
+    [
+      "9OC0",
+      "emprot"
+    ],
+    [
+      "9OC0",
+      "emodelx"
+    ],
+    [
+      "13BD",
+      "modelangelo"
+    ],
+    [
+      "13BD",
+      "emprot"
+    ],
+    [
+      "13BD",
+      "emodelx"
+    ],
+    [
+      "26DK",
+      "modelangelo"
+    ],
+    [
+      "26DK",
+      "e3"
+    ],
+    [
+      "26DK",
+      "emprot"
+    ],
+    [
+      "26DK",
+      "emodelx"
+    ]
+  ],
+  "hours_setting": 7.0,
+  "run_limit_s": 10800,
+  "lanes": [
+    0
+  ]
+}

@@ -1,0 +1,16 @@
+\begin{tabular}{@{}p{5.2cm}r*{6}{>{\raggedleft\arraybackslash}p{1.45cm}}@{}}
+\toprule
+Output & $n$ & TM-score, median & TM-score, mean & Fragment-agnostic TM, median & C$\alpha$ match, median & Coverage, median & C$\alpha$ quality, median \\
+\midrule
+MICA, all-atom model (scored) & 17 & 0.94 & 0.94 & 0.96 & 94.9 & 1.02 & 96.0 \\
+MICA, C$\alpha$ model after chain building & 17 & 0.94 & 0.94 & 0.96 & 94.9 & 1.02 & 96.2 \\
+MICA, initial C$\alpha$ model of the network & 17 & 0.82 & 0.82 & 0.86 & 99.5 & 0.86 & 84.4 \\
+ModelAngelo, sequence-assigned model (scored) & 19 & 0.91 & 0.79 & 0.96 & 91.1 & 1.01 & 96.7 \\
+ModelAngelo, model without sequence assignment & 19 & 0.50 & 0.50 & 0.99 & 48.5 & 1.47 & 98.2 \\
+EModelX(+AF), all-atom model (scored) & 18 & 0.94 & 0.94 & 0.95 & 94.1 & 1.01 & 94.7 \\
+EModelX(+AF), C$\alpha$ model & 18 & 0.94 & 0.94 & 0.95 & 94.1 & 1.01 & 94.7 \\
+EMProt, build with the AF3 models (scored) & 19 & 0.98 & 0.96 & 0.99 & 57.4 & 1.45 & 98.2 \\
+EMProt, de novo model & 19 & 0.96 & 0.82 & 0.97 & 97.2 & 1.00 & 97.1 \\
+E3-CryoFold, \texttt{pre\_align} model (scored) & 15 & 0.91 & 0.86 & 0.93 & 80.9 & 1.03 & 92.0 \\
+\bottomrule
+\end{tabular}

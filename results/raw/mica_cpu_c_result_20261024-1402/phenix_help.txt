@@ -1,0 +1,126 @@
+phenix.dock_in_map: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+phenix.real_space_refine: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.real_space_refine
+phenix.chain_comparison: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.chain_comparison
+phenix.version: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.version
+
+-------------------------------------------------------------------------------
+  Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography
+  Version: 2.2.1
+  Release tag: 6174
+-------------------------------------------------------------------------------
+
+==== phenix.chain_comparison --help
+usage: ChainComparison [-h] [--show-defaults [{0,1,2,3}]]
+                       [--attributes-level [{0,1,2,3}]] [--write-data]
+                       [--write-defaults] [--write-modified] [--write-all]
+                       [--diff-params] [--json]
+                       [--json-filename JSON_FILENAME] [--check-current-dir]
+                       [--overwrite] [--profile] [--dry-run]
+                       [--citations [{default,cell,iucr}]] [--quiet]
+                       [--version]
+                       [files ...] [phil ...]
+
+-------------------------------------------------------------------------------
+Compare CA atom positions in two models
+
+-------------------------------------------------------------------------------
+
+PHIL arguments:
+  input_files {
+    pdb_in = None
+    unique_query_only = False
+    unique_target_pdb_in = None
+    unique_part_of_target_only = None
+    test_unique_part_of_target_only = True
+    allow_extensions = False
+    ncs_file = None
+    query_dir = None
+  }
+  output_files {
+    match_pdb_file = None
+  }
+  crystal_info {
+    chain_type = *PROTEIN RNA DNA
+    use_crystal_symmetry = None
+  }
+  comparison {
+    max_dist = 3.
+    distance_per_site = None
+    min_similarity = 0.99
+    target_length_from_matching_chains = False
+    minimum_percent_match_to_select = 1
+    maximum_percent_match_to_select = 100
+    remove_alt_conf = True
+    residue_groups = "VGASCTI P LDNEQM KR FHY W"
+    score_by_residue_groups = False
+    only_keep_best_chain = False
+  }
+  control {
+    verbose = False
+    quiet = False
+  }
+  job_title = None
+  gui {
+    output_dir = None
+  }
+  output {
+    filename = None
+    file_name = None
+    prefix = None
+    suffix = None
+    serial = 0
+    serial_format = "%03d"
+    target_output_format = *None pdb mmcif
+    overwrite = False
+  }
+
+positional arguments:
+  files                 Input file(s) (e.g. model.cif)
+  phil                  Parameter(s) (e.g. d_min=2.0)
+
+options:
+  -h, --help            show this help message and exit
+  --show-defaults [{0,1,2,3}], --show_defaults [{0,1,2,3}]
+                        show default parameters with expert level (default=3)
+  --attributes-level [{0,1,2,3}], --attributes_level [{0,1,2,3}]
+                        show parameters with extra attributes (default=0)
+  --write-data, --write_data
+                        write DataManager PHIL parameters to file
+                        (ChainComparison_data.eff)
+  --write-defaults, --write_defaults
+                        write default PHIL parameters to file
+                        (ChainComparison_defaults.eff)
+  --write-modified, --write_modified
+                        write modifed PHIL parameters to file
+                        (ChainComparison_modified.eff)
+  --write-all, --write_all
+                        write all (modified + default + data) PHIL parameters
+                        to file (ChainComparison_all.eff)
+  --diff-params, --diff_params
+                        similar to --write-modified, but stops program
+                        execution after writing and always overwrites
+  --json                writes or overwrites the JSON output for the program
+                        to file. The default filename is determined by the
+                        program, but can be set using --json-filename.
+  --json-filename JSON_FILENAME, --json_filename JSON_FILENAME
+                        optionally specify a filename for JSON output. If a
+                        filename is provided, the .json extension will be
+                        added automatically if it does not already exist.
+                        Also, specifying this flag implies that --json is also
+                        specified.
+  --check-current-dir, --check_current_dir
+                        check current directory for a file if the file path
+                        specified in a PHIL file does not work
+  --overwrite           overwrite files, this overrides the output.overwrite
+                        PHIL parameter
+  --profile             enable profiling and outputs statistics to a file
+                        (profile.out).
+  --dry-run, --dry_run  performs basic validation the input arguments, but
+                        does not run the program
+  --citations [{default,cell,iucr}]
+                        show citation(s) for program in different formats
+  --quiet               suppress output to terminal
+  --version, -v         show version information
+
+-------------------------------------------------------------------------------
+For additional help, you can contact the developers at help@phenix-online.org

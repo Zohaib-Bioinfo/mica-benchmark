@@ -1,0 +1,31 @@
+method,x,x_label,y,n,spearman_rho,p
+mica,resolution_A,resolution (A),tm_score,17,-0.253988,0.325258
+mica,resolution_A,resolution (A),ca_quality,17,-0.244172,0.344931
+mica,modeled_residues,modeled residues,tm_score,17,0.0343137,0.895981
+mica,modeled_residues,modeled residues,ca_quality,17,-0.183824,0.480034
+mica,max_id_to_pre2026_pdb,highest identity to a pre-2026 PDB chain,tm_score,17,0.0199184,0.939517
+mica,max_id_to_pre2026_pdb,highest identity to a pre-2026 PDB chain,ca_quality,17,-0.193872,0.455917
+modelangelo,resolution_A,resolution (A),tm_score,19,-0.65964,0.00212092
+modelangelo,resolution_A,resolution (A),ca_quality,19,-0.739016,0.000300648
+modelangelo,modeled_residues,modeled residues,tm_score,19,-0.285213,0.236573
+modelangelo,modeled_residues,modeled residues,ca_quality,19,-0.289728,0.228908
+modelangelo,max_id_to_pre2026_pdb,highest identity to a pre-2026 PDB chain,tm_score,19,0.0513253,0.834706
+modelangelo,max_id_to_pre2026_pdb,highest identity to a pre-2026 PDB chain,ca_quality,19,-0.0218704,0.929186
+emodelx,resolution_A,resolution (A),tm_score,18,-0.479339,0.0441354
+emodelx,resolution_A,resolution (A),ca_quality,18,-0.331612,0.178846
+emodelx,modeled_residues,modeled residues,tm_score,18,-0.184822,0.462826
+emodelx,modeled_residues,modeled residues,ca_quality,18,-0.304595,0.219081
+emodelx,max_id_to_pre2026_pdb,highest identity to a pre-2026 PDB chain,tm_score,18,-0.422853,0.0804095
+emodelx,max_id_to_pre2026_pdb,highest identity to a pre-2026 PDB chain,ca_quality,18,-0.385442,0.114188
+emprot,resolution_A,resolution (A),tm_score,19,-0.534915,0.0182838
+emprot,resolution_A,resolution (A),ca_quality,19,-0.410809,0.0806032
+emprot,modeled_residues,modeled residues,tm_score,19,-0.125494,0.608714
+emprot,modeled_residues,modeled residues,ca_quality,19,-0.374012,0.114684
+emprot,max_id_to_pre2026_pdb,highest identity to a pre-2026 PDB chain,tm_score,19,-0.279438,0.246614
+emprot,max_id_to_pre2026_pdb,highest identity to a pre-2026 PDB chain,ca_quality,19,-0.439785,0.0595431
+e3,resolution_A,resolution (A),tm_score,15,-0.284182,0.30465
+e3,resolution_A,resolution (A),ca_quality,15,-0.377123,0.165843
+e3,modeled_residues,modeled residues,tm_score,15,-0.00357143,0.989921
+e3,modeled_residues,modeled residues,ca_quality,15,-0.221429,0.427714
+e3,max_id_to_pre2026_pdb,highest identity to a pre-2026 PDB chain,tm_score,15,-0.114396,0.684776
+e3,max_id_to_pre2026_pdb,highest identity to a pre-2026 PDB chain,ca_quality,15,-0.0756178,0.788821

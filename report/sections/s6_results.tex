@@ -1,0 +1,72 @@
+\section{Results}\label{sec:results}
+
+\subsection{Completion}
+Table~\ref{tab:completion} shows how many of the \NEntries{} entries ended with a scored model. MICA built \NModelMica{} (\CompListMica\,\%), ModelAngelo \NModelAngelo{} (\CompListAngelo\,\%), EModelX(+AF) \NModelEmodelx{} (\CompListEmodelx\,\%), EMProt \NModelEmprot{} (\CompListEmprot\,\%) and E3-CryoFold \NModelEthree{} (\CompListEthree\,\%). No run produced a file that could not be scored. The 9VI4 entry (1.8~\AA{}, a 1~GB map) failed for every method, and 26DK failed for MICA, EModelX(+AF) and E3-CryoFold (Table~\ref{tab:failures}, Appendix). The three failures of MICA are limits of the free machine and not errors of the program: two kills by the system when MICA's model building used up the RAM, and one run that hit the 2-hour limit close to the end of its model building (the last gap of the last chain). They count as failures all the same, because the user who runs MICA on this machine does not get a model. Of the \NModelMica{} models, \NRerunMica{} (\RerunMicaList{}) needed a second attempt after a GPU out-of-memory failure of the first one (Section~\ref{sec:dockprocedure}).
+
+\begin{table}[t]
+\centering\small
+\caption{Completion. \emph{Model scored}: the run ended with a model file that was scored. \emph{Failed}: crash, kill by the system or timeout. The last two columns divide by the 20 entries and by the entries on which the method was run (all 20).}
+\label{tab:completion}
+\fitwidth{\input{generated/tab_completion.tex}}
+\end{table}
+
+\subsection{Accuracy of the models that were built}
+Table~\ref{tab:summary} and Figure~\ref{fig:heat} show the accuracy of each method on its own set of models; the sets differ in size, so the rows are not directly comparable. The median TM-score of MICA is \TmMedMica{} (interquartile range \TmQoneMica{}--\TmQthreeMica{}; mean \TmMeanMica{}, 95\,\% CI \TmLoMica{}--\TmHiMica{}), and \NTmGeNinetyMica{} of its \NModelMica{} models reach 0.90 or more (the lowest is \TmMinMica{}). EModelX(+AF) has the same median and mean (\TmMedEmodelx{}, \TmMeanEmodelx{}). EMProt is higher (median \TmMedEmprot{}, mean \TmMeanEmprot{}). E3-CryoFold is lower (\TmMedEthree{}, \TmMeanEthree{}). ModelAngelo has a median of \TmMedAngelo{} but a mean of only \TmMeanAngelo{}, because \NTmLtHalfAngelo{} of its models are below 0.5 (9WQ6, 9VBD, 9WTX, all at resolutions above 3.0~\AA{}).
+
+\begin{table}[t]
+\centering\small
+\caption{TM-score and three other measures of the scored models of each method (all entries). Medians for the C$\alpha$ match, coverage and C$\alpha$ quality; the other measures are in Table~\ref{tab:allmetrics}. $n$ is the number of scored models.}
+\label{tab:summary}
+\fitwidth{\input{generated/tab_summary.tex}}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.93\textwidth]{figures/fig1_tm_score_per_entry.pdf}
+\caption{TM-score of every method on every entry (the primary measure, normalised by the deposited model). Entries are ordered by stratum, then by the seeded order of the selection; hatched cells are failed runs. The line separates the two resolution strata.}
+\label{fig:heat}
+\end{figure}
+
+\subsection{Paired comparison with MICA}\label{sec:paired}
+Table~\ref{tab:paired} and Figure~\ref{fig:paired} compare each method with MICA on the entries where both built a model (difference = method minus MICA).
+\begin{itemize}
+\item \textbf{EMProt} has a higher TM-score than MICA on \HigherTmEmprot{} of \NPairsTmEmprot{} entries; the mean difference is \DiffTmEmprot{} (95\,\% CI \DiffLoTmEmprot{} to \DiffHiTmEmprot{}), the median difference \MedDiffTmEmprot{}, the Wilcoxon $p$ is \PwTmEmprot{} (Holm \PwHolmTmEmprot{}; paired $t$-test, Holm: \PtHolmTmEmprot{}). The difference is small and consistent: it is positive in both strata (\DiffTmEmprotLow{} up to 3.0~\AA{}, \DiffTmEmprotHigh{} above) and EMProt is higher on \HigherTmEmprotHigh{} of the \NPairsTmEmprotHigh{} entries above 3.0~\AA{}.
+\item \textbf{EModelX(+AF)} is not different from MICA: mean difference \DiffTmEmodelx{} (\DiffLoTmEmodelx{} to \DiffHiTmEmodelx{}), higher on \HigherTmEmodelx{} and lower on \LowerTmEmodelx{} of \NPairsTmEmodelx{} entries, Wilcoxon Holm $p$ = \PwHolmTmEmodelx{}.
+\item \textbf{E3-CryoFold} is lower than MICA: \DiffTmEthree{} (\DiffLoTmEthree{} to \DiffHiTmEthree{}) over \NPairsTmEthree{} entries, lower on \LowerTmEthree{} of them; Wilcoxon Holm $p$ = \PwHolmTmEthree{}, but the $t$-test with Holm correction gives \PtHolmTmEthree{}.
+\item \textbf{ModelAngelo} has a mean difference of \DiffTmAngelo{} (\DiffLoTmAngelo{} to \DiffHiTmAngelo{}) but a median difference of \MedDiffTmAngelo{} (higher on \HigherTmAngelo{}, lower on \LowerTmAngelo{} of \NPairsTmAngelo{} entries); the Wilcoxon Holm $p$ is \PwHolmTmAngelo{} and the $t$-test Holm $p$ is \PtHolmTmAngelo{}. The mean is carried by the entries above 3.0~\AA{}: up to 3.0~\AA{} the mean difference is \DiffTmAngeloLow{} (\DiffLoTmAngeloLow{} to \DiffHiTmAngeloLow{}, $n$ = \NPairsTmAngeloLow{}); above 3.0~\AA{} it is \DiffTmAngeloHigh{} (\DiffLoTmAngeloHigh{} to \DiffHiTmAngeloHigh{}, $n$ = \NPairsTmAngeloHigh{}), with ModelAngelo lower on \LowerTmAngeloHigh{} of them and a Wilcoxon Holm $p$ of \PwHolmTmAngeloHigh{} (\PtHolmTmAngeloHigh{} for the $t$-test).
+\end{itemize}
+The rank correlation of the TM-score with the resolution is weak for MICA (Spearman $\rho$ = \RhoResTmMica{}, $p$ = \RhoPResTmMica{}) and stronger for ModelAngelo ($\rho$ = \RhoResTmAngelo{}, $p$ = \RhoPResTmAngelo{}), EMProt (\RhoResTmEmprot{}, \RhoPResTmEmprot{}) and EModelX(+AF) (\RhoResTmEmodelx{}, \RhoPResTmEmodelx{}); the correlations with the number of residues are all weak (Table~\ref{tab:corr}, Appendix).
+
+\begin{table}[t]
+\centering\small
+\caption{Paired comparison of the TM-score with MICA on the entries where both methods built a model (method minus MICA; 95\,\% bootstrap CI of the mean difference; two-sided Wilcoxon signed-rank test and paired $t$-test, both with Holm correction over the four methods; counts of entries where the method is higher, lower or equal).}
+\label{tab:paired}
+\fitwidth{\input{generated/tab_paired.tex}}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig2_paired_differences.pdf}
+\caption{Difference in TM-score between each method and MICA (mean and 95\,\% bootstrap CI), for all entries and for each resolution stratum; positive values favour the other method.}
+\label{fig:paired}
+\end{figure}
+
+\subsection{What the other measures say}\label{sec:othermeasures}
+The ranking by TM-score is not an artefact of fragmentation or of extra copies. ModelAngelo writes its models as several chains; US-align's multi-chain mode counts one fragment per deposited chain, so its TM-score mixes accuracy and continuity. With the fragment-agnostic TM-score (Table~\ref{tab:fns}) the difference between ModelAngelo and MICA shrinks to \DiffFnsAngelo{} (\DiffLoFnsAngelo{} to \DiffHiFnsAngelo{}; Wilcoxon Holm $p$ = \PwHolmFnsAngelo{}), EModelX(+AF) stays equal (\DiffFnsEmodelx{}), EMProt stays higher (\DiffFnsEmprot{}, Holm $p$ = \PwHolmFnsEmprot{}) and E3-CryoFold lower (\DiffFnsEthree{}, Holm $p$ = \PwHolmFnsEthree{}). The C$\alpha$ match (precision) is lowest for EMProt (median \CamMedEmprot{} against \CamMedMica{} for MICA) because EMProt builds \CovMedEmprot{} times the deposited number of residues (median; up to \CovMaxEmprot{} times), that is, every copy it finds in the map; the same holds for ModelAngelo in a few entries (coverage up to \CovMaxAngelo{}). MICA builds about the deposited number of residues (median coverage \CovMedMica{}) because its input is one AF3 prediction per unique chain; only in 13BD did it build clearly more than the deposit (coverage \CovMaxMica{}; the next highest is \CovSecondMica{}). The C$\alpha$ quality score, which does not punish extra copies, gives \CaqMedMica{} for MICA, \CaqMedAngelo{} for ModelAngelo, \CaqMedEmodelx{} for EModelX(+AF), \CaqMedEmprot{} for EMProt and \CaqMedEthree{} for E3-CryoFold (medians, \%). The median sequence match of MICA is \SqmMedMica{}\,\%, and its median RMSD over the aligned residues is \RmsdMedMica{}~\AA{} for \AliMedMica{} aligned residues, against \RmsdMedAngelo{}~\AA{} for \AliMedAngelo{} for ModelAngelo, whose models align over fewer residues, so RMSDs are not comparable across methods (all measures: Table~\ref{tab:allmetrics}, Figure~\ref{fig:dist}).
+
+\subsection{Failures scored as zero}
+If a failed run counts as zero on every measure (Table~\ref{tab:zero}), the mean TM-score over all \NEntries{} entries is \ZeroMeanMica{} for MICA (95\,\% CI \ZeroLoMica{}--\ZeroHiMica{}), \ZeroMeanAngelo{} for ModelAngelo, \ZeroMeanEmodelx{} for EModelX(+AF), \ZeroMeanEmprot{} for EMProt and \ZeroMeanEthree{} for E3-CryoFold. On this footing neither ModelAngelo nor EModelX(+AF) differs from MICA: the mean differences are \ZeroDiffAngelo{} and \ZeroDiffEmodelx{} (Holm $p$ = \ZeroPwHolmAngelo{} and \ZeroPwHolmEmodelx{}). EMProt remains higher (\ZeroDiffEmprot{}; Holm $p$ \ZeroPwHolmEmprot{}) and E3-CryoFold lower (\ZeroDiffEthree{}; Holm $p$ = \ZeroPwHolmEthree{}). If the \NRerunMica{} reruns counted as failures as well, MICA would have \FirstModels{} models with a mean TM-score of \FirstTmMean{}, and a mean of \FirstZeroMean{} over all 20 entries.
+
+\subsection{Docking and its effect on MICA}\label{sec:dockresults}
+MICA's own docking could not be run on a free machine (Section~\ref{sec:mica}), so the placements of the AF3 domains in the map are coarse and unverified. Pass~3 docked \DockDockedThree{} of \DockDomainsThree{} domains (Table~\ref{tab:docking}); \DockModeFull{} entries are fully docked, \DockModePartial{} partly and \DockModeNone{} not at all.
+
+\paragraph{Docked against no docked input.}
+On the \DockEffectN{} entries that ran with and without docked input (all fully docked), the TM-score is \DockEffectMeanDocked{} with and \DockEffectMeanNoDock{} without docked input; the mean difference is \DockEffectMean{} (95\,\% CI \DockEffectLo{} to \DockEffectHi{}), Wilcoxon $p$ = \DockEffectP{}, higher with docked input on \DockEffectHigher{} and lower on \DockEffectLower{} entries (Table~\ref{tab:dockeffect}). The differences are small (the largest are 9KQM and 9VUH), but they go in the expected direction, which is weak evidence that the coarse placements carry information. Without docked input MICA still uses the AF3 structures when it builds the chains, so this is not a comparison with MICA without AlphaFold.
+
+\paragraph{By docking mode.}
+The \ModeFullModels{} models of fully docked entries have a mean TM-score of \ModeFullTmMean{} (range \ModeFullTmMin{}--\ModeFullTmMax{}), the \ModePartialModels{} models of partly docked entries \ModePartialTmMean{} (\ModePartialTmMin{}--\ModePartialTmMax{}); the three lowest TM-scores of MICA are those of \ModeLowThreeList{}, and \ModeLowThreePartial{} of these entries are partly docked. This is a description and not a test, because the entries also differ in size and resolution, but it points to the same side: where the free-compute docking left a domain unplaced, MICA was less accurate, so the docking deviation more probably understates than overstates MICA. The initial C$\alpha$ model that MICA's network writes before the chains are built from the AF3 structures has a median TM-score of \MicaVarInitTmMed{}, against \MicaVarAllTmMed{} for the final model (Table~\ref{tab:variants}); a large part of MICA's accuracy on these maps comes from the step that uses the AF3 structures (the AF3 predictions themselves were not scored).
+
+\subsection{Novelty and run time}
+Only \NIdentLow{} entries have a chain at 30\,\% identity or less to any pre-2026 PDB chain (9TKA, 9VBD, 26DK), and MICA failed on one of them, so the planned low-identity analysis has \NPairsTmEmprotNovel{} pairs and is not tested; the TM-scores on these entries are in Table~\ref{tab:perentry}. Over all entries the TM-score of MICA is not related to the identity to older entries (Spearman $\rho$ = \RhoIdentTmMica{}, $p$ = \RhoPIdentTmMica{}), and no method shows a relation with $p$ below 0.05 (smallest $p$ of the five methods: \RhoIdentMinP{}; Table~\ref{tab:corr}).
+
+Run times are only indicative (Table~\ref{tab:runtime}, Figure~\ref{fig:runtime}). The median time of MICA is \RtMedMica{} min per entry (range \RtMinMica{} to \RtMaxMica{}; \RtTotMica{}~h in total for programs 1 to 3 including docking), against \RtMedAngelo{} min for ModelAngelo, \RtMedEmodelx{} for EModelX(+AF), \RtMedEmprot{} for EMProt and \RtMedEthree{} for E3-CryoFold. The baselines were timed while a second program used the other GPU, MICA's program~3 ran one entry at a time, and most of MICA's time on a large map goes into model building on one CPU core. The whole benchmark, including every failed attempt and the first two docking passes, used \GpuSessionHours{}~h of GPU sessions and \CpuSessionHours{}~h of CPU sessions (\NSessions{} sessions, Table~\ref{tab:sessions}).

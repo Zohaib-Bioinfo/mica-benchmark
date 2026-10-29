@@ -1,0 +1,25 @@
+2026-10-24 11:47:17 - INFO - PHENIX DOCKING TOOL - SESSION STARTED
+2026-10-24 11:47:17 - INFO - Timestamp: 20261024_114717
+2026-10-24 11:47:17 - INFO - Testing Phenix environment...
+2026-10-24 11:47:17 - INFO - ✓ Phenix environment activated successfully
+2026-10-24 11:47:17 - INFO - ✓ phenix.dock_in_map found at: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+2026-10-24 11:47:17 - INFO - STARTING DOCKING PROCESS
+2026-10-24 11:47:17 - INFO - Density map: /tmp/mica_pilot/MICA/input/9Z24/emd_73762.map
+2026-10-24 11:47:17 - INFO - Contour level: 0.003
+2026-10-24 11:47:17 - INFO - Resolution: 3.1 Å
+2026-10-24 11:47:17 - INFO - FASTA file: /tmp/mica_pilot/MICA/input/9Z24/9z24.fasta
+2026-10-24 11:47:17 - INFO - Dock type: domainwise
+2026-10-24 11:47:17 - INFO - Processing initial map with contour level 0.003
+2026-10-24 11:47:18 - INFO - Initial map processed and saved to: /tmp/mica_pilot/MICA/input/9Z24/temp_maps/initial_processed.mrc
+2026-10-24 11:47:18 - INFO - PHENIX COMMAND for fold_9z24_1_model_0_chain_A_domain_01.pdb (benchmark attempt 1 of 2, no_mr_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9Z24/AF3_domains/fold_9z24_1_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9Z24/temp_maps/initial_processed.mrc nproc=2 resolution=3.1 pdb_out=/tmp/mica_pilot/MICA/input/9Z24/AF3_docked_models/fold_9z24_1_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9Z24/9z24.fasta dock_with_mr=False quick=True'
+2026-10-24 12:32:18 - ERROR - PHENIX TIMEOUT: Docking for fold_9z24_1_model_0_chain_A_domain_01.pdb took longer than 2700 s (attempt 1, no_mr_quick)
+2026-10-24 12:32:18 - INFO - BENCH ATTEMPT 2 (no_mr_thorough) for fold_9z24_1_model_0_chain_A_domain_01.pdb skipped: the attempt before it ran into its time limit
+2026-10-24 12:32:18 - INFO - PHENIX COMMAND for fold_9z24_1_model_0_chain_A_domain_02.pdb (benchmark attempt 1 of 2, no_mr_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9Z24/AF3_domains/fold_9z24_1_model_0_chain_A_domain_02.pdb map_file=/tmp/mica_pilot/MICA/input/9Z24/temp_maps/initial_processed.mrc nproc=2 resolution=3.1 pdb_out=/tmp/mica_pilot/MICA/input/9Z24/AF3_docked_models/fold_9z24_1_model_0_chain_A_domain_02_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9Z24/9z24.fasta dock_with_mr=False quick=True'
+2026-10-24 13:17:18 - ERROR - PHENIX TIMEOUT: Docking for fold_9z24_1_model_0_chain_A_domain_02.pdb took longer than 2700 s (attempt 1, no_mr_quick)
+2026-10-24 13:17:18 - INFO - BENCH ATTEMPT 2 (no_mr_thorough) for fold_9z24_1_model_0_chain_A_domain_02.pdb skipped: the attempt before it ran into its time limit
+2026-10-24 13:17:18 - INFO - PHENIX COMMAND for fold_9z24_1_model_0_chain_A_domain_03.pdb (benchmark attempt 1 of 2, no_mr_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9Z24/AF3_domains/fold_9z24_1_model_0_chain_A_domain_03.pdb map_file=/tmp/mica_pilot/MICA/input/9Z24/temp_maps/initial_processed.mrc nproc=2 resolution=3.1 pdb_out=/tmp/mica_pilot/MICA/input/9Z24/AF3_docked_models/fold_9z24_1_model_0_chain_A_domain_03_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9Z24/9z24.fasta dock_with_mr=False quick=True'
+2026-10-24 14:02:19 - ERROR - PHENIX TIMEOUT: Docking for fold_9z24_1_model_0_chain_A_domain_03.pdb took longer than 2700 s (attempt 1, no_mr_quick)
+2026-10-24 14:02:19 - INFO - BENCH ATTEMPT 2 (no_mr_thorough) for fold_9z24_1_model_0_chain_A_domain_03.pdb skipped: the attempt before it ran into its time limit
+2026-10-24 14:02:19 - INFO - FINAL SUMMARY:
+2026-10-24 14:02:19 - INFO - Total: 3, Success: 0, Failed: 3
+2026-10-24 14:02:19 - WARNING - Failed models: ['fold_9z24_1_model_0_chain_A_domain_01.pdb', 'fold_9z24_1_model_0_chain_A_domain_02.pdb', 'fold_9z24_1_model_0_chain_A_domain_03.pdb']

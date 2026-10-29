@@ -1,0 +1,7 @@
+label,kind,path,bytes,sha256,model_files
+gpu_batch1_result_20261023-1416,zip,/kaggle/input/notebooks/faltuaccounts/gpu-batch1/gpu_batch1_result_20261023-1416.zip,10625181,4e3a94a14921aab6f32fd22b8534cbe4c761ab297179a5fbcd883c72568df682,113
+gpu_batch2_result_20261024-1334,zip,/kaggle/input/notebooks/faltuaccounts/gpu-batch2/gpu_batch2_result_20261024-1334.zip,758694,d257c1b3883956719cd68d64f9e145400e74cbdf64b1401076b01fceca6b0191,2
+gpu_batch3_result_20261025-2341,zip,/kaggle/input/notebooks/faltuaccounts/gpu-batch3/gpu_batch3_result_20261025-2341.zip,5570058,c7dad9bb1910d83809c9c72946cbf135e947e154cfe0fa246f8898033f910bba,12
+pilot,folder,/kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot,,,113
+pilot,folder,/kaggle/input/notebooks/faltuaccounts/gpu-batch2/pilot,,,2
+pilot,folder,/kaggle/input/notebooks/faltuaccounts/gpu-batch3/pilot,,,12

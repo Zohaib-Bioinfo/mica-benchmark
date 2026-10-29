@@ -1,0 +1,2 @@
+entry,status,failed_step,note
+9WFL,deferred,,program 3 needs a GPU session: 125 windows of 64^3 would take about 1.0 hours on this CPU (limit 120 windows)

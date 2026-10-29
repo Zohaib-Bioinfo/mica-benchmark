@@ -1,0 +1,29 @@
+\section{Evaluation metrics}\label{sec:metrics}
+
+\subsection{Scoring protocol}
+Every model is compared with the deposited model of its entry (protein chains only, first model, first alternative location) with the same code and tools for every method. The protocol was written down on 24~October 2026, before any MICA model existed, and was not changed afterwards. A model with several chains, fragments or copies is scored as the method wrote it. Table~\ref{tab:metrics} lists the measures: the six of the MICA paper \citep{gyawali2025mica} plus the C$\alpha$ RMSD and the residue coverage, which I had named in my email to Prof.\ Cheng, and a fragment-agnostic TM-score that I added to read the first one correctly.
+
+\begin{table}[t]
+\centering\small
+\caption{Measures of the accuracy of a model. The completion and the run time are defined with their results (Section~\ref{sec:results}). The TM-score is the primary measure (spec decision~7 and~8). $N_\text{close}$ and $N_\text{far}$ are the residues of the model that have a deposited C$\alpha$ within 3.0~\AA{} or not.}
+\label{tab:metrics}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{3.1cm}@{}}
+\toprule
+Measure & Definition & Tool \\
+\midrule
+TM-score (primary) & Normalised by the length of the \emph{deposited} model; multi-chain alignment with the chains paired one to one (\texttt{-mm 1 -ter 1}), so extra copies in the model are ignored. & US-align \citep{zhang2022usalign,zhang2004tmscore} \\
+Aligned length, RMSD, sequence identity & Aligned C$\alpha$ pairs of the same run, their RMSD (\AA{}), and the share of them with the same residue type. & US-align \\
+TM-score, fragment-agnostic & All chains of each structure joined into one chain and aligned without regard to residue order (\texttt{-mm 5}); fragment order, chain breaks and extra copies do not matter. & US-align \\
+C$\alpha$ match (\%) & $100\,N_\text{close}/(N_\text{close}+N_\text{far})$: the share of the model's C$\alpha$ atoms that lie within 3.0~\AA{} of a deposited C$\alpha$ (a precision). & \pcc{} \citep{liebschner2019phenix} \\
+Sequence match (\%) & Share of the matched residues that have the residue type of the deposited residue. & \pcc{} \\
+Coverage & Residues of the model divided by residues of the deposited model; above 1 means that the model has more residues than the deposit (extra copies or extra chains). & -- \\
+C$\alpha$ quality score (\%) & C$\alpha$ match $\times$ coverage, as defined for the MICA paper and its predecessor; it equals the share of deposited residues found when $N_\text{close}+N_\text{far}$ equals the residues of the model, so built copies cancel out. & -- \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{Reading the measures.}
+Before \texttt{chain\_comparison} each model is moved onto the deposited model with the rotation of the \texttt{-mm 1} run, because a map can hold symmetry copies of the deposited chain and a method may build another copy; the same measures without this step are in the Appendix. Two properties of the measures matter for the comparison. First, US-align's multi-chain mode aligns only one fragment per deposited chain: a model cut into many pieces scores low although each piece is right (a synthetic test gave 0.14 for a perfect model cut into seven fragments). ModelAngelo writes its models as several chains (median \ChainsMedAngelo{}, up to \ChainsMaxAngelo{}; the deposited models have 1 to \ChainsNativeMax{}), so its TM-score mixes accuracy and continuity; the fragment-agnostic TM-score separates them. Second, the C$\alpha$ match is a precision: a method that builds every copy it finds in the map (ModelAngelo, EMProt) is penalised for copies that the deposited model does not contain, although the deposited chain is built correctly. Conclusions therefore rest on the TM-score and the C$\alpha$ quality score, and the other measures are shown next to them with the coverage.
+
+\subsection{Statistics}\label{sec:stats}
+Each method is compared with MICA on the entries where both have a scored model; the number of pairs is always given, and every difference is \emph{method minus MICA}. The primary test is the two-sided Wilcoxon signed-rank test on the TM-score; the paired $t$-test is given because the MICA paper uses it. Confidence intervals (95\,\%) are percentile bootstrap intervals over entries (10\,000 resamples, seed 2026) for means, medians and mean differences. $p$-values are adjusted by Holm's method over the four method pairs, separately for each measure and group; they are not adjusted across measures, so every measure except the TM-score is exploratory. Results are given for all entries and for each resolution stratum. Failed runs are not missing data: a sensitivity analysis scores them as zero on every measure and compares the means over all 20 entries. The planned subset of low-identity entries has too few entries to test and is described. Spearman rank correlations with resolution, size and novelty are descriptive. With 17 pairs or fewer, differences of a few hundredths in the TM-score cannot be told from noise, so the report puts effect sizes and intervals before $p$-values.

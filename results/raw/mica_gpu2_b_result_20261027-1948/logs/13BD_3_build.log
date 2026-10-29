@@ -1,0 +1,881 @@
+2026-10-27 18:35:52 - INFO - 🚀 Starting MICA - Map ID: 76936, PDB ID: 13bd
+================================================================================
+🧬 MICA PIPELINE STARTING
+================================================================================
+2026-10-27 18:35:52 - INFO - Using MICA with AF3 structures
+2026-10-27 18:35:52 - INFO - Parsing FASTA file...
+2026-10-27 18:35:52 - INFO - Processing 1 sequences with multiprocessing...
+2026-10-27 18:35:53 - INFO - FASTA parsing completed successfully:
+2026-10-27 18:35:53 - INFO -    Sequence 1: 13BD_1
+2026-10-27 18:35:53 - INFO -    Chains: A B
+2026-10-27 18:35:53 - INFO -    Sequence: MFVFLVLLLLVSSQCVNLTTTTQLPLAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHVISGTNGTKRFDNPVLPFNDGVYFASIEKSNITRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFNNKSWMESESRVYSSAKNCTFEYVFQPFLMDLEGKQGNFTNLREFVFKNIDGYFKIYSKHTPIIVRDLPQGFSALEPLVDLPIGINITRFQTLLHRSYLTSGDSSSGWTAGAAAYYVGYLQPRTFLLKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESVVRFPNITNLCPFYEVFNATRFPSVYAWNRKRISNCVADYSVLYNFAPFFTFKCYGVSPTKLNDLCFTNVYADSFVIKGNEVSQIAPGQTGNIADYNYKLPDDFTGCVISWNSNRLDSKADGNYNYWYRLFRKSKLKPFERDISTEIYQAGNNPCNGVKGFNCYFPLQSYSFRPTYGVGYQPYRVVVLSFELLHAPATVCGPKQSTNLVKNKCVNFNFNGLTGTGVLTDSNKKFLPFQQFGRDIADTTDA ...
+
+================================================================================
+🚀 STARTING DEEP LEARNING PREDICTION
+================================================================================
+📊 System Information:
+   🖥️  Device: cuda
+   🧠 CPU Cores: 2 physical, 4 logical
+   💾 System Memory: 31.3 GB
+   🎮 GPU Memory: 14.6 GB
+
+2026-10-27 18:35:53 - INFO - Starting data preprocessing...
+
+================================================================================
+🗺️  DENSITY MAP RESAMPLING AND NORMALIZATION
+================================================================================
+2026-10-27 18:35:53 - INFO - Processing density map: emd_76936.map
+2026-10-27 18:35:54 - INFO - Original map shape: (416, 416, 416)
+2026-10-27 18:35:54 - INFO - Resampling with zoom factors: [0.8320000171661377, 0.8320000171661377, 0.8320000171661377]
+2026-10-27 18:36:15 - INFO - ✓ Resampled map shape: (346, 346, 346)
+2026-10-27 18:36:15 - INFO - Normalizing density map...
+2026-10-27 18:36:17 - INFO - ✓ Normalized map shape: (346, 346, 346)
+2026-10-27 18:36:18 - INFO - ✓ Normalized map saved: resampled_normalized_map.mrc
+
+🎯 Map Processing Results:
+   ✅ Map successfully resampled to 1.0 A and normalized to [0, 1] range.
+   📁 Normalized map path: /tmp/mica_pilot/MICA/input/13BD/resampled_normalized_map.mrc
+
+
+================================================================================
+🧬 AF3 FEATURES ENCODING
+================================================================================
+2026-10-27 18:36:18 - INFO - Creating AF3 encodings...
+2026-10-27 18:36:18 - INFO - Using reference map: resampled_normalized_map.mrc
+2026-10-27 18:36:18 - INFO - Reference map shape: (346, 346, 346)
+2026-10-27 18:36:18 - INFO - Creating 24 feature channels
+2026-10-27 18:36:18 - INFO - ✓ Processed 250 residues, 1000 atoms
+2026-10-27 18:36:18 - INFO - Saving 24 channels encodings using 2 CPU cores in parallel
+2026-10-27 18:37:00 - INFO - ✓ Saved CA encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved N encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved C encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved O encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved ALA encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved CYS encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved ASP encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved GLU encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved PHE encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved GLY encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved HIS encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved ILE encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved LYS encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved LEU encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved MET encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved ASN encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved PRO encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved GLN encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved ARG encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved SER encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved THR encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved VAL encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved TRP encoding
+2026-10-27 18:37:00 - INFO - ✓ Saved TYR encoding
+
+🎯 Encoding Results:
+   ✅ Feature encoding successful
+   🧬 Channels created: 24/24
+   🔬 Residues processed: 250
+   ⚛️  Atoms processed: 1000
+   📁 AF3 encodings directory: /tmp/mica_pilot/MICA/input/13BD/AF3_encodings
+
+
+================================================================================
+🗺️  CREATING GRIDS FOR NORMALIZED MAP
+================================================================================
+2026-10-27 18:37:00 - INFO - Processing normalized map: resampled_normalized_map.mrc
+2026-10-27 18:37:00 - INFO - Output directory: /tmp/mica_pilot/MICA/input/13BD/grids/normalized_map_grids
+2026-10-27 18:37:00 - INFO - Grid size: 48, Padding: 8
+2026-10-27 18:37:00 - INFO - Creating grids for resampled_normalized_map.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:03 - INFO - ✓ Created 512 grids from resampled_normalized_map.mrc
+
+🎯 Grid Creation Results:
+   ✅ Successfully created: 512 grids
+   📁 Output directory: normalized_map_grids
+   ⏱️  Processing time: 3.16 seconds
+
+
+================================================================================
+🧬 CREATING GRIDS FOR AF3 ENCODINGS
+================================================================================
+2026-10-27 18:37:03 - INFO - Found 24 AF3 encoding files
+2026-10-27 18:37:03 - INFO - Output directory: /tmp/mica_pilot/MICA/input/13BD/grids/AF3_encoding_grids
+2026-10-27 18:37:03 - INFO - Processing 24 channels using 2 CPU cores in parallel
+2026-10-27 18:37:03 - INFO - Creating grids for HIS_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:03 - INFO - Creating grids for ASP_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:06 - INFO - ✓ Created 512 grids from HIS_encoding.mrc
+2026-10-27 18:37:06 - INFO - ✓ Created 512 grids from ASP_encoding.mrc
+2026-10-27 18:37:07 - INFO - Creating grids for N_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:07 - INFO - Creating grids for TYR_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:11 - INFO - ✓ Created 512 grids from N_encoding.mrc
+2026-10-27 18:37:11 - INFO - ✓ Created 512 grids from TYR_encoding.mrc
+2026-10-27 18:37:11 - INFO - Creating grids for PHE_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:11 - INFO - Creating grids for ASN_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:14 - INFO - ✓ Created 512 grids from PHE_encoding.mrc
+2026-10-27 18:37:14 - INFO - ✓ Created 512 grids from ASN_encoding.mrc
+2026-10-27 18:37:14 - INFO - Creating grids for THR_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:14 - INFO - Creating grids for MET_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:17 - INFO - ✓ Created 512 grids from THR_encoding.mrc
+2026-10-27 18:37:17 - INFO - Creating grids for O_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:17 - INFO - ✓ Created 512 grids from MET_encoding.mrc
+2026-10-27 18:37:18 - INFO - Creating grids for VAL_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:31 - INFO - ✓ Created 512 grids from O_encoding.mrc
+2026-10-27 18:37:31 - INFO - Creating grids for GLU_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:31 - INFO - ✓ Created 512 grids from VAL_encoding.mrc
+2026-10-27 18:37:31 - INFO - Creating grids for GLY_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:34 - INFO - ✓ Created 512 grids from GLU_encoding.mrc
+2026-10-27 18:37:34 - INFO - Creating grids for SER_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:34 - INFO - ✓ Created 512 grids from GLY_encoding.mrc
+2026-10-27 18:37:34 - INFO - Creating grids for CA_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:37 - INFO - ✓ Created 512 grids from CA_encoding.mrc
+2026-10-27 18:37:37 - INFO - ✓ Created 512 grids from SER_encoding.mrc
+2026-10-27 18:37:37 - INFO - Creating grids for C_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:37 - INFO - Creating grids for PRO_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:41 - INFO - ✓ Created 512 grids from C_encoding.mrc
+2026-10-27 18:37:41 - INFO - ✓ Created 512 grids from PRO_encoding.mrc
+2026-10-27 18:37:41 - INFO - Creating grids for CYS_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:41 - INFO - Creating grids for TRP_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:55 - INFO - ✓ Created 512 grids from CYS_encoding.mrc
+2026-10-27 18:37:55 - INFO - Creating grids for LEU_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:55 - INFO - ✓ Created 512 grids from TRP_encoding.mrc
+2026-10-27 18:37:55 - INFO - Creating grids for ILE_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:58 - INFO - ✓ Created 512 grids from LEU_encoding.mrc
+2026-10-27 18:37:58 - INFO - Creating grids for GLN_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:37:58 - INFO - ✓ Created 512 grids from ILE_encoding.mrc
+2026-10-27 18:37:59 - INFO - Creating grids for ARG_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:38:02 - INFO - ✓ Created 512 grids from GLN_encoding.mrc
+2026-10-27 18:38:02 - INFO - Creating grids for ALA_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:38:02 - INFO - ✓ Created 512 grids from ARG_encoding.mrc
+2026-10-27 18:38:02 - INFO - Creating grids for LYS_encoding.mrc with shape: (346, 346, 346)
+2026-10-27 18:38:05 - INFO - ✓ Created 512 grids from ALA_encoding.mrc
+2026-10-27 18:38:06 - INFO - ✓ Created 512 grids from LYS_encoding.mrc
+
+🎯 AF3 Encoding Grid Results:
+   ✅ Successfully processed: 24/24 channels
+   🔢 Total grids created: 12288
+   📁 Output directory: /tmp/mica_pilot/MICA/input/13BD/grids/AF3_encoding_grids
+   ⏱️  Processing time: 62.57 seconds
+
+============================================================
+🏁 CREATING GRIDS COMPLETE
+============================================================
+
+2026-10-27 18:38:06 - INFO - Cryo-EM map and AF3 results processed. Map Offset: [0.0, 0.0, 0.0]
+2026-10-27 18:38:06 - INFO - ✓ Data preprocessing completed in 133.05 seconds
+2026-10-27 18:38:06 - INFO - Starting Deep Learning prediction...
+2026-10-27 18:38:06 - INFO - Starting prediction pipeline at 2026-10-27 18:38:06
+
+================================================================================
+🧭 PROCESSING STRATEGY SELECTION
+================================================================================
+📊 Dataset Analysis:
+   🔢 Total samples: 512
+   🎯 Batch threshold: 1000000
+You may change batch threshold parameter: 1000000 to lower value if run on your local machine by changing its value in: utils/predict.py
+   ✅ Strategy: SINGLE SAMPLE PROCESSING
+   📦 Batch size: 1
+
+================================================================================
+🤖 MODEL LOADING
+================================================================================
+2026-10-27 18:38:06 - INFO - Loading model from: MICA_best_model.pth
+2026-10-27 18:38:24 - INFO - Model loaded successfully
+🎯 Results:
+   ✅ Model loaded successfully
+   ⏱️  Loading time: 18.77s
+
+================================================================================
+📊 DATA PREPARATION
+================================================================================
+2026-10-27 18:38:24 - INFO - Dataset prepared with 512 samples
+🎯 Results:
+   ✅ Dataset prepared successfully
+   🔢 Total samples: 512
+   📦 Batch size: 1
+   ⏱️  Preparation time: 0.00s
+
+================================================================================
+🚀 RUNNING SINGLE SAMPLE INFERENCE
+================================================================================
+📊 Configuration:
+   🔢 Total batches: 512
+   📦 Batch size: 1
+
+
+Processing samples:   0%|          | 0/512 [00:00<?, ?it/s]
+Processing samples:   0%|          | 1/512 [00:02<22:59,  2.70s/it]
+Processing samples:   0%|          | 2/512 [00:05<22:08,  2.60s/it]
+Processing samples:   1%|          | 3/512 [00:07<21:47,  2.57s/it]
+Processing samples:   1%|          | 4/512 [00:10<21:39,  2.56s/it]
+Processing samples:   1%|          | 5/512 [00:12<21:37,  2.56s/it]
+Processing samples:   1%|          | 6/512 [00:15<21:27,  2.54s/it]
+Processing samples:   1%|▏         | 7/512 [00:17<21:21,  2.54s/it]
+Processing samples:   2%|▏         | 8/512 [00:20<21:18,  2.54s/it]
+Processing samples:   2%|▏         | 9/512 [00:22<21:16,  2.54s/it]
+Processing samples:   2%|▏         | 10/512 [00:25<21:22,  2.55s/it]
+Processing samples:   2%|▏         | 11/512 [00:28<21:19,  2.55s/it]
+Processing samples:   2%|▏         | 12/512 [00:30<21:20,  2.56s/it]
+Processing samples:   3%|▎         | 13/512 [00:33<21:22,  2.57s/it]
+Processing samples:   3%|▎         | 14/512 [00:35<21:18,  2.57s/it]
+Processing samples:   3%|▎         | 15/512 [00:38<21:19,  2.57s/it]
+Processing samples:   3%|▎         | 16/512 [00:41<21:22,  2.59s/it]
+Processing samples:   3%|▎         | 17/512 [00:43<21:23,  2.59s/it]
+Processing samples:   4%|▎         | 18/512 [00:46<21:23,  2.60s/it]
+Processing samples:   4%|▎         | 19/512 [00:48<21:17,  2.59s/it]
+Processing samples:   4%|▍         | 20/512 [00:51<21:13,  2.59s/it]
+Processing samples:   4%|▍         | 21/512 [00:54<21:15,  2.60s/it]
+Processing samples:   4%|▍         | 22/512 [00:56<21:13,  2.60s/it]
+Processing samples:   4%|▍         | 23/512 [00:59<21:09,  2.60s/it]
+Processing samples:   5%|▍         | 24/512 [01:01<21:08,  2.60s/it]
+Processing samples:   5%|▍         | 25/512 [01:04<21:07,  2.60s/it]
+Processing samples:   5%|▌         | 26/512 [01:07<21:06,  2.61s/it]
+Processing samples:   5%|▌         | 27/512 [01:09<21:06,  2.61s/it]
+Processing samples:   5%|▌         | 28/512 [01:12<21:02,  2.61s/it]
+Processing samples:   6%|▌         | 29/512 [01:14<20:59,  2.61s/it]
+Processing samples:   6%|▌         | 30/512 [01:17<21:01,  2.62s/it]
+Processing samples:   6%|▌         | 31/512 [01:20<20:59,  2.62s/it]
+Processing samples:   6%|▋         | 32/512 [01:22<20:59,  2.62s/it]
+Processing samples:   6%|▋         | 33/512 [01:25<21:00,  2.63s/it]
+Processing samples:   7%|▋         | 34/512 [01:28<21:01,  2.64s/it]
+Processing samples:   7%|▋         | 35/512 [01:30<20:55,  2.63s/it]
+Processing samples:   7%|▋         | 36/512 [01:33<20:59,  2.65s/it]
+Processing samples:   7%|▋         | 37/512 [01:36<21:02,  2.66s/it]
+Processing samples:   7%|▋         | 38/512 [01:38<21:00,  2.66s/it]
+Processing samples:   8%|▊         | 39/512 [01:41<21:00,  2.66s/it]
+Processing samples:   8%|▊         | 40/512 [01:44<20:56,  2.66s/it]
+Processing samples:   8%|▊         | 41/512 [01:46<20:54,  2.66s/it]
+Processing samples:   8%|▊         | 42/512 [01:49<20:55,  2.67s/it]
+Processing samples:   8%|▊         | 43/512 [01:52<20:50,  2.67s/it]
+Processing samples:   9%|▊         | 44/512 [01:54<20:47,  2.67s/it]
+Processing samples:   9%|▉         | 45/512 [01:57<20:45,  2.67s/it]
+Processing samples:   9%|▉         | 46/512 [02:00<20:39,  2.66s/it]
+Processing samples:   9%|▉         | 47/512 [02:02<20:35,  2.66s/it]
+Processing samples:   9%|▉         | 48/512 [02:05<20:33,  2.66s/it]
+Processing samples:  10%|▉         | 49/512 [02:08<20:37,  2.67s/it]
+Processing samples:  10%|▉         | 50/512 [02:10<20:51,  2.71s/it]
+Processing samples:  10%|▉         | 51/512 [02:13<20:46,  2.70s/it]
+Processing samples:  10%|█         | 52/512 [02:16<20:39,  2.69s/it]
+Processing samples:  10%|█         | 53/512 [02:18<20:31,  2.68s/it]
+Processing samples:  11%|█         | 54/512 [02:21<20:26,  2.68s/it]
+Processing samples:  11%|█         | 55/512 [02:24<20:24,  2.68s/it]
+Processing samples:  11%|█         | 56/512 [02:26<20:25,  2.69s/it]
+Processing samples:  11%|█         | 57/512 [02:29<20:25,  2.69s/it]
+Processing samples:  11%|█▏        | 58/512 [02:32<20:19,  2.69s/it]
+Processing samples:  12%|█▏        | 59/512 [02:35<20:13,  2.68s/it]
+Processing samples:  12%|█▏        | 60/512 [02:37<20:11,  2.68s/it]
+Processing samples:  12%|█▏        | 61/512 [02:40<20:10,  2.68s/it]
+Processing samples:  12%|█▏        | 62/512 [02:43<20:11,  2.69s/it]
+Processing samples:  12%|█▏        | 63/512 [02:45<20:13,  2.70s/it]
+Processing samples:  12%|█▎        | 64/512 [02:48<20:10,  2.70s/it]
+Processing samples:  13%|█▎        | 65/512 [02:51<20:06,  2.70s/it]
+Processing samples:  13%|█▎        | 66/512 [02:53<20:05,  2.70s/it]
+Processing samples:  13%|█▎        | 67/512 [02:56<20:04,  2.71s/it]
+Processing samples:  13%|█▎        | 68/512 [02:59<19:59,  2.70s/it]
+Processing samples:  13%|█▎        | 69/512 [03:02<19:57,  2.70s/it]
+Processing samples:  14%|█▎        | 70/512 [03:04<19:54,  2.70s/it]
+Processing samples:  14%|█▍        | 71/512 [03:07<19:51,  2.70s/it]
+Processing samples:  14%|█▍        | 72/512 [03:10<19:50,  2.71s/it]
+Processing samples:  14%|█▍        | 73/512 [03:12<19:46,  2.70s/it]
+Processing samples:  14%|█▍        | 74/512 [03:15<19:43,  2.70s/it]
+Processing samples:  15%|█▍        | 75/512 [03:18<19:43,  2.71s/it]
+Processing samples:  15%|█▍        | 76/512 [03:20<19:42,  2.71s/it]
+Processing samples:  15%|█▌        | 77/512 [03:23<19:39,  2.71s/it]
+Processing samples:  15%|█▌        | 78/512 [03:26<19:37,  2.71s/it]
+Processing samples:  15%|█▌        | 79/512 [03:29<19:36,  2.72s/it]
+Processing samples:  16%|█▌        | 80/512 [03:31<19:37,  2.72s/it]
+Processing samples:  16%|█▌        | 81/512 [03:34<19:34,  2.73s/it]
+Processing samples:  16%|█▌        | 82/512 [03:37<19:30,  2.72s/it]
+Processing samples:  16%|█▌        | 83/512 [03:40<19:28,  2.72s/it]
+Processing samples:  16%|█▋        | 84/512 [03:42<19:27,  2.73s/it]
+Processing samples:  17%|█▋        | 85/512 [03:45<19:27,  2.73s/it]
+Processing samples:  17%|█▋        | 86/512 [03:48<19:21,  2.73s/it]
+Processing samples:  17%|█▋        | 87/512 [03:51<20:54,  2.95s/it]
+Processing samples:  17%|█▋        | 88/512 [03:54<20:21,  2.88s/it]
+Processing samples:  17%|█▋        | 89/512 [03:57<19:57,  2.83s/it]
+Processing samples:  18%|█▊        | 90/512 [03:59<19:43,  2.80s/it]
+Processing samples:  18%|█▊        | 91/512 [04:02<19:30,  2.78s/it]
+Processing samples:  18%|█▊        | 92/512 [04:05<19:20,  2.76s/it]
+Processing samples:  18%|█▊        | 93/512 [04:08<19:17,  2.76s/it]
+Processing samples:  18%|█▊        | 94/512 [04:10<19:11,  2.76s/it]
+Processing samples:  19%|█▊        | 95/512 [04:13<19:05,  2.75s/it]
+Processing samples:  19%|█▉        | 96/512 [04:16<19:02,  2.75s/it]
+Processing samples:  19%|█▉        | 97/512 [04:19<19:00,  2.75s/it]
+Processing samples:  19%|█▉        | 98/512 [04:21<18:58,  2.75s/it]
+Processing samples:  19%|█▉        | 99/512 [04:24<18:56,  2.75s/it]
+Processing samples:  20%|█▉        | 100/512 [04:27<18:55,  2.76s/it]
+Processing samples:  20%|█▉        | 101/512 [04:30<18:53,  2.76s/it]
+Processing samples:  20%|█▉        | 102/512 [04:32<18:50,  2.76s/it]
+Processing samples:  20%|██        | 103/512 [04:35<18:45,  2.75s/it]
+Processing samples:  20%|██        | 104/512 [04:38<18:41,  2.75s/it]
+Processing samples:  21%|██        | 105/512 [04:41<18:36,  2.74s/it]
+Processing samples:  21%|██        | 106/512 [04:43<18:31,  2.74s/it]
+Processing samples:  21%|██        | 107/512 [04:46<18:30,  2.74s/it]
+Processing samples:  21%|██        | 108/512 [04:49<18:32,  2.75s/it]
+Processing samples:  21%|██▏       | 109/512 [04:52<18:30,  2.75s/it]
+Processing samples:  21%|██▏       | 110/512 [04:54<18:23,  2.75s/it]
+Processing samples:  22%|██▏       | 111/512 [04:57<18:22,  2.75s/it]
+Processing samples:  22%|██▏       | 112/512 [05:00<18:18,  2.75s/it]
+Processing samples:  22%|██▏       | 113/512 [05:03<18:13,  2.74s/it]
+Processing samples:  22%|██▏       | 114/512 [05:05<18:10,  2.74s/it]
+Processing samples:  22%|██▏       | 115/512 [05:08<18:07,  2.74s/it]
+Processing samples:  23%|██▎       | 116/512 [05:11<18:05,  2.74s/it]
+Processing samples:  23%|██▎       | 117/512 [05:14<18:07,  2.75s/it]
+Processing samples:  23%|██▎       | 118/512 [05:16<18:03,  2.75s/it]
+Processing samples:  23%|██▎       | 119/512 [05:19<18:01,  2.75s/it]
+Processing samples:  23%|██▎       | 120/512 [05:22<18:03,  2.76s/it]
+Processing samples:  24%|██▎       | 121/512 [05:25<17:58,  2.76s/it]
+Processing samples:  24%|██▍       | 122/512 [05:27<17:56,  2.76s/it]
+Processing samples:  24%|██▍       | 123/512 [05:30<17:56,  2.77s/it]
+Processing samples:  24%|██▍       | 124/512 [05:33<17:50,  2.76s/it]
+Processing samples:  24%|██▍       | 125/512 [05:36<17:46,  2.76s/it]
+Processing samples:  25%|██▍       | 126/512 [05:38<17:46,  2.76s/it]
+Processing samples:  25%|██▍       | 127/512 [05:41<17:40,  2.76s/it]
+Processing samples:  25%|██▌       | 128/512 [05:44<17:38,  2.76s/it]
+Processing samples:  25%|██▌       | 129/512 [05:47<17:38,  2.76s/it]
+Processing samples:  25%|██▌       | 130/512 [05:49<17:31,  2.75s/it]
+Processing samples:  26%|██▌       | 131/512 [05:52<17:29,  2.76s/it]
+Processing samples:  26%|██▌       | 132/512 [05:55<17:26,  2.75s/it]
+Processing samples:  26%|██▌       | 133/512 [05:58<17:24,  2.76s/it]
+Processing samples:  26%|██▌       | 134/512 [06:01<18:02,  2.86s/it]
+Processing samples:  26%|██▋       | 135/512 [06:04<17:42,  2.82s/it]
+Processing samples:  27%|██▋       | 136/512 [06:06<17:41,  2.82s/it]
+Processing samples:  27%|██▋       | 137/512 [06:09<17:33,  2.81s/it]
+Processing samples:  27%|██▋       | 138/512 [06:12<17:25,  2.80s/it]
+Processing samples:  27%|██▋       | 139/512 [06:15<17:21,  2.79s/it]
+Processing samples:  27%|██▋       | 140/512 [06:17<17:12,  2.78s/it]
+Processing samples:  28%|██▊       | 141/512 [06:20<17:06,  2.77s/it]
+Processing samples:  28%|██▊       | 142/512 [06:23<17:05,  2.77s/it]
+Processing samples:  28%|██▊       | 143/512 [06:26<17:00,  2.77s/it]
+Processing samples:  28%|██▊       | 144/512 [06:28<16:55,  2.76s/it]
+Processing samples:  28%|██▊       | 145/512 [06:31<16:53,  2.76s/it]
+Processing samples:  29%|██▊       | 146/512 [06:34<16:48,  2.76s/it]
+Processing samples:  29%|██▊       | 147/512 [06:37<16:44,  2.75s/it]
+Processing samples:  29%|██▉       | 148/512 [06:39<16:47,  2.77s/it]
+Processing samples:  29%|██▉       | 149/512 [06:42<16:44,  2.77s/it]
+Processing samples:  29%|██▉       | 150/512 [06:45<16:41,  2.77s/it]
+Processing samples:  29%|██▉       | 151/512 [06:48<16:34,  2.76s/it]
+Processing samples:  30%|██▉       | 152/512 [06:50<16:29,  2.75s/it]
+Processing samples:  30%|██▉       | 153/512 [06:53<16:28,  2.75s/it]
+Processing samples:  30%|███       | 154/512 [06:56<16:24,  2.75s/it]
+Processing samples:  30%|███       | 155/512 [06:59<16:25,  2.76s/it]
+Processing samples:  30%|███       | 156/512 [07:02<16:22,  2.76s/it]
+Processing samples:  31%|███       | 157/512 [07:04<16:21,  2.76s/it]
+Processing samples:  31%|███       | 158/512 [07:07<16:22,  2.78s/it]
+Processing samples:  31%|███       | 159/512 [07:10<16:18,  2.77s/it]
+Processing samples:  31%|███▏      | 160/512 [07:13<16:12,  2.76s/it]
+Processing samples:  31%|███▏      | 161/512 [07:15<16:14,  2.78s/it]
+Processing samples:  32%|███▏      | 162/512 [07:18<16:10,  2.77s/it]
+Processing samples:  32%|███▏      | 163/512 [07:21<16:05,  2.77s/it]
+Processing samples:  32%|███▏      | 164/512 [07:24<16:00,  2.76s/it]
+Processing samples:  32%|███▏      | 165/512 [07:26<15:56,  2.76s/it]
+Processing samples:  32%|███▏      | 166/512 [07:29<15:55,  2.76s/it]
+Processing samples:  33%|███▎      | 167/512 [07:32<15:53,  2.76s/it]
+Processing samples:  33%|███▎      | 168/512 [07:35<15:47,  2.75s/it]
+Processing samples:  33%|███▎      | 169/512 [07:37<15:42,  2.75s/it]
+Processing samples:  33%|███▎      | 170/512 [07:40<15:41,  2.75s/it]
+Processing samples:  33%|███▎      | 171/512 [07:43<15:44,  2.77s/it]
+Processing samples:  34%|███▎      | 172/512 [07:46<15:41,  2.77s/it]
+Processing samples:  34%|███▍      | 173/512 [07:49<15:39,  2.77s/it]
+Processing samples:  34%|███▍      | 174/512 [07:51<15:35,  2.77s/it]
+Processing samples:  34%|███▍      | 175/512 [07:54<15:31,  2.77s/it]
+Processing samples:  34%|███▍      | 176/512 [07:57<15:30,  2.77s/it]
+Processing samples:  35%|███▍      | 177/512 [08:00<15:24,  2.76s/it]
+Processing samples:  35%|███▍      | 178/512 [08:02<15:22,  2.76s/it]
+Processing samples:  35%|███▍      | 179/512 [08:05<15:19,  2.76s/it]
+Processing samples:  35%|███▌      | 180/512 [08:08<15:14,  2.75s/it]
+Processing samples:  35%|███▌      | 181/512 [08:11<15:13,  2.76s/it]
+Processing samples:  36%|███▌      | 182/512 [08:13<15:07,  2.75s/it]
+Processing samples:  36%|███▌      | 183/512 [08:16<15:03,  2.75s/it]
+Processing samples:  36%|███▌      | 184/512 [08:19<14:59,  2.74s/it]
+Processing samples:  36%|███▌      | 185/512 [08:22<15:01,  2.76s/it]
+Processing samples:  36%|███▋      | 186/512 [08:24<15:05,  2.78s/it]
+Processing samples:  37%|███▋      | 187/512 [08:27<15:01,  2.78s/it]
+Processing samples:  37%|███▋      | 188/512 [08:30<14:56,  2.77s/it]
+Processing samples:  37%|███▋      | 189/512 [08:33<14:56,  2.78s/it]
+Processing samples:  37%|███▋      | 190/512 [08:36<14:53,  2.77s/it]
+Processing samples:  37%|███▋      | 191/512 [08:38<14:46,  2.76s/it]
+Processing samples:  38%|███▊      | 192/512 [08:41<14:42,  2.76s/it]
+Processing samples:  38%|███▊      | 193/512 [08:44<14:39,  2.76s/it]
+Processing samples:  38%|███▊      | 194/512 [08:46<14:34,  2.75s/it]
+Processing samples:  38%|███▊      | 195/512 [08:49<14:33,  2.76s/it]
+Processing samples:  38%|███▊      | 196/512 [08:52<14:29,  2.75s/it]
+Processing samples:  38%|███▊      | 197/512 [08:55<14:28,  2.76s/it]
+Processing samples:  39%|███▊      | 198/512 [08:58<14:33,  2.78s/it]
+Processing samples:  39%|███▉      | 199/512 [09:00<14:30,  2.78s/it]
+Processing samples:  39%|███▉      | 200/512 [09:03<14:23,  2.77s/it]
+Processing samples:  39%|███▉      | 201/512 [09:06<14:20,  2.77s/it]
+Processing samples:  39%|███▉      | 202/512 [09:09<14:15,  2.76s/it]
+Processing samples:  40%|███▉      | 203/512 [09:11<14:14,  2.77s/it]
+Processing samples:  40%|███▉      | 204/512 [09:14<14:12,  2.77s/it]
+Processing samples:  40%|████      | 205/512 [09:17<14:19,  2.80s/it]
+Processing samples:  40%|████      | 206/512 [09:20<14:12,  2.78s/it]
+Processing samples:  40%|████      | 207/512 [09:23<14:07,  2.78s/it]
+Processing samples:  41%|████      | 208/512 [09:25<14:08,  2.79s/it]
+Processing samples:  41%|████      | 209/512 [09:28<14:01,  2.78s/it]
+Processing samples:  41%|████      | 210/512 [09:31<14:07,  2.80s/it]
+Processing samples:  41%|████      | 211/512 [09:34<13:58,  2.79s/it]
+Processing samples:  41%|████▏     | 212/512 [09:36<13:52,  2.77s/it]
+Processing samples:  42%|████▏     | 213/512 [09:39<13:49,  2.78s/it]
+Processing samples:  42%|████▏     | 214/512 [09:42<13:48,  2.78s/it]
+Processing samples:  42%|████▏     | 215/512 [09:45<13:45,  2.78s/it]
+Processing samples:  42%|████▏     | 216/512 [09:48<13:39,  2.77s/it]
+Processing samples:  42%|████▏     | 217/512 [09:50<13:40,  2.78s/it]
+Processing samples:  43%|████▎     | 218/512 [09:53<13:38,  2.79s/it]
+Processing samples:  43%|████▎     | 219/512 [09:56<13:33,  2.78s/it]
+Processing samples:  43%|████▎     | 220/512 [09:59<13:28,  2.77s/it]
+Processing samples:  43%|████▎     | 221/512 [10:01<13:25,  2.77s/it]
+Processing samples:  43%|████▎     | 222/512 [10:04<13:23,  2.77s/it]
+Processing samples:  44%|████▎     | 223/512 [10:07<13:18,  2.76s/it]
+Processing samples:  44%|████▍     | 224/512 [10:10<13:15,  2.76s/it]
+Processing samples:  44%|████▍     | 225/512 [10:13<13:12,  2.76s/it]
+Processing samples:  44%|████▍     | 226/512 [10:15<13:14,  2.78s/it]
+Processing samples:  44%|████▍     | 227/512 [10:18<13:10,  2.77s/it]
+Processing samples:  45%|████▍     | 228/512 [10:21<13:09,  2.78s/it]
+Processing samples:  45%|████▍     | 229/512 [10:24<13:13,  2.81s/it]
+Processing samples:  45%|████▍     | 230/512 [10:27<13:06,  2.79s/it]
+Processing samples:  45%|████▌     | 231/512 [10:29<13:03,  2.79s/it]
+Processing samples:  45%|████▌     | 232/512 [10:32<12:59,  2.78s/it]
+Processing samples:  46%|████▌     | 233/512 [10:35<12:56,  2.78s/it]
+Processing samples:  46%|████▌     | 234/512 [10:38<12:57,  2.80s/it]
+Processing samples:  46%|████▌     | 235/512 [10:40<12:51,  2.78s/it]
+Processing samples:  46%|████▌     | 236/512 [10:43<12:46,  2.78s/it]
+Processing samples:  46%|████▋     | 237/512 [10:46<12:41,  2.77s/it]
+Processing samples:  46%|████▋     | 238/512 [10:49<12:38,  2.77s/it]
+Processing samples:  47%|████▋     | 239/512 [10:52<12:39,  2.78s/it]
+Processing samples:  47%|████▋     | 240/512 [10:54<12:36,  2.78s/it]
+Processing samples:  47%|████▋     | 241/512 [10:57<12:31,  2.77s/it]
+Processing samples:  47%|████▋     | 242/512 [11:00<12:29,  2.77s/it]
+Processing samples:  47%|████▋     | 243/512 [11:03<12:26,  2.77s/it]
+Processing samples:  48%|████▊     | 244/512 [11:05<12:24,  2.78s/it]
+Processing samples:  48%|████▊     | 245/512 [11:08<12:20,  2.77s/it]
+Processing samples:  48%|████▊     | 246/512 [11:11<12:15,  2.77s/it]
+Processing samples:  48%|████▊     | 247/512 [11:14<12:13,  2.77s/it]
+Processing samples:  48%|████▊     | 248/512 [11:16<12:11,  2.77s/it]
+Processing samples:  49%|████▊     | 249/512 [11:19<12:07,  2.77s/it]
+Processing samples:  49%|████▉     | 250/512 [11:22<12:04,  2.76s/it]
+Processing samples:  49%|████▉     | 251/512 [11:25<12:03,  2.77s/it]
+Processing samples:  49%|████▉     | 252/512 [11:28<12:02,  2.78s/it]
+Processing samples:  49%|████▉     | 253/512 [11:30<12:01,  2.79s/it]
+Processing samples:  50%|████▉     | 254/512 [11:33<11:59,  2.79s/it]
+Processing samples:  50%|████▉     | 255/512 [11:36<11:55,  2.78s/it]
+Processing samples:  50%|█████     | 256/512 [11:39<11:51,  2.78s/it]
+Processing samples:  50%|█████     | 257/512 [11:41<11:50,  2.79s/it]
+Processing samples:  50%|█████     | 258/512 [11:44<11:47,  2.79s/it]
+Processing samples:  51%|█████     | 259/512 [11:47<11:43,  2.78s/it]
+Processing samples:  51%|█████     | 260/512 [11:50<11:44,  2.79s/it]
+Processing samples:  51%|█████     | 261/512 [11:53<11:43,  2.80s/it]
+Processing samples:  51%|█████     | 262/512 [11:55<11:38,  2.79s/it]
+Processing samples:  51%|█████▏    | 263/512 [11:58<11:33,  2.79s/it]
+Processing samples:  52%|█████▏    | 264/512 [12:01<11:29,  2.78s/it]
+Processing samples:  52%|█████▏    | 265/512 [12:04<11:30,  2.79s/it]
+Processing samples:  52%|█████▏    | 266/512 [12:07<11:24,  2.78s/it]
+Processing samples:  52%|█████▏    | 267/512 [12:09<11:25,  2.80s/it]
+Processing samples:  52%|█████▏    | 268/512 [12:12<11:24,  2.80s/it]
+Processing samples:  53%|█████▎    | 269/512 [12:15<11:18,  2.79s/it]
+Processing samples:  53%|█████▎    | 270/512 [12:18<11:15,  2.79s/it]
+Processing samples:  53%|█████▎    | 271/512 [12:21<11:09,  2.78s/it]
+Processing samples:  53%|█████▎    | 272/512 [12:23<11:07,  2.78s/it]
+Processing samples:  53%|█████▎    | 273/512 [12:26<11:04,  2.78s/it]
+Processing samples:  54%|█████▎    | 274/512 [12:29<11:00,  2.77s/it]
+Processing samples:  54%|█████▎    | 275/512 [12:32<10:57,  2.77s/it]
+Processing samples:  54%|█████▍    | 276/512 [12:34<10:54,  2.77s/it]
+Processing samples:  54%|█████▍    | 277/512 [12:37<10:50,  2.77s/it]
+Processing samples:  54%|█████▍    | 278/512 [12:40<10:48,  2.77s/it]
+Processing samples:  54%|█████▍    | 279/512 [12:43<10:45,  2.77s/it]
+Processing samples:  55%|█████▍    | 280/512 [12:45<10:43,  2.77s/it]
+Processing samples:  55%|█████▍    | 281/512 [12:48<10:42,  2.78s/it]
+Processing samples:  55%|█████▌    | 282/512 [12:51<10:43,  2.80s/it]
+Processing samples:  55%|█████▌    | 283/512 [12:54<10:40,  2.80s/it]
+Processing samples:  55%|█████▌    | 284/512 [12:57<10:36,  2.79s/it]
+Processing samples:  56%|█████▌    | 285/512 [12:59<10:31,  2.78s/it]
+Processing samples:  56%|█████▌    | 286/512 [13:02<10:27,  2.78s/it]
+Processing samples:  56%|█████▌    | 287/512 [13:05<10:24,  2.78s/it]
+Processing samples:  56%|█████▋    | 288/512 [13:08<10:22,  2.78s/it]
+Processing samples:  56%|█████▋    | 289/512 [13:11<10:18,  2.77s/it]
+Processing samples:  57%|█████▋    | 290/512 [13:13<10:15,  2.77s/it]
+Processing samples:  57%|█████▋    | 291/512 [13:16<10:14,  2.78s/it]
+Processing samples:  57%|█████▋    | 292/512 [13:19<10:11,  2.78s/it]
+Processing samples:  57%|█████▋    | 293/512 [13:22<10:06,  2.77s/it]
+Processing samples:  57%|█████▋    | 294/512 [13:24<10:06,  2.78s/it]
+Processing samples:  58%|█████▊    | 295/512 [13:27<10:03,  2.78s/it]
+Processing samples:  58%|█████▊    | 296/512 [13:30<10:02,  2.79s/it]
+Processing samples:  58%|█████▊    | 297/512 [13:33<09:56,  2.78s/it]
+Processing samples:  58%|█████▊    | 298/512 [13:36<09:53,  2.78s/it]
+Processing samples:  58%|█████▊    | 299/512 [13:38<09:52,  2.78s/it]
+Processing samples:  59%|█████▊    | 300/512 [13:41<09:48,  2.78s/it]
+Processing samples:  59%|█████▉    | 301/512 [13:44<09:45,  2.78s/it]
+Processing samples:  59%|█████▉    | 302/512 [13:47<09:45,  2.79s/it]
+Processing samples:  59%|█████▉    | 303/512 [13:49<09:41,  2.78s/it]
+Processing samples:  59%|█████▉    | 304/512 [13:52<09:40,  2.79s/it]
+Processing samples:  60%|█████▉    | 305/512 [13:56<10:14,  2.97s/it]
+Processing samples:  60%|█████▉    | 306/512 [13:58<09:59,  2.91s/it]
+Processing samples:  60%|█████▉    | 307/512 [14:01<09:48,  2.87s/it]
+Processing samples:  60%|██████    | 308/512 [14:04<09:39,  2.84s/it]
+Processing samples:  60%|██████    | 309/512 [14:07<09:32,  2.82s/it]
+Processing samples:  61%|██████    | 310/512 [14:10<09:27,  2.81s/it]
+Processing samples:  61%|██████    | 311/512 [14:12<09:23,  2.80s/it]
+Processing samples:  61%|██████    | 312/512 [14:15<09:20,  2.80s/it]
+Processing samples:  61%|██████    | 313/512 [14:18<09:19,  2.81s/it]
+Processing samples:  61%|██████▏   | 314/512 [14:21<09:15,  2.81s/it]
+Processing samples:  62%|██████▏   | 315/512 [14:24<09:11,  2.80s/it]
+Processing samples:  62%|██████▏   | 316/512 [14:26<09:09,  2.80s/it]
+Processing samples:  62%|██████▏   | 317/512 [14:29<09:05,  2.80s/it]
+Processing samples:  62%|██████▏   | 318/512 [14:32<09:01,  2.79s/it]
+Processing samples:  62%|██████▏   | 319/512 [14:35<08:58,  2.79s/it]
+Processing samples:  62%|██████▎   | 320/512 [14:38<08:56,  2.80s/it]
+Processing samples:  63%|██████▎   | 321/512 [14:40<08:54,  2.80s/it]
+Processing samples:  63%|██████▎   | 322/512 [14:43<08:54,  2.81s/it]
+Processing samples:  63%|██████▎   | 323/512 [14:46<08:51,  2.81s/it]
+Processing samples:  63%|██████▎   | 324/512 [14:49<08:46,  2.80s/it]
+Processing samples:  63%|██████▎   | 325/512 [14:52<08:43,  2.80s/it]
+Processing samples:  64%|██████▎   | 326/512 [14:54<08:38,  2.79s/it]
+Processing samples:  64%|██████▍   | 327/512 [14:57<08:34,  2.78s/it]
+Processing samples:  64%|██████▍   | 328/512 [15:00<08:31,  2.78s/it]
+Processing samples:  64%|██████▍   | 329/512 [15:03<08:29,  2.78s/it]
+Processing samples:  64%|██████▍   | 330/512 [15:05<08:29,  2.80s/it]
+Processing samples:  65%|██████▍   | 331/512 [15:08<08:26,  2.80s/it]
+Processing samples:  65%|██████▍   | 332/512 [15:11<08:23,  2.79s/it]
+Processing samples:  65%|██████▌   | 333/512 [15:14<08:19,  2.79s/it]
+Processing samples:  65%|██████▌   | 334/512 [15:17<08:17,  2.80s/it]
+Processing samples:  65%|██████▌   | 335/512 [15:19<08:15,  2.80s/it]
+Processing samples:  66%|██████▌   | 336/512 [15:22<08:12,  2.80s/it]
+Processing samples:  66%|██████▌   | 337/512 [15:25<08:11,  2.81s/it]
+Processing samples:  66%|██████▌   | 338/512 [15:28<08:07,  2.80s/it]
+Processing samples:  66%|██████▌   | 339/512 [15:31<08:04,  2.80s/it]
+Processing samples:  66%|██████▋   | 340/512 [15:33<08:02,  2.80s/it]
+Processing samples:  67%|██████▋   | 341/512 [15:36<08:01,  2.81s/it]
+Processing samples:  67%|██████▋   | 342/512 [15:39<07:58,  2.81s/it]
+Processing samples:  67%|██████▋   | 343/512 [15:42<07:55,  2.81s/it]
+Processing samples:  67%|██████▋   | 344/512 [15:45<07:51,  2.80s/it]
+Processing samples:  67%|██████▋   | 345/512 [15:48<07:47,  2.80s/it]
+Processing samples:  68%|██████▊   | 346/512 [15:50<07:45,  2.80s/it]
+Processing samples:  68%|██████▊   | 347/512 [15:53<07:41,  2.80s/it]
+Processing samples:  68%|██████▊   | 348/512 [15:56<07:42,  2.82s/it]
+Processing samples:  68%|██████▊   | 349/512 [15:59<07:36,  2.80s/it]
+Processing samples:  68%|██████▊   | 350/512 [16:02<07:33,  2.80s/it]
+Processing samples:  69%|██████▊   | 351/512 [16:04<07:29,  2.79s/it]
+Processing samples:  69%|██████▉   | 352/512 [16:07<07:26,  2.79s/it]
+Processing samples:  69%|██████▉   | 353/512 [16:10<07:25,  2.80s/it]
+Processing samples:  69%|██████▉   | 354/512 [16:13<07:22,  2.80s/it]
+Processing samples:  69%|██████▉   | 355/512 [16:16<07:19,  2.80s/it]
+Processing samples:  70%|██████▉   | 356/512 [16:18<07:14,  2.79s/it]
+Processing samples:  70%|██████▉   | 357/512 [16:21<07:11,  2.78s/it]
+Processing samples:  70%|██████▉   | 358/512 [16:24<07:08,  2.79s/it]
+Processing samples:  70%|███████   | 359/512 [16:27<07:07,  2.79s/it]
+Processing samples:  70%|███████   | 360/512 [16:29<07:04,  2.79s/it]
+Processing samples:  71%|███████   | 361/512 [16:32<07:00,  2.79s/it]
+Processing samples:  71%|███████   | 362/512 [16:35<06:57,  2.78s/it]
+Processing samples:  71%|███████   | 363/512 [16:38<06:54,  2.78s/it]
+Processing samples:  71%|███████   | 364/512 [16:41<06:52,  2.78s/it]
+Processing samples:  71%|███████▏  | 365/512 [16:43<06:50,  2.79s/it]
+Processing samples:  71%|███████▏  | 366/512 [16:46<06:47,  2.79s/it]
+Processing samples:  72%|███████▏  | 367/512 [16:49<06:44,  2.79s/it]
+Processing samples:  72%|███████▏  | 368/512 [16:52<06:42,  2.79s/it]
+Processing samples:  72%|███████▏  | 369/512 [16:55<06:40,  2.80s/it]
+Processing samples:  72%|███████▏  | 370/512 [16:57<06:39,  2.81s/it]
+Processing samples:  72%|███████▏  | 371/512 [17:00<06:35,  2.81s/it]
+Processing samples:  73%|███████▎  | 372/512 [17:03<06:33,  2.81s/it]
+Processing samples:  73%|███████▎  | 373/512 [17:06<06:31,  2.82s/it]
+Processing samples:  73%|███████▎  | 374/512 [17:09<06:29,  2.82s/it]
+Processing samples:  73%|███████▎  | 375/512 [17:11<06:25,  2.82s/it]
+Processing samples:  73%|███████▎  | 376/512 [17:14<06:21,  2.81s/it]
+Processing samples:  74%|███████▎  | 377/512 [17:17<06:18,  2.80s/it]
+Processing samples:  74%|███████▍  | 378/512 [17:20<06:14,  2.80s/it]
+Processing samples:  74%|███████▍  | 379/512 [17:23<06:11,  2.80s/it]
+Processing samples:  74%|███████▍  | 380/512 [17:25<06:10,  2.81s/it]
+Processing samples:  74%|███████▍  | 381/512 [17:28<06:08,  2.81s/it]
+Processing samples:  75%|███████▍  | 382/512 [17:31<06:03,  2.80s/it]
+Processing samples:  75%|███████▍  | 383/512 [17:34<06:00,  2.80s/it]
+Processing samples:  75%|███████▌  | 384/512 [17:37<05:58,  2.80s/it]
+Processing samples:  75%|███████▌  | 385/512 [17:39<05:55,  2.80s/it]
+Processing samples:  75%|███████▌  | 386/512 [17:42<05:52,  2.80s/it]
+Processing samples:  76%|███████▌  | 387/512 [17:45<05:55,  2.85s/it]
+Processing samples:  76%|███████▌  | 388/512 [17:48<05:51,  2.83s/it]
+Processing samples:  76%|███████▌  | 389/512 [17:51<05:46,  2.82s/it]
+Processing samples:  76%|███████▌  | 390/512 [17:54<05:42,  2.81s/it]
+Processing samples:  76%|███████▋  | 391/512 [17:56<05:38,  2.79s/it]
+Processing samples:  77%|███████▋  | 392/512 [17:59<05:35,  2.80s/it]
+Processing samples:  77%|███████▋  | 393/512 [18:02<05:32,  2.79s/it]
+Processing samples:  77%|███████▋  | 394/512 [18:05<05:28,  2.79s/it]
+Processing samples:  77%|███████▋  | 395/512 [18:08<05:27,  2.80s/it]
+Processing samples:  77%|███████▋  | 396/512 [18:10<05:25,  2.80s/it]
+Processing samples:  78%|███████▊  | 397/512 [18:13<05:22,  2.80s/it]
+Processing samples:  78%|███████▊  | 398/512 [18:16<05:19,  2.80s/it]
+Processing samples:  78%|███████▊  | 399/512 [18:19<05:15,  2.79s/it]
+Processing samples:  78%|███████▊  | 400/512 [18:22<05:13,  2.79s/it]
+Processing samples:  78%|███████▊  | 401/512 [18:24<05:10,  2.80s/it]
+Processing samples:  79%|███████▊  | 402/512 [18:27<05:08,  2.80s/it]
+Processing samples:  79%|███████▊  | 403/512 [18:30<05:05,  2.80s/it]
+Processing samples:  79%|███████▉  | 404/512 [18:33<05:02,  2.80s/it]
+Processing samples:  79%|███████▉  | 405/512 [18:36<04:59,  2.80s/it]
+Processing samples:  79%|███████▉  | 406/512 [18:38<04:56,  2.79s/it]
+Processing samples:  79%|███████▉  | 407/512 [18:41<04:53,  2.79s/it]
+Processing samples:  80%|███████▉  | 408/512 [18:44<04:51,  2.80s/it]
+Processing samples:  80%|███████▉  | 409/512 [18:47<04:48,  2.80s/it]
+Processing samples:  80%|████████  | 410/512 [18:50<04:46,  2.81s/it]
+Processing samples:  80%|████████  | 411/512 [18:52<04:43,  2.81s/it]
+Processing samples:  80%|████████  | 412/512 [18:55<04:40,  2.81s/it]
+Processing samples:  81%|████████  | 413/512 [18:58<04:38,  2.81s/it]
+Processing samples:  81%|████████  | 414/512 [19:01<04:35,  2.81s/it]
+Processing samples:  81%|████████  | 415/512 [19:04<04:31,  2.80s/it]
+Processing samples:  81%|████████▏ | 416/512 [19:06<04:29,  2.81s/it]
+Processing samples:  81%|████████▏ | 417/512 [19:09<04:26,  2.81s/it]
+Processing samples:  82%|████████▏ | 418/512 [19:12<04:24,  2.81s/it]
+Processing samples:  82%|████████▏ | 419/512 [19:15<04:21,  2.81s/it]
+Processing samples:  82%|████████▏ | 420/512 [19:18<04:17,  2.80s/it]
+Processing samples:  82%|████████▏ | 421/512 [19:20<04:15,  2.81s/it]
+Processing samples:  82%|████████▏ | 422/512 [19:23<04:11,  2.80s/it]
+Processing samples:  83%|████████▎ | 423/512 [19:26<04:09,  2.81s/it]
+Processing samples:  83%|████████▎ | 424/512 [19:29<04:05,  2.79s/it]
+Processing samples:  83%|████████▎ | 425/512 [19:32<04:03,  2.80s/it]
+Processing samples:  83%|████████▎ | 426/512 [19:34<04:00,  2.79s/it]
+Processing samples:  83%|████████▎ | 427/512 [19:37<03:57,  2.79s/it]
+Processing samples:  84%|████████▎ | 428/512 [19:40<03:54,  2.79s/it]
+Processing samples:  84%|████████▍ | 429/512 [19:43<03:55,  2.83s/it]
+Processing samples:  84%|████████▍ | 430/512 [19:46<03:51,  2.82s/it]
+Processing samples:  84%|████████▍ | 431/512 [19:48<03:47,  2.81s/it]
+Processing samples:  84%|████████▍ | 432/512 [19:51<03:44,  2.81s/it]
+Processing samples:  85%|████████▍ | 433/512 [19:54<03:41,  2.80s/it]
+Processing samples:  85%|████████▍ | 434/512 [19:57<03:38,  2.80s/it]
+Processing samples:  85%|████████▍ | 435/512 [20:00<03:36,  2.81s/it]
+Processing samples:  85%|████████▌ | 436/512 [20:03<03:33,  2.81s/it]
+Processing samples:  85%|████████▌ | 437/512 [20:05<03:30,  2.80s/it]
+Processing samples:  86%|████████▌ | 438/512 [20:08<03:27,  2.80s/it]
+Processing samples:  86%|████████▌ | 439/512 [20:11<03:24,  2.80s/it]
+Processing samples:  86%|████████▌ | 440/512 [20:14<03:21,  2.80s/it]
+Processing samples:  86%|████████▌ | 441/512 [20:16<03:18,  2.79s/it]
+Processing samples:  86%|████████▋ | 442/512 [20:19<03:15,  2.80s/it]
+Processing samples:  87%|████████▋ | 443/512 [20:22<03:13,  2.80s/it]
+Processing samples:  87%|████████▋ | 444/512 [20:25<03:10,  2.80s/it]
+Processing samples:  87%|████████▋ | 445/512 [20:28<03:07,  2.80s/it]
+Processing samples:  87%|████████▋ | 446/512 [20:31<03:04,  2.80s/it]
+Processing samples:  87%|████████▋ | 447/512 [20:33<03:01,  2.80s/it]
+Processing samples:  88%|████████▊ | 448/512 [20:36<02:58,  2.79s/it]
+Processing samples:  88%|████████▊ | 449/512 [20:39<02:55,  2.79s/it]
+Processing samples:  88%|████████▊ | 450/512 [20:42<02:53,  2.79s/it]
+Processing samples:  88%|████████▊ | 451/512 [20:44<02:50,  2.79s/it]
+Processing samples:  88%|████████▊ | 452/512 [20:47<02:47,  2.79s/it]
+Processing samples:  88%|████████▊ | 453/512 [20:50<02:45,  2.80s/it]
+Processing samples:  89%|████████▊ | 454/512 [20:53<02:43,  2.82s/it]
+Processing samples:  89%|████████▉ | 455/512 [20:56<02:40,  2.82s/it]
+Processing samples:  89%|████████▉ | 456/512 [20:59<02:37,  2.82s/it]
+Processing samples:  89%|████████▉ | 457/512 [21:01<02:34,  2.82s/it]
+Processing samples:  89%|████████▉ | 458/512 [21:04<02:31,  2.80s/it]
+Processing samples:  90%|████████▉ | 459/512 [21:07<02:28,  2.81s/it]
+Processing samples:  90%|████████▉ | 460/512 [21:10<02:25,  2.80s/it]
+Processing samples:  90%|█████████ | 461/512 [21:13<02:22,  2.80s/it]
+Processing samples:  90%|█████████ | 462/512 [21:15<02:19,  2.79s/it]
+Processing samples:  90%|█████████ | 463/512 [21:18<02:17,  2.80s/it]
+Processing samples:  91%|█████████ | 464/512 [21:21<02:14,  2.80s/it]
+Processing samples:  91%|█████████ | 465/512 [21:24<02:11,  2.79s/it]
+Processing samples:  91%|█████████ | 466/512 [21:26<02:08,  2.79s/it]
+Processing samples:  91%|█████████ | 467/512 [21:29<02:05,  2.79s/it]
+Processing samples:  91%|█████████▏| 468/512 [21:32<02:02,  2.78s/it]
+Processing samples:  92%|█████████▏| 469/512 [21:35<01:59,  2.78s/it]
+Processing samples:  92%|█████████▏| 470/512 [21:38<01:57,  2.79s/it]
+Processing samples:  92%|█████████▏| 471/512 [21:40<01:54,  2.79s/it]
+Processing samples:  92%|█████████▏| 472/512 [21:43<01:51,  2.79s/it]
+Processing samples:  92%|█████████▏| 473/512 [21:46<01:49,  2.80s/it]
+Processing samples:  93%|█████████▎| 474/512 [21:49<01:46,  2.80s/it]
+Processing samples:  93%|█████████▎| 475/512 [21:52<01:43,  2.81s/it]
+Processing samples:  93%|█████████▎| 476/512 [21:54<01:40,  2.80s/it]
+Processing samples:  93%|█████████▎| 477/512 [21:57<01:37,  2.79s/it]
+Processing samples:  93%|█████████▎| 478/512 [22:00<01:34,  2.79s/it]
+Processing samples:  94%|█████████▎| 479/512 [22:03<01:32,  2.80s/it]
+Processing samples:  94%|█████████▍| 480/512 [22:06<01:29,  2.80s/it]
+Processing samples:  94%|█████████▍| 481/512 [22:08<01:27,  2.81s/it]
+Processing samples:  94%|█████████▍| 482/512 [22:11<01:25,  2.84s/it]
+Processing samples:  94%|█████████▍| 483/512 [22:14<01:21,  2.82s/it]
+Processing samples:  95%|█████████▍| 484/512 [22:17<01:18,  2.81s/it]
+Processing samples:  95%|█████████▍| 485/512 [22:20<01:15,  2.80s/it]
+Processing samples:  95%|█████████▍| 486/512 [22:22<01:12,  2.80s/it]
+Processing samples:  95%|█████████▌| 487/512 [22:25<01:10,  2.81s/it]
+Processing samples:  95%|█████████▌| 488/512 [22:28<01:07,  2.81s/it]
+Processing samples:  96%|█████████▌| 489/512 [22:31<01:04,  2.80s/it]
+Processing samples:  96%|█████████▌| 490/512 [22:34<01:01,  2.80s/it]
+Processing samples:  96%|█████████▌| 491/512 [22:36<00:58,  2.80s/it]
+Processing samples:  96%|█████████▌| 492/512 [22:39<00:55,  2.80s/it]
+Processing samples:  96%|█████████▋| 493/512 [22:42<00:53,  2.80s/it]
+Processing samples:  96%|█████████▋| 494/512 [22:45<00:50,  2.79s/it]
+Processing samples:  97%|█████████▋| 495/512 [22:48<00:47,  2.79s/it]
+Processing samples:  97%|█████████▋| 496/512 [22:50<00:44,  2.79s/it]
+Processing samples:  97%|█████████▋| 497/512 [22:53<00:41,  2.79s/it]
+Processing samples:  97%|█████████▋| 498/512 [22:56<00:38,  2.78s/it]
+Processing samples:  97%|█████████▋| 499/512 [22:59<00:36,  2.78s/it]
+Processing samples:  98%|█████████▊| 500/512 [23:02<00:33,  2.78s/it]
+Processing samples:  98%|█████████▊| 501/512 [23:04<00:30,  2.79s/it]
+Processing samples:  98%|█████████▊| 502/512 [23:07<00:27,  2.79s/it]
+Processing samples:  98%|█████████▊| 503/512 [23:10<00:25,  2.79s/it]
+Processing samples:  98%|█████████▊| 504/512 [23:13<00:22,  2.84s/it]
+Processing samples:  99%|█████████▊| 505/512 [23:16<00:19,  2.82s/it]
+Processing samples:  99%|█████████▉| 506/512 [23:18<00:16,  2.81s/it]
+Processing samples:  99%|█████████▉| 507/512 [23:21<00:14,  2.80s/it]
+Processing samples:  99%|█████████▉| 508/512 [23:24<00:11,  2.80s/it]
+Processing samples:  99%|█████████▉| 509/512 [23:27<00:08,  2.80s/it]
+Processing samples: 100%|█████████▉| 510/512 [23:30<00:05,  2.80s/it]
+Processing samples: 100%|█████████▉| 511/512 [23:32<00:02,  2.80s/it]
+Processing samples: 100%|██████████| 512/512 [23:35<00:00,  2.80s/it]
+Processing samples: 100%|██████████| 512/512 [23:35<00:00,  2.77s/it]
+2026-10-27 19:02:00 - INFO - Inference completed successfully
+🎯 Results:
+   ✅ Inference completed successfully
+   🔢 Samples processed: 512
+   ⏱️  Inference time: 1415.73s
+   ⚡ Throughput: 0.36 samples/sec
+
+================================================================================
+🔧 VOLUME RECONSTRUCTION
+================================================================================
+2026-10-27 19:02:00 - INFO - Reconstructing backbone_probability from 512 grids
+2026-10-27 19:02:03 - INFO - Reconstructing carbon_alpha_probability from 512 grids
+2026-10-27 19:02:06 - INFO - Reconstructing amino_acid_prediction from 512 grids
+2026-10-27 19:02:10 - INFO - Reconstructing amino_acid_probability from 512 grids
+🎯 Results:
+   ✅ Reconstruction completed successfully
+   🗺️  Volumes created: 4/4
+   ⏱️  Reconstruction time: 46.98s
+
+================================================================================
+📊 DEEP LEARNING PREDICTION SUMMARY
+================================================================================
+🎯 Overall Results:
+   ✅ Pipeline completed successfully
+   📊 Processing strategy: Single sample
+   🔢 Total samples: 512
+   ⏱️  Total time: 1481.51s
+⚡ Performance:
+   📈 Throughput: 0.36 samples/sec
+   ⏱️  Average per sample: 2.765s
+
+================================================================================
+🚀 DEEP LEARNING PREDICTION COMPLETE
+================================================================================
+2026-10-27 19:02:47 - INFO - ✓ Deep Learning predictions completed...
+2026-10-27 19:02:47 - INFO -    📊 Amino acid prediction shape: (346, 346, 346)
+2026-10-27 19:02:47 - INFO -    📊 Amino acid probability shape: (20, 346, 346, 346)
+2026-10-27 19:02:47 - INFO -    📊 Backbone probability shape: (346, 346, 346)
+2026-10-27 19:02:47 - INFO -    📊 CA probability shape: (346, 346, 346)
+2026-10-27 19:02:47 - INFO - Deleting all grids, normalized density map and AF3 encodings for disk space saving...
+2026-10-27 19:02:48 - INFO - ✓ Deleted all grids, normalized density map and AF3 encodings for disk space saving...
+2026-10-27 19:02:48 - INFO - ✓ Deep Learning prediction completed in 1482.33 seconds
+
+================================================================================
+🔗 CLUSTERING CANDIDATES
+================================================================================
+2026-10-27 19:02:48 - INFO - Starting candidate clustering...
+2026-10-27 19:02:48 - INFO - Starting clustering with eps=10, min_points=10
+2026-10-27 19:02:48 - INFO - CA score threshold: 0.3
+2026-10-27 19:02:58 - INFO - Initial point cloud size: 109634
+2026-10-27 19:02:58 - INFO - Number of clusters found: 1
+2026-10-27 19:02:58 - INFO - Valid clusters selected: 109634 points from 109634
+2026-10-27 19:02:59 - INFO - Processing 109634 candidate positions...
+2026-10-27 19:03:06 - INFO - Final CA candidates: 4447
+2026-10-27 19:03:09 - INFO - Building neighbor lists...
+2026-10-27 19:03:10 - INFO - Computing neighbor scoring matrix...
+2026-10-27 19:03:11 - INFO - ✓ Clustering completed - 4447 candidates with neighbors
+2026-10-27 19:03:11 - INFO - ✓ Clustering completed in 23.32 seconds
+================================================================================
+🧩 GENERATING INITIAL FRAGMENTS
+================================================================================
+2026-10-27 19:03:11 - INFO - Starting fragment modeling...
+2026-10-27 19:03:11 - INFO - Starting fragment modeling with protocol: AF3_struct
+2026-10-27 19:03:11 - INFO - CA candidates shape: (4447, 3)
+2026-10-27 19:03:11 - INFO - Neighbors 2to6 length: 4447
+2026-10-27 19:03:11 - INFO - Neighbor matrix shape: (4447, 4447)
+2026-10-27 19:03:11 - INFO - Initial edge list: 15519 edges
+2026-10-27 19:03:12 - INFO - Initial fragments generated: 369
+2026-10-27 19:03:12 - INFO - Reducing fragments from 369 to 30
+2026-10-27 19:03:56 - INFO - Final fragment count: 30
+2026-10-27 19:03:56 - INFO - ✓ Fragment modeling completed in 44.65 seconds
+================================================================================
+🔗 Cα-SEQUENCE ALIGNMENT
+================================================================================
+2026-10-27 19:03:56 - INFO - Sequence candidate AA matrix shape: (1, 1271, 4447)
+2026-10-27 19:03:56 - INFO - CA candidates AA probability shape: (20, 4447)
+2026-10-27 19:04:00 - INFO - Starting Cα-sequence alignment with AF3 structure...
+2026-10-27 19:04:00 - INFO - Starting Cα-sequence alignment with AF3 structures...
+2026-10-27 19:04:00 - INFO - Starting sequence register scoring...
+2026-10-27 19:04:00 - INFO - Starting Cα-sequence scoring...
+2026-10-27 19:04:00 - INFO - Computing N-hop matrix with n_hop=6
+2026-10-27 19:04:04 - INFO - ✓ N-hop matrix computation completed
+2026-10-27 19:04:04 - INFO - Generating local traces...
+2026-10-27 19:04:05 - INFO - Generated 11904 local traces
+2026-10-27 19:37:01 - INFO - ✓ Cα-sequence scoring completed
+2026-10-27 19:37:06 - INFO - Computing register scores for 13BD_1...
+2026-10-27 19:38:32 - INFO - Register score for 13BD_1: 311.29
+2026-10-27 19:38:32 - INFO - Processing sequences in order of register scores: [311.28668]
+2026-10-27 19:38:32 - INFO - Processing sequence 13BD_1 with 1271 residues, 2 chains
+2026-10-27 19:41:25 - INFO - AF3 matching results: 1138 matches, total score: 181666.67
+2026-10-27 19:41:26 - INFO - ✓ AF3 structure-based alignment completed in 2246.41 seconds
+================================================================================
+🏗️  BUILDING INITIAL MODEL
+================================================================================
+2026-10-27 19:41:26 - INFO - Starting initial modeling...
+2026-10-27 19:41:26 - INFO - Starting initial model building with 1 aligned fragments
+2026-10-27 19:41:26 - INFO - Processing 1271 traces for sequence 13BD_1
+2026-10-27 19:41:26 - INFO - Chain list: ['A', 'B']
+2026-10-27 19:41:26 - INFO - Saving initial model: output/76936_13bd_MICA(init)_ca_model.pdb
+2026-10-27 19:41:26 - INFO - ✓ Initial model building completed in 0.31 seconds
+================================================================================
+🧵 RUNNING GAP FILLING
+================================================================================
+2026-10-27 19:41:26 - INFO - Starting gap filling...
+2026-10-27 19:41:26 - INFO - Starting gap filling process...
+2026-10-27 19:41:39 - INFO - Processing gap 1/34: positions 298->308
+2026-10-27 19:41:40 - INFO - Processing gap 2/34: positions 564->574
+2026-10-27 19:41:41 - INFO - Processing gap 3/34: positions 135->145
+2026-10-27 19:41:41 - INFO - Processing gap 4/34: positions 1010->1020
+2026-10-27 19:41:42 - INFO - Processing gap 5/34: positions 912->925
+2026-10-27 19:41:44 - INFO - Processing gap 6/34: positions 615->629
+2026-10-27 19:41:45 - INFO - Processing gap 7/34: positions 1021->1035
+2026-10-27 19:41:47 - INFO - Processing gap 8/34: positions 496->510
+2026-10-27 19:41:47 - INFO - Processing gap 9/34: positions 513->527
+2026-10-27 19:41:49 - INFO - Processing gap 10/34: positions 451->466
+2026-10-27 19:41:49 - INFO - Processing gap 11/34: positions 597->606
+2026-10-27 19:41:49 - INFO - Processing gap 12/34: positions 421->438
+2026-10-27 19:41:51 - INFO - Processing gap 13/34: positions 687->697
+2026-10-27 19:41:52 - INFO - Processing gap 14/34: positions 687->697
+2026-10-27 19:41:53 - INFO - Processing gap 15/34: positions 777->790
+2026-10-27 19:41:54 - INFO - Processing gap 16/34: positions 598->616
+2026-10-27 19:41:58 - INFO - Processing gap 17/34: positions 891->905
+2026-10-27 19:42:00 - INFO - Processing gap 18/34: positions 888->904
+2026-10-27 19:42:04 - INFO - Processing gap 19/34: positions 348->363
+2026-10-27 19:42:04 - INFO - Processing gap 20/34: positions 345->363
+2026-10-27 19:42:06 - INFO - Processing gap 21/34: positions 62->80
+2026-10-27 19:42:08 - INFO - Processing gap 22/34: positions 155->177
+2026-10-27 19:42:10 - INFO - Processing gap 23/34: positions 653->676
+2026-10-27 19:42:12 - INFO - Processing gap 24/34: positions 152->178
+2026-10-27 19:42:12 - INFO - Processing gap 25/34: positions 63->94
+2026-10-27 19:42:18 - INFO - Processing gap 26/34: positions 224->248
+2026-10-27 19:42:20 - INFO - Processing gap 27/34: positions 648->677
+2026-10-27 19:42:25 - INFO - Processing gap 28/34: positions 220->249
+2026-10-27 19:42:31 - INFO - Processing gap 29/34: positions -1->30
+2026-10-27 19:42:33 - INFO - Processing gap 30/34: positions -1->31
+2026-10-27 19:42:39 - INFO - Processing gap 31/34: positions 805->842
+2026-10-27 19:42:43 - INFO - Processing gap 32/34: positions 774->842
+2026-10-27 19:43:03 - INFO - Processing gap 33/34: positions 1053->1271
+2026-10-27 19:45:29 - INFO - Processing gap 34/34: positions 1046->1271
+2026-10-27 19:47:41 - INFO - Saving gap filled model: output/76936_13bd_MICA_ca_model.pdb
+2026-10-27 19:47:41 - INFO - ✓ Gap filling completed in 374.56 seconds
+================================================================================
+🔧 RUNNING PULCHRA
+================================================================================
+2026-10-27 19:47:41 - INFO - Starting Pulchra reconstruction...
+2026-10-27 19:47:41 - INFO - Starting Pulchra processing for PDB file: output/76936_13bd_MICA_ca_model.pdb
+2026-10-27 19:47:41 - INFO - Splitting PDB file by chains...
+2026-10-27 19:47:41 - INFO - Running Pulchra reconstruction on chain fragments...
+2026-10-27 19:47:49 - INFO - Combining rebuilt chains into all-atom model...
+2026-10-27 19:47:49 - INFO - ✓ Pulchra processing completed. All-atom model saved: output/76936_13bd_MICA_all_atom_model.pdb
+2026-10-27 19:47:49 - INFO - ✓ Pulchra completed in 8.45 seconds
+================================================================================
+⚡ RUNNING PHENIX REFINEMENT
+================================================================================
+2026-10-27 19:47:49 - INFO - Starting Phenix refinement...
+2026-10-27 19:47:49 - INFO - Executing Phenix command: bash modules/phenix.sh /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh /tmp/mica_pilot/MICA/output "phenix.real_space_refine /tmp/mica_pilot/MICA/output/76936_13bd_MICA_all_atom_model.pdb /tmp/mica_pilot/MICA/input/13BD/emd_76936.map /tmp/mica_pilot/MICA/modules/phenix.eff resolution=2.65"
+2026-10-27 19:47:50 - INFO - ✓ Phenix refinement completed in 0.28 seconds
+2026-10-27 19:47:50 - INFO - Recording timing information: output/time_cost_76936_13bd_MICA.csv
+================================================================================
+🎉 MICA PIPELINE COMPLETED SUCCESSFULLY
+================================================================================
+📊 Total processing time: 4313.36 seconds
+📁 Final model saved: output/76936_13bd_MICA_all_atom_model.pdb
+

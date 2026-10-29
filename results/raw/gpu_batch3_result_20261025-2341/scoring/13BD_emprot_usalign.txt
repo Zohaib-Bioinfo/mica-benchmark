@@ -1,0 +1,27 @@
+# USalign /tmp/mica_pilot/runs/emprot/13BD/output.cif /kaggle/working/pilot/native/13BD.cif -mol protein
+
+ ********************************************************************
+ * US-align (Version 20261012)                                      *
+ * Universal Structure Alignment of Proteins and Nucleic Acids      *
+ * Reference: C Zhang, L Freddolino, Y Zhang. (2026) Nat Protoc     *
+ *            C Zhang, M Shine, AM Pyle, Y Zhang. (2022) Nat Methods*
+ *            C Zhang, AM Pyle (2022) iScience.                     *
+ * Please email comments and suggestions to zhanglab@zhanggroup.org *
+ ********************************************************************
+
+Name of Structure_1: /tmp/mica_pilot/runs/emprot/13BD/output.cif:A (to be superimposed onto Structure_2)
+Name of Structure_2: /kaggle/working/pilot/native/13BD.cif:C
+Length of Structure_1: 623 residues
+Length of Structure_2: 232 residues
+
+Aligned length= 119, RMSD=   6.39, Seq_ID=n_identical/n_aligned= 0.067
+TM-score= 0.13389 (normalized by length of Structure_1: L=623, d0=8.70)
+TM-score= 0.27468 (normalized by length of Structure_2: L=232, d0=5.65)
+(You should use TM-score normalized by length of the reference structure)
+
+(":" denotes residue pairs of d < 5.0 Angstrom, "." denotes other aligned residues)
+IT-------------------------------------------NLCPFYEVFNATRFPSVYAWNRKRISNCVADYSVLYNF-AP-----FFTFKCY-GVSPTK-----------LND---------------LC-FT--NVYADSFVIKGNEVSQIAPGQTGNIADY--------------NYKLPDDFTGCVI-S-WNSNRLDSKADGNY-------------NYWYRLFRKSKL-KPFERDISTEIYQAGNNP-CNGVKGFNCYFPLQSYSFRPTYGVGYQPYRVVVLSFELLHAPATVCGPKQSTNLVKNKCVNFNFNGLTGTGVLTDSNKKFLPFQQFGRDIADTTDAVRAENLVAYSNNSIAIPTNFTISVTTEILPVSMTKTSVDCTMYICGDSTECSNLLLQYGSFCTQLKRALTGIAVEQDKNTQEVFAQVKQIYKTPPITYFGGFNFSQILPDPSKPSKRSPIEDLLFNKVTLADAGFIKQYGDCLGDIAARDLICKQKFNGLTVLPPLLTDEMIAQYTSALLAGTITSGWTFGAGPALQIPFPMQMAYRFNGIGVTQNVLYENQKLIANQFNSAIGKIQDSLFSTPSALGKLQDVVNHNAQALNTLVKQLSSKFGAISSVLNDILSRLDPPEAEVQIDRLITGRLQSLQTYVTQQLIRAAEIRASANLAATKMSECVLGQSKRVDFCGKGYHLMSFPQSAPHGVVFLHVTYVPAQEKNFTT---
+                                             .:...::  :::.....  ::::::::. :.:. :... .:     ::::..  .:::.            ..                .  ..  ..:::.:.::::.:.::..                       ..::.  . ...  . .:::..                     .::::::::::. .......:::..       ..::...:..                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+--PLAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHVISGFDNP--VLPFNDGV--YFASIEKSN-ITRG-WIFGTTLDSKTQSLLIVN-NATNVV-IKVCEFQFNNKSR-VYSSAKNCTFEYVFQP-FLGNFTNLREFVFKNIDGYFKIYS---------KHTPIIVRDLPQGFSALEP--L-VDL-PIGINITRF--------QTLLHGAAAYYVGYLQPRTFLLKYNENGTITDAVDCAL------DPLSETKCTLK---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------SFT
+
+#Total CPU time is  0.24 seconds

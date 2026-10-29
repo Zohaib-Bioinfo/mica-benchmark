@@ -1,0 +1,27 @@
+# USalign /tmp/mica_pilot/MICA/output/66226_9wtx_MICA_all_atom_model.pdb /kaggle/working/pilot/native/9WTX.cif -mol protein
+
+ ********************************************************************
+ * US-align (Version 20261012)                                      *
+ * Universal Structure Alignment of Proteins and Nucleic Acids      *
+ * Reference: C Zhang, L Freddolino, Y Zhang. (2026) Nat Protoc     *
+ *            C Zhang, M Shine, AM Pyle, Y Zhang. (2022) Nat Methods*
+ *            C Zhang, AM Pyle (2022) iScience.                     *
+ * Please email comments and suggestions to zhanglab@zhanggroup.org *
+ ********************************************************************
+
+Name of Structure_1: /tmp/mica_pilot/MICA/output/66226_9wtx_MICA_all_atom_model.pdb:A (to be superimposed onto Structure_2)
+Name of Structure_2: /kaggle/working/pilot/native/9WTX.cif:A
+Length of Structure_1: 525 residues
+Length of Structure_2: 500 residues
+
+Aligned length= 477, RMSD=   1.44, Seq_ID=n_identical/n_aligned= 0.990
+TM-score= 0.88643 (normalized by length of Structure_1: L=525, d0=8.11)
+TM-score= 0.92994 (normalized by length of Structure_2: L=500, d0=7.94)
+(You should use TM-score normalized by length of the reference structure)
+
+(":" denotes residue pairs of d < 5.0 Angstrom, "." denotes other aligned residues)
+MRDYDEVIAFL-----------GEWGPFQRLIFFLLSASIIPNGFNGMSVVFLAGTPEHRCRVPDAANLSSAWRNNSVPLRLRDGREVPHSCSRYRLATIANFSALG--EPGRDVDLGQLEQESCLDGWEFSQDVYLSTVVTEWNLVCEDNWKVPLTTSLFFVGVLLGSFVSGQLSDRFGRKNVLFATMAVQTGFSFLQIFSISWEMFTVLFVIVGMGQISNYVVAFILGTEILGKSVRIIFSTLGVCTFFAVGYMLLPLFAYFIRDWRMLLLALTVPGVLCVPLWWFIPESPRWLISQRRFREAEDIIQKAAKMNNKQQKAFILDLFR---------TRNIAIMTIMSLLLWMLTSVGYFALSLDAPNLHGDAYLNCFLSALIEIPAYITA-LLLRTLPRRYIIAAVLFWGGGVLLFIQLVPVDYYFLSIGLVMLGKFGITSAFSMLYVFTAELYPTLVRNMAVGVTSTASRVGSIIAPYFVYLGAYNRMLPYIVMGSLTVLIGILTLFFPESLGMTLPETLEQMQKFRSGKKTRDSMETEENPKVL
+                      ...::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  ::::: :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.                     :::::::::::::::::::::::::::::::::::::::::::::::::::::: :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::..:.                        
+-----------MRDYDEVIAFLGEWGPFQRLIFFLLSASIIPNGFNGMSVVFLAGTPEHRCRVPDAANLSSAWRNNSVPLRLRDGREVPHSCSRYRLATIANFSALGLEPGRDV-DLGQLEQESCLDGWEFSQDVYLSTVVTEWNLVCEDNWKVPLTTSLFFVGVLLGSFVSGQLSDRFGRKNVLFATMAVQTGFSFLQIFSISWEMFTVLFVIVGMGQISNYVVAFILGTEILGKSVRIIFSTLGVCTFFAVGYMLLPLFAYFIRDWRMLLLALTVPGVLCVPLWWFIPESPRWLISQRRFREAEDIIQKAAKMNN------------IAVPAVIFDTRNIAIMTIMSLLLWMLTSVGYFALSLDAPNLHGDAYLNCFLSALIEIPAYITAWLLLRTLPRRYIIAAVLFWGGGVLLFIQLVPVDYYFLSIGLVMLGKFGITSAFSMLYVFTAELYPTLVRNMAVGVTSTASRVGSIIAPYFVYLGAYNRMLPYIVMGSLTVLIGILTLFFPESLGMTLPETLE------------------------
+
+#Total CPU time is  0.99 seconds

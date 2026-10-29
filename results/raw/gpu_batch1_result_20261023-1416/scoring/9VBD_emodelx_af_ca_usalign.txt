@@ -1,0 +1,27 @@
+# USalign /tmp/mica_pilot/runs/emodelx/9VBD/out/9vbd_EModelX(+AF)_ca_model.pdb /kaggle/working/pilot/native/9VBD.cif -mol protein
+
+ ********************************************************************
+ * US-align (Version 20261012)                                      *
+ * Universal Structure Alignment of Proteins and Nucleic Acids      *
+ * Reference: C Zhang, L Freddolino, Y Zhang. (2026) Nat Protoc     *
+ *            C Zhang, M Shine, AM Pyle, Y Zhang. (2022) Nat Methods*
+ *            C Zhang, AM Pyle (2022) iScience.                     *
+ * Please email comments and suggestions to zhanglab@zhanggroup.org *
+ ********************************************************************
+
+Name of Structure_1: /tmp/mica_pilot/runs/emodelx/9VBD/out/9vbd_EModelX(+AF)_ca_model.pdb:A (to be superimposed onto Structure_2)
+Name of Structure_2: /kaggle/working/pilot/native/9VBD.cif:A
+Length of Structure_1: 524 residues
+Length of Structure_2: 521 residues
+
+Aligned length= 520, RMSD=   0.96, Seq_ID=n_identical/n_aligned= 0.992
+TM-score= 0.97979 (normalized by length of Structure_1: L=524, d0=8.10)
+TM-score= 0.98538 (normalized by length of Structure_2: L=521, d0=8.08)
+(You should use TM-score normalized by length of the reference structure)
+
+(":" denotes residue pairs of d < 5.0 Angstrom, "." denotes other aligned residues)
+LTNGLDASALNALKSEWTTPPDGWEGSDPCGTNWVGITCQNDRVVSISLGNLDLEGKLPADISFLSELRILDLSYNPKLSGPLPPNIGNLGKLRNLILVGCSFSGQIPESIGTLKELIYLSLNLNKFSGTIPPSIGLLSKLYWFDIADNQIEGELPVSNG-TAPGLDMLLQTKHFHFGKNKLSGNIPKELFSSNMSLIHVLFDGNQFTGEIPETLSLVKTLTVLRLDRNKLIGDIPSYLNNLTNLNELYLANNRFTGTLPNLTSLTSLYTLDVSNNTLDFSPIPSWISSLPSLSTLRMEGIQLNGPIPISFFSPPQLQTVILKRNSIVESLDFGTDVSSQLEFVDLQYNEITDYKPSANKVLQVILANNPVCLEAGNGPSYCSAIQHNTSFSTLPTNCSPCEPGMEASPTCRCAYPFMGTLYFRSPSFSGLFNSTNFSILQKAIADFFKKFNYPVDSVGVRNIRENPTDHQLLIDLLVFPLGRESFNQTGMSLVGFAFSNQTYKPPPIFGPYIFKADLYKQFSGS
+  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: : :.:
+--NGLDASALNALKSEWTTPPDGWEGSDPCGTNWVGITCQNDRVVSISLGNLDLEGKLPADISFLSELRILDLSYNPKLSGPLPPNIGNLGKLRNLILVGCSFSGQIPESIGTLKELIYLSLNLNKFSGTIPPSIGLLSKLYWFDIADNQIEGELPVSNGTSAPGLDMLLQTKHFHFGKNKLSGNIPKELFSSNMSLIHVLFDGNQFTGEIPETLSLVKTLTVLRLDRNKLIGDIPSYLNNLTNLNELYLANNRFTGTLPNLTSLTSLYTLDVSNNTLDFSPIPSWISSLPSLSTLRMEGIQLNGPIPISFFSPPQLQTVILKRNSIVESLDFGTDVSSQLEFVDLQYNEITDYKPSANKVLQVILANNPVCLEAGNGPSYCSAIQHNTSFSTLPTNCSPCEPGMEASPTCRCAYPFMGTLYFRSPSFSGLFNSTNFSILQKAIADFFKKFNYPVDSVGVRNIRENPTDHQLLIDLLVFPLGRESFNQTGMSLVGFAFSNQTYKPPPIFGPYIFKADLY-K-QFS
+
+#Total CPU time is  0.60 seconds

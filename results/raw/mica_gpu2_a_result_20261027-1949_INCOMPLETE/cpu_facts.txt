@@ -1,0 +1,7 @@
+os.cpu_count: 4
+multiprocessing.cpu_count: 4
+usable (sched_getaffinity): 4
+nproc: 4
+cgroup v2 cpu.max: 400000 100000
+cgroup v1 quota: cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory
+MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48): 2

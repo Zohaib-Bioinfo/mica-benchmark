@@ -1,0 +1,396 @@
+{
+ "ok": true,
+ "problem": "",
+ "t0": 1793011459.5657685,
+ "started": "2026-10-26T10:44:19.565772+00:00",
+ "phenix_env": "/tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh",
+ "phenix_version": "------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1",
+ "installer_sha256": "e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885",
+ "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+ "usalign_version": "* US-align (Version 20261012)                                      *",
+ "weights": {},
+ "env": {
+  "python_version": "3.8.20",
+  "uv_version": "0.13.1",
+  "packages": 171,
+  "differences_to_pinned_list": []
+ },
+ "entries": {
+  "9OC0": {
+   "entry": "9OC0",
+   "status": "docked",
+   "failed_step": "",
+   "note": "stages [1, 2] finished; program 3 is for another session",
+   "steps": {
+    "1_process_af3": {
+     "peak_gpu_mb": 0,
+     "peak_gpu_util_pct": 0,
+     "min_ram_available_gb": 27.14,
+     "samples": 16,
+     "rc": 0,
+     "seconds": 76,
+     "timed_out": false,
+     "limit_s": 1800,
+     "started_utc": "2026-10-26T11:05:54Z"
+    },
+    "2_dock": {
+     "peak_gpu_mb": 0,
+     "peak_gpu_util_pct": 0,
+     "min_ram_available_gb": 1.44,
+     "samples": 5234,
+     "rc": 0,
+     "seconds": 26175,
+     "timed_out": false,
+     "limit_s": 28800,
+     "started_utc": "2026-10-26T11:07:10Z"
+    }
+   },
+   "models": [],
+   "lane": 0,
+   "stages": [
+    1,
+    2
+   ],
+   "device": "",
+   "started_utc": "2026-10-26T10:59:52Z",
+   "map_sha256": "7f01ae5544d71a4b0331e7d6d5c57273004ddacb76f087883342a13afbe29f48",
+   "contour": 0.066,
+   "resolution": 2.97,
+   "parameters_from": "emdb_extractor.py",
+   "resolution_in_table": "2.97",
+   "grid": [
+    440,
+    440,
+    440
+   ],
+   "voxel_A": [
+    0.8399999737739563,
+    0.8399999737739563,
+    0.8399999737739563
+   ],
+   "box_A": [
+    369.6,
+    369.6,
+    369.6
+   ],
+   "resampled_grid": [
+    370,
+    370,
+    370
+   ],
+   "windows": 512,
+   "reflections_M": 4.036,
+   "dock_profile": "pass3",
+   "docking": {
+    "domains": 7,
+    "docked": 3,
+    "seconds": 26083
+   },
+   "dock_mode": "partial",
+   "seconds": 26612
+  },
+  "9VI4": {
+   "entry": "9VI4",
+   "status": "docked",
+   "failed_step": "",
+   "note": "stages [1, 2] finished; program 3 is for another session",
+   "steps": {
+    "1_process_af3": {
+     "peak_gpu_mb": 0,
+     "peak_gpu_util_pct": 0,
+     "min_ram_available_gb": 25.12,
+     "samples": 5,
+     "rc": 0,
+     "seconds": 24,
+     "timed_out": false,
+     "limit_s": 1800,
+     "started_utc": "2026-10-26T11:23:44Z"
+    },
+    "2_dock": {
+     "peak_gpu_mb": 0,
+     "peak_gpu_util_pct": 0,
+     "min_ram_available_gb": 1.36,
+     "samples": 322,
+     "rc": 0,
+     "seconds": 1610,
+     "timed_out": false,
+     "limit_s": 28800,
+     "started_utc": "2026-10-26T11:24:08Z"
+    }
+   },
+   "models": [],
+   "lane": 1,
+   "stages": [
+    1,
+    2
+   ],
+   "device": "",
+   "started_utc": "2026-10-26T10:59:52Z",
+   "map_sha256": "645dccdc247631f8560a2afc7605f65700d09696ba7381561d2638bc3284e9e7",
+   "contour": 0.35,
+   "resolution": 1.8,
+   "parameters_from": "emdb_extractor.py",
+   "resolution_in_table": "1.8",
+   "grid": [
+    640,
+    640,
+    640
+   ],
+   "voxel_A": [
+    0.6572999954223633,
+    0.6572999954223633,
+    0.6572999954223633
+   ],
+   "box_A": [
+    420.7,
+    420.7,
+    420.7
+   ],
+   "resampled_grid": [
+    421,
+    421,
+    421
+   ],
+   "windows": 729,
+   "reflections_M": 26.735,
+   "dock_profile": "pass3",
+   "dock_mode": "none",
+   "docking": {
+    "domains": 3,
+    "docked": 0,
+    "seconds": 1604
+   },
+   "seconds": 3066
+  },
+  "9ZLH": {
+   "entry": "9ZLH",
+   "status": "docked",
+   "failed_step": "",
+   "note": "stages [1, 2] finished; program 3 is for another session",
+   "steps": {
+    "1_process_af3": {
+     "peak_gpu_mb": 0,
+     "peak_gpu_util_pct": 0,
+     "min_ram_available_gb": 9.76,
+     "samples": 4,
+     "rc": 0,
+     "seconds": 18,
+     "timed_out": false,
+     "limit_s": 1800,
+     "started_utc": "2026-10-26T11:52:03Z"
+    },
+    "2_dock": {
+     "peak_gpu_mb": 0,
+     "peak_gpu_util_pct": 0,
+     "min_ram_available_gb": 7.86,
+     "samples": 355,
+     "rc": 0,
+     "seconds": 1771,
+     "timed_out": false,
+     "limit_s": 28800,
+     "started_utc": "2026-10-26T11:52:21Z"
+    }
+   },
+   "models": [],
+   "lane": 1,
+   "stages": [
+    1,
+    2
+   ],
+   "device": "",
+   "started_utc": "2026-10-26T11:50:58Z",
+   "map_sha256": "dc246722484736fd417716e202bde69d3f5c44e551defccca7648aeca50901e1",
+   "contour": 0.8,
+   "resolution": 2.14,
+   "parameters_from": "emdb_extractor.py",
+   "resolution_in_table": "2.14",
+   "grid": [
+    256,
+    256,
+    256
+   ],
+   "voxel_A": [
+    0.8299999833106995,
+    0.8299999833106995,
+    0.8299999833106995
+   ],
+   "box_A": [
+    212.5,
+    212.5,
+    212.5
+   ],
+   "resampled_grid": [
+    212,
+    212,
+    212
+   ],
+   "windows": 125,
+   "reflections_M": 2.05,
+   "dock_profile": "pass3",
+   "docking": {
+    "domains": 2,
+    "docked": 2,
+    "seconds": 1761
+   },
+   "dock_mode": "full",
+   "seconds": 1854
+  },
+  "22FX": {
+   "entry": "22FX",
+   "status": "docked",
+   "failed_step": "",
+   "note": "stages [1, 2] finished; program 3 is for another session",
+   "steps": {
+    "1_process_af3": {
+     "peak_gpu_mb": 0,
+     "peak_gpu_util_pct": 0,
+     "min_ram_available_gb": 17.47,
+     "samples": 2,
+     "rc": 0,
+     "seconds": 8,
+     "timed_out": false,
+     "limit_s": 1800,
+     "started_utc": "2026-10-26T12:27:22Z"
+    },
+    "2_dock": {
+     "peak_gpu_mb": 0,
+     "peak_gpu_util_pct": 0,
+     "min_ram_available_gb": 1.34,
+     "samples": 760,
+     "rc": 0,
+     "seconds": 3799,
+     "timed_out": false,
+     "limit_s": 28800,
+     "started_utc": "2026-10-26T12:27:31Z"
+    }
+   },
+   "models": [],
+   "lane": 1,
+   "stages": [
+    1,
+    2
+   ],
+   "device": "",
+   "started_utc": "2026-10-26T12:21:52Z",
+   "map_sha256": "2ace449877cf4fb4b32695b8d513d5cf294e50dd5e0302fd485d6655195d7809",
+   "contour": 0.1,
+   "resolution": 1.24,
+   "parameters_from": "emdb_extractor.py",
+   "resolution_in_table": "1.24",
+   "grid": [
+    440,
+    440,
+    440
+   ],
+   "voxel_A": [
+    0.569527268409729,
+    0.569527268409729,
+    0.569527268409729
+   ],
+   "box_A": [
+    250.6,
+    250.6,
+    250.6
+   ],
+   "resampled_grid": [
+    251,
+    251,
+    251
+   ],
+   "windows": 216,
+   "reflections_M": 17.286,
+   "dock_profile": "pass3",
+   "docking": {
+    "domains": 2,
+    "docked": 1,
+    "seconds": 3761
+   },
+   "dock_mode": "partial",
+   "seconds": 4138
+  },
+  "9WQ6": {
+   "entry": "9WQ6",
+   "status": "docked",
+   "failed_step": "",
+   "note": "stages [1, 2] finished; program 3 is for another session",
+   "steps": {
+    "1_process_af3": {
+     "peak_gpu_mb": 0,
+     "peak_gpu_util_pct": 0,
+     "min_ram_available_gb": 25.21,
+     "samples": 4,
+     "rc": 0,
+     "seconds": 20,
+     "timed_out": false,
+     "limit_s": 1800,
+     "started_utc": "2026-10-26T13:34:31Z"
+    },
+    "2_dock": {
+     "peak_gpu_mb": 0,
+     "peak_gpu_util_pct": 0,
+     "min_ram_available_gb": 10.16,
+     "samples": 362,
+     "rc": 0,
+     "seconds": 1809,
+     "timed_out": false,
+     "limit_s": 26668,
+     "started_utc": "2026-10-26T13:34:51Z"
+    }
+   },
+   "models": [],
+   "lane": 1,
+   "stages": [
+    1,
+    2
+   ],
+   "device": "",
+   "started_utc": "2026-10-26T13:30:50Z",
+   "map_sha256": "f30f55491161af18527c04df7160a08bc4562f94a93af5b7b2c62cbb5ed018e5",
+   "contour": 0.2,
+   "resolution": 3.4,
+   "parameters_from": "emdb_extractor.py",
+   "resolution_in_table": "3.4",
+   "grid": [
+    320,
+    320,
+    320
+   ],
+   "voxel_A": [
+    0.8319999575614929,
+    0.8319999575614929,
+    0.8319999575614929
+   ],
+   "box_A": [
+    266.2,
+    266.2,
+    266.2
+   ],
+   "resampled_grid": [
+    266,
+    266,
+    266
+   ],
+   "windows": 216,
+   "reflections_M": 1.006,
+   "dock_profile": "pass3",
+   "docking": {
+    "domains": 1,
+    "docked": 1,
+    "seconds": 1798
+   },
+   "dock_mode": "full",
+   "seconds": 2051
+  }
+ },
+ "gpu": "",
+ "cpu_facts": {
+  "os.cpu_count": 4,
+  "multiprocessing.cpu_count": 4,
+  "usable (sched_getaffinity)": 4,
+  "nproc": "4",
+  "cgroup v2 cpu.max": "400000 100000",
+  "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+  "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+ },
+ "complete": true
+}

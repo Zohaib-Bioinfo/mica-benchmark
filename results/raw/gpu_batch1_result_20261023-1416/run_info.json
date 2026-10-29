@@ -1,0 +1,4995 @@
+{
+  "notebook": "gpu_batch1",
+  "started_utc": "2026-10-23T05:35:27.863956+00:00",
+  "finished_utc": "2026-10-23T14:16:40.961919+00:00",
+  "elapsed_minutes": 521,
+  "problem": "",
+  "complete": true,
+  "platform": "kaggle",
+  "python": "3.13.15",
+  "os": "Linux-6.18.48+-x86_64-with-glibc2.39",
+  "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+  "cpu_cores": 4,
+  "ram_gb": 31.3,
+  "state": {
+    "ok": true,
+    "problem": "",
+    "t0": 1792733727.8639548,
+    "started": "2026-10-23T05:35:27.863956+00:00",
+    "phenix_env": null,
+    "phenix_version": "",
+    "installer_sha256": "",
+    "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+    "usalign_version": "* US-align (Version 20261012)                                      *",
+    "weights": {},
+    "env": {},
+    "entries": {},
+    "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+    "cpu_facts": {
+      "os.cpu_count": 4,
+      "multiprocessing.cpu_count": 4,
+      "usable (sched_getaffinity)": 4,
+      "nproc": "4",
+      "cgroup v2 cpu.max": "400000 100000",
+      "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+      "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+    },
+    "methods": {
+      "modelangelo": {
+        "key": "modelangelo",
+        "label": "ModelAngelo",
+        "commit": "994945bdfa6e5368e0d62349a47792f4864eebc3",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 886,
+        "entries": {
+          "9T5K": {
+            "entry": "9T5K",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 1.85,
+                "samples": 925,
+                "rc": 0,
+                "seconds": 4702,
+                "timed_out": false,
+                "started": 1792735011.236358,
+                "ended": 1792739713.2299387,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T05:56:51Z",
+                "ended_utc": "2026-10-23T07:15:13Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0419,
+                "tm_score_pred_norm": 0.7471,
+                "ca_rmsd": 0.32,
+                "aligned_ca_length": 16,
+                "seq_identity": 1.0,
+                "pred_residues": 16,
+                "native_residues": 381,
+                "coverage": 0.042,
+                "method": "modelangelo",
+                "entry": "9T5K",
+                "model_kind": "modelangelo",
+                "model_file": "9T5K_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0419,
+                "tm_score_pred_norm": 0.7471,
+                "ca_rmsd": 0.32,
+                "aligned_ca_length": 16,
+                "seq_identity": 1.0,
+                "pred_residues": 16,
+                "native_residues": 381,
+                "coverage": 0.042,
+                "method": "modelangelo",
+                "entry": "9T5K",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9T5K_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T05:55:37Z",
+            "seconds": 4777
+          },
+          "9WQ6": {
+            "entry": "9WQ6",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 9.82,
+                "samples": 324,
+                "rc": 0,
+                "seconds": 1640,
+                "timed_out": false,
+                "started": 1792739813.0060647,
+                "ended": 1792741452.535043,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T07:16:53Z",
+                "ended_utc": "2026-10-23T07:44:12Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.4457,
+                "tm_score_pred_norm": 0.7412,
+                "ca_rmsd": 3.0,
+                "aligned_ca_length": 140,
+                "seq_identity": 0.193,
+                "pred_residues": 141,
+                "native_residues": 261,
+                "coverage": 0.5402,
+                "method": "modelangelo",
+                "entry": "9WQ6",
+                "model_kind": "modelangelo",
+                "model_file": "9WQ6_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0382,
+                "tm_score_pred_norm": 0.7117,
+                "ca_rmsd": 0.3,
+                "aligned_ca_length": 10,
+                "seq_identity": 1.0,
+                "pred_residues": 11,
+                "native_residues": 261,
+                "coverage": 0.0421,
+                "method": "modelangelo",
+                "entry": "9WQ6",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9WQ6_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T07:15:13Z",
+            "seconds": 1739
+          },
+          "22FX": {
+            "entry": "22FX",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5587,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 13.31,
+                "samples": 393,
+                "rc": 0,
+                "seconds": 1983,
+                "timed_out": false,
+                "started": 1792741582.3512805,
+                "ended": 1792743565.2097793,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T07:46:22Z",
+                "ended_utc": "2026-10-23T08:19:25Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9989,
+                "tm_score_pred_norm": 0.9989,
+                "ca_rmsd": 0.16,
+                "aligned_ca_length": 173,
+                "seq_identity": 1.0,
+                "pred_residues": 173,
+                "native_residues": 173,
+                "coverage": 1.0,
+                "method": "modelangelo",
+                "entry": "22FX",
+                "model_kind": "modelangelo",
+                "model_file": "22FX_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9989,
+                "tm_score_pred_norm": 0.9989,
+                "ca_rmsd": 0.16,
+                "aligned_ca_length": 173,
+                "seq_identity": 1.0,
+                "pred_residues": 173,
+                "native_residues": 173,
+                "coverage": 1.0,
+                "method": "modelangelo",
+                "entry": "22FX",
+                "model_kind": "modelangelo_raw",
+                "model_file": "22FX_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T07:42:25Z",
+            "seconds": 2221
+          },
+          "9V4D": {
+            "entry": "9V4D",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 16.48,
+                "samples": 229,
+                "rc": 0,
+                "seconds": 1163,
+                "timed_out": false,
+                "started": 1792743568.7904105,
+                "ended": 1792744731.8930647,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T08:19:28Z",
+                "ended_utc": "2026-10-23T08:38:51Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.3966,
+                "tm_score_pred_norm": 0.969,
+                "ca_rmsd": 0.65,
+                "aligned_ca_length": 107,
+                "seq_identity": 0.991,
+                "pred_residues": 108,
+                "native_residues": 267,
+                "coverage": 0.3913,
+                "method": "modelangelo",
+                "entry": "9V4D",
+                "model_kind": "modelangelo",
+                "model_file": "9V4D_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.4038,
+                "tm_score_pred_norm": 0.9593,
+                "ca_rmsd": 0.68,
+                "aligned_ca_length": 109,
+                "seq_identity": 0.972,
+                "pred_residues": 111,
+                "native_residues": 267,
+                "coverage": 0.4022,
+                "method": "modelangelo",
+                "entry": "9V4D",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9V4D_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T08:19:26Z",
+            "seconds": 1167
+          },
+          "9JKK": {
+            "entry": "9JKK",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.68,
+                "samples": 128,
+                "rc": 0,
+                "seconds": 642,
+                "timed_out": false,
+                "started": 1792744526.0564213,
+                "ended": 1792745167.9133787,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T08:35:26Z",
+                "ended_utc": "2026-10-23T08:46:07Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9934,
+                "tm_score_pred_norm": 0.9878,
+                "ca_rmsd": 0.44,
+                "aligned_ca_length": 528,
+                "seq_identity": 1.0,
+                "pred_residues": 533,
+                "native_residues": 530,
+                "coverage": 1.0057,
+                "method": "modelangelo",
+                "entry": "9JKK",
+                "model_kind": "modelangelo",
+                "model_file": "9JKK_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.237,
+                "tm_score_pred_norm": 0.9815,
+                "ca_rmsd": 0.46,
+                "aligned_ca_length": 126,
+                "seq_identity": 0.992,
+                "pred_residues": 127,
+                "native_residues": 530,
+                "coverage": 0.2396,
+                "method": "modelangelo",
+                "entry": "9JKK",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9JKK_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T08:34:41Z",
+            "seconds": 689
+          },
+          "9OTA": {
+            "entry": "9OTA",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 15.15,
+                "samples": 127,
+                "rc": 0,
+                "seconds": 638,
+                "timed_out": false,
+                "started": 1792745465.6941555,
+                "ended": 1792746103.6150827,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T08:51:05Z",
+                "ended_utc": "2026-10-23T09:01:43Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.901,
+                "tm_score_pred_norm": 0.9892,
+                "ca_rmsd": 0.64,
+                "aligned_ca_length": 243,
+                "seq_identity": 0.979,
+                "pred_residues": 243,
+                "native_residues": 267,
+                "coverage": 0.4551,
+                "method": "modelangelo",
+                "entry": "9OTA",
+                "model_kind": "modelangelo",
+                "model_file": "9OTA_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.3883,
+                "tm_score_pred_norm": 0.9579,
+                "ca_rmsd": 1.03,
+                "aligned_ca_length": 106,
+                "seq_identity": 0.925,
+                "pred_residues": 106,
+                "native_residues": 267,
+                "coverage": 0.1985,
+                "method": "modelangelo",
+                "entry": "9OTA",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9OTA_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T08:50:20Z",
+            "seconds": 684
+          },
+          "9TKA": {
+            "entry": "9TKA",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 13.22,
+                "samples": 165,
+                "rc": 0,
+                "seconds": 831,
+                "timed_out": false,
+                "started": 1792746353.3402684,
+                "ended": 1792747184.8385139,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:05:53Z",
+                "ended_utc": "2026-10-23T09:19:44Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9978,
+                "tm_score_pred_norm": 0.9858,
+                "ca_rmsd": 0.28,
+                "aligned_ca_length": 247,
+                "seq_identity": 1.0,
+                "pred_residues": 250,
+                "native_residues": 247,
+                "coverage": 1.0121,
+                "method": "modelangelo",
+                "entry": "9TKA",
+                "model_kind": "modelangelo",
+                "model_file": "9TKA_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9978,
+                "tm_score_pred_norm": 0.9742,
+                "ca_rmsd": 0.28,
+                "aligned_ca_length": 247,
+                "seq_identity": 1.0,
+                "pred_residues": 253,
+                "native_residues": 247,
+                "coverage": 1.0243,
+                "method": "modelangelo",
+                "entry": "9TKA",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9TKA_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:03:29Z",
+            "seconds": 976
+          },
+          "9KQM": {
+            "entry": "9KQM",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 13.71,
+                "samples": 95,
+                "rc": 0,
+                "seconds": 476,
+                "timed_out": false,
+                "started": 1792747443.345738,
+                "ended": 1792747919.7407753,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:24:03Z",
+                "ended_utc": "2026-10-23T09:31:59Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.7881,
+                "tm_score_pred_norm": 0.9947,
+                "ca_rmsd": 0.48,
+                "aligned_ca_length": 319,
+                "seq_identity": 0.997,
+                "pred_residues": 319,
+                "native_residues": 403,
+                "coverage": 0.7916,
+                "method": "modelangelo",
+                "entry": "9KQM",
+                "model_kind": "modelangelo",
+                "model_file": "9KQM_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0855,
+                "tm_score_pred_norm": 0.9226,
+                "ca_rmsd": 1.09,
+                "aligned_ca_length": 35,
+                "seq_identity": 0.943,
+                "pred_residues": 35,
+                "native_residues": 403,
+                "coverage": 0.0868,
+                "method": "modelangelo",
+                "entry": "9KQM",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9KQM_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:23:02Z",
+            "seconds": 539
+          },
+          "9WFL": {
+            "entry": "9WFL",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 13.37,
+                "samples": 117,
+                "rc": 0,
+                "seconds": 589,
+                "timed_out": false,
+                "started": 1792748269.3831828,
+                "ended": 1792748858.661678,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:37:49Z",
+                "ended_utc": "2026-10-23T09:47:38Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9954,
+                "tm_score_pred_norm": 0.9775,
+                "ca_rmsd": 0.51,
+                "aligned_ca_length": 652,
+                "seq_identity": 0.994,
+                "pred_residues": 665,
+                "native_residues": 653,
+                "coverage": 0.9751,
+                "method": "modelangelo",
+                "entry": "9WFL",
+                "model_kind": "modelangelo",
+                "model_file": "9WFL_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.4825,
+                "tm_score_pred_norm": 0.9859,
+                "ca_rmsd": 0.52,
+                "aligned_ca_length": 316,
+                "seq_identity": 0.997,
+                "pred_residues": 319,
+                "native_residues": 653,
+                "coverage": 0.4677,
+                "method": "modelangelo",
+                "entry": "9WFL",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9WFL_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:36:55Z",
+            "seconds": 648
+          },
+          "9WME": {
+            "entry": "9WME",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 13.57,
+                "samples": 112,
+                "rc": 0,
+                "seconds": 565,
+                "timed_out": false,
+                "started": 1792749199.596905,
+                "ended": 1792749764.4313602,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:53:19Z",
+                "ended_utc": "2026-10-23T10:02:44Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.5679,
+                "tm_score_pred_norm": 0.9733,
+                "ca_rmsd": 0.95,
+                "aligned_ca_length": 253,
+                "seq_identity": 0.96,
+                "pred_residues": 254,
+                "native_residues": 439,
+                "coverage": 0.5695,
+                "method": "modelangelo",
+                "entry": "9WME",
+                "model_kind": "modelangelo",
+                "model_file": "9WME_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0272,
+                "tm_score_pred_norm": 0.6562,
+                "ca_rmsd": 0.54,
+                "aligned_ca_length": 12,
+                "seq_identity": 0.917,
+                "pred_residues": 12,
+                "native_residues": 439,
+                "coverage": 0.0269,
+                "method": "modelangelo",
+                "entry": "9WME",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9WME_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:53:02Z",
+            "seconds": 584
+          },
+          "9VI4": {
+            "entry": "9VI4",
+            "method": "modelangelo",
+            "status": "killed_corun",
+            "failed_step": "build",
+            "note": "killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5523,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 2.07,
+                "samples": 129,
+                "rc": -9,
+                "seconds": 651,
+                "timed_out": false,
+                "started": 1792751099.3560433,
+                "ended": 1792751750.7265956,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T10:24:59Z",
+                "ended_utc": "2026-10-23T10:35:50Z"
+              }
+            },
+            "models": [],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T10:11:55Z"
+          },
+          "9VBD": {
+            "entry": "9VBD",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 2.13,
+                "samples": 254,
+                "rc": 0,
+                "seconds": 1278,
+                "timed_out": false,
+                "started": 1792752567.5962167,
+                "ended": 1792753845.9168947,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T10:49:27Z",
+                "ended_utc": "2026-10-23T11:10:45Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.1949,
+                "tm_score_pred_norm": 0.9708,
+                "ca_rmsd": 0.54,
+                "aligned_ca_length": 102,
+                "seq_identity": 0.971,
+                "pred_residues": 103,
+                "native_residues": 521,
+                "coverage": 0.1977,
+                "method": "modelangelo",
+                "entry": "9VBD",
+                "model_kind": "modelangelo",
+                "model_file": "9VBD_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0977,
+                "tm_score_pred_norm": 0.9732,
+                "ca_rmsd": 0.38,
+                "aligned_ca_length": 51,
+                "seq_identity": 0.98,
+                "pred_residues": 51,
+                "native_residues": 521,
+                "coverage": 0.0979,
+                "method": "modelangelo",
+                "entry": "9VBD",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9VBD_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T10:48:07Z",
+            "seconds": 1360
+          },
+          "9ZLH": {
+            "entry": "9ZLH",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 16.63,
+                "samples": 123,
+                "rc": 0,
+                "seconds": 619,
+                "timed_out": false,
+                "started": 1792754334.7151573,
+                "ended": 1792754953.9390147,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:18:54Z",
+                "ended_utc": "2026-10-23T11:29:13Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9972,
+                "tm_score_pred_norm": 0.9972,
+                "ca_rmsd": 0.29,
+                "aligned_ca_length": 206,
+                "seq_identity": 1.0,
+                "pred_residues": 206,
+                "native_residues": 206,
+                "coverage": 1.0,
+                "method": "modelangelo",
+                "entry": "9ZLH",
+                "model_kind": "modelangelo",
+                "model_file": "9ZLH_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9972,
+                "tm_score_pred_norm": 0.5793,
+                "ca_rmsd": 0.29,
+                "aligned_ca_length": 206,
+                "seq_identity": 1.0,
+                "pred_residues": 355,
+                "native_residues": 206,
+                "coverage": 1.7233,
+                "method": "modelangelo",
+                "entry": "9ZLH",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9ZLH_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:18:04Z",
+            "seconds": 672
+          },
+          "9RWS": {
+            "entry": "9RWS",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 11.45,
+                "samples": 104,
+                "rc": 0,
+                "seconds": 522,
+                "timed_out": false,
+                "started": 1792755613.1662517,
+                "ended": 1792756135.0209742,
+                "gpu": 0,
+                "limit_s": 9915,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:40:13Z",
+                "ended_utc": "2026-10-23T11:48:55Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9673,
+                "tm_score_pred_norm": 0.9904,
+                "ca_rmsd": 0.63,
+                "aligned_ca_length": 498,
+                "seq_identity": 0.996,
+                "pred_residues": 500,
+                "native_residues": 512,
+                "coverage": 0.9766,
+                "method": "modelangelo",
+                "entry": "9RWS",
+                "model_kind": "modelangelo",
+                "model_file": "9RWS_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.3631,
+                "tm_score_pred_norm": 0.9875,
+                "ca_rmsd": 0.65,
+                "aligned_ca_length": 187,
+                "seq_identity": 0.989,
+                "pred_residues": 187,
+                "native_residues": 512,
+                "coverage": 0.3652,
+                "method": "modelangelo",
+                "entry": "9RWS",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9RWS_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:38:23Z",
+            "seconds": 635
+          },
+          "9VUH": {
+            "entry": "9VUH",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 17.66,
+                "samples": 106,
+                "rc": 0,
+                "seconds": 534,
+                "timed_out": false,
+                "started": 1792756340.8931222,
+                "ended": 1792756874.8822525,
+                "gpu": 1,
+                "limit_s": 9187,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:52:20Z",
+                "ended_utc": "2026-10-23T12:01:14Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.1259,
+                "tm_score_pred_norm": 0.2663,
+                "ca_rmsd": 4.88,
+                "aligned_ca_length": 55,
+                "seq_identity": 0.091,
+                "pred_residues": 89,
+                "native_residues": 296,
+                "coverage": 0.1404,
+                "method": "modelangelo",
+                "entry": "9VUH",
+                "model_kind": "modelangelo",
+                "model_file": "9VUH_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0706,
+                "tm_score_pred_norm": 0.5958,
+                "ca_rmsd": 1.7,
+                "aligned_ca_length": 22,
+                "seq_identity": 0.182,
+                "pred_residues": 25,
+                "native_residues": 296,
+                "coverage": 0.0394,
+                "method": "modelangelo",
+                "entry": "9VUH",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9VUH_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:50:49Z",
+            "seconds": 627
+          },
+          "9WTX": {
+            "entry": "9WTX",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 12.05,
+                "samples": 269,
+                "rc": 0,
+                "seconds": 1359,
+                "timed_out": false,
+                "started": 1792757370.558606,
+                "ended": 1792758729.7978654,
+                "gpu": 0,
+                "limit_s": 8157,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T12:09:30Z",
+                "ended_utc": "2026-10-23T12:32:09Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.2637,
+                "tm_score_pred_norm": 0.9725,
+                "ca_rmsd": 0.75,
+                "aligned_ca_length": 133,
+                "seq_identity": 0.962,
+                "pred_residues": 133,
+                "native_residues": 500,
+                "coverage": 0.266,
+                "method": "modelangelo",
+                "entry": "9WTX",
+                "model_kind": "modelangelo",
+                "model_file": "9WTX_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0696,
+                "tm_score_pred_norm": 0.8841,
+                "ca_rmsd": 0.57,
+                "aligned_ca_length": 35,
+                "seq_identity": 1.0,
+                "pred_residues": 36,
+                "native_residues": 500,
+                "coverage": 0.072,
+                "method": "modelangelo",
+                "entry": "9WTX",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9WTX_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T12:08:19Z",
+            "seconds": 1433
+          },
+          "9OC0": {
+            "entry": "9OC0",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 0.44,
+                "samples": 841,
+                "rc": 0,
+                "seconds": 4268,
+                "timed_out": false,
+                "started": 1792758957.1288874,
+                "ended": 1792763224.7427914,
+                "gpu": 0,
+                "limit_s": 6571,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T12:35:57Z",
+                "ended_utc": "2026-10-23T13:47:04Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.7129,
+                "tm_score_pred_norm": 0.4868,
+                "ca_rmsd": 0.34,
+                "aligned_ca_length": 89,
+                "seq_identity": 1.0,
+                "pred_residues": 182,
+                "native_residues": 124,
+                "coverage": 0.3555,
+                "method": "modelangelo",
+                "entry": "9OC0",
+                "model_kind": "modelangelo",
+                "model_file": "9OC0_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.2741,
+                "tm_score_pred_norm": 0.8421,
+                "ca_rmsd": 1.26,
+                "aligned_ca_length": 35,
+                "seq_identity": 0.971,
+                "pred_residues": 39,
+                "native_residues": 124,
+                "coverage": 0.0762,
+                "method": "modelangelo",
+                "entry": "9OC0",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9OC0_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T12:32:12Z",
+            "seconds": 4495
+          },
+          "9Z24": {
+            "entry": "9Z24",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 5.75,
+                "samples": 458,
+                "rc": 0,
+                "seconds": 2320,
+                "timed_out": false,
+                "started": 1792762247.1928954,
+                "ended": 1792764567.1551979,
+                "gpu": 1,
+                "limit_s": 3281,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T13:30:47Z",
+                "ended_utc": "2026-10-23T14:09:27Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9031,
+                "tm_score_pred_norm": 0.9909,
+                "ca_rmsd": 0.33,
+                "aligned_ca_length": 306,
+                "seq_identity": 0.997,
+                "pred_residues": 308,
+                "native_residues": 338,
+                "coverage": 0.9112,
+                "method": "modelangelo",
+                "entry": "9Z24",
+                "model_kind": "modelangelo",
+                "model_file": "9Z24_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.4279,
+                "tm_score_pred_norm": 0.9944,
+                "ca_rmsd": 0.34,
+                "aligned_ca_length": 145,
+                "seq_identity": 0.986,
+                "pred_residues": 145,
+                "native_residues": 338,
+                "coverage": 0.429,
+                "method": "modelangelo",
+                "entry": "9Z24",
+                "model_kind": "modelangelo_raw",
+                "model_file": "9Z24_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T13:30:24Z",
+            "seconds": 2345
+          },
+          "13BD": {
+            "entry": "13BD",
+            "method": "modelangelo",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "26DK": {
+            "entry": "26DK",
+            "method": "modelangelo",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          }
+        },
+        "version": "ModelAngelo 1.0.18",
+        "weights": {
+          "torch_home/hub/checkpoints/esm1b_t33_650M_UR50S.pt": 7828576466,
+          "torch_home/hub/checkpoints/model_angelo_v1.0/nucleotides/c_alpha/chkpt.torch": 734237153,
+          "torch_home/hub/checkpoints/model_angelo_v1.0/nucleotides/gnn/chkpt_483863.torch": 1603440621
+        }
+      },
+      "e3": {
+        "key": "e3",
+        "label": "E3-CryoFold",
+        "commit": "241cef48da83b96519e62ab02cccd9db96d8e68b",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 109,
+        "entries": {
+          "9T5K": {
+            "entry": "9T5K",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 4737,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 12.01,
+                "samples": 232,
+                "rc": 0,
+                "seconds": 1169,
+                "timed_out": false,
+                "started": 1792735011.2361932,
+                "ended": 1792736180.4050357,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T05:56:51Z",
+                "ended_utc": "2026-10-23T06:16:20Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.68,
+                "tm_score_pred_norm": 0.615,
+                "ca_rmsd": 1.75,
+                "aligned_ca_length": 267,
+                "seq_identity": 0.981,
+                "pred_residues": 422,
+                "native_residues": 381,
+                "coverage": 1.1076,
+                "method": "e3",
+                "entry": "9T5K",
+                "model_kind": "e3_prealign",
+                "model_file": "9T5K_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T05:55:37Z",
+            "seconds": 1244
+          },
+          "9WQ6": {
+            "entry": "9WQ6",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3949,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 23.4,
+                "samples": 36,
+                "rc": 0,
+                "seconds": 179,
+                "timed_out": false,
+                "started": 1792739914.3330958,
+                "ended": 1792740093.705556,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T07:18:34Z",
+                "ended_utc": "2026-10-23T07:21:33Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.7993,
+                "tm_score_pred_norm": 0.6671,
+                "ca_rmsd": 2.41,
+                "aligned_ca_length": 229,
+                "seq_identity": 0.751,
+                "pred_residues": 316,
+                "native_residues": 261,
+                "coverage": 1.2107,
+                "method": "e3",
+                "entry": "9WQ6",
+                "model_kind": "e3_prealign",
+                "model_file": "9WQ6_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T07:18:34Z",
+            "seconds": 180
+          },
+          "22FX": {
+            "entry": "22FX",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3949,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 21.71,
+                "samples": 62,
+                "rc": 0,
+                "seconds": 311,
+                "timed_out": false,
+                "started": 1792741582.3540487,
+                "ended": 1792741893.7161129,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T07:46:22Z",
+                "ended_utc": "2026-10-23T07:51:33Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9692,
+                "tm_score_pred_norm": 0.948,
+                "ca_rmsd": 0.88,
+                "aligned_ca_length": 173,
+                "seq_identity": 1.0,
+                "pred_residues": 177,
+                "native_residues": 173,
+                "coverage": 1.0231,
+                "method": "e3",
+                "entry": "22FX",
+                "model_kind": "e3_prealign",
+                "model_file": "22FX_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T07:44:13Z",
+            "seconds": 441
+          },
+          "9V4D": {
+            "entry": "9V4D",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3181,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 25.43,
+                "samples": 12,
+                "rc": 0,
+                "seconds": 60,
+                "timed_out": false,
+                "started": 1792743997.4847462,
+                "ended": 1792744057.2021043,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T08:26:37Z",
+                "ended_utc": "2026-10-23T08:27:37Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9337,
+                "tm_score_pred_norm": 0.6958,
+                "ca_rmsd": 1.19,
+                "aligned_ca_length": 258,
+                "seq_identity": 0.984,
+                "pred_residues": 361,
+                "native_residues": 267,
+                "coverage": 1.308,
+                "method": "e3",
+                "entry": "9V4D",
+                "model_kind": "e3_prealign",
+                "model_file": "9V4D_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T08:26:37Z",
+            "seconds": 61
+          },
+          "9JKK": {
+            "entry": "9JKK",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3901,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 25.27,
+                "samples": 25,
+                "rc": 0,
+                "seconds": 122,
+                "timed_out": false,
+                "started": 1792744733.0444834,
+                "ended": 1792744855.508479,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T08:38:53Z",
+                "ended_utc": "2026-10-23T08:40:55Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9811,
+                "tm_score_pred_norm": 0.9527,
+                "ca_rmsd": 1.03,
+                "aligned_ca_length": 528,
+                "seq_identity": 0.996,
+                "pred_residues": 546,
+                "native_residues": 530,
+                "coverage": 1.0302,
+                "method": "e3",
+                "entry": "9JKK",
+                "model_kind": "e3_prealign",
+                "model_file": "9JKK_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T08:38:53Z",
+            "seconds": 125
+          },
+          "9OTA": {
+            "entry": "9OTA",
+            "method": "e3",
+            "status": "failed",
+            "failed_step": "prealign",
+            "note": "exit code 1; the model file 9OTA_e3_prealign.pdb was not written",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3519,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 25.24,
+                "samples": 21,
+                "rc": 1,
+                "seconds": 104,
+                "timed_out": false,
+                "started": 1792745530.7437708,
+                "ended": 1792745635.1511564,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T08:52:10Z",
+                "ended_utc": "2026-10-23T08:53:55Z"
+              }
+            },
+            "models": [],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T08:52:10Z",
+            "seconds": 105
+          },
+          "9TKA": {
+            "entry": "9TKA",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3949,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 23.87,
+                "samples": 35,
+                "rc": 0,
+                "seconds": 172,
+                "timed_out": false,
+                "started": 1792746353.3385549,
+                "ended": 1792746525.644337,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:05:53Z",
+                "ended_utc": "2026-10-23T09:08:45Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9799,
+                "tm_score_pred_norm": 0.9571,
+                "ca_rmsd": 0.84,
+                "aligned_ca_length": 247,
+                "seq_identity": 0.996,
+                "pred_residues": 253,
+                "native_residues": 247,
+                "coverage": 1.0243,
+                "method": "e3",
+                "entry": "9TKA",
+                "model_kind": "e3_prealign",
+                "model_file": "9TKA_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:05:16Z",
+            "seconds": 210
+          },
+          "9KQM": {
+            "entry": "9KQM",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3565,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 25.43,
+                "samples": 26,
+                "rc": 0,
+                "seconds": 130,
+                "timed_out": false,
+                "started": 1792747463.5785158,
+                "ended": 1792747593.8464613,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:24:23Z",
+                "ended_utc": "2026-10-23T09:26:33Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.8998,
+                "tm_score_pred_norm": 0.7416,
+                "ca_rmsd": 2.38,
+                "aligned_ca_length": 384,
+                "seq_identity": 0.885,
+                "pred_residues": 492,
+                "native_residues": 403,
+                "coverage": 1.2208,
+                "method": "e3",
+                "entry": "9KQM",
+                "model_kind": "e3_prealign",
+                "model_file": "9KQM_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:24:23Z",
+            "seconds": 132
+          },
+          "9WFL": {
+            "entry": "9WFL",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 4421,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 25.42,
+                "samples": 27,
+                "rc": 0,
+                "seconds": 132,
+                "timed_out": false,
+                "started": 1792748269.3830178,
+                "ended": 1792748401.7055068,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:37:49Z",
+                "ended_utc": "2026-10-23T09:40:01Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.983,
+                "tm_score_pred_norm": 0.9445,
+                "ca_rmsd": 1.17,
+                "aligned_ca_length": 653,
+                "seq_identity": 0.998,
+                "pred_residues": 680,
+                "native_residues": 653,
+                "coverage": 0.9971,
+                "method": "e3",
+                "entry": "9WFL",
+                "model_kind": "e3_prealign",
+                "model_file": "9WFL_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:37:35Z",
+            "seconds": 150
+          },
+          "9WME": {
+            "entry": "9WME",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3565,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 25.17,
+                "samples": 25,
+                "rc": 0,
+                "seconds": 122,
+                "timed_out": false,
+                "started": 1792749223.2023501,
+                "ended": 1792749345.513177,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:53:43Z",
+                "ended_utc": "2026-10-23T09:55:45Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.6078,
+                "tm_score_pred_norm": 0.6474,
+                "ca_rmsd": 4.13,
+                "aligned_ca_length": 309,
+                "seq_identity": 0.793,
+                "pred_residues": 410,
+                "native_residues": 439,
+                "coverage": 0.9193,
+                "method": "e3",
+                "entry": "9WME",
+                "model_kind": "e3_prealign",
+                "model_file": "9WME_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:53:43Z",
+            "seconds": 124
+          },
+          "9VI4": {
+            "entry": "9VI4",
+            "method": "e3",
+            "status": "killed_corun",
+            "failed_step": "prealign",
+            "note": "killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 5075,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 2.07,
+                "samples": 130,
+                "rc": -9,
+                "seconds": 653,
+                "timed_out": false,
+                "started": 1792751099.35527,
+                "ended": 1792751752.3792348,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T10:24:59Z",
+                "ended_utc": "2026-10-23T10:35:52Z"
+              }
+            },
+            "models": [],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T10:12:00Z"
+          },
+          "9VBD": {
+            "entry": "9VBD",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 4837,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 13.38,
+                "samples": 41,
+                "rc": 0,
+                "seconds": 206,
+                "timed_out": false,
+                "started": 1792753482.9917839,
+                "ended": 1792753689.3941054,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:04:42Z",
+                "ended_utc": "2026-10-23T11:08:09Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.968,
+                "tm_score_pred_norm": 0.691,
+                "ca_rmsd": 1.49,
+                "aligned_ca_length": 520,
+                "seq_identity": 0.983,
+                "pred_residues": 735,
+                "native_residues": 521,
+                "coverage": 1.4107,
+                "method": "e3",
+                "entry": "9VBD",
+                "model_kind": "e3_prealign",
+                "model_file": "9VBD_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:04:42Z",
+            "seconds": 210
+          },
+          "9ZLH": {
+            "entry": "9ZLH",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3565,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 19.66,
+                "samples": 47,
+                "rc": 0,
+                "seconds": 233,
+                "timed_out": false,
+                "started": 1792754843.821785,
+                "ended": 1792755077.1998692,
+                "gpu": 0,
+                "limit_s": 10684,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:27:23Z",
+                "ended_utc": "2026-10-23T11:31:17Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9636,
+                "tm_score_pred_norm": 0.9636,
+                "ca_rmsd": 1.06,
+                "aligned_ca_length": 206,
+                "seq_identity": 1.0,
+                "pred_residues": 206,
+                "native_residues": 206,
+                "coverage": 1.0,
+                "method": "e3",
+                "entry": "9ZLH",
+                "model_kind": "e3_prealign",
+                "model_file": "9ZLH_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:27:23Z",
+            "seconds": 235
+          },
+          "9RWS": {
+            "entry": "9RWS",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3565,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 25.48,
+                "samples": 26,
+                "rc": 0,
+                "seconds": 129,
+                "timed_out": false,
+                "started": 1792755613.1618314,
+                "ended": 1792755741.8686783,
+                "gpu": 1,
+                "limit_s": 9915,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:40:13Z",
+                "ended_utc": "2026-10-23T11:42:21Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9628,
+                "tm_score_pred_norm": 0.9684,
+                "ca_rmsd": 1.44,
+                "aligned_ca_length": 505,
+                "seq_identity": 0.982,
+                "pred_residues": 509,
+                "native_residues": 512,
+                "coverage": 0.9941,
+                "method": "e3",
+                "entry": "9RWS",
+                "model_kind": "e3_prealign",
+                "model_file": "9RWS_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:39:54Z",
+            "seconds": 150
+          },
+          "9VUH": {
+            "entry": "9VUH",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3921,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 17.74,
+                "samples": 23,
+                "rc": 0,
+                "seconds": 115,
+                "timed_out": false,
+                "started": 1792756396.6118774,
+                "ended": 1792756511.2135324,
+                "gpu": 0,
+                "limit_s": 9131,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:53:16Z",
+                "ended_utc": "2026-10-23T11:55:11Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.3733,
+                "tm_score_pred_norm": 0.5506,
+                "ca_rmsd": 4.14,
+                "aligned_ca_length": 136,
+                "seq_identity": 0.61,
+                "pred_residues": 191,
+                "native_residues": 296,
+                "coverage": 0.3013,
+                "method": "e3",
+                "entry": "9VUH",
+                "model_kind": "e3_prealign",
+                "model_file": "9VUH_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:53:16Z",
+            "seconds": 117
+          },
+          "9WTX": {
+            "entry": "9WTX",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3949,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 23.43,
+                "samples": 37,
+                "rc": 0,
+                "seconds": 185,
+                "timed_out": false,
+                "started": 1792757370.5583038,
+                "ended": 1792757555.5469,
+                "gpu": 1,
+                "limit_s": 8157,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T12:09:30Z",
+                "ended_utc": "2026-10-23T12:12:35Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.7337,
+                "tm_score_pred_norm": 0.6853,
+                "ca_rmsd": 2.91,
+                "aligned_ca_length": 396,
+                "seq_identity": 0.826,
+                "pred_residues": 537,
+                "native_residues": 500,
+                "coverage": 1.074,
+                "method": "e3",
+                "entry": "9WTX",
+                "model_kind": "e3_prealign",
+                "model_file": "9WTX_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T12:08:42Z",
+            "seconds": 236
+          },
+          "9OC0": {
+            "entry": "9OC0",
+            "method": "e3",
+            "status": "failed",
+            "failed_step": "prealign",
+            "note": "exit code 1; the model file 9OC0_e3_prealign.pdb was not written",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 4691,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.97,
+                "samples": 96,
+                "rc": 1,
+                "seconds": 482,
+                "timed_out": false,
+                "started": 1792758957.1282258,
+                "ended": 1792759439.1687295,
+                "gpu": 1,
+                "limit_s": 6571,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T12:35:57Z",
+                "ended_utc": "2026-10-23T12:43:59Z"
+              }
+            },
+            "models": [],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T12:33:49Z",
+            "seconds": 612
+          },
+          "9Z24": {
+            "entry": "9Z24",
+            "method": "e3",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3181,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 25.61,
+                "samples": 18,
+                "rc": 0,
+                "seconds": 86,
+                "timed_out": false,
+                "started": 1792763227.133794,
+                "ended": 1792763313.5514128,
+                "gpu": 0,
+                "limit_s": 2301,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T13:47:07Z",
+                "ended_utc": "2026-10-23T13:48:33Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.8913,
+                "tm_score_pred_norm": 0.8965,
+                "ca_rmsd": 1.05,
+                "aligned_ca_length": 308,
+                "seq_identity": 1.0,
+                "pred_residues": 336,
+                "native_residues": 338,
+                "coverage": 0.9941,
+                "method": "e3",
+                "entry": "9Z24",
+                "model_kind": "e3_prealign",
+                "model_file": "9Z24_e3_prealign.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T13:47:07Z",
+            "seconds": 89
+          },
+          "13BD": {
+            "entry": "13BD",
+            "method": "e3",
+            "status": "failed",
+            "failed_step": "prealign",
+            "note": "exit code 1; the model file 13BD_e3_prealign.pdb was not written",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 4691,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 17.88,
+                "samples": 82,
+                "rc": 1,
+                "seconds": 410,
+                "timed_out": false,
+                "started": 1792764584.9649777,
+                "ended": 1792764994.549355,
+                "gpu": 0,
+                "limit_s": 943,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-23T14:09:44Z",
+                "ended_utc": "2026-10-23T14:16:34Z"
+              }
+            },
+            "models": [],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T14:08:18Z",
+            "seconds": 498
+          },
+          "26DK": {
+            "entry": "26DK",
+            "method": "e3",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          }
+        },
+        "weights": {
+          "src_e3/models/structure_model.pth": 239971852,
+          "src_e3/models/model_weight.pth": 1401618067
+        }
+      },
+      "emprot": {
+        "key": "emprot",
+        "label": "EMProt",
+        "commit": "9489d52e7fdc81c85ba82e386abcfa05bac2b9d1",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 87,
+        "entries": {
+          "9T5K": {
+            "entry": "9T5K",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8857,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 3.79,
+                "samples": 375,
+                "rc": 0,
+                "seconds": 1888,
+                "timed_out": false,
+                "started": 1792736180.9851794,
+                "ended": 1792738069.1785247,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T06:16:20Z",
+                "ended_utc": "2026-10-23T06:47:49Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9988,
+                "tm_score_pred_norm": 0.1746,
+                "ca_rmsd": 0.24,
+                "aligned_ca_length": 381,
+                "seq_identity": 1.0,
+                "pred_residues": 2182,
+                "native_residues": 381,
+                "coverage": 5.727,
+                "method": "emprot",
+                "entry": "9T5K",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9988,
+                "tm_score_pred_norm": 0.9783,
+                "ca_rmsd": 0.24,
+                "aligned_ca_length": 381,
+                "seq_identity": 1.0,
+                "pred_residues": 389,
+                "native_residues": 381,
+                "coverage": 1.021,
+                "method": "emprot",
+                "entry": "9T5K",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9786,
+                "tm_score_pred_norm": 0.8251,
+                "ca_rmsd": 1.22,
+                "aligned_ca_length": 381,
+                "seq_identity": 0.99,
+                "pred_residues": 453,
+                "native_residues": 381,
+                "coverage": 1.189,
+                "method": "emprot",
+                "entry": "9T5K",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T06:16:20Z",
+            "seconds": 1898
+          },
+          "9WQ6": {
+            "entry": "9WQ6",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 13.6,
+                "samples": 166,
+                "rc": 0,
+                "seconds": 837,
+                "timed_out": false,
+                "started": 1792740094.3789997,
+                "ended": 1792740931.2373257,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T07:21:34Z",
+                "ended_utc": "2026-10-23T07:35:31Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9399,
+                "tm_score_pred_norm": 0.9092,
+                "ca_rmsd": 1.21,
+                "aligned_ca_length": 253,
+                "seq_identity": 0.897,
+                "pred_residues": 270,
+                "native_residues": 261,
+                "coverage": 1.0345,
+                "method": "emprot",
+                "entry": "9WQ6",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.5922,
+                "tm_score_pred_norm": 0.95,
+                "ca_rmsd": 0.96,
+                "aligned_ca_length": 158,
+                "seq_identity": 0.804,
+                "pred_residues": 161,
+                "native_residues": 261,
+                "coverage": 0.6169,
+                "method": "emprot",
+                "entry": "9WQ6",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9379,
+                "tm_score_pred_norm": 0.7302,
+                "ca_rmsd": 1.78,
+                "aligned_ca_length": 261,
+                "seq_identity": 0.893,
+                "pred_residues": 339,
+                "native_residues": 261,
+                "coverage": 1.2989,
+                "method": "emprot",
+                "entry": "9WQ6",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T07:21:34Z",
+            "seconds": 838
+          },
+          "22FX": {
+            "entry": "22FX",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 13.75,
+                "samples": 329,
+                "rc": 0,
+                "seconds": 1657,
+                "timed_out": false,
+                "started": 1792741894.3750021,
+                "ended": 1792743551.4968019,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T07:51:34Z",
+                "ended_utc": "2026-10-23T08:19:11Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9975,
+                "tm_score_pred_norm": 0.0399,
+                "ca_rmsd": 0.26,
+                "aligned_ca_length": 173,
+                "seq_identity": 1.0,
+                "pred_residues": 4340,
+                "native_residues": 173,
+                "coverage": 25.0867,
+                "method": "emprot",
+                "entry": "22FX",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9931,
+                "tm_score_pred_norm": 0.9989,
+                "ca_rmsd": 0.16,
+                "aligned_ca_length": 172,
+                "seq_identity": 1.0,
+                "pred_residues": 172,
+                "native_residues": 173,
+                "coverage": 0.9942,
+                "method": "emprot",
+                "entry": "22FX",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9952,
+                "tm_score_pred_norm": 0.9462,
+                "ca_rmsd": 0.36,
+                "aligned_ca_length": 173,
+                "seq_identity": 1.0,
+                "pred_residues": 182,
+                "native_residues": 173,
+                "coverage": 1.052,
+                "method": "emprot",
+                "entry": "22FX",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T07:51:34Z",
+            "seconds": 1667
+          },
+          "9V4D": {
+            "entry": "9V4D",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8861,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 20.12,
+                "samples": 55,
+                "rc": 0,
+                "seconds": 277,
+                "timed_out": false,
+                "started": 1792744058.4380865,
+                "ended": 1792744335.7071054,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T08:27:38Z",
+                "ended_utc": "2026-10-23T08:32:15Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9791,
+                "tm_score_pred_norm": 0.6601,
+                "ca_rmsd": 1.08,
+                "aligned_ca_length": 267,
+                "seq_identity": 0.985,
+                "pred_residues": 398,
+                "native_residues": 267,
+                "coverage": 1.442,
+                "method": "emprot",
+                "entry": "9V4D",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.957,
+                "tm_score_pred_norm": 0.9863,
+                "ca_rmsd": 0.65,
+                "aligned_ca_length": 258,
+                "seq_identity": 0.988,
+                "pred_residues": 259,
+                "native_residues": 267,
+                "coverage": 0.9384,
+                "method": "emprot",
+                "entry": "9V4D",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9209,
+                "tm_score_pred_norm": 0.6385,
+                "ca_rmsd": 1.98,
+                "aligned_ca_length": 267,
+                "seq_identity": 0.985,
+                "pred_residues": 393,
+                "native_residues": 267,
+                "coverage": 1.4239,
+                "method": "emprot",
+                "entry": "9V4D",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T08:27:38Z",
+            "seconds": 279
+          },
+          "9JKK": {
+            "entry": "9JKK",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.68,
+                "samples": 132,
+                "rc": 0,
+                "seconds": 667,
+                "timed_out": false,
+                "started": 1792744857.8680873,
+                "ended": 1792745525.2439635,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T08:40:57Z",
+                "ended_utc": "2026-10-23T08:52:05Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9958,
+                "tm_score_pred_norm": 0.9054,
+                "ca_rmsd": 0.4,
+                "aligned_ca_length": 529,
+                "seq_identity": 1.0,
+                "pred_residues": 583,
+                "native_residues": 530,
+                "coverage": 1.1,
+                "method": "emprot",
+                "entry": "9JKK",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9976,
+                "tm_score_pred_norm": 0.9901,
+                "ca_rmsd": 0.4,
+                "aligned_ca_length": 530,
+                "seq_identity": 1.0,
+                "pred_residues": 534,
+                "native_residues": 530,
+                "coverage": 1.0075,
+                "method": "emprot",
+                "entry": "9JKK",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.946,
+                "tm_score_pred_norm": 0.8134,
+                "ca_rmsd": 2.11,
+                "aligned_ca_length": 530,
+                "seq_identity": 0.985,
+                "pred_residues": 620,
+                "native_residues": 530,
+                "coverage": 1.1698,
+                "method": "emprot",
+                "entry": "9JKK",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T08:40:57Z",
+            "seconds": 673
+          },
+          "9OTA": {
+            "entry": "9OTA",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.78,
+                "samples": 114,
+                "rc": 0,
+                "seconds": 572,
+                "timed_out": false,
+                "started": 1792745636.241275,
+                "ended": 1792746208.3337057,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T08:53:56Z",
+                "ended_utc": "2026-10-23T09:03:28Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9668,
+                "tm_score_pred_norm": 0.9598,
+                "ca_rmsd": 1.3,
+                "aligned_ca_length": 266,
+                "seq_identity": 0.962,
+                "pred_residues": 269,
+                "native_residues": 267,
+                "coverage": 0.5037,
+                "method": "emprot",
+                "entry": "9OTA",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9112,
+                "tm_score_pred_norm": 0.9925,
+                "ca_rmsd": 0.53,
+                "aligned_ca_length": 245,
+                "seq_identity": 1.0,
+                "pred_residues": 245,
+                "native_residues": 267,
+                "coverage": 0.4588,
+                "method": "emprot",
+                "entry": "9OTA",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9573,
+                "tm_score_pred_norm": 0.9469,
+                "ca_rmsd": 1.57,
+                "aligned_ca_length": 267,
+                "seq_identity": 0.959,
+                "pred_residues": 270,
+                "native_residues": 267,
+                "coverage": 0.5056,
+                "method": "emprot",
+                "entry": "9OTA",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T08:53:56Z",
+            "seconds": 574
+          },
+          "9TKA": {
+            "entry": "9TKA",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 12.57,
+                "samples": 170,
+                "rc": 0,
+                "seconds": 854,
+                "timed_out": false,
+                "started": 1792746527.0748045,
+                "ended": 1792747380.9554312,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:08:47Z",
+                "ended_utc": "2026-10-23T09:23:00Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.998,
+                "tm_score_pred_norm": 0.4225,
+                "ca_rmsd": 0.27,
+                "aligned_ca_length": 247,
+                "seq_identity": 1.0,
+                "pred_residues": 584,
+                "native_residues": 247,
+                "coverage": 2.3644,
+                "method": "emprot",
+                "entry": "9TKA",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9946,
+                "tm_score_pred_norm": 0.9906,
+                "ca_rmsd": 0.21,
+                "aligned_ca_length": 246,
+                "seq_identity": 1.0,
+                "pred_residues": 248,
+                "native_residues": 247,
+                "coverage": 1.004,
+                "method": "emprot",
+                "entry": "9TKA",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9847,
+                "tm_score_pred_norm": 0.8319,
+                "ca_rmsd": 0.74,
+                "aligned_ca_length": 247,
+                "seq_identity": 1.0,
+                "pred_residues": 293,
+                "native_residues": 247,
+                "coverage": 1.1862,
+                "method": "emprot",
+                "entry": "9TKA",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:08:46Z",
+            "seconds": 856
+          },
+          "9KQM": {
+            "entry": "9KQM",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 13.68,
+                "samples": 129,
+                "rc": 0,
+                "seconds": 656,
+                "timed_out": false,
+                "started": 1792747595.9461405,
+                "ended": 1792748252.0438159,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:26:35Z",
+                "ended_utc": "2026-10-23T09:37:32Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9568,
+                "tm_score_pred_norm": 0.7581,
+                "ca_rmsd": 1.26,
+                "aligned_ca_length": 393,
+                "seq_identity": 0.995,
+                "pred_residues": 510,
+                "native_residues": 403,
+                "coverage": 1.2655,
+                "method": "emprot",
+                "entry": "9KQM",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.7638,
+                "tm_score_pred_norm": 0.9875,
+                "ca_rmsd": 0.78,
+                "aligned_ca_length": 311,
+                "seq_identity": 0.997,
+                "pred_residues": 311,
+                "native_residues": 403,
+                "coverage": 0.7717,
+                "method": "emprot",
+                "entry": "9KQM",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9696,
+                "tm_score_pred_norm": 0.6181,
+                "ca_rmsd": 1.64,
+                "aligned_ca_length": 403,
+                "seq_identity": 0.975,
+                "pred_residues": 637,
+                "native_residues": 403,
+                "coverage": 1.5806,
+                "method": "emprot",
+                "entry": "9KQM",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:26:35Z",
+            "seconds": 660
+          },
+          "9WFL": {
+            "entry": "9WFL",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 13.35,
+                "samples": 151,
+                "rc": 0,
+                "seconds": 767,
+                "timed_out": false,
+                "started": 1792748405.8348508,
+                "ended": 1792749173.0780232,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:40:05Z",
+                "ended_utc": "2026-10-23T09:52:53Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9963,
+                "tm_score_pred_norm": 0.9349,
+                "ca_rmsd": 0.41,
+                "aligned_ca_length": 652,
+                "seq_identity": 1.0,
+                "pred_residues": 696,
+                "native_residues": 653,
+                "coverage": 1.0205,
+                "method": "emprot",
+                "entry": "9WFL",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9963,
+                "tm_score_pred_norm": 0.9843,
+                "ca_rmsd": 0.41,
+                "aligned_ca_length": 652,
+                "seq_identity": 1.0,
+                "pred_residues": 661,
+                "native_residues": 653,
+                "coverage": 0.9692,
+                "method": "emprot",
+                "entry": "9WFL",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9915,
+                "tm_score_pred_norm": 0.9293,
+                "ca_rmsd": 0.84,
+                "aligned_ca_length": 653,
+                "seq_identity": 0.972,
+                "pred_residues": 697,
+                "native_residues": 653,
+                "coverage": 1.022,
+                "method": "emprot",
+                "entry": "9WFL",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:40:05Z",
+            "seconds": 777
+          },
+          "9WME": {
+            "entry": "9WME",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 15.41,
+                "samples": 188,
+                "rc": 0,
+                "seconds": 963,
+                "timed_out": false,
+                "started": 1792749347.819853,
+                "ended": 1792750311.0956142,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:55:47Z",
+                "ended_utc": "2026-10-23T10:11:51Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.3635,
+                "tm_score_pred_norm": 0.3196,
+                "ca_rmsd": 6.02,
+                "aligned_ca_length": 227,
+                "seq_identity": 0.115,
+                "pred_residues": 514,
+                "native_residues": 439,
+                "coverage": 1.1525,
+                "method": "emprot",
+                "entry": "9WME",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.4592,
+                "tm_score_pred_norm": 0.9774,
+                "ca_rmsd": 0.85,
+                "aligned_ca_length": 204,
+                "seq_identity": 0.975,
+                "pred_residues": 204,
+                "native_residues": 439,
+                "coverage": 0.4574,
+                "method": "emprot",
+                "entry": "9WME",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.7354,
+                "tm_score_pred_norm": 0.7137,
+                "ca_rmsd": 3.25,
+                "aligned_ca_length": 356,
+                "seq_identity": 0.854,
+                "pred_residues": 453,
+                "native_residues": 439,
+                "coverage": 1.0157,
+                "method": "emprot",
+                "entry": "9WME",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:55:47Z",
+            "seconds": 968
+          },
+          "9VI4": {
+            "entry": "9VI4",
+            "method": "emprot",
+            "status": "killed_corun",
+            "failed_step": "build",
+            "note": "killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8857,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 1.02,
+                "samples": 343,
+                "rc": -9,
+                "seconds": 1727,
+                "timed_out": false,
+                "started": 1792751753.0781178,
+                "ended": 1792753480.5526972,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T10:35:53Z",
+                "ended_utc": "2026-10-23T11:04:40Z"
+              }
+            },
+            "models": [],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T10:35:52Z"
+          },
+          "9VBD": {
+            "entry": "9VBD",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 12.77,
+                "samples": 225,
+                "rc": 0,
+                "seconds": 1142,
+                "timed_out": false,
+                "started": 1792753693.7659435,
+                "ended": 1792754836.149142,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:08:13Z",
+                "ended_utc": "2026-10-23T11:27:16Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9861,
+                "tm_score_pred_norm": 0.576,
+                "ca_rmsd": 0.85,
+                "aligned_ca_length": 519,
+                "seq_identity": 0.987,
+                "pred_residues": 895,
+                "native_residues": 521,
+                "coverage": 1.7179,
+                "method": "emprot",
+                "entry": "9VBD",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.3437,
+                "tm_score_pred_norm": 0.9654,
+                "ca_rmsd": 0.9,
+                "aligned_ca_length": 181,
+                "seq_identity": 0.956,
+                "pred_residues": 183,
+                "native_residues": 521,
+                "coverage": 0.3512,
+                "method": "emprot",
+                "entry": "9VBD",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9923,
+                "tm_score_pred_norm": 0.5805,
+                "ca_rmsd": 0.72,
+                "aligned_ca_length": 521,
+                "seq_identity": 1.0,
+                "pred_residues": 893,
+                "native_residues": 521,
+                "coverage": 1.714,
+                "method": "emprot",
+                "entry": "9VBD",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:08:13Z",
+            "seconds": 1150
+          },
+          "9ZLH": {
+            "entry": "9ZLH",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 15.03,
+                "samples": 125,
+                "rc": 0,
+                "seconds": 636,
+                "timed_out": false,
+                "started": 1792754955.9691558,
+                "ended": 1792755592.282439,
+                "gpu": 1,
+                "limit_s": 10572,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:29:15Z",
+                "ended_utc": "2026-10-23T11:39:52Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9928,
+                "tm_score_pred_norm": 0.9976,
+                "ca_rmsd": 0.26,
+                "aligned_ca_length": 205,
+                "seq_identity": 1.0,
+                "pred_residues": 205,
+                "native_residues": 206,
+                "coverage": 0.9951,
+                "method": "emprot",
+                "entry": "9ZLH",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9976,
+                "tm_score_pred_norm": 0.9976,
+                "ca_rmsd": 0.26,
+                "aligned_ca_length": 206,
+                "seq_identity": 1.0,
+                "pred_residues": 206,
+                "native_residues": 206,
+                "coverage": 1.0,
+                "method": "emprot",
+                "entry": "9ZLH",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.8674,
+                "tm_score_pred_norm": 0.8674,
+                "ca_rmsd": 2.45,
+                "aligned_ca_length": 203,
+                "seq_identity": 0.911,
+                "pred_residues": 206,
+                "native_residues": 206,
+                "coverage": 1.0,
+                "method": "emprot",
+                "entry": "9ZLH",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:29:15Z",
+            "seconds": 638
+          },
+          "9RWS": {
+            "entry": "9RWS",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 11.25,
+                "samples": 99,
+                "rc": 0,
+                "seconds": 499,
+                "timed_out": false,
+                "started": 1792755744.8397336,
+                "ended": 1792756244.2339506,
+                "gpu": 1,
+                "limit_s": 9783,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:42:24Z",
+                "ended_utc": "2026-10-23T11:50:44Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9821,
+                "tm_score_pred_norm": 0.9783,
+                "ca_rmsd": 0.92,
+                "aligned_ca_length": 507,
+                "seq_identity": 1.0,
+                "pred_residues": 514,
+                "native_residues": 512,
+                "coverage": 1.0039,
+                "method": "emprot",
+                "entry": "9RWS",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9749,
+                "tm_score_pred_norm": 0.9942,
+                "ca_rmsd": 0.51,
+                "aligned_ca_length": 501,
+                "seq_identity": 0.994,
+                "pred_residues": 502,
+                "native_residues": 512,
+                "coverage": 0.9805,
+                "method": "emprot",
+                "entry": "9RWS",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9379,
+                "tm_score_pred_norm": 0.8743,
+                "ca_rmsd": 2.12,
+                "aligned_ca_length": 510,
+                "seq_identity": 0.99,
+                "pred_residues": 551,
+                "native_residues": 512,
+                "coverage": 1.0762,
+                "method": "emprot",
+                "entry": "9RWS",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:42:24Z",
+            "seconds": 505
+          },
+          "9VUH": {
+            "entry": "9VUH",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 17.79,
+                "samples": 152,
+                "rc": 0,
+                "seconds": 777,
+                "timed_out": false,
+                "started": 1792756513.635762,
+                "ended": 1792757290.300719,
+                "gpu": 0,
+                "limit_s": 9014,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:55:13Z",
+                "ended_utc": "2026-10-23T12:08:10Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.3131,
+                "tm_score_pred_norm": 0.286,
+                "ca_rmsd": 5.46,
+                "aligned_ca_length": 143,
+                "seq_identity": 0.07,
+                "pred_residues": 334,
+                "native_residues": 296,
+                "coverage": 0.5268,
+                "method": "emprot",
+                "entry": "9VUH",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.2476,
+                "tm_score_pred_norm": 0.3162,
+                "ca_rmsd": 5.9,
+                "aligned_ca_length": 119,
+                "seq_identity": 0.084,
+                "pred_residues": 208,
+                "native_residues": 296,
+                "coverage": 0.3281,
+                "method": "emprot",
+                "entry": "9VUH",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.2123,
+                "tm_score_pred_norm": 0.2012,
+                "ca_rmsd": 5.61,
+                "aligned_ca_length": 98,
+                "seq_identity": 0.051,
+                "pred_residues": 318,
+                "native_residues": 296,
+                "coverage": 0.5016,
+                "method": "emprot",
+                "entry": "9VUH",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:55:13Z",
+            "seconds": 786
+          },
+          "9WTX": {
+            "entry": "9WTX",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 16.17,
+                "samples": 173,
+                "rc": 0,
+                "seconds": 872,
+                "timed_out": false,
+                "started": 1792757558.619376,
+                "ended": 1792758430.977226,
+                "gpu": 1,
+                "limit_s": 7969,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T12:12:38Z",
+                "ended_utc": "2026-10-23T12:27:10Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9805,
+                "tm_score_pred_norm": 0.8972,
+                "ca_rmsd": 1.07,
+                "aligned_ca_length": 498,
+                "seq_identity": 0.998,
+                "pred_residues": 547,
+                "native_residues": 500,
+                "coverage": 1.094,
+                "method": "emprot",
+                "entry": "9WTX",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.3052,
+                "tm_score_pred_norm": 0.956,
+                "ca_rmsd": 1.05,
+                "aligned_ca_length": 155,
+                "seq_identity": 0.929,
+                "pred_residues": 156,
+                "native_residues": 500,
+                "coverage": 0.312,
+                "method": "emprot",
+                "entry": "9WTX",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9841,
+                "tm_score_pred_norm": 0.894,
+                "ca_rmsd": 1.08,
+                "aligned_ca_length": 500,
+                "seq_identity": 0.998,
+                "pred_residues": 551,
+                "native_residues": 500,
+                "coverage": 1.102,
+                "method": "emprot",
+                "entry": "9WTX",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T12:12:38Z",
+            "seconds": 878
+          },
+          "9OC0": {
+            "entry": "9OC0",
+            "method": "emprot",
+            "status": "killed_corun",
+            "failed_step": "build",
+            "note": "killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 0.75,
+                "samples": 375,
+                "rc": -9,
+                "seconds": 1890,
+                "timed_out": false,
+                "started": 1792759441.4204504,
+                "ended": 1792761331.6833599,
+                "gpu": 1,
+                "limit_s": 6086,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T12:44:01Z",
+                "ended_utc": "2026-10-23T13:15:31Z"
+              }
+            },
+            "models": [],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T12:44:01Z"
+          },
+          "9Z24": {
+            "entry": "9Z24",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 9.87,
+                "samples": 169,
+                "rc": 0,
+                "seconds": 851,
+                "timed_out": false,
+                "started": 1792763316.105387,
+                "ended": 1792764167.5079887,
+                "gpu": 0,
+                "limit_s": 2212,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T13:48:36Z",
+                "ended_utc": "2026-10-23T14:02:47Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9099,
+                "tm_score_pred_norm": 0.2691,
+                "ca_rmsd": 2.41,
+                "aligned_ca_length": 324,
+                "seq_identity": 0.941,
+                "pred_residues": 1170,
+                "native_residues": 338,
+                "coverage": 3.4615,
+                "method": "emprot",
+                "entry": "9Z24",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9095,
+                "tm_score_pred_norm": 0.9697,
+                "ca_rmsd": 0.29,
+                "aligned_ca_length": 308,
+                "seq_identity": 1.0,
+                "pred_residues": 317,
+                "native_residues": 338,
+                "coverage": 0.9379,
+                "method": "emprot",
+                "entry": "9Z24",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9194,
+                "tm_score_pred_norm": 0.2628,
+                "ca_rmsd": 2.51,
+                "aligned_ca_length": 329,
+                "seq_identity": 0.936,
+                "pred_residues": 1214,
+                "native_residues": 338,
+                "coverage": 3.5917,
+                "method": "emprot",
+                "entry": "9Z24",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T13:48:35Z",
+            "seconds": 862
+          },
+          "13BD": {
+            "entry": "13BD",
+            "method": "emprot",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "26DK": {
+            "entry": "26DK",
+            "method": "emprot",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          }
+        },
+        "weights": {
+          "src_emprot/emprot/bin/USalign": 2580159,
+          "src_emprot/emprot/bin/unidoc_frag": 9235980,
+          "src_emprot/emprot/bin/stride": 1098276,
+          "src_emprot/emprot/bin/NWalign": 1000500,
+          "src_emprot/emprot/bin/getp": 1793843,
+          "src_emprot/emprot/bin/dockx": 4386343,
+          "src_emprot/emprot/bin/domasgx": 1812226,
+          "src_emprot/emprot/bin/TMalign": 1888059,
+          "src_emprot/emprot/weights/model_all_atom": 152286626,
+          "src_emprot/emprot/weights/model_aa": 19124029,
+          "src_emprot/emprot/weights/model_mc": 19065277
+        }
+      },
+      "emodelx": {
+        "key": "emodelx",
+        "label": "EModelX(+AF)",
+        "commit": "53713cf820d10d78b1ca6669ef197850cf907843",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 83,
+        "entries": {
+          "9T5K": {
+            "entry": "9T5K",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 5583,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 1.85,
+                "samples": 356,
+                "rc": 0,
+                "seconds": 1833,
+                "timed_out": false,
+                "started": 1792738079.7460277,
+                "ended": 1792739913.1236093,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T06:47:59Z",
+                "ended_utc": "2026-10-23T07:18:33Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9922,
+                "tm_score_pred_norm": 0.9179,
+                "ca_rmsd": 0.79,
+                "aligned_ca_length": 381,
+                "seq_identity": 0.997,
+                "pred_residues": 412,
+                "native_residues": 381,
+                "coverage": 1.0814,
+                "method": "emodelx",
+                "entry": "9T5K",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9t5k_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.994,
+                "tm_score_pred_norm": 0.9129,
+                "ca_rmsd": 0.61,
+                "aligned_ca_length": 381,
+                "seq_identity": 0.997,
+                "pred_residues": 415,
+                "native_residues": 381,
+                "coverage": 1.0892,
+                "method": "emodelx",
+                "entry": "9T5K",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9t5k_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T06:47:58Z",
+            "seconds": 1835
+          },
+          "9WQ6": {
+            "entry": "9WQ6",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4687,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 10.09,
+                "samples": 80,
+                "rc": 0,
+                "seconds": 409,
+                "timed_out": false,
+                "started": 1792740934.9818084,
+                "ended": 1792741344.2962472,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T07:35:34Z",
+                "ended_utc": "2026-10-23T07:42:24Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.8939,
+                "tm_score_pred_norm": 0.7569,
+                "ca_rmsd": 1.71,
+                "aligned_ca_length": 246,
+                "seq_identity": 0.829,
+                "pred_residues": 310,
+                "native_residues": 261,
+                "coverage": 1.1877,
+                "method": "emodelx",
+                "entry": "9WQ6",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9wq6_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.8994,
+                "tm_score_pred_norm": 0.757,
+                "ca_rmsd": 1.74,
+                "aligned_ca_length": 248,
+                "seq_identity": 0.831,
+                "pred_residues": 312,
+                "native_residues": 261,
+                "coverage": 1.1954,
+                "method": "emodelx",
+                "entry": "9WQ6",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9wq6_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T07:35:32Z",
+            "seconds": 413
+          },
+          "22FX": {
+            "entry": "22FX",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4687,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 18.27,
+                "samples": 85,
+                "rc": 0,
+                "seconds": 434,
+                "timed_out": false,
+                "started": 1792743562.06804,
+                "ended": 1792743996.4401598,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T08:19:22Z",
+                "ended_utc": "2026-10-23T08:26:36Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9723,
+                "tm_score_pred_norm": 0.9347,
+                "ca_rmsd": 0.76,
+                "aligned_ca_length": 170,
+                "seq_identity": 1.0,
+                "pred_residues": 180,
+                "native_residues": 173,
+                "coverage": 1.0405,
+                "method": "emodelx",
+                "entry": "22FX",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "22fx_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9723,
+                "tm_score_pred_norm": 0.9347,
+                "ca_rmsd": 0.76,
+                "aligned_ca_length": 170,
+                "seq_identity": 1.0,
+                "pred_residues": 180,
+                "native_residues": 173,
+                "coverage": 1.0405,
+                "method": "emodelx",
+                "entry": "22FX",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "22fx_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T08:19:21Z",
+            "seconds": 436
+          },
+          "9V4D": {
+            "entry": "9V4D",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4047,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 16.89,
+                "samples": 28,
+                "rc": 0,
+                "seconds": 141,
+                "timed_out": false,
+                "started": 1792744338.0329304,
+                "ended": 1792744479.2309456,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T08:32:18Z",
+                "ended_utc": "2026-10-23T08:34:39Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9693,
+                "tm_score_pred_norm": 0.9693,
+                "ca_rmsd": 1.07,
+                "aligned_ca_length": 265,
+                "seq_identity": 0.985,
+                "pred_residues": 267,
+                "native_residues": 267,
+                "coverage": 0.9674,
+                "method": "emodelx",
+                "entry": "9V4D",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9v4d_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9693,
+                "tm_score_pred_norm": 0.9693,
+                "ca_rmsd": 1.07,
+                "aligned_ca_length": 265,
+                "seq_identity": 0.985,
+                "pred_residues": 267,
+                "native_residues": 267,
+                "coverage": 0.9674,
+                "method": "emodelx",
+                "entry": "9V4D",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9v4d_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T08:32:17Z",
+            "seconds": 144
+          },
+          "9JKK": {
+            "entry": "9JKK",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4367,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 17.15,
+                "samples": 49,
+                "rc": 0,
+                "seconds": 246,
+                "timed_out": false,
+                "started": 1792745171.2243092,
+                "ended": 1792745417.1787617,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T08:46:11Z",
+                "ended_utc": "2026-10-23T08:50:17Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9908,
+                "tm_score_pred_norm": 0.9725,
+                "ca_rmsd": 0.77,
+                "aligned_ca_length": 529,
+                "seq_identity": 0.996,
+                "pred_residues": 540,
+                "native_residues": 530,
+                "coverage": 1.0189,
+                "method": "emodelx",
+                "entry": "9JKK",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9jkk_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9908,
+                "tm_score_pred_norm": 0.9689,
+                "ca_rmsd": 0.77,
+                "aligned_ca_length": 529,
+                "seq_identity": 0.996,
+                "pred_residues": 542,
+                "native_residues": 530,
+                "coverage": 1.0226,
+                "method": "emodelx",
+                "entry": "9JKK",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9jkk_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T08:46:10Z",
+            "seconds": 250
+          },
+          "9OTA": {
+            "entry": "9OTA",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4367,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 23.7,
+                "samples": 41,
+                "rc": 0,
+                "seconds": 209,
+                "timed_out": false,
+                "started": 1792746105.8923087,
+                "ended": 1792746315.3206055,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:01:45Z",
+                "ended_utc": "2026-10-23T09:05:15Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9104,
+                "tm_score_pred_norm": 0.979,
+                "ca_rmsd": 0.95,
+                "aligned_ca_length": 248,
+                "seq_identity": 0.992,
+                "pred_residues": 248,
+                "native_residues": 267,
+                "coverage": 0.4644,
+                "method": "emodelx",
+                "entry": "9OTA",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9ota_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9104,
+                "tm_score_pred_norm": 0.979,
+                "ca_rmsd": 0.95,
+                "aligned_ca_length": 248,
+                "seq_identity": 0.992,
+                "pred_residues": 248,
+                "native_residues": 267,
+                "coverage": 0.4644,
+                "method": "emodelx",
+                "entry": "9OTA",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9ota_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:01:45Z",
+            "seconds": 212
+          },
+          "9TKA": {
+            "entry": "9TKA",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4687,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 13.84,
+                "samples": 55,
+                "rc": 0,
+                "seconds": 275,
+                "timed_out": false,
+                "started": 1792747186.9730024,
+                "ended": 1792747462.0972364,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:19:46Z",
+                "ended_utc": "2026-10-23T09:24:22Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9944,
+                "tm_score_pred_norm": 0.9748,
+                "ca_rmsd": 0.44,
+                "aligned_ca_length": 247,
+                "seq_identity": 0.996,
+                "pred_residues": 252,
+                "native_residues": 247,
+                "coverage": 1.0202,
+                "method": "emodelx",
+                "entry": "9TKA",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9tka_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9944,
+                "tm_score_pred_norm": 0.9748,
+                "ca_rmsd": 0.44,
+                "aligned_ca_length": 247,
+                "seq_identity": 0.996,
+                "pred_residues": 252,
+                "native_residues": 247,
+                "coverage": 1.0202,
+                "method": "emodelx",
+                "entry": "9TKA",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9tka_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:19:46Z",
+            "seconds": 277
+          },
+          "9KQM": {
+            "entry": "9KQM",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4367,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 19.14,
+                "samples": 57,
+                "rc": 0,
+                "seconds": 290,
+                "timed_out": false,
+                "started": 1792747921.905393,
+                "ended": 1792748212.0080254,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:32:01Z",
+                "ended_utc": "2026-10-23T09:36:52Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.8588,
+                "tm_score_pred_norm": 0.8364,
+                "ca_rmsd": 1.49,
+                "aligned_ca_length": 356,
+                "seq_identity": 0.961,
+                "pred_residues": 414,
+                "native_residues": 403,
+                "coverage": 1.0273,
+                "method": "emodelx",
+                "entry": "9KQM",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9kqm_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.8635,
+                "tm_score_pred_norm": 0.837,
+                "ca_rmsd": 1.49,
+                "aligned_ca_length": 358,
+                "seq_identity": 0.961,
+                "pred_residues": 416,
+                "native_residues": 403,
+                "coverage": 1.0323,
+                "method": "emodelx",
+                "entry": "9KQM",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9kqm_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:32:01Z",
+            "seconds": 294
+          },
+          "9WFL": {
+            "entry": "9WFL",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4367,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 22.87,
+                "samples": 69,
+                "rc": 0,
+                "seconds": 352,
+                "timed_out": false,
+                "started": 1792748864.8496547,
+                "ended": 1792749216.5493999,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T09:47:44Z",
+                "ended_utc": "2026-10-23T09:53:36Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9961,
+                "tm_score_pred_norm": 0.9595,
+                "ca_rmsd": 0.55,
+                "aligned_ca_length": 653,
+                "seq_identity": 0.998,
+                "pred_residues": 678,
+                "native_residues": 653,
+                "coverage": 0.9941,
+                "method": "emodelx",
+                "entry": "9WFL",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9wfl_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9961,
+                "tm_score_pred_norm": 0.9595,
+                "ca_rmsd": 0.55,
+                "aligned_ca_length": 653,
+                "seq_identity": 0.998,
+                "pred_residues": 678,
+                "native_residues": 653,
+                "coverage": 0.9941,
+                "method": "emodelx",
+                "entry": "9WFL",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9wfl_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T09:47:43Z",
+            "seconds": 360
+          },
+          "9WME": {
+            "entry": "9WME",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4367,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 23.04,
+                "samples": 106,
+                "rc": 0,
+                "seconds": 548,
+                "timed_out": false,
+                "started": 1792749769.2298644,
+                "ended": 1792750317.6154468,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T10:02:49Z",
+                "ended_utc": "2026-10-23T10:11:57Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.8539,
+                "tm_score_pred_norm": 0.8673,
+                "ca_rmsd": 2.83,
+                "aligned_ca_length": 400,
+                "seq_identity": 0.922,
+                "pred_residues": 432,
+                "native_residues": 439,
+                "coverage": 0.9686,
+                "method": "emodelx",
+                "entry": "9WME",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9wme_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.8539,
+                "tm_score_pred_norm": 0.8673,
+                "ca_rmsd": 2.83,
+                "aligned_ca_length": 400,
+                "seq_identity": 0.922,
+                "pred_residues": 432,
+                "native_residues": 439,
+                "coverage": 0.9686,
+                "method": "emodelx",
+                "entry": "9WME",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9wme_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T10:02:47Z",
+            "seconds": 553
+          },
+          "9VI4": {
+            "entry": "9VI4",
+            "method": "emodelx",
+            "status": "killed_corun",
+            "failed_step": "temp_flex",
+            "note": "killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 5935,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 3.0,
+                "samples": 145,
+                "rc": -9,
+                "seconds": 730,
+                "timed_out": false,
+                "started": 1792751755.3788025,
+                "ended": 1792752485.61812,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T10:35:55Z",
+                "ended_utc": "2026-10-23T10:48:05Z"
+              }
+            },
+            "models": [],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T10:35:54Z"
+          },
+          "9VBD": {
+            "entry": "9VBD",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4687,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 15.86,
+                "samples": 84,
+                "rc": 0,
+                "seconds": 432,
+                "timed_out": false,
+                "started": 1792753848.7469535,
+                "ended": 1792754280.344606,
+                "gpu": 1,
+                "limit_s": 10800,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:10:48Z",
+                "ended_utc": "2026-10-23T11:18:00Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9854,
+                "tm_score_pred_norm": 0.9798,
+                "ca_rmsd": 0.96,
+                "aligned_ca_length": 520,
+                "seq_identity": 0.992,
+                "pred_residues": 524,
+                "native_residues": 521,
+                "coverage": 1.0058,
+                "method": "emodelx",
+                "entry": "9VBD",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9vbd_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9854,
+                "tm_score_pred_norm": 0.9798,
+                "ca_rmsd": 0.96,
+                "aligned_ca_length": 520,
+                "seq_identity": 0.992,
+                "pred_residues": 524,
+                "native_residues": 521,
+                "coverage": 1.0058,
+                "method": "emodelx",
+                "entry": "9VBD",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9vbd_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:10:47Z",
+            "seconds": 436
+          },
+          "9ZLH": {
+            "entry": "9ZLH",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4367,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 15.25,
+                "samples": 83,
+                "rc": 0,
+                "seconds": 422,
+                "timed_out": false,
+                "started": 1792755079.2483542,
+                "ended": 1792755501.742329,
+                "gpu": 0,
+                "limit_s": 10449,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:31:19Z",
+                "ended_utc": "2026-10-23T11:38:21Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9931,
+                "tm_score_pred_norm": 0.9931,
+                "ca_rmsd": 0.45,
+                "aligned_ca_length": 206,
+                "seq_identity": 1.0,
+                "pred_residues": 206,
+                "native_residues": 206,
+                "coverage": 1.0,
+                "method": "emodelx",
+                "entry": "9ZLH",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9zlh_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9931,
+                "tm_score_pred_norm": 0.9931,
+                "ca_rmsd": 0.45,
+                "aligned_ca_length": 206,
+                "seq_identity": 1.0,
+                "pred_residues": 206,
+                "native_residues": 206,
+                "coverage": 1.0,
+                "method": "emodelx",
+                "entry": "9ZLH",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9zlh_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:31:18Z",
+            "seconds": 425
+          },
+          "9RWS": {
+            "entry": "9RWS",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4367,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 23.44,
+                "samples": 50,
+                "rc": 0,
+                "seconds": 253,
+                "timed_out": false,
+                "started": 1792756139.2919164,
+                "ended": 1792756392.6403866,
+                "gpu": 0,
+                "limit_s": 9389,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T11:48:59Z",
+                "ended_utc": "2026-10-23T11:53:12Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9611,
+                "tm_score_pred_norm": 0.9781,
+                "ca_rmsd": 1.21,
+                "aligned_ca_length": 499,
+                "seq_identity": 0.984,
+                "pred_residues": 503,
+                "native_residues": 512,
+                "coverage": 0.9824,
+                "method": "emodelx",
+                "entry": "9RWS",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9rws_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.963,
+                "tm_score_pred_norm": 0.9762,
+                "ca_rmsd": 1.31,
+                "aligned_ca_length": 501,
+                "seq_identity": 0.98,
+                "pred_residues": 505,
+                "native_residues": 512,
+                "coverage": 0.9863,
+                "method": "emodelx",
+                "entry": "9RWS",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9rws_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T11:48:58Z",
+            "seconds": 258
+          },
+          "9VUH": {
+            "entry": "9VUH",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4047,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 23.35,
+                "samples": 85,
+                "rc": 0,
+                "seconds": 441,
+                "timed_out": false,
+                "started": 1792756879.331966,
+                "ended": 1792757319.9787996,
+                "gpu": 1,
+                "limit_s": 8649,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T12:01:19Z",
+                "ended_utc": "2026-10-23T12:08:39Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9628,
+                "tm_score_pred_norm": 0.9116,
+                "ca_rmsd": 1.3,
+                "aligned_ca_length": 294,
+                "seq_identity": 1.0,
+                "pred_residues": 313,
+                "native_residues": 296,
+                "coverage": 0.4937,
+                "method": "emodelx",
+                "entry": "9VUH",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9vuh_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9628,
+                "tm_score_pred_norm": 0.9116,
+                "ca_rmsd": 1.3,
+                "aligned_ca_length": 294,
+                "seq_identity": 1.0,
+                "pred_residues": 313,
+                "native_residues": 296,
+                "coverage": 0.4937,
+                "method": "emodelx",
+                "entry": "9VUH",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9vuh_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T12:01:17Z",
+            "seconds": 445
+          },
+          "9WTX": {
+            "entry": "9WTX",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4687,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 13.01,
+                "samples": 76,
+                "rc": 0,
+                "seconds": 387,
+                "timed_out": false,
+                "started": 1792758438.0189974,
+                "ended": 1792758824.989438,
+                "gpu": 1,
+                "limit_s": 7090,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T12:27:18Z",
+                "ended_utc": "2026-10-23T12:33:44Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9305,
+                "tm_score_pred_norm": 0.8955,
+                "ca_rmsd": 1.99,
+                "aligned_ca_length": 483,
+                "seq_identity": 0.975,
+                "pred_residues": 520,
+                "native_residues": 500,
+                "coverage": 1.04,
+                "method": "emodelx",
+                "entry": "9WTX",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9wtx_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9315,
+                "tm_score_pred_norm": 0.8914,
+                "ca_rmsd": 2.04,
+                "aligned_ca_length": 484,
+                "seq_identity": 0.975,
+                "pred_residues": 523,
+                "native_residues": 500,
+                "coverage": 1.046,
+                "method": "emodelx",
+                "entry": "9WTX",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9wtx_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T12:27:16Z",
+            "seconds": 393
+          },
+          "9OC0": {
+            "entry": "9OC0",
+            "method": "emodelx",
+            "status": "killed_corun",
+            "failed_step": "temp_flex",
+            "note": "killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 5583,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 0.35,
+                "samples": 171,
+                "rc": -9,
+                "seconds": 884,
+                "timed_out": false,
+                "started": 1792761336.055572,
+                "ended": 1792762220.5442598,
+                "gpu": 1,
+                "limit_s": 4192,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T13:15:36Z",
+                "ended_utc": "2026-10-23T13:30:20Z"
+              }
+            },
+            "models": [],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-23T13:15:34Z"
+          },
+          "9Z24": {
+            "entry": "9Z24",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4047,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 6.72,
+                "samples": 61,
+                "rc": 0,
+                "seconds": 317,
+                "timed_out": false,
+                "started": 1792764178.5704,
+                "ended": 1792764495.0944486,
+                "gpu": 0,
+                "limit_s": 1349,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-23T14:02:58Z",
+                "ended_utc": "2026-10-23T14:08:15Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9054,
+                "tm_score_pred_norm": 0.9189,
+                "ca_rmsd": 0.79,
+                "aligned_ca_length": 309,
+                "seq_identity": 0.994,
+                "pred_residues": 333,
+                "native_residues": 338,
+                "coverage": 0.9852,
+                "method": "emodelx",
+                "entry": "9Z24",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9z24_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9059,
+                "tm_score_pred_norm": 0.9166,
+                "ca_rmsd": 0.77,
+                "aligned_ca_length": 309,
+                "seq_identity": 0.994,
+                "pred_residues": 334,
+                "native_residues": 338,
+                "coverage": 0.9882,
+                "method": "emodelx",
+                "entry": "9Z24",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9z24_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-23T14:02:57Z",
+            "seconds": 321
+          },
+          "13BD": {
+            "entry": "13BD",
+            "method": "emodelx",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "26DK": {
+            "entry": "26DK",
+            "method": "emodelx",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          }
+        },
+        "weights": {
+          "src_emodelx/models/best_AA_model.ckpt": 423942088,
+          "src_emodelx/models/best_CA_model.ckpt": 423942088,
+          "src_emodelx/models/best_BB_model.ckpt": 423942088
+        }
+      }
+    },
+    "complete": true,
+    "pending": [
+      [
+        "9VI4",
+        "modelangelo",
+        "killed_corun"
+      ],
+      [
+        "13BD",
+        "modelangelo",
+        "not run"
+      ],
+      [
+        "26DK",
+        "modelangelo",
+        "not run"
+      ],
+      [
+        "9VI4",
+        "e3",
+        "killed_corun"
+      ],
+      [
+        "26DK",
+        "e3",
+        "not run"
+      ],
+      [
+        "9VI4",
+        "emprot",
+        "killed_corun"
+      ],
+      [
+        "9OC0",
+        "emprot",
+        "killed_corun"
+      ],
+      [
+        "13BD",
+        "emprot",
+        "not run"
+      ],
+      [
+        "26DK",
+        "emprot",
+        "not run"
+      ],
+      [
+        "9VI4",
+        "emodelx",
+        "killed_corun"
+      ],
+      [
+        "9OC0",
+        "emodelx",
+        "killed_corun"
+      ],
+      [
+        "13BD",
+        "emodelx",
+        "not run"
+      ],
+      [
+        "26DK",
+        "emodelx",
+        "not run"
+      ]
+    ]
+  },
+  "methods": {
+    "modelangelo": {
+      "label": "ModelAngelo",
+      "commit": "994945bdfa6e5368e0d62349a47792f4864eebc3",
+      "status": "ready",
+      "setup_seconds": 886,
+      "version": "ModelAngelo 1.0.18"
+    },
+    "e3": {
+      "label": "E3-CryoFold",
+      "commit": "241cef48da83b96519e62ab02cccd9db96d8e68b",
+      "status": "ready",
+      "setup_seconds": 109,
+      "version": ""
+    },
+    "emprot": {
+      "label": "EMProt",
+      "commit": "9489d52e7fdc81c85ba82e386abcfa05bac2b9d1",
+      "status": "ready",
+      "setup_seconds": 87,
+      "version": ""
+    },
+    "emodelx": {
+      "label": "EModelX(+AF)",
+      "commit": "53713cf820d10d78b1ca6669ef197850cf907843",
+      "status": "ready",
+      "setup_seconds": 83,
+      "version": ""
+    }
+  },
+  "specs": {
+    "modelangelo": {
+      "key": "modelangelo",
+      "label": "ModelAngelo",
+      "repo": "https://github.com/3dem/model-angelo",
+      "commit": "994945bdfa6e5368e0d62349a47792f4864eebc3",
+      "python": "3.11.14",
+      "req": "env/modelangelo_requirements.txt",
+      "timeout": 10800,
+      "uses_af3": false,
+      "bundle": "nucleotides",
+      "weights_url": null,
+      "weights_min_bytes": 0,
+      "gdrive_id": null,
+      "import_test": "import sys, torch, numpy, scipy, pandas, Bio, mrcfile, einops, esm, pyhmmer, loguru, psutil, matplotlib, matplotlib.pyplot; print('python', sys.version.split()[0], '| torch', torch.__version__, '| cuda', torch.version.cuda, '| numpy', numpy.__version__, '| pandas', pandas.__version__, '| biopython', Bio.__version__, '| pyhmmer', pyhmmer.__version__)",
+      "main_kind": "modelangelo"
+    },
+    "e3": {
+      "key": "e3",
+      "label": "E3-CryoFold",
+      "repo": "https://github.com/A4Bio/E3-CryoFold",
+      "commit": "241cef48da83b96519e62ab02cccd9db96d8e68b",
+      "python": "3.9.25",
+      "req": "env/e3cryofold_requirements.txt",
+      "timeout": 10800,
+      "uses_af3": false,
+      "weights_url": "https://github.com/A4Bio/E3-CryoFold/releases/download/checkpoint/models.zip",
+      "weights_min_bytes": 50000000,
+      "gdrive_id": null,
+      "import_test": "import sys, torch, pytorch_lightning, numpy, scipy, Bio, mrcfile, open3d, skimage, sklearn, superpose3d, esm, networkx, nglview, matplotlib, PIL, requests; from cryo_module.AutoEM import run_pulchra; from E3CryoFold2 import E3CryoFold2; print('python', sys.version.split()[0], '| torch', torch.__version__, '| cuda', torch.version.cuda, '| numpy', numpy.__version__, '| open3d', open3d.__version__)",
+      "main_kind": "e3_prealign"
+    },
+    "emprot": {
+      "key": "emprot",
+      "label": "EMProt",
+      "repo": "https://github.com/huang-laboratory/EMProt",
+      "commit": "9489d52e7fdc81c85ba82e386abcfa05bac2b9d1",
+      "python": "3.10.20",
+      "req": "env/emprot_requirements.txt",
+      "timeout": 10800,
+      "uses_af3": true,
+      "weights_url": "http://huanglab.phys.hust.edu.cn/EMProt/pretrained_weights/weights.tgz",
+      "weights_min_bytes": 1000000,
+      "gdrive_id": null,
+      "import_test": "import sys, torch, numpy, emprot, emprot.run, emprot.eval, emprot.clean, emprot.fit, emprot.refine; print('python', sys.version.split()[0], '| torch', torch.__version__, '| cuda', torch.version.cuda, '| numpy', numpy.__version__, '| emprot', emprot.__version__)",
+      "main_kind": "emprot"
+    },
+    "emodelx": {
+      "key": "emodelx",
+      "label": "EModelX(+AF)",
+      "repo": "https://github.com/biomed-AI/EModelX",
+      "commit": "53713cf820d10d78b1ca6669ef197850cf907843",
+      "python": "3.8.20",
+      "req": "env/emodelx_requirements.txt",
+      "timeout": 10800,
+      "uses_af3": true,
+      "ckpt_files": [
+        "best_BB_model.ckpt",
+        "best_CA_model.ckpt",
+        "best_AA_model.ckpt"
+      ],
+      "weights_url": null,
+      "weights_min_bytes": 50000000,
+      "gdrive_id": "13BKzEBfL0uubYgcJJTGSZ-PkO9hXAB9X",
+      "import_test": "import sys, torch, numpy, mrcfile, networkx, open3d, pandas, requests, skimage, superpose3d, Bio; from modules.AutoEM import Solver; from unet3d.emmodel import ResUNet3D4EM; print('python', sys.version.split()[0], '| torch', torch.__version__, '| open3d', open3d.__version__, '| numpy', numpy.__version__)",
+      "main_kind": "emodelx_af_all_atom"
+    }
+  },
+  "usalign_commit": "746ad8a2a4dea9f317075cc482df0ecb5440bdea",
+  "usalign_version": "* US-align (Version 20261012)                                      *",
+  "input_sha256": {
+    "scripts/nbtools.py": "9bda95fce7f7fbe0c373e315740f555fc27942a08971ce2fe1b5cae6af6d748d",
+    "scripts/mica_inputs.py": "87b7f5e43b86671e09e673e8bb07abb20496ad92264528dfd9994b88bded417f",
+    "scripts/evaluate_models.py": "8c235732d2595f8ad2014d70a278b44097205aff2417c9b5761f55dfe4974250",
+    "data/af3/af3_jobs.csv": "b43068ffed7e3843d0d9c5cfa509d8f1ba9900527a1a0cad9e74aa69573cd4b0",
+    "data/af3/af3_files_sha256.txt": "c131836802f9469c2073cc8c0bbb495e906854ffb223100cf30750714e2e3a4f",
+    "data/entries_2026.csv": "cb695bb04ef09bf48f8c2848f91a2580c0b3c15f2a8f1e580659d86f0097a5da",
+    "env/modelangelo_requirements.txt": "fb1e831ccc62aaa1633b2dff7e15dd904403e493e3fe0360e95bf349d1150d4a",
+    "env/e3cryofold_requirements.txt": "40afa3f8479e02c25ca55a6e9f958b985d00390df23c142a76b358ac55bb8505",
+    "env/emprot_requirements.txt": "1c2c4f4adf2d327357d5d6b83990e54b05db7817c910c0b89d5bf2c21b749092",
+    "env/emodelx_requirements.txt": "61fe9b6d878be2d227f469c031356066b5bc17c92fb7c868fe1fe34214a835c7"
+  },
+  "tasks": [
+    [
+      "9T5K",
+      "modelangelo"
+    ],
+    [
+      "9T5K",
+      "e3"
+    ],
+    [
+      "9T5K",
+      "emprot"
+    ],
+    [
+      "9T5K",
+      "emodelx"
+    ],
+    [
+      "9WQ6",
+      "modelangelo"
+    ],
+    [
+      "9WQ6",
+      "e3"
+    ],
+    [
+      "9WQ6",
+      "emprot"
+    ],
+    [
+      "9WQ6",
+      "emodelx"
+    ],
+    [
+      "22FX",
+      "modelangelo"
+    ],
+    [
+      "22FX",
+      "e3"
+    ],
+    [
+      "22FX",
+      "emprot"
+    ],
+    [
+      "22FX",
+      "emodelx"
+    ],
+    [
+      "9V4D",
+      "modelangelo"
+    ],
+    [
+      "9V4D",
+      "e3"
+    ],
+    [
+      "9V4D",
+      "emprot"
+    ],
+    [
+      "9V4D",
+      "emodelx"
+    ],
+    [
+      "9JKK",
+      "modelangelo"
+    ],
+    [
+      "9JKK",
+      "e3"
+    ],
+    [
+      "9JKK",
+      "emprot"
+    ],
+    [
+      "9JKK",
+      "emodelx"
+    ],
+    [
+      "9OTA",
+      "modelangelo"
+    ],
+    [
+      "9OTA",
+      "e3"
+    ],
+    [
+      "9OTA",
+      "emprot"
+    ],
+    [
+      "9OTA",
+      "emodelx"
+    ],
+    [
+      "9TKA",
+      "modelangelo"
+    ],
+    [
+      "9TKA",
+      "e3"
+    ],
+    [
+      "9TKA",
+      "emprot"
+    ],
+    [
+      "9TKA",
+      "emodelx"
+    ],
+    [
+      "9KQM",
+      "modelangelo"
+    ],
+    [
+      "9KQM",
+      "e3"
+    ],
+    [
+      "9KQM",
+      "emprot"
+    ],
+    [
+      "9KQM",
+      "emodelx"
+    ],
+    [
+      "9WFL",
+      "modelangelo"
+    ],
+    [
+      "9WFL",
+      "e3"
+    ],
+    [
+      "9WFL",
+      "emprot"
+    ],
+    [
+      "9WFL",
+      "emodelx"
+    ],
+    [
+      "9WME",
+      "modelangelo"
+    ],
+    [
+      "9WME",
+      "e3"
+    ],
+    [
+      "9WME",
+      "emprot"
+    ],
+    [
+      "9WME",
+      "emodelx"
+    ],
+    [
+      "9VI4",
+      "modelangelo"
+    ],
+    [
+      "9VI4",
+      "e3"
+    ],
+    [
+      "9VI4",
+      "emprot"
+    ],
+    [
+      "9VI4",
+      "emodelx"
+    ],
+    [
+      "9VBD",
+      "modelangelo"
+    ],
+    [
+      "9VBD",
+      "e3"
+    ],
+    [
+      "9VBD",
+      "emprot"
+    ],
+    [
+      "9VBD",
+      "emodelx"
+    ],
+    [
+      "9ZLH",
+      "modelangelo"
+    ],
+    [
+      "9ZLH",
+      "e3"
+    ],
+    [
+      "9ZLH",
+      "emprot"
+    ],
+    [
+      "9ZLH",
+      "emodelx"
+    ],
+    [
+      "9RWS",
+      "modelangelo"
+    ],
+    [
+      "9RWS",
+      "e3"
+    ],
+    [
+      "9RWS",
+      "emprot"
+    ],
+    [
+      "9RWS",
+      "emodelx"
+    ],
+    [
+      "9VUH",
+      "modelangelo"
+    ],
+    [
+      "9VUH",
+      "e3"
+    ],
+    [
+      "9VUH",
+      "emprot"
+    ],
+    [
+      "9VUH",
+      "emodelx"
+    ],
+    [
+      "9WTX",
+      "modelangelo"
+    ],
+    [
+      "9WTX",
+      "e3"
+    ],
+    [
+      "9WTX",
+      "emprot"
+    ],
+    [
+      "9WTX",
+      "emodelx"
+    ],
+    [
+      "9OC0",
+      "modelangelo"
+    ],
+    [
+      "9OC0",
+      "e3"
+    ],
+    [
+      "9OC0",
+      "emprot"
+    ],
+    [
+      "9OC0",
+      "emodelx"
+    ],
+    [
+      "9Z24",
+      "modelangelo"
+    ],
+    [
+      "9Z24",
+      "e3"
+    ],
+    [
+      "9Z24",
+      "emprot"
+    ],
+    [
+      "9Z24",
+      "emodelx"
+    ],
+    [
+      "13BD",
+      "modelangelo"
+    ],
+    [
+      "13BD",
+      "e3"
+    ],
+    [
+      "13BD",
+      "emprot"
+    ],
+    [
+      "13BD",
+      "emodelx"
+    ],
+    [
+      "26DK",
+      "modelangelo"
+    ],
+    [
+      "26DK",
+      "e3"
+    ],
+    [
+      "26DK",
+      "emprot"
+    ],
+    [
+      "26DK",
+      "emodelx"
+    ]
+  ],
+  "hours_setting": 9.0,
+  "run_limit_s": 10800,
+  "lanes": [
+    0,
+    1
+  ]
+}

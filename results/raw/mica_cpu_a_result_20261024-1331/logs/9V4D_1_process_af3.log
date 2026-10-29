@@ -1,0 +1,71 @@
+
+2026-10-24 06:49:25 - INFO - FASTA file: /tmp/mica_pilot/MICA/input/9V4D/9v4d.fasta
+2026-10-24 06:49:25 - INFO - AF3 results: /tmp/mica_pilot/MICA/input/9V4D/AF3_results
+
+================================================================================
+🔄 CIF TO PDB CONVERSION
+================================================================================
+2026-10-24 06:49:25 - INFO - Found 2 CIF files to convert
+2026-10-24 06:49:25 - INFO - Extracting protein information from FASTA content
+2026-10-24 06:49:25 - INFO - Found 2 proteins in FASTA file
+2026-10-24 06:49:25 - INFO - Protein 9V4D_1: 1 chains, 393 residues
+2026-10-24 06:49:25 - INFO - Protein 9V4D_2: 1 chains, 9 residues
+2026-10-24 06:49:25 - INFO - ✓ CIF converted: fold_9v4d_1_model_0.pdb
+2026-10-24 06:49:25 - INFO - Extracting protein information from FASTA content
+2026-10-24 06:49:25 - INFO - Found 2 proteins in FASTA file
+2026-10-24 06:49:25 - INFO - Protein 9V4D_1: 1 chains, 393 residues
+2026-10-24 06:49:25 - INFO - Protein 9V4D_2: 1 chains, 9 residues
+2026-10-24 06:49:25 - INFO - ✓ CIF converted: fold_9v4d_2_model_0.pdb
+
+🎯 CIF Conversion Results:
+   ✅ Successful: 2/2
+
+================================================================================
+⛓️  SPLITTING CHAINS
+================================================================================
+2026-10-24 06:49:25 - INFO - Processing 2 PDB files for chain splitting
+2026-10-24 06:49:25 - INFO - ✓ Split fold_9v4d_2_model_0.pdb: 1 chains
+2026-10-24 06:49:25 - INFO - ✓ Split fold_9v4d_1_model_0.pdb: 1 chains
+
+🎯 Chain Splitting Results:
+   🔗 Total chains extracted: 2
+   📁 Saved to: /tmp/mica_pilot/MICA/input/9V4D/AF3_chains
+
+================================================================================
+🧩 SPLITTING DOMAINS WITH MERIZO
+================================================================================
+⏳ This process may take some time - please be patient...
+
+2026-10-24 06:49:25 - INFO - Processing 2 chain files for domain splitting
+2026-10-24 06:49:28 - ERROR - ✗ Merizo failed: fold_9v4d_2_model_0_chain_A.pdb
+2026-10-24 06:49:28 - ERROR - Error: Traceback (most recent call last):
+  File "modules/merizo/predict.py", line 360, in <module>
+    run_merizo(
+  File "modules/merizo/predict.py", line 306, in run_merizo
+    features = segment(pdb_path=pdb_path, network=network, device=device, 
+  File "modules/merizo/predict.py", line 169, in segment
+    features['domain_ids'], features['conf_res'] = network(features)
+  File "/tmp/mica_pilot/mica_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/tmp/mica_pilot/MICA/modules/merizo/model/network.py", line 49, in forward
+    domain_ids, conf_res = self.decoder_head(
+  File "/tmp/mica_pilot/mica_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/tmp/mica_pilot/MICA/modules/merizo/model/decoders/mask_decoder.py", line 192, in forward
+    pred_ids = clean_singletons(pred_ids, 10)
+  File "/tmp/mica_pilot/MICA/modules/merizo/model/utils/utils.py", line 235, in clean_singletons
+    dom_ids_ = assimilate_short_terminal(
+  File "/tmp/mica_pilot/MICA/modules/merizo/model/utils/utils.py", line 190, in assimilate_short_terminal
+    dom_ids[:i+1] = next_dom_id
+UnboundLocalError: local variable 'next_dom_id' referenced before assignment
+
+2026-10-24 06:49:41 - INFO - ✓ Domains split: fold_9v4d_1_model_0_chain_A.pdb
+
+🎯 Domain Splitting Results:
+   🧩 Chains processed: 1/2
+   📁 Saved to: /tmp/mica_pilot/MICA/input/9V4D/AF3_domains
+
+================================================================================
+🏁 AF3 RESULTS PROCESSING COMPLETE
+================================================================================
+

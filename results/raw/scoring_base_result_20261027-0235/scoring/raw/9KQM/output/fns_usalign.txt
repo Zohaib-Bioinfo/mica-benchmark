@@ -1,0 +1,3 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/working/pilot/scoring/raw/9KQM/output/pred_merged.pdb /kaggle/working/pilot/scoring/raw/9KQM/output/native_merged.pdb -mol protein -mm 5 -ter 2 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/9KQM/output/fns_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/working/pilot/scoring/raw/9KQM/output/pred_merged.pdb:A	/kaggle/working/pilot/scoring/raw/9KQM/output/native_merged.pdb:A	0.7578	0.9567	1.19	0.751	0.950	0.977	510	403	392

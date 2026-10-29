@@ -1,0 +1,27 @@
+# USalign /tmp/mica_pilot/runs/emprot/9KQM/output_fit.cif /kaggle/working/pilot/native/9KQM.cif -mol protein
+
+ ********************************************************************
+ * US-align (Version 20261012)                                      *
+ * Universal Structure Alignment of Proteins and Nucleic Acids      *
+ * Reference: C Zhang, L Freddolino, Y Zhang. (2026) Nat Protoc     *
+ *            C Zhang, M Shine, AM Pyle, Y Zhang. (2022) Nat Methods*
+ *            C Zhang, AM Pyle (2022) iScience.                     *
+ * Please email comments and suggestions to zhanglab@zhanggroup.org *
+ ********************************************************************
+
+Name of Structure_1: /tmp/mica_pilot/runs/emprot/9KQM/output_fit.cif:A (to be superimposed onto Structure_2)
+Name of Structure_2: /kaggle/working/pilot/native/9KQM.cif:A
+Length of Structure_1: 637 residues
+Length of Structure_2: 403 residues
+
+Aligned length= 403, RMSD=   1.64, Seq_ID=n_identical/n_aligned= 0.975
+TM-score= 0.61810 (normalized by length of Structure_1: L=637, d0=8.78)
+TM-score= 0.96957 (normalized by length of Structure_2: L=403, d0=7.24)
+(You should use TM-score normalized by length of the reference structure)
+
+(":" denotes residue pairs of d < 5.0 Angstrom, "." denotes other aligned residues)
+MADLEDNWETLNDNLKVIEKADNAAQVKDALTKMRAAALDAQKATPPKLEDKSPDSPEMKDFRHGFDILVGQIDDALKLANEGKVKEAQAAAEQLKTTRNAYIQKYLLQEPRRQRRLVLVIVCVALLLDNMLYMVIVPIVPDYIAHMRGGGEGPTRTPEVWEPTLPLPTPANASAYTANTSASPTAAWPAGSALRPRYPTESEDVKIGVLFASKAILQLLVNPLSGPFIDRMSYDVPLLIGLGVMFASTVLFAFAEDYATLFAARSLQGLGSAFADTSGIAMIADKYPEEPERSRALGVALAFISFGSLVAPPFGGILYEFAGKRVPFLVLAAVSLFDALLLLAVAKPFSAAARARANLPVGTPIHRLMLDPYIAVVAGALTTCNIPLAFLEPTIATWMKHTMAASEWEMGMAWLPAFVPHVLGVYLTVRLAARYPHLQWLYGALGLAVIGASSCIVPACRSFAPLVVSLCGLCFGIALVDTALLPTLAFLVDVRHVSVYGSVYAIADISYSVAYALGPIVAGHIVHSLGFEQLSLGMGLANLLYAPVLLLLRNVGLLTRSRSERDVLLDEPPQGLYDAVRLRERPVSGQDGEPRSPPGPFDACEDDYNYYYTRSHHHHHHHHHHGSVEDYKDDDDK
+                                                                                                           : :::::::::::::::::::::::::::::::::::                                                ........:  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::     ::  .                                                                     
+-----------------------------------------------------------------------------------------------------------Q-EPRRQRRLVLVIVCVALLLDNMLYMVIVPIVPDYI------------------------------------------------RPRYPTESE--DVKIGVLFASKAILQLLVNPLSGPFIDRMSYDVPLLIGLGVMFASTVLFAFAEDYATLFAARSLQGLGSAFADTSGIAMIADKYPEEPERSRALGVALAFISFGSLVAPPFGGILYEFAGKRVPFLVLAAVSLFDALLLLAVAKPFSAAARARANLPVGTPIHRLMLDPYIAVVAGALTTCNIPLAFLEPTIATWMKHTMAASEWEMGMAWLPAFVPHVLGVYLTVRLAARYPHLQWLYGALGLAVIGASSCIVPACRSFAPLVVSLCGLCFGIALVDTALLPTLAFLVDVRHVSVYGSVYAIADISYSVAYALGPIVAGHIVHSLGFEQLSLGMGLANLLYAPVLLLLRNVGLL-----TR--S---------------------------------------------------------------------
+
+#Total CPU time is  0.50 seconds

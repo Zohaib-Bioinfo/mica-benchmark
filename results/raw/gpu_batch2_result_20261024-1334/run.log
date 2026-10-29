@@ -1,0 +1,582 @@
+platform kaggle | python 3.13.15 | Linux-6.18.55+-x86_64-with-glibc2.39 | 4 CPU cores (Intel(R) Xeon(R) CPU @ 2.00GHz) | 31.3 GB RAM
+large files go to /tmp/mica_pilot (1126 GB free); results to /kaggle/working/pilot (21 GB free)
+GPU: Tesla T4, 15360 MiB, 580.178.04 | Tesla T4, 15360 MiB, 580.178.04
+checking the internet:
+  reachable: PyPI      200
+  reachable: GitHub    200
+  reachable: GitHub files 200
+  reachable: Zenodo (ModelAngelo) 200
+  reachable: Meta ESM weights 200
+  reachable: HUST (EMProt) 200
+  reachable: Google Drive 200
+  reachable: EBI FTP   200
+  reachable: RCSB      200
+all 10 files written and checked (hashes match)
+processors: os.cpu_count 4 | multiprocessing.cpu_count 4 | usable 4 | nproc 4 | cgroup 400000 100000 | cgroup cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory | MICA's 2
+progress lines, state.json and the partial zip (/kaggle/working/gpu_batch2_partial.zip) are ready
+tools ready; methods: modelangelo, e3, emprot, emodelx; 13 tasks; budget 7.0 hours (the programs are stopped 10 minutes before the end)
+US-align: /tmp/mica_pilot/USalign_src/USalign (* US-align (Version 20261012)                                      *)
+AlphaFold Server files of 4 entries: found in /kaggle/input, every hash matches the checked list
+
+##############################################################################
+# setup of ModelAngelo (commit 994945bdfa)
+##############################################################################
+source: https://github.com/3dem/model-angelo at commit 994945bdfa6e5368e0d62349a47792f4864eebc3
+uv: uv 0.13.1 (x86_64-unknown-linux-gnu)
+installing Python 3.11.14 ...
+Downloading cpython-3.11.14-linux-x86_64-gnu (download) (29.8MiB)
+ Downloaded cpython-3.11.14-linux-x86_64-gnu (download)
+Installed Python 3.11.14 in 1.20s
+ + cpython-3.11.14-linux-x86_64-gnu (python3.11)
+warning: `/root/.local/bin` is not on your PATH. To use installed Python executables, run `export PATH="/root/.local/bin:$PATH"` or `uv python update-shell`.
+installing the virtual environment ...
+warning: The `--system` flag has no effect, `uv venv` always ignores virtual environments when finding a Python interpreter; did you mean `--no-managed-python`?
+Using CPython 3.11.14
+Creating virtual environment at: /tmp/mica_pilot/env_modelangelo
+Activate with: source /tmp/mica_pilot/env_modelangelo/bin/activate
+installing the 47 packages of env/modelangelo_requirements.txt (a few minutes) ...
+Using Python 3.11.14 environment at: /tmp/mica_pilot/env_modelangelo
+Resolved 47 packages in 275ms
+Downloading nvidia-nvjitlink-cu12 (37.4MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading networkx (2.0MiB)
+Downloading nvidia-cublas-cu12 (566.8MiB)
+ Downloaded pandas
+[uv: the 47 packages of env/modelan] running for 2 min | load 1.2 | free RAM 30.0 GB | busiest: uv 44.8% (120s), python3 2.8% (183s), python3 1.2% (171s)
+ + contourpy==1.3.3
+ + nvidia-cudnn-cu12==9.10.2.21
+ + sympy==1.14.0
+python 3.11.14 | torch 2.9.1+cu128 | cuda 12.8 | numpy 1.26.4 | pandas 3.0.3 | biopython 1.87 | pyhmmer 0.7.1
+python 3.11.14 | torch 2.9.1+cu128 | cuda 12.8 | numpy 1.26.4 | pandas 3.0.3 | biopython 1.87 | pyhmmer 0.7.1
+cuda available: True
+gpu: Tesla T4 | 14.6 GB | capability 7.5
+<string>:11: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+3D convolution and matrix product on the GPU work (torch 2.9.1+cu128, cuda 12.8)
+version printed by the program: ModelAngelo 1.0.18
+ModelAngelo modules import
+downloading the weights: model_angelo setup_weights --bundle-name nucleotides
+Please make sure you have set the environment variable TORCH_HOME 
+to a suitable directory, visible to all relevant users!
+Setting up bundle with name: nucleotides for the first time.
+
+  0%|          | 0.00/1.98G [00:00<?, ?B/s]
+  2%|▏         | 43.0M/1.98G [00:15<04:07, 8.42MB/s]
+  5%|▍         | 100M/1.98G [00:28<11:17, 2.99MB/s] 
+  8%|▊         | 157M/1.98G [00:42<07:29, 4.37MB/s]
+ 11%|█         | 228M/1.98G [00:54<01:09, 27.3MB/s]
+ 16%|█▌        | 315M/1.98G [01:08<05:32, 5.41MB/s]
+ 18%|█▊        | 372M/1.98G [01:21<06:28, 4.48MB/s]
+ 21%|██        | 425M/1.98G [01:34<06:28, 4.33MB/s]
+ 24%|██▎       | 480M/1.98G [01:47<05:59, 4.52MB/s]
+[ModelAngelo weights] running for 2 min | load 0.1 | free RAM 29.7 GB | busiest: python 4.6% (120s), python3 1.3% (402s), python3 0.6% (390s) | modelangelo_setup_weights.log: 48345 bytes, changed 0 s ago, last line: 26%|██▌       | 518M/1.98G [01:55<05:46, 4.57MB/s]
+ 29%|██▊       | 583M/1.98G [02:01<04:45, 5.31MB/s]
+ 32%|███▏      | 650M/1.98G [02:14<04:22, 5.51MB/s]
+ 35%|███▌      | 713M/1.98G [02:27<04:10, 5.51MB/s]
+ 38%|███▊      | 772M/1.98G [02:40<04:41, 4.69MB/s]
+ 41%|████      | 832M/1.98G [02:54<03:52, 5.41MB/s]
+ 44%|████▍     | 894M/1.98G [03:06<04:02, 4.91MB/s]
+ 47%|████▋     | 956M/1.98G [03:19<03:16, 5.73MB/s]
+ 50%|█████     | 0.99G/1.98G [03:32<05:06, 3.47MB/s]
+ 53%|█████▎    | 1.05G/1.98G [03:45<03:19, 5.05MB/s]
+[ModelAngelo weights] running for 4 min | load 0.0 | free RAM 29.7 GB | busiest: python 2.9% (240s), python3 1.0% (522s), nvidia-smi 0.5% (522s) | modelangelo_setup_weights.log: 104207 bytes, changed 0 s ago, last line: 55%|█████▌    | 1.09G/1.98G [03:55<02:58, 5.36MB/s]
+ 56%|█████▌    | 1.11G/1.98G [03:58<03:33, 4.42MB/s]
+ 59%|█████▊    | 1.16G/1.98G [04:11<03:30, 4.19MB/s]
+ 61%|██████▏   | 1.22G/1.98G [04:24<05:07, 2.68MB/s]
+ 64%|██████▍   | 1.27G/1.98G [04:36<02:45, 4.62MB/s]
+ 67%|██████▋   | 1.32G/1.98G [04:49<02:11, 5.36MB/s]
+ 70%|██████▉   | 1.38G/1.98G [05:02<02:32, 4.25MB/s]
+ 72%|███████▏  | 1.43G/1.98G [05:15<02:05, 4.70MB/s]
+ 75%|███████▌  | 1.49G/1.98G [05:28<02:08, 4.09MB/s]
+ 80%|███████▉  | 1.58G/1.98G [05:41<00:14, 30.1MB/s]
+[ModelAngelo weights] running for 6 min | load 0.0 | free RAM 29.7 GB | busiest: python 2.3% (360s), python3 0.8% (642s), nvidia-smi 0.5% (642s) | modelangelo_setup_weights.log: 166047 bytes, changed 0 s ago, last line: 83%|████████▎ | 1.64G/1.98G [05:55<01:07, 5.41MB/s]
+ 83%|████████▎ | 1.64G/1.98G [05:56<01:22, 4.45MB/s]
+ 88%|████████▊ | 1.74G/1.98G [06:11<00:48, 5.38MB/s]
+ 91%|█████████ | 1.80G/1.98G [06:24<00:36, 5.38MB/s]
+ 94%|█████████▎| 1.86G/1.98G [06:37<00:27, 5.02MB/s]
+ 99%|█████████▊| 1.96G/1.98G [06:52<00:05, 5.36MB/s]
+Checking checksum of downloaded file.
+Checksum of downloaded file matches expected checksum.
+Bundle nucleotides successfully installed.
+Setting up language model bundle with name: esm1b_t33_650M_UR50S for the first time.
+
+ 35%|███▌      | 2.56G/7.29G [00:10<00:40, 124MB/s] 
+ 96%|█████████▌| 6.98G/7.29G [00:33<00:00, 493MB/s]
+
+Successful!
+Path to model is /tmp/mica_pilot/torch_home/hub/checkpoints/model_angelo_v1.0/nucleotides
+weights files of modelangelo: 3 files, 10166 MB {'torch_home/hub/checkpoints/esm1b_t33_650M_UR50S.pt': 7828, 'torch_home/hub/checkpoints/model_angelo_v1.0/nucleotides/c_alpha/chkpt.torch': 734, 'torch_home/hub/checkpoints/model_angelo_v1.0/nucleotides/gnn/chkpt_483863.torch': 1603}
+ModelAngelo is ready (705 s)
+
+##############################################################################
+# setup of E3-CryoFold (commit 241cef48da)
+##############################################################################
+source: https://github.com/A4Bio/E3-CryoFold at commit 241cef48da83b96519e62ab02cccd9db96d8e68b
+installing Python 3.9.25 ...
+Downloading cpython-3.9.25-linux-x86_64-gnu (download) (27.0MiB)
+ Downloaded cpython-3.9.25-linux-x86_64-gnu (download)
+Installed Python 3.9.25 in 1.12s
+ + cpython-3.9.25-linux-x86_64-gnu (python3.9)
+warning: `/root/.local/bin` is not on your PATH. To use installed Python executables, run `export PATH="/root/.local/bin:$PATH"` or `uv python update-shell`.
+installing the virtual environment ...
+warning: The `--system` flag has no effect, `uv venv` always ignores virtual environments when finding a Python interpreter; did you mean `--no-managed-python`?
+Using CPython 3.9.25
+Creating virtual environment at: /tmp/mica_pilot/env_e3
+Activate with: source /tmp/mica_pilot/env_e3/bin/activate
+installing the 170 packages of env/e3cryofold_requirements.txt (a few minutes) ...
+Using Python 3.9.25 environment at: /tmp/mica_pilot/env_e3
+Resolved 170 packages in 469ms
+Downloading pillow (6.3MiB)
+Downloading sympy (5.9MiB)
+Downloading networkx (1.6MiB)
+Downloading scikit-image (14.2MiB)
+ Downloaded setuptools
+ Downloaded notebook
+[uv: the 170 packages of env/e3cryo] running for 2 min | load 1.6 | free RAM 30.0 GB | busiest: uv 47.8% (120s), python3 0.6% (889s), nvidia-smi 0.5% (889s)
+Installed 170 packages in 471ms
+ + charset-normalizer==3.4.3
+ + h11==0.16.0
+ + jupyter-core==5.8.1
+ + narwhals==2.3.0
+ + nvidia-nccl-cu12==2.21.5
+ + pygments==2.19.2
+ + setuptools==80.9.0
+ + tzdata==2025.2
+/tmp/mica_pilot/env_e3/lib/python3.9/site-packages/nglview/__init__.py:12: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+python 3.9.25 | torch 2.6.0+cu124 | cuda 12.4 | numpy 1.26.4 | open3d 0.18.0
+python 3.9.25 | torch 2.6.0+cu124 | cuda 12.4 | numpy 1.26.4 | open3d 0.18.0
+cuda available: True
+gpu: Tesla T4 | 14.6 GB | capability 7.5
+3D convolution and matrix product on the GPU work (torch 2.6.0+cu124, cuda 12.4)
+downloading E3-CryoFold weights from https://github.com/A4Bio/E3-CryoFold/releases/download/checkpoint/models.zip
+E3-CryoFold weights: 1520 MB in 54 s
+weights files of e3: 2 files, 1641 MB {'src_e3/models/structure_model.pth': 239, 'src_e3/models/model_weight.pth': 1401}
+E3-CryoFold is ready (297 s)
+
+##############################################################################
+# setup of EMProt (commit 9489d52e7f)
+##############################################################################
+source: https://github.com/huang-laboratory/EMProt at commit 9489d52e7fdc81c85ba82e386abcfa05bac2b9d1
+installing Python 3.10.20 ...
+Downloading cpython-3.10.20-linux-x86_64-gnu (download) (28.1MiB)
+ Downloaded cpython-3.10.20-linux-x86_64-gnu (download)
+Installed Python 3.10.20 in 1.51s
+ + cpython-3.10.20-linux-x86_64-gnu (python3.10)
+warning: `/root/.local/bin` is not on your PATH. To use installed Python executables, run `export PATH="/root/.local/bin:$PATH"` or `uv python update-shell`.
+installing the virtual environment ...
+warning: The `--system` flag has no effect, `uv venv` always ignores virtual environments when finding a Python interpreter; did you mean `--no-managed-python`?
+Using CPython 3.10.20
+Creating virtual environment at: /tmp/mica_pilot/env_emprot
+Activate with: source /tmp/mica_pilot/env_emprot/bin/activate
+installing the 79 packages of env/emprot_requirements.txt (a few minutes) ...
+Using Python 3.10.20 environment at: /tmp/mica_pilot/env_emprot
+Resolved 79 packages in 375ms
+Downloading networkx (1.6MiB)
+Downloading nvidia-cuda-nvrtc-cu12 (22.6MiB)
+Downloading matplotlib (8.3MiB)
+Downloading nvidia-nvjitlink-cu12 (37.9MiB)
+ Downloaded torchvision
+ Downloaded nvidia-cudnn-cu12
+ + fsspec==2026.2.0
+ + nvidia-cublas-cu12==12.1.3.1
+ + pyparsing==3.3.2
+ + wget==3.2
+python 3.10.20 | torch 2.1.2+cu121 | cuda 12.1 | numpy 1.26.2 | emprot 1.2
+python 3.10.20 | torch 2.1.2+cu121 | cuda 12.1 | numpy 1.26.2 | emprot 1.2
+cuda available: True
+gpu: Tesla T4 | 14.6 GB | capability 7.5
+3D convolution and matrix product on the GPU work (torch 2.1.2+cu121, cuda 12.1)
+downloading EMProt weights from http://huanglab.phys.hust.edu.cn/EMProt/pretrained_weights/weights.tgz
+EMProt weights: 172 MB in 38 s
+weights files of emprot: 11 files, 214 MB {'src_emprot/emprot/bin/USalign': 2, 'src_emprot/emprot/bin/unidoc_frag': 9, 'src_emprot/emprot/bin/stride': 1, 'src_emprot/emprot/bin/NWalign': 1, 'src_emprot/emprot/bin/getp': 1, 'src_emprot/emprot/bin/dockx': 4, 'src_emprot/emprot/bin/domasgx': 1, 'src_emprot/emprot/bin/TMalign': 1}
+EMProt is ready (127 s)
+
+##############################################################################
+# setup of EModelX(+AF) (commit 53713cf820)
+##############################################################################
+source: https://github.com/biomed-AI/EModelX at commit 53713cf820d10d78b1ca6669ef197850cf907843
+installing Python 3.8.20 ...
+Downloading cpython-3.8.20-linux-x86_64-gnu (download) (19.9MiB)
+ Downloaded cpython-3.8.20-linux-x86_64-gnu (download)
+Installed Python 3.8.20 in 836ms
+ + cpython-3.8.20-linux-x86_64-gnu (python3.8)
+warning: `/root/.local/bin` is not on your PATH. To use installed Python executables, run `export PATH="/root/.local/bin:$PATH"` or `uv python update-shell`.
+installing the virtual environment ...
+warning: The `--system` flag has no effect, `uv venv` always ignores virtual environments when finding a Python interpreter; did you mean `--no-managed-python`?
+Using CPython 3.8.20
+Creating virtual environment at: /tmp/mica_pilot/env_emodelx
+Activate with: source /tmp/mica_pilot/env_emodelx/bin/activate
+installing the 137 packages of env/emodelx_requirements.txt (a few minutes) ...
+Using Python 3.8.20 environment at: /tmp/mica_pilot/env_emodelx
+Resolved 137 packages in 174ms
+Downloading pygments (1.2MiB)
+Downloading widgetsnbextension (2.2MiB)
+Downloading numpy (13.9MiB)
+Downloading setuptools (1.2MiB)
+ Downloaded numpy
+ + bleach==6.1.0
+ + importlib-resources==6.4.5
+ + jupyter-server-ydoc==0.8.0
+ + numpy==1.19.1
+ + python-dateutil==2.9.0.post0
+ + superpose3d==1.1.1
+ + widgetsnbextension==4.0.13
+python 3.8.20 | torch 1.8.1+cu102 | open3d 0.13.0 | numpy 1.19.1
+python 3.8.20 | torch 1.8.1+cu102 | open3d 0.13.0 | numpy 1.19.1
+cuda available: True
+gpu: Tesla T4 | 14.6 GB | capability 7.5
+3D convolution and matrix product on the GPU work (torch 1.8.1+cu102, cuda 10.2)
+Downloading...
+From (original): https://drive.google.com/uc?id=13BKzEBfL0uubYgcJJTGSZ-PkO9hXAB9X
+From (redirected): https://drive.google.com/uc?id=13BKzEBfL0uubYgcJJTGSZ-PkO9hXAB9X&confirm=t&uuid=55e30c69-e000-4fc3-a099-87d0ded2ff0a
+To: /tmp/mica_pilot/downloads/emodelx_models_download
+
+  0%|          | 0.00/1.18G [00:00<?, ?B/s]
+pulchra starts (exit code 255): ['PULCHRA Protein Chain Restoration Algorithm version 3.04']
+weights files of emodelx: 3 files, 1271 MB {'src_emodelx/models/best_AA_model.ckpt': 423, 'src_emodelx/models/best_CA_model.ckpt': 423, 'src_emodelx/models/best_BB_model.ckpt': 423}
+EModelX(+AF) is ready (104 s)
+GPU 0: a PyTorch computation works
+GPU 1: a PyTorch computation works
+
+GPUs used: [0]; queue: 13 waiting, 0 ok, 0 failed; 0.4 of 7.0 hours used
+
+------------------------------------------------------------------------
+GPU0 ModelAngelo 9VI4 (attempt 1)
+queue: 12 waiting, 0 ok, 0 failed; 0.4 of 7.0 hours used
+------------------------------------------------------------------------
+9VI4: map emd_65077.mrc (1048 MB, sha256 645dccdc247631f8), 1 sequence(s): [{'job': '9VI4_E1', 'length': 516, 'copies': 1}]
+
+=== GPU0 ModelAngelo 9VI4, build: -m model_angelo build -v /tmp/mica_pilot/input/9VI4/emd_65077.mrc -pf /tmp/mica_pilot/input/9VI4/9vi4.fasta -o /tmp/mica_pilot/runs/modelangelo/9VI4/9VI4_modelangelo --device 0
+[GPU0 ModelAngelo 9VI4] running for 2 min | load 1.0 | free RAM 28.3 GB | busiest: python 102% (120s), python3 2.0% (1807s), nvidia-smi 0.5% (1818s) | 9VI4_modelangelo_build.log: 884 bytes, changed 1 s ago, last line: 2%|▏         | 48/2744 [01:25<1:15:21,  1.68s/it] | model_angelo.log: 2447 bytes, changed 93 s ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 4 min | load 1.0 | free RAM 28.3 GB | busiest: python 101% (240s), python3 1.9% (1927s), nvidia-smi 0.5% (1938s) | 9VI4_modelangelo_build.log: 1752 bytes, changed 6 s ago, last line: 4%|▍         | 112/2744 [03:20<1:18:32,  1.79s/it] | model_angelo.log: 2447 bytes, changed 4 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 6 min | load 1.0 | free RAM 28.3 GB | busiest: python 101% (360s), python3 1.8% (2047s), nvidia-smi 0.5% (2058s) | 9VI4_modelangelo_build.log: 2687 bytes, changed 5 s ago, last line: 7%|▋         | 180/2744 [05:21<1:16:19,  1.79s/it] | model_angelo.log: 2447 bytes, changed 6 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 8 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (480s), python3 1.7% (2167s), nvidia-smi 0.5% (2178s) | 9VI4_modelangelo_build.log: 3622 bytes, changed 3 s ago, last line: 9%|▉         | 248/2744 [07:22<1:14:13,  1.78s/it] | model_angelo.log: 2447 bytes, changed 8 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 10 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (600s), python3 1.6% (2287s), nvidia-smi 0.5% (2298s) | 9VI4_modelangelo_build.log: 4561 bytes, changed 2 s ago, last line: 12%|█▏        | 316/2744 [09:23<1:12:07,  1.78s/it] | model_angelo.log: 2447 bytes, changed 10 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 12 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (720s), python3 1.5% (2407s), nvidia-smi 0.5% (2418s) | 9VI4_modelangelo_build.log: 5530 bytes, changed 1 s ago, last line: 14%|█▍        | 384/2744 [11:24<1:09:58,  1.78s/it] | model_angelo.log: 2447 bytes, changed 12 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 14 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (840s), python3 1.4% (2527s), nvidia-smi 0.5% (2538s) | 9VI4_modelangelo_build.log: 6442 bytes, changed 7 s ago, last line: 16%|█▋        | 448/2744 [13:18<1:08:11,  1.78s/it] | model_angelo.log: 2447 bytes, changed 14 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 16 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (960s), python3 1.4% (2647s), nvidia-smi 0.5% (2658s) | 9VI4_modelangelo_build.log: 7411 bytes, changed 6 s ago, last line: 19%|█▉        | 516/2744 [15:19<1:06:05,  1.78s/it] | model_angelo.log: 2447 bytes, changed 16 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 18 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (1080s), python3 1.3% (2767s), nvidia-smi 0.5% (2778s) | 9VI4_modelangelo_build.log: 8382 bytes, changed 5 s ago, last line: 21%|██▏       | 584/2744 [17:20<1:03:53,  1.77s/it] | model_angelo.log: 2447 bytes, changed 18 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 20 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (1200s), python3 1.3% (2887s), nvidia-smi 0.4% (2898s) | 9VI4_modelangelo_build.log: 9385 bytes, changed 4 s ago, last line: 24%|██▍       | 652/2744 [19:21<1:01:59,  1.78s/it] | model_angelo.log: 2447 bytes, changed 20 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 22 min | load 1.1 | free RAM 28.3 GB | busiest: python 100% (1320s), python3 1.2% (3007s), nvidia-smi 0.4% (3018s) | 9VI4_modelangelo_build.log: 10388 bytes, changed 3 s ago, last line: 26%|██▌       | 720/2744 [21:22<1:00:09,  1.78s/it] | model_angelo.log: 2447 bytes, changed 22 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 24 min | load 1.1 | free RAM 28.3 GB | busiest: python 100% (1440s), python3 1.2% (3127s), nvidia-smi 0.4% (3138s) | 9VI4_modelangelo_build.log: 11361 bytes, changed 2 s ago, last line: 29%|██▊       | 788/2744 [23:23<58:01,  1.78s/it] | model_angelo.log: 2447 bytes, changed 24 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 26 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (1560s), python3 1.1% (3247s), nvidia-smi 0.4% (3258s) | 9VI4_modelangelo_build.log: 12330 bytes, changed 1 s ago, last line: 31%|███       | 856/2744 [25:24<55:54,  1.78s/it] | model_angelo.log: 2447 bytes, changed 26 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 28 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (1680s), python3 1.1% (3367s), nvidia-smi 0.4% (3378s) | 9VI4_modelangelo_build.log: 13333 bytes, changed 0 s ago, last line: 34%|███▎      | 924/2744 [27:25<53:56,  1.78s/it] | model_angelo.log: 2447 bytes, changed 28 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 30 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (1800s), python3 1.0% (3487s), nvidia-smi 0.4% (3498s) | 9VI4_modelangelo_build.log: 14277 bytes, changed 6 s ago, last line: 36%|███▌      | 988/2744 [29:19<52:08,  1.78s/it] | model_angelo.log: 2447 bytes, changed 30 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 32 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (1920s), python3 1.0% (3607s), nvidia-smi 0.4% (3618s) | 9VI4_modelangelo_build.log: 15295 bytes, changed 5 s ago, last line: 38%|███▊      | 1056/2744 [31:20<50:06,  1.78s/it] | model_angelo.log: 2447 bytes, changed 32 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 34 min | load 1.1 | free RAM 28.3 GB | busiest: python 100% (2040s), python3 1.0% (3727s), nvidia-smi 0.4% (3738s) | 9VI4_modelangelo_build.log: 16315 bytes, changed 4 s ago, last line: 41%|████      | 1124/2744 [33:21<48:02,  1.78s/it] | model_angelo.log: 2447 bytes, changed 34 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 36 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (2160s), python3 0.9% (3847s), nvidia-smi 0.4% (3858s) | 9VI4_modelangelo_build.log: 17367 bytes, changed 3 s ago, last line: 43%|████▎     | 1192/2744 [35:22<45:58,  1.78s/it] | model_angelo.log: 2447 bytes, changed 36 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 38 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (2280s), python3 0.9% (3967s), nvidia-smi 0.4% (3978s) | 9VI4_modelangelo_build.log: 18421 bytes, changed 2 s ago, last line: 46%|████▌     | 1260/2744 [37:23<43:58,  1.78s/it] | model_angelo.log: 2447 bytes, changed 38 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 40 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (2400s), python3 0.9% (4087s), nvidia-smi 0.4% (4098s) | 9VI4_modelangelo_build.log: 19475 bytes, changed 1 s ago, last line: 48%|████▊     | 1328/2744 [39:24<41:59,  1.78s/it] | model_angelo.log: 2447 bytes, changed 40 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 42 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (2520s), python3 0.9% (4207s), nvidia-smi 0.4% (4218s) | 9VI4_modelangelo_build.log: 20529 bytes, changed 0 s ago, last line: 51%|█████     | 1396/2744 [41:25<39:54,  1.78s/it] | model_angelo.log: 2447 bytes, changed 42 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 44 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (2640s), python3 0.8% (4327s), nvidia-smi 0.4% (4338s) | 9VI4_modelangelo_build.log: 21549 bytes, changed 7 s ago, last line: 53%|█████▎    | 1460/2744 [43:19<38:00,  1.78s/it] | model_angelo.log: 2447 bytes, changed 44 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 46 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (2760s), python3 0.8% (4447s), nvidia-smi 0.4% (4458s) | 9VI4_modelangelo_build.log: 22637 bytes, changed 6 s ago, last line: 56%|█████▌    | 1528/2744 [45:20<36:06,  1.78s/it] | model_angelo.log: 2447 bytes, changed 46 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 48 min | load 1.2 | free RAM 28.3 GB | busiest: python 100% (2880s), python3 0.8% (4567s), nvidia-smi 0.4% (4578s) | 9VI4_modelangelo_build.log: 23725 bytes, changed 4 s ago, last line: 58%|█████▊    | 1596/2744 [47:21<34:04,  1.78s/it] | model_angelo.log: 2447 bytes, changed 48 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 50 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (3000s), python3 0.8% (4687s), nvidia-smi 0.4% (4698s) | 9VI4_modelangelo_build.log: 24813 bytes, changed 3 s ago, last line: 61%|██████    | 1664/2744 [49:22<31:57,  1.78s/it] | model_angelo.log: 2447 bytes, changed 50 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 52 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (3120s), python3 0.8% (4807s), nvidia-smi 0.4% (4818s) | 9VI4_modelangelo_build.log: 25927 bytes, changed 2 s ago, last line: 63%|██████▎   | 1732/2744 [51:23<30:08,  1.79s/it] | model_angelo.log: 2447 bytes, changed 52 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 54 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (3240s), python3 0.7% (4927s), nvidia-smi 0.4% (4938s) | 9VI4_modelangelo_build.log: 27049 bytes, changed 1 s ago, last line: 66%|██████▌   | 1800/2744 [53:25<27:59,  1.78s/it] | model_angelo.log: 2447 bytes, changed 54 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 56 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (3360s), python3 0.7% (5047s), nvidia-smi 0.4% (5058s) | 9VI4_modelangelo_build.log: 28171 bytes, changed 0 s ago, last line: 68%|██████▊   | 1868/2744 [55:26<25:58,  1.78s/it] | model_angelo.log: 2447 bytes, changed 56 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 58 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (3480s), python3 0.7% (5167s), nvidia-smi 0.4% (5178s) | 9VI4_modelangelo_build.log: 29227 bytes, changed 6 s ago, last line: 70%|███████   | 1932/2744 [57:19<24:04,  1.78s/it] | model_angelo.log: 2447 bytes, changed 58 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 60 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (3600s), python3 0.7% (5287s), nvidia-smi 0.4% (5298s) | 9VI4_modelangelo_build.log: 30373 bytes, changed 5 s ago, last line: 73%|███████▎  | 2000/2744 [59:20<22:03,  1.78s/it] | model_angelo.log: 2447 bytes, changed 60 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 62 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (3720s), python3 0.7% (5407s), nvidia-smi 0.4% (5418s) | 9VI4_modelangelo_build.log: 31553 bytes, changed 5 s ago, last line: 75%|███████▌  | 2068/2744 [1:01:21<20:01,  1.78s/it] | model_angelo.log: 2447 bytes, changed 62 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 64 min | load 1.1 | free RAM 28.3 GB | busiest: python 100% (3840s), python3 0.7% (5527s), nvidia-smi 0.4% (5538s) | 9VI4_modelangelo_build.log: 32743 bytes, changed 4 s ago, last line: 78%|███████▊  | 2136/2744 [1:03:22<18:02,  1.78s/it] | model_angelo.log: 2447 bytes, changed 64 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 66 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (3960s), python3 0.6% (5647s), nvidia-smi 0.4% (5658s) | 9VI4_modelangelo_build.log: 33933 bytes, changed 2 s ago, last line: 80%|████████  | 2204/2744 [1:05:23<16:02,  1.78s/it] | model_angelo.log: 2447 bytes, changed 66 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 68 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (4080s), python3 0.6% (5767s), nvidia-smi 0.4% (5778s) | 9VI4_modelangelo_build.log: 35145 bytes, changed 1 s ago, last line: 83%|████████▎ | 2272/2744 [1:07:25<14:02,  1.79s/it] | model_angelo.log: 2447 bytes, changed 68 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 70 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (4200s), python3 0.6% (5887s), nvidia-smi 0.4% (5898s) | 9VI4_modelangelo_build.log: 36297 bytes, changed 7 s ago, last line: 85%|████████▌ | 2336/2744 [1:09:19<12:06,  1.78s/it] | model_angelo.log: 2447 bytes, changed 70 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 72 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (4320s), python3 0.6% (6007s), nvidia-smi 0.4% (6018s) | 9VI4_modelangelo_build.log: 37521 bytes, changed 6 s ago, last line: 88%|████████▊ | 2404/2744 [1:11:20<10:05,  1.78s/it] | model_angelo.log: 2447 bytes, changed 72 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 74 min | load 1.2 | free RAM 28.3 GB | busiest: python 100% (4440s), python3 0.6% (6127s), nvidia-smi 0.4% (6138s) | 9VI4_modelangelo_build.log: 38745 bytes, changed 5 s ago, last line: 90%|█████████ | 2472/2744 [1:13:21<08:04,  1.78s/it] | model_angelo.log: 2447 bytes, changed 74 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 76 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (4560s), python3 0.6% (6247s), nvidia-smi 0.4% (6258s) | 9VI4_modelangelo_build.log: 39989 bytes, changed 4 s ago, last line: 93%|█████████▎| 2540/2744 [1:15:22<06:03,  1.78s/it] | model_angelo.log: 2447 bytes, changed 76 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 78 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (4680s), python3 0.6% (6367s), nvidia-smi 0.4% (6378s) | 9VI4_modelangelo_build.log: 41247 bytes, changed 3 s ago, last line: 95%|█████████▌| 2608/2744 [1:17:23<04:01,  1.78s/it] | model_angelo.log: 2447 bytes, changed 78 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 80 min | load 1.0 | free RAM 28.3 GB | busiest: python 100% (4800s), python3 0.6% (6487s), nvidia-smi 0.4% (6498s) | 9VI4_modelangelo_build.log: 42505 bytes, changed 2 s ago, last line: 98%|█████████▊| 2676/2744 [1:19:24<02:01,  1.78s/it] | model_angelo.log: 2447 bytes, changed 80 min ago, last line: 2026-10-24 at 07:13:27 | INFO | {'model_checkpoint': 'chkpt.torch', 'bfactor': 0, 'batch_size': 4, 'box_size': 64, 'stride': 16, 'dont_mask_input': True, 'thres
+[GPU0 ModelAngelo 9VI4] running for 82 min | load 1.0 | free RAM 28.0 GB | busiest: python 100% (4920s), python3 0.6% (6607s), nvidia-smi 0.4% (6618s) | 9VI4_modelangelo_build.log: 43837 bytes, changed 7 s ago, last line: 100%|██████████| 2744/2744 [1:21:25<00:00,  1.78s/it] | model_angelo.log: 2764 bytes, changed 4 s ago, last line: 2026-10-24 at 08:34:56 | INFO | Have 37260 Cα points before pruning and 30764 after pruning
+[GPU0 ModelAngelo 9VI4] running for 84 min | load 1.4 | free RAM 24.1 GB | busiest: python 100% (5040s), python3 0.5% (6727s), nvidia-smi 0.4% (6739s) | 9VI4_modelangelo_build.log: 44753 bytes, changed 3 s ago, last line: 2%|▏         | 750/30764 [00:47<26:03, 19.20it/s] | model_angelo.log: 3930 bytes, changed 117 s ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 86 min | load 1.3 | free RAM 24.1 GB | busiest: python 100% (5160s), python3 0.5% (6847s), nvidia-smi 0.4% (6859s) | 9VI4_modelangelo_build.log: 47279 bytes, changed 1 s ago, last line: 10%|▉         | 3050/30764 [02:48<24:22, 18.94it/s] | model_angelo.log: 3930 bytes, changed 4 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 88 min | load 1.4 | free RAM 24.1 GB | busiest: python 101% (5280s), python3 0.5% (6967s), nvidia-smi 0.4% (6979s) | 9VI4_modelangelo_build.log: 49885 bytes, changed 1 s ago, last line: 17%|█▋        | 5350/30764 [04:49<22:14, 19.04it/s] | model_angelo.log: 3930 bytes, changed 6 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 90 min | load 1.3 | free RAM 24.1 GB | busiest: python 101% (5400s), python3 0.5% (7087s), nvidia-smi 0.4% (7099s) | 9VI4_modelangelo_build.log: 52494 bytes, changed 2 s ago, last line: 25%|██▍       | 7600/30764 [06:47<20:14, 19.08it/s] | model_angelo.log: 3930 bytes, changed 8 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 92 min | load 1.2 | free RAM 24.1 GB | busiest: python 101% (5520s), python3 0.5% (7207s), nvidia-smi 0.4% (7219s) | 9VI4_modelangelo_build.log: 55220 bytes, changed 2 s ago, last line: 32%|███▏      | 9900/30764 [08:48<18:12, 19.09it/s] | model_angelo.log: 3930 bytes, changed 10 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 94 min | load 1.4 | free RAM 24.1 GB | busiest: python 102% (5640s), python3 0.5% (7327s), nvidia-smi 0.4% (7339s) | 9VI4_modelangelo_build.log: 58071 bytes, changed 1 s ago, last line: 40%|███▉      | 12200/30764 [10:49<16:14, 19.04it/s] | model_angelo.log: 3930 bytes, changed 12 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 96 min | load 1.2 | free RAM 24.1 GB | busiest: python 102% (5760s), python3 0.5% (7447s), nvidia-smi 0.4% (7459s) | 9VI4_modelangelo_build.log: 60997 bytes, changed 1 s ago, last line: 47%|████▋     | 14500/30764 [12:49<14:12, 19.07it/s] | model_angelo.log: 3930 bytes, changed 14 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 98 min | load 1.2 | free RAM 24.1 GB | busiest: python 102% (5880s), python3 0.5% (7567s), nvidia-smi 0.4% (7579s) | 9VI4_modelangelo_build.log: 63917 bytes, changed 3 s ago, last line: 54%|█████▍    | 16689/30764 [14:47<12:47, 18.33it/s] | model_angelo.log: 3930 bytes, changed 16 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 100 min | load 1.2 | free RAM 24.1 GB | busiest: python 103% (6000s), python3 0.5% (7687s), nvidia-smi 0.4% (7699s) | 9VI4_modelangelo_build.log: 66953 bytes, changed 2 s ago, last line: 61%|██████    | 18789/30764 [16:48<11:53, 16.79it/s] | model_angelo.log: 3930 bytes, changed 18 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 102 min | load 1.3 | free RAM 24.1 GB | busiest: python 103% (6120s), python3 0.5% (7807s), nvidia-smi 0.4% (7819s) | 9VI4_modelangelo_build.log: 70079 bytes, changed 2 s ago, last line: 67%|██████▋   | 20740/30764 [18:48<10:50, 15.41it/s] | model_angelo.log: 3930 bytes, changed 20 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 104 min | load 1.2 | free RAM 24.1 GB | busiest: python 103% (6240s), python3 0.5% (7927s), nvidia-smi 0.4% (7939s) | 9VI4_modelangelo_build.log: 73223 bytes, changed 1 s ago, last line: 72%|███████▏  | 22106/30764 [20:48<14:58,  9.64it/s] | model_angelo.log: 3930 bytes, changed 22 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 106 min | load 1.1 | free RAM 24.1 GB | busiest: python 104% (6360s), python3 0.5% (8047s), nvidia-smi 0.4% (8059s) | 9VI4_modelangelo_build.log: 76443 bytes, changed 1 s ago, last line: 75%|███████▍  | 23034/30764 [22:49<15:33,  8.28it/s] | model_angelo.log: 3930 bytes, changed 24 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 108 min | load 1.4 | free RAM 24.1 GB | busiest: python 104% (6480s), python3 0.4% (8167s), nvidia-smi 0.4% (8179s) | 9VI4_modelangelo_build.log: 79663 bytes, changed 1 s ago, last line: 78%|███████▊  | 23914/30764 [24:49<15:07,  7.55it/s] | model_angelo.log: 3930 bytes, changed 26 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 110 min | load 1.3 | free RAM 24.1 GB | busiest: python 104% (6600s), nvidia-smi 50.0% (0s), python3 0.4% (8287s) | 9VI4_modelangelo_build.log: 82883 bytes, changed 0 s ago, last line: 80%|████████  | 24709/30764 [26:50<13:25,  7.52it/s] | model_angelo.log: 3930 bytes, changed 28 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 112 min | load 1.4 | free RAM 24.1 GB | busiest: python 105% (6720s), python3 0.4% (8407s), nvidia-smi 0.4% (8419s) | 9VI4_modelangelo_build.log: 86167 bytes, changed 0 s ago, last line: 83%|████████▎ | 25508/30764 [28:50<18:05,  4.84it/s] | model_angelo.log: 3930 bytes, changed 30 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 114 min | load 1.2 | free RAM 24.1 GB | busiest: python 105% (6840s), python3 0.4% (8527s), nvidia-smi 0.4% (8539s) | 9VI4_modelangelo_build.log: 89407 bytes, changed 2 s ago, last line: 85%|████████▌ | 26209/30764 [30:47<13:20,  5.69it/s] | model_angelo.log: 3930 bytes, changed 32 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 116 min | load 1.3 | free RAM 24.1 GB | busiest: python 105% (6960s), nvidia-smi 0.4% (8659s), python3 0.4% (8647s) | 9VI4_modelangelo_build.log: 92719 bytes, changed 2 s ago, last line: 87%|████████▋ | 26848/30764 [32:48<10:27,  6.24it/s] | model_angelo.log: 3930 bytes, changed 34 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 118 min | load 1.2 | free RAM 24.1 GB | busiest: python 105% (7080s), nvidia-smi 0.4% (8779s), python3 0.4% (8767s) | 9VI4_modelangelo_build.log: 96031 bytes, changed 2 s ago, last line: 89%|████████▉ | 27379/30764 [34:48<13:01,  4.33it/s] | model_angelo.log: 3930 bytes, changed 36 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 120 min | load 1.1 | free RAM 24.1 GB | busiest: python 106% (7200s), nvidia-smi 0.4% (8899s), python3 0.4% (8887s) | 9VI4_modelangelo_build.log: 99343 bytes, changed 2 s ago, last line: 91%|█████████ | 27890/30764 [36:48<14:26,  3.32it/s] | model_angelo.log: 3930 bytes, changed 38 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 122 min | load 1.2 | free RAM 24.1 GB | busiest: python 106% (7320s), nvidia-smi 0.4% (9019s), python3 0.4% (9007s) | 9VI4_modelangelo_build.log: 102795 bytes, changed 0 s ago, last line: 92%|█████████▏| 28437/30764 [38:50<10:03,  3.86it/s] | model_angelo.log: 3930 bytes, changed 40 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 124 min | load 1.2 | free RAM 24.1 GB | busiest: python 106% (7440s), nvidia-smi 0.4% (9139s), python3 0.4% (9127s) | 9VI4_modelangelo_build.log: 106199 bytes, changed 2 s ago, last line: 94%|█████████▍| 28887/30764 [40:48<08:03,  3.88it/s] | model_angelo.log: 3930 bytes, changed 42 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 126 min | load 1.3 | free RAM 24.1 GB | busiest: python 106% (7560s), nvidia-smi 0.4% (9259s), python3 0.4% (9247s) | 9VI4_modelangelo_build.log: 109677 bytes, changed 0 s ago, last line: 95%|█████████▌| 29232/30764 [42:50<10:44,  2.38it/s] | model_angelo.log: 3930 bytes, changed 44 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 128 min | load 1.1 | free RAM 24.1 GB | busiest: python 106% (7680s), nvidia-smi 0.4% (9379s), python3 0.4% (9367s) | 9VI4_modelangelo_build.log: 113081 bytes, changed 2 s ago, last line: 96%|█████████▌| 29575/30764 [44:49<10:15,  1.93it/s] | model_angelo.log: 3930 bytes, changed 46 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 130 min | load 1.2 | free RAM 24.1 GB | busiest: python 107% (7800s), nvidia-smi 0.4% (9499s), python3 0.4% (9487s) | 9VI4_modelangelo_build.log: 116559 bytes, changed 0 s ago, last line: 97%|█████████▋| 29830/30764 [46:50<07:10,  2.17it/s] | model_angelo.log: 3930 bytes, changed 48 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 132 min | load 1.2 | free RAM 24.1 GB | busiest: python 107% (7920s), nvidia-smi 0.4% (9619s), python3 0.4% (9607s) | 9VI4_modelangelo_build.log: 119963 bytes, changed 2 s ago, last line: 98%|█████████▊| 30037/30764 [48:48<07:01,  1.72it/s] | model_angelo.log: 3930 bytes, changed 50 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 134 min | load 1.1 | free RAM 24.1 GB | busiest: python 107% (8040s), nvidia-smi 0.4% (9739s), python3 0.4% (9727s) | 9VI4_modelangelo_build.log: 123441 bytes, changed 1 s ago, last line: 98%|█████████▊| 30209/30764 [50:50<06:33,  1.41it/s] | model_angelo.log: 3930 bytes, changed 52 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 136 min | load 1.3 | free RAM 24.1 GB | busiest: python 107% (8160s), nvidia-smi 0.4% (9859s), python3 0.4% (9847s) | 9VI4_modelangelo_build.log: 126845 bytes, changed 2 s ago, last line: 99%|█████████▊| 30366/30764 [52:48<04:30,  1.47it/s] | model_angelo.log: 3930 bytes, changed 54 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 138 min | load 1.3 | free RAM 24.1 GB | busiest: python 107% (8280s), nvidia-smi 0.4% (9979s), python3 0.4% (9967s) | 9VI4_modelangelo_build.log: 130323 bytes, changed 1 s ago, last line: 99%|█████████▉| 30522/30764 [54:49<03:45,  1.07it/s] | model_angelo.log: 3930 bytes, changed 56 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 140 min | load 1.4 | free RAM 24.1 GB | busiest: python 107% (8400s), nvidia-smi 0.4% (10099s), python3 0.4% (10087s) | 9VI4_modelangelo_build.log: 133801 bytes, changed 0 s ago, last line: 100%|█████████▉| 30637/30764 [56:50<01:50,  1.15it/s] | model_angelo.log: 3930 bytes, changed 58 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 142 min | load 1.2 | free RAM 24.1 GB | busiest: python 108% (8520s), nvidia-smi 0.4% (10219s), python3 0.4% (10207s) | 9VI4_modelangelo_build.log: 137205 bytes, changed 2 s ago, last line: 100%|█████████▉| 30718/30764 [58:48<01:50,  2.41s/it] | model_angelo.log: 3930 bytes, changed 60 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 144 min | load 1.1 | free RAM 24.0 GB | busiest: python 108% (8640s), nvidia-smi 0.4% (10339s), python3 0.4% (10327s) | 9VI4_modelangelo_build.log: 140267 bytes, changed 22 s ago, last line: 100%|██████████| 30764/30764 [1:00:31<00:00,  8.47it/s] | model_angelo.log: 3930 bytes, changed 62 min ago, last line: 2026-10-24 at 08:35:03 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 146 min | load 1.1 | free RAM 23.4 GB | busiest: python 108% (8760s), nvidia-smi 0.4% (10459s), python3 0.4% (10447s) | 9VI4_modelangelo_build.log: 140339 bytes, changed 15 s ago, last line: ------------------ GNN model refinement, round 2 / 3 ------------------ | model_angelo.log: 4885 bytes, changed 15 s ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 148 min | load 1.1 | free RAM 23.3 GB | busiest: python 108% (8880s), nvidia-smi 0.4% (10579s), python3 0.3% (10567s) | 9VI4_modelangelo_build.log: 142108 bytes, changed 2 s ago, last line: 5%|▌         | 1600/30762 [01:24<24:37, 19.73it/s] | model_angelo.log: 4885 bytes, changed 2 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 150 min | load 1.1 | free RAM 23.3 GB | busiest: python 108% (9000s), nvidia-smi 0.4% (10699s), python3 0.3% (10687s) | 9VI4_modelangelo_build.log: 144713 bytes, changed 1 s ago, last line: 13%|█▎        | 3950/30762 [03:25<22:56, 19.48it/s] | model_angelo.log: 4885 bytes, changed 4 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 152 min | load 1.1 | free RAM 23.3 GB | busiest: python 108% (9120s), nvidia-smi 0.4% (10819s), python3 0.3% (10807s) | 9VI4_modelangelo_build.log: 147392 bytes, changed 0 s ago, last line: 20%|██        | 6300/30762 [05:26<20:57, 19.45it/s] | model_angelo.log: 4885 bytes, changed 6 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 154 min | load 1.2 | free RAM 23.3 GB | busiest: python 108% (9240s), nvidia-smi 0.4% (10939s), python3 0.3% (10927s) | 9VI4_modelangelo_build.log: 150098 bytes, changed 2 s ago, last line: 28%|██▊       | 8600/30762 [07:24<18:56, 19.51it/s] | model_angelo.log: 4885 bytes, changed 8 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 156 min | load 1.2 | free RAM 23.3 GB | busiest: python 108% (9360s), nvidia-smi 0.4% (11059s), python3 0.3% (11047s) | 9VI4_modelangelo_build.log: 152945 bytes, changed 2 s ago, last line: 36%|███▌      | 10950/30762 [09:25<16:58, 19.46it/s] | model_angelo.log: 4885 bytes, changed 10 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 158 min | load 1.2 | free RAM 23.3 GB | busiest: python 108% (9480s), nvidia-smi 0.4% (11179s), python3 0.3% (11167s) | 9VI4_modelangelo_build.log: 155885 bytes, changed 1 s ago, last line: 43%|████▎     | 13300/30762 [11:25<14:56, 19.49it/s] | model_angelo.log: 4885 bytes, changed 12 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 160 min | load 1.3 | free RAM 23.3 GB | busiest: python 108% (9600s), nvidia-smi 0.4% (11299s), python3 0.3% (11287s) | 9VI4_modelangelo_build.log: 158893 bytes, changed 1 s ago, last line: 51%|█████     | 15634/30762 [13:26<13:10, 19.15it/s] | model_angelo.log: 4885 bytes, changed 14 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 162 min | load 2.0 | free RAM 23.3 GB | busiest: python 109% (9720s), nvidia-smi 0.4% (11419s), python3 0.3% (11407s) | 9VI4_modelangelo_build.log: 161991 bytes, changed 0 s ago, last line: 58%|█████▊    | 17850/30762 [15:26<11:59, 17.95it/s] | model_angelo.log: 4885 bytes, changed 16 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 164 min | load 1.8 | free RAM 23.3 GB | busiest: python 109% (9840s), nvidia-smi 0.4% (11539s), python3 0.3% (11527s) | 9VI4_modelangelo_build.log: 165075 bytes, changed 2 s ago, last line: 65%|██████▍   | 19865/30762 [17:24<11:02, 16.44it/s] | model_angelo.log: 4885 bytes, changed 18 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 166 min | load 1.2 | free RAM 23.3 GB | busiest: python 109% (9960s), nvidia-smi 0.4% (11659s), python3 0.3% (11647s) | 9VI4_modelangelo_build.log: 168271 bytes, changed 2 s ago, last line: 70%|███████   | 21653/30762 [19:25<14:35, 10.40it/s] | model_angelo.log: 4885 bytes, changed 20 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 168 min | load 1.2 | free RAM 23.3 GB | busiest: python 109% (10080s), nvidia-smi 0.4% (11779s), python3 0.3% (11767s) | 9VI4_modelangelo_build.log: 171535 bytes, changed 1 s ago, last line: 73%|███████▎  | 22585/30762 [21:25<16:23,  8.32it/s] | model_angelo.log: 4885 bytes, changed 22 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 170 min | load 1.2 | free RAM 23.3 GB | busiest: python 109% (10200s), nvidia-smi 0.4% (11899s), python3 0.3% (11887s) | 9VI4_modelangelo_build.log: 174825 bytes, changed 1 s ago, last line: 76%|███████▋  | 23471/30762 [23:25<20:57,  5.80it/s] | model_angelo.log: 4885 bytes, changed 24 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 172 min | load 1.2 | free RAM 23.3 GB | busiest: python 109% (10320s), nvidia-smi 0.4% (12019s), python3 0.3% (12007s) | 9VI4_modelangelo_build.log: 178115 bytes, changed 1 s ago, last line: 79%|███████▉  | 24347/30762 [25:25<13:29,  7.92it/s] | model_angelo.log: 4885 bytes, changed 26 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 174 min | load 1.3 | free RAM 23.3 GB | busiest: python 109% (10440s), nvidia-smi 0.4% (12139s), python3 0.3% (12127s) | 9VI4_modelangelo_build.log: 181421 bytes, changed 1 s ago, last line: 82%|████████▏ | 25119/30762 [27:26<14:22,  6.54it/s] | model_angelo.log: 4885 bytes, changed 28 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 176 min | load 1.3 | free RAM 23.3 GB | busiest: python 109% (10561s), nvidia-smi 0.4% (12259s), python3 0.3% (12247s) | 9VI4_modelangelo_build.log: 184805 bytes, changed 0 s ago, last line: 84%|████████▍ | 25861/30762 [29:26<10:34,  7.72it/s] | model_angelo.log: 4885 bytes, changed 30 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+[GPU0 ModelAngelo 9VI4] running for 178 min | load 1.2 | free RAM 23.3 GB | busiest: python 109% (10681s), nvidia-smi 0.4% (12379s), python3 0.3% (12368s) | 9VI4_modelangelo_build.log: 188189 bytes, changed 0 s ago, last line: 86%|████████▌ | 26532/30762 [31:26<17:16,  4.08it/s] | model_angelo.log: 4885 bytes, changed 32 min ago, last line: 2026-10-24 at 09:38:46 | INFO | Loaded module from step: 483863
+GPU0 ModelAngelo 9VI4 build finished: exit code -9, 10800 s, GPU memory peak 5537 MB, lowest free RAM 18.67 GB, other GPU busy: False
+GPU0 ModelAngelo 9VI4: FAILED: timeout: the run limit of 10800 s; the model file 9VI4_modelangelo.cif was not written. The last lines of the program:
+ 88%|████████▊ | 26931/30762 [32:38<13:12,  4.83it/s]
+ 88%|████████▊ | 26956/30762 [32:41<10:02,  6.31it/s]
+ 88%|████████▊ | 26972/30762 [32:43<10:01,  6.30it/s]
+ 88%|████████▊ | 26985/30762 [32:46<10:35,  5.94it/s]
+ 88%|████████▊ | 27003/30762 [32:48<09:58,  6.28it/s]
+ 88%|████████▊ | 27025/30762 [32:51<08:55,  6.97it/s]
+ 88%|████████▊ | 27048/30762 [32:53<08:09,  7.58it/s]
+ 88%|████████▊ | 27068/30762 [32:56<08:02,  7.66it/s]
+ 88%|████████▊ | 27077/30762 [32:58<09:34,  6.41it/s]
+ 88%|████████▊ | 27089/30762 [33:01<10:23,  5.89it/s]
+ 88%|████████▊ | 27103/30762 [33:04<10:35,  5.76it/s]
+ 88%|████████▊ | 27117/30762 [33:06<10:43,  5.67it/s]
+ 88%|████████▊ | 27136/30762 [33:09<09:45,  6.19it/s]
+ 88%|████████▊ | 27143/30762 [33:11<11:43,  5.14it/s]
+ 88%|████████▊ | 27151/30762 [33:14<13:17,  4.53it/s]
+ 88%|████████▊ | 27157/30762 [33:16<15:31,  3.87it/s]
+ 88%|████████▊ | 27167/30762 [33:19<15:28,  3.87it/s]
+ 88%|████████▊ | 27172/30762 [33:22<18:08,  3.30it/s]
+ 88%|████████▊ | 27194/30762 [33:24<12:12,  4.87it/s]
+ 88%|████████▊ | 27216/30762 [33:27<09:53,  5.98it/s]
+ModelAngelo wrote: model_angelo.log (4885 bytes), gnn_output_round_1/output.cif (20333975 bytes), gnn_output_round_1/output_aa_probabilities.aap (10706579 bytes), gnn_output_round_1/output_chain_report.csv (37612 bytes), gnn_output_round_1/output_entropy_score.cif (20333975 bytes), gnn_output_round_1/output_fixed_aa.cif (20115937 bytes), gnn_output_round_1/output_fixed_aa_entropy_score.cif (20115937 bytes), gnn_output_round_1/output_fixed_aa_pruned.cif (20350873 bytes), gnn_output_round_1/output_fixed_aa_pruned_entropy_score.cif (20350873 bytes), see_alpha_output/output_ca_points_before_pruning.cif (2757675 bytes), see_alpha_output/output_p_points_before_pruning.cif (648 bytes), see_alpha_output/see_alpha_merg
+
+------------------------------------------------------------------------
+GPU0 E3-CryoFold 9VI4 (attempt 1)
+queue: 11 waiting, 0 ok, 1 failed; 3.5 of 7.0 hours used
+------------------------------------------------------------------------
+
+=== GPU0 E3-CryoFold 9VI4, prealign: inference.py --map_path /tmp/mica_pilot/input/9VI4/emd_65077.mrc --fasta_path /tmp/mica_pilot/input/9VI4/9vi4.fasta --save_dir /tmp/mica_pilot/runs/e3/9VI4/prealign/ --save_name 9VI4_e3_prealign --protocol pre_align --t 0.1
+[GPU0 E3-CryoFold 9VI4] running for 2 min | load 1.1 | free RAM 24.6 GB | busiest: python 107% (120s), nvidia-smi 0.4% (12619s), python3 0.3% (12607s) | 9VI4_e3_prealign.log: 1169 bytes, changed 61 s ago, last line: nnPred...
+[GPU0 E3-CryoFold 9VI4] running for 4 min | load 1.0 | free RAM 21.5 GB | busiest: python 104% (240s), nvidia-smi 0.4% (12739s), python3 0.3% (12727s) | 9VI4_e3_prealign.log: 1169 bytes, changed 3 min ago, last line: nnPred...
+[GPU0 E3-CryoFold 9VI4] running for 6 min | load 1.6 | free RAM 18.6 GB | busiest: python 103% (360s), nvidia-smi 0.4% (12859s), python3 0.3% (12847s) | 9VI4_e3_prealign.log: 1169 bytes, changed 5 min ago, last line: nnPred...
+[GPU0 E3-CryoFold 9VI4] running for 8 min | load 1.9 | free RAM 15.6 GB | busiest: python 102% (480s), nvidia-smi 0.4% (12979s), python3 0.3% (12967s) | 9VI4_e3_prealign.log: 1169 bytes, changed 7 min ago, last line: nnPred...
+[GPU0 E3-CryoFold 9VI4] running for 10 min | load 2.0 | free RAM 14.3 GB | busiest: python 102% (600s), nvidia-smi 0.4% (13099s), python3 0.3% (13087s) | 9VI4_e3_prealign.log: 1214 bytes, changed 88 s ago, last line: clustering...
+[GPU0 E3-CryoFold 9VI4] running for 20 min | load 10.8 | free RAM 1.2 GB | busiest: python 84.3% (1214s), python3 3.7% (13702s), python3 3.0% (13713s) | 9VI4_e3_prealign.log: 1214 bytes, changed 12 min ago, last line: clustering...
+GPU0 E3-CryoFold 9VI4 prealign finished: exit code -9, 1216 s, GPU memory peak 5075 MB, lowest free RAM 4.22 GB, other GPU busy: False
+GPU0 E3-CryoFold 9VI4: FAILED: killed by the system (exit code -9, probably out of memory); the model file 9VI4_e3_prealign.pdb was not written. The last lines of the program:
+Seed set to 42
+starting... emid: 65077, pdbid: 9vi4
+Cryo Model loaded successfully!
+Computing reference stats for 2g3n
+Loaded from cache
+All models loaded successfully
+/tmp/mica_pilot/input/9VI4/9vi4.fasta
+AFDB searching...
+The process typically requires between 5 to 10 minutes to complete when no same search hits before.
+Waiting over 1000s would be recognized as search failed
+Check your fasta inputs, the fasta parser can only handle standard fasta inputs and only protein sequences would be parsed:
+Your sequence 1 name: 9VI4_1, Chains that belong to this sequence:
+A 
+Your sequence: 
+VGNASGNWHCDSTWLGDRVITTSTRTWALPTYNNHLYKQISSASTGASNDNHYFGYSTPWGYFDFNRFHCHFSPRDWQRLINNNWGFRPKRLNFKLFNIQVKEVTTNDGVTTIANNLTSTVQVFSDSEYQLPYVLGSAHQGCLPPFPADVFMIPQYGYLTLNNGSQAVGRSSFYCLEYFPSQMLRTGNNFTFSYTFEDVPFHSSYAHSQSLDRLMNPLIDQYLYYLNRTQNQSGSAQNKDLLFSRGSPAGMSVQPKNWLPGPCYRQQRVSKTKTDNNNSNFTWTGASKYNLNGRESIINPGTAMASHKDDKDKFFPMSGVMIFGKESAGASNTALDNVMITDEEEIKATNPVATERFGTVATNHQSVNYEEETGDVHVMGALPGMVWQDRDVYLQGPIWAKIPHTDGHFHPSPLMGGFGLKHPPPQILIKNTPVPANPPAEFSATKFASFITQYSTGQVSVEIEWELQKENSKRWNPEVQYTSNYAKSANVDFTVDNNGLYTEPRPIGTRYLTRPL
+preprocessEM...
+preprocessEM finished in 17 seconds
+nnPred...
+nnPred finished in 453 seconds
+clustering...
+E3-CryoFold wrote: 
+
+------------------------------------------------------------------------
+GPU0 EMProt 9VI4 (attempt 1)
+queue: 10 waiting, 0 ok, 2 failed; 3.8 of 7.0 hours used
+------------------------------------------------------------------------
+AlphaFold Server files of 9VI4: found in /kaggle/input, hashes match the checked list
+
+=== GPU0 EMProt 9VI4, build: -m emprot build --map /tmp/mica_pilot/input/9VI4/emd_65077.mrc --seq /tmp/mica_pilot/runs/emprot/9VI4_in/9vi4_emprot.fasta --chain /tmp/mica_pilot/input/9VI4/AF3_results/9vi4_1/fold_9vi4_1_model_0.cif --device 0 --output /tmp/mica_pilot/runs/emprot/9VI4
+[GPU0 EMProt 9VI4] running for 2 min | load 2.3 | free RAM 25.9 GB | busiest: python 92.8% (120s), python3 3.7% (13823s), python3 3.0% (13835s) | 9VI4_emprot_build.log: 1216 bytes, changed 18 s ago, last line: |##--------------------------------------| 5% 58.8440 seconds elapsed
+[GPU0 EMProt 9VI4] running for 4 min | load 1.2 | free RAM 25.9 GB | busiest: python 96.4% (240s), python3 3.6% (13943s), python3 2.9% (13955s) | 9VI4_emprot_build.log: 1362 bytes, changed 18 s ago, last line: |######----------------------------------| 15% 179.3610 seconds elapsed
+[GPU0 EMProt 9VI4] running for 6 min | load 1.0 | free RAM 25.9 GB | busiest: python 97.6% (360s), python3 3.6% (14063s), python3 2.9% (14075s) | 9VI4_emprot_build.log: 1508 bytes, changed 13 s ago, last line: |##########------------------------------| 25% 304.1335 seconds elapsed
+[GPU0 EMProt 9VI4] running for 8 min | load 1.0 | free RAM 25.9 GB | busiest: python 98.2% (480s), python3 3.6% (14183s), python3 2.9% (14195s) | 9VI4_emprot_build.log: 1654 bytes, changed 11 s ago, last line: |##############--------------------------| 35% 426.4124 seconds elapsed
+[GPU0 EMProt 9VI4] running for 10 min | load 1.0 | free RAM 25.9 GB | busiest: python 98.5% (600s), python3 3.5% (14303s), python3 2.9% (14315s) | 9VI4_emprot_build.log: 1800 bytes, changed 9 s ago, last line: |##################----------------------| 45% 548.5617 seconds elapsed
+[GPU0 EMProt 9VI4] running for 12 min | load 1.0 | free RAM 25.9 GB | busiest: python 98.8% (720s), python3 3.5% (14423s), python3 2.8% (14435s) | 9VI4_emprot_build.log: 1946 bytes, changed 6 s ago, last line: |######################------------------| 55% 670.8849 seconds elapsed
+[GPU0 EMProt 9VI4] running for 14 min | load 1.0 | free RAM 25.9 GB | busiest: python 99.0% (840s), python3 3.5% (14543s), python3 2.8% (14555s) | 9VI4_emprot_build.log: 2092 bytes, changed 4 s ago, last line: |##########################--------------| 65% 793.1451 seconds elapsed
+[GPU0 EMProt 9VI4] running for 16 min | load 1.0 | free RAM 25.9 GB | busiest: python 99.1% (960s), python3 3.5% (14663s), python3 2.8% (14675s) | 9VI4_emprot_build.log: 2165 bytes, changed 62 s ago, last line: |############################------------| 70% 855.5105 seconds elapsed
+[GPU0 EMProt 9VI4] running for 18 min | load 1.0 | free RAM 25.9 GB | busiest: python 99.2% (1080s), python3 3.4% (14783s), python3 2.8% (14795s) | 9VI4_emprot_build.log: 2311 bytes, changed 59 s ago, last line: |################################--------| 80% 977.7227 seconds elapsed
+[GPU0 EMProt 9VI4] running for 20 min | load 1.0 | free RAM 25.9 GB | busiest: python 99.3% (1200s), python3 3.4% (14903s), python3 2.8% (14915s) | 9VI4_emprot_build.log: 2459 bytes, changed 57 s ago, last line: |####################################----| 90% 1099.8133 seconds elapsed
+[GPU0 EMProt 9VI4] running for 22 min | load 1.3 | free RAM 18.2 GB | busiest: python 99.3% (1320s), python3 3.4% (15023s), python3 2.7% (15035s) | 9VI4_emprot_build.log: 3088 bytes, changed 46 s ago, last line: # Start processing
+[GPU0 EMProt 9VI4] running for 24 min | load 1.0 | free RAM 11.2 GB | busiest: python 99.4% (1440s), python3 3.4% (15143s), python3 2.7% (15155s) | 9VI4_emprot_build.log: 3159 bytes, changed 68 s ago, last line: |##--------------------------------------| 5% 97.7809 seconds elapsed
+[GPU0 EMProt 9VI4] running for 26 min | load 1.0 | free RAM 11.5 GB | busiest: python 99.4% (1560s), python3 3.3% (15263s), python3 2.7% (15275s) | 9VI4_emprot_build.log: 3305 bytes, changed 38 s ago, last line: |######----------------------------------| 15% 248.7342 seconds elapsed
+[GPU0 EMProt 9VI4] running for 28 min | load 1.0 | free RAM 11.5 GB | busiest: python 99.5% (1680s), python3 3.3% (15383s), python3 2.7% (15395s) | 9VI4_emprot_build.log: 3451 bytes, changed 4 s ago, last line: |##########------------------------------| 25% 402.5316 seconds elapsed
+[GPU0 EMProt 9VI4] running for 30 min | load 1.0 | free RAM 11.5 GB | busiest: python 99.5% (1800s), python3 3.3% (15503s), python3 2.6% (15515s) | 9VI4_emprot_build.log: 3524 bytes, changed 50 s ago, last line: |############----------------------------| 30% 476.3435 seconds elapsed
+[GPU0 EMProt 9VI4] running for 32 min | load 1.1 | free RAM 11.5 GB | busiest: python 99.5% (1920s), python3 3.2% (15624s), python3 2.6% (15635s) | 9VI4_emprot_build.log: 3670 bytes, changed 19 s ago, last line: |################------------------------| 40% 627.1200 seconds elapsed
+[GPU0 EMProt 9VI4] running for 34 min | load 1.0 | free RAM 11.5 GB | busiest: python 99.6% (2040s), python3 3.2% (15744s), python3 2.6% (15755s) | 9VI4_emprot_build.log: 3743 bytes, changed 62 s ago, last line: |##################----------------------| 45% 703.9626 seconds elapsed
+[GPU0 EMProt 9VI4] running for 36 min | load 1.0 | free RAM 11.5 GB | busiest: python 99.6% (2160s), python3 3.2% (15864s), python3 2.6% (15875s) | 9VI4_emprot_build.log: 3889 bytes, changed 31 s ago, last line: |######################------------------| 55% 855.0459 seconds elapsed
+[GPU0 EMProt 9VI4] running for 38 min | load 1.0 | free RAM 11.5 GB | busiest: python 99.6% (2280s), python3 3.2% (15984s), python3 2.6% (15995s) | 9VI4_emprot_build.log: 4036 bytes, changed 1 s ago, last line: |##########################--------------| 65% 1005.7601 seconds elapsed
+[GPU0 EMProt 9VI4] running for 40 min | load 1.0 | free RAM 11.5 GB | busiest: python 99.6% (2400s), python3 3.2% (16104s), python3 2.6% (16115s) | 9VI4_emprot_build.log: 4110 bytes, changed 44 s ago, last line: |############################------------| 70% 1082.6570 seconds elapsed
+[GPU0 EMProt 9VI4] running for 42 min | load 1.0 | free RAM 11.5 GB | busiest: python 99.6% (2520s), python3 3.1% (16224s), python3 2.5% (16235s) | 9VI4_emprot_build.log: 4258 bytes, changed 13 s ago, last line: |################################--------| 80% 1233.1592 seconds elapsed
+[GPU0 EMProt 9VI4] running for 44 min | load 1.0 | free RAM 11.5 GB | busiest: python 99.7% (2640s), python3 3.1% (16344s), python3 2.5% (16355s) | 9VI4_emprot_build.log: 4332 bytes, changed 56 s ago, last line: |##################################------| 85% 1309.8987 seconds elapsed
+[GPU0 EMProt 9VI4] running for 46 min | load 1.0 | free RAM 11.5 GB | busiest: python 99.7% (2760s), python3 3.1% (16464s), python3 2.5% (16475s) | 9VI4_emprot_build.log: 4480 bytes, changed 26 s ago, last line: |######################################--| 95% 1460.2984 seconds elapsed
+GPU0 EMProt 9VI4 build finished: exit code -9, 2824 s, GPU memory peak 8857 MB, lowest free RAM 4.18 GB, other GPU busy: False
+GPU0 EMProt 9VI4: FAILED: killed by the system (exit code -9, probably out of memory); the model file output.cif was not written. The last lines of the program:
+
+|######################------------------| 55% 855.0459 seconds elapsed
+
+|########################----------------| 60% 932.0153 seconds elapsed
+
+|##########################--------------| 65% 1005.7601 seconds elapsed
+
+|############################------------| 70% 1082.6570 seconds elapsed
+
+|##############################----------| 75% 1159.5531 seconds elapsed
+
+|################################--------| 80% 1233.1592 seconds elapsed
+
+|##################################------| 85% 1309.8987 seconds elapsed
+
+|####################################----| 90% 1383.5550 seconds elapsed
+
+|######################################--| 95% 1460.2984 seconds elapsed
+
+|########################################| 100% 1536.8441 seconds elapsed
+EMProt wrote: temp/format_map.mrc (298474868 bytes), temp/format_seq.fasta (526 bytes), temp/chain_templs/templ_0.pdb (333478 bytes), temp/templs/templ_0.pdb (333478 bytes), temp/templs/type.txt (6 bytes), temp/ncac/c.mrc (298474868 bytes), temp/ncac/ca.mrc (298474868 bytes), temp/ncac/mc.mrc (298474868 bytes), temp/ncac/n.mrc (298474868 bytes)
+
+------------------------------------------------------------------------
+GPU0 EModelX(+AF) 9VI4 (attempt 1)
+queue: 9 waiting, 0 ok, 3 failed; 4.6 of 7.0 hours used
+------------------------------------------------------------------------
+template 9VI4_1: wrote /tmp/mica_pilot/runs/emodelx/9VI4/templates/9VI4_1/ranked_0.pdb 516 C-alpha atoms
+
+=== GPU0 EModelX(+AF) 9VI4, temp_flex: run.py --protocol=temp_flex --EM_map /tmp/mica_pilot/input/9VI4/emd_65077.mrc --fasta /tmp/mica_pilot/runs/emodelx/9VI4/9vi4.fasta --template_dir /tmp/mica_pilot/runs/emodelx/9VI4/templates --output_dir /tmp/mica_pilot/runs/emodelx/9VI4/out --run_pulchra --pulchra_path modules/pulchra304/src/pulchra
+[GPU0 EModelX(+AF) 9VI4] running for 2 min | load 1.1 | free RAM 22.5 GB | busiest: python 90.2% (120s), python3 3.0% (16649s), python3 2.5% (16660s) | 9VI4_emodelx_temp_flex.log: 2181 bytes, changed 74 s ago, last line: nnPred...
+[GPU0 EModelX(+AF) 9VI4] running for 4 min | load 1.0 | free RAM 19.8 GB | busiest: python 95.4% (240s), python3 3.0% (16769s), python3 2.5% (16780s) | 9VI4_emodelx_temp_flex.log: 2181 bytes, changed 3 min ago, last line: nnPred...
+[GPU0 EModelX(+AF) 9VI4] running for 6 min | load 1.0 | free RAM 17.2 GB | busiest: python 97.2% (360s), python3 3.0% (16889s), python3 2.4% (16900s) | 9VI4_emodelx_temp_flex.log: 2181 bytes, changed 5 min ago, last line: nnPred...
+[GPU0 EModelX(+AF) 9VI4] running for 8 min | load 1.0 | free RAM 14.6 GB | busiest: python 98.0% (480s), python3 3.0% (17009s), python3 2.4% (17020s) | 9VI4_emodelx_temp_flex.log: 2181 bytes, changed 7 min ago, last line: nnPred...
+[GPU0 EModelX(+AF) 9VI4] running for 10 min | load 1.1 | free RAM 12.3 GB | busiest: python 99.4% (600s), python3 3.0% (17129s), python3 2.4% (17140s) | 9VI4_emodelx_temp_flex.log: 2226 bytes, changed 32 s ago, last line: clustering...
+[GPU0 EModelX(+AF) 9VI4] running for 12 min | load 1.1 | free RAM 12.3 GB | busiest: python 99.6% (720s), python3 2.9% (17249s), python3 2.4% (17261s) | 9VI4_emodelx_temp_flex.log: 2226 bytes, changed 3 min ago, last line: clustering...
+GPU0 EModelX(+AF) 9VI4 temp_flex finished: exit code -9, 757 s, GPU memory peak 5935 MB, lowest free RAM 3.96 GB, other GPU busy: False
+GPU0 EModelX(+AF) 9VI4: FAILED: killed by the system (exit code -9, probably out of memory); the model file 9vi4_EModelX(+AF)_all_atom_model.pdb was not written. The last lines of the program:
+starting... emid: 65077, pdbid: 9vi4
+You are using EModelX(+AF).
+We will replace your fasta sequence as AlphaFold sequence (or the most similar one in AFDB).
+AFDB searching...
+The process typically requires between 5 to 10 minutes to complete when no same search hits before.
+Waiting over 1000s would be recognized as search failed
+Replacing 9VI4_1:
+	"VGNASGNWHCDSTWLGDRVITTSTRTWALPTYNNHLYKQISSASTGASNDNHYFGYSTPWGYFDFNRFHCHFSPRDWQRLINNNWGFRPKRLNFKLFNIQVKEVTTNDGVTTIANNLTSTVQVFSDSEYQLPYVLGSAHQGCLPPFPADVFMIPQYGYLTLNNGSQAVGRSSFYCLEYFPSQMLRTGNNFTFSYTFEDVPFHSSYAHSQSLDRLMNPLIDQYLYYLNRTQNQSGSAQNKDLLFSRGSPAGMSVQPKNWLPGPCYRQQRVSKTKTDNNNSNFTWTGASKYNLNGRESIINPGTAMASHKDDKDKFFPMSGVMIFGKESAGASNTALDNVMITDEEEIKATNPVATERFGTVATNHQSVNYEEETGDVHVMGALPGMVWQDRDVYLQGPIWAKIPHTDGHFHPSPLMGGFGLKHPPPQILIKNTPVPANPPAEFSATKFASFITQYSTGQVSVEIEWELQKENSKRWNPEVQYTSNYAKSANVDFTVDNNGLYTEPRPIGTRYLTRPL"
+as	"VGNASGNWHCDSTWLGDRVITTSTRTWALPTYNNHLYKQISSASTGASNDNHYFGYSTPWGYFDFNRFHCHFSPRDWQRLINNNWGFRPKRLNFKLFNIQVKEVTTNDGVTTIANNLTSTVQVFSDSEYQLPYVLGSAHQGCLPPFPADVFMIPQYGYLTLNNGSQAVGRSSFYCLEYFPSQMLRTGNNFTFSYTFEDVPFHSSYAHSQSLDRLMNPLIDQYLYYLNRTQNQSGSAQNKDLLFSRGSPAGMSVQPKNWLPGPCYRQQRVSKTKTDNNNSNFTWTGASKYNLNGRESIINPGTAMASHKDDKDKFFPMSGVMIFGKESAGASNTALDNVMITDEEEIKATNPVATERFGTVATNHQSVNYEEETGDVHVMGALPGMVWQDRDVYLQGPIWAKIPHTDGHFHPSPLMGGFGLKHPPPQILIKNTPVPANPPAEFSATKFASFITQYSTGQVSVEIEWELQKENSKRWNPEVQYTSNYAKSANVDFTVDNNGLYTEPRPIGTRYLTRPL"
+Check your fasta inputs, the fasta parser can only handle standard fasta inputs and only protein sequences would be parsed:
+Your sequence 1 name: 9VI4_1, Chains that belong to this sequence:
+A 
+Your sequence: 
+VGNASGNWHCDSTWLGDRVITTSTRTWALPTYNNHLYKQISSASTGASNDNHYFGYSTPWGYFDFNRFHCHFSPRDWQRLINNNWGFRPKRLNFKLFNIQVKEVTTNDGVTTIANNLTSTVQVFSDSEYQLPYVLGSAHQGCLPPFPADVFMIPQYGYLTLNNGSQAVGRSSFYCLEYFPSQMLRTGNNFTFSYTFEDVPFHSSYAHSQSLDRLMNPLIDQYLYYLNRTQNQSGSAQNKDLLFSRGSPAGMSVQPKNWLPGPCYRQQRVSKTKTDNNNSNFTWTGASKYNLNGRESIINPGTAMASHKDDKDKFFPMSGVMIFGKESAGASNTALDNVMITDEEEIKATNPVATERFGTVATNHQSVNYEEETGDVHVMGALPGMVWQDRDVYLQGPIWAKIPHTDGHFHPSPLMGGFGLKHPPPQILIKNTPVPANPPAEFSATKFASFITQYSTGQVSVEIEWELQKENSKRWNPEVQYTSNYAKSANVDFTVDNNGLYTEPRPIGTRYLTRPL
+preprocessEM...
+preprocessEM finished in 25 seconds
+nnPred...
+nnPred finished in 522 seconds
+clustering...
+EModelX(+AF) wrote: 
+
+------------------------------------------------------------------------
+GPU0 EMProt 9OC0 (attempt 1)
+queue: 8 waiting, 0 ok, 4 failed; 4.8 of 7.0 hours used
+------------------------------------------------------------------------
+9OC0: map emd_70305.mrc (340 MB, sha256 7f01ae5544d71a4b), 2 sequence(s): [{'job': '9OC0_E1', 'length': 847, 'copies': 2}, {'job': '9OC0_E2', 'length': 862, 'copies': 2}]
+AlphaFold Server files of 9OC0: found in /kaggle/input, hashes match the checked list
+
+=== GPU0 EMProt 9OC0, build: -m emprot build --map /tmp/mica_pilot/input/9OC0/emd_70305.mrc --seq /tmp/mica_pilot/runs/emprot/9OC0_in/9oc0_emprot.fasta --chain /tmp/mica_pilot/input/9OC0/AF3_results/9oc0_1/fold_9oc0_1_model_0.cif /tmp/mica_pilot/input/9OC0/AF3_results/9oc0_1/fold_9oc0_1_model_0.cif /tmp/mica_pilot/input/9OC0/AF3_results/9oc0_2/fold_9oc0_2_model_0.cif /tmp/mica_pilot/input/9OC0/AF3_results/9oc0_2/fold_9oc0_2_model_0.cif --device 0 --output /tmp/mica_pilot/runs/emprot/9OC0
+[GPU0 EMProt 9OC0] running for 2 min | load 1.0 | free RAM 26.9 GB | busiest: python 96.5% (120s), python3 2.9% (17660s), python3 2.3% (17672s) | 9OC0_emprot_build.log: 1591 bytes, changed 12 s ago, last line: |####------------------------------------| 10% 79.1986 seconds elapsed
+[GPU0 EMProt 9OC0] running for 4 min | load 1.0 | free RAM 26.9 GB | busiest: python 98.2% (240s), python3 2.9% (17780s), python3 2.3% (17792s) | 9OC0_emprot_build.log: 1810 bytes, changed 5 s ago, last line: |##########------------------------------| 25% 206.3272 seconds elapsed
+[GPU0 EMProt 9OC0] running for 6 min | load 1.1 | free RAM 26.8 GB | busiest: python 98.8% (360s), python3 2.9% (17900s), python3 2.3% (17912s) | 9OC0_emprot_build.log: 1956 bytes, changed 41 s ago, last line: |##############--------------------------| 35% 290.8727 seconds elapsed
+[GPU0 EMProt 9OC0] running for 8 min | load 1.0 | free RAM 26.8 GB | busiest: python 99.1% (480s), python3 2.8% (18020s), python3 2.3% (18032s) | 9OC0_emprot_build.log: 2175 bytes, changed 31 s ago, last line: |####################--------------------| 50% 420.4168 seconds elapsed
+[GPU0 EMProt 9OC0] running for 10 min | load 1.0 | free RAM 26.9 GB | busiest: python 99.3% (600s), python3 2.8% (18140s), python3 2.3% (18152s) | 9OC0_emprot_build.log: 2394 bytes, changed 22 s ago, last line: |##########################--------------| 65% 549.7432 seconds elapsed
+[GPU0 EMProt 9OC0] running for 12 min | load 1.0 | free RAM 26.9 GB | busiest: python 99.4% (720s), python3 2.8% (18260s), python3 2.3% (18272s) | 9OC0_emprot_build.log: 2613 bytes, changed 12 s ago, last line: |################################--------| 80% 679.1302 seconds elapsed
+[GPU0 EMProt 9OC0] running for 14 min | load 1.0 | free RAM 26.9 GB | busiest: python 99.5% (840s), python3 2.8% (18380s), python3 2.2% (18392s) | 9OC0_emprot_build.log: 2832 bytes, changed 3 s ago, last line: |######################################--| 95% 808.4846 seconds elapsed
+[GPU0 EMProt 9OC0] running for 16 min | load 1.0 | free RAM 16.4 GB | busiest: python 99.6% (960s), python3 2.8% (18500s), python3 2.2% (18512s) | 9OC0_emprot_build.log: 3457 bytes, changed 6 s ago, last line: |##--------------------------------------| 5% 69.2777 seconds elapsed
+[GPU0 EMProt 9OC0] running for 18 min | load 1.0 | free RAM 16.3 GB | busiest: python 99.6% (1080s), python3 2.8% (18620s), python3 2.2% (18632s) | 9OC0_emprot_build.log: 3603 bytes, changed 21 s ago, last line: |######----------------------------------| 15% 173.7154 seconds elapsed
+[GPU0 EMProt 9OC0] running for 20 min | load 1.0 | free RAM 16.3 GB | busiest: python 99.6% (1200s), python3 2.7% (18740s), python3 2.2% (18752s) | 9OC0_emprot_build.log: 3749 bytes, changed 34 s ago, last line: |##########------------------------------| 25% 281.1679 seconds elapsed
+[GPU0 EMProt 9OC0] running for 22 min | load 1.0 | free RAM 16.1 GB | busiest: python 99.7% (1320s), python3 2.7% (18860s), python3 2.2% (18872s) | 9OC0_emprot_build.log: 3895 bytes, changed 49 s ago, last line: |##############--------------------------| 35% 385.5853 seconds elapsed
+[GPU0 EMProt 9OC0] running for 24 min | load 1.0 | free RAM 16.3 GB | busiest: python 99.7% (1440s), python3 2.7% (18980s), python3 2.2% (18992s) | 9OC0_emprot_build.log: 4114 bytes, changed 10 s ago, last line: |####################--------------------| 50% 545.4012 seconds elapsed
+[GPU0 EMProt 9OC0] running for 26 min | load 1.0 | free RAM 16.3 GB | busiest: python 99.7% (1560s), python3 2.7% (19100s), python3 2.2% (19112s) | 9OC0_emprot_build.log: 4260 bytes, changed 22 s ago, last line: |########################----------------| 60% 652.9854 seconds elapsed
+[GPU0 EMProt 9OC0] running for 28 min | load 1.0 | free RAM 16.3 GB | busiest: python 99.7% (1680s), python3 2.7% (19220s), python3 2.1% (19232s) | 9OC0_emprot_build.log: 4406 bytes, changed 38 s ago, last line: |############################------------| 70% 757.3434 seconds elapsed
+[GPU0 EMProt 9OC0] running for 30 min | load 1.1 | free RAM 16.1 GB | busiest: python 99.8% (1800s), python3 2.6% (19340s), python3 2.1% (19352s) | 9OC0_emprot_build.log: 4552 bytes, changed 50 s ago, last line: |################################--------| 80% 864.9806 seconds elapsed
+[GPU0 EMProt 9OC0] running for 32 min | load 1.0 | free RAM 16.3 GB | busiest: python 99.8% (1920s), python3 2.6% (19461s), python3 2.1% (19472s) | 9OC0_emprot_build.log: 4772 bytes, changed 10 s ago, last line: |######################################--| 95% 1024.6188 seconds elapsed
+[GPU0 EMProt 9OC0] running for 34 min | load 1.4 | free RAM 28.8 GB | busiest: python 98.8% (2040s), python3 2.6% (19581s), python3 2.1% (19592s) | 9OC0_emprot_build.log: 6867 bytes, changed 1 s ago, last line: 65%|██████▍   | 983/1518 [00:30<00:17, 30.55it/s]
+[GPU0 EMProt 9OC0] running for 36 min | load 1.5 | free RAM 28.5 GB | busiest: python 99.6% (2160s), python3 2.6% (19701s), python3 2.1% (19712s) | 9OC0_emprot_build.log: 14523 bytes, changed 1 s ago, last line: 89%|████████▉ | 953/1073 [00:32<00:06, 18.94it/s]
+[GPU0 EMProt 9OC0] running for 38 min | load 1.4 | free RAM 28.8 GB | busiest: python 100% (2280s), python3 2.6% (19821s), python3 2.1% (19832s) | 9OC0_emprot_build.log: 33138 bytes, changed 1 s ago, last line: Total 1015 denovo coords
+[GPU0 EMProt 9OC0] running for 40 min | load 3.6 | free RAM 28.4 GB | busiest: dockx 386% (108s), python 95.3% (2400s), python3 2.6% (19941s) | 9OC0_emprot_build.log: 56622 bytes, changed 109 s ago, last line: # Running command /tmp/mica_pilot/src_emprot/emprot/bin/dockx mc.mrc xxx_all.pdb 5.0 transform.pdb -nt 4 -thresh 10.0 -angle_step 18.0 -fgrid 5.0 -sgrid 2.0
+[GPU0 EMProt 9OC0] running for 42 min | load 2.4 | free RAM 28.4 GB | busiest: dockx 332% (228s), python 90.8% (2520s), python3 2.6% (20061s) | 9OC0_emprot_build.log: 56622 bytes, changed 4 min ago, last line: # Running command /tmp/mica_pilot/src_emprot/emprot/bin/dockx mc.mrc xxx_all.pdb 5.0 transform.pdb -nt 4 -thresh 10.0 -angle_step 18.0 -fgrid 5.0 -sgrid 2.0
+[GPU0 EMProt 9OC0] running for 44 min | load 3.8 | free RAM 28.4 GB | busiest: dockx 343% (348s), python 86.7% (2640s), python3 2.5% (20181s) | 9OC0_emprot_build.log: 56622 bytes, changed 6 min ago, last line: # Running command /tmp/mica_pilot/src_emprot/emprot/bin/dockx mc.mrc xxx_all.pdb 5.0 transform.pdb -nt 4 -thresh 10.0 -angle_step 18.0 -fgrid 5.0 -sgrid 2.0
+[GPU0 EMProt 9OC0] running for 46 min | load 3.7 | free RAM 28.4 GB | busiest: dockx 341% (468s), python 82.9% (2760s), python3 2.5% (20301s) | 9OC0_emprot_build.log: 56622 bytes, changed 8 min ago, last line: # Running command /tmp/mica_pilot/src_emprot/emprot/bin/dockx mc.mrc xxx_all.pdb 5.0 transform.pdb -nt 4 -thresh 10.0 -angle_step 18.0 -fgrid 5.0 -sgrid 2.0
+[GPU0 EMProt 9OC0] running for 48 min | load 3.7 | free RAM 28.4 GB | busiest: dockx 344% (588s), python 79.4% (2880s), python3 2.5% (20421s) | 9OC0_emprot_build.log: 56622 bytes, changed 10 min ago, last line: # Running command /tmp/mica_pilot/src_emprot/emprot/bin/dockx mc.mrc xxx_all.pdb 5.0 transform.pdb -nt 4 -thresh 10.0 -angle_step 18.0 -fgrid 5.0 -sgrid 2.0
+[GPU0 EMProt 9OC0] running for 50 min | load 3.7 | free RAM 28.4 GB | busiest: dockx 384% (77s), python 76.3% (3000s), python3 2.5% (20541s) | 9OC0_emprot_build.log: 60600 bytes, changed 78 s ago, last line: # Running command /tmp/mica_pilot/src_emprot/emprot/bin/dockx mc.mrc xxx_all.pdb 5.0 transform.pdb -nt 4 -thresh 10.0 -angle_step 18.0 -fgrid 5.0 -sgrid 2.0
+[GPU0 EMProt 9OC0] running for 52 min | load 4.0 | free RAM 28.4 GB | busiest: dockx 390% (197s), python 73.4% (3120s), python3 2.5% (20661s) | 9OC0_emprot_build.log: 60600 bytes, changed 3 min ago, last line: # Running command /tmp/mica_pilot/src_emprot/emprot/bin/dockx mc.mrc xxx_all.pdb 5.0 transform.pdb -nt 4 -thresh 10.0 -angle_step 18.0 -fgrid 5.0 -sgrid 2.0
+[GPU0 EMProt 9OC0] running for 54 min | load 2.9 | free RAM 28.4 GB | busiest: dockx 320% (317s), python 70.7% (3240s), python3 2.5% (20781s) | 9OC0_emprot_build.log: 60600 bytes, changed 5 min ago, last line: # Running command /tmp/mica_pilot/src_emprot/emprot/bin/dockx mc.mrc xxx_all.pdb 5.0 transform.pdb -nt 4 -thresh 10.0 -angle_step 18.0 -fgrid 5.0 -sgrid 2.0
+[GPU0 EMProt 9OC0] running for 56 min | load 3.0 | free RAM 28.4 GB | busiest: dockx 329% (437s), python 68.1% (3360s), python3 2.5% (20901s) | 9OC0_emprot_build.log: 60600 bytes, changed 7 min ago, last line: # Running command /tmp/mica_pilot/src_emprot/emprot/bin/dockx mc.mrc xxx_all.pdb 5.0 transform.pdb -nt 4 -thresh 10.0 -angle_step 18.0 -fgrid 5.0 -sgrid 2.0
+[GPU0 EMProt 9OC0] running for 58 min | load 2.3 | free RAM 28.8 GB | busiest: python 66.8% (3480s), python3 2.4% (21021s), python3 2.0% (21033s) | 9OC0_emprot_build.log: 88725 bytes, changed 10 s ago, last line: # Adding restraints between 31 same chain pairs
+GPU0 EMProt 9OC0 build finished: exit code 0, 3508 s, GPU memory peak 8853 MB, lowest free RAM 3.72 GB, other GPU busy: False
+EMProt wrote: output.cif (2049878 bytes), output_denovo.cif (679769 bytes), output_fit.cif (2317202 bytes), temp/format_map.mrc (200974660 bytes), temp/format_seq.fasta (3458 bytes), temp/denovo/recycle_0/output.cif (716829 bytes), temp/denovo/recycle_0/denovo_chains/denovo_chain_0.pdb (169858 bytes), temp/denovo/recycle_0/denovo_chains/denovo_chain_1.pdb (130978 bytes), temp/denovo/recycle_0/denovo_chains/denovo_chain_2.pdb (118018 bytes), temp/denovo/recycle_0/denovo_chains/denovo_chain_3.pdb (93070 bytes), temp/denovo/recycle_0/denovo_chains/denovo_chain_4.pdb (49735 bytes), temp/denovo/recycle_0/denovo_chains/denovo_chain_5.pdb (44227 bytes), temp/denovo/recycle_0/denovo_chains/denovo_chain_6.pdb (412
+
+------------------------------------------------------------------------
+GPU0 EModelX(+AF) 9OC0 (attempt 1)
+queue: 7 waiting, 1 ok, 4 failed; 5.8 of 7.0 hours used
+------------------------------------------------------------------------
+template 9OC0_1: wrote /tmp/mica_pilot/runs/emodelx/9OC0/templates/9OC0_1/ranked_0.pdb 847 C-alpha atoms
+template 9OC0_2: wrote /tmp/mica_pilot/runs/emodelx/9OC0/templates/9OC0_2/ranked_0.pdb 862 C-alpha atoms
+
+=== GPU0 EModelX(+AF) 9OC0, temp_flex: run.py --protocol=temp_flex --EM_map /tmp/mica_pilot/input/9OC0/emd_70305.mrc --fasta /tmp/mica_pilot/runs/emodelx/9OC0/9oc0.fasta --template_dir /tmp/mica_pilot/runs/emodelx/9OC0/templates --output_dir /tmp/mica_pilot/runs/emodelx/9OC0/out --run_pulchra --pulchra_path modules/pulchra304/src/pulchra
+[GPU0 EModelX(+AF) 9OC0] running for 2 min | load 1.2 | free RAM 22.9 GB | busiest: python 93.3% (120s), python3 2.4% (21170s), python3 1.9% (21182s) | 9OC0_emodelx_temp_flex.log: 4360 bytes, changed 88 s ago, last line: nnPred...
+[GPU0 EModelX(+AF) 9OC0] running for 4 min | load 1.0 | free RAM 20.4 GB | busiest: python 97.0% (240s), python3 2.4% (21290s), python3 1.9% (21302s) | 9OC0_emodelx_temp_flex.log: 4360 bytes, changed 3 min ago, last line: nnPred...
+[GPU0 EModelX(+AF) 9OC0] running for 6 min | load 1.0 | free RAM 18.0 GB | busiest: python 98.2% (360s), python3 2.4% (21410s), python3 1.9% (21422s) | 9OC0_emodelx_temp_flex.log: 4360 bytes, changed 5 min ago, last line: nnPred...
+[GPU0 EModelX(+AF) 9OC0] running for 8 min | load 1.0 | free RAM 16.9 GB | busiest: python 100% (480s), python3 2.4% (21531s), python3 1.9% (21542s) | 9OC0_emodelx_temp_flex.log: 4455 bytes, changed 54 s ago, last line: fragModeling...
+[GPU0 EModelX(+AF) 9OC0] running for 10 min | load 21.4 | free RAM 12.5 GB | busiest: python 88.2% (600s), python 13.9% (72s), python 13.9% (75s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 76 s ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 12 min | load 29.0 | free RAM 11.5 GB | busiest: python 74.2% (721s), python 13.6% (197s), python 13.6% (194s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 3 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 14 min | load 29.5 | free RAM 11.2 GB | busiest: python 64.4% (842s), python 13.6% (317s), python 13.6% (315s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 5 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 16 min | load 29.9 | free RAM 11.0 GB | busiest: python 56.9% (962s), python 13.6% (437s), python 13.5% (437s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 7 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 18 min | load 30.0 | free RAM 10.8 GB | busiest: python 51.0% (1082s), python 13.6% (557s), python 13.5% (557s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 9 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 20 min | load 30.2 | free RAM 10.5 GB | busiest: python 46.4% (1202s), python 13.2% (675s), python 13.2% (677s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 11 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 22 min | load 29.4 | free RAM 10.3 GB | busiest: python 42.7% (1324s), python 13.4% (799s), python 13.4% (798s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 13 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 24 min | load 27.1 | free RAM 10.0 GB | busiest: python 39.6% (1444s), python 13.2% (919s), python 13.2% (916s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 15 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 26 min | load 30.0 | free RAM 9.8 GB | busiest: python 36.8% (1564s), python 13.2% (1039s), python 13.2% (1036s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 17 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 28 min | load 27.7 | free RAM 9.6 GB | busiest: python 34.7% (1684s), python 13.4% (1159s), python 13.1% (1159s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 19 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 30 min | load 9.6 | free RAM 11.2 GB | busiest: python 36.4% (1804s), python 12.9% (9s), python 12.8% (9s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 21 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 32 min | load 27.2 | free RAM 9.8 GB | busiest: python 34.3% (1926s), python 13.4% (135s), python 13.3% (135s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 23 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 34 min | load 26.3 | free RAM 8.8 GB | busiest: python 32.8% (2046s), python 14.1% (251s), python 14.1% (252s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 25 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 36 min | load 29.7 | free RAM 8.6 GB | busiest: python 31.2% (2166s), python 13.8% (372s), python 13.7% (373s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 27 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 38 min | load 30.3 | free RAM 8.3 GB | busiest: python 29.7% (2286s), python 13.6% (493s), python 13.5% (493s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 29 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 40 min | load 27.6 | free RAM 8.1 GB | busiest: python 28.7% (2406s), python 13.2% (612s), python 13.2% (613s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 31 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 42 min | load 29.7 | free RAM 7.8 GB | busiest: python 27.5% (2528s), python 13.2% (735s), python 13.2% (735s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 33 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 44 min | load 30.3 | free RAM 7.6 GB | busiest: python 26.4% (2648s), python 13.2% (854s), python 13.2% (856s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 35 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 46 min | load 30.2 | free RAM 7.3 GB | busiest: python 25.4% (2768s), python 13.2% (976s), python 13.2% (974s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 37 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 48 min | load 29.0 | free RAM 7.0 GB | busiest: python 24.7% (2888s), python 13.0% (1094s), python 13.0% (1094s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 39 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 50 min | load 24.2 | free RAM 12.2 GB | busiest: python 24.1% (3008s), python3 2.1% (24059s), python3 1.7% (24071s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 41 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 52 min | load 17.2 | free RAM 13.4 GB | busiest: python 26.6% (3129s), python 12.9% (39s), python 12.9% (38s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 43 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 54 min | load 25.7 | free RAM 13.3 GB | busiest: python 25.9% (3249s), python 13.0% (33s), python 12.8% (33s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 45 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 56 min | load 24.2 | free RAM 13.3 GB | busiest: python 26.2% (3369s), python 13.2% (55s), python 13.1% (55s) | 9OC0_emodelx_temp_flex.log: 4559 bytes, changed 47 min ago, last line: traces:  13656
+[GPU0 EModelX(+AF) 9OC0] running for 58 min | load 4.5 | free RAM 14.5 GB | busiest: python 29.4% (3489s), python3 2.1% (24540s), python3 1.7% (24552s) | 9OC0_emodelx_temp_flex.log: 4913 bytes, changed 67 s ago, last line: 14 / 16 -1 455
+GPU0 EModelX(+AF) 9OC0 temp_flex finished: exit code -9, 3552 s, GPU memory peak 5583 MB, lowest free RAM 6.77 GB, other GPU busy: False
+GPU0 EModelX(+AF) 9OC0: INTERRUPTED by the end of the session (not a failure)
+GPU 0: nothing more to start in this session
+
+entry  ModelAngelo              E3-CryoFold              EMProt                   EModelX(+AF)            
+9VI4   failed 180min            failed 20min             failed 47min             failed 13min            
+9OC0   -                        -                        ok 58min TM 0.8627       interrupted 59min       
+13BD   not run                  -                        not run                  not run                 
+26DK   not run                  not run                  not run                  not run                 
+
+ModelAngelo    READY         setup 705 s
+E3-CryoFold    READY         setup 297 s
+EMProt         READY         setup 127 s
+EModelX(+AF)   READY         setup 104 s
+
+5 tasks are finished (ok or failed), 8 are left for the next session (pending.csv)

@@ -1,0 +1,14 @@
+entry,method,status,note
+9VI4,modelangelo,killed_corun,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone"
+13BD,modelangelo,not run,not started: not enough time left in the session
+26DK,modelangelo,not run,not started: not enough time left in the session
+9VI4,e3,killed_corun,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone"
+26DK,e3,not run,not started: not enough time left in the session
+9VI4,emprot,killed_corun,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone"
+9OC0,emprot,killed_corun,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone"
+13BD,emprot,not run,not started: not enough time left in the session
+26DK,emprot,not run,not started: not enough time left in the session
+9VI4,emodelx,killed_corun,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone"
+9OC0,emodelx,killed_corun,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone"
+13BD,emodelx,not run,not started: not enough time left in the session
+26DK,emodelx,not run,not started: not enough time left in the session

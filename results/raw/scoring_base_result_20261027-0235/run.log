@@ -1,0 +1,446 @@
+platform kaggle | python 3.13.15 | Linux-6.18.55+-x86_64-with-glibc2.39 | 4 CPU cores (Intel(R) Xeon(R) CPU @ 2.20GHz) | 31.3 GB RAM
+large files go to /tmp/mica_pilot (1126 GB free); results to /kaggle/working/pilot (21 GB free)
+checking the internet:
+  reachable: PyPI      200
+  reachable: GitHub    200
+  reachable: RCSB      200
+  reachable: Phenix    200
+all 3 files written and checked (hashes match)
+processors: os.cpu_count 4 | multiprocessing.cpu_count 4 | usable 4 | nproc 4 | cgroup 400000 100000 | cgroup cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory | MICA's 2
+progress lines, state.json and the partial zip (/kaggle/working/scoring_base_partial.zip) are ready
+  downloaded 0 MB
+  downloaded 250 MB
+  downloaded 500 MB
+  downloaded 750 MB
+  downloaded 1000 MB
+  downloaded 1250 MB
+  downloaded 1500 MB
+  downloaded 1750 MB
+  downloaded 2000 MB
+  downloaded 2250 MB
+  downloaded 2500 MB
+  downloaded 2750 MB
+  downloaded 3000 MB
+  downloaded 3250 MB
+  downloaded 3500 MB
+installer sha256: e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885
+installing Phenix (15 to 25 minutes; a line is printed now and then) ...
+PREFIX=/tmp/mica_pilot/phenix-2.2.1-6174
+Unpacking bootstrapper...
+Unpacking payload...
+
+Installing base environment...
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/boost_adaptbx.show_platform_info created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.riso created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.xfel.merge created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx_website.extract_script_from_html_cctbx_doc created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/csegment_library created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.get_next_trial_id created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.stream_to_pickle created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.cluster_unit_cell created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.import_xds created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.rs_mapper created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/diffBragg.hopper_process created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dxtbx.show_dist_paths created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/elbow.mogul created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/hopper created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.get_pubmed_citation created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.reflection_file_reader created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.grep_adsc created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.spot_index_xds created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.create_install_script_bat created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.latex created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.sh created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.wait_for_file created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.pdb_statistics created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.verify_mon_lib_data created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/muscle.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser.benchmark_score_suite created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser_regression.show_build_path created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phasertng.xtricorder created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.build_index_html created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.development.carbo_load created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.fake_f_obs created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.get_cc_mtz_mtz created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.ligandfit created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.model_model_distances created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.pathwalker created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.replace_side_chains created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.setup_tutorial created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.twin_map_utils created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.voyager.rmsd_to_bfactor created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix_regression.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/prime.mpi_run created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/qr.fqm_mopac created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/rstbx.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/smtbx.benchmark_refinement created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/wxtbx.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xia2.html created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xpp.jobs_sentinel created
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx_website.python already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.hist_finalise already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.combine_experiments already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.scale already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dxtbx.show_mask_info already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iota already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.shelx.as_cif already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.spotfinder_adsc already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.line_count already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.TAAM_minus_IAM already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.where_is_that_cif_file already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser.benchmark_score_test already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.development.gainful already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.get_cc_mtz_pdb already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.model_statistics already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.query_docs already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.shift_model_to_match_map already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.voyager.scotty already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/prime.mpi_scale already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/rstbx.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/wxtbx.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xpp.progress_bar already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.space_group_info already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cextract_segment already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.lsf already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.correlation_matrix already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/elbow.become_novice already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iota.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.show_distances already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.store_crystal_orientation already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.make_sphinx_html already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.clashscore2 already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/molprobity.cbetadev already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser.extract_alignments already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.TAAM_minus_IAM already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.development.phi_psi_2 already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.get_solution already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.models_as_chains already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.read_ncs_from_pdb already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.simple_ncs_from_pdb already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.where_mon_lib_list_cif already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/prime.python already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/rstbx.simage.wx_display already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xcif.show_build_path already exists, skipping
+
+    reciprocal_space_arrays.txt
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/density_modification.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/reference/density_modification.html
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/guess_molecular_centers.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/reference/guess_molecular_centers.html
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/phaser_ep.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/reference/phaser_ep.html
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/tutorials/cryo_fit_gui.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/tutorials/cryo_fit_gui.html
+
+Phenix installed in 10 minutes: ------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1
+phenix.dock_in_map: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+phenix.real_space_refine: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.real_space_refine
+phenix.chain_comparison: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.chain_comparison
+phenix.version: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.version
+
+-------------------------------------------------------------------------------
+  Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography
+  Version: 2.2.1
+gemmi 0.7.5, numpy 2.1.3, scipy 1.16.3
+US-align: /tmp/mica_pilot/USalign_src/USalign (* US-align (Version 20261012)                                      *)
+input folders: /kaggle/input
+result zips found: 3, result folders found: 3
+  zip    kaggle/input/notebooks/faltuaccounts/gpu-batch1/gpu_batch1_result_20261023-1416.zip: 113 model files
+  zip    kaggle/input/notebooks/faltuaccounts/gpu-batch2/gpu_batch2_result_20261024-1334.zip: 2 model files
+  zip    kaggle/input/notebooks/faltuaccounts/gpu-batch3/gpu_batch3_result_20261025-2341.zip: 12 model files
+  folder /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot: 113 model files
+  folder /kaggle/input/notebooks/faltuaccounts/gpu-batch2/pilot: 2 model files
+  folder /kaggle/input/notebooks/faltuaccounts/gpu-batch3/pilot: 12 model files
+WARNING: e3 22FX 22FX_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9JKK 9JKK_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9KQM 9KQM_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9RWS 9RWS_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9T5K 9T5K_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9TKA 9TKA_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9V4D 9V4D_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9VBD 9VBD_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9VUH 9VUH_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9WFL 9WFL_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9WME 9WME_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9WQ6 9WQ6_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9WTX 9WTX_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9Z24 9Z24_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: e3 9ZLH 9ZLH_e3_prealign.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 22FX 22fx_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 22FX 22fx_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9JKK 9jkk_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9JKK 9jkk_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9KQM 9kqm_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9KQM 9kqm_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9OTA 9ota_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9OTA 9ota_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9RWS 9rws_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9RWS 9rws_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9T5K 9t5k_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9T5K 9t5k_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9TKA 9tka_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9TKA 9tka_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9V4D 9v4d_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9V4D 9v4d_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9VBD 9vbd_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9VBD 9vbd_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9VUH 9vuh_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9VUH 9vuh_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9WFL 9wfl_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9WFL 9wfl_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9WME 9wme_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9WME 9wme_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9WQ6 9wq6_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9WQ6 9wq6_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9WTX 9wtx_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9WTX 9wtx_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9Z24 9z24_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9Z24 9z24_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9ZLH 9zlh_EModelX(+AF)_all_atom_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emodelx 9ZLH 9zlh_EModelX(+AF)_ca_model.pdb: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 22FX output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 22FX output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9JKK output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9JKK output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9KQM output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9KQM output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9OTA output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9OTA output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9RWS output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9RWS output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9T5K output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9T5K output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9TKA output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9TKA output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9V4D output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9V4D output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9VBD output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9VBD output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9VUH output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9VUH output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9WFL output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9WFL output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9WME output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9WME output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9WQ6 output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9WQ6 output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9WTX output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9WTX output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9Z24 output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9Z24 output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9ZLH output.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9ZLH output_denovo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 22FX 22FX_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 22FX 22FX_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9JKK 9JKK_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9JKK 9JKK_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9KQM 9KQM_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9KQM 9KQM_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9OC0 9OC0_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9OC0 9OC0_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9OTA 9OTA_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9OTA 9OTA_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9RWS 9RWS_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9RWS 9RWS_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9T5K 9T5K_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9T5K 9T5K_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9TKA 9TKA_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9TKA 9TKA_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9V4D 9V4D_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9V4D 9V4D_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9VBD 9VBD_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9VBD 9VBD_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9VUH 9VUH_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9VUH 9VUH_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9WFL 9WFL_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9WFL 9WFL_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9WME 9WME_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9WME 9WME_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9WQ6 9WQ6_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9WQ6 9WQ6_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9WTX 9WTX_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9WTX 9WTX_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9Z24 9Z24_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9Z24 9Z24_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9ZLH 9ZLH_modelangelo.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: modelangelo 9ZLH 9ZLH_modelangelo_raw.cif: in gpu_batch1_result_20261023-1416 and in pilot (the last one is used)
+WARNING: emprot 9OC0 output.cif: in gpu_batch2_result_20261024-1334 and in pilot (the last one is used)
+WARNING: emprot 9OC0 output_denovo.cif: in gpu_batch2_result_20261024-1334 and in pilot (the last one is used)
+WARNING: emodelx 13BD 13bd_EModelX(+AF)_all_atom_model.pdb: in gpu_batch3_result_20261025-2341 and in pilot (the last one is used)
+WARNING: emodelx 13BD 13bd_EModelX(+AF)_ca_model.pdb: in gpu_batch3_result_20261025-2341 and in pilot (the last one is used)
+WARNING: emodelx 9OC0 9oc0_EModelX(+AF)_all_atom_model.pdb: in gpu_batch3_result_20261025-2341 and in pilot (the last one is used)
+WARNING: emodelx 9OC0 9oc0_EModelX(+AF)_ca_model.pdb: in gpu_batch3_result_20261025-2341 and in pilot (the last one is used)
+WARNING: emprot 13BD output.cif: in gpu_batch3_result_20261025-2341 and in pilot (the last one is used)
+WARNING: emprot 13BD output_denovo.cif: in gpu_batch3_result_20261025-2341 and in pilot (the last one is used)
+WARNING: emprot 26DK output.cif: in gpu_batch3_result_20261025-2341 and in pilot (the last one is used)
+WARNING: emprot 26DK output_denovo.cif: in gpu_batch3_result_20261025-2341 and in pilot (the last one is used)
+WARNING: modelangelo 13BD 13BD_modelangelo.cif: in gpu_batch3_result_20261025-2341 and in pilot (the last one is used)
+WARNING: modelangelo 13BD 13BD_modelangelo_raw.cif: in gpu_batch3_result_20261025-2341 and in pilot (the last one is used)
+WARNING: modelangelo 26DK 26DK_modelangelo.cif: in gpu_batch3_result_20261025-2341 and in pilot (the last one is used)
+WARNING: modelangelo 26DK 26DK_modelangelo_raw.cif: in gpu_batch3_result_20261025-2341 and in pilot (the last one is used)
+
+method         kind                   entries
+e3             e3_prealign                 15
+emodelx        emodelx_af_all_atom         18
+emodelx        emodelx_af_ca               18
+emprot         emprot                      19
+emprot         emprot_denovo               19
+modelangelo    modelangelo                 19
+modelangelo    modelangelo_raw             19
+
+127 model files of 19 entries; 71 of them are the primary file of their method
+  9V4D: 275 amino-acid residues with a CA atom, entries table says 276
+self-test on 13BD (461 residues): TM-score 1.0, fNS 1.0, own match 100.0, Phenix match 100.0 found 100.0 sequence 100.0
+[4/127] 13BD  emprot       emprot_denovo          ok         TM 0.9811  fNS 0.9822  CAmatch 26.821  29.6s
+[3/127] 13BD  emprot       emprot                 ok         TM 0.9915  fNS 0.9926  CAmatch 15.979  67.8s
+[5/127] 13BD  modelangelo  modelangelo            ok         TM 0.9799  fNS 0.9832  CAmatch 22.376  38.6s
+[7/127] 22FX  e3           e3_prealign            ok         TM 0.9692  fNS 0.9692  CAmatch 97.74   4.8s
+[8/127] 22FX  emodelx      emodelx_af_all_atom    ok         TM 0.9723  fNS 0.9723  CAmatch 93.889  4.6s
+[2/127] 13BD  emodelx      emodelx_af_ca          ok         TM 0.9232  fNS 0.9369  CAmatch 18.621  79.2s
+[1/127] 13BD  emodelx      emodelx_af_all_atom    ok         TM 0.9223  fNS 0.9362  CAmatch 18.77   81.1s
+[9/127] 22FX  emodelx      emodelx_af_ca          ok         TM 0.9723  fNS 0.9723  CAmatch 93.889  4.4s
+[12/127] 22FX  modelangelo  modelangelo            ok         TM 0.9989  fNS 0.9989  CAmatch 4.193   25.9s
+[11/127] 22FX  emprot       emprot_denovo          ok         TM 0.9931  fNS 0.9931  CAmatch 4.268   30.6s
+[10/127] 22FX  emprot       emprot                 ok         TM 0.9975  fNS 0.9975  CAmatch 3.983   49.9s
+[13/127] 22FX  modelangelo  modelangelo_raw        ok         TM 0.9989  fNS 0.9989  CAmatch 4.168   30.7s
+[6/127] 13BD  modelangelo  modelangelo_raw        ok         TM 0.6266  fNS 0.9965  CAmatch 13.188  74.7s
+[14/127] 26DK  emprot       emprot                 ok         TM 0.9828  fNS 0.9828  CAmatch 5.829   32.9s
+[15/127] 26DK  emprot       emprot_denovo          ok         TM 0.9614  fNS 0.966   CAmatch 6.506   17.8s
+[17/127] 26DK  modelangelo  modelangelo_raw        ok         TM 0.9372  fNS         CAmatch 1.404   17.5s
+[16/127] 26DK  modelangelo  modelangelo            ok         TM 0.9502  fNS 0.9527  CAmatch 5.981   22.9s
+[18/127] 9JKK  e3           e3_prealign            ok         TM 0.9811  fNS 0.9823  CAmatch 96.52   17.9s
+[19/127] 9JKK  emodelx      emodelx_af_all_atom    ok         TM 0.9908  fNS 0.9918  CAmatch 97.778  16.8s
+[20/127] 9JKK  emodelx      emodelx_af_ca          ok         TM 0.9908  fNS 0.9918  CAmatch 97.417  12.5s
+[21/127] 9JKK  emprot       emprot                 ok         TM 0.9958  fNS 0.9958  CAmatch 90.738  12.5s
+[22/127] 9JKK  emprot       emprot_denovo          ok         TM 0.9976  fNS 0.9976  CAmatch 99.251  13.2s
+[23/127] 9JKK  modelangelo  modelangelo            ok         TM 0.9934  fNS 0.9934  CAmatch 98.874  12.0s
+[24/127] 9JKK  modelangelo  modelangelo_raw        ok         TM 0.6071  fNS 0.9973  CAmatch 94.643  12.4s
+[27/127] 9KQM  emodelx      emodelx_af_ca          ok         TM 0.8635  fNS 0.955   CAmatch 91.827  11.7s
+[26/127] 9KQM  emodelx      emodelx_af_all_atom    ok         TM 0.8588  fNS 0.9505  CAmatch 92.271  12.6s
+[25/127] 9KQM  e3           e3_prealign            ok         TM 0.8998  fNS 0.9325  CAmatch 75.0    14.7s
+[30/127] 9KQM  modelangelo  modelangelo            ok         TM 0.7881  fNS 0.855   CAmatch 100.0   8.3s
+[28/127] 9KQM  emprot       emprot                 ok         TM 0.9568  fNS 0.9567  CAmatch 74.902  12.2s
+[29/127] 9KQM  emprot       emprot_denovo          ok         TM 0.7638  fNS 0.9096  CAmatch 98.652  10.5s
+[31/127] 9KQM  modelangelo  modelangelo_raw        ok         TM 0.2376  fNS 0.9724  CAmatch 92.417  13.3s
+[35/127] 9OC0  emprot       emprot_denovo          ok         TM 0.7765  fNS 0.9745  CAmatch 48.966  20.6s
+[36/127] 9OC0  modelangelo  modelangelo            ok         TM 0.7819  fNS 0.9841  CAmatch 46.432  22.1s
+[37/127] 9OC0  modelangelo  modelangelo_raw        ok         TM 0.5285  fNS 0.9954  CAmatch 15.562  31.8s
+[38/127] 9OTA  emodelx      emodelx_af_all_atom    ok         TM 0.9283  fNS 0.9323  CAmatch 50.099  17.2s
+[39/127] 9OTA  emodelx      emodelx_af_ca          ok         TM 0.9283  fNS 0.9323  CAmatch 50.099  17.1s
+[40/127] 9OTA  emprot       emprot                 ok         TM 0.9764  fNS 0.9791  CAmatch 47.77   14.6s
+[41/127] 9OTA  emprot       emprot_denovo          ok         TM 0.9104  fNS 0.9104  CAmatch 50.0    12.1s
+[32/127] 9OC0  emodelx      emodelx_af_all_atom    ok         TM 0.8552  fNS 0.9817  CAmatch 12.549  146.2s
+[34/127] 9OC0  emprot       emprot                 ok         TM 0.6675  fNS 0.9887  CAmatch 13.282  145.7s
+[33/127] 9OC0  emodelx      emodelx_af_ca          ok         TM 0.8552  fNS 0.9817  CAmatch 12.52   147.9s
+[42/127] 9OTA  modelangelo  modelangelo            ok         TM 0.9089  fNS 0.9092  CAmatch 98.364  12.0s
+[44/127] 9RWS  e3           e3_prealign            ok         TM 0.9628  fNS 0.968   CAmatch 97.25   15.9s
+[43/127] 9OTA  modelangelo  modelangelo_raw        ok         TM 0.4077  fNS 0.971   CAmatch 46.14   21.3s
+[45/127] 9RWS  emodelx      emodelx_af_all_atom    ok         TM 0.9611  fNS 0.9704  CAmatch 98.608  20.3s
+[46/127] 9RWS  emodelx      emodelx_af_ca          ok         TM 0.963   fNS 0.9742  CAmatch 98.614  19.0s
+[47/127] 9RWS  emprot       emprot                 ok         TM 0.9821  fNS 0.9859  CAmatch 97.471  11.3s
+[48/127] 9RWS  emprot       emprot_denovo          ok         TM 0.9749  fNS 0.9761  CAmatch 99.602  10.8s
+[49/127] 9RWS  modelangelo  modelangelo            ok         TM 0.9673  fNS 0.9692  CAmatch 99.0    10.6s
+[50/127] 9RWS  modelangelo  modelangelo_raw        ok         TM 0.3631  fNS 0.9908  CAmatch 92.168  10.3s
+[52/127] 9T5K  emodelx      emodelx_af_all_atom    ok         TM 0.9922  fNS 0.9943  CAmatch 92.233  7.4s
+[51/127] 9T5K  e3           e3_prealign            ok         TM 0.68    fNS 0.69    CAmatch 62.085  11.5s
+[53/127] 9T5K  emodelx      emodelx_af_ca          ok         TM 0.994   fNS 0.996   CAmatch 91.807  7.0s
+[55/127] 9T5K  emprot       emprot_denovo          ok         TM 0.9988  fNS 0.9988  CAmatch 25.553  19.1s
+[58/127] 9TKA  e3           e3_prealign            ok         TM 0.9799  fNS 0.9799  CAmatch 97.628  5.7s
+[59/127] 9TKA  emodelx      emodelx_af_all_atom    ok         TM 0.9944  fNS 0.9944  CAmatch 98.016  5.1s
+[54/127] 9T5K  emprot       emprot                 ok         TM 0.9988  fNS 0.9988  CAmatch 17.461  34.2s
+[56/127] 9T5K  modelangelo  modelangelo            ok         TM 0.9961  fNS 0.9973  CAmatch 16.587  32.3s
+[60/127] 9TKA  emodelx      emodelx_af_ca          ok         TM 0.9944  fNS 0.9944  CAmatch 98.016  5.1s
+[61/127] 9TKA  emprot       emprot                 ok         TM 0.998   fNS 0.998   CAmatch 42.295  6.5s
+[57/127] 9T5K  modelangelo  modelangelo_raw        ok         TM 0.5528  fNS 0.9986  CAmatch 14.302  37.5s
+[62/127] 9TKA  emprot       emprot_denovo          ok         TM 0.9946  fNS 0.9946  CAmatch 49.798  6.5s
+[63/127] 9TKA  modelangelo  modelangelo            ok         TM 0.9978  fNS 0.9978  CAmatch 49.499  6.3s
+[64/127] 9TKA  modelangelo  modelangelo_raw        ok         TM 0.9978  fNS 0.9978  CAmatch 48.527  6.5s
+[66/127] 9V4D  emodelx      emodelx_af_all_atom    ok         TM 0.9416  fNS 0.9441  CAmatch 97.378  7.1s
+[65/127] 9V4D  e3           e3_prealign            ok         TM 0.9073  fNS 0.9105  CAmatch 70.083  8.1s
+[67/127] 9V4D  emodelx      emodelx_af_ca          ok         TM 0.9416  fNS 0.9441  CAmatch 97.378  7.2s
+[68/127] 9V4D  emprot       emprot                 ok         TM 0.951   fNS 0.9725  CAmatch 66.583  7.0s
+[69/127] 9V4D  emprot       emprot_denovo          ok         TM 0.958   fNS 0.9576  CAmatch 94.964  6.1s
+[70/127] 9V4D  modelangelo  modelangelo            ok         TM 0.5783  fNS 0.9632  CAmatch 91.065  5.9s
+[71/127] 9V4D  modelangelo  modelangelo_raw        ok         TM 0.5915  fNS 0.9775  CAmatch 45.531  7.6s
+[74/127] 9VBD  emodelx      emodelx_af_ca          ok         TM 0.9854  fNS 0.9861  CAmatch 97.71   16.3s
+[73/127] 9VBD  emodelx      emodelx_af_all_atom    ok         TM 0.9854  fNS 0.9861  CAmatch 97.71   17.0s
+[75/127] 9VBD  emprot       emprot                 ok         TM 0.9861  fNS 0.9868  CAmatch 57.366  17.9s
+[77/127] 9VBD  modelangelo  modelangelo            ok         TM 0.2367  fNS 0.6786  CAmatch 98.319  8.0s
+[76/127] 9VBD  emprot       emprot_denovo          ok         TM 0.3437  fNS 0.8506  CAmatch 97.566  10.1s
+[72/127] 9VBD  e3           e3_prealign            ok         TM 0.968   fNS 0.9723  CAmatch 68.163  30.1s
+[78/127] 9VBD  modelangelo  modelangelo_raw        ok         TM 0.1079  fNS 0.9794  CAmatch 88.77   14.6s
+[80/127] 9VUH  emodelx      emodelx_af_all_atom    ok         TM 0.9108  fNS 0.9345  CAmatch 95.153  32.0s
+[82/127] 9VUH  emprot       emprot                 ok         TM 0.9742  fNS 0.9777  CAmatch 67.857  25.3s
+[81/127] 9VUH  emodelx      emodelx_af_ca          ok         TM 0.9124  fNS 0.9361  CAmatch 95.161  33.3s
+[79/127] 9VUH  e3           e3_prealign            ok         TM 0.6297  fNS 0.8392  CAmatch 80.882  41.8s
+[83/127] 9VUH  emprot       emprot_denovo          ok         TM 0.6363  fNS 0.762   CAmatch 97.963  13.4s
+[84/127] 9VUH  modelangelo  modelangelo            ok         TM 0.7537  fNS 0.7545  CAmatch 98.551  14.0s
+[85/127] 9VUH  modelangelo  modelangelo_raw        ok         TM 0.2523  fNS 0.9797  CAmatch 85.035  17.9s
+[87/127] 9WFL  emodelx      emodelx_af_all_atom    ok         TM 0.9539  fNS 0.954   CAmatch 96.313  19.2s
+[88/127] 9WFL  emodelx      emodelx_af_ca          ok         TM 0.9539  fNS 0.954   CAmatch 96.313  18.9s
+[89/127] 9WFL  emprot       emprot                 ok         TM 0.992   fNS 0.992   CAmatch 93.906  18.9s
+[86/127] 9WFL  e3           e3_prealign            ok         TM 0.9828  fNS 0.9829  CAmatch 94.922  42.1s
+[90/127] 9WFL  emprot       emprot_denovo          ok         TM 0.9935  fNS 0.9935  CAmatch 98.692  18.6s
+[91/127] 9WFL  modelangelo  modelangelo            ok         TM 0.9949  fNS 0.9953  CAmatch 97.839  18.2s
+[92/127] 9WFL  modelangelo  modelangelo_raw        ok         TM 0.5043  fNS 0.9968  CAmatch 96.317  17.7s
+[94/127] 9WME  emodelx      emodelx_af_all_atom    ok         TM 0.841   fNS 0.9274  CAmatch 94.213  11.7s
+[95/127] 9WME  emodelx      emodelx_af_ca          ok         TM 0.841   fNS 0.9274  CAmatch 94.213  11.4s
+[93/127] 9WME  e3           e3_prealign            ok         TM 0.5989  fNS 0.7796  CAmatch 79.268  18.0s
+[97/127] 9WME  emprot       emprot_denovo          ok         TM 0.4591  fNS 0.7059  CAmatch 97.819  7.4s
+[98/127] 9WME  modelangelo  modelangelo            ok         TM 0.559   fNS 0.5917  CAmatch 98.507  7.0s
+[100/127] 9WQ6  e3           e3_prealign            ok         TM 0.7993  fNS 0.8416  CAmatch 67.722  8.4s
+[99/127] 9WME  modelangelo  modelangelo_raw        ok         TM 0.1111  fNS 0.956   CAmatch 80.338  11.0s
+[101/127] 9WQ6  emodelx      emodelx_af_all_atom    ok         TM 0.8939  fNS 0.9312  CAmatch 77.419  9.8s
+[103/127] 9WQ6  emprot       emprot                 ok         TM 0.9399  fNS 0.9434  CAmatch 90.741  6.2s
+[102/127] 9WQ6  emodelx      emodelx_af_ca          ok         TM 0.8994  fNS 0.9353  CAmatch 77.244  9.0s
+[104/127] 9WQ6  emprot       emprot_denovo          ok         TM 0.5922  fNS 0.8706  CAmatch 94.191  13.3s
+[105/127] 9WQ6  modelangelo  modelangelo            ok         TM 0.4469  fNS 0.7787  CAmatch 59.677  12.6s
+[96/127] 9WME  emprot       emprot                 ok         TM 0.9535  fNS 0.9599  CAmatch 43.047  41.1s
+[109/127] 9WTX  emodelx      emodelx_af_ca          ok         TM 0.9315  fNS 0.9426  CAmatch 89.101  18.4s
+[108/127] 9WTX  emodelx      emodelx_af_all_atom    ok         TM 0.9305  fNS 0.9414  CAmatch 89.423  20.8s
+[106/127] 9WQ6  modelangelo  modelangelo_raw        ok         TM 0.1967  fNS 0.7196  CAmatch 19.644  31.8s
+[107/127] 9WTX  e3           e3_prealign            ok         TM 0.7337  fNS 0.8087  CAmatch 68.343  28.9s
+[111/127] 9WTX  emprot       emprot_denovo          ok         TM 0.3065  fNS 0.7197  CAmatch 97.808  8.5s
+[112/127] 9WTX  modelangelo  modelangelo            ok         TM 0.2723  fNS 0.6118  CAmatch 99.029  8.8s
+[110/127] 9WTX  emprot       emprot                 ok         TM 0.9805  fNS 0.9808  CAmatch 89.762  15.1s
+[115/127] 9Z24  emodelx      emodelx_af_all_atom    ok         TM 0.9054  fNS 0.9054  CAmatch 92.192  6.6s
+[114/127] 9Z24  e3           e3_prealign            ok         TM 0.8913  fNS 0.8945  CAmatch 91.369  8.3s
+[116/127] 9Z24  emodelx      emodelx_af_ca          ok         TM 0.9059  fNS 0.9059  CAmatch 92.216  8.1s
+[118/127] 9Z24  emprot       emprot_denovo          ok         TM 0.9095  fNS 0.9103  CAmatch 97.161  5.9s
+[119/127] 9Z24  modelangelo  modelangelo            ok         TM 0.9031  fNS 0.9031  CAmatch 89.213  6.7s
+[120/127] 9Z24  modelangelo  modelangelo_raw        ok         TM 0.4279  fNS 0.9342  CAmatch 63.508  7.3s
+[121/127] 9ZLH  e3           e3_prealign            ok         TM 0.9636  fNS 0.9636  CAmatch 99.029  5.2s
+[122/127] 9ZLH  emodelx      emodelx_af_all_atom    ok         TM 0.9931  fNS 0.9931  CAmatch 100.0   5.0s
+[113/127] 9WTX  modelangelo  modelangelo_raw        ok         TM 0.1296  fNS 0.973   CAmatch 79.397  30.1s
+[117/127] 9Z24  emprot       emprot                 ok         TM 0.9099  fNS 0.9216  CAmatch 26.154  21.8s
+[123/127] 9ZLH  emodelx      emodelx_af_ca          ok         TM 0.9931  fNS 0.9931  CAmatch 100.0   5.1s
+[124/127] 9ZLH  emprot       emprot                 ok         TM 0.9928  fNS 0.9928  CAmatch 100.0   4.9s
+[125/127] 9ZLH  emprot       emprot_denovo          ok         TM 0.9976  fNS 0.9976  CAmatch 100.0   5.0s
+[126/127] 9ZLH  modelangelo  modelangelo            ok         TM 0.9972  fNS 0.9972  CAmatch 90.351  4.4s
+[127/127] 9ZLH  modelangelo  modelangelo_raw        ok         TM 0.9972  fNS 0.9972  CAmatch 21.684  6.6s
+
+127 models scored in 11 minutes
+
+primary models: TM-score (-mm 1) / fragment-agnostic TM-score / Calpha match / coverage
+entry e3                                 emodelx                            emprot                             modelangelo                       
+13BD  -                                  0.9223 / 0.9362 / 18.77 / 4.7961   0.9915 / 0.9926 / 15.979 / 6.2039  0.9799 / 0.9832 / 22.376 / 4.3818 
+22FX  0.9692 / 0.9692 / 97.74 / 1.0231   0.9723 / 0.9723 / 93.889 / 1.0405  0.9975 / 0.9975 / 3.983 / 25.1098  0.9989 / 0.9989 / 4.193 / 23.8497 
+26DK  -                                  -                                  0.9828 / 0.9828 / 5.829 / 17.1571  0.9502 / 0.9527 / 5.981 / 16.1937 
+9JKK  0.9811 / 0.9823 / 96.52 / 1.0302   0.9908 / 0.9918 / 97.778 / 1.0189  0.9958 / 0.9958 / 90.738 / 1.1     0.9934 / 0.9934 / 98.874 / 1.0057 
+9KQM  0.8998 / 0.9325 / 75.0 / 1.2208    0.8588 / 0.9505 / 92.271 / 1.0273  0.9568 / 0.9567 / 74.902 / 1.2655  0.7881 / 0.855 / 100.0 / 0.8586   
+9OC0  -                                  0.8552 / 0.9817 / 12.549 / 5.9609  0.6675 / 0.9887 / 13.282 / 5.7793  0.7819 / 0.9841 / 46.432 / 2.1074 
+9OTA  -                                  0.9283 / 0.9323 / 50.099 / 0.9419  0.9764 / 0.9791 / 47.77 / 1.0075   0.9089 / 0.9092 / 98.364 / 0.9157 
+9RWS  0.9628 / 0.968 / 97.25 / 0.9941    0.9611 / 0.9704 / 98.608 / 0.9824  0.9821 / 0.9859 / 97.471 / 1.0039  0.9673 / 0.9692 / 99.0 / 0.9766   
+9T5K  0.68 / 0.69 / 62.085 / 1.1076      0.9922 / 0.9943 / 92.233 / 1.0814  0.9988 / 0.9988 / 17.461 / 5.727   0.9961 / 0.9973 / 16.587 / 6.0131 
+9TKA  0.9799 / 0.9799 / 97.628 / 1.0243  0.9944 / 0.9944 / 98.016 / 1.0202  0.998 / 0.998 / 42.295 / 2.3644    0.9978 / 0.9978 / 49.499 / 2.0202 
+9V4D  0.9073 / 0.9105 / 70.083 / 1.3127  0.9416 / 0.9441 / 97.378 / 0.9709  0.951 / 0.9725 / 66.583 / 1.4473   0.5783 / 0.9632 / 91.065 / 1.0582 
+9VBD  0.968 / 0.9723 / 68.163 / 1.4107   0.9854 / 0.9861 / 97.71 / 1.0058   0.9861 / 0.9868 / 57.366 / 1.7198  0.2367 / 0.6786 / 98.319 / 0.6852 
+9VUH  0.6297 / 0.8392 / 80.882 / 0.9653  0.9108 / 0.9345 / 95.153 / 0.9763  0.9742 / 0.9777 / 67.857 / 1.4132  0.7537 / 0.7545 / 98.551 / 0.7618 
+9WFL  0.9828 / 0.9829 / 94.922 / 1.0396  0.9539 / 0.954 / 96.313 / 0.9941   0.992 / 0.992 / 93.906 / 1.0587    0.9949 / 0.9953 / 97.839 / 1.0176 
+9WME  0.5989 / 0.7796 / 79.268 / 0.9193  0.841 / 0.9274 / 94.213 / 0.9686   0.9535 / 0.9599 / 43.047 / 2.1928  0.559 / 0.5917 / 98.507 / 0.6009  
+9WQ6  0.7993 / 0.8416 / 67.722 / 1.2107  0.8939 / 0.9312 / 77.419 / 1.1877  0.9399 / 0.9434 / 90.741 / 1.0345  0.4469 / 0.7787 / 59.677 / 0.9502 
+9WTX  0.7337 / 0.8087 / 68.343 / 1.074   0.9305 / 0.9414 / 89.423 / 1.04    0.9805 / 0.9808 / 89.762 / 1.094   0.2723 / 0.6118 / 99.029 / 0.618  
+9Z24  0.8913 / 0.8945 / 91.369 / 0.9941  0.9054 / 0.9054 / 92.192 / 0.9852  0.9099 / 0.9216 / 26.154 / 3.4615  0.9031 / 0.9031 / 89.213 / 1.0148 
+9ZLH  0.9636 / 0.9636 / 99.029 / 1.0     0.9931 / 0.9931 / 100.0 / 1.0      0.9928 / 0.9928 / 100.0 / 0.9951   0.9972 / 0.9972 / 90.351 / 1.1068 
+
+status of the 127 models: ok 127

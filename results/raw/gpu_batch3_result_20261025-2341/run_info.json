@@ -1,0 +1,735 @@
+{
+  "notebook": "gpu_batch3",
+  "started_utc": "2026-10-25T16:30:01.651401+00:00",
+  "finished_utc": "2026-10-25T23:41:40.300409+00:00",
+  "elapsed_minutes": 432,
+  "problem": "",
+  "complete": true,
+  "platform": "kaggle",
+  "python": "3.13.15",
+  "os": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+  "cpu_cores": 4,
+  "ram_gb": 31.3,
+  "state": {
+    "ok": true,
+    "problem": "",
+    "t0": 1792945801.6513991,
+    "started": "2026-10-25T16:30:01.651401+00:00",
+    "phenix_env": null,
+    "phenix_version": "",
+    "installer_sha256": "",
+    "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+    "usalign_version": "* US-align (Version 20261012)                                      *",
+    "weights": {},
+    "env": {},
+    "entries": {},
+    "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+    "cpu_facts": {
+      "os.cpu_count": 4,
+      "multiprocessing.cpu_count": 4,
+      "usable (sched_getaffinity)": 4,
+      "nproc": "4",
+      "cgroup v2 cpu.max": "400000 100000",
+      "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+      "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+    },
+    "methods": {
+      "modelangelo": {
+        "key": "modelangelo",
+        "label": "ModelAngelo",
+        "commit": "994945bdfa6e5368e0d62349a47792f4864eebc3",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 779,
+        "entries": {
+          "13BD": {
+            "entry": "13BD",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 11.61,
+                "samples": 798,
+                "rc": 0,
+                "seconds": 4019,
+                "timed_out": false,
+                "started": 1792953359.7695818,
+                "ended": 1792957378.8816915,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-25T18:35:59Z",
+                "ended_utc": "2026-10-25T19:42:58Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.6043,
+                "tm_score_pred_norm": 0.281,
+                "ca_rmsd": 0.65,
+                "aligned_ca_length": 142,
+                "seq_identity": 0.986,
+                "pred_residues": 502,
+                "native_residues": 232,
+                "coverage": 1.0889,
+                "method": "modelangelo",
+                "entry": "13BD",
+                "model_kind": "modelangelo",
+                "model_file": "13BD_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.1133,
+                "tm_score_pred_norm": 0.2629,
+                "ca_rmsd": 4.24,
+                "aligned_ca_length": 37,
+                "seq_identity": 0.081,
+                "pred_residues": 66,
+                "native_residues": 232,
+                "coverage": 0.1432,
+                "method": "modelangelo",
+                "entry": "13BD",
+                "model_kind": "modelangelo_raw",
+                "model_file": "13BD_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-25T18:33:57Z",
+            "seconds": 4143
+          },
+          "26DK": {
+            "entry": "26DK",
+            "method": "modelangelo",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 5585,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 19.05,
+                "samples": 984,
+                "rc": 0,
+                "seconds": 4960,
+                "timed_out": false,
+                "started": 1792963039.1499503,
+                "ended": 1792967999.556692,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-25T21:17:19Z",
+                "ended_utc": "2026-10-25T22:39:59Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9358,
+                "tm_score_pred_norm": 0.9758,
+                "ca_rmsd": 0.83,
+                "aligned_ca_length": 183,
+                "seq_identity": 1.0,
+                "pred_residues": 183,
+                "native_residues": 191,
+                "coverage": 0.9581,
+                "method": "modelangelo",
+                "entry": "26DK",
+                "model_kind": "modelangelo",
+                "model_file": "26DK_modelangelo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.5788,
+                "tm_score_pred_norm": 0.978,
+                "ca_rmsd": 0.59,
+                "aligned_ca_length": 112,
+                "seq_identity": 1.0,
+                "pred_residues": 112,
+                "native_residues": 191,
+                "coverage": 0.5864,
+                "method": "modelangelo",
+                "entry": "26DK",
+                "model_kind": "modelangelo_raw",
+                "model_file": "26DK_modelangelo_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-25T21:17:06Z",
+            "seconds": 4975
+          }
+        },
+        "version": "ModelAngelo 1.0.18",
+        "weights": {
+          "torch_home/hub/checkpoints/esm1b_t33_650M_UR50S.pt": 7828576466,
+          "torch_home/hub/checkpoints/model_angelo_v1.0/nucleotides/c_alpha/chkpt.torch": 734237153,
+          "torch_home/hub/checkpoints/model_angelo_v1.0/nucleotides/gnn/chkpt_483863.torch": 1603440621
+        }
+      },
+      "e3": {
+        "key": "e3",
+        "label": "E3-CryoFold",
+        "commit": "241cef48da83b96519e62ab02cccd9db96d8e68b",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 360,
+        "entries": {
+          "26DK": {
+            "entry": "26DK",
+            "method": "e3",
+            "status": "failed",
+            "failed_step": "prealign",
+            "note": "killed by the system (exit code -9, probably out of memory); the model file 26DK_e3_prealign.pdb was not written",
+            "runs": {
+              "prealign": {
+                "peak_gpu_mb": 3903,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 1.8,
+                "samples": 98,
+                "rc": -9,
+                "seconds": 493,
+                "timed_out": false,
+                "started": 1792968000.7264433,
+                "ended": 1792968494.082159,
+                "gpu": 0,
+                "limit_s": 9601,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-25T22:40:00Z",
+                "ended_utc": "2026-10-25T22:48:14Z"
+              }
+            },
+            "models": [],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-25T22:40:00Z",
+            "seconds": 495
+          }
+        },
+        "weights": {
+          "src_e3/models/structure_model.pth": 239971852,
+          "src_e3/models/model_weight.pth": 1401618067
+        }
+      },
+      "emprot": {
+        "key": "emprot",
+        "label": "EMProt",
+        "commit": "9489d52e7fdc81c85ba82e386abcfa05bac2b9d1",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 134,
+        "entries": {
+          "13BD": {
+            "entry": "13BD",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8857,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 7.07,
+                "samples": 462,
+                "rc": 0,
+                "seconds": 2332,
+                "timed_out": false,
+                "started": 1792957380.0427113,
+                "ended": 1792959712.145733,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-25T19:43:00Z",
+                "ended_utc": "2026-10-25T20:21:52Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.2747,
+                "tm_score_pred_norm": 0.1339,
+                "ca_rmsd": 6.39,
+                "aligned_ca_length": 119,
+                "seq_identity": 0.067,
+                "pred_residues": 623,
+                "native_residues": 232,
+                "coverage": 1.3514,
+                "method": "emprot",
+                "entry": "13BD",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.241,
+                "tm_score_pred_norm": 0.1586,
+                "ca_rmsd": 6.72,
+                "aligned_ca_length": 111,
+                "seq_identity": 0.054,
+                "pred_residues": 430,
+                "native_residues": 232,
+                "coverage": 0.9328,
+                "method": "emprot",
+                "entry": "13BD",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9658,
+                "tm_score_pred_norm": 0.1804,
+                "ca_rmsd": 1.36,
+                "aligned_ca_length": 232,
+                "seq_identity": 0.983,
+                "pred_residues": 1271,
+                "native_residues": 232,
+                "coverage": 2.757,
+                "method": "emprot",
+                "entry": "13BD",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-25T19:42:59Z",
+            "seconds": 2335
+          },
+          "26DK": {
+            "entry": "26DK",
+            "method": "emprot",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 8853,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 17.74,
+                "samples": 529,
+                "rc": 0,
+                "seconds": 2666,
+                "timed_out": false,
+                "started": 1792968495.917165,
+                "ended": 1792971161.8007472,
+                "gpu": 0,
+                "limit_s": 9106,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-25T22:48:15Z",
+                "ended_utc": "2026-10-25T23:32:41Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9828,
+                "tm_score_pred_norm": 0.0587,
+                "ca_rmsd": 0.7,
+                "aligned_ca_length": 191,
+                "seq_identity": 1.0,
+                "pred_residues": 3247,
+                "native_residues": 191,
+                "coverage": 17.0,
+                "method": "emprot",
+                "entry": "26DK",
+                "model_kind": "emprot",
+                "model_file": "output.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9614,
+                "tm_score_pred_norm": 0.9566,
+                "ca_rmsd": 1.04,
+                "aligned_ca_length": 190,
+                "seq_identity": 0.995,
+                "pred_residues": 192,
+                "native_residues": 191,
+                "coverage": 1.0052,
+                "method": "emprot",
+                "entry": "26DK",
+                "model_kind": "emprot_denovo",
+                "model_file": "output_denovo.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.8947,
+                "tm_score_pred_norm": 0.8697,
+                "ca_rmsd": 1.87,
+                "aligned_ca_length": 190,
+                "seq_identity": 0.947,
+                "pred_residues": 197,
+                "native_residues": 191,
+                "coverage": 1.0314,
+                "method": "emprot",
+                "entry": "26DK",
+                "model_kind": "emprot_fit",
+                "model_file": "output_fit.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-25T22:48:15Z",
+            "seconds": 2674
+          }
+        },
+        "weights": {
+          "src_emprot/emprot/bin/USalign": 2580159,
+          "src_emprot/emprot/bin/unidoc_frag": 9235980,
+          "src_emprot/emprot/bin/stride": 1098276,
+          "src_emprot/emprot/bin/NWalign": 1000500,
+          "src_emprot/emprot/bin/getp": 1793843,
+          "src_emprot/emprot/bin/dockx": 4386343,
+          "src_emprot/emprot/bin/domasgx": 1812226,
+          "src_emprot/emprot/bin/TMalign": 1888059,
+          "src_emprot/emprot/weights/model_all_atom": 152286626,
+          "src_emprot/emprot/weights/model_aa": 19124029,
+          "src_emprot/emprot/weights/model_mc": 19065277
+        }
+      },
+      "emodelx": {
+        "key": "emodelx",
+        "label": "EModelX(+AF)",
+        "commit": "53713cf820d10d78b1ca6669ef197850cf907843",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 107,
+        "entries": {
+          "9OC0": {
+            "entry": "9OC0",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 5583,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 6.9,
+                "samples": 1126,
+                "rc": 0,
+                "seconds": 5806,
+                "timed_out": false,
+                "started": 1792947430.5904186,
+                "ended": 1792953236.2931998,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-25T16:57:10Z",
+                "ended_utc": "2026-10-25T18:33:56Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9562,
+                "tm_score_pred_norm": 0.16,
+                "ca_rmsd": 0.61,
+                "aligned_ca_length": 121,
+                "seq_identity": 0.992,
+                "pred_residues": 753,
+                "native_residues": 124,
+                "coverage": 1.4707,
+                "method": "emodelx",
+                "entry": "9OC0",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "9oc0_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9562,
+                "tm_score_pred_norm": 0.1598,
+                "ca_rmsd": 0.61,
+                "aligned_ca_length": 121,
+                "seq_identity": 0.992,
+                "pred_residues": 754,
+                "native_residues": 124,
+                "coverage": 1.4727,
+                "method": "emodelx",
+                "entry": "9OC0",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "9oc0_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-25T16:53:47Z",
+            "seconds": 6010
+          },
+          "13BD": {
+            "entry": "13BD",
+            "method": "emodelx",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 5583,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 10.81,
+                "samples": 640,
+                "rc": 0,
+                "seconds": 3308,
+                "timed_out": false,
+                "started": 1792959716.025605,
+                "ended": 1792963023.878983,
+                "gpu": 0,
+                "limit_s": 10800,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-25T20:21:56Z",
+                "ended_utc": "2026-10-25T21:17:03Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.8847,
+                "tm_score_pred_norm": 0.1937,
+                "ca_rmsd": 1.32,
+                "aligned_ca_length": 210,
+                "seq_identity": 0.957,
+                "pred_residues": 1073,
+                "native_residues": 232,
+                "coverage": 2.3275,
+                "method": "emodelx",
+                "entry": "13BD",
+                "model_kind": "emodelx_af_all_atom",
+                "model_file": "13bd_EModelX(+AF)_all_atom_model.pdb"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.8934,
+                "tm_score_pred_norm": 0.195,
+                "ca_rmsd": 1.46,
+                "aligned_ca_length": 213,
+                "seq_identity": 0.944,
+                "pred_residues": 1079,
+                "native_residues": 232,
+                "coverage": 2.3406,
+                "method": "emodelx",
+                "entry": "13BD",
+                "model_kind": "emodelx_af_ca",
+                "model_file": "13bd_EModelX(+AF)_ca_model.pdb"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-25T20:21:54Z",
+            "seconds": 3311
+          },
+          "26DK": {
+            "entry": "26DK",
+            "method": "emodelx",
+            "status": "failed",
+            "failed_step": "temp_flex",
+            "note": "killed by the system (exit code -9, probably out of memory); the model file 26dk_EModelX(+AF)_all_atom_model.pdb was not written",
+            "runs": {
+              "temp_flex": {
+                "peak_gpu_mb": 4687,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 0.74,
+                "samples": 105,
+                "rc": -9,
+                "seconds": 527,
+                "timed_out": false,
+                "started": 1792971169.5914147,
+                "ended": 1792971696.2697883,
+                "gpu": 0,
+                "limit_s": 6432,
+                "other_gpu_busy": false,
+                "started_utc": "2026-10-25T23:32:49Z",
+                "ended_utc": "2026-10-25T23:41:36Z"
+              }
+            },
+            "models": [],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-25T23:32:48Z",
+            "seconds": 529
+          }
+        },
+        "weights": {
+          "src_emodelx/models/best_AA_model.ckpt": 423942088,
+          "src_emodelx/models/best_CA_model.ckpt": 423942088,
+          "src_emodelx/models/best_BB_model.ckpt": 423942088
+        }
+      }
+    },
+    "complete": true,
+    "pending": []
+  },
+  "methods": {
+    "modelangelo": {
+      "label": "ModelAngelo",
+      "commit": "994945bdfa6e5368e0d62349a47792f4864eebc3",
+      "status": "ready",
+      "setup_seconds": 779,
+      "version": "ModelAngelo 1.0.18"
+    },
+    "e3": {
+      "label": "E3-CryoFold",
+      "commit": "241cef48da83b96519e62ab02cccd9db96d8e68b",
+      "status": "ready",
+      "setup_seconds": 360,
+      "version": ""
+    },
+    "emprot": {
+      "label": "EMProt",
+      "commit": "9489d52e7fdc81c85ba82e386abcfa05bac2b9d1",
+      "status": "ready",
+      "setup_seconds": 134,
+      "version": ""
+    },
+    "emodelx": {
+      "label": "EModelX(+AF)",
+      "commit": "53713cf820d10d78b1ca6669ef197850cf907843",
+      "status": "ready",
+      "setup_seconds": 107,
+      "version": ""
+    }
+  },
+  "specs": {
+    "modelangelo": {
+      "key": "modelangelo",
+      "label": "ModelAngelo",
+      "repo": "https://github.com/3dem/model-angelo",
+      "commit": "994945bdfa6e5368e0d62349a47792f4864eebc3",
+      "python": "3.11.14",
+      "req": "env/modelangelo_requirements.txt",
+      "timeout": 10800,
+      "uses_af3": false,
+      "bundle": "nucleotides",
+      "weights_url": null,
+      "weights_min_bytes": 0,
+      "gdrive_id": null,
+      "import_test": "import sys, torch, numpy, scipy, pandas, Bio, mrcfile, einops, esm, pyhmmer, loguru, psutil, matplotlib, matplotlib.pyplot; print('python', sys.version.split()[0], '| torch', torch.__version__, '| cuda', torch.version.cuda, '| numpy', numpy.__version__, '| pandas', pandas.__version__, '| biopython', Bio.__version__, '| pyhmmer', pyhmmer.__version__)",
+      "main_kind": "modelangelo"
+    },
+    "e3": {
+      "key": "e3",
+      "label": "E3-CryoFold",
+      "repo": "https://github.com/A4Bio/E3-CryoFold",
+      "commit": "241cef48da83b96519e62ab02cccd9db96d8e68b",
+      "python": "3.9.25",
+      "req": "env/e3cryofold_requirements.txt",
+      "timeout": 10800,
+      "uses_af3": false,
+      "weights_url": "https://github.com/A4Bio/E3-CryoFold/releases/download/checkpoint/models.zip",
+      "weights_min_bytes": 50000000,
+      "gdrive_id": null,
+      "import_test": "import sys, torch, pytorch_lightning, numpy, scipy, Bio, mrcfile, open3d, skimage, sklearn, superpose3d, esm, networkx, nglview, matplotlib, PIL, requests; from cryo_module.AutoEM import run_pulchra; from E3CryoFold2 import E3CryoFold2; print('python', sys.version.split()[0], '| torch', torch.__version__, '| cuda', torch.version.cuda, '| numpy', numpy.__version__, '| open3d', open3d.__version__)",
+      "main_kind": "e3_prealign"
+    },
+    "emprot": {
+      "key": "emprot",
+      "label": "EMProt",
+      "repo": "https://github.com/huang-laboratory/EMProt",
+      "commit": "9489d52e7fdc81c85ba82e386abcfa05bac2b9d1",
+      "python": "3.10.20",
+      "req": "env/emprot_requirements.txt",
+      "timeout": 10800,
+      "uses_af3": true,
+      "weights_url": "http://huanglab.phys.hust.edu.cn/EMProt/pretrained_weights/weights.tgz",
+      "weights_min_bytes": 1000000,
+      "gdrive_id": null,
+      "import_test": "import sys, torch, numpy, emprot, emprot.run, emprot.eval, emprot.clean, emprot.fit, emprot.refine; print('python', sys.version.split()[0], '| torch', torch.__version__, '| cuda', torch.version.cuda, '| numpy', numpy.__version__, '| emprot', emprot.__version__)",
+      "main_kind": "emprot"
+    },
+    "emodelx": {
+      "key": "emodelx",
+      "label": "EModelX(+AF)",
+      "repo": "https://github.com/biomed-AI/EModelX",
+      "commit": "53713cf820d10d78b1ca6669ef197850cf907843",
+      "python": "3.8.20",
+      "req": "env/emodelx_requirements.txt",
+      "timeout": 10800,
+      "uses_af3": true,
+      "ckpt_files": [
+        "best_BB_model.ckpt",
+        "best_CA_model.ckpt",
+        "best_AA_model.ckpt"
+      ],
+      "weights_url": null,
+      "weights_min_bytes": 50000000,
+      "gdrive_id": "13BKzEBfL0uubYgcJJTGSZ-PkO9hXAB9X",
+      "import_test": "import sys, torch, numpy, mrcfile, networkx, open3d, pandas, requests, skimage, superpose3d, Bio; from modules.AutoEM import Solver; from unet3d.emmodel import ResUNet3D4EM; print('python', sys.version.split()[0], '| torch', torch.__version__, '| open3d', open3d.__version__, '| numpy', numpy.__version__)",
+      "main_kind": "emodelx_af_all_atom"
+    }
+  },
+  "usalign_commit": "746ad8a2a4dea9f317075cc482df0ecb5440bdea",
+  "usalign_version": "* US-align (Version 20261012)                                      *",
+  "input_sha256": {
+    "scripts/nbtools.py": "9bda95fce7f7fbe0c373e315740f555fc27942a08971ce2fe1b5cae6af6d748d",
+    "scripts/mica_inputs.py": "87b7f5e43b86671e09e673e8bb07abb20496ad92264528dfd9994b88bded417f",
+    "scripts/evaluate_models.py": "8c235732d2595f8ad2014d70a278b44097205aff2417c9b5761f55dfe4974250",
+    "data/af3/af3_jobs.csv": "b43068ffed7e3843d0d9c5cfa509d8f1ba9900527a1a0cad9e74aa69573cd4b0",
+    "data/af3/af3_files_sha256.txt": "c131836802f9469c2073cc8c0bbb495e906854ffb223100cf30750714e2e3a4f",
+    "data/entries_2026.csv": "cb695bb04ef09bf48f8c2848f91a2580c0b3c15f2a8f1e580659d86f0097a5da",
+    "env/modelangelo_requirements.txt": "fb1e831ccc62aaa1633b2dff7e15dd904403e493e3fe0360e95bf349d1150d4a",
+    "env/e3cryofold_requirements.txt": "40afa3f8479e02c25ca55a6e9f958b985d00390df23c142a76b358ac55bb8505",
+    "env/emprot_requirements.txt": "1c2c4f4adf2d327357d5d6b83990e54b05db7817c910c0b89d5bf2c21b749092",
+    "env/emodelx_requirements.txt": "61fe9b6d878be2d227f469c031356066b5bc17c92fb7c868fe1fe34214a835c7"
+  },
+  "tasks": [
+    [
+      "9OC0",
+      "emodelx"
+    ],
+    [
+      "13BD",
+      "modelangelo"
+    ],
+    [
+      "13BD",
+      "emprot"
+    ],
+    [
+      "13BD",
+      "emodelx"
+    ],
+    [
+      "26DK",
+      "modelangelo"
+    ],
+    [
+      "26DK",
+      "e3"
+    ],
+    [
+      "26DK",
+      "emprot"
+    ],
+    [
+      "26DK",
+      "emodelx"
+    ]
+  ],
+  "hours_setting": 9.0,
+  "run_limit_s": 10800,
+  "lanes": [
+    0
+  ]
+}

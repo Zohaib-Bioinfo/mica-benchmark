@@ -1,0 +1,7 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9RWS/9RWS_modelangelo_raw.cif /kaggle/working/pilot/native/ca/9RWS_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/9RWS/9RWS_modelangelo_raw/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9RWS/9RWS_modelangelo_raw.cif:A:B:C:D:E:F:G:H:I	/kaggle/working/pilot/native/ca/9RWS_native_ca.pdb:A::::::::	0.3425	0.3631	0.65	0.341	0.361	0.989	543	512	187
+
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9RWS/9RWS_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9RWS/9RWS_modelangelo_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9RWS/9RWS_modelangelo_raw.cif

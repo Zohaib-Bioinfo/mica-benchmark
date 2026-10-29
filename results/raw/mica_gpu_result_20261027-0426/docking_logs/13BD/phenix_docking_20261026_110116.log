@@ -1,0 +1,37 @@
+2026-10-26 11:01:16 - INFO - PHENIX DOCKING TOOL - SESSION STARTED
+2026-10-26 11:01:16 - INFO - Timestamp: 20261026_110116
+2026-10-26 11:01:16 - INFO - Testing Phenix environment...
+2026-10-26 11:01:16 - INFO - ✓ Phenix environment activated successfully
+2026-10-26 11:01:16 - INFO - ✓ phenix.dock_in_map found at: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+2026-10-26 11:01:16 - INFO - STARTING DOCKING PROCESS
+2026-10-26 11:01:16 - INFO - Density map: /tmp/mica_pilot/MICA/input/13BD/emd_76936.map
+2026-10-26 11:01:16 - INFO - Contour level: 0.13
+2026-10-26 11:01:16 - INFO - Resolution: 2.65 Å
+2026-10-26 11:01:16 - INFO - FASTA file: /tmp/mica_pilot/MICA/input/13BD/13bd.fasta
+2026-10-26 11:01:16 - INFO - Dock type: domainwise
+2026-10-26 11:01:16 - INFO - Processing initial map with contour level 0.13
+2026-10-26 11:01:18 - INFO - Initial map processed and saved to: /tmp/mica_pilot/MICA/input/13BD/temp_maps/initial_processed.mrc
+2026-10-26 11:01:18 - INFO - PHENIX COMMAND for fold_13bd_1_model_0_chain_A_domain_01.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/13BD/AF3_domains/fold_13bd_1_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/13BD/temp_maps/initial_processed.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/13BD/AF3_docked_models/fold_13bd_1_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/13BD/13bd.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 11:41:18 - ERROR - PHENIX TIMEOUT: Docking for fold_13bd_1_model_0_chain_A_domain_01.pdb took longer than 2400 s (attempt 1, res6_quick)
+2026-10-26 11:41:18 - INFO - PHENIX COMMAND for fold_13bd_1_model_0_chain_A_domain_01.pdb (benchmark attempt 2 of 2, res10_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/13BD/AF3_domains/fold_13bd_1_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/13BD/temp_maps/initial_processed.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/13BD/AF3_docked_models/fold_13bd_1_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/13BD/13bd.fasta dock_with_mr=False quick=True resolution=10.0'
+2026-10-26 12:05:41 - INFO - PHENIX SUCCESS: Docking completed for fold_13bd_1_model_0_chain_A_domain_01.pdb (attempt 2, res10_quick, 1463 s, local CC 0.06)
+2026-10-26 12:05:41 - INFO - Identified 1 domains in fold_13bd_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 12:05:41 - INFO - Domain 1 (residues 24-273): 1000 atoms, 400 selected for masking, centroid at [174.32, 154.67, 190.68]
+2026-10-26 12:06:19 - INFO - Successfully processed 1 domains from fold_13bd_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 12:06:19 - INFO - PHENIX COMMAND for fold_13bd_1_model_0_chain_A_domain_02.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/13BD/AF3_domains/fold_13bd_1_model_0_chain_A_domain_02.pdb map_file=/tmp/mica_pilot/MICA/input/13BD/temp_maps/map_after_fold_13bd_1_model_0_chain_A_domain_01.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/13BD/AF3_docked_models/fold_13bd_1_model_0_chain_A_domain_02_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/13BD/13bd.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 12:46:20 - ERROR - PHENIX TIMEOUT: Docking for fold_13bd_1_model_0_chain_A_domain_02.pdb took longer than 2400 s (attempt 1, res6_quick)
+2026-10-26 12:46:20 - INFO - PHENIX COMMAND for fold_13bd_1_model_0_chain_A_domain_02.pdb (benchmark attempt 2 of 2, res10_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/13BD/AF3_domains/fold_13bd_1_model_0_chain_A_domain_02.pdb map_file=/tmp/mica_pilot/MICA/input/13BD/temp_maps/map_after_fold_13bd_1_model_0_chain_A_domain_01.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/13BD/AF3_docked_models/fold_13bd_1_model_0_chain_A_domain_02_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/13BD/13bd.fasta dock_with_mr=False quick=True resolution=10.0'
+2026-10-26 13:11:20 - ERROR - PHENIX TIMEOUT: Docking for fold_13bd_1_model_0_chain_A_domain_02.pdb took longer than 1500 s (attempt 2, res10_quick)
+2026-10-26 13:11:20 - INFO - PHENIX COMMAND for fold_13bd_1_model_0_chain_A_domain_03.pdb (benchmark attempt 1 of 2, res6_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/13BD/AF3_domains/fold_13bd_1_model_0_chain_A_domain_03.pdb map_file=/tmp/mica_pilot/MICA/input/13BD/temp_maps/map_after_fold_13bd_1_model_0_chain_A_domain_01.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/13BD/AF3_docked_models/fold_13bd_1_model_0_chain_A_domain_03_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/13BD/13bd.fasta dock_with_mr=False quick=True resolution=6.0'
+2026-10-26 13:51:20 - ERROR - PHENIX TIMEOUT: Docking for fold_13bd_1_model_0_chain_A_domain_03.pdb took longer than 2400 s (attempt 1, res6_quick)
+2026-10-26 13:51:20 - INFO - PHENIX COMMAND for fold_13bd_1_model_0_chain_A_domain_03.pdb (benchmark attempt 2 of 2, res10_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/13BD/AF3_domains/fold_13bd_1_model_0_chain_A_domain_03.pdb map_file=/tmp/mica_pilot/MICA/input/13BD/temp_maps/map_after_fold_13bd_1_model_0_chain_A_domain_01.mrc nproc=2 pdb_out=/tmp/mica_pilot/MICA/input/13BD/AF3_docked_models/fold_13bd_1_model_0_chain_A_domain_03_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/13BD/13bd.fasta dock_with_mr=False quick=True resolution=10.0'
+2026-10-26 14:16:20 - ERROR - PHENIX TIMEOUT: Docking for fold_13bd_1_model_0_chain_A_domain_03.pdb took longer than 1500 s (attempt 2, res10_quick)
+2026-10-26 14:16:20 - INFO - FINAL SUMMARY:
+2026-10-26 14:16:20 - INFO - Total: 3, Success: 1, Failed: 2
+2026-10-26 14:16:20 - WARNING - Failed models: ['fold_13bd_1_model_0_chain_A_domain_02.pdb', 'fold_13bd_1_model_0_chain_A_domain_03.pdb']
+2026-10-26 14:16:20 - INFO - Processing docked AF3 structures from: /tmp/mica_pilot/MICA/input/13BD/AF3_docked_models
+2026-10-26 14:16:20 - INFO - Found 1 PDB files to combine
+2026-10-26 14:16:20 - INFO - Starting combination of 1 PDB files
+2026-10-26 14:16:20 - INFO - ✓ Added 1 chain from fold_13bd_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-26 14:16:20 - INFO - ✓ Combined PDB saved to: 13BD_af3_docked.pdb
+2026-10-26 14:16:20 - INFO - ✓ Total chains: 1, Files processed: 1

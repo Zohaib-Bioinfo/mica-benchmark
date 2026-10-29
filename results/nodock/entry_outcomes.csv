@@ -1,0 +1,101 @@
+entry,method,outcome,reason,status_raw,runtime_s,gpu,history
+9T5K,mica,not_run,deferred: program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept,deferred,118,cuda,deferred
+22FX,mica,failed,3_build: exit code 1; the output of 3_build was not written,failed,29,cuda,failed
+9JKK,mica,model,,ok,490,cuda,ok
+9TKA,mica,not_run,deferred: program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept,deferred,101,cuda,deferred
+9WFL,mica,model,,ok,557,cuda,ok
+9VI4,mica,not_run,deferred: program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept,deferred,803,cuda,deferred
+9ZLH,mica,model,,ok,477,cuda,ok
+9VUH,mica,model,,ok,505,cuda,ok
+9OC0,mica,not_run,deferred: program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept,deferred,315,cuda,deferred
+13BD,mica,not_run,deferred: program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept,deferred,380,cuda,deferred
+9WQ6,mica,failed,3_build: exit code 1; the output of 3_build was not written,failed,29,cuda,failed
+9V4D,mica,failed,3_build: exit code 1; the output of 3_build was not written,failed,27,cuda,failed
+9OTA,mica,model,,ok,445,cuda,ok
+9KQM,mica,model,,ok,525,cuda,ok
+9WME,mica,model,,ok,737,cuda,ok
+9VBD,mica,not_run,deferred: program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept,deferred,152,cuda,deferred
+9RWS,mica,model,,ok,485,cuda,ok
+9WTX,mica,not_run,deferred: program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept,deferred,215,cuda,deferred
+9Z24,mica,not_run,deferred: program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept,deferred,118,cuda,deferred
+26DK,mica,not_run,deferred: program 3 was switched off in this session after two failures in a row (see the log); the docked state is kept,deferred,176,cuda,deferred
+9T5K,modelangelo,model,,ok,4702,0,ok
+22FX,modelangelo,model,,ok,1983,1,ok
+9JKK,modelangelo,model,,ok,642,0,ok
+9TKA,modelangelo,model,,ok,831,1,ok
+9WFL,modelangelo,model,,ok,589,0,ok
+9VI4,modelangelo,failed,build: timeout: the run limit of 10800 s; the model file 9VI4_modelangelo.cif was not written,failed,10800,0,killed_corun; failed
+9ZLH,modelangelo,model,,ok,619,1,ok
+9VUH,modelangelo,model,,ok,534,1,ok
+9OC0,modelangelo,model,,ok,4268,0,ok
+13BD,modelangelo,model,,ok,4019,0,not run; not run; ok
+9WQ6,modelangelo,model,,ok,1640,0,ok
+9V4D,modelangelo,model,,ok,1163,1,ok
+9OTA,modelangelo,model,,ok,638,0,ok
+9KQM,modelangelo,model,,ok,476,0,ok
+9WME,modelangelo,model,,ok,565,1,ok
+9VBD,modelangelo,model,,ok,1278,1,ok
+9RWS,modelangelo,model,,ok,522,0,ok
+9WTX,modelangelo,model,,ok,1359,0,ok
+9Z24,modelangelo,model,,ok,2320,1,ok
+26DK,modelangelo,model,,ok,4960,0,not run; not run; ok
+9T5K,emodelx,model,,ok,1833,1,ok
+22FX,emodelx,model,,ok,434,0,ok
+9JKK,emodelx,model,,ok,246,0,ok
+9TKA,emodelx,model,,ok,275,1,ok
+9WFL,emodelx,model,,ok,352,0,ok
+9VI4,emodelx,failed,"temp_flex: killed by the system (exit code -9, probably out of memory); the model file 9vi4_EModelX(+AF)_all_atom_model.pdb was not written",failed,757,0,killed_corun; failed
+9ZLH,emodelx,model,,ok,422,0,ok
+9VUH,emodelx,model,,ok,441,1,ok
+9OC0,emodelx,model,,ok,5806,0,killed_corun; interrupted; ok
+13BD,emodelx,model,,ok,3308,0,not run; not run; ok
+9WQ6,emodelx,model,,ok,409,1,ok
+9V4D,emodelx,model,,ok,141,0,ok
+9OTA,emodelx,model,,ok,209,0,ok
+9KQM,emodelx,model,,ok,290,0,ok
+9WME,emodelx,model,,ok,548,1,ok
+9VBD,emodelx,model,,ok,432,1,ok
+9RWS,emodelx,model,,ok,253,0,ok
+9WTX,emodelx,model,,ok,387,1,ok
+9Z24,emodelx,model,,ok,317,0,ok
+26DK,emodelx,failed,"temp_flex: killed by the system (exit code -9, probably out of memory); the model file 26dk_EModelX(+AF)_all_atom_model.pdb was not written",failed,527,0,not run; not run; failed
+9T5K,emprot,model,,ok,1888,1,ok
+22FX,emprot,model,,ok,1657,0,ok
+9JKK,emprot,model,,ok,667,1,ok
+9TKA,emprot,model,,ok,854,0,ok
+9WFL,emprot,model,,ok,767,1,ok
+9VI4,emprot,failed,"build: killed by the system (exit code -9, probably out of memory); the model file output.cif was not written",failed,2824,0,killed_corun; failed
+9ZLH,emprot,model,,ok,636,1,ok
+9VUH,emprot,model,,ok,777,0,ok
+9OC0,emprot,model,,ok,3508,0,killed_corun; ok
+13BD,emprot,model,,ok,2332,0,not run; not run; ok
+9WQ6,emprot,model,,ok,837,1,ok
+9V4D,emprot,model,,ok,277,0,ok
+9OTA,emprot,model,,ok,572,1,ok
+9KQM,emprot,model,,ok,656,1,ok
+9WME,emprot,model,,ok,963,0,ok
+9VBD,emprot,model,,ok,1142,0,ok
+9RWS,emprot,model,,ok,499,1,ok
+9WTX,emprot,model,,ok,872,1,ok
+9Z24,emprot,model,,ok,851,0,ok
+26DK,emprot,model,,ok,2666,0,not run; not run; ok
+9T5K,e3,model,,ok,1169,1,ok
+22FX,e3,model,,ok,311,0,ok
+9JKK,e3,model,,ok,122,1,ok
+9TKA,e3,model,,ok,172,0,ok
+9WFL,e3,model,,ok,132,1,ok
+9VI4,e3,failed,"prealign: killed by the system (exit code -9, probably out of memory); the model file 9VI4_e3_prealign.pdb was not written",failed,1216,0,killed_corun; failed
+9ZLH,e3,model,,ok,233,0,ok
+9VUH,e3,model,,ok,115,0,ok
+9OC0,e3,failed,prealign: exit code 1; the model file 9OC0_e3_prealign.pdb was not written,failed,482,1,failed
+13BD,e3,failed,prealign: exit code 1; the model file 13BD_e3_prealign.pdb was not written,failed,410,0,failed
+9WQ6,e3,model,,ok,179,1,ok
+9V4D,e3,model,,ok,60,0,ok
+9OTA,e3,failed,prealign: exit code 1; the model file 9OTA_e3_prealign.pdb was not written,failed,104,1,failed
+9KQM,e3,model,,ok,130,1,ok
+9WME,e3,model,,ok,122,0,ok
+9VBD,e3,model,,ok,206,0,ok
+9RWS,e3,model,,ok,129,1,ok
+9WTX,e3,model,,ok,185,1,ok
+9Z24,e3,model,,ok,86,0,ok
+26DK,e3,failed,"prealign: killed by the system (exit code -9, probably out of memory); the model file 26DK_e3_prealign.pdb was not written",failed,493,0,not run; not run; failed

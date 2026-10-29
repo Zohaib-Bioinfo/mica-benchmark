@@ -1,0 +1,81 @@
+
+🧬 Phenix Docking Tool for Cryo-EM Map
+================================================================================
+🔍 VALIDATING INPUTS...
+✅ Input validation passed
+
+
+🧬 PHENIX DOCKING TOOL
+⏰ Session started: 2026-10-26 11:06:28
+📄 Log file: /tmp/mica_pilot/MICA/input/9VBD/docking_logs/phenix_docking_20261026_110628.log
+
+================================================================================
+🔧 TESTING PHENIX ENVIRONMENT
+================================================================================
+✅ Phenix environment test PASSED
+   📍 dock_in_map location: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+
+================================================================================
+🎯 DOCKING PROCESS STARTING
+================================================================================
+📊 DOCKING PARAMETERS:
+   🗺️  Density map: emd_64920.map
+   📏 Contour level: 0.29
+   🔍 Resolution: 3.26 Å
+   🧬 FASTA file: 9vbd.fasta
+   ⚙️  Dock type: domainwise
+   📁 Models directory: /tmp/mica_pilot/MICA/input/9VBD/AF3_domains
+   🎯 Found 4 models to dock
+
+🔄 Processing initial density map...
+✅ Initial map processing complete
+
+================================================================================
+🚀 STARTING ITERATIVE DOCKING
+================================================================================
+
+📍 [1/4] Processing: fold_9vbd_1_model_0_chain_A_domain_01.pdb
+   🎯 Running Phenix dock_in_map...
+   🗺️  Updating density map...
+   ✅ Model docked successfully and map updated
+
+📍 [2/4] Processing: fold_9vbd_1_model_0_chain_A_domain_02.pdb
+   🎯 Running Phenix dock_in_map...
+   🗺️  Updating density map...
+   ✅ Model docked successfully and map updated
+
+📍 [3/4] Processing: fold_9vbd_1_model_0_chain_A_domain_03.pdb
+   🎯 Running Phenix dock_in_map...
+2026-10-26 12:19:58 - ERROR - PHENIX FAILED: fold_9vbd_1_model_0_chain_A_domain_03.pdb - return code 1 (attempt 1, res6_quick)
+2026-10-26 12:19:58 - ERROR - PHENIX ERROR: Sorry: No solution found...try quick=False or try inverting the hand of the map with map_box
+   🗺️  Updating density map...
+   ✅ Model docked successfully and map updated
+
+📍 [4/4] Processing: fold_9vbd_1_model_0_chain_A_domain_04.pdb
+   🎯 Running Phenix dock_in_map...
+   🗺️  Updating density map...
+   ✅ Model docked successfully and map updated
+
+🧹 Cleaning up temporary files...
+✅ Cleaned up temporary directory
+
+================================================================================
+🏁 DOCKING COMPLETE
+================================================================================
+📊 Total models processed: 4
+✅ Successfully docked: 4
+❌ Failed: 0
+📁 Results saved to: /tmp/mica_pilot/MICA/input/9VBD/AF3_docked_models
+📄 Log files saved to: /tmp/mica_pilot/MICA/input/9VBD/docking_logs
+================================================================================
+
+
+================================================================================
+🔗 AF3 DOCKED STRUCTURES COMBINING
+================================================================================
+
+🎯 Combination Results:
+   ✅ Successfully combined: 4/4 files
+   🔗 Total chains: 4
+   📁 Output file: 9VBD_af3_docked.pdb
+

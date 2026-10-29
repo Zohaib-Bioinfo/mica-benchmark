@@ -296,8 +296,8 @@ class NotebookTests(unittest.TestCase):
             nov = z.read(files["novelty/novelty.csv"]).decode()
             self.assertEqual(len(nov.splitlines()) - 1, len(entries) - 1)
             self.assertIn("max_id_to_pre2026_pdb", entries[0])
-        else:
-            self.assertIn("NOVELTY CHECK DID NOT FINISH", text)
+        else:                      # without MMseqs2 the notebook downloads it: on a host that cannot reach GitHub the novelty check does not finish, on one that can it does
+            self.assertTrue("NOVELTY CHECK DID NOT FINISH" in text or info["novelty"] == "done", info["novelty"])
         # the log never shows the Phenix password, and no file with it was needed
         self.assertNotIn(PASSWORD, z.read(files["run.log"]).decode())
 

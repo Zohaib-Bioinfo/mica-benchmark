@@ -1,0 +1,5 @@
+method,entry,model_kind,model_file,status,note,tm_score,tm_score_pred_norm,ca_rmsd,aligned_ca_length,seq_identity,pred_residues,native_residues,coverage,chain_comparison
+mica,9VUH,mica_init_ca,65363_9vuh_MICA(init)_ca_model.pdb,ok,,0.969,0.9593,0.67,290,1.0,299,296,0.4716,ok
+mica,9VUH,mica_all_atom,65363_9vuh_MICA_all_atom_model.pdb,ok,,0.9888,0.9356,0.68,296,1.0,313,296,0.4937,ok
+mica,9VUH,mica_ca,65363_9vuh_MICA_ca_model.pdb,ok,,0.9888,0.9356,0.68,296,1.0,313,296,0.4937,ok
+mica,9VUH,af3_docked,9VUH_af3_docked.pdb,ok,,0.2677,0.8896,0.62,80,1.0,87,296,0.1372,ok

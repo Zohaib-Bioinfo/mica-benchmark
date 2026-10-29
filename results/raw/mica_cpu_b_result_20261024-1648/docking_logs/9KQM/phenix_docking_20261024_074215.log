@@ -1,0 +1,30 @@
+2026-10-24 07:42:15 - INFO - PHENIX DOCKING TOOL - SESSION STARTED
+2026-10-24 07:42:15 - INFO - Timestamp: 20261024_074215
+2026-10-24 07:42:15 - INFO - Testing Phenix environment...
+2026-10-24 07:42:15 - INFO - ✓ Phenix environment activated successfully
+2026-10-24 07:42:15 - INFO - ✓ phenix.dock_in_map found at: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+2026-10-24 07:42:15 - INFO - STARTING DOCKING PROCESS
+2026-10-24 07:42:15 - INFO - Density map: /tmp/mica_pilot/MICA/input/9KQM/emd_62507.map
+2026-10-24 07:42:15 - INFO - Contour level: 0.1
+2026-10-24 07:42:15 - INFO - Resolution: 3.5 Å
+2026-10-24 07:42:15 - INFO - FASTA file: /tmp/mica_pilot/MICA/input/9KQM/9kqm.fasta
+2026-10-24 07:42:15 - INFO - Dock type: domainwise
+2026-10-24 07:42:15 - INFO - Processing initial map with contour level 0.1
+2026-10-24 07:42:15 - INFO - Initial map processed and saved to: /tmp/mica_pilot/MICA/input/9KQM/temp_maps/initial_processed.mrc
+2026-10-24 07:42:15 - INFO - PHENIX COMMAND for fold_9kqm_1_model_0_chain_A_domain_01.pdb (benchmark attempt 1 of 2, no_mr_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9KQM/AF3_domains/fold_9kqm_1_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9KQM/temp_maps/initial_processed.mrc nproc=2 resolution=3.5 pdb_out=/tmp/mica_pilot/MICA/input/9KQM/AF3_docked_models/fold_9kqm_1_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9KQM/9kqm.fasta dock_with_mr=False quick=True'
+2026-10-24 08:26:22 - INFO - PHENIX SUCCESS: Docking completed for fold_9kqm_1_model_0_chain_A_domain_01.pdb (attempt 1, no_mr_quick, 2646 s, local CC 0.08)
+2026-10-24 08:26:22 - INFO - Identified 1 domains in fold_9kqm_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-24 08:26:22 - INFO - Domain 1 (residues 1-144): 576 atoms, 230 selected for masking, centroid at [113.28, 111.51, 121.33]
+2026-10-24 08:26:26 - INFO - Successfully processed 1 domains from fold_9kqm_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-24 08:26:26 - INFO - PHENIX COMMAND for fold_9kqm_1_model_0_chain_A_domain_02.pdb (benchmark attempt 1 of 2, no_mr_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9KQM/AF3_domains/fold_9kqm_1_model_0_chain_A_domain_02.pdb map_file=/tmp/mica_pilot/MICA/input/9KQM/temp_maps/map_after_fold_9kqm_1_model_0_chain_A_domain_01.mrc nproc=2 resolution=3.5 pdb_out=/tmp/mica_pilot/MICA/input/9KQM/AF3_docked_models/fold_9kqm_1_model_0_chain_A_domain_02_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9KQM/9kqm.fasta dock_with_mr=False quick=True'
+2026-10-24 09:11:26 - ERROR - PHENIX TIMEOUT: Docking for fold_9kqm_1_model_0_chain_A_domain_02.pdb took longer than 2700 s (attempt 1, no_mr_quick)
+2026-10-24 09:11:26 - INFO - BENCH ATTEMPT 2 (no_mr_thorough) for fold_9kqm_1_model_0_chain_A_domain_02.pdb skipped: the attempt before it ran into its time limit
+2026-10-24 09:11:26 - INFO - FINAL SUMMARY:
+2026-10-24 09:11:26 - INFO - Total: 2, Success: 1, Failed: 1
+2026-10-24 09:11:26 - WARNING - Failed models: ['fold_9kqm_1_model_0_chain_A_domain_02.pdb']
+2026-10-24 09:11:26 - INFO - Processing docked AF3 structures from: /tmp/mica_pilot/MICA/input/9KQM/AF3_docked_models
+2026-10-24 09:11:26 - INFO - Found 1 PDB files to combine
+2026-10-24 09:11:26 - INFO - Starting combination of 1 PDB files
+2026-10-24 09:11:26 - INFO - ✓ Added 1 chain from fold_9kqm_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-24 09:11:26 - INFO - ✓ Combined PDB saved to: 9KQM_af3_docked.pdb
+2026-10-24 09:11:26 - INFO - ✓ Total chains: 1, Files processed: 1

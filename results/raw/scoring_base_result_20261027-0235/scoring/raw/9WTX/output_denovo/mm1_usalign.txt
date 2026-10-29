@@ -1,0 +1,5 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/emprot/9WTX/output_denovo.cif /kaggle/working/pilot/native/ca/9WTX_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/9WTX/output_denovo/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/emprot/9WTX/output_denovo.cif:B:A:C	/kaggle/working/pilot/native/ca/9WTX_native_ca.pdb:A::	0.4187	0.3065	0.93	0.405	0.296	0.955	365	500	155
+
+Warning! Duplicated residue 222 

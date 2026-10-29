@@ -1,0 +1,3 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/emodelx/9ZLH/9zlh_EModelX(+AF)_all_atom_model.pdb /kaggle/working/pilot/native/ca/9ZLH_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/9ZLH/9zlh_EModelX__AF__all_atom_model/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/emodelx/9ZLH/9zlh_EModelX(+AF)_all_atom_model.pdb:A	/kaggle/working/pilot/native/ca/9ZLH_native_ca.pdb:A	0.9931	0.9931	0.45	1.000	1.000	1.000	206	206	206

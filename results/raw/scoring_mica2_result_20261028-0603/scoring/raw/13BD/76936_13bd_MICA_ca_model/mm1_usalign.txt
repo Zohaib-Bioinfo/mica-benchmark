@@ -1,0 +1,3 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/mica-gpu2-b/pilot/models/mica/13BD/76936_13bd_MICA_ca_model.pdb /kaggle/working/pilot/native/ca/13BD_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/13BD/76936_13bd_MICA_ca_model/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/mica-gpu2-b/pilot/models/mica/13BD/76936_13bd_MICA_ca_model.pdb:A:B	/kaggle/working/pilot/native/ca/13BD_native_ca.pdb:A:C	0.1848	0.8768	1.10	0.184	0.881	0.993	2203	461	409

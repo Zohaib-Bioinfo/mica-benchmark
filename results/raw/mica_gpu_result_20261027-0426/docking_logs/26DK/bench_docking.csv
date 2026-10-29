@@ -1,0 +1,3 @@
+model,attempt,setting,settings,timeout_s,seconds,rc,timed_out,skipped,docked,local_cc,log
+fold_26dk_1_model_0_chain_A_domain_01.pdb,1,res6_quick,"{""dock_with_mr"": ""False"", ""quick"": ""True"", ""resolution"": ""6.0""}",2400,576,0,False,False,True,0.36,phenix_fold_26dk_1_model_0_chain_A_domain_01.pdb_20261026_141655.log
+fold_26dk_1_model_0_chain_A_domain_02.pdb,1,res6_quick,"{""dock_with_mr"": ""False"", ""quick"": ""True"", ""resolution"": ""6.0""}",2400,579,0,False,False,True,0.17,phenix_fold_26dk_1_model_0_chain_A_domain_02.pdb_20261026_141655.log

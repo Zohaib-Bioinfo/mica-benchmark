@@ -1,0 +1,86 @@
+
+🧬 Phenix Docking Tool for Cryo-EM Map
+================================================================================
+🔍 VALIDATING INPUTS...
+✅ Input validation passed
+
+
+🧬 PHENIX DOCKING TOOL
+⏰ Session started: 2026-10-26 11:04:11
+📄 Log file: /tmp/mica_pilot/MICA/input/9WFL/docking_logs/phenix_docking_20261026_110411.log
+
+================================================================================
+🔧 TESTING PHENIX ENVIRONMENT
+================================================================================
+✅ Phenix environment test PASSED
+   📍 dock_in_map location: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+
+================================================================================
+🎯 DOCKING PROCESS STARTING
+================================================================================
+📊 DOCKING PARAMETERS:
+   🗺️  Density map: emd_65930.map
+   📏 Contour level: 0.244
+   🔍 Resolution: 2.75 Å
+   🧬 FASTA file: 9wfl.fasta
+   ⚙️  Dock type: domainwise
+   📁 Models directory: /tmp/mica_pilot/MICA/input/9WFL/AF3_domains
+   🎯 Found 5 models to dock
+
+🔄 Processing initial density map...
+✅ Initial map processing complete
+
+================================================================================
+🚀 STARTING ITERATIVE DOCKING
+================================================================================
+
+📍 [1/5] Processing: fold_9wfl_1_model_0_chain_A_domain_01.pdb
+   🎯 Running Phenix dock_in_map...
+   🗺️  Updating density map...
+   ✅ Model docked successfully and map updated
+
+📍 [2/5] Processing: fold_9wfl_1_model_0_chain_A_domain_02.pdb
+   🎯 Running Phenix dock_in_map...
+2026-10-26 11:43:00 - ERROR - PHENIX FAILED: fold_9wfl_1_model_0_chain_A_domain_02.pdb - return code 0 (attempt 1, res6_quick)
+   🗺️  Updating density map...
+   ✅ Model docked successfully and map updated
+
+📍 [3/5] Processing: fold_9wfl_1_model_0_chain_A_domain_03.pdb
+   🎯 Running Phenix dock_in_map...
+2026-10-26 12:11:25 - ERROR - PHENIX FAILED: fold_9wfl_1_model_0_chain_A_domain_03.pdb - return code 0 (attempt 1, res6_quick)
+   🗺️  Updating density map...
+   ✅ Model docked successfully and map updated
+
+📍 [4/5] Processing: fold_9wfl_1_model_0_chain_A_domain_04.pdb
+   🎯 Running Phenix dock_in_map...
+   🗺️  Updating density map...
+   ✅ Model docked successfully and map updated
+
+📍 [5/5] Processing: fold_9wfl_2_model_0_chain_A_domain_01.pdb
+   🎯 Running Phenix dock_in_map...
+   🗺️  Updating density map...
+   ✅ Model docked successfully and map updated
+
+🧹 Cleaning up temporary files...
+✅ Cleaned up temporary directory
+
+================================================================================
+🏁 DOCKING COMPLETE
+================================================================================
+📊 Total models processed: 5
+✅ Successfully docked: 5
+❌ Failed: 0
+📁 Results saved to: /tmp/mica_pilot/MICA/input/9WFL/AF3_docked_models
+📄 Log files saved to: /tmp/mica_pilot/MICA/input/9WFL/docking_logs
+================================================================================
+
+
+================================================================================
+🔗 AF3 DOCKED STRUCTURES COMBINING
+================================================================================
+
+🎯 Combination Results:
+   ✅ Successfully combined: 5/5 files
+   🔗 Total chains: 5
+   📁 Output file: 9WFL_af3_docked.pdb
+

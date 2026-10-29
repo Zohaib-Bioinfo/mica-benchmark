@@ -1,0 +1,3 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9JKK/9JKK_modelangelo_raw.cif /kaggle/working/pilot/native/ca/9JKK_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/9JKK/9JKK_modelangelo_raw/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9JKK/9JKK_modelangelo_raw.cif:B:A:C:D:E	/kaggle/working/pilot/native/ca/9JKK_native_ca.pdb:A::::	0.5747	0.6071	1.59	0.571	0.604	0.982	560	530	326

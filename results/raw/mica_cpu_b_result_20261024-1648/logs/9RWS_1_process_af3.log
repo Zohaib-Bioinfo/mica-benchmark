@@ -1,0 +1,42 @@
+
+2026-10-24 09:13:08 - INFO - FASTA file: /tmp/mica_pilot/MICA/input/9RWS/9rws.fasta
+2026-10-24 09:13:08 - INFO - AF3 results: /tmp/mica_pilot/MICA/input/9RWS/AF3_results
+
+================================================================================
+🔄 CIF TO PDB CONVERSION
+================================================================================
+2026-10-24 09:13:08 - INFO - Found 1 CIF files to convert
+2026-10-24 09:13:08 - INFO - Extracting protein information from FASTA content
+2026-10-24 09:13:08 - INFO - Found 1 proteins in FASTA file
+2026-10-24 09:13:08 - INFO - Protein 9RWS_1: 1 chains, 551 residues
+2026-10-24 09:13:08 - INFO - ✓ CIF converted: fold_9rws_1_model_0.pdb
+
+🎯 CIF Conversion Results:
+   ✅ Successful: 1/1
+
+================================================================================
+⛓️  SPLITTING CHAINS
+================================================================================
+2026-10-24 09:13:08 - INFO - Processing 1 PDB files for chain splitting
+2026-10-24 09:13:08 - INFO - ✓ Split fold_9rws_1_model_0.pdb: 1 chains
+
+🎯 Chain Splitting Results:
+   🔗 Total chains extracted: 1
+   📁 Saved to: /tmp/mica_pilot/MICA/input/9RWS/AF3_chains
+
+================================================================================
+🧩 SPLITTING DOMAINS WITH MERIZO
+================================================================================
+⏳ This process may take some time - please be patient...
+
+2026-10-24 09:13:08 - INFO - Processing 1 chain files for domain splitting
+2026-10-24 09:13:37 - INFO - ✓ Domains split: fold_9rws_1_model_0_chain_A.pdb
+
+🎯 Domain Splitting Results:
+   🧩 Chains processed: 1/1
+   📁 Saved to: /tmp/mica_pilot/MICA/input/9RWS/AF3_domains
+
+================================================================================
+🏁 AF3 RESULTS PROCESSING COMPLETE
+================================================================================
+

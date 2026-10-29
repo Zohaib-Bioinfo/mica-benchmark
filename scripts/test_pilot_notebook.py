@@ -193,6 +193,22 @@ class HelperTests(unittest.TestCase):
         self.assertLessEqual(len([ln for ln in shown if "%|" in ln]), 4)
         self.assertIn("done", shown)
 
+    def test_run_writes_each_line_to_the_log_file_at_once(self):
+        logfile = os.path.join(self.k.work, "live.log")
+        t = threading.Thread(target=lambda: self.ns["run"](["bash", "-c", "echo first; sleep 3; echo second"], log_file=logfile, quiet=True))
+        t.start()
+        try:
+            deadline = time.time() + 2.5
+            seen = ""
+            while time.time() < deadline and "first" not in seen:
+                time.sleep(0.1)
+                seen = open(logfile).read() if os.path.exists(logfile) else ""
+            self.assertIn("first", seen, "the first line must be in the file while the program is still running")
+            self.assertNotIn("second", seen)
+        finally:
+            t.join()
+        self.assertIn("second", open(logfile).read())
+
     def test_run_reports_a_program_that_cannot_be_started(self):
         rc, last, timed = self.ns["run"](["/nonexistent/program"], quiet=True)
         self.assertEqual(rc, 127)

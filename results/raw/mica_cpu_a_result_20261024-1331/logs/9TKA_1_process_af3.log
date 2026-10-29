@@ -1,0 +1,42 @@
+
+2026-10-24 07:36:21 - INFO - FASTA file: /tmp/mica_pilot/MICA/input/9TKA/9tka.fasta
+2026-10-24 07:36:21 - INFO - AF3 results: /tmp/mica_pilot/MICA/input/9TKA/AF3_results
+
+================================================================================
+🔄 CIF TO PDB CONVERSION
+================================================================================
+2026-10-24 07:36:21 - INFO - Found 1 CIF files to convert
+2026-10-24 07:36:21 - INFO - Extracting protein information from FASTA content
+2026-10-24 07:36:21 - INFO - Found 1 proteins in FASTA file
+2026-10-24 07:36:21 - INFO - Protein 9TKA_1: 1 chains, 293 residues
+2026-10-24 07:36:21 - INFO - ✓ CIF converted: fold_9tka_1_model_0.pdb
+
+🎯 CIF Conversion Results:
+   ✅ Successful: 1/1
+
+================================================================================
+⛓️  SPLITTING CHAINS
+================================================================================
+2026-10-24 07:36:21 - INFO - Processing 1 PDB files for chain splitting
+2026-10-24 07:36:21 - INFO - ✓ Split fold_9tka_1_model_0.pdb: 1 chains
+
+🎯 Chain Splitting Results:
+   🔗 Total chains extracted: 1
+   📁 Saved to: /tmp/mica_pilot/MICA/input/9TKA/AF3_chains
+
+================================================================================
+🧩 SPLITTING DOMAINS WITH MERIZO
+================================================================================
+⏳ This process may take some time - please be patient...
+
+2026-10-24 07:36:21 - INFO - Processing 1 chain files for domain splitting
+2026-10-24 07:36:31 - INFO - ✓ Domains split: fold_9tka_1_model_0_chain_A.pdb
+
+🎯 Domain Splitting Results:
+   🧩 Chains processed: 1/1
+   📁 Saved to: /tmp/mica_pilot/MICA/input/9TKA/AF3_domains
+
+================================================================================
+🏁 AF3 RESULTS PROCESSING COMPLETE
+================================================================================
+

@@ -1,0 +1,46 @@
+2026-10-24 11:42:15 - INFO - PHENIX DOCKING TOOL - SESSION STARTED
+2026-10-24 11:42:15 - INFO - Timestamp: 20261024_114215
+2026-10-24 11:42:15 - INFO - Testing Phenix environment...
+2026-10-24 11:42:15 - INFO - ✓ Phenix environment activated successfully
+2026-10-24 11:42:15 - INFO - ✓ phenix.dock_in_map found at: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+2026-10-24 11:42:15 - INFO - STARTING DOCKING PROCESS
+2026-10-24 11:42:15 - INFO - Density map: /tmp/mica_pilot/MICA/input/9VUH/emd_65363.map
+2026-10-24 11:42:15 - INFO - Contour level: 0.0144
+2026-10-24 11:42:15 - INFO - Resolution: 2.7 Å
+2026-10-24 11:42:15 - INFO - FASTA file: /tmp/mica_pilot/MICA/input/9VUH/9vuh.fasta
+2026-10-24 11:42:15 - INFO - Dock type: domainwise
+2026-10-24 11:42:15 - INFO - Processing initial map with contour level 0.0144
+2026-10-24 11:42:15 - INFO - Initial map processed and saved to: /tmp/mica_pilot/MICA/input/9VUH/temp_maps/initial_processed.mrc
+2026-10-24 11:42:15 - INFO - PHENIX COMMAND for fold_9vuh_1_model_0_chain_A_domain_01.pdb (benchmark attempt 1 of 2, no_mr_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9VUH/AF3_domains/fold_9vuh_1_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9VUH/temp_maps/initial_processed.mrc nproc=2 resolution=2.7 pdb_out=/tmp/mica_pilot/MICA/input/9VUH/AF3_docked_models/fold_9vuh_1_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9VUH/9vuh.fasta dock_with_mr=False quick=True'
+2026-10-24 11:47:19 - INFO - PHENIX SUCCESS: Docking completed for fold_9vuh_1_model_0_chain_A_domain_01.pdb (attempt 1, no_mr_quick, 304 s, local CC 0.43)
+2026-10-24 11:47:19 - INFO - Identified 1 domains in fold_9vuh_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-24 11:47:19 - INFO - Domain 1 (residues 22-108): 348 atoms, 139 selected for masking, centroid at [91.83, 88.16, 70.46]
+2026-10-24 11:47:25 - INFO - Successfully processed 1 domains from fold_9vuh_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-24 11:47:25 - INFO - PHENIX COMMAND for fold_9vuh_1_model_0_chain_A_domain_02.pdb (benchmark attempt 1 of 2, no_mr_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9VUH/AF3_domains/fold_9vuh_1_model_0_chain_A_domain_02.pdb map_file=/tmp/mica_pilot/MICA/input/9VUH/temp_maps/map_after_fold_9vuh_1_model_0_chain_A_domain_01.mrc nproc=2 resolution=2.7 pdb_out=/tmp/mica_pilot/MICA/input/9VUH/AF3_docked_models/fold_9vuh_1_model_0_chain_A_domain_02_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9VUH/9vuh.fasta dock_with_mr=False quick=True'
+2026-10-24 11:52:10 - INFO - PHENIX SUCCESS: Docking completed for fold_9vuh_1_model_0_chain_A_domain_02.pdb (attempt 1, no_mr_quick, 285 s, local CC 0.48)
+2026-10-24 11:52:10 - INFO - Identified 1 domains in fold_9vuh_1_model_0_chain_A_domain_02_docked.pdb
+2026-10-24 11:52:10 - INFO - Domain 1 (residues 109-332): 896 atoms, 358 selected for masking, centroid at [79.31, 107.00, 81.38]
+2026-10-24 11:52:15 - INFO - Successfully processed 1 domains from fold_9vuh_1_model_0_chain_A_domain_02_docked.pdb
+2026-10-24 11:52:16 - INFO - PHENIX COMMAND for fold_9vuh_2_model_0_chain_A_domain_01.pdb (benchmark attempt 1 of 2, no_mr_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9VUH/AF3_domains/fold_9vuh_2_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9VUH/temp_maps/map_after_fold_9vuh_1_model_0_chain_A_domain_02.mrc nproc=2 resolution=2.7 pdb_out=/tmp/mica_pilot/MICA/input/9VUH/AF3_docked_models/fold_9vuh_2_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9VUH/9vuh.fasta dock_with_mr=False quick=True'
+2026-10-24 12:00:46 - INFO - PHENIX SUCCESS: Docking completed for fold_9vuh_2_model_0_chain_A_domain_01.pdb (attempt 1, no_mr_quick, 511 s, local CC 0.42)
+2026-10-24 12:00:46 - INFO - Identified 1 domains in fold_9vuh_2_model_0_chain_A_domain_01_docked.pdb
+2026-10-24 12:00:46 - INFO - Domain 1 (residues 68-319): 1008 atoms, 403 selected for masking, centroid at [105.07, 77.30, 96.15]
+2026-10-24 12:00:52 - INFO - Successfully processed 1 domains from fold_9vuh_2_model_0_chain_A_domain_01_docked.pdb
+2026-10-24 12:00:52 - INFO - PHENIX COMMAND for fold_9vuh_3_model_0_chain_A_domain_01.pdb (benchmark attempt 1 of 2, no_mr_quick): bash -c 'source /tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh && phenix.dock_in_map search_model=/tmp/mica_pilot/MICA/input/9VUH/AF3_domains/fold_9vuh_3_model_0_chain_A_domain_01.pdb map_file=/tmp/mica_pilot/MICA/input/9VUH/temp_maps/map_after_fold_9vuh_2_model_0_chain_A_domain_01.mrc nproc=2 resolution=2.7 pdb_out=/tmp/mica_pilot/MICA/input/9VUH/AF3_docked_models/fold_9vuh_3_model_0_chain_A_domain_01_docked.pdb dock_chains_individually=True sequence=/tmp/mica_pilot/MICA/input/9VUH/9vuh.fasta dock_with_mr=False quick=True'
+2026-10-24 12:22:33 - INFO - PHENIX SUCCESS: Docking completed for fold_9vuh_3_model_0_chain_A_domain_01.pdb (attempt 1, no_mr_quick, 1301 s, local CC 0.04)
+2026-10-24 12:22:33 - INFO - Domain break detected: gap of 13 between residues 124 and 137
+2026-10-24 12:22:33 - INFO - Identified 2 domains in fold_9vuh_3_model_0_chain_A_domain_01_docked.pdb
+2026-10-24 12:22:33 - INFO - Domain 1 (residues 107-124): 72 atoms, 28 selected for masking, centroid at [57.82, 109.17, 82.25]
+2026-10-24 12:22:33 - INFO - Domain 2 (residues 137-229): 372 atoms, 148 selected for masking, centroid at [66.77, 88.12, 66.03]
+2026-10-24 12:22:39 - INFO - Successfully processed 2 domains from fold_9vuh_3_model_0_chain_A_domain_01_docked.pdb
+2026-10-24 12:22:39 - INFO - FINAL SUMMARY:
+2026-10-24 12:22:39 - INFO - Total: 4, Success: 4, Failed: 0
+2026-10-24 12:22:39 - INFO - Processing docked AF3 structures from: /tmp/mica_pilot/MICA/input/9VUH/AF3_docked_models
+2026-10-24 12:22:39 - INFO - Found 4 PDB files to combine
+2026-10-24 12:22:39 - INFO - Starting combination of 4 PDB files
+2026-10-24 12:22:39 - INFO - ✓ Added 1 chain from fold_9vuh_1_model_0_chain_A_domain_01_docked.pdb
+2026-10-24 12:22:39 - INFO - ✓ Added 1 chain from fold_9vuh_1_model_0_chain_A_domain_02_docked.pdb
+2026-10-24 12:22:40 - INFO - ✓ Added 1 chain from fold_9vuh_2_model_0_chain_A_domain_01_docked.pdb
+2026-10-24 12:22:40 - INFO - ✓ Added 1 chain from fold_9vuh_3_model_0_chain_A_domain_01_docked.pdb
+2026-10-24 12:22:40 - INFO - ✓ Combined PDB saved to: 9VUH_af3_docked.pdb
+2026-10-24 12:22:40 - INFO - ✓ Total chains: 4, Files processed: 4

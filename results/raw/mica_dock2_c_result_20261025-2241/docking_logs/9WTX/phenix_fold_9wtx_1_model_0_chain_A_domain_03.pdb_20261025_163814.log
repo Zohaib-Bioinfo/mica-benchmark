@@ -1,0 +1,64 @@
+Starting phenix.dock_in_map
+on Sun Oct 25 18:08:28 2026 by root
+===============================================================================
+
+Processing files:
+-------------------------------------------------------------------------------
+
+  No files found
+
+Processing PHIL parameters:
+-------------------------------------------------------------------------------
+
+  Adding command-line PHIL:
+  -------------------------
+    search_model=/tmp/mica_pilot/MICA/input/9WTX/AF3_domains/fold_9wtx_1_model_0_chain_A_domain_03.pdb
+    map_file=/tmp/mica_pilot/MICA/input/9WTX/temp_maps/initial_processed.mrc
+    nproc=2
+    pdb_out=/tmp/mica_pilot/MICA/input/9WTX/AF3_docked_models/fold_9wtx_1_model_0_chain_A_domain_03_docked.pdb
+    dock_chains_individually=True
+    sequence=/tmp/mica_pilot/MICA/input/9WTX/9wtx.fasta
+    dock_with_mr=False
+    quick=True
+    resolution=6.0
+    rigid_body_refinement_resolution=3.37
+    density_radius=20.22
+
+Traceback (most recent call last):
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix/command_line/dock_in_map.py", line 8, in <module>
+    run_program(program_class=dock_in_map.Program)
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/iotbx/cli_parser.py", line 965, in run_program
+    namespace = parser.parse_args(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/iotbx/cli_parser.py", line 377, in parse_args
+    self.process_phil(self.namespace.phil)
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/iotbx/cli_parser.py", line 677, in process_phil
+    diff_phil = self.master_phil.fetch_diff(self.working_phil)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1943, in fetch_diff
+    return self.fetch(
+           ^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1880, in fetch
+    result_object = master_object.fetch(
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1875, in fetch
+    result_object = master_object.fetch(
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1034, in fetch
+    if (diff): return self.fetch_diff(source=source,
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1028, in fetch_diff
+    result_as_str = self.extract_format(source=result).as_str()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1162, in extract_format
+    return self.format(python_object=source.extract())
+                                     ^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 1147, in extract
+    return self._type_from_words()(self.words, master=self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 194, in from_words
+    return bool_from_words(words=words, path=master.full_path())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/libtbx/phil/__init__.py", line 183, in bool_from_words
+    raise RuntimeError(
+RuntimeError: One True or False value expected, search.rigid_body_refinement_resolution="3.37" found (command line argument, line 1)

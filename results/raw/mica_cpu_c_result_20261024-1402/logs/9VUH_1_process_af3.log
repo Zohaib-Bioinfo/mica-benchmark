@@ -1,0 +1,60 @@
+
+2026-10-24 11:41:42 - INFO - FASTA file: /tmp/mica_pilot/MICA/input/9VUH/9vuh.fasta
+2026-10-24 11:41:42 - INFO - AF3 results: /tmp/mica_pilot/MICA/input/9VUH/AF3_results
+
+================================================================================
+🔄 CIF TO PDB CONVERSION
+================================================================================
+2026-10-24 11:41:42 - INFO - Found 3 CIF files to convert
+2026-10-24 11:41:42 - INFO - Extracting protein information from FASTA content
+2026-10-24 11:41:42 - INFO - Found 3 proteins in FASTA file
+2026-10-24 11:41:42 - INFO - Protein 9VUH_1: 1 chains, 332 residues
+2026-10-24 11:41:42 - INFO - Protein 9VUH_2: 1 chains, 365 residues
+2026-10-24 11:41:42 - INFO - Protein 9VUH_3: 1 chains, 318 residues
+2026-10-24 11:41:43 - INFO - ✓ CIF converted: fold_9vuh_1_model_0.pdb
+2026-10-24 11:41:43 - INFO - Extracting protein information from FASTA content
+2026-10-24 11:41:43 - INFO - Found 3 proteins in FASTA file
+2026-10-24 11:41:43 - INFO - Protein 9VUH_1: 1 chains, 332 residues
+2026-10-24 11:41:43 - INFO - Protein 9VUH_2: 1 chains, 365 residues
+2026-10-24 11:41:43 - INFO - Protein 9VUH_3: 1 chains, 318 residues
+2026-10-24 11:41:43 - INFO - ✓ CIF converted: fold_9vuh_2_model_0.pdb
+2026-10-24 11:41:43 - INFO - Extracting protein information from FASTA content
+2026-10-24 11:41:43 - INFO - Found 3 proteins in FASTA file
+2026-10-24 11:41:43 - INFO - Protein 9VUH_1: 1 chains, 332 residues
+2026-10-24 11:41:43 - INFO - Protein 9VUH_2: 1 chains, 365 residues
+2026-10-24 11:41:43 - INFO - Protein 9VUH_3: 1 chains, 318 residues
+2026-10-24 11:41:43 - INFO - ✓ CIF converted: fold_9vuh_3_model_0.pdb
+
+🎯 CIF Conversion Results:
+   ✅ Successful: 3/3
+
+================================================================================
+⛓️  SPLITTING CHAINS
+================================================================================
+2026-10-24 11:41:43 - INFO - Processing 3 PDB files for chain splitting
+2026-10-24 11:41:43 - INFO - ✓ Split fold_9vuh_1_model_0.pdb: 1 chains
+2026-10-24 11:41:43 - INFO - ✓ Split fold_9vuh_2_model_0.pdb: 1 chains
+2026-10-24 11:41:43 - INFO - ✓ Split fold_9vuh_3_model_0.pdb: 1 chains
+
+🎯 Chain Splitting Results:
+   🔗 Total chains extracted: 3
+   📁 Saved to: /tmp/mica_pilot/MICA/input/9VUH/AF3_chains
+
+================================================================================
+🧩 SPLITTING DOMAINS WITH MERIZO
+================================================================================
+⏳ This process may take some time - please be patient...
+
+2026-10-24 11:41:43 - INFO - Processing 3 chain files for domain splitting
+2026-10-24 11:41:54 - INFO - ✓ Domains split: fold_9vuh_1_model_0_chain_A.pdb
+2026-10-24 11:42:06 - INFO - ✓ Domains split: fold_9vuh_2_model_0_chain_A.pdb
+2026-10-24 11:42:14 - INFO - ✓ Domains split: fold_9vuh_3_model_0_chain_A.pdb
+
+🎯 Domain Splitting Results:
+   🧩 Chains processed: 3/3
+   📁 Saved to: /tmp/mica_pilot/MICA/input/9VUH/AF3_domains
+
+================================================================================
+🏁 AF3 RESULTS PROCESSING COMPLETE
+================================================================================
+

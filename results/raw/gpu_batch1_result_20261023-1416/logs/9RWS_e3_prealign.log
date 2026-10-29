@@ -1,0 +1,90 @@
+Seed set to 42
+starting... emid: 54346, pdbid: 9rws
+Cryo Model loaded successfully!
+Loaded from cache
+Loaded from cache
+All models loaded successfully
+/tmp/mica_pilot/input/9RWS/9rws.fasta
+AFDB searching...
+The process typically requires between 5 to 10 minutes to complete when no same search hits before.
+Waiting over 1000s would be recognized as search failed
+Check your fasta inputs, the fasta parser can only handle standard fasta inputs and only protein sequences would be parsed:
+Your sequence 1 name: 9RWS_1, Chains that belong to this sequence:
+A 
+Your sequence: 
+MQPQPSATPDRKQDNKNKNYEKAGLLGFIGLLLVVAVYVAFTGNDVNWGALVFMFISYAIIFYIGSVTAGKKSDSASDMMVAGRSMPLWVAMFTMTATWVGGGYIAGTAETTFASGVVWAQAPWGYGLSLIIGGIFYARKMRRYEFTTMLDPLEVRFGKKVAGVLYLPALLGELFWSAAILVALGTTFGLILGLDFTTSIIISAIIAVAYTFVGGMWSVALTDVAQIIMIIIGMFLVVPFALSEVGGLGQAWGAYKEGMAGFTNLLPPLDGWNHPDWGNYYWNWWDYALLLIFGGIPWQVYFQRVLSAKNEKTAMWLSIAAGFLCIILAVPAVMIGVAGFSADWASYGIEGPGAASEILAYVVNYMSPYLVAIVALGAIAAAVMSSMDSSILSASSMAAWNIYRPLVKPKANGRDIKRTIRVSIILIGLAATIVALNIDSVYTLWYLCADLVYCMLFPQLTTALFDKKANTYGAIAGLSVSLFLRLGGGEPALGLPAFLPYPMIEDGVVLFPFRTLAMVSGLLTIIVVSRLTQKSCPPQPLRKLKTEMQDE
+preprocessEM...
+preprocessEM finished in 2 seconds
+nnPred...
+nnPred finished in 71 seconds
+clustering...
+clustering finished in 1 seconds
+fragModeling...
+seq_free trace_num: 4
+fragModeling finished in 0 seconds
+seqStructureAlign...
+seqStructureAlign finished in 2 seconds
+initialModeling...
+initialModeling finished in 0 seconds
+gapThreading...
+0 / 8 268 275
+1 / 8 484 492
+2 / 8 33 43
+3 / 8 210 221
+4 / 8 530 551
+5 / 8 62 87
+6 / 8 390 416
+7 / 8 -1 30
+
+Integrating SDE:   0%|          | 0/50 [00:00<?, ?it/s]
+Integrating SDE:   2%|▏         | 1/50 [00:00<00:38,  1.27it/s]
+Integrating SDE:   4%|▍         | 2/50 [00:01<00:23,  2.04it/s]
+Integrating SDE:   6%|▌         | 3/50 [00:01<00:18,  2.52it/s]
+Integrating SDE:   8%|▊         | 4/50 [00:01<00:16,  2.84it/s]
+Integrating SDE:  10%|█         | 5/50 [00:01<00:14,  3.06it/s]
+Integrating SDE:  12%|█▏        | 6/50 [00:02<00:13,  3.19it/s]
+Integrating SDE:  14%|█▍        | 7/50 [00:02<00:13,  3.29it/s]
+Integrating SDE:  16%|█▌        | 8/50 [00:02<00:12,  3.35it/s]
+Integrating SDE:  18%|█▊        | 9/50 [00:03<00:12,  3.40it/s]
+Integrating SDE:  20%|██        | 10/50 [00:03<00:11,  3.43it/s]
+Integrating SDE:  22%|██▏       | 11/50 [00:03<00:11,  3.46it/s]
+Integrating SDE:  24%|██▍       | 12/50 [00:03<00:10,  3.48it/s]
+Integrating SDE:  26%|██▌       | 13/50 [00:04<00:10,  3.50it/s]
+Integrating SDE:  28%|██▊       | 14/50 [00:04<00:10,  3.51it/s]
+Integrating SDE:  30%|███       | 15/50 [00:04<00:09,  3.51it/s]
+Integrating SDE:  32%|███▏      | 16/50 [00:05<00:09,  3.51it/s]
+Integrating SDE:  34%|███▍      | 17/50 [00:05<00:09,  3.51it/s]
+Integrating SDE:  36%|███▌      | 18/50 [00:05<00:09,  3.50it/s]
+Integrating SDE:  38%|███▊      | 19/50 [00:05<00:08,  3.51it/s]
+Integrating SDE:  40%|████      | 20/50 [00:06<00:08,  3.51it/s]
+Integrating SDE:  42%|████▏     | 21/50 [00:06<00:08,  3.52it/s]
+Integrating SDE:  44%|████▍     | 22/50 [00:06<00:07,  3.52it/s]
+Integrating SDE:  46%|████▌     | 23/50 [00:07<00:07,  3.52it/s]
+Integrating SDE:  48%|████▊     | 24/50 [00:07<00:07,  3.52it/s]
+Integrating SDE:  50%|█████     | 25/50 [00:07<00:07,  3.51it/s]
+Integrating SDE:  52%|█████▏    | 26/50 [00:07<00:06,  3.51it/s]
+Integrating SDE:  54%|█████▍    | 27/50 [00:08<00:06,  3.51it/s]
+Integrating SDE:  56%|█████▌    | 28/50 [00:08<00:06,  3.50it/s]
+Integrating SDE:  58%|█████▊    | 29/50 [00:08<00:06,  3.50it/s]
+Integrating SDE:  60%|██████    | 30/50 [00:09<00:05,  3.50it/s]
+Integrating SDE:  62%|██████▏   | 31/50 [00:09<00:05,  3.49it/s]
+Integrating SDE:  64%|██████▍   | 32/50 [00:09<00:05,  3.49it/s]
+Integrating SDE:  66%|██████▌   | 33/50 [00:09<00:04,  3.49it/s]
+Integrating SDE:  68%|██████▊   | 34/50 [00:10<00:04,  3.49it/s]
+Integrating SDE:  70%|███████   | 35/50 [00:10<00:04,  3.49it/s]
+Integrating SDE:  72%|███████▏  | 36/50 [00:10<00:04,  3.48it/s]
+Integrating SDE:  74%|███████▍  | 37/50 [00:11<00:03,  3.48it/s]
+Integrating SDE:  76%|███████▌  | 38/50 [00:11<00:03,  3.49it/s]
+Integrating SDE:  78%|███████▊  | 39/50 [00:11<00:03,  3.49it/s]
+Integrating SDE:  80%|████████  | 40/50 [00:11<00:02,  3.49it/s]
+Integrating SDE:  82%|████████▏ | 41/50 [00:12<00:02,  3.48it/s]
+Integrating SDE:  84%|████████▍ | 42/50 [00:12<00:02,  3.47it/s]
+Integrating SDE:  86%|████████▌ | 43/50 [00:12<00:02,  3.48it/s]
+Integrating SDE:  88%|████████▊ | 44/50 [00:13<00:01,  3.49it/s]
+Integrating SDE:  90%|█████████ | 45/50 [00:13<00:01,  3.50it/s]
+Integrating SDE:  92%|█████████▏| 46/50 [00:13<00:01,  3.50it/s]
+Integrating SDE:  94%|█████████▍| 47/50 [00:13<00:00,  3.49it/s]
+Integrating SDE:  96%|█████████▌| 48/50 [00:14<00:00,  3.48it/s]
+Integrating SDE:  98%|█████████▊| 49/50 [00:14<00:00,  3.48it/s]
+Integrating SDE: 100%|██████████| 50/50 [00:14<00:00,  3.49it/s]
+Integrating SDE: 100%|██████████| 50/50 [00:14<00:00,  3.38it/s]

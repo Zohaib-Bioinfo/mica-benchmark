@@ -1,0 +1,5 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/gpu-batch3/pilot/models/emprot/13BD/output.cif /kaggle/working/pilot/native/ca/13BD_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/13BD/output/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/gpu-batch3/pilot/models/emprot/13BD/output.cif:B:C:A	/kaggle/working/pilot/native/ca/13BD_native_ca.pdb:C:A:	0.1606	0.9915	0.72	0.158	0.978	0.980	2859	461	460
+
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-batch3/pilot/models/emprot/13BD/output.cif

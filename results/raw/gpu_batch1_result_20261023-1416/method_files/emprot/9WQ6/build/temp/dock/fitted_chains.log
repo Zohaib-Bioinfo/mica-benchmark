@@ -1,0 +1,42 @@
+ [ASGDOM] This chain has  1 domain(s). 
+
+ [EMBuild] Input MC map: 'mc.mrc'
+ [EMBuild] Input PDB models: 'xxx_all.pdb'
+ [EMBuild] resolution:  5.000
+ [EMBuild] Output PDB file: 'transform.pdb'
+ [EMBuild] threshold=   10.00000    
+ [EMBuild] rshift=   10.00000    
+ [EMBuild] rmerge=  0.5000000    
+ [EMBuild] filter=  0.0000000E+00
+ [EMBuild] angle_step=   18.00000    
+ [EMBuild] fgrid=   5.000000    
+ [EMBuild] sgrid=   2.000000    
+ [EMBuild] rmsdcut1=   2.500000    
+ [EMBuild] rmsdcut2=   5.000000    
+ [EMBuild] stacksize=                   128
+ [EMBuild] nt=           4
+ [EMBuild] ntrans=           8
+ [EMBuild] mcycle=           4
+ [EMBuild] iseed=        1024
+ [EMBuild] stride=/usr/bin/stride
+ [ReadPDB] Input structure has  1 chain(s).
+ [ReadPDB] Chain #01 has  1 domain(s).
+ [EMBuild] Number of valid grid points=   14865
+ [Meanshift] Number of main-chain points (MCP) =          765
+ [MeanShift] The actual time consumption:    1.957858    
+------------------------------------------------------------
+        Cycle #00, 0/ 1 chains assigned
+        Assigned chains: 
+------------------------------------------------------------
+ [FTMatch] The dimension of the FFT grid is:    28   28   28
+ [FTMatch] Number of rotations:  2540
+ [FTMatch] The actual time consumption:    1.533157    
+ [Simplex] The dimension of the refinement grid is:    42   44   52
+ [Simplex] The actual time consumption:    18.19237    
+ [EMBuild] Keep  7 top scored poses for chain #01
+------------------------------------------------------------
+        Finish EMBuild with 01 cycles,  1/ 1 chains assigned
+        Unassigned chains: 
+------------------------------------------------------------
+ [EMBuild] The total time consumption:    22.49008    
+

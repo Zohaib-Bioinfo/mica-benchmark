@@ -1,0 +1,78 @@
+
+🧬 Phenix Docking Tool for Cryo-EM Map
+================================================================================
+🔍 VALIDATING INPUTS...
+✅ Input validation passed
+
+
+🧬 PHENIX DOCKING TOOL
+⏰ Session started: 2026-10-24 11:32:27
+📄 Log file: /tmp/mica_pilot/MICA/input/13BD/docking_logs/phenix_docking_20261024_113227.log
+
+================================================================================
+🔧 TESTING PHENIX ENVIRONMENT
+================================================================================
+✅ Phenix environment test PASSED
+   📍 dock_in_map location: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+
+================================================================================
+🎯 DOCKING PROCESS STARTING
+================================================================================
+📊 DOCKING PARAMETERS:
+   🗺️  Density map: emd_76936.map
+   📏 Contour level: 0.13
+   🔍 Resolution: 2.65 Å
+   🧬 FASTA file: 13bd.fasta
+   ⚙️  Dock type: domainwise
+   📁 Models directory: /tmp/mica_pilot/MICA/input/13BD/AF3_domains
+   🎯 Found 3 models to dock
+
+🔄 Processing initial density map...
+✅ Initial map processing complete
+
+================================================================================
+🚀 STARTING ITERATIVE DOCKING
+================================================================================
+
+📍 [1/3] Processing: fold_13bd_1_model_0_chain_A_domain_01.pdb
+   🎯 Running Phenix dock_in_map...
+   🗺️  Updating density map...
+   ✅ Model docked successfully and map updated
+
+📍 [2/3] Processing: fold_13bd_1_model_0_chain_A_domain_02.pdb
+   🎯 Running Phenix dock_in_map...
+   🗺️  Updating density map...
+   ✅ Model docked successfully and map updated
+
+📍 [3/3] Processing: fold_13bd_1_model_0_chain_A_domain_03.pdb
+   🎯 Running Phenix dock_in_map...
+2026-10-24 13:31:51 - ERROR - PHENIX TIMEOUT: Docking for fold_13bd_1_model_0_chain_A_domain_03.pdb took longer than 2700 s (attempt 1, no_mr_quick)
+   ❌ Docking failed
+
+🧹 Cleaning up temporary files...
+✅ Cleaned up temporary directory
+
+================================================================================
+🏁 DOCKING COMPLETE
+================================================================================
+📊 Total models processed: 3
+✅ Successfully docked: 2
+❌ Failed: 1
+📁 Results saved to: /tmp/mica_pilot/MICA/input/13BD/AF3_docked_models
+📄 Log files saved to: /tmp/mica_pilot/MICA/input/13BD/docking_logs
+
+❌ Failed models:
+   • fold_13bd_1_model_0_chain_A_domain_03.pdb
+2026-10-24 13:31:51 - WARNING - Failed models: ['fold_13bd_1_model_0_chain_A_domain_03.pdb']
+================================================================================
+
+
+================================================================================
+🔗 AF3 DOCKED STRUCTURES COMBINING
+================================================================================
+
+🎯 Combination Results:
+   ✅ Successfully combined: 2/2 files
+   🔗 Total chains: 2
+   📁 Output file: 13BD_af3_docked.pdb
+

@@ -1,0 +1,5 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9V4D/9V4D_modelangelo.cif /kaggle/working/pilot/native/ca/9V4D_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/9V4D/9V4D_modelangelo/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot/models/modelangelo/9V4D/9V4D_modelangelo.cif:Ab:Ba:Aa:Ac:Ad	/kaggle/working/pilot/native/ca/9V4D_native_ca.pdb:A:C:::	0.5469	0.5783	0.94	0.550	0.582	0.988	291	275	162
+
+Warning! Duplicated residue 197 

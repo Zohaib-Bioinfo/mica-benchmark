@@ -1,0 +1,219 @@
+{
+ "ok": true,
+ "problem": "",
+ "t0": 1793163771.1767898,
+ "started": "2026-10-28T05:02:51.176792+00:00",
+ "phenix_env": "/tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh",
+ "phenix_version": "------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1",
+ "installer_sha256": "e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885",
+ "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+ "usalign_version": "* US-align (Version 20261012)                                      *",
+ "weights": {
+  "url": "https://zenodo.org/records/15756654/files/trained_models.tar.gz?download=1",
+  "size_bytes": 154685007,
+  "md5": "a952451652294ca299ff5636f79524f7",
+  "md5_listed_by_zenodo": "a952451652294ca299ff5636f79524f7",
+  "file": "/tmp/mica_pilot/MICA/trained_models/MICA_best_model.pth",
+  "file_size_bytes": 169779898,
+  "file_sha256": "b95fc62cb3698da5492a8c9ba4f7a2f194b319dcf418d037fdf15faa0b8e4d43"
+ },
+ "env": {
+  "python_version": "3.8.20",
+  "uv_version": "0.13.1",
+  "packages": 171,
+  "differences_to_pinned_list": []
+ },
+ "entries": {
+  "9OC0": {
+   "entry": "9OC0",
+   "status": "failed",
+   "failed_step": "3_build",
+   "note": "timeout after 7200 s; the output of 3_build was not written",
+   "steps": {
+    "3_build": {
+     "peak_gpu_mb": 4455,
+     "peak_gpu_util_pct": 100,
+     "min_ram_available_gb": 12.73,
+     "samples": 1427,
+     "rc": -9,
+     "seconds": 7201,
+     "timed_out": true,
+     "limit_s": 7200,
+     "started_utc": "2026-10-28T06:08:38Z",
+     "device": "cuda"
+    }
+   },
+   "models": [
+    {
+     "status": "ok",
+     "note": "",
+     "tm_score": 0.786,
+     "tm_score_pred_norm": 0.4012,
+     "ca_rmsd": 0.68,
+     "aligned_ca_length": 100,
+     "seq_identity": 1.0,
+     "pred_residues": 246,
+     "native_residues": 124,
+     "coverage": 0.4805,
+     "entry": "9OC0",
+     "model_kind": "mica_init_ca",
+     "model_file": "70305_9oc0_MICA(init)_ca_model.pdb",
+     "chain_comparison": "ok"
+    },
+    {
+     "status": "ok",
+     "note": "",
+     "tm_score": 0.3268,
+     "tm_score_pred_norm": 0.245,
+     "ca_rmsd": 3.33,
+     "aligned_ca_length": 53,
+     "seq_identity": 0.057,
+     "pred_residues": 174,
+     "native_residues": 124,
+     "coverage": 0.3398,
+     "entry": "9OC0",
+     "model_kind": "af3_docked",
+     "model_file": "9OC0_af3_docked.pdb",
+     "chain_comparison": "ok"
+    }
+   ],
+   "lane": 0,
+   "stages": [
+    3
+   ],
+   "device": "cuda",
+   "started_utc": "2026-10-28T05:16:15Z",
+   "map_sha256": "7f01ae5544d71a4b0331e7d6d5c57273004ddacb76f087883342a13afbe29f48",
+   "contour": 0.066,
+   "resolution": 2.97,
+   "parameters_from": "emdb_extractor.py",
+   "resolution_in_table": "2.97",
+   "restored_from": "/kaggle/input/notebooks/faltuaccounts/mica-dock3-b/mica_state/9OC0",
+   "grid": [
+    440,
+    440,
+    440
+   ],
+   "voxel_A": [
+    0.8399999737739563,
+    0.8399999737739563,
+    0.8399999737739563
+   ],
+   "box_A": [
+    369.6,
+    369.6,
+    369.6
+   ],
+   "resampled_grid": [
+    370,
+    370,
+    370
+   ],
+   "windows": 512,
+   "reflections_M": 4.036,
+   "dock_profile": "pass3",
+   "docking": {
+    "domains": 7,
+    "docked": 3,
+    "seconds": ""
+   },
+   "dock_mode": "partial",
+   "models_kept": [
+    "70305_9oc0_MICA(init)_ca_model.pdb"
+   ],
+   "seconds": 10348
+  },
+  "9VI4": {
+   "entry": "9VI4",
+   "status": "failed",
+   "failed_step": "3_build",
+   "note": "exit code -9; the output of 3_build was not written",
+   "steps": {
+    "3_build": {
+     "peak_gpu_mb": 4529,
+     "peak_gpu_util_pct": 100,
+     "min_ram_available_gb": 2.36,
+     "samples": 516,
+     "rc": -9,
+     "seconds": 2599,
+     "timed_out": false,
+     "limit_s": 7200,
+     "started_utc": "2026-10-28T05:25:19Z",
+     "device": "cuda"
+    }
+   },
+   "models": [
+    {
+     "status": "ok",
+     "note": "",
+     "tm_score": 0.9955,
+     "tm_score_pred_norm": 0.9955,
+     "ca_rmsd": 0.54,
+     "aligned_ca_length": 516,
+     "seq_identity": 1.0,
+     "pred_residues": 516,
+     "native_residues": 516,
+     "coverage": 1.0,
+     "entry": "9VI4",
+     "model_kind": "af3_model_0",
+     "model_file": "fold_9vi4_1_model_0.cif",
+     "chain_comparison": "ok"
+    }
+   ],
+   "lane": 1,
+   "stages": [
+    3
+   ],
+   "device": "cuda",
+   "started_utc": "2026-10-28T05:16:15Z",
+   "map_sha256": "645dccdc247631f8560a2afc7605f65700d09696ba7381561d2638bc3284e9e7",
+   "contour": 0.35,
+   "resolution": 1.8,
+   "parameters_from": "emdb_extractor.py",
+   "resolution_in_table": "1.8",
+   "restored_from": "/kaggle/input/notebooks/faltuaccounts/mica-dock3-b/mica_state/9VI4",
+   "grid": [
+    640,
+    640,
+    640
+   ],
+   "voxel_A": [
+    0.6572999954223633,
+    0.6572999954223633,
+    0.6572999954223633
+   ],
+   "box_A": [
+    420.7,
+    420.7,
+    420.7
+   ],
+   "resampled_grid": [
+    421,
+    421,
+    421
+   ],
+   "windows": 729,
+   "reflections_M": 26.735,
+   "dock_profile": "pass3",
+   "docking": {
+    "domains": 3,
+    "docked": 0,
+    "seconds": ""
+   },
+   "dock_mode": "none",
+   "models_kept": [],
+   "seconds": 3149
+  }
+ },
+ "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+ "cpu_facts": {
+  "os.cpu_count": 4,
+  "multiprocessing.cpu_count": 4,
+  "usable (sched_getaffinity)": 4,
+  "nproc": "4",
+  "cgroup v2 cpu.max": "400000 100000",
+  "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+  "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+ },
+ "complete": true
+}

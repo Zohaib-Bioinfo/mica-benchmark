@@ -1,4 +1,5 @@
 # Large data and structure files: fetch them with the scripts, never commit them.
+# (results/raw/ is committed: it holds only the text files of the sessions, see scripts/ingest_results.py.)
 # Use `git add -f <file>` for the few small files you want to share.
 *.map
 *.map.gz
@@ -9,10 +10,9 @@
 *.pdb
 *.tar.gz
 *.zip
-raw/
-inputs/
-outputs/
-work/
+/inputs/
+/outputs/
+/work/
 
 # Secrets: never commit
 kaggle.json
@@ -31,3 +31,6 @@ __pycache__/
 # The check table and the file hashes in data/af3/ are public.
 af3_models/
 fold_*
+
+# LaTeX build folder of the report (the PDF in report/ is kept)
+report/build/

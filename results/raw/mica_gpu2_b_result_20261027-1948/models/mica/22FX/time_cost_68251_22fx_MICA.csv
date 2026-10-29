@@ -1,0 +1,10 @@
+step,time
+getData,62
+nnPred,618
+clustering,8
+fragModeling,0
+seqStructAlignWithAF3Structure,236
+initialModelBuilding,0
+gapFilling,2
+run_pulchra,0
+phenix_refine,0

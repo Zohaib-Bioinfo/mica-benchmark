@@ -1,0 +1,5 @@
+time_utc,gpu_mem_used_mb,gpu_util_pct,ram_available_gb
+13:33:25,,,13.2
+13:33:30,,,26.64
+13:33:35,,,26.99
+13:33:40,,,27.83

@@ -1,0 +1,3 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/working/pilot/scoring/raw/22FX/output_denovo/pred_merged.pdb /kaggle/working/pilot/scoring/raw/22FX/output_denovo/native_merged.pdb -mol protein -mm 5 -ter 2 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/22FX/output_denovo/fns_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/working/pilot/scoring/raw/22FX/output_denovo/pred_merged.pdb:A	/kaggle/working/pilot/scoring/raw/22FX/output_denovo/native_merged.pdb:A	0.0427	0.9931	0.16	0.043	0.994	1.000	4030	173	172

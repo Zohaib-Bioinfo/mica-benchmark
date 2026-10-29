@@ -1,0 +1,157 @@
+{
+  "notebook": "scoring_base",
+  "started_utc": "2026-10-27T02:08:57.600783+00:00",
+  "finished_utc": "2026-10-27T02:35:12.083452+00:00",
+  "elapsed_minutes": 26,
+  "problem": "",
+  "complete": true,
+  "platform": "kaggle",
+  "python": "3.13.15",
+  "os": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "gpu": "",
+  "cpu_cores": 4,
+  "ram_gb": 31.3,
+  "state": {
+    "ok": true,
+    "problem": "",
+    "t0": 1793066937.6007793,
+    "started": "2026-10-27T02:08:57.600783+00:00",
+    "phenix_env": "/tmp/mica_pilot/phenix-2.2.1-6174/phenix_env.sh",
+    "phenix_version": "------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1",
+    "installer_sha256": "e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885",
+    "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+    "usalign_version": "* US-align (Version 20261012)                                      *",
+    "weights": {},
+    "env": {},
+    "entries": {},
+    "gpu": "",
+    "cpu_facts": {
+      "os.cpu_count": 4,
+      "multiprocessing.cpu_count": 4,
+      "usable (sched_getaffinity)": 4,
+      "nproc": "4",
+      "cgroup v2 cpu.max": "400000 100000",
+      "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+      "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+    },
+    "ok_before_phenix": true,
+    "gemmi": "0.7.5",
+    "sources": [
+      {
+        "label": "gpu_batch1_result_20261023-1416",
+        "kind": "zip",
+        "path": "/kaggle/input/notebooks/faltuaccounts/gpu-batch1/gpu_batch1_result_20261023-1416.zip",
+        "bytes": 10625181,
+        "sha256": "4e3a94a14921aab6f32fd22b8534cbe4c761ab297179a5fbcd883c72568df682",
+        "model_files": 113
+      },
+      {
+        "label": "gpu_batch2_result_20261024-1334",
+        "kind": "zip",
+        "path": "/kaggle/input/notebooks/faltuaccounts/gpu-batch2/gpu_batch2_result_20261024-1334.zip",
+        "bytes": 758694,
+        "sha256": "d257c1b3883956719cd68d64f9e145400e74cbdf64b1401076b01fceca6b0191",
+        "model_files": 2
+      },
+      {
+        "label": "gpu_batch3_result_20261025-2341",
+        "kind": "zip",
+        "path": "/kaggle/input/notebooks/faltuaccounts/gpu-batch3/gpu_batch3_result_20261025-2341.zip",
+        "bytes": 5570058,
+        "sha256": "c7dad9bb1910d83809c9c72946cbf135e947e154cfe0fa246f8898033f910bba",
+        "model_files": 12
+      },
+      {
+        "label": "pilot",
+        "kind": "folder",
+        "path": "/kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot",
+        "bytes": "",
+        "sha256": "",
+        "model_files": 113
+      },
+      {
+        "label": "pilot",
+        "kind": "folder",
+        "path": "/kaggle/input/notebooks/faltuaccounts/gpu-batch2/pilot",
+        "bytes": "",
+        "sha256": "",
+        "model_files": 2
+      },
+      {
+        "label": "pilot",
+        "kind": "folder",
+        "path": "/kaggle/input/notebooks/faltuaccounts/gpu-batch3/pilot",
+        "bytes": "",
+        "sha256": "",
+        "model_files": 12
+      }
+    ],
+    "phenix_used": true,
+    "complete": true
+  },
+  "protocol_version": "1.0",
+  "usalign_commit": "746ad8a2a4dea9f317075cc482df0ecb5440bdea",
+  "usalign_version": "* US-align (Version 20261012)                                      *",
+  "gemmi": "0.7.5",
+  "phenix_installer": "Phenix-2.2.1-6174-Linux-x86_64.sh",
+  "phenix_installer_sha256": "e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885",
+  "phenix_version_output": "------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1",
+  "phenix_used": true,
+  "sources": [
+    {
+      "label": "gpu_batch1_result_20261023-1416",
+      "kind": "zip",
+      "path": "/kaggle/input/notebooks/faltuaccounts/gpu-batch1/gpu_batch1_result_20261023-1416.zip",
+      "bytes": 10625181,
+      "sha256": "4e3a94a14921aab6f32fd22b8534cbe4c761ab297179a5fbcd883c72568df682",
+      "model_files": 113
+    },
+    {
+      "label": "gpu_batch2_result_20261024-1334",
+      "kind": "zip",
+      "path": "/kaggle/input/notebooks/faltuaccounts/gpu-batch2/gpu_batch2_result_20261024-1334.zip",
+      "bytes": 758694,
+      "sha256": "d257c1b3883956719cd68d64f9e145400e74cbdf64b1401076b01fceca6b0191",
+      "model_files": 2
+    },
+    {
+      "label": "gpu_batch3_result_20261025-2341",
+      "kind": "zip",
+      "path": "/kaggle/input/notebooks/faltuaccounts/gpu-batch3/gpu_batch3_result_20261025-2341.zip",
+      "bytes": 5570058,
+      "sha256": "c7dad9bb1910d83809c9c72946cbf135e947e154cfe0fa246f8898033f910bba",
+      "model_files": 12
+    },
+    {
+      "label": "pilot",
+      "kind": "folder",
+      "path": "/kaggle/input/notebooks/faltuaccounts/gpu-batch1/pilot",
+      "bytes": "",
+      "sha256": "",
+      "model_files": 113
+    },
+    {
+      "label": "pilot",
+      "kind": "folder",
+      "path": "/kaggle/input/notebooks/faltuaccounts/gpu-batch2/pilot",
+      "bytes": "",
+      "sha256": "",
+      "model_files": 2
+    },
+    {
+      "label": "pilot",
+      "kind": "folder",
+      "path": "/kaggle/input/notebooks/faltuaccounts/gpu-batch3/pilot",
+      "bytes": "",
+      "sha256": "",
+      "model_files": 12
+    }
+  ],
+  "models": 127,
+  "workers": 4,
+  "input_sha256": {
+    "scripts/nbtools.py": "9bda95fce7f7fbe0c373e315740f555fc27942a08971ce2fe1b5cae6af6d748d",
+    "scripts/score_models.py": "82d18146c18d3ee5cd687a2a134549c3200d17fde81f02586977cc04ded2c862",
+    "data/entries_2026.csv": "cb695bb04ef09bf48f8c2848f91a2580c0b3c15f2a8f1e580659d86f0097a5da"
+  }
+}

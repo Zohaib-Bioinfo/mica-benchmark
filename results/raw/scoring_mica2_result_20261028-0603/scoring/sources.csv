@@ -1,0 +1,5 @@
+label,kind,path,bytes,sha256,model_files
+mica_gpu2_b_result_20261027-1948,zip,/kaggle/input/notebooks/faltuaccounts/mica-gpu2-b/mica_gpu2_b_result_20261027-1948.zip,974567,e7a3fc2b18f2b37cb08b81e4bb01feabdb7e3590ee9e0b1ec671fbe63f274598,24
+mica_gpu2_a_result_20261027-1949_INCOMPLETE,zip,/kaggle/input/notebooks/faltuaccounts/mica-gpu2-a/mica_gpu2_a_result_20261027-1949_INCOMPLETE.zip,374074,88dab77ac2d363132ae3336120d96d9bed0b13ba23d17fa961c900423ed8cb0c,12
+pilot,folder,/kaggle/input/notebooks/faltuaccounts/mica-gpu2-a/pilot,,,12
+pilot,folder,/kaggle/input/notebooks/faltuaccounts/mica-gpu2-b/pilot,,,24
