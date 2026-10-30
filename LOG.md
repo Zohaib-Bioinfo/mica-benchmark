@@ -18,6 +18,8 @@ Newest entry first. One entry per working day: what was done, what was decided, 
 
 **Tests (2026-10-30, `python3 -W error -m unittest discover -s scripts -p "test_*.py"`)**: 565 tests, all pass, 103 skipped (they need MMseqs2, US-align, a MICA Python environment, the private AlphaFold files or `uv`; each test module says which).
 
+**Statement on AI assistance (report, Section 9) reworded on 2026-10-30 at Zohaib's request**, so that it shows the division of work more clearly. The facts are unchanged: the assistant (Claude) wrote the notebooks, scripts, tests, log and report text; Zohaib took the task from Prof. Cheng, locked the specification on 2026-10-10, made the AF3 predictions, obtained the Phenix licence, ran the notebooks, uploaded the outputs and read the report. Two statements of the first version were corrected: "I set the task, the scope" (the task is Prof. Cheng's; Zohaib locked the specification) and "decided what to do when a run failed" (the technical decisions were proposed by the assistant and approved by Zohaib). The sentence on checks now says that every result, not every number, is computed by a script, as Section 4 says of the few figures quoted from logs. `scripts/regenerate.sh` is named in Section 9.
+
 **Open for Zohaib**: read the whole report once, in particular section 9 (statement on assistance: it says what he did and what the assistant did; change it if it is not exact); push the repository (`README.md`, "Upload"); send the e-mail with the PDF and the link.
 
 ## 2026-10-28 (afternoon): `mica_gpu3` and `scoring_mica2` received; MICA ends at 17 models and 3 failures; no run is left; MICA's real-space refinement never ran
