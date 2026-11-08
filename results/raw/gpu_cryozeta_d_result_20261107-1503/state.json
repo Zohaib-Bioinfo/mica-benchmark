@@ -1,0 +1,300 @@
+{
+ "ok": true,
+ "problem": "",
+ "t0": 1794024803.898046,
+ "started": "2026-11-07T04:13:23.898047+00:00",
+ "phenix_env": null,
+ "phenix_version": "",
+ "installer_sha256": "",
+ "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+ "usalign_version": "* US-align (Version 20261012)                                      *",
+ "weights": {},
+ "env": {},
+ "entries": {},
+ "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+ "cpu_facts": {
+  "os.cpu_count": 4,
+  "multiprocessing.cpu_count": 4,
+  "usable (sched_getaffinity)": 4,
+  "nproc": "4",
+  "cgroup v2 cpu.max": "400000 100000",
+  "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+  "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+ },
+ "methods": {
+  "cryozeta": {
+   "key": "cryozeta",
+   "label": "CryoZeta",
+   "commit": "c544c6bbd0366951d8b4e0bc4c0da547836f7b8f",
+   "status": "ready",
+   "failed_step": "",
+   "note": "",
+   "setup_seconds": 272,
+   "entries": {
+    "9OC0": {
+     "entry": "9OC0",
+     "method": "cryozeta",
+     "status": "failed",
+     "failed_step": "run",
+     "note": "killed by the system (exit code -9, probably out of memory; also when it ran alone); the model file 9OC0_sample_0.cif was not written",
+     "runs": {
+      "run": {
+       "peak_gpu_mb": 3443,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 1.96,
+       "samples": 134,
+       "rc": 4,
+       "seconds": 673,
+       "timed_out": false,
+       "started": 1794025277.5621932,
+       "ended": 1794025950.5935032,
+       "gpu": 0,
+       "limit_s": 21600,
+       "other_gpu_busy": false,
+       "started_utc": "2026-11-07T04:21:17Z",
+       "ended_utc": "2026-11-07T04:32:30Z"
+      }
+     },
+     "models": [],
+     "gpu": 0,
+     "attempt": 2,
+     "started_utc": "2026-11-07T04:18:31Z",
+     "seconds": 839
+    },
+    "9VI4": {
+     "entry": "9VI4",
+     "method": "cryozeta",
+     "status": "killed_corun",
+     "failed_step": "run",
+     "note": "killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",
+     "runs": {
+      "run": {
+       "peak_gpu_mb": 3517,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 2.24,
+       "samples": 223,
+       "rc": 4,
+       "seconds": 1121,
+       "timed_out": false,
+       "started": 1794026248.2066429,
+       "ended": 1794027369.165545,
+       "gpu": 0,
+       "limit_s": 21600,
+       "other_gpu_busy": true,
+       "started_utc": "2026-11-07T04:37:28Z",
+       "ended_utc": "2026-11-07T04:56:09Z"
+      }
+     },
+     "models": [],
+     "gpu": 0,
+     "attempt": 1,
+     "started_utc": "2026-11-07T04:32:30Z"
+    },
+    "9VBD": {
+     "entry": "9VBD",
+     "method": "cryozeta",
+     "status": "failed",
+     "failed_step": "run",
+     "note": "timeout: the run limit of 21600 s; the model file 9VBD_sample_0.cif was not written",
+     "runs": {
+      "run": {
+       "peak_gpu_mb": 14837,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 2.27,
+       "samples": 4278,
+       "rc": -9,
+       "seconds": 21600,
+       "timed_out": true,
+       "started": 1794026313.0855756,
+       "ended": 1794047913.0927923,
+       "gpu": 1,
+       "limit_s": 21600,
+       "other_gpu_busy": true,
+       "started_utc": "2026-11-07T04:38:33Z",
+       "ended_utc": "2026-11-07T10:38:33Z"
+      }
+     },
+     "models": [],
+     "gpu": 1,
+     "attempt": 1,
+     "started_utc": "2026-11-07T04:32:30Z",
+     "seconds": 21963
+    },
+    "9VUH": {
+     "entry": "9VUH",
+     "method": "cryozeta",
+     "status": "failed",
+     "failed_step": "run",
+     "note": "timeout: the run limit of 21600 s; the model file 9VUH_sample_0.cif was not written",
+     "runs": {
+      "run": {
+       "peak_gpu_mb": 14543,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 14.76,
+       "samples": 4278,
+       "rc": -9,
+       "seconds": 21600,
+       "timed_out": true,
+       "started": 1794027406.3437283,
+       "ended": 1794049006.3718276,
+       "gpu": 0,
+       "limit_s": 21600,
+       "other_gpu_busy": true,
+       "started_utc": "2026-11-07T04:56:46Z",
+       "ended_utc": "2026-11-07T10:56:46Z"
+      }
+     },
+     "models": [],
+     "gpu": 0,
+     "attempt": 1,
+     "started_utc": "2026-11-07T04:56:09Z",
+     "seconds": 21637
+    },
+    "9WFL": {
+     "entry": "9WFL",
+     "method": "cryozeta",
+     "status": "interrupted",
+     "failed_step": "run",
+     "note": "stopped by the end of the session after 15850 s; run again in the next session",
+     "runs": {
+      "run": {
+       "peak_gpu_mb": 13143,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 13.96,
+       "samples": 3139,
+       "rc": -9,
+       "seconds": 15850,
+       "timed_out": true,
+       "started": 1794047953.716487,
+       "ended": 1794063803.9301646,
+       "gpu": 1,
+       "limit_s": 15850,
+       "other_gpu_busy": true,
+       "started_utc": "2026-11-07T10:39:13Z",
+       "ended_utc": "2026-11-07T15:03:23Z"
+      }
+     },
+     "models": [],
+     "gpu": 1,
+     "attempt": 1,
+     "started_utc": "2026-11-07T10:38:33Z"
+    },
+    "9WME": {
+     "entry": "9WME",
+     "method": "cryozeta",
+     "status": "interrupted",
+     "failed_step": "run",
+     "note": "stopped by the end of the session after 14774 s; run again in the next session",
+     "runs": {
+      "run": {
+       "peak_gpu_mb": 14819,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 21.3,
+       "samples": 2926,
+       "rc": -9,
+       "seconds": 14774,
+       "timed_out": true,
+       "started": 1794049029.968736,
+       "ended": 1794063803.9148433,
+       "gpu": 0,
+       "limit_s": 14774,
+       "other_gpu_busy": true,
+       "started_utc": "2026-11-07T10:57:09Z",
+       "ended_utc": "2026-11-07T15:03:23Z"
+      }
+     },
+     "models": [],
+     "gpu": 0,
+     "attempt": 1,
+     "started_utc": "2026-11-07T10:56:46Z"
+    }
+   },
+   "weights_hub": {
+    "repo": "KiharaLab/CryoZeta",
+    "revision": "6fdba93a5f3af71c61760723438ff05f48e033db",
+    "files": {
+     "detection": {
+      "file": "cryozeta-detection-v0.0.1.safetensors",
+      "hub_path": "cryozeta-detection-v0.0.1.safetensors",
+      "bytes": 39547664,
+      "sha256": "677ea35f308d6d14f02cf841437b9c2f5a4490ee03df69a81d41acc73b9c76cc",
+      "hub_sha256": "677ea35f308d6d14f02cf841437b9c2f5a4490ee03df69a81d41acc73b9c76cc"
+     },
+     "cryozeta": {
+      "file": "cryozeta-v0.0.1.safetensors",
+      "hub_path": "cryozeta-v0.0.1.safetensors",
+      "bytes": 2680248116,
+      "sha256": "da7153b024d5eaebfcea7a0a0a55c1da72833cc9688df0976ca33678280c57c5",
+      "hub_sha256": "da7153b024d5eaebfcea7a0a0a55c1da72833cc9688df0976ca33678280c57c5"
+     },
+     "interpolate": {
+      "file": "cryozeta-interpolate-v0.0.1.safetensors",
+      "hub_path": "cryozeta-interpolate-v0.0.1.safetensors",
+      "bytes": 2680255796,
+      "sha256": "1a0b2f3e53953af47e95c36d7a6a84ec9af4ba0296e458f83c5093a2a1263285",
+      "hub_sha256": "1a0b2f3e53953af47e95c36d7a6a84ec9af4ba0296e458f83c5093a2a1263285"
+     },
+     "ccd": {
+      "file": "components.v20240608.cif",
+      "hub_path": "components.v20240608.cif",
+      "bytes": 427767290,
+      "sha256": "7240b17369ccfbbcc86e2d02dc8c9db59f46c32e0420f58889c6c121c60bfef0",
+      "hub_sha256": "7240b17369ccfbbcc86e2d02dc8c9db59f46c32e0420f58889c6c121c60bfef0"
+     },
+     "ccd_rdkit": {
+      "file": "components.v20240608.cif.rdkit_mol.pkl",
+      "hub_path": "components.v20240608.cif.rdkit_mol.pkl",
+      "bytes": 125903802,
+      "sha256": "2d6caced2d26c62015115a1d0a50f4106755a300e0c2a2d2b5c101c9038dcbcd",
+      "hub_sha256": "2d6caced2d26c62015115a1d0a50f4106755a300e0c2a2d2b5c101c9038dcbcd"
+     }
+    }
+   },
+   "preflight": {
+    "gpu_test": {
+     "torch": "2.4.1",
+     "cuda": "11.8",
+     "cuda_available": true,
+     "gpu": "Tesla T4",
+     "memory_gb": 14.56,
+     "capability": "7.5",
+     "bf16_matmul": "ok",
+     "bf16_conv3d": "ok",
+     "bf16_autocast_conv3d": "ok"
+    },
+    "detection_patched": false,
+    "dtype_start": "bf16"
+   },
+   "version": "commit c544c6bbd0, pixi 0.41.1, environment cu11, weights revision 6fdba93a5f",
+   "teaser": {
+    "commit": "52a9c52ee7d4c838c5e8a75458c33178be5bfb70",
+    "folder": "/tmp/mica_pilot/teaser_plusplus"
+   },
+   "weights": {
+    "cryozeta_assets/components.v20240608.cif.rdkit_mol.pkl": 125903802,
+    "cryozeta_assets/cryozeta-interpolate-v0.0.1.safetensors": 2680255796,
+    "cryozeta_assets/components.v20240608.cif": 427767290,
+    "cryozeta_assets/cryozeta-v0.0.1.safetensors": 2680248116,
+    "cryozeta_assets/cryozeta-detection-v0.0.1.safetensors": 39547664
+   }
+  }
+ },
+ "complete": true,
+ "pending": [
+  [
+   "9VI4",
+   "cryozeta",
+   "killed_corun"
+  ],
+  [
+   "9WFL",
+   "cryozeta",
+   "interrupted"
+  ],
+  [
+   "9WME",
+   "cryozeta",
+   "interrupted"
+  ]
+ ]
+}

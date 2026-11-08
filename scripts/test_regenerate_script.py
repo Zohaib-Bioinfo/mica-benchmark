@@ -50,6 +50,35 @@ class TestRegenerate(unittest.TestCase):
         self.assertIn("grep -v mica_gpu_nodock", self.text)                     # the main analysis does not read the session without docked input
         self.assertIn("--out results/nodock", self.text.replace('analyze results/nodock "$METHOD_STATUS $NODOCK_STATUS" "$SCORES_NODOCK"', "--out results/nodock"))
 
+    @unittest.skipUnless(shutil.which("bash"), "bash is not installed")
+    def test_a_scoring_session_without_scores_is_left_out(self):
+        """scoring_cryozeta_d stopped on 7 November 2026 because batch d had built no model: its folder has no scoring/scores_long.csv. The list of score files must not name it
+        (the analysis stopped with FileNotFoundError), and a folder with a NOT_A_RESULT.txt is left out as well, like the status tables of ingest_results.py --list."""
+        import tempfile
+        funcs = re.search(r"^scoring_folders\(\) \{.*?^scores\(\) \{.*?^\}", self.text, re.S | re.M)
+        self.assertIsNotNone(funcs)
+        with tempfile.TemporaryDirectory() as tmp:
+            def make(name, scores=True, note=False):
+                os.makedirs(os.path.join(tmp, name, "scoring"))
+                if scores:
+                    open(os.path.join(tmp, name, "scoring", "scores_long.csv"), "w").close()
+                if note:
+                    open(os.path.join(tmp, name, "NOT_A_RESULT.txt"), "w").close()
+            make("scoring_a_result_20261101-1000")
+            make("scoring_b_result_20261102-1000_INCOMPLETE", scores=False)
+            make("scoring_c_result_20261103-1000", note=True)
+            make("scoring_nodock_result_20261104-1000")
+            make("scoring_cryo_result_20261030-1000")
+            script = "set -euo pipefail\nRAW=%s\n%s\n" % (tmp, funcs.group(0))
+            run = lambda *flt: subprocess.run(["bash", "-c", script + "scores " + " ".join(flt)], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            main, nodock = run("grep", "-v", "nodock"), run("grep", "-E", "'scoring_nodock|scoring_cryo'")
+            self.assertEqual(main.returncode, 0, main.stderr)
+            self.assertEqual([os.path.relpath(x, tmp).split("/")[0] for x in main.stdout.split()], ["scoring_cryo_result_20261030-1000", "scoring_a_result_20261101-1000"])    # oldest first
+            self.assertEqual(nodock.returncode, 0, nodock.stderr)
+            self.assertEqual([os.path.relpath(x, tmp).split("/")[0] for x in nodock.stdout.split()], ["scoring_cryo_result_20261030-1000", "scoring_nodock_result_20261104-1000"])
+            for x in main.stdout.split() + nodock.stdout.split():
+                self.assertTrue(x.endswith("/scoring/scores_long.csv"), x)
+
     @unittest.skipUnless(os.path.isdir(os.path.join(ROOT, "results", "raw")) and shutil.which("bash"), "results/raw/ and bash are needed")
     def test_the_committed_tables_regenerate_identically(self):
         r = subprocess.run(["bash", SCRIPT, "--check"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, cwd=ROOT)

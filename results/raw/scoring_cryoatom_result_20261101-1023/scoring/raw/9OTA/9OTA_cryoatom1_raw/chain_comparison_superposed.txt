@@ -1,0 +1,69 @@
+# phenix.chain_comparison /kaggle/working/pilot/native/ca/9OTA_native_ca.pdb /kaggle/working/pilot/scoring/raw/9OTA/9OTA_cryoatom1_raw/query_superposed.pdb
+Starting ChainComparison
+on Sun Nov  1 10:21:41 2026 by root
+===============================================================================
+
+Processing files:
+-------------------------------------------------------------------------------
+
+  Found model, /kaggle/working/pilot/native/ca/9OTA_native_ca.pdb
+  Found model, /kaggle/working/pilot/scoring/raw/9OTA/9OTA_cryoatom1_raw/query_superposed.pdb
+
+Processing PHIL parameters:
+-------------------------------------------------------------------------------
+
+  No PHIL parameters found
+
+Final processed PHIL parameters:
+-------------------------------------------------------------------------------
+  data_manager {
+    model {
+      file = "/kaggle/working/pilot/native/ca/9OTA_native_ca.pdb"
+    }
+    model {
+      file = "/kaggle/working/pilot/scoring/raw/9OTA/9OTA_cryoatom1_raw/query_superposed.pdb"
+    }
+    default_model = "/kaggle/working/pilot/native/ca/9OTA_native_ca.pdb"
+  }
+
+
+Starting job
+===============================================================================
+
+************************************************************
+          PHENIX ChainComparison  Sun Nov  1 10:21:41 2026
+************************************************************
+
+Working directory:  /kaggle/working/pilot/scoring/raw/9OTA/9OTA_cryoatom1_raw 
+
+PHENIX VERSION:  2.2.1-6174 
+
+Validating inputs
+Using /kaggle/working/pilot/native/ca/9OTA_native_ca.pdb as target
+
+Testing unique_part_of_target_only as True and False and 
+reporting results for whichever gives higher fraction matched.
+Percent close with unique_part_of_target_only=True:    99.6
+Percent close with unique_part_of_target_only=False:    99.3
+
+Original residues in target: 534  In query: 910
+Used residues in target:  267  In query: 910
+CLOSE is within  3.0 A.
+CA SCORE is (fraction close)/(rmsd of close residues)
+SEQ SCORE is fraction (close and matching target sequence).
+MEAN LENGTH is the mean length of contiguous segments in the match with target sequence. (Each gap/reverse of direction starts new segment).
+
+
+
+               ----ALL RESIDUES---  CLOSE RESIDUES ONLY    %
+     MODEL     --CLOSE-    --FAR-- FORWARD REVERSE MIXED FOUND  CA                  SEQ
+               RMSD   N      N       N       N      N         SCORE  SEQ MATCH(%)  SCORE  MEAN LENGTH  FRAGMENTS BAD CONNECTIONS
+
+ Unique_target 0.74  266    644    252       2      12   99.6   1.35    93.2        0.93   26.6         48               2
+
+Finished 
+
+===============================================================================
+Job complete
+usr+sys time: 3.15 seconds
+wall clock time: 3.49 seconds

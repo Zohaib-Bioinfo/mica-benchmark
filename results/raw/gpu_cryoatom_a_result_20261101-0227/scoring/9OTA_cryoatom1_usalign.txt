@@ -1,0 +1,27 @@
+# USalign /tmp/mica_pilot/runs/cryoatom1/9OTA_cryoatom1/9OTA_cryoatom1.cif /kaggle/working/pilot/native/9OTA.cif -mol protein
+
+ ********************************************************************
+ * US-align (Version 20261012)                                      *
+ * Universal Structure Alignment of Proteins and Nucleic Acids      *
+ * Reference: C Zhang, L Freddolino, Y Zhang. (2026) Nat Protoc     *
+ *            C Zhang, M Shine, AM Pyle, Y Zhang. (2022) Nat Methods*
+ *            C Zhang, AM Pyle (2022) iScience.                     *
+ * Please email comments and suggestions to zhanglab@zhanggroup.org *
+ ********************************************************************
+
+Name of Structure_1: /tmp/mica_pilot/runs/cryoatom1/9OTA_cryoatom1/9OTA_cryoatom1.cif:Aa (to be superimposed onto Structure_2)
+Name of Structure_2: /kaggle/working/pilot/native/9OTA.cif:B
+Length of Structure_1: 258 residues
+Length of Structure_2: 267 residues
+
+Aligned length= 258, RMSD=   1.02, Seq_ID=n_identical/n_aligned= 0.992
+TM-score= 0.98078 (normalized by length of Structure_1: L=258, d0=5.94)
+TM-score= 0.94814 (normalized by length of Structure_2: L=267, d0=6.03)
+(You should use TM-score normalized by length of the reference structure)
+
+(":" denotes residue pairs of d < 5.0 Angstrom, "." denotes other aligned residues)
+-ALLAGALAAYAAYLVLGALLVARLEGPHEARLRAELETLRAQLLQRSPCVAAPALDAFVERVLAAGRLGRVVLANASGSANASDPAWD-ASALFFASTLITTVGYGYTTPLTDAGKAFSIAFALLGVPTTMLLLTASAQRLSLLLTHV----W--D-PRRAACWHLVALLGVVVTVCFLVPAVIFAHLEEAWSFLDAFYFCFISLSTIGLGDYVPGEAPGQPYRALYKVLVTVYLFLGLVAMVLVLQTFRHVSDLHGLTELILLPP
+ :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::..::::::::: :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::    :  : :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+GALLAGALAAYAAYLVLGALLVARLEGPHEARLRAELETLRAQLLQRSPCVAAPALDAFVERVLAAGRLGRVVLANASGSANASDPAWDFASALFFASTLITTVGYGYTTPLTDAGKAFSIAFALLGVPTTMLLLTASAQRLSLLLTHVPLSWLSMRDPRRAACWHLVALLGVVVTVCFLVPAVIFAHLEEAWSFLDAFYFCFISLSTIGLGDYVPGEAPGQPYRALYKVLVTVYLFLGLVAMVLVLQTFRHVSDLHGLTELILLPP
+
+#Total CPU time is  0.09 seconds

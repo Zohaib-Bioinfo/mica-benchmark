@@ -415,6 +415,14 @@ SCOPES = {
                   inputs="`mica_gpu3` **and nothing else**", plain="mica_gpu3"),
     "nodock2": dict(scored="MICA without docked AlphaFold input from `mica_gpu2_nodock_a` and `mica_gpu2_nodock_b` (the sensitivity session, second GPU round); the other methods are scored in another session",
                     inputs="`mica_gpu2_nodock_a` and `mica_gpu2_nodock_b` **and nothing else**", plain="mica_gpu2_nodock_a, mica_gpu2_nodock_b"),
+    "cryoatom": dict(scored="CryoAtom v1.0.0 from `gpu_cryoatom_a` (added to the benchmark after Prof. Cheng's request of 2026-10-31); the other methods are scored in another session",
+                     inputs="`gpu_cryoatom_a` **and nothing else**", plain="gpu_cryoatom_a"),
+    "cryozeta_b": dict(scored="CryoZeta from `gpu_cryozeta_b` (the first full session; added to the benchmark after Prof. Cheng's request of 2026-10-31); the other methods are scored in another session",
+                       inputs="`gpu_cryozeta_b` **and nothing else**", plain="gpu_cryozeta_b"),
+    "cryozeta_c": dict(scored="CryoZeta from `gpu_cryozeta_c` (the second full session; added to the benchmark after Prof. Cheng's request of 2026-10-31); the other methods are scored in another session",
+                       inputs="`gpu_cryozeta_c` **and nothing else**", plain="gpu_cryozeta_c"),
+    "cryozeta_d": dict(scored="CryoZeta from `gpu_cryozeta_d` (the third full session; added to the benchmark after Prof. Cheng's request of 2026-10-31); the other methods are scored in another session",
+                       inputs="`gpu_cryozeta_d` **and nothing else**", plain="gpu_cryozeta_d"),
 }
 
 

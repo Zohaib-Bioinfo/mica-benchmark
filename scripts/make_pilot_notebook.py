@@ -301,19 +301,39 @@ class Monitor(threading.Thread):
         return {"peak_gpu_mb": self.peak_gpu_mb, "peak_gpu_util_pct": self.peak_util, "min_ram_available_gb": self.min_ram_gb, "samples": self.samples}
 
 
-def check_internet():
-    import urllib.request
-    bad_required = []
-    for name, url, required in NET_HOSTS:
-        try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "mica-benchmark-pilot"}), timeout=20) as r:
-                r.read(512)
-                log("  reachable: %-9s %s" % (name, r.status))
-        except Exception as ex:
-            log("  NOT reachable: %-9s %s" % (name, str(ex)[:100]))
-            if required:
-                bad_required.append(name)
-    return bad_required
+def probe_site(url, timeout=45):
+    import urllib.error, urllib.request
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "mica-benchmark-pilot"}), timeout=timeout) as r:
+            r.read(512)
+            return True, "HTTP %s" % r.status
+    except urllib.error.HTTPError as ex:           # the server answered (404 or 403 for a probe address): the way to the site is open; only 5xx counts as down
+        return ex.code < 500, "HTTP %s" % ex.code
+    except Exception as ex:                        # no answer: DNS, TLS handshake or connect time-out, connection reset, internet off
+        return False, str(ex)[:100]
+
+
+def check_internet(tries=4, pause=20):
+    # Up to 4 rounds (20, 40 and 60 s apart), and only the sites that failed are asked again: one TLS time-out of one site (the EBI map server on
+    # 7 November 2026) must not stop a session of 11 hours. A session with the internet off still stops after about 2 minutes, before any hour is spent.
+    pending, last = list(NET_HOSTS), {}
+    for rnd in range(1, tries + 1):
+        retry = []
+        for host in pending:
+            ok, text = probe_site(host[1])
+            if ok:
+                log("  reachable: %-9s %s%s" % (host[0], text, "" if rnd == 1 else " (at try %d)" % rnd))
+            else:
+                last[host[0]] = text
+                retry.append(host)
+                log("  no answer (try %d of %d): %-9s %s" % (rnd, tries, host[0], text))
+        pending = retry
+        if not pending or rnd == tries:
+            break
+        time.sleep(pause * rnd)
+    for name, url, required in pending:
+        log("  NOT reachable: %-9s %s" % (name, "needed: the notebook stops" if required else "optional: the notebook goes on"))
+    return [name for name, url, required in pending if required]
 
 
 free_big, free_work = round(shutil.disk_usage(BIG).free / 1e9), round(shutil.disk_usage(WORK).free / 1e9)

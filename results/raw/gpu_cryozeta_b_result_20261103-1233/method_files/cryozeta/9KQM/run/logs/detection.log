@@ -1,0 +1,84 @@
+$ /tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/bin/cryozeta-detection json-run /tmp/mica_pilot/input/9KQM/cryozeta_input.json /tmp/mica_pilot/runs/cryozeta/9KQM --device cuda --checkpoint-path /tmp/mica_pilot/cryozeta_assets/cryozeta-detection-v0.0.1.safetensors
+2026-11-03 07:33:57.931 | INFO     | cryozeta.runner.inference_detection:__init__:359 - Using device: cuda
+2026-11-03 07:33:57.932 | INFO     | cryozeta.runner.inference_detection:__init__:360 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-03 07:33:57.932 | INFO     | cryozeta.runner.inference_detection:__init__:367 - Loading models...
+2026-11-03 07:33:58.377 | INFO     | cryozeta.runner.inference_detection:__init__:375 - Models loaded successfully
+2026-11-03 07:33:58.378 | INFO     | cryozeta.runner.inference_detection:json_run:817 - [batch 1/1] Processing /tmp/mica_pilot/input/9KQM/emd_62507.mrc
+2026-11-03 07:33:58.378 | INFO     | cryozeta.runner.inference_detection:run_inference:441 - Running inference for 9KQM
+2026-11-03 07:33:58.378 | INFO     | cryozeta.runner.inference_detection:run_inference:446 - Using resolution for 9KQM: 3.5
+2026-11-03 07:33:58.378 | INFO     | cryozeta.runner.inference_detection:preprocess_map:379 - Preprocessing map from /tmp/mica_pilot/input/9KQM/emd_62507.mrc
+2026-11-03 07:33:58.503 | INFO     | cryozeta.runner.inference_detection:preprocess_map:391 - Using contour level for 9KQM: 0.1
+2026-11-03 07:34:00.478 | INFO     | cryozeta.runner.inference_detection:preprocess_map:410 - Finished preprocessing, shape: torch.Size([1, 1, 205, 206, 207])
+2026-11-03 07:34:00.482 | INFO     | cryozeta.runner.inference_detection:run_inference:460 - Start inference for 9KQM
+2026-11-03 07:34:00.558 | INFO     | cryozeta.em.utils:sliding_window_inference:282 - Input tensor shape: 205/206/207
+2026-11-03 07:34:01.945 | INFO     | cryozeta.em.utils:sliding_window_inference:334 - Number of non-empty ROIs / All possible ROIs: 216 / 216
+
+Processing inference:   0%|          | 0/54 [00:00<?, ?it/s]
+Processing inference:   2%|▏         | 1/54 [00:02<02:03,  2.33s/it]
+Processing inference:   4%|▎         | 2/54 [00:04<01:56,  2.24s/it]
+Processing inference:   6%|▌         | 3/54 [00:06<01:52,  2.21s/it]
+Processing inference:   7%|▋         | 4/54 [00:08<01:49,  2.20s/it]
+Processing inference:   9%|▉         | 5/54 [00:11<01:47,  2.20s/it]
+Processing inference:  11%|█         | 6/54 [00:13<01:45,  2.20s/it]
+Processing inference:  13%|█▎        | 7/54 [00:15<01:43,  2.21s/it]
+Processing inference:  15%|█▍        | 8/54 [00:17<01:42,  2.22s/it]
+Processing inference:  17%|█▋        | 9/54 [00:19<01:40,  2.22s/it]
+Processing inference:  19%|█▊        | 10/54 [00:22<01:38,  2.23s/it]
+Processing inference:  20%|██        | 11/54 [00:24<01:36,  2.24s/it]
+Processing inference:  22%|██▏       | 12/54 [00:26<01:34,  2.26s/it]
+Processing inference:  24%|██▍       | 13/54 [00:29<01:32,  2.26s/it]
+Processing inference:  26%|██▌       | 14/54 [00:31<01:30,  2.26s/it]
+Processing inference:  28%|██▊       | 15/54 [00:33<01:28,  2.27s/it]
+Processing inference:  30%|██▉       | 16/54 [00:35<01:26,  2.28s/it]
+Processing inference:  31%|███▏      | 17/54 [00:38<01:24,  2.28s/it]
+Processing inference:  33%|███▎      | 18/54 [00:40<01:22,  2.28s/it]
+Processing inference:  35%|███▌      | 19/54 [00:42<01:20,  2.29s/it]
+Processing inference:  37%|███▋      | 20/54 [00:45<01:17,  2.29s/it]
+Processing inference:  39%|███▉      | 21/54 [00:47<01:15,  2.30s/it]
+Processing inference:  41%|████      | 22/54 [00:49<01:13,  2.30s/it]
+Processing inference:  43%|████▎     | 23/54 [00:51<01:11,  2.31s/it]
+Processing inference:  44%|████▍     | 24/54 [00:54<01:09,  2.32s/it]
+Processing inference:  46%|████▋     | 25/54 [00:56<01:07,  2.33s/it]
+Processing inference:  48%|████▊     | 26/54 [00:59<01:05,  2.32s/it]
+Processing inference:  50%|█████     | 27/54 [01:01<01:02,  2.33s/it]
+Processing inference:  52%|█████▏    | 28/54 [01:03<01:00,  2.34s/it]
+Processing inference:  54%|█████▎    | 29/54 [01:06<00:58,  2.35s/it]
+Processing inference:  56%|█████▌    | 30/54 [01:08<00:56,  2.35s/it]
+Processing inference:  57%|█████▋    | 31/54 [01:10<00:54,  2.36s/it]
+Processing inference:  59%|█████▉    | 32/54 [01:13<00:52,  2.37s/it]
+Processing inference:  61%|██████    | 33/54 [01:15<00:50,  2.39s/it]
+Processing inference:  63%|██████▎   | 34/54 [01:18<00:47,  2.40s/it]
+Processing inference:  65%|██████▍   | 35/54 [01:20<00:45,  2.41s/it]
+Processing inference:  67%|██████▋   | 36/54 [01:22<00:43,  2.42s/it]
+Processing inference:  69%|██████▊   | 37/54 [01:25<00:41,  2.44s/it]
+Processing inference:  70%|███████   | 38/54 [01:27<00:39,  2.45s/it]
+Processing inference:  72%|███████▏  | 39/54 [01:30<00:36,  2.46s/it]
+Processing inference:  74%|███████▍  | 40/54 [01:32<00:34,  2.49s/it]
+Processing inference:  76%|███████▌  | 41/54 [01:35<00:32,  2.51s/it]
+Processing inference:  78%|███████▊  | 42/54 [01:38<00:30,  2.52s/it]
+Processing inference:  80%|███████▉  | 43/54 [01:40<00:27,  2.52s/it]
+Processing inference:  81%|████████▏ | 44/54 [01:43<00:25,  2.52s/it]
+Processing inference:  83%|████████▎ | 45/54 [01:45<00:22,  2.53s/it]
+Processing inference:  85%|████████▌ | 46/54 [01:48<00:20,  2.53s/it]
+Processing inference:  87%|████████▋ | 47/54 [01:50<00:17,  2.54s/it]
+Processing inference:  89%|████████▉ | 48/54 [01:53<00:15,  2.54s/it]
+Processing inference:  91%|█████████ | 49/54 [01:55<00:12,  2.55s/it]
+Processing inference:  93%|█████████▎| 50/54 [01:58<00:10,  2.54s/it]
+Processing inference:  94%|█████████▍| 51/54 [02:00<00:07,  2.53s/it]
+Processing inference:  96%|█████████▋| 52/54 [02:03<00:05,  2.53s/it]
+Processing inference:  98%|█████████▊| 53/54 [02:05<00:02,  2.53s/it]
+Processing inference: 100%|██████████| 54/54 [02:08<00:00,  2.53s/it]
+Processing inference: 100%|██████████| 54/54 [02:08<00:00,  2.38s/it]
+2026-11-03 07:36:54.799 | INFO     | cryozeta.runner.inference_detection:post_process:144 - Post-processing 9KQM...
+MeanShift++ Converged at 7 steps.
+2026-11-03 07:36:57.019 | INFO     | cryozeta.runner.inference_detection:post_process:207 - [9KQM] Number of CA indices: 393
+MeanShift++ Converged at 18 steps.
+2026-11-03 07:36:57.041 | INFO     | cryozeta.runner.inference_detection:post_process:261 - [9KQM] Number of protein CA clusters: 1
+2026-11-03 07:36:57.041 | WARNING  | cryozeta.runner.inference_detection:post_process:272 - No R/DNA C1P indices found for 9KQM
+2026-11-03 07:36:57.041 | INFO     | cryozeta.runner.inference_detection:post_process:274 - [9KQM] Number of clusters: 1
+2026-11-03 07:36:57.102 | INFO     | cryozeta.runner.inference_detection:post_process:284 - [9KQM] Main atom prob shape: torch.Size([3, 205, 206, 207])
+2026-11-03 07:36:57.103 | INFO     | cryozeta.runner.inference_detection:post_process:288 - [9KQM] voxel_size: [1. 1. 1.], global_origin: [4. 3. 2.]
+2026-11-03 07:36:57.103 | INFO     | cryozeta.runner.inference_detection:post_process:292 - [9KQM] main_atom_coords shape: (393, 3)
+2026-11-03 07:36:57.192 | INFO     | cryozeta.runner.inference_detection:post_process:350 - [9KQM] Saved output to /tmp/mica_pilot/runs/cryozeta/9KQM/9KQM/CryoZeta-Detection/9KQM.pt
+2026-11-03 07:36:57.200 | INFO     | cryozeta.runner.inference_detection:run_inference:586 - Completed inference for 9KQM
+Batch inference completed. Results saved to /tmp/mica_pilot/runs/cryozeta/9KQM

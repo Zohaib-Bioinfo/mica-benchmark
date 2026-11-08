@@ -1,0 +1,10 @@
+Not a result of CryoZeta (first try of batch d, 7 November 2026, 08:56 PKT; notebook scripts/as_run/gpu_cryozeta_d_try1.ipynb).
+
+What happened: the check of the internet at the start of the notebook asked every site once, with a limit of 20 seconds. The EBI map server (ftp.ebi.ac.uk, needed for the maps)
+answered with "_ssl.c:1015: The handshake operation timed out" (a time-out of the TLS handshake of one connection, not an error of the site), so the notebook counted a needed site as
+missing, skipped every later step after 25 seconds and packed this INCOMPLETE zip. No program of CryoZeta was started and no GPU time was used. The ColabFold server (not needed)
+answered "HTTP Error 404: Not Found" for its root address; that is an answer of the server, not a missing way to it.
+
+No row of this folder is used: scripts/ingest_results.py --list leaves it out, so the analysis does not read its status tables. The folder stays as part of the record.
+Correction: since 2026-11-07 the check asks a site that does not answer up to four times (20, 40 and 60 seconds apart) and counts every HTTP answer below 500 as reachable
+(LOG.md, 2026-11-07). The second try used scripts/gpu_cryozeta_d.ipynb.

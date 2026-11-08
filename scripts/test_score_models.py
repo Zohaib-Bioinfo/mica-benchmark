@@ -261,7 +261,24 @@ class UnitTests(unittest.TestCase):
                           k("emprot", "output_denovo.cif"), k("emodelx", "9t5k_EModelX(+AF)_all_atom_model.pdb"), k("emodelx", "9t5k_EModelX(+AF)_ca_model.pdb"),
                           k("mica", "EMD-1_9t5k_MICA_all_atom_model.pdb"), k("mica", "EMD-1_9t5k_MICA_ca_model.pdb"), k("mica", "EMD-1_9t5k_MICA_all_atom_model_real_space_refined_000.pdb")],
                          ["modelangelo", "modelangelo_raw", "e3_prealign", "emprot", "emprot_denovo", "emodelx_af_all_atom", "emodelx_af_ca", "mica_all_atom", "mica_ca", "mica_refined"])
-        self.assertEqual(sorted(sm.PRIMARY_KINDS), ["e3_prealign", "emodelx_af_all_atom", "emprot", "mica_all_atom", "modelangelo"])
+        self.assertEqual(sorted(sm.PRIMARY_KINDS), ["cryoatom1", "cryozeta", "e3_prealign", "emodelx_af_all_atom", "emprot", "mica_all_atom", "modelangelo"])
+
+    def test_the_models_of_cryoatom_and_cryozeta(self):
+        """CryoAtom v1.0.0: <ENTRY>_cryoatom1.cif is the model, <ENTRY>_cryoatom1_raw.cif the one before pruning. CryoZeta: CryoZeta-Final/<ENTRY>_sample_<i>.cif, the program ranks them best first."""
+        k = sm.model_kind
+        self.assertEqual([k("cryoatom1", "9T5K_cryoatom1.cif"), k("cryoatom1", "9T5K_cryoatom1_raw.cif"), k("cryozeta", "9T5K_sample_0.cif"), k("cryozeta", "9T5K_sample_3.cif"),
+                          k("cryozeta", "9T5K_sample_10.cif"), k("cryozeta", "notes.cif")],
+                         ["cryoatom1", "cryoatom1_raw", "cryozeta", "cryozeta_s3", "cryozeta_s10", "cryozeta_other"])
+        for kind, primary in (("cryoatom1", True), ("cryoatom1_raw", False), ("cryozeta", True), ("cryozeta_s1", False)):
+            self.assertEqual(kind in sm.PRIMARY_KINDS, primary, kind)
+        for method, files in (("cryoatom1", ["9T5K_cryoatom1.cif", "9T5K_cryoatom1_raw.cif"]), ("cryozeta", ["9T5K_sample_0.cif", "9T5K_sample_1.cif"])):
+            d = os.path.join(self.tmp, "gc", "models", method, "9T5K")
+            os.makedirs(d, exist_ok=True)
+            for f in files:
+                open(os.path.join(d, f), "w", encoding="utf-8").close()
+        models, _warnings = sm.collect_models([os.path.join(self.tmp, "gc")])
+        self.assertEqual([(m["method"], m["model_kind"], m["primary"]) for m in models],
+                         [("cryoatom1", "cryoatom1", True), ("cryoatom1", "cryoatom1_raw", False), ("cryozeta", "cryozeta", True), ("cryozeta", "cryozeta_s1", False)])
 
     def test_models_are_collected_from_result_folders_and_the_last_folder_wins(self):
         for root, entry, files in (("gb1", "9T5K", ["9T5K_e3_prealign.pdb"]), ("gb1", "26DK", ["26DK_e3_prealign.pdb"]), ("gb2", "9T5K", ["9T5K_e3_prealign.pdb"])):

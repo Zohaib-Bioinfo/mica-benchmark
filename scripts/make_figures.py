@@ -25,9 +25,9 @@ from matplotlib.patches import Patch, Rectangle                    # noqa: E402
 import analyze_results as A                                        # noqa: E402
 
 INK, INK2, MUTED, GRID, AXIS, SURFACE = "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7", "#ffffff"
-COLORS = {"mica": "#2a78d6", "modelangelo": "#eb6834", "emodelx": "#1baf7a", "emprot": "#eda100", "e3": "#e87ba4"}
-MARKERS = {"mica": "o", "modelangelo": "s", "emodelx": "^", "emprot": "D", "e3": "v"}
-SHORT = {"mica": "MICA", "modelangelo": "ModelAngelo", "emodelx": "EModelX(+AF)", "emprot": "EMProt", "e3": "E3-CryoFold"}
+COLORS = {"mica": "#2a78d6", "modelangelo": "#eb6834", "emodelx": "#1baf7a", "emprot": "#eda100", "e3": "#e87ba4", "cryoatom1": "#7c5cc4", "cryozeta": "#8c6d4f"}
+MARKERS = {"mica": "o", "modelangelo": "s", "emodelx": "^", "emprot": "D", "e3": "v", "cryoatom1": "P", "cryozeta": "X"}
+SHORT = {"mica": "MICA", "modelangelo": "ModelAngelo", "emodelx": "EModelX(+AF)", "emprot": "EMProt", "e3": "E3-CryoFold", "cryoatom1": "CryoAtom", "cryozeta": "CryoZeta"}
 BLUES = ["#e8f1fc", "#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#2a78d6", "#256abf", "#1c5cab", "#184f95", "#0d366b"]     # sequential, light to dark
 STATUS = {"model": "#0ca30c", "failed": "#d03b3b", "unscorable": "#ec835a", "not_run": "#c3c2b7"}
 STATUS_LABEL = {"model": "model scored", "failed": "failed", "unscorable": "model missing or unusable", "not_run": "not run (no result)"}
@@ -60,6 +60,28 @@ def tidy(ax, grid="y"):
     if grid:
         ax.grid(axis=grid, zorder=0)
         ax.set_axisbelow(True)
+
+
+def panel_grid(n, panel_w, panel_h, extra_w=0.4):
+    """One row of panels for up to four, else a grid of three or four columns, so that the panels stay readable when methods are added.
+    Returns the figure, the n visible axes in reading order and the number of columns; tick labels stay on the left column and on the lowest panel of each column."""
+    ncols = n if n <= 4 else (3 if n <= 6 else 4)
+    nrows = math.ceil(n / ncols)
+    fig, grid = plt.subplots(nrows, ncols, figsize=(panel_w * ncols + extra_w, panel_h * nrows), sharex=True, sharey=True, squeeze=False)
+    flat = list(grid.flat)
+    for ax in flat[n:]:
+        ax.set_visible(False)
+    for i, ax in enumerate(flat[:n]):
+        ax.tick_params(labelleft=(i % ncols == 0), labelbottom=(i + ncols >= n))
+    return fig, flat[:n], ncols
+
+
+def label_grid(axes, ncols, xlabel, ylabel, fontsize):
+    for i, ax in enumerate(axes):
+        if i % ncols == 0:
+            ax.set_ylabel(ylabel, fontsize=fontsize)
+        if i + ncols >= len(axes):
+            ax.set_xlabel(xlabel, fontsize=fontsize)
 
 
 def read(results, name):
@@ -177,25 +199,24 @@ def fig_pairs(results, out, column="tm_score", name="fig3_tm_score_pairs", label
     if A.REFERENCE not in w.columns:
         return None
     methods = [x for x in A.METHODS if x != A.REFERENCE and x in w.columns]
-    fig, axes = plt.subplots(1, len(methods), figsize=(2.15 * len(methods) + 0.4, 2.55), sharex=True, sharey=True)
-    axes = np.atleast_1d(axes)
+    fig, axes, ncols = panel_grid(len(methods), 2.15, 2.55)
     for ax, meth in zip(axes, methods):
         d = w[[A.REFERENCE, meth]].dropna()
         ax.plot([0, 1], [0, 1], color=AXIS, linewidth=0.9, zorder=1)
         ax.scatter(d[A.REFERENCE], d[meth], s=30, marker=MARKERS[meth], color=COLORS[meth], edgecolor=SURFACE, linewidth=0.9, zorder=3)
         far = (d[meth] - d[A.REFERENCE]).abs().sort_values(ascending=False).head(3)
-        offsets = [(5, -2), (5, -10), (-4, 6)]
-        for k, e in enumerate([e for e in far.index if far[e] >= 0.3]):
+        labelled = sorted([e for e in far.index if far[e] >= 0.3], key=lambda e: -d.loc[e, meth])      # the highest point gets the highest label, so that the labels of close points do not overlap
+        offsets = [(5, 2), (5, -6), (5, -14)]
+        for k, e in enumerate(labelled):
             x, y = d.loc[e, A.REFERENCE], d.loc[e, meth]
-            ax.annotate(e, (x, y), xytext=offsets[k], textcoords="offset points", fontsize=6, color=INK2, ha="left" if offsets[k][0] > 0 else "right")
+            ax.annotate(e, (x, y), xytext=offsets[k], textcoords="offset points", fontsize=6, color=INK2, ha="left")
         above, below = int((d[meth] > d[A.REFERENCE]).sum()), int((d[meth] < d[A.REFERENCE]).sum())
         ax.set_title("%s (n = %d)\n%d above, %d below the line" % (SHORT[meth], len(d), above, below), loc="left", fontsize=8)
         ax.set_xlim(-0.02, 1.02)
         ax.set_ylim(-0.02, 1.02)
         ax.set_aspect("equal")
-        ax.set_xlabel("MICA %s" % label, fontsize=7.5)
         tidy(ax, "both")
-    axes[0].set_ylabel("method %s" % label, fontsize=7.5)
+    label_grid(axes, ncols, "MICA %s" % label, "method %s" % label, 7.5)
     fig.tight_layout()
     return save(fig, out, name)
 
@@ -319,8 +340,7 @@ def fig_fragmentation(results, out):
         return None
     m = m[m["status"] == "model"]
     methods = [x for x in A.METHODS if x in set(m["method"])]
-    fig, axes = plt.subplots(1, len(methods), figsize=(1.9 * len(methods) + 0.5, 2.3), sharex=True, sharey=True)
-    axes = np.atleast_1d(axes)
+    fig, axes, ncols = panel_grid(len(methods), 2.0, 2.3, extra_w=0.5)
     for ax, meth in zip(axes, methods):
         d = m[m["method"] == meth][["tm_score", "tm_score_fns"]].dropna()
         ax.plot([0, 1], [0, 1], color=AXIS, linewidth=0.9, zorder=1)
@@ -329,9 +349,8 @@ def fig_fragmentation(results, out):
         ax.set_xlim(-0.02, 1.02)
         ax.set_ylim(-0.02, 1.02)
         ax.set_aspect("equal")
-        ax.set_xlabel("TM-score, chain by chain", fontsize=7)
         tidy(ax, "both")
-    axes[0].set_ylabel("TM-score, fragment-agnostic", fontsize=7)
+    label_grid(axes, ncols, "TM-score, chain by chain", "TM-score, fragment-agnostic", 7)
     fig.tight_layout()
     return save(fig, out, "figA2_fragmentation")
 
@@ -342,16 +361,14 @@ def fig_resolution(results, out):
         return None
     m = m[m["status"] == "model"]
     methods = [x for x in A.METHODS if x in set(m["method"])]
-    fig, axes = plt.subplots(1, len(methods), figsize=(1.9 * len(methods) + 0.5, 2.3), sharex=True, sharey=True)
-    axes = np.atleast_1d(axes)
+    fig, axes, ncols = panel_grid(len(methods), 2.0, 2.3, extra_w=0.5)
     for ax, meth in zip(axes, methods):
         d = m[m["method"] == meth][["resolution_A", "tm_score"]].dropna()
         ax.scatter(d["resolution_A"], d["tm_score"], s=22, marker=MARKERS[meth], color=COLORS[meth], edgecolor=SURFACE, linewidth=0.8, zorder=3)
         ax.set_title(SHORT[meth], loc="left")
         ax.set_ylim(-0.02, 1.02)
-        ax.set_xlabel("resolution (Å)", fontsize=7)
         tidy(ax, "y")
-    axes[0].set_ylabel("TM-score", fontsize=7)
+    label_grid(axes, ncols, "resolution (Å)", "TM-score", 7)
     fig.tight_layout()
     return save(fig, out, "figA3_resolution")
 

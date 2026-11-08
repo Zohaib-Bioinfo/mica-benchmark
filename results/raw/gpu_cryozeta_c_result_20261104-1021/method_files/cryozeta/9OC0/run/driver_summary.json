@@ -1,0 +1,63 @@
+{
+  "name": "9OC0",
+  "status": "failed",
+  "failed_stage": "detection",
+  "note": "detection: exit code -9",
+  "settings": {
+    "seed": 101,
+    "n_sample": 5,
+    "n_step": 20,
+    "n_cycle": 10,
+    "num_select": 5,
+    "dtype": "bf16",
+    "kernels": "off",
+    "chunk_sizes": [
+      256,
+      64,
+      16,
+      4
+    ]
+  },
+  "stages": [
+    {
+      "stage": "detection",
+      "rc": -9,
+      "seconds": 621.9,
+      "gpu_peak_mb": 3443,
+      "gpu_total_mb": 15360,
+      "oom": false
+    }
+  ],
+  "attempts": [],
+  "input": {
+    "chains": [
+      {
+        "chain": 1,
+        "length": 847,
+        "copies": 2,
+        "n_uniref_hits": 5037,
+        "n_env_hits": 2850,
+        "ticket": "gbmmMSY8AgcaD9R_hfpkY_Z8UuYJlRFCTadZEg",
+        "msa_dir": "/tmp/mica_pilot/input/9OC0/cryozeta_msa/chain1"
+      },
+      {
+        "chain": 2,
+        "length": 862,
+        "copies": 2,
+        "n_uniref_hits": 5728,
+        "n_env_hits": 2443,
+        "ticket": "TS9qe9f_w7s-eDqC8QQXQRre8_ItOYwnmdLOEQ",
+        "msa_dir": "/tmp/mica_pilot/input/9OC0/cryozeta_msa/chain2"
+      }
+    ],
+    "contour_level": 0.066,
+    "contour_level_source": "https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-70305/header/emd-70305.xml"
+  },
+  "seconds": 1007.3,
+  "final_settings": {
+    "dtype": "bf16",
+    "chunk_index": 0,
+    "chunk_size": 256
+  },
+  "gpu_peak_mb": 3443
+}

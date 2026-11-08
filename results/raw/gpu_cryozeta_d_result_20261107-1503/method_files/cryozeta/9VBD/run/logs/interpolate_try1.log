@@ -1,0 +1,23 @@
+$ /tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/bin/cryozeta-inference --seeds 101 --load_checkpoint_path /tmp/mica_pilot/cryozeta_assets/cryozeta-interpolate-v0.0.1.safetensors --em_file_dir /tmp/mica_pilot/runs/cryozeta/9VBD --dump_dir /tmp/mica_pilot/runs/cryozeta/9VBD --input_json_path /tmp/mica_pilot/input/9VBD/cryozeta_input.json --use_deepspeed_evo_attention false --use_cuequivariance_attention false --use_cuequivariance_multiplicative_update false --use_cuequivariance_attention_pair_bias false --use_opm_tilelang false --model.N_cycle 10 --sample_diffusion.N_sample 5 --sample_diffusion.N_step 20 --data.num_dl_workers 1 --use_interpolation true --overwrite true --dtype bf16 --infer_setting.chunk_size 64
+2026-11-07 07:55:49.042 | INFO     | cryozeta.runner.inference:init_env:53 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-07 07:55:49.042 | INFO     | cryozeta.runner.inference:print:161 - Distributed environment: world size: 1, global rank: 0, local rank: 0
+2026-11-07 07:55:49.042 | INFO     | cryozeta.runner.inference:init_env:72 - LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]
+2026-11-07 07:55:49.043 | INFO     | cryozeta.runner.inference:init_env:96 - Finished init ENV.
+inference scheduler 16.0
+Diffusion Module has 16.0
+2026-11-07 07:56:09.830 | INFO     | cryozeta.runner.inference:print:161 - Loading from /tmp/mica_pilot/cryozeta_assets/cryozeta-interpolate-v0.0.1.safetensors
+2026-11-07 07:56:20.831 | INFO     | cryozeta.runner.inference:print:161 - Finish loading checkpoint.
+2026-11-07 07:56:20.852 | INFO     | cryozeta.runner.inference:main:200 - Loading data from
+/tmp/mica_pilot/input/9VBD/cryozeta_input.json
+2026-11-07 07:56:20.854 | INFO     | cryozeta.data.infer_data_pipeline:__getitem__:269 - Featurizing 9VBD...
+2026-11-07 07:56:31.216 | INFO     | cryozeta.data.data_transforms_em:parse_mrc:132 - has_interpolate_confidence: True
+2026-11-07 07:56:36.215 | INFO     | cryozeta.runner.inference:main:243 - [Rank 0 (1/1)] 9VBD: N_asym 1, N_token 893, N_atom 6921, N_msa 9426
+
+EMPairformer cycles:   0%|          | 0/10 [00:00<?, ?it/s]
+EMPairformer cycles:  10%|█         | 1/10 [18:11<2:43:43, 1091.51s/it]
+EMPairformer cycles:  20%|██        | 2/10 [36:46<2:27:23, 1105.45s/it]
+EMPairformer cycles:  30%|███       | 3/10 [55:23<2:09:33, 1110.44s/it]
+EMPairformer cycles:  40%|████      | 4/10 [1:13:58<1:51:15, 1112.54s/it]
+EMPairformer cycles:  50%|█████     | 5/10 [1:32:34<1:32:48, 1113.63s/it]
+EMPairformer cycles:  60%|██████    | 6/10 [1:51:10<1:14:17, 1114.37s/it]
+EMPairformer cycles:  70%|███████   | 7/10 [2:09:44<55:43, 1114.35s/it]  

@@ -1,0 +1,33 @@
+$ /tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/bin/cryozeta-detection json-run /tmp/mica_pilot/input/9VUH/cryozeta_input.json /tmp/mica_pilot/runs/cryozeta/9VUH --device cuda --checkpoint-path /tmp/mica_pilot/cryozeta_assets/cryozeta-detection-v0.0.1.safetensors
+2026-11-07 05:03:09.158 | INFO     | cryozeta.runner.inference_detection:__init__:359 - Using device: cuda
+2026-11-07 05:03:09.177 | INFO     | cryozeta.runner.inference_detection:__init__:360 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-07 05:03:09.177 | INFO     | cryozeta.runner.inference_detection:__init__:367 - Loading models...
+2026-11-07 05:03:09.840 | INFO     | cryozeta.runner.inference_detection:__init__:375 - Models loaded successfully
+2026-11-07 05:03:09.841 | INFO     | cryozeta.runner.inference_detection:json_run:817 - [batch 1/1] Processing /tmp/mica_pilot/input/9VUH/emd_65363.mrc
+2026-11-07 05:03:09.841 | INFO     | cryozeta.runner.inference_detection:run_inference:441 - Running inference for 9VUH
+2026-11-07 05:03:09.841 | INFO     | cryozeta.runner.inference_detection:run_inference:446 - Using resolution for 9VUH: 2.7
+2026-11-07 05:03:09.841 | INFO     | cryozeta.runner.inference_detection:preprocess_map:379 - Preprocessing map from /tmp/mica_pilot/input/9VUH/emd_65363.mrc
+2026-11-07 05:03:10.086 | INFO     | cryozeta.runner.inference_detection:preprocess_map:391 - Using contour level for 9VUH: 0.0144
+2026-11-07 05:03:11.057 | INFO     | cryozeta.runner.inference_detection:preprocess_map:410 - Finished preprocessing, shape: torch.Size([1, 1, 91, 92, 102])
+2026-11-07 05:03:11.060 | INFO     | cryozeta.runner.inference_detection:run_inference:460 - Start inference for 9VUH
+2026-11-07 05:03:11.088 | INFO     | cryozeta.em.utils:sliding_window_inference:282 - Input tensor shape: 91/92/102
+2026-11-07 05:03:11.309 | INFO     | cryozeta.em.utils:sliding_window_inference:334 - Number of non-empty ROIs / All possible ROIs: 12 / 12
+
+Processing inference:   0%|          | 0/3 [00:00<?, ?it/s]
+Processing inference:  33%|███▎      | 1/3 [00:02<00:05,  2.59s/it]
+Processing inference:  67%|██████▋   | 2/3 [00:04<00:02,  2.35s/it]
+Processing inference: 100%|██████████| 3/3 [00:06<00:00,  2.27s/it]
+Processing inference: 100%|██████████| 3/3 [00:06<00:00,  2.31s/it]
+2026-11-07 05:03:22.694 | INFO     | cryozeta.runner.inference_detection:post_process:144 - Post-processing 9VUH...
+MeanShift++ Converged at 11 steps.
+2026-11-07 05:03:25.886 | INFO     | cryozeta.runner.inference_detection:post_process:207 - [9VUH] Number of CA indices: 638
+MeanShift++ Converged at 51 steps.
+2026-11-07 05:03:25.952 | INFO     | cryozeta.runner.inference_detection:post_process:261 - [9VUH] Number of protein CA clusters: 3
+2026-11-07 05:03:25.952 | WARNING  | cryozeta.runner.inference_detection:post_process:272 - No R/DNA C1P indices found for 9VUH
+2026-11-07 05:03:25.952 | INFO     | cryozeta.runner.inference_detection:post_process:274 - [9VUH] Number of clusters: 3
+2026-11-07 05:03:25.958 | INFO     | cryozeta.runner.inference_detection:post_process:284 - [9VUH] Main atom prob shape: torch.Size([3, 91, 92, 102])
+2026-11-07 05:03:25.958 | INFO     | cryozeta.runner.inference_detection:post_process:288 - [9VUH] voxel_size: [1. 1. 1.], global_origin: [46. 49. 46.]
+2026-11-07 05:03:25.958 | INFO     | cryozeta.runner.inference_detection:post_process:292 - [9VUH] main_atom_coords shape: (638, 3)
+2026-11-07 05:03:26.191 | INFO     | cryozeta.runner.inference_detection:post_process:350 - [9VUH] Saved output to /tmp/mica_pilot/runs/cryozeta/9VUH/9VUH/CryoZeta-Detection/9VUH.pt
+2026-11-07 05:03:26.191 | INFO     | cryozeta.runner.inference_detection:run_inference:586 - Completed inference for 9VUH
+Batch inference completed. Results saved to /tmp/mica_pilot/runs/cryozeta/9VUH

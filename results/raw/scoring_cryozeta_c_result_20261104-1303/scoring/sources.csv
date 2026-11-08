@@ -1,0 +1,3 @@
+label,kind,path,bytes,sha256,model_files
+gpu_cryozeta_c_result_20261104-1021,zip,/kaggle/input/notebooks/faltuaccounts/gpu-cryozeta-c/gpu_cryozeta_c_result_20261104-1021.zip,1526247,d05bed7397cdb18cbf7e453c77b58e087557fdfc9df1b5222e6f6b964958abb2,15
+pilot,folder,/kaggle/input/notebooks/faltuaccounts/gpu-cryozeta-c/pilot,,,15

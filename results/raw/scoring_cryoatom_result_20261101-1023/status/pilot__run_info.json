@@ -1,0 +1,1339 @@
+{
+  "notebook": "gpu_cryoatom_a",
+  "started_utc": "2026-10-31T17:40:22.593896+00:00",
+  "finished_utc": "2026-11-01T02:27:40.239123+00:00",
+  "elapsed_minutes": 527,
+  "problem": "",
+  "complete": true,
+  "platform": "kaggle",
+  "python": "3.13.15",
+  "os": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+  "cpu_cores": 4,
+  "ram_gb": 31.3,
+  "state": {
+    "ok": true,
+    "problem": "",
+    "t0": 1793468422.5938933,
+    "started": "2026-10-31T17:40:22.593896+00:00",
+    "phenix_env": null,
+    "phenix_version": "",
+    "installer_sha256": "",
+    "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+    "usalign_version": "* US-align (Version 20261012)                                      *",
+    "weights": {},
+    "env": {},
+    "entries": {},
+    "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+    "cpu_facts": {
+      "os.cpu_count": 4,
+      "multiprocessing.cpu_count": 4,
+      "usable (sched_getaffinity)": 4,
+      "nproc": "4",
+      "cgroup v2 cpu.max": "400000 100000",
+      "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+      "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+    },
+    "methods": {
+      "cryoatom1": {
+        "key": "cryoatom1",
+        "label": "CryoAtom v1.0.0 (code of the paper)",
+        "commit": "e2a31f2b2ff21fae363490ac5f4a5e945513024c",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 132,
+        "entries": {
+          "9T5K": {
+            "entry": "9T5K",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 13459,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.28,
+                "samples": 1018,
+                "rc": 0,
+                "seconds": 5132,
+                "timed_out": false,
+                "started": 1793468666.6048682,
+                "ended": 1793473798.1523466,
+                "gpu": 0,
+                "limit_s": 36000,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T17:44:26Z",
+                "ended_utc": "2026-10-31T19:09:58Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9657,
+                "tm_score_pred_norm": 0.9811,
+                "ca_rmsd": 0.65,
+                "aligned_ca_length": 370,
+                "seq_identity": 0.997,
+                "pred_residues": 375,
+                "native_residues": 381,
+                "coverage": 0.9843,
+                "method": "cryoatom1",
+                "entry": "9T5K",
+                "model_kind": "cryoatom1",
+                "model_file": "9T5K_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.2772,
+                "tm_score_pred_norm": 0.9613,
+                "ca_rmsd": 0.42,
+                "aligned_ca_length": 106,
+                "seq_identity": 1.0,
+                "pred_residues": 109,
+                "native_residues": 381,
+                "coverage": 0.2861,
+                "method": "cryoatom1",
+                "entry": "9T5K",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9T5K_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-31T17:43:17Z",
+            "seconds": 5202
+          },
+          "9WQ6": {
+            "entry": "9WQ6",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 13267,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.39,
+                "samples": 235,
+                "rc": 0,
+                "seconds": 1183,
+                "timed_out": false,
+                "started": 1793468769.7345788,
+                "ended": 1793469953.1066904,
+                "gpu": 1,
+                "limit_s": 36000,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T17:46:09Z",
+                "ended_utc": "2026-10-31T18:05:53Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.5321,
+                "tm_score_pred_norm": 0.9173,
+                "ca_rmsd": 0.78,
+                "aligned_ca_length": 141,
+                "seq_identity": 0.787,
+                "pred_residues": 150,
+                "native_residues": 261,
+                "coverage": 0.5747,
+                "method": "cryoatom1",
+                "entry": "9WQ6",
+                "model_kind": "cryoatom1",
+                "model_file": "9WQ6_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.5321,
+                "tm_score_pred_norm": 0.8997,
+                "ca_rmsd": 0.78,
+                "aligned_ca_length": 141,
+                "seq_identity": 0.787,
+                "pred_residues": 153,
+                "native_residues": 261,
+                "coverage": 0.5862,
+                "method": "cryoatom1",
+                "entry": "9WQ6",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9WQ6_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T17:43:17Z",
+            "seconds": 1356
+          },
+          "22FX": {
+            "entry": "22FX",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 13267,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.29,
+                "samples": 552,
+                "rc": 0,
+                "seconds": 2780,
+                "timed_out": false,
+                "started": 1793470278.6014245,
+                "ended": 1793473058.8526216,
+                "gpu": 1,
+                "limit_s": 36000,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T18:11:18Z",
+                "ended_utc": "2026-10-31T18:57:38Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9994,
+                "tm_score_pred_norm": 0.9936,
+                "ca_rmsd": 0.12,
+                "aligned_ca_length": 173,
+                "seq_identity": 1.0,
+                "pred_residues": 174,
+                "native_residues": 173,
+                "coverage": 1.0058,
+                "method": "cryoatom1",
+                "entry": "22FX",
+                "model_kind": "cryoatom1",
+                "model_file": "22FX_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9994,
+                "tm_score_pred_norm": 0.9936,
+                "ca_rmsd": 0.12,
+                "aligned_ca_length": 173,
+                "seq_identity": 1.0,
+                "pred_residues": 174,
+                "native_residues": 173,
+                "coverage": 1.0058,
+                "method": "cryoatom1",
+                "entry": "22FX",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "22FX_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T18:05:53Z",
+            "seconds": 3106
+          },
+          "9V4D": {
+            "entry": "9V4D",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 13267,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.4,
+                "samples": 147,
+                "rc": 0,
+                "seconds": 738,
+                "timed_out": false,
+                "started": 1793473061.7243245,
+                "ended": 1793473799.6206224,
+                "gpu": 1,
+                "limit_s": 34361,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T18:57:41Z",
+                "ended_utc": "2026-10-31T19:09:59Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9592,
+                "tm_score_pred_norm": 0.9592,
+                "ca_rmsd": 0.96,
+                "aligned_ca_length": 261,
+                "seq_identity": 0.981,
+                "pred_residues": 267,
+                "native_residues": 267,
+                "coverage": 0.9674,
+                "method": "cryoatom1",
+                "entry": "9V4D",
+                "model_kind": "cryoatom1",
+                "model_file": "9V4D_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0112,
+                "tm_score_pred_norm": 0.9692,
+                "ca_rmsd": 0.09,
+                "aligned_ca_length": 3,
+                "seq_identity": 0.0,
+                "pred_residues": 3,
+                "native_residues": 267,
+                "coverage": 0.0109,
+                "method": "cryoatom1",
+                "entry": "9V4D",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9V4D_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T18:57:39Z",
+            "seconds": 741
+          },
+          "9JKK": {
+            "entry": "9JKK",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 14107,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.34,
+                "samples": 107,
+                "rc": 0,
+                "seconds": 536,
+                "timed_out": false,
+                "started": 1793473838.962861,
+                "ended": 1793474374.7985582,
+                "gpu": 0,
+                "limit_s": 33584,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T19:10:38Z",
+                "ended_utc": "2026-10-31T19:19:34Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9954,
+                "tm_score_pred_norm": 0.9628,
+                "ca_rmsd": 0.44,
+                "aligned_ca_length": 529,
+                "seq_identity": 1.0,
+                "pred_residues": 548,
+                "native_residues": 530,
+                "coverage": 1.034,
+                "method": "cryoatom1",
+                "entry": "9JKK",
+                "model_kind": "cryoatom1",
+                "model_file": "9JKK_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.2187,
+                "tm_score_pred_norm": 0.9403,
+                "ca_rmsd": 1.03,
+                "aligned_ca_length": 117,
+                "seq_identity": 0.983,
+                "pred_residues": 122,
+                "native_residues": 530,
+                "coverage": 0.2302,
+                "method": "cryoatom1",
+                "entry": "9JKK",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9JKK_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-31T19:09:59Z",
+            "seconds": 578
+          },
+          "9OTA": {
+            "entry": "9OTA",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 13139,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.33,
+                "samples": 128,
+                "rc": 0,
+                "seconds": 641,
+                "timed_out": false,
+                "started": 1793473873.4315991,
+                "ended": 1793474514.8534296,
+                "gpu": 1,
+                "limit_s": 33549,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T19:11:13Z",
+                "ended_utc": "2026-10-31T19:21:54Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9481,
+                "tm_score_pred_norm": 0.9808,
+                "ca_rmsd": 1.02,
+                "aligned_ca_length": 258,
+                "seq_identity": 0.992,
+                "pred_residues": 258,
+                "native_residues": 267,
+                "coverage": 0.4831,
+                "method": "cryoatom1",
+                "entry": "9OTA",
+                "model_kind": "cryoatom1",
+                "model_file": "9OTA_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0149,
+                "tm_score_pred_norm": 0.5414,
+                "ca_rmsd": 0.51,
+                "aligned_ca_length": 4,
+                "seq_identity": 0.0,
+                "pred_residues": 4,
+                "native_residues": 267,
+                "coverage": 0.0075,
+                "method": "cryoatom1",
+                "entry": "9OTA",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9OTA_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T19:10:00Z",
+            "seconds": 715
+          },
+          "9TKA": {
+            "entry": "9TKA",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 13267,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.36,
+                "samples": 104,
+                "rc": 0,
+                "seconds": 522,
+                "timed_out": false,
+                "started": 1793474504.1686676,
+                "ended": 1793475026.604336,
+                "gpu": 0,
+                "limit_s": 32918,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T19:21:44Z",
+                "ended_utc": "2026-10-31T19:30:26Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9981,
+                "tm_score_pred_norm": 0.9745,
+                "ca_rmsd": 0.26,
+                "aligned_ca_length": 247,
+                "seq_identity": 1.0,
+                "pred_residues": 253,
+                "native_residues": 247,
+                "coverage": 1.0243,
+                "method": "cryoatom1",
+                "entry": "9TKA",
+                "model_kind": "cryoatom1",
+                "model_file": "9TKA_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0606,
+                "tm_score_pred_norm": 0.6613,
+                "ca_rmsd": 0.26,
+                "aligned_ca_length": 15,
+                "seq_identity": 1.0,
+                "pred_residues": 19,
+                "native_residues": 247,
+                "coverage": 0.0769,
+                "method": "cryoatom1",
+                "entry": "9TKA",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9TKA_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-31T19:19:36Z",
+            "seconds": 651
+          },
+          "9KQM": {
+            "entry": "9KQM",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 14149,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.36,
+                "samples": 118,
+                "rc": 0,
+                "seconds": 595,
+                "timed_out": false,
+                "started": 1793474562.9718945,
+                "ended": 1793475157.9825983,
+                "gpu": 1,
+                "limit_s": 32860,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T19:22:42Z",
+                "ended_utc": "2026-10-31T19:32:37Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.2468,
+                "tm_score_pred_norm": 0.9634,
+                "ca_rmsd": 0.56,
+                "aligned_ca_length": 100,
+                "seq_identity": 1.0,
+                "pred_residues": 102,
+                "native_residues": 403,
+                "coverage": 0.2531,
+                "method": "cryoatom1",
+                "entry": "9KQM",
+                "model_kind": "cryoatom1",
+                "model_file": "9KQM_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.2483,
+                "tm_score_pred_norm": 0.9311,
+                "ca_rmsd": 0.83,
+                "aligned_ca_length": 101,
+                "seq_identity": 0.98,
+                "pred_residues": 106,
+                "native_residues": 403,
+                "coverage": 0.263,
+                "method": "cryoatom1",
+                "entry": "9KQM",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9KQM_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T19:21:55Z",
+            "seconds": 643
+          },
+          "9WFL": {
+            "entry": "9WFL",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 13065,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.34,
+                "samples": 139,
+                "rc": 0,
+                "seconds": 701,
+                "timed_out": false,
+                "started": 1793475065.6625278,
+                "ended": 1793475766.3241916,
+                "gpu": 0,
+                "limit_s": 32357,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T19:31:05Z",
+                "ended_utc": "2026-10-31T19:42:46Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9982,
+                "tm_score_pred_norm": 0.9502,
+                "ca_rmsd": 0.38,
+                "aligned_ca_length": 653,
+                "seq_identity": 0.998,
+                "pred_residues": 686,
+                "native_residues": 653,
+                "coverage": 1.0059,
+                "method": "cryoatom1",
+                "entry": "9WFL",
+                "model_kind": "cryoatom1",
+                "model_file": "9WFL_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0091,
+                "tm_score_pred_norm": 0.4559,
+                "ca_rmsd": 0.67,
+                "aligned_ca_length": 6,
+                "seq_identity": 0.167,
+                "pred_residues": 9,
+                "native_residues": 653,
+                "coverage": 0.0132,
+                "method": "cryoatom1",
+                "entry": "9WFL",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9WFL_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-31T19:30:27Z",
+            "seconds": 742
+          },
+          "9WME": {
+            "entry": "9WME",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 14213,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.33,
+                "samples": 130,
+                "rc": 0,
+                "seconds": 652,
+                "timed_out": false,
+                "started": 1793475177.1351457,
+                "ended": 1793475829.0739071,
+                "gpu": 1,
+                "limit_s": 32245,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T19:32:57Z",
+                "ended_utc": "2026-10-31T19:43:49Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.7968,
+                "tm_score_pred_norm": 0.9704,
+                "ca_rmsd": 1.34,
+                "aligned_ca_length": 359,
+                "seq_identity": 0.997,
+                "pred_residues": 359,
+                "native_residues": 439,
+                "coverage": 0.8049,
+                "method": "cryoatom1",
+                "entry": "9WME",
+                "model_kind": "cryoatom1",
+                "model_file": "9WME_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.3554,
+                "tm_score_pred_norm": 0.9145,
+                "ca_rmsd": 1.48,
+                "aligned_ca_length": 160,
+                "seq_identity": 0.95,
+                "pred_residues": 167,
+                "native_residues": 439,
+                "coverage": 0.3744,
+                "method": "cryoatom1",
+                "entry": "9WME",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9WME_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T19:32:38Z",
+            "seconds": 672
+          },
+          "9VI4": {
+            "entry": "9VI4",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 13723,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 9.98,
+                "samples": 4696,
+                "rc": 0,
+                "seconds": 23697,
+                "timed_out": false,
+                "started": 1793476351.646966,
+                "ended": 1793500049.0274053,
+                "gpu": 0,
+                "limit_s": 31071,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T19:52:31Z",
+                "ended_utc": "2026-11-01T02:27:29Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.3699,
+                "tm_score_pred_norm": 0.9986,
+                "ca_rmsd": 0.2,
+                "aligned_ca_length": 191,
+                "seq_identity": 1.0,
+                "pred_residues": 191,
+                "native_residues": 516,
+                "coverage": 0.3702,
+                "method": "cryoatom1",
+                "entry": "9VI4",
+                "model_kind": "cryoatom1",
+                "model_file": "9VI4_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0078,
+                "tm_score_pred_norm": 0.9803,
+                "ca_rmsd": 0.07,
+                "aligned_ca_length": 4,
+                "seq_identity": 0.25,
+                "pred_residues": 4,
+                "native_residues": 516,
+                "coverage": 0.0078,
+                "method": "cryoatom1",
+                "entry": "9VI4",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9VI4_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-10-31T19:42:49Z",
+            "seconds": 24283
+          },
+          "9VBD": {
+            "entry": "9VBD",
+            "method": "cryoatom1",
+            "status": "failed",
+            "failed_step": "build",
+            "note": "out of GPU memory (exit code 1; the error message of the program); the model file 9VBD_cryoatom1.cif was not written",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 10357,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 17.69,
+                "samples": 29,
+                "rc": 1,
+                "seconds": 144,
+                "timed_out": false,
+                "started": 1793476445.4963675,
+                "ended": 1793476589.5386624,
+                "gpu": 1,
+                "limit_s": 30977,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T19:54:05Z",
+                "ended_utc": "2026-10-31T19:56:29Z"
+              }
+            },
+            "models": [],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T19:43:50Z",
+            "seconds": 760
+          },
+          "9ZLH": {
+            "entry": "9ZLH",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 13139,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 12.46,
+                "samples": 494,
+                "rc": 0,
+                "seconds": 2493,
+                "timed_out": false,
+                "started": 1793476618.313271,
+                "ended": 1793479111.5383115,
+                "gpu": 1,
+                "limit_s": 30804,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T19:56:58Z",
+                "ended_utc": "2026-10-31T20:38:31Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9977,
+                "tm_score_pred_norm": 0.9977,
+                "ca_rmsd": 0.26,
+                "aligned_ca_length": 206,
+                "seq_identity": 1.0,
+                "pred_residues": 206,
+                "native_residues": 206,
+                "coverage": 1.0,
+                "method": "cryoatom1",
+                "entry": "9ZLH",
+                "model_kind": "cryoatom1",
+                "model_file": "9ZLH_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0194,
+                "tm_score_pred_norm": 0.7812,
+                "ca_rmsd": 0.27,
+                "aligned_ca_length": 4,
+                "seq_identity": 0.0,
+                "pred_residues": 4,
+                "native_residues": 206,
+                "coverage": 0.0194,
+                "method": "cryoatom1",
+                "entry": "9ZLH",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9ZLH_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T19:56:30Z",
+            "seconds": 2522
+          },
+          "9RWS": {
+            "entry": "9RWS",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 13905,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.3,
+                "samples": 99,
+                "rc": 0,
+                "seconds": 498,
+                "timed_out": false,
+                "started": 1793479188.56079,
+                "ended": 1793479686.723964,
+                "gpu": 1,
+                "limit_s": 28234,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T20:39:48Z",
+                "ended_utc": "2026-10-31T20:48:06Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9921,
+                "tm_score_pred_norm": 0.9769,
+                "ca_rmsd": 0.66,
+                "aligned_ca_length": 511,
+                "seq_identity": 0.988,
+                "pred_residues": 520,
+                "native_residues": 512,
+                "coverage": 1.0156,
+                "method": "cryoatom1",
+                "entry": "9RWS",
+                "model_kind": "cryoatom1",
+                "model_file": "9RWS_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.7866,
+                "tm_score_pred_norm": 0.984,
+                "ca_rmsd": 0.46,
+                "aligned_ca_length": 404,
+                "seq_identity": 0.993,
+                "pred_residues": 409,
+                "native_residues": 512,
+                "coverage": 0.7988,
+                "method": "cryoatom1",
+                "entry": "9RWS",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9RWS_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T20:38:32Z",
+            "seconds": 577
+          },
+          "9VUH": {
+            "entry": "9VUH",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 13145,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.29,
+                "samples": 154,
+                "rc": 0,
+                "seconds": 773,
+                "timed_out": false,
+                "started": 1793479734.9639285,
+                "ended": 1793480508.4431353,
+                "gpu": 1,
+                "limit_s": 27688,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T20:48:54Z",
+                "ended_utc": "2026-10-31T21:01:48Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.2996,
+                "tm_score_pred_norm": 0.3752,
+                "ca_rmsd": 5.25,
+                "aligned_ca_length": 133,
+                "seq_identity": 0.06,
+                "pred_residues": 218,
+                "native_residues": 296,
+                "coverage": 0.3438,
+                "method": "cryoatom1",
+                "entry": "9VUH",
+                "model_kind": "cryoatom1",
+                "model_file": "9VUH_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.275,
+                "tm_score_pred_norm": 0.331,
+                "ca_rmsd": 5.8,
+                "aligned_ca_length": 133,
+                "seq_identity": 0.068,
+                "pred_residues": 226,
+                "native_residues": 296,
+                "coverage": 0.3565,
+                "method": "cryoatom1",
+                "entry": "9VUH",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9VUH_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T20:48:10Z",
+            "seconds": 820
+          },
+          "9WTX": {
+            "entry": "9WTX",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 14033,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.27,
+                "samples": 154,
+                "rc": 0,
+                "seconds": 777,
+                "timed_out": false,
+                "started": 1793480591.1374776,
+                "ended": 1793481368.1749394,
+                "gpu": 1,
+                "limit_s": 26831,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T21:03:11Z",
+                "ended_utc": "2026-10-31T21:16:08Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.6057,
+                "tm_score_pred_norm": 0.972,
+                "ca_rmsd": 1.26,
+                "aligned_ca_length": 309,
+                "seq_identity": 0.997,
+                "pred_residues": 309,
+                "native_residues": 500,
+                "coverage": 0.618,
+                "method": "cryoatom1",
+                "entry": "9WTX",
+                "model_kind": "cryoatom1",
+                "model_file": "9WTX_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.4324,
+                "tm_score_pred_norm": 0.8954,
+                "ca_rmsd": 0.96,
+                "aligned_ca_length": 219,
+                "seq_identity": 0.913,
+                "pred_residues": 239,
+                "native_residues": 500,
+                "coverage": 0.478,
+                "method": "cryoatom1",
+                "entry": "9WTX",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "9WTX_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T21:01:50Z",
+            "seconds": 860
+          },
+          "9OC0": {
+            "entry": "9OC0",
+            "method": "cryoatom1",
+            "status": "failed",
+            "failed_step": "build",
+            "note": "out of GPU memory (exit code 1; the error message of the program); the model file 9OC0_cryoatom1.cif was not written",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 13787,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 15.11,
+                "samples": 51,
+                "rc": 1,
+                "seconds": 253,
+                "timed_out": false,
+                "started": 1793481531.487473,
+                "ended": 1793481784.2823787,
+                "gpu": 1,
+                "limit_s": 25891,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T21:18:51Z",
+                "ended_utc": "2026-10-31T21:23:04Z"
+              }
+            },
+            "models": [],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T21:16:10Z",
+            "seconds": 415
+          },
+          "9Z24": {
+            "entry": "9Z24",
+            "method": "cryoatom1",
+            "status": "failed",
+            "failed_step": "build",
+            "note": "out of GPU memory (exit code 1; the error message of the program); the model file 9Z24_cryoatom1.cif was not written",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 10549,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.54,
+                "samples": 50,
+                "rc": 1,
+                "seconds": 252,
+                "timed_out": false,
+                "started": 1793481807.2910373,
+                "ended": 1793482058.838166,
+                "gpu": 1,
+                "limit_s": 25615,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T21:23:27Z",
+                "ended_utc": "2026-10-31T21:27:38Z"
+              }
+            },
+            "models": [],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T21:23:05Z",
+            "seconds": 275
+          },
+          "13BD": {
+            "entry": "13BD",
+            "method": "cryoatom1",
+            "status": "failed",
+            "failed_step": "build",
+            "note": "out of GPU memory (exit code 1; the error message of the program); the model file 13BD_cryoatom1.cif was not written",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 10563,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 14.35,
+                "samples": 52,
+                "rc": 1,
+                "seconds": 259,
+                "timed_out": false,
+                "started": 1793482090.3867824,
+                "ended": 1793482349.5121224,
+                "gpu": 1,
+                "limit_s": 25332,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T21:28:10Z",
+                "ended_utc": "2026-10-31T21:32:29Z"
+              }
+            },
+            "models": [],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T21:27:40Z",
+            "seconds": 291
+          },
+          "26DK": {
+            "entry": "26DK",
+            "method": "cryoatom1",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "build": {
+                "peak_gpu_mb": 13267,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 10.17,
+                "samples": 2746,
+                "rc": 0,
+                "seconds": 13861,
+                "timed_out": false,
+                "started": 1793482362.506343,
+                "ended": 1793496223.9829748,
+                "gpu": 1,
+                "limit_s": 25060,
+                "other_gpu_busy": true,
+                "started_utc": "2026-10-31T21:32:42Z",
+                "ended_utc": "2026-11-01T01:23:43Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9661,
+                "tm_score_pred_norm": 0.9711,
+                "ca_rmsd": 0.73,
+                "aligned_ca_length": 188,
+                "seq_identity": 1.0,
+                "pred_residues": 190,
+                "native_residues": 191,
+                "coverage": 0.9948,
+                "method": "cryoatom1",
+                "entry": "26DK",
+                "model_kind": "cryoatom1",
+                "model_file": "26DK_cryoatom1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.0333,
+                "tm_score_pred_norm": 0.2934,
+                "ca_rmsd": 1.82,
+                "aligned_ca_length": 7,
+                "seq_identity": 0.0,
+                "pred_residues": 13,
+                "native_residues": 191,
+                "coverage": 0.0681,
+                "method": "cryoatom1",
+                "entry": "26DK",
+                "model_kind": "cryoatom1_raw",
+                "model_file": "26DK_cryoatom1_raw.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-10-31T21:32:30Z",
+            "seconds": 13875
+          }
+        },
+        "weights": {
+          "src_cryoatom1/CryoAtom/checkpoint/SimpleUnet.pth": 191486651,
+          "src_cryoatom1/CryoAtom/checkpoint/CryNet.pth": 286009033
+        },
+        "source_patch": {
+          "file": "CryoAtom/utils/aa_probs_to_hmm.py",
+          "line_before": "tmp_path = os.path.join(base_dir, f\"CryoAtom_temp.hmm\")",
+          "line_after": "tmp_path = os.path.join(base_dir, f\"CryoAtom_temp_{os.getpid()}.hmm\")",
+          "file_sha256": "f59f71319d1fec2da856c2f9f29435af0ffb9fc3fa48dd1814deb04ec7aff171"
+        },
+        "esm_weights": {
+          "torch_home/hub/checkpoints/esm2_t33_650M_UR50D.pt": 2604537549
+        }
+      }
+    },
+    "complete": true,
+    "pending": []
+  },
+  "methods": {
+    "cryoatom1": {
+      "label": "CryoAtom v1.0.0 (code of the paper)",
+      "commit": "e2a31f2b2ff21fae363490ac5f4a5e945513024c",
+      "status": "ready",
+      "setup_seconds": 132,
+      "version": ""
+    }
+  },
+  "specs": {
+    "cryoatom1": {
+      "key": "cryoatom1",
+      "label": "CryoAtom v1.0.0 (code of the paper)",
+      "repo": "https://github.com/YangLab-SDU/CryoAtom",
+      "commit": "e2a31f2b2ff21fae363490ac5f4a5e945513024c",
+      "python": "3.8.20",
+      "req": "env/cryoatom1_requirements.txt",
+      "timeout": 36000,
+      "uses_af3": false,
+      "pkg": "CryoAtom",
+      "ckpt_files": [
+        "CryNet.pth",
+        "SimpleUnet.pth"
+      ],
+      "cli": [
+        "-s",
+        "{fasta}",
+        "-v",
+        "{map}",
+        "-o",
+        "{out}"
+      ],
+      "weights_url": "https://yanglab.qd.sdu.edu.cn/CryoAtom/download/checkpoints_v1.0.zip",
+      "weights_min_bytes": 50000000,
+      "gdrive_id": null,
+      "import_test": "import sys, torch, numpy, esm, CryoAtom, CryoAtom.build; print('python', sys.version.split()[0], '| torch', torch.__version__, '| cuda', torch.version.cuda, '| numpy', numpy.__version__)",
+      "s_per_residue": 51,
+      "oom_is_result": true,
+      "esm": {
+        "call": "esm2_t33_650M_UR50D",
+        "file": "esm2_t33_650M_UR50D.pt",
+        "min_bytes": 500000000
+      },
+      "main_kind": "cryoatom1"
+    }
+  },
+  "usalign_commit": "746ad8a2a4dea9f317075cc482df0ecb5440bdea",
+  "usalign_version": "* US-align (Version 20261012)                                      *",
+  "input_sha256": {
+    "scripts/nbtools.py": "9bda95fce7f7fbe0c373e315740f555fc27942a08971ce2fe1b5cae6af6d748d",
+    "scripts/mica_inputs.py": "87b7f5e43b86671e09e673e8bb07abb20496ad92264528dfd9994b88bded417f",
+    "scripts/evaluate_models.py": "8c235732d2595f8ad2014d70a278b44097205aff2417c9b5761f55dfe4974250",
+    "data/af3/af3_jobs.csv": "b43068ffed7e3843d0d9c5cfa509d8f1ba9900527a1a0cad9e74aa69573cd4b0",
+    "data/af3/af3_files_sha256.txt": "c131836802f9469c2073cc8c0bbb495e906854ffb223100cf30750714e2e3a4f",
+    "data/entries_2026.csv": "cb695bb04ef09bf48f8c2848f91a2580c0b3c15f2a8f1e580659d86f0097a5da",
+    "env/cryoatom1_requirements.txt": "bd337b7d5207f3359df65ac2080cd2a5674b761bf4d31d1cea7307dad7d10480"
+  },
+  "tasks": [
+    [
+      "9T5K",
+      "cryoatom1"
+    ],
+    [
+      "9WQ6",
+      "cryoatom1"
+    ],
+    [
+      "22FX",
+      "cryoatom1"
+    ],
+    [
+      "9V4D",
+      "cryoatom1"
+    ],
+    [
+      "9JKK",
+      "cryoatom1"
+    ],
+    [
+      "9OTA",
+      "cryoatom1"
+    ],
+    [
+      "9TKA",
+      "cryoatom1"
+    ],
+    [
+      "9KQM",
+      "cryoatom1"
+    ],
+    [
+      "9WFL",
+      "cryoatom1"
+    ],
+    [
+      "9WME",
+      "cryoatom1"
+    ],
+    [
+      "9VI4",
+      "cryoatom1"
+    ],
+    [
+      "9VBD",
+      "cryoatom1"
+    ],
+    [
+      "9ZLH",
+      "cryoatom1"
+    ],
+    [
+      "9RWS",
+      "cryoatom1"
+    ],
+    [
+      "9VUH",
+      "cryoatom1"
+    ],
+    [
+      "9WTX",
+      "cryoatom1"
+    ],
+    [
+      "9OC0",
+      "cryoatom1"
+    ],
+    [
+      "9Z24",
+      "cryoatom1"
+    ],
+    [
+      "13BD",
+      "cryoatom1"
+    ],
+    [
+      "26DK",
+      "cryoatom1"
+    ]
+  ],
+  "hours_setting": 11.0,
+  "run_limit_s": 10800,
+  "lanes": [
+    0,
+    1
+  ]
+}

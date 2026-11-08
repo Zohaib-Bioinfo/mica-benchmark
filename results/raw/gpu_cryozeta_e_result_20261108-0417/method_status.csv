@@ -1,0 +1,4 @@
+method,entry,status,failed_step,note,attempt,gpu,started_utc,seconds,peak_gpu_mb,min_ram_gb,other_gpu_busy,limit_s
+cryozeta,9VUH,failed,run,timeout: the run limit of 21600 s; the model file 9VUH_sample_0.cif was not written,2,0,2026-11-07T17:32:09Z,21600,14543,24.29,False,21600
+cryozeta,9WFL,interrupted,run,stopped by the end of the session after 17039 s; run again in the next session,1,0,2026-11-07T23:32:29Z,17039,13143,16.15,True,17039
+cryozeta,9WME,interrupted,run,stopped by the end of the session after 17022 s; run again in the next session,1,1,2026-11-07T23:32:29Z,17022,14829,15.86,True,17022

@@ -1,0 +1,84 @@
+$ /tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/bin/cryozeta-detection json-run /tmp/mica_pilot/input/22FX/cryozeta_input.json /tmp/mica_pilot/runs/cryozeta/22FX --device cuda --checkpoint-path /tmp/mica_pilot/cryozeta_assets/cryozeta-detection-v0.0.1.safetensors
+2026-11-03 02:50:48.809 | INFO     | cryozeta.runner.inference_detection:__init__:359 - Using device: cuda
+2026-11-03 02:50:48.811 | INFO     | cryozeta.runner.inference_detection:__init__:360 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-03 02:50:48.811 | INFO     | cryozeta.runner.inference_detection:__init__:367 - Loading models...
+2026-11-03 02:50:49.254 | INFO     | cryozeta.runner.inference_detection:__init__:375 - Models loaded successfully
+2026-11-03 02:50:49.255 | INFO     | cryozeta.runner.inference_detection:json_run:817 - [batch 1/1] Processing /tmp/mica_pilot/input/22FX/emd_68251.mrc
+2026-11-03 02:50:49.255 | INFO     | cryozeta.runner.inference_detection:run_inference:441 - Running inference for 22FX
+2026-11-03 02:50:49.255 | INFO     | cryozeta.runner.inference_detection:run_inference:446 - Using resolution for 22FX: 1.24
+2026-11-03 02:50:49.255 | INFO     | cryozeta.runner.inference_detection:preprocess_map:379 - Preprocessing map from /tmp/mica_pilot/input/22FX/emd_68251.mrc
+2026-11-03 02:50:50.077 | INFO     | cryozeta.runner.inference_detection:preprocess_map:391 - Using contour level for 22FX: 0.1
+2026-11-03 02:50:53.553 | INFO     | cryozeta.runner.inference_detection:preprocess_map:410 - Finished preprocessing, shape: torch.Size([1, 1, 224, 224, 224])
+2026-11-03 02:50:53.560 | INFO     | cryozeta.runner.inference_detection:run_inference:460 - Start inference for 22FX
+2026-11-03 02:50:53.654 | INFO     | cryozeta.em.utils:sliding_window_inference:282 - Input tensor shape: 224/224/224
+2026-11-03 02:50:54.978 | INFO     | cryozeta.em.utils:sliding_window_inference:334 - Number of non-empty ROIs / All possible ROIs: 210 / 216
+
+Processing inference:   0%|          | 0/53 [00:00<?, ?it/s]
+Processing inference:   2%|▏         | 1/53 [00:04<03:33,  4.10s/it]
+Processing inference:   4%|▍         | 2/53 [00:06<02:31,  2.98s/it]
+Processing inference:   6%|▌         | 3/53 [00:09<02:30,  3.01s/it]
+Processing inference:   8%|▊         | 4/53 [00:11<02:11,  2.69s/it]
+Processing inference:   9%|▉         | 5/53 [00:13<02:01,  2.54s/it]
+Processing inference:  11%|█▏        | 6/53 [00:16<01:54,  2.44s/it]
+Processing inference:  13%|█▎        | 7/53 [00:18<01:50,  2.41s/it]
+Processing inference:  15%|█▌        | 8/53 [00:21<02:05,  2.79s/it]
+Processing inference:  17%|█▋        | 9/53 [00:24<01:55,  2.64s/it]
+Processing inference:  19%|█▉        | 10/53 [00:27<01:54,  2.66s/it]
+Processing inference:  21%|██        | 11/53 [00:29<01:47,  2.56s/it]
+Processing inference:  23%|██▎       | 12/53 [00:31<01:42,  2.50s/it]
+Processing inference:  25%|██▍       | 13/53 [00:34<01:37,  2.45s/it]
+Processing inference:  26%|██▋       | 14/53 [00:37<01:49,  2.80s/it]
+Processing inference:  28%|██▊       | 15/53 [00:40<01:48,  2.87s/it]
+Processing inference:  30%|███       | 16/53 [00:43<01:46,  2.88s/it]
+Processing inference:  32%|███▏      | 17/53 [00:45<01:38,  2.74s/it]
+Processing inference:  34%|███▍      | 18/53 [00:48<01:32,  2.64s/it]
+Processing inference:  36%|███▌      | 19/53 [00:50<01:27,  2.57s/it]
+Processing inference:  38%|███▊      | 20/53 [00:55<01:41,  3.09s/it]
+Processing inference:  40%|███▉      | 21/53 [00:57<01:34,  2.96s/it]
+Processing inference:  42%|████▏     | 22/53 [01:00<01:32,  3.00s/it]
+Processing inference:  43%|████▎     | 23/53 [01:03<01:25,  2.86s/it]
+Processing inference:  45%|████▌     | 24/53 [01:05<01:20,  2.76s/it]
+Processing inference:  47%|████▋     | 25/53 [01:08<01:15,  2.69s/it]
+Processing inference:  49%|████▉     | 26/53 [01:10<01:11,  2.64s/it]
+Processing inference:  51%|█████     | 27/53 [01:13<01:08,  2.62s/it]
+Processing inference:  53%|█████▎    | 28/53 [01:16<01:05,  2.62s/it]
+Processing inference:  55%|█████▍    | 29/53 [01:18<01:02,  2.62s/it]
+Processing inference:  57%|█████▋    | 30/53 [01:21<01:00,  2.63s/it]
+Processing inference:  58%|█████▊    | 31/53 [01:24<00:58,  2.65s/it]
+Processing inference:  60%|██████    | 32/53 [01:26<00:56,  2.68s/it]
+Processing inference:  62%|██████▏   | 33/53 [01:29<00:54,  2.70s/it]
+Processing inference:  64%|██████▍   | 34/53 [01:32<00:52,  2.75s/it]
+Processing inference:  66%|██████▌   | 35/53 [01:35<00:49,  2.77s/it]
+Processing inference:  68%|██████▊   | 36/53 [01:38<00:47,  2.79s/it]
+Processing inference:  70%|██████▉   | 37/53 [01:41<00:44,  2.81s/it]
+Processing inference:  72%|███████▏  | 38/53 [01:43<00:42,  2.83s/it]
+Processing inference:  74%|███████▎  | 39/53 [01:46<00:40,  2.86s/it]
+Processing inference:  75%|███████▌  | 40/53 [01:49<00:37,  2.87s/it]
+Processing inference:  77%|███████▋  | 41/53 [01:52<00:34,  2.88s/it]
+Processing inference:  79%|███████▉  | 42/53 [01:55<00:31,  2.88s/it]
+Processing inference:  81%|████████  | 43/53 [01:58<00:28,  2.87s/it]
+Processing inference:  83%|████████▎ | 44/53 [02:01<00:25,  2.85s/it]
+Processing inference:  85%|████████▍ | 45/53 [02:03<00:22,  2.83s/it]
+Processing inference:  87%|████████▋ | 46/53 [02:06<00:19,  2.81s/it]
+Processing inference:  89%|████████▊ | 47/53 [02:09<00:16,  2.79s/it]
+Processing inference:  91%|█████████ | 48/53 [02:12<00:13,  2.76s/it]
+Processing inference:  92%|█████████▏| 49/53 [02:14<00:11,  2.76s/it]
+Processing inference:  94%|█████████▍| 50/53 [02:17<00:08,  2.73s/it]
+Processing inference:  96%|█████████▌| 51/53 [02:20<00:05,  2.70s/it]
+Processing inference:  98%|█████████▊| 52/53 [02:22<00:02,  2.70s/it]
+Processing inference: 100%|██████████| 53/53 [02:25<00:00,  2.66s/it]
+Processing inference: 100%|██████████| 53/53 [02:25<00:00,  2.74s/it]
+2026-11-03 02:53:59.746 | INFO     | cryozeta.runner.inference_detection:post_process:144 - Post-processing 22FX...
+MeanShift++ Converged at 10 steps.
+2026-11-03 02:54:02.402 | INFO     | cryozeta.runner.inference_detection:post_process:207 - [22FX] Number of CA indices: 4146
+MeanShift++ Converged at 40 steps.
+2026-11-03 02:54:02.501 | INFO     | cryozeta.runner.inference_detection:post_process:261 - [22FX] Number of protein CA clusters: 28
+2026-11-03 02:54:02.501 | WARNING  | cryozeta.runner.inference_detection:post_process:272 - No R/DNA C1P indices found for 22FX
+2026-11-03 02:54:02.501 | INFO     | cryozeta.runner.inference_detection:post_process:274 - [22FX] Number of clusters: 28
+2026-11-03 02:54:02.554 | INFO     | cryozeta.runner.inference_detection:post_process:284 - [22FX] Main atom prob shape: torch.Size([3, 224, 224, 224])
+2026-11-03 02:54:02.555 | INFO     | cryozeta.runner.inference_detection:post_process:288 - [22FX] voxel_size: [1. 1. 1.], global_origin: [13. 13. 13.]
+2026-11-03 02:54:02.556 | INFO     | cryozeta.runner.inference_detection:post_process:292 - [22FX] main_atom_coords shape: (4146, 3)
+2026-11-03 02:54:02.573 | INFO     | cryozeta.runner.inference_detection:post_process:323 - [22FX] Number of points (4146) exceeds interp_threshold (3000), skipping interpolation
+2026-11-03 02:54:02.576 | INFO     | cryozeta.runner.inference_detection:post_process:350 - [22FX] Saved output to /tmp/mica_pilot/runs/cryozeta/22FX/22FX/CryoZeta-Detection/22FX.pt
+2026-11-03 02:54:02.585 | INFO     | cryozeta.runner.inference_detection:run_inference:586 - Completed inference for 22FX
+Batch inference completed. Results saved to /tmp/mica_pilot/runs/cryozeta/22FX

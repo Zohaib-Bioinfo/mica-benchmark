@@ -1,0 +1,3 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/gpu-cryozeta-b/pilot/models/cryozeta/9V4D/9V4D_sample_1.cif /kaggle/working/pilot/native/ca/9V4D_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/9V4D/9V4D_sample_1/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/gpu-cryozeta-b/pilot/models/cryozeta/9V4D/9V4D_sample_1.cif:A0:B0	/kaggle/working/pilot/native/ca/9V4D_native_ca.pdb:A:C	0.6782	0.9884	0.72	0.684	1.000	1.000	402	275	275

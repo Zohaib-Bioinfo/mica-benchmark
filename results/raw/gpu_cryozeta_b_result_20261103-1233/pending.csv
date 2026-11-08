@@ -1,0 +1,12 @@
+entry,method,status,note
+9WME,cryozeta,interrupted,stopped by the end of the session after 17576 s; run again in the next session
+9ZLH,cryozeta,not run,"could not download https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-74403/map/emd_74403.map.gz: HTTPSConnectionPool(host='ftp.ebi.ac.uk', port=443): Max retries exceeded with url: /pub/databases/emdb/structures/EMD-74403/map/emd_74403.map.gz (Caused by NewConnectionError(""HTTPSConnection(host='f"
+9WFL,cryozeta,not run,not started: not enough time left in the session
+9VI4,cryozeta,not run,not started: not enough time left in the session
+9VBD,cryozeta,not run,not started: not enough time left in the session
+9RWS,cryozeta,not run,not started: not enough time left in the session
+9VUH,cryozeta,not run,not started: not enough time left in the session
+9WTX,cryozeta,not run,not started: not enough time left in the session
+9OC0,cryozeta,not run,not started: not enough time left in the session
+9Z24,cryozeta,not run,not started: not enough time left in the session
+13BD,cryozeta,not run,not started: not enough time left in the session

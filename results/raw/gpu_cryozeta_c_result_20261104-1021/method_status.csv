@@ -1,0 +1,13 @@
+method,entry,status,failed_step,note,attempt,gpu,started_utc,seconds,peak_gpu_mb,min_ram_gb,other_gpu_busy,limit_s
+cryozeta,26DK,failed,run,"killed by the system (exit code -9, probably out of memory; also when it ran alone); the model file 26DK_sample_0.cif was not written",2,0,2026-11-04T03:12:52Z,355,3413,3.83,False,21600
+cryozeta,9ZLH,ok,,,1,0,2026-11-04T03:19:07Z,1108,6593,21.1,True,21600
+cryozeta,9Z24,failed,run,timeout: the run limit of 21600 s; the model file 9Z24_sample_0.cif was not written,1,1,2026-11-04T03:19:07Z,21600,14639,0.97,True,21600
+cryozeta,13BD,failed,run,out of GPU memory (exit code 2; the error message of the program); the model file 13BD_sample_0.cif was not written,1,0,2026-11-04T03:39:36Z,1369,13941,15.98,True,21600
+cryozeta,9WTX,ok,,,1,0,2026-11-04T04:06:13Z,10630,12929,1.81,True,21600
+cryozeta,9OC0,killed_corun,run,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",1,0,2026-11-04T07:06:29Z,1008,3443,0.45,True,16820
+cryozeta,9RWS,ok,,,1,0,2026-11-04T07:32:47Z,9961,12823,20.74,True,15664
+cryozeta,9VI4,not run,,not started: not enough time left in the session,,,,,,,,
+cryozeta,9VBD,not run,,not started: not enough time left in the session,,,,,,,,
+cryozeta,9VUH,not run,,not started: not enough time left in the session,,,,,,,,
+cryozeta,9WFL,not run,,not started: not enough time left in the session,,,,,,,,
+cryozeta,9WME,not run,,not started: not enough time left in the session,,,,,,,,

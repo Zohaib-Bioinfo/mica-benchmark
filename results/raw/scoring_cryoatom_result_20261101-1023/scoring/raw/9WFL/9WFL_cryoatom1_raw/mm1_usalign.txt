@@ -1,0 +1,52 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif /kaggle/working/pilot/native/ca/9WFL_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/9WFL/9WFL_cryoatom1_raw/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif:B:D:A:C:E:F:G:H:I:J:K:L:M:N:O:P:Q:R:S:T:U:V	/kaggle/working/pilot/native/ca/9WFL_native_ca.pdb:A:B::::::::::::::::::::	0.7342	0.8910	0.74	0.728	0.884	0.989	828	682	610
+
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Warning! Duplicated residue 1 
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif
+Sequence is too short <3!: /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WFL/9WFL_cryoatom1_raw.cif

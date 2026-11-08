@@ -1,0 +1,3 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WTX/9WTX_cryoatom1.cif /kaggle/working/pilot/native/ca/9WTX_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/9WTX/9WTX_cryoatom1/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WTX/9WTX_cryoatom1.cif:Aa:Ab	/kaggle/working/pilot/native/ca/9WTX_native_ca.pdb:A:	0.5963	0.6057	1.26	0.606	0.616	0.997	508	500	309

@@ -18,6 +18,7 @@ other GPU runs is run again alone. They need the same three things as test_metho
 from __future__ import annotations
 
 import csv
+import datetime
 import gzip
 import hashlib
 import io
@@ -38,6 +39,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 import make_main_notebook as M  # noqa: E402
 import nbkit  # noqa: E402
+import test_cryozeta_tools as TZ  # noqa: E402  (the stand-in programs of CryoZeta and the stand-in ColabFold server)
 import test_methods_notebook as TM  # noqa: E402
 import test_pilot_notebook as T  # noqa: E402
 
@@ -1440,6 +1442,990 @@ class CryoAtomEndToEndTests(unittest.TestCase):
         self.assertEqual([s["status"] for s in status], ["failed"] * 3, status)
         self.assertTrue(all(s["note"].startswith("out of GPU memory") for s in status), status)
         self.assertEqual(len(read_lines(os.path.join(tmp, "calls.txt"))), 3)
+
+
+# ---------------------------------------------------------------------------------------------------------- CryoZeta: a notebook of its own
+COMMITTED_CRYOZETA = os.path.join(HERE, "gpu_cryozeta_d.ipynb")      # batches a, b and c (as_run/): a stopped on a missing data file, b finished 8 entries, c three more (LOG 2026-11-03 to 05)
+CZ_B_STATUS = os.path.join(ROOT, "results", "raw", "gpu_cryozeta_b_result_20261103-1233", "method_status.csv")
+CZ_C_STATUS = os.path.join(ROOT, "results", "raw", "gpu_cryozeta_c_result_20261104-1021", "method_status.csv")
+CZ_D_ARGS = ["--batch", "cryozeta_d", "--methods", "cryozeta", "--hours", "11", "--entries", "9OC0", "9VI4", "9VBD", "9VUH", "9WFL", "9WME", "--alone-first", "9OC0:cryozeta", "--order-text",
+             "from the smallest to the largest deposited model, except that 9OC0, which the system killed in the second session while the other GPU was busy, runs first and alone and 9WME, which the end of the first session cut after 4.9 hours, runs last"]
+# the three programs of CryoZeta of the tests of the runner, plus: a model that US-align can read instead of the dummy text, and the time span of every call
+STUB_CRYOZETA = r'''#!/usr/bin/env python3
+import atexit, json, os, shutil, sys, time
+_HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_T0 = time.time()
+
+
+def _finish():
+    prog, a = os.path.basename(sys.argv[0]), sys.argv[1:]
+    if prog == "cryozeta-combine" and os.environ.get("STUB_MODEL_CIF"):
+        with open(a[a.index("--input-json-path") + 1]) as f:
+            name = json.load(f)[0]["name"]
+        final = os.path.join(a[a.index("--dump-dir") + 1], name, "CryoZeta-Final")
+        for n in (os.listdir(final) if os.path.isdir(final) else []):
+            if n.endswith(".cif"):
+                shutil.copy(os.environ["STUB_MODEL_CIF"], os.path.join(final, n))
+    with open(os.path.join(_HERE, "spans.jsonl"), "a") as f:
+        f.write(json.dumps({"prog": prog, "gpu": os.environ.get("CUDA_VISIBLE_DEVICES"), "t0": _T0, "t1": time.time(), "pid": os.getpid()}) + "\n")
+
+
+atexit.register(_finish)
+if os.path.basename(sys.argv[0]) == "cryozeta-inference":
+    time.sleep(float(os.environ.get("STUB_SLOW_CRYOZETA", "0")))
+''' + TZ.STUB.split("\n", 1)[1]
+
+
+class FlakyFiles(T.Files):
+    """The file server of the tests, but it refuses (503) the first `fail[path]` requests of a path: a network error that goes away."""
+    fail: dict = {}
+
+    def do_GET(self):
+        path = self.path.split("?")[0]
+        if FlakyFiles.fail.get(path, 0) > 0:
+            FlakyFiles.fail[path] -= 1
+            self.send_response(503)
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return
+        super().do_GET()
+
+
+def jsonl(path):
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        return [json.loads(line) for line in f if line.strip()]
+
+
+class CryoZetaStructureTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.mkdtemp(prefix="czbuild_")
+        cls.path = os.path.join(cls.tmp, "nb.ipynb")
+        cls.expected = M.build(cls.path, batch="cryozeta_test", hours=11.0, run_methods=["cryozeta"])
+        cls.nb = nbformat.read(cls.path, as_version=4)
+        cls.text = "\n".join(c.source for c in cls.nb.cells)
+
+    @classmethod
+    def tearDownClass(cls):
+        shutil.rmtree(cls.tmp, ignore_errors=True)
+
+    def cell(self, cid):
+        return next(c for c in self.nb.cells if c["id"] == cid).source
+
+    def test_cells_compile_and_have_no_placeholders(self):
+        for c in self.nb.cells:
+            if c.cell_type == "code" and not c.source.startswith("%%writefile"):
+                compile(c.source, c["id"], "exec")
+            self.assertEqual(re.findall(r"@[A-Z_0-9]+@", c.source), [], c["id"])
+
+    def test_cell_order_has_one_method_and_the_steps_are_numbered(self):
+        ids = [c["id"] for c in self.nb.cells if c.cell_type == "code" and not c["id"].startswith("file-")]
+        self.assertEqual(ids, ["settings", "step1", "step2-dirs", "step2-check", "robust", "tools", "step4", "cryozeta", "run", "summary", "final"])
+        self.assertIn("## Step 5. CryoZeta", self.cell("cryozeta-title"))
+        self.assertIn("## Step 6. The runs", self.cell("run-title"))
+        self.assertIn("## Step 7. Summary", self.cell("summary-title"))
+
+    def test_the_setting_is_eleven_hours_and_the_text_matches(self):
+        first = next(c for c in self.nb.cells if c.cell_type == "code")
+        self.assertRegex(first.source, r"(?m)^HOURS = 11\.0$")
+        self.assertIn("less than 12 hours left this week", first.source)
+
+    def test_no_alphafold_dataset_is_needed_and_the_hosts_are_the_ones_of_the_setup(self):
+        specs = literal(self.nb, "SPECS")
+        self.assertEqual(list(specs), ["cryozeta"])
+        self.assertFalse(specs["cryozeta"]["uses_af3"])
+        self.assertIn("no AlphaFold dataset is needed", self.cell("intro"))
+        self.assertIn("no input dataset and no secret", self.cell("intro"))
+        hosts = {h[0]: h for h in literal(self.nb, "NET_HOSTS")}
+        self.assertTrue(hosts["Hugging Face (CryoZeta weights)"][2] and hosts["conda-forge"][2] and hosts["GitHub"][2])           # without these the setup cannot work: stop before it starts
+        self.assertFalse(hosts["ColabFold server"][2])
+        self.assertIn("api.colabfold.com", hosts["ColabFold server"][1])
+        self.assertNotIn("zenodo", " ".join(h[1] for h in hosts.values()))
+
+    def test_the_pins(self):
+        spec = literal(self.nb, "SPECS")["cryozeta"]
+        self.assertEqual(spec["commit"], "c544c6bbd0366951d8b4e0bc4c0da547836f7b8f")
+        self.assertEqual(spec["repo"], "https://github.com/kiharalab/CryoZeta")
+        self.assertEqual((spec["pixi"]["version"], spec["pixi"]["env"]), ("0.41.1", "cu11"))
+        self.assertRegex(spec["pixi"]["sha256"], r"^[0-9a-f]{64}$")
+        self.assertIn("v0.41.1", spec["pixi"]["url"])
+        self.assertEqual((spec["teaser"]["repo"], spec["teaser"]["commit"]), ("https://github.com/MIT-SPARK/TEASER-plusplus", "52a9c52ee7d4c838c5e8a75458c33178be5bfb70"))
+        self.assertEqual((spec["teaser"]["cmake"], spec["teaser"]["pybind11"]), ("3.31.6", "3.0.1"))
+        self.assertEqual(spec["hub"]["data_files"], {"ccd": "components.v20240608.cif", "ccd_rdkit": "components.v20240608.cif.rdkit_mol.pkl"})
+        self.assertIn("CRYOZETA_ASSETS_DIR", self.cell("cryozeta"))
+        self.assertIn("CRYOZETA_ASSETS_DIR", self.cell("cryozeta-title"))
+        self.assertEqual(spec["hub"]["repo"], "KiharaLab/CryoZeta")
+        self.assertEqual(spec["hub"]["files"], {"detection": "cryozeta-detection-v0.0.1.safetensors", "cryozeta": "cryozeta-v0.0.1.safetensors", "interpolate": "cryozeta-interpolate-v0.0.1.safetensors"})
+        self.assertIn("blobs=true", spec["hub"]["api"])                                      # the size and the sha256 of every file
+        for t in (self.cell("cryozeta"), self.cell("tools")):
+            self.assertNotIn("pip install -q torch", t)
+
+    def test_the_settings_of_a_run_are_those_of_the_demo_of_the_authors(self):
+        spec = literal(self.nb, "SPECS")["cryozeta"]
+        self.assertEqual(spec["run"], {"seed": 101, "n_sample": 5, "n_step": 20, "n_cycle": 10, "num_select": 5, "dtype": "bf16", "kernels": "off"})
+        self.assertEqual(spec["colabfold"], "https://api.colabfold.com")
+
+    def test_the_limit_and_the_time_model(self):
+        spec = literal(self.nb, "SPECS")["cryozeta"]
+        self.assertEqual((spec["timeout"], spec["s_per_residue"]), (21600, 15))
+        self.assertTrue(spec["oom_is_result"])                                               # a GPU out-of-memory error is a result, not a crash of the installation
+        self.assertEqual((M.CRYOZETA_LIMIT_S, M.CRYOZETA_S_PER_RESIDUE), (21600, 15))
+        self.assertIn("Every run has a time limit of 6 hours", self.cell("intro"))
+        self.assertRegex(self.cell("intro"), r"first estimate is\s+15 seconds per residue")
+        self.assertIn("RUN_LIMIT = 10800", self.cell("tools"))                               # the default of the other methods is not changed
+        self.assertEqual(literal(self.nb, "SIZES")["26DK"], 191)
+
+    def test_the_tasks_are_the_twenty_entries_in_the_seeded_order(self):
+        tasks = literal(self.nb, "TASKS")
+        self.assertEqual(tasks, [[e, "cryozeta"] for e in M.seeded_order(M.read_entries())])
+        self.assertEqual(len(tasks), 20)
+        self.assertEqual(literal(self.nb, "RUN_METHODS"), ["cryozeta"])
+        self.assertEqual(literal(self.nb, "MAX_LANES"), 2)
+
+    def test_the_embedded_files_are_the_common_ones_and_the_runner(self):
+        got = {}
+        for c in self.nb.cells:
+            if c.source.startswith("%%writefile"):
+                first, text = c.source.split("\n", 1)
+                got[first.split(None, 1)[1].strip()] = text
+        self.assertEqual(sorted(got), sorted([t for _s, t in M.BASE_FILES] + ["scripts/cryozeta_tools.py"]))
+        for target, text in got.items():
+            with open(os.path.join(ROOT, target), encoding="utf-8") as f:
+                want = f.read()
+            self.assertEqual(text, want if want.endswith("\n") else want + "\n", target)
+            self.assertEqual(self.expected[target], hashlib.sha256(text.encode()).hexdigest())
+
+    def test_the_other_methods_are_not_in_the_notebook(self):
+        code = "\n".join(c.source for c in self.nb.cells if c.cell_type == "code" and not c.source.startswith("%%writefile"))
+        for name in ("setup_modelangelo", "plan_emprot", "plan_e3", "setup_emodelx", "model_angelo", "patch_cryoatom_tempfile", "setup_cryoatom"):
+            self.assertNotIn(name, code)
+
+    def test_the_run_goes_through_the_runner_of_the_repository_and_the_programs_of_the_demo(self):
+        code = self.cell("cryozeta")
+        self.assertIn('cmd = [sys.executable, os.path.join(WORK, "scripts", "cryozeta_tools.py"), "run", cfg_path]', code)
+        self.assertIn('SETUPS["cryozeta"], PLANS["cryozeta"] = setup_cryozeta, plan_cryozeta', code)
+        self.assertIn('"-e", name, "--frozen"', code)                                         # the environment exactly as the lock file says
+        for word in ("cryozeta-detection", "cryozeta-inference", "cryozeta-combine"):
+            self.assertIn(word, self.cell("cryozeta-title") + code)
+        self.assertIn("cryozeta_source_patch.diff", code)
+
+    def test_it_cannot_be_mixed_with_the_other_methods(self):
+        for other in ("e3", "cryoatom1"):
+            with self.assertRaises(ValueError):
+                M.build(os.path.join(self.tmp, "x.ipynb"), run_methods=["cryozeta", other])
+        self.assertEqual(M.ORDER, ["modelangelo", "e3", "emprot", "emodelx"])
+        self.assertNotIn("cryozeta", M.SPECS)
+
+    def test_the_command_line_gives_eleven_hours_by_default(self):
+        out = os.path.join(self.tmp, "cli.ipynb")
+        self.assertEqual(M.main(["--batch", "cz_cli", "--methods", "cryozeta", "--out", out]), 0)
+        nb = nbformat.read(out, as_version=4)
+        self.assertRegex(next(c for c in nb.cells if c.cell_type == "code").source, r"(?m)^HOURS = 11\.0$")
+        self.assertEqual(len(literal(nb, "TASKS")), 20)
+
+    def test_the_committed_notebook_is_current(self):
+        if not (os.path.exists(COMMITTED_CRYOZETA) and os.path.exists(CZ_B_STATUS) and os.path.exists(CZ_C_STATUS)):
+            self.skipTest("gpu_cryozeta_d.ipynb or the status tables of batches b and c are not there")
+        fresh = os.path.join(self.tmp, "fresh.ipynb")
+        self.assertEqual(M.main(CZ_D_ARGS + ["--done", CZ_B_STATUS, CZ_C_STATUS, "--out", fresh]), 0)
+        a, b = nbformat.read(fresh, as_version=4), nbformat.read(COMMITTED_CRYOZETA, as_version=4)
+        self.assertEqual([c.source for c in a.cells], [c.source for c in b.cells], "run make_main_notebook.py " + " ".join(CZ_D_ARGS) + " --done <the status tables of batches b and c> again")
+
+    def test_a_continuation_has_its_order_its_rate_and_its_first_task_alone(self):
+        status = os.path.join(self.tmp, "b_status.csv")
+        with open(status, "w", newline="", encoding="utf-8") as f:
+            w = csv.writer(f, lineterminator="\n")
+            w.writerow(["method", "entry", "status", "seconds"])
+            w.writerow(["cryozeta", "22FX", "ok", "692"])                    # 173 residues: 4.0 s per residue
+            w.writerow(["cryozeta", "9T5K", "ok", "3810"])                   # 381 residues: 10.0 s per residue
+            w.writerow(["cryozeta", "9WQ6", "failed", "10"])                 # a failure is not a rate
+            w.writerow(["cryozeta", "9WME", "interrupted", "17576"])         # nor is a run that the end of the session cut
+        out = os.path.join(self.tmp, "cont.ipynb")
+        self.assertEqual(M.main(["--batch", "cz_cont", "--methods", "cryozeta", "--entries", "26DK", "9WQ6", "22FX", "9T5K", "--done", status, "--redo", "9WQ6:cryozeta",
+                                 "--alone-first", "26DK:cryozeta", "--out", out]), 0)
+        nb = nbformat.read(out, as_version=4)
+        self.assertEqual(literal(nb, "TASKS"), [["26DK", "cryozeta"], ["9WQ6", "cryozeta"]])      # 22FX and 9T5K are done; the failure of 9WQ6 is run again because of --redo
+        self.assertEqual(literal(nb, "ALONE_FIRST"), [["26DK", "cryozeta"]])
+        rate = literal(nb, "SPECS")["cryozeta"]["s_per_residue"]
+        self.assertEqual(rate, round((692 + 3810) / (173 + 381)))                                 # all seconds over all residues, rounded: 8
+        intro = nb.cells[0].source
+        self.assertIn("The earlier session timed 2 runs of CryoZeta on this GPU: 4 to 10 seconds per residue", intro)
+        self.assertIn("The first estimate is %d;" % rate, intro)
+        self.assertIn("in an order that was written down before the session (LOG.md)", intro)
+        self.assertNotIn("No run of CryoZeta has been timed", intro)
+        self.assertEqual(M.measured_rates([status], "cryozeta", {"22FX": 173, "9T5K": 381, "9WQ6": 261, "9WME": 446})["n"], 2)
+        self.assertIsNone(M.measured_rates([status], "e3", {"22FX": 173}))
+
+
+class StartCheckTests(unittest.TestCase):
+    """The check of the internet at the start of a session (probe_site and check_internet of the step 1 cell), run on its own source text against a fake `urlopen` and a
+    fake `time.sleep`. Batch d of CryoZeta stopped after 25 seconds on 7 November 2026 because the check asked every site once and one TLS handshake of the EBI server
+    timed out: the whole session was skipped. A site that does not answer is now asked again (4 rounds, 20, 40 and 60 s apart) before the session is stopped."""
+    EBI, PYPI, COLAB = "https://ftp.ebi.ac.uk/x.xml", "https://pypi.org/simple/uv/", "https://api.colabfold.com/"
+    HOSTS = (("EBI FTP", EBI, True), ("PyPI", PYPI, True), ("ColabFold server", COLAB, False))
+    TLS = OSError("<urlopen error _ssl.c:1015: The handshake operation timed out>")
+
+    @classmethod
+    def setUpClass(cls):
+        import ast
+        tmp = tempfile.mkdtemp(prefix="czcheck_")
+        try:
+            path = os.path.join(tmp, "nb.ipynb")
+            M.build(path, batch="cryozeta_test", hours=11.0, run_methods=["cryozeta"])
+            nb = nbformat.read(path, as_version=4)
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+        cls.src = segment(nb, "step1", ast.FunctionDef, "probe_site") + "\n\n" + segment(nb, "step1", ast.FunctionDef, "check_internet")
+
+    def run_check(self, answers, hosts=None):
+        """`answers` maps a url to its outcomes in the order of the calls (the last one repeats): an exception is raised, 200 answers, any other number is an HTTP error."""
+        import types
+        import urllib.error
+        from unittest import mock
+        queue, asked, slept, lines = {u: list(o) for u, o in answers.items()}, [], [], []
+
+        class Reply:
+            status = 200
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *exc):
+                return False
+
+            def read(self, n=-1):
+                return b"ok"
+
+        def fake_urlopen(req, timeout=None):
+            asked.append((req.full_url, timeout))
+            outcomes = queue[req.full_url]
+            outcome = outcomes.pop(0) if len(outcomes) > 1 else outcomes[0]
+            if isinstance(outcome, Exception):
+                raise outcome
+            if outcome == 200:
+                return Reply()
+            raise urllib.error.HTTPError(req.full_url, outcome, "stub", {}, io.BytesIO(b""))
+
+        ns = {"NET_HOSTS": hosts or self.HOSTS, "log": lines.append, "time": types.SimpleNamespace(sleep=slept.append)}
+        exec(compile(self.src, "start-check", "exec"), ns)
+        with mock.patch("urllib.request.urlopen", fake_urlopen):
+            missing = ns["check_internet"]()
+        return missing, asked, slept, lines
+
+    def test_a_tls_timeout_of_one_site_is_asked_again_and_the_session_goes_on(self):
+        missing, asked, slept, lines = self.run_check({self.EBI: [self.TLS, 200], self.PYPI: [200], self.COLAB: [404]})
+        self.assertEqual(missing, [])
+        self.assertEqual([u for u, t in asked], [self.EBI, self.PYPI, self.COLAB, self.EBI])      # only the site that failed is asked again
+        self.assertEqual(slept, [20])
+        text = "\n".join(lines)
+        self.assertIn("no answer (try 1 of 4): EBI FTP", text)
+        self.assertRegex(text, r"reachable: EBI FTP\s+HTTP 200 \(at try 2\)")
+        self.assertNotIn("NOT reachable", text)
+        self.assertTrue(all(t >= 30 for u, t in asked), asked)                                    # the 20 s of the first version were too short for a slow handshake
+
+    def test_an_http_answer_below_500_means_that_the_way_is_open(self):
+        missing, asked, slept, lines = self.run_check({self.EBI: [200], self.PYPI: [200], self.COLAB: [404]})                 # the ColabFold root address answers 404
+        self.assertEqual((missing, slept, len(asked)), ([], [], 3))
+        self.assertRegex("\n".join(lines), r"reachable: ColabFold server\s+HTTP 404")
+        missing, asked, slept, lines = self.run_check({self.EBI: [403], self.PYPI: [200], self.COLAB: [200]})
+        self.assertEqual((missing, slept, len(asked)), ([], [], 3))
+
+    def test_a_server_error_is_asked_again(self):
+        missing, asked, slept, lines = self.run_check({self.EBI: [503, 503, 200], self.PYPI: [200], self.COLAB: [200]})
+        self.assertEqual(missing, [])
+        self.assertEqual(slept, [20, 40])
+        self.assertEqual(sum(1 for u, t in asked if u == self.EBI), 3)
+
+    def test_a_needed_site_that_never_answers_stops_the_session_after_two_minutes(self):
+        missing, asked, slept, lines = self.run_check({self.EBI: [self.TLS], self.PYPI: [200], self.COLAB: [200]})
+        self.assertEqual(missing, ["EBI FTP"])
+        self.assertEqual(sum(1 for u, t in asked if u == self.EBI), 4)
+        self.assertEqual(sum(1 for u, t in asked if u == self.PYPI), 1)
+        self.assertEqual(slept, [20, 40, 60])
+        self.assertIn("NOT reachable: EBI FTP", "\n".join(lines))
+        self.assertIn("needed: the notebook stops", "\n".join(lines))
+
+    def test_an_optional_site_that_never_answers_does_not_stop_the_session(self):
+        missing, asked, slept, lines = self.run_check({self.EBI: [200], self.PYPI: [200], self.COLAB: [self.TLS]})
+        self.assertEqual(missing, [])
+        self.assertIn("optional: the notebook goes on", "\n".join(lines))
+
+    def test_with_the_internet_off_every_needed_site_is_named_and_the_wait_is_short(self):
+        off = OSError("[Errno -3] Temporary failure in name resolution")
+        missing, asked, slept, lines = self.run_check({self.EBI: [off], self.PYPI: [off], self.COLAB: [off]})
+        self.assertEqual(missing, ["EBI FTP", "PyPI"])
+        self.assertEqual(slept, [20, 40, 60])                                                      # about two minutes of waiting, then the session stops before any hour is spent
+
+
+class CryoZetaLogicTests(unittest.TestCase):
+    """The functions of the CryoZeta cell, run on their own source text taken from the built notebook against fakes of the tools (no network, no GPU)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.mkdtemp(prefix="czlogic_")
+        path = os.path.join(cls.tmp, "nb.ipynb")
+        M.build(path, batch="cryozeta_test", hours=11.0, run_methods=["cryozeta"])
+        cls.nb = nbformat.read(path, as_version=4)
+        cls.spec = M.cryozeta_spec()
+
+    @classmethod
+    def tearDownClass(cls):
+        shutil.rmtree(cls.tmp, ignore_errors=True)
+
+    def setUp(self):
+        self.work = tempfile.mkdtemp(dir=self.tmp)
+
+    def ns(self, *names, cell="cryozeta", **extra):
+        import ast
+        import glob
+        ns = {"os": os, "json": json, "sys": sys, "shutil": shutil, "glob": glob, "log": lambda *a, **k: None, "BIG": self.work, "WORK": self.work, "sha256_file": TZ_sha256}
+        ns.update(extra)
+        for name in names:
+            exec(segment(self.nb, cell, ast.FunctionDef, name), ns)
+        return ns
+
+    def test_pixi_is_checked_against_the_hash_of_the_release(self):
+        data = b"p" * 100
+
+        def fetch(url, dest, min_bytes, label, **kw):
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            with open(dest, "wb") as f:
+                f.write(data)
+            return True
+        spec = {"pixi": dict(self.spec["pixi"], min_bytes=10, sha256=hashlib.sha256(data).hexdigest())}
+        ns = self.ns("install_pixi", fetch=fetch, pixi_vars=lambda: {}, run=lambda cmd, **kw: (0, ["pixi 0.41.1"], False))
+        exe = ns["install_pixi"](spec)
+        self.assertTrue(os.access(exe, os.X_OK))
+        shutil.rmtree(os.path.join(self.work, "pixi"))
+        spec["pixi"]["sha256"] = "0" * 64
+        with self.assertRaisesRegex(RuntimeError, "does not have the sha256"):
+            ns["install_pixi"](spec)
+        self.assertFalse(os.path.exists(exe))
+
+    def test_the_environment_is_installed_from_the_lock_file_and_a_source_without_it_stops(self):
+        repo = os.path.join(self.work, "repo")
+        os.makedirs(repo)
+        for f in ("pixi.lock", "pyproject.toml", "env_setup.sh"):
+            with open(os.path.join(repo, f), "w") as h:
+                h.write("x")
+        env_py = os.path.join(repo, ".pixi", "envs", "cu11", "bin", "python")
+        seen = []
+
+        def run_watched(cmd, label, **kw):
+            seen.append((cmd, kw))
+            os.makedirs(os.path.dirname(env_py), exist_ok=True)
+            open(env_py, "w").close()
+            return 0, [], False
+
+        def run(cmd, **kw):
+            seen.append((cmd, kw))
+            return 0, ["ok"], False
+        ns = self.ns("make_env_cryozeta", install_pixi=lambda spec: "/x/pixi", pixi_vars=lambda: {"PIXI_HOME": "/h"}, run_watched=run_watched, run=run, env_vars=lambda p, e=None: {}, IMPORT_TESTS=None,
+                     CZ_PACKAGE_LIST="# CZ_PACKAGE_LIST_MARK")
+        self.assertEqual(ns["make_env_cryozeta"](self.spec, repo), env_py)
+        cmd, kw = seen[0]
+        self.assertEqual(cmd, ["/x/pixi", "install", "-e", "cu11", "--frozen"])
+        self.assertEqual((kw["cwd"], kw["env"]), (repo, {"PIXI_HOME": "/h"}))
+        self.assertEqual(seen[-1][0][:2], [env_py, "-c"])                                    # the modules are imported with the program of the new environment
+        listing = [c for c, _ in seen if c[0] == env_py and "CZ_PACKAGE_LIST_MARK" in c[2]]                 # the versions are listed by the program of the new environment, not by pixi
+        self.assertEqual(len(listing), 1)
+        self.assertEqual(listing[0][3], os.path.join(self.work, "cryozeta_env_packages.txt"))
+        os.remove(os.path.join(repo, "pixi.lock"))
+        shutil.rmtree(os.path.join(repo, ".pixi"))
+        with self.assertRaisesRegex(RuntimeError, "lacks pixi.lock"):
+            ns["make_env_cryozeta"](self.spec, repo)
+
+    def teaser_ns(self, makes_module=True):
+        calls = []
+
+        def git_checkout(repo, commit, folder):
+            calls.append(("git", repo, commit, folder))
+            os.makedirs(os.path.join(folder, "python", "teaserpp_python"), exist_ok=True)
+            with open(os.path.join(folder, "python", "teaserpp_python", "__init__.py"), "w") as f:
+                f.write("# init\n")
+            return True
+
+        def run(cmd, **kw):
+            calls.append(("pip", cmd))
+            tools = cmd[cmd.index("--target") + 1]
+            os.makedirs(os.path.join(tools, "cmake", "data", "bin"), exist_ok=True)
+            open(os.path.join(tools, "cmake", "data", "bin", "cmake"), "w").close()
+            os.makedirs(os.path.join(tools, "pybind11", "share", "cmake", "pybind11"), exist_ok=True)
+            return 0, [], False
+
+        def run_watched(cmd, label, **kw):
+            calls.append(("watched", cmd, kw))
+            if "--build" in cmd and makes_module:
+                pkg = os.path.join(cmd[cmd.index("--build") + 1], "python", "teaserpp_python")
+                os.makedirs(pkg, exist_ok=True)
+                open(os.path.join(pkg, "_teaserpp.cpython-312-x86_64-linux-gnu.so"), "w").close()
+            return 0, [], False
+        return self.ns("build_teaser", git_checkout=git_checkout, run=run, run_watched=run_watched), calls
+
+    def test_teaser_is_built_at_the_pinned_commit_with_pinned_tools_and_the_headers_of_the_environment(self):
+        ns, calls = self.teaser_ns()
+        prefix = os.path.join(self.work, "env")
+        root = ns["build_teaser"](self.spec, prefix)
+        self.assertEqual(root, os.path.join(self.work, "teaser_plusplus"))
+        self.assertEqual(calls[0][:3], ("git", "https://github.com/MIT-SPARK/TEASER-plusplus", "52a9c52ee7d4c838c5e8a75458c33178be5bfb70"))
+        pip = next(c[1] for c in calls if c[0] == "pip")
+        self.assertIn("cmake==3.31.6", pip)
+        self.assertIn("pybind11==3.0.1", pip)
+        configure, build = [c for c in calls if c[0] == "watched"]
+        for flag in ("-DBUILD_PYTHON_BINDINGS=ON", "-DBUILD_TESTS=OFF", "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_PREFIX_PATH=" + prefix, "-DPYTHON_EXECUTABLE=" + os.path.join(prefix, "bin", "python"),
+                     "-Dpybind11_DIR=" + os.path.join(self.work, "teaser_tools", "pybind11", "share", "cmake", "pybind11")):
+            self.assertIn(flag, configure[1])
+        self.assertEqual(configure[1][0], os.path.join(self.work, "teaser_tools", "cmake", "data", "bin", "cmake"))
+        self.assertIn("--build", build[1])
+        self.assertEqual(configure[2]["env"], {"CC": None, "CXX": None, "PYTHONPATH": None})
+        self.assertTrue(os.path.exists(os.path.join(root, "build", "python", "teaserpp_python", "__init__.py")))     # as env_setup.sh does
+        ns["build_teaser"](self.spec, prefix)                                                 # the module is there: nothing is built again
+        self.assertEqual(len([c for c in calls if c[0] == "watched"]), 2)
+
+    def test_a_teaser_build_without_the_python_module_stops_the_setup(self):
+        ns, _calls = self.teaser_ns(makes_module=False)
+        with self.assertRaisesRegex(RuntimeError, "did not make the Python module"):
+            ns["build_teaser"](self.spec, os.path.join(self.work, "env"))
+
+    def test_the_conda_environment_gets_its_library_path_but_the_runner_does_not(self):
+        import ast
+        ns = {"os": os, "TORCH_HOME": "/t"}
+        exec(segment(self.nb, "tools", ast.FunctionDef, "env_vars"), ns)
+        ns["_env_vars_plain"] = ns["env_vars"]
+        exec(segment(self.nb, "cryozeta", ast.FunctionDef, "env_vars"), ns)
+        conda, venv = os.path.join(self.work, "conda"), os.path.join(self.work, "venv")
+        os.makedirs(os.path.join(conda, "conda-meta"))
+        os.makedirs(os.path.join(venv, "bin"))
+        e = ns["env_vars"](os.path.join(conda, "bin", "python"))
+        self.assertEqual(e["CONDA_PREFIX"], conda)
+        self.assertTrue(e["LD_LIBRARY_PATH"].startswith(os.path.join(conda, "lib")))
+        e = ns["env_vars"](os.path.join(venv, "bin", "python"))
+        self.assertNotIn("CONDA_PREFIX", e)                                                   # the environments of the other methods are what they were
+        self.assertNotIn("LD_LIBRARY_PATH", e)
+        self.assertNotIn("LD_LIBRARY_PATH", ns["_env_vars_plain"](os.path.join(conda, "bin", "python")))
+
+    def test_cz_env_is_what_the_activation_script_of_the_project_sets(self):
+        ns = self.ns("cz_env", env_vars=lambda p, extra=None: dict(extra or {}, PYTHONPATH=None))
+        e = ns["cz_env"]("/prefix", "/teaser")
+        self.assertEqual((e["CUTLASS_PATH"], e["USE_OPM_CHUNKED"], e["CUDA_DEVICE_ORDER"]), ("/prefix", "1", "PCI_BUS_ID"))
+        self.assertEqual((e["TEASERPP_DIR"], e["PYTHONPATH"]), ("/teaser", "/teaser/build/python"))
+
+    def preflight(self, probe, rc_import=0, rc_data=0):
+        """Runs cryozeta_preflight against a git repository with the detection file of CryoZeta and a fake GPU test; returns (namespace, repo, error)."""
+        import cryozeta_tools as CZT
+        repo = os.path.join(self.work, "repo")
+        path = os.path.join(repo, CZT.DETECTION_FILE)
+        os.makedirs(os.path.dirname(path))
+        with open(path, "w") as f:
+            f.write("class D:\n    def load(self):\n        %s\n        %s\n" % (CZT.DETECTION_CHANGES[0][0], CZT.DETECTION_CHANGES[1][0]))
+        T.sh("git init -q -b main . && git add -A && git -c user.name=t -c user.email=t@t commit -q -m stub", cwd=repo)
+
+        def run(cmd, **kw):
+            if "CZ_PREFLIGHT_MARK" in cmd[2]:
+                return 0, [json.dumps(probe)] if probe is not None else ["no json"], False
+            if "CZ_DATA_CHECK_MARK" in cmd[2]:
+                calls.append(kw)
+                return rc_data, [], False
+            return rc_import, [], False
+        sh = lambda cmd, timeout=60: subprocess.run(cmd, shell=True, capture_output=True, text=True).stdout.strip()
+        calls = self.data_check_calls = []
+        ns = self.ns("cryozeta_preflight", CZT=CZT, CZ={"teaser": "/t", "assets": "/a"}, STATE={"methods": {"cryozeta": {}}}, REQUIRE_GPU=True, ENV_PY_GIVEN=None, run=run, sh=sh,
+                     cz_env=lambda prefix, teaser=None, assets=None: {"ASSETS": assets}, CZ_PROGRAMS=(), CZ_PREFLIGHT="# CZ_PREFLIGHT_MARK", CZ_DATA_CHECK="# CZ_DATA_CHECK_MARK")
+        return ns, repo
+
+    GOOD = {"cuda_available": True, "gpu": "Tesla T4", "bf16_matmul": "ok", "bf16_conv3d": "ok", "bf16_autocast_conv3d": "ok"}
+
+    def test_a_gpu_that_does_bfloat16_keeps_the_source_as_it_is(self):
+        ns, repo = self.preflight(self.GOOD)
+        ns["cryozeta_preflight"](self.spec, repo, "/env/bin/python", "/env")
+        self.assertEqual(ns["CZ"]["dtype"], "bf16")
+        self.assertEqual(T.sh("git status --porcelain", cwd=repo), "")
+        self.assertFalse(ns["STATE"]["methods"]["cryozeta"]["preflight"]["detection_patched"])
+
+    def test_a_gpu_that_cannot_do_bfloat16_in_the_detection_network_gets_the_two_line_change(self):
+        ns, repo = self.preflight(dict(self.GOOD, bf16_conv3d="failed: no kernel"))
+        ns["cryozeta_preflight"](self.spec, repo, "/env/bin/python", "/env")
+        self.assertEqual(ns["CZ"]["dtype"], "bf16")                                           # only the detection network is changed
+        diff = T.sh("git diff", cwd=repo)
+        self.assertEqual(diff.count("\n+ ") + diff.count("\n- "), 4, diff)
+        self.assertIn("torch.float32", diff)
+        self.assertTrue(ns["STATE"]["methods"]["cryozeta"]["preflight"]["detection_patched"])
+        with open(os.path.join(self.work, "cryozeta_source_patch.diff"), encoding="utf-8") as f:
+            self.assertIn("torch.float32", f.read())
+
+    def test_a_gpu_without_bfloat16_matrix_products_starts_in_float32(self):
+        ns, repo = self.preflight(dict(self.GOOD, bf16_matmul="failed: not implemented", bf16_conv3d="failed", bf16_autocast_conv3d="failed"))
+        ns["cryozeta_preflight"](self.spec, repo, "/env/bin/python", "/env")
+        self.assertEqual(ns["CZ"]["dtype"], "fp32")
+
+    def test_no_gpu_stops_the_setup_before_any_hour_is_spent(self):
+        ns, repo = self.preflight(dict(self.GOOD, cuda_available=False))
+        with self.assertRaisesRegex(RuntimeError, "does not see the GPU"):
+            ns["cryozeta_preflight"](self.spec, repo, "/env/bin/python", "/env")
+
+    def test_modules_that_do_not_import_together_with_teaser_stop_the_setup(self):
+        ns, repo = self.preflight(self.GOOD, rc_import=1)
+        with self.assertRaisesRegex(RuntimeError, "do not import together with TEASER"):
+            ns["cryozeta_preflight"](self.spec, repo, "/env/bin/python", "/env")
+
+    def test_the_chemical_components_files_are_read_with_the_environment_that_names_their_folder(self):
+        ns, repo = self.preflight(self.GOOD)
+        ns["cryozeta_preflight"](self.spec, repo, "/env/bin/python", "/env")
+        self.assertEqual(len(self.data_check_calls), 1)
+        self.assertEqual(self.data_check_calls[0]["env"], {"ASSETS": "/a"})
+        self.assertGreaterEqual(self.data_check_calls[0]["timeout"], 600)
+
+    def test_components_files_that_the_package_cannot_read_stop_the_setup(self):
+        ns, repo = self.preflight(self.GOOD, rc_data=1)
+        with self.assertRaisesRegex(RuntimeError, "cannot read its chemical-components files in /a"):
+            ns["cryozeta_preflight"](self.spec, repo, "/env/bin/python", "/env")
+
+    def test_the_environment_of_the_programs_names_the_assets_folder_when_there_is_one(self):
+        ns = self.ns("cz_env", env_vars=lambda py, extra=None: dict(extra or {}))
+        self.assertEqual(ns["cz_env"]("/prefix", "/teaser", "/assets")["CRYOZETA_ASSETS_DIR"], "/assets")
+        self.assertNotIn("CRYOZETA_ASSETS_DIR", ns["cz_env"]("/prefix", "/teaser"))
+
+    def run_data_check(self, files=("components.v20240608.cif", "components.v20240608.cif.rdkit_mol.pkl"), atoms=3, mol=True):
+        """The program text of the data check of the setup against a fake `cryozeta` package whose configuration points into a temporary folder; returns (exit code, output)."""
+        code = literal(self.nb, "CZ_DATA_CHECK")
+        pkg = os.path.join(self.work, "fakepkg")
+        assets = os.path.join(self.work, "fakeassets")
+        os.makedirs(assets, exist_ok=True)
+        for n in files:
+            with open(os.path.join(assets, n), "w") as f:
+                f.write("x")
+        for rel, text in {"cryozeta/__init__.py": "", "cryozeta/configs/__init__.py": "", "cryozeta/data/__init__.py": "",
+                          "cryozeta/configs/configs_data.py": "data_configs = {'ccd_components_file': %r, 'ccd_components_rdkit_mol_file': %r}\n" % (
+                              os.path.join(assets, "components.v20240608.cif"), os.path.join(assets, "components.v20240608.cif.rdkit_mol.pkl")),
+                          "cryozeta/data/ccd.py": "def get_component_atom_array(code, keep_leaving_atoms=False, keep_hydrogens=False):\n    assert code == 'ALA' and keep_leaving_atoms and not keep_hydrogens\n"
+                                                  "    return [1] * %d if %d else None\n\n\ndef get_component_rdkit_mol(code):\n    return object() if %r else None\n" % (atoms, atoms, mol)}.items():
+            path = os.path.join(pkg, rel)
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, "w") as f:
+                f.write(text)
+        r = subprocess.run([sys.executable, "-c", code], env={"PYTHONPATH": pkg, "PATH": os.environ.get("PATH", "")}, capture_output=True, text=True, cwd=self.work)
+        shutil.rmtree(pkg, ignore_errors=True)
+        shutil.rmtree(assets, ignore_errors=True)
+        return r.returncode, r.stdout + r.stderr
+
+    def test_the_package_list_program_writes_the_python_and_the_conda_packages(self):
+        out = os.path.join(self.work, "packages.txt")
+        r = subprocess.run([sys.executable, "-c", literal(self.nb, "CZ_PACKAGE_LIST"), out], capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        with open(out, encoding="utf-8") as f:
+            text = f.read()
+        self.assertTrue(text.startswith("# python packages (importlib.metadata)\n"))
+        self.assertIn("# conda packages (conda-meta)\n", text)
+        self.assertRegex(text, r"(?m)^[A-Za-z0-9_.-]+==[0-9][^\s]*$")
+
+    def test_the_data_check_passes_when_the_package_reads_both_files(self):
+        self.assertIn("get_component_atom_array", literal(self.nb, "CZ_DATA_CHECK"))
+        rc, out = self.run_data_check()
+        self.assertEqual(rc, 0, out)
+        self.assertIn("the package reads its chemical-components files", out)
+
+    def test_the_data_check_names_a_file_that_is_not_there(self):
+        for missing in ("components.v20240608.cif", "components.v20240608.cif.rdkit_mol.pkl"):
+            rc, out = self.run_data_check(files=[n for n in ("components.v20240608.cif", "components.v20240608.cif.rdkit_mol.pkl") if n != missing])
+            self.assertNotEqual(rc, 0)
+            self.assertIn("the package looks for files that are not there", out)
+            self.assertIn(missing, out)
+
+    def test_the_data_check_stops_on_a_components_file_without_alanine_or_a_missing_mol(self):
+        rc, out = self.run_data_check(atoms=0)
+        self.assertNotEqual(rc, 0)
+        self.assertIn("no entry for ALA", out)
+        rc, out = self.run_data_check(mol=False)
+        self.assertNotEqual(rc, 0)
+        self.assertIn("the RDKit file has no entry for ALA", out)
+
+    def run_probe(self, available=True, failing=()):
+        """Runs the GPU probe of the setup (a program text that the notebook gives to the python of the CryoZeta environment) against a fake torch."""
+        import contextlib
+        import types
+        code = literal(self.nb, "CZ_PREFLIGHT")
+        fake = types.ModuleType("torch")
+        fake.__version__, fake.bfloat16, fake.version = "2.4.1", "bf16", types.SimpleNamespace(cuda="11.8")
+
+        class Tensor:
+            def __init__(self, bf=False):
+                self.bf = bf
+
+            def __matmul__(self, other):
+                if "matmul" in failing:
+                    raise RuntimeError("no bf16 gemm\nsecond line")
+                return self
+
+            def to(self, dtype):
+                return Tensor(dtype == "bf16")
+
+        class Conv:
+            bf = False
+
+            def __init__(self, *a, **k):
+                pass
+
+            def cuda(self):
+                return self
+
+            def to(self, dtype):
+                c = Conv()
+                c.bf = dtype == "bf16"
+                return c
+
+            def __call__(self, x):
+                if self.bf and "conv" in failing:
+                    raise RuntimeError("bf16 conv3d is not supported")
+                return x
+
+        class Autocast:
+            def __init__(self, *a, **k):
+                pass
+
+            def __enter__(self):
+                if "autocast" in failing:
+                    raise RuntimeError("autocast to bf16 is not supported")
+
+            def __exit__(self, *a):
+                return False
+        fake.cuda = types.SimpleNamespace(is_available=lambda: available, synchronize=lambda: None,
+                                          get_device_properties=lambda i: types.SimpleNamespace(name="Tesla T4", total_memory=15 * 2 ** 30, major=7, minor=5))
+        fake.randn = lambda *a, **k: Tensor(k.get("dtype") == "bf16")
+        fake.nn, fake.autocast = types.SimpleNamespace(Conv3d=Conv), Autocast
+        sys.modules["torch"] = fake
+        buf = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(buf):
+                exec(compile(code, "probe", "exec"), {})
+        finally:
+            del sys.modules["torch"]
+        return json.loads(buf.getvalue().strip().splitlines()[-1])
+
+    def test_the_gpu_probe_reports_what_this_gpu_can_do_in_bfloat16(self):
+        out = self.run_probe()
+        self.assertEqual((out["gpu"], out["memory_gb"], out["capability"], out["cuda_available"]), ("Tesla T4", 15.0, "7.5", True))
+        self.assertEqual((out["bf16_matmul"], out["bf16_conv3d"], out["bf16_autocast_conv3d"]), ("ok", "ok", "ok"))
+        out = self.run_probe(failing=("matmul", "conv", "autocast"))
+        self.assertEqual((out["bf16_matmul"], out["bf16_conv3d"], out["bf16_autocast_conv3d"]), ("failed: no bf16 gemm", "failed: bf16 conv3d is not supported", "failed: autocast to bf16 is not supported"))
+        out = self.run_probe(available=False)
+        self.assertEqual((out["cuda_available"], "gpu" in out, "bf16_matmul" in out), (False, False, False))
+
+    def test_the_plan_is_one_run_of_the_runner_with_a_settings_file(self):
+        import cryozeta_tools as CZT
+        ns = self.ns("plan_cryozeta", "cz_prefix", CZT=CZT, CZ={"teaser": "/teaser", "assets": "/assets", "dtype": "fp32"}, RUN_ROOT=os.path.join(self.work, "runs"),
+                     INPUT_ROOT=os.path.join(self.work, "input"), _env_vars_plain=lambda p: {"PATH": "x"})
+        ctx = {"entry": "9T5K", "row": {"resolution_A": "2.6", "map_url": "https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-55586/map/emd_55586.map.gz"}, "map": "/m/emd_55586.mrc",
+               "jobs": [{"sequence_submitted": "MKT", "copies_in_entry": "2"}, {"sequence_submitted": " AAA\n", "copies_in_entry": "1"}]}
+        runs = ns["plan_cryozeta"](self.spec, ctx, "/repo", "/env/bin/python")
+        self.assertEqual(len(runs), 1)
+        r = runs[0]
+        self.assertEqual((r["variant"], r["main"], r["cwd"], r["env"]), ("run", "cryozeta", "/repo", {"PATH": "x"}))      # the runner does not get the library path of the conda environment
+        self.assertEqual((r["cmd"][0], r["cmd"][2]), (sys.executable, "run"))
+        self.assertTrue(r["cmd"][1].endswith(os.path.join("scripts", "cryozeta_tools.py")))
+        with open(r["cmd"][3]) as f:
+            cfg = json.load(f)
+        self.assertEqual((cfg["name"], cfg["env_dir"], cfg["teaser_dir"], cfg["assets"], cfg["dtype"], cfg["kernels"]), ("9T5K", "/env", "/teaser", "/assets", "fp32", "off"))
+        self.assertEqual((cfg["seed"], cfg["n_sample"], cfg["n_step"], cfg["n_cycle"], cfg["num_select"]), (101, 5, 20, 10, 5))
+        self.assertEqual(cfg["header_url"], "https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-55586/header/emd-55586.xml")
+        self.assertEqual((cfg["resolution"], cfg["map_path"], cfg["colabfold_host"]), (2.6, "/m/emd_55586.mrc", "https://api.colabfold.com"))
+        self.assertEqual(cfg["chains"], [{"sequence": "MKT", "count": 2}, {"sequence": "AAA", "count": 1}])
+        self.assertEqual(list(r["outputs"]), ["cryozeta", "cryozeta_s1", "cryozeta_s2", "cryozeta_s3", "cryozeta_s4"])
+        self.assertTrue(r["outputs"]["cryozeta"].endswith(os.path.join("9T5K", "9T5K", "CryoZeta-Final", "9T5K_sample_0.cif")))
+        self.assertEqual(r["watch"], [cfg["progress_path"]])
+
+
+def TZ_sha256(path):
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
+@unittest.skipUnless(ENV_PY and USALIGN, "needs MICA_TEST_ENV_PYTHON (numpy, mrcfile, biopython) and USALIGN; the AlphaFold files are not needed")
+class CryoZetaEndToEndTests(unittest.TestCase):
+    """The whole notebook of CryoZeta as a script against stand-ins: a local git repository (the source), stand-in programs (the three programs of CryoZeta), a local Hugging Face (the
+    file list and the weights), a local ColabFold server, the EMDB headers, the maps and the deposited model from a file server, and the real US-align."""
+    ENTRIES = ["9T5K", "9WQ6", "22FX", "9V4D"]
+    BLOBS = {"cryozeta-detection-v0.0.1.safetensors": 4200 * 256, "cryozeta-v0.0.1.safetensors": 5000 * 256, "cryozeta-interpolate-v0.0.1.safetensors": 4400 * 256,
+             "components.v20240608.cif": 4100 * 256, "components.v20240608.cif.rdkit_mol.pkl": 4300 * 256}      # 1 MB or more: recorded
+    REV = "0123456789abcdef0123456789abcdef01234567"
+
+    @classmethod
+    def setUpClass(cls):
+        cls.root = tempfile.mkdtemp(prefix="czrun_")
+        cls.cif = os.path.join(cls.root, "model.cif")
+        subprocess.run([ENV_PY, "-c", SYNTH_MODEL, cls.cif], check=True)
+        with open(cls.cif, "rb") as f:
+            cif_bytes = f.read()
+        mapfile = os.path.join(cls.root, "stub.map")
+        subprocess.run([ENV_PY, "-c", "import mrcfile, numpy; m = mrcfile.new(%r, overwrite=True); m.set_data(numpy.random.rand(32, 32, 32).astype('float32')); "
+                        "m.voxel_size = 1.0; m.close()" % mapfile], check=True)
+        with open(mapfile, "rb") as f:
+            map_gz = gzip.compress(f.read())
+        cls.srv, cls.url = T.serve(FlakyFiles)
+        cls.msa = TZ.Server(statuses=("COMPLETE",), result_for=TZ.msa_archive)
+        cls.blobs = {n: bytes((i * (k + 3)) % 251 for i in range(256)) * (size // 256) for k, (n, size) in enumerate(cls.BLOBS.items())}
+        cls.api = {"id": "KiharaLab/CryoZeta", "sha": cls.REV, "lastModified": "2026-09-01T00:00:00.000Z",
+                   "siblings": [{"rfilename": ".gitattributes", "size": 100}] + [{"rfilename": n, "size": len(b), "lfs": {"sha256": hashlib.sha256(b).hexdigest(), "size": len(b), "pointerSize": 134}}
+                                                                                     for n, b in cls.blobs.items()]}
+        routes = {"/cif/stub.cif": cif_bytes, "/hub/api/models/KiharaLab/CryoZeta": json.dumps(cls.api).encode()}
+        routes.update({"/hub/resolve/%s/%s" % (cls.REV, n): b for n, b in cls.blobs.items()})
+        cls.entries = os.path.join(cls.root, "entries.csv")
+        with open(os.path.join(ROOT, "data", "entries_2026.csv"), newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            rows, fields = list(reader), reader.fieldnames
+        cls.rows = {r["pdb_id"]: r for r in rows}
+        with open(os.path.join(ROOT, "data", "af3", "af3_jobs.csv"), newline="", encoding="utf-8") as f:
+            cls.jobs = list(csv.DictReader(f))
+        for r in rows:
+            number = r["emdb_id"].split("-")[-1]
+            r["map_url"], r["cif_url"] = "%s/emdb/EMD-%s/map/emd_%s.map.gz" % (cls.url, number, number), cls.url + "/cif/stub.cif"
+            routes["/emdb/EMD-%s/map/emd_%s.map.gz" % (number, number)] = map_gz
+            routes["/emdb/EMD-%s/header/emd-%s.xml" % (number, number)] = TZ.HEADER.encode()
+        cls.routes = routes
+        with open(cls.entries, "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
+            w.writeheader()
+            w.writerows(rows)
+        cls.repo = os.path.join(cls.root, "cryozeta_stub")
+        for rel, text in {"pyproject.toml": "[project]\nname = 'cryozeta'\n", "pixi.lock": "version: 6\n", "env_setup.sh": "#!/bin/sh\n", "src/cryozeta/__init__.py": ""}.items():
+            path = os.path.join(cls.repo, rel)
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, "w") as f:
+                f.write(text)
+        T.sh("git init -q -b main . && git add -A && git -c user.name=t -c user.email=t@t commit -q -m stub", cwd=cls.repo)
+        cls.commit = T.sh("git rev-parse HEAD", cwd=cls.repo)
+        cls.teaser = os.path.join(cls.root, "teaser")
+        os.makedirs(cls.teaser)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.srv.shutdown()
+        cls.srv.server_close()
+        cls.msa.close()
+        shutil.rmtree(cls.root, ignore_errors=True)
+
+    def make_env(self, scenario=None, drop=()):
+        env = tempfile.mkdtemp(prefix="czenv_", dir=self.root)
+        os.makedirs(os.path.join(env, "bin"))
+        os.makedirs(os.path.join(env, "conda-meta"))
+        os.symlink(sys.executable, os.path.join(env, "bin", "python"))
+        for prog in [p for p in ("cryozeta-detection", "cryozeta-inference", "cryozeta-combine") if p not in drop]:
+            path = os.path.join(env, "bin", prog)
+            with open(path, "w") as f:
+                f.write(STUB_CRYOZETA)
+            os.chmod(path, 0o755)
+        sc = {"detection": ["ok"], "cryozeta": ["ok"], "interpolate": ["ok"], "combine": ["ok"]}
+        sc.update(scenario or {})
+        with open(os.path.join(env, "scenario.json"), "w") as f:
+            json.dump(sc, f)
+        return env
+
+    def stub_specs(self, **update):
+        s = M.cryozeta_spec()
+        s.update(repo="file://" + self.repo, commit=self.commit, s_per_residue=0.001, msa_poll_s=0.0, msa_tries=1, colabfold=self.msa.url)
+        s["teaser"] = dict(s["teaser"], prebuilt=self.teaser)
+        s["hub"] = dict(s["hub"], api=self.url + "/hub/api/models/KiharaLab/CryoZeta?blobs=true", resolve=self.url + "/hub/resolve/{rev}/{path}", min_bytes=1000)
+        s.update(update)
+        return {"cryozeta": s}
+
+    def run_notebook(self, tasks=None, hours=11.0, gpus="2", scenario=None, routes=None, spec_update=None, drop=(), alone_first=(), fail=None, **extra_env):
+        T.Files.routes = dict(self.routes, **(routes or {}))
+        FlakyFiles.fail = dict(fail or {})
+        self.msa.posts = 0
+        tmp = tempfile.mkdtemp(prefix="run_", dir=self.root)
+        env_dir = self.make_env(scenario, drop)
+        nb_path = os.path.join(tmp, "nb.ipynb")
+        M.build(nb_path, batch="test", entries=self.ENTRIES, tasks=tasks, hours=hours, entries_path=self.entries, env_python=os.path.join(env_dir, "bin", "python"), usalign_bin=USALIGN,
+                net_hosts=(), require_gpu=False, specs=self.stub_specs(**(spec_update or {})), run_methods=["cryozeta"], alone_first=alone_first)
+        script = os.path.join(tmp, "nb.py")
+        T.to_script(nbformat.read(nb_path, as_version=4), script)
+        env = {k: v for k, v in os.environ.items() if not k.startswith(("STUB_", "MICA_AF3"))}
+        env.update(MICA_WORK=os.path.join(tmp, "work"), MICA_BIG=os.path.join(tmp, "big"), MICA_BEAT="1", MICA_RETRY_WAIT="0.1", MICA_TEST_GPUS=gpus, MICA_POLL="0.2", MICA_RESERVE_S="0",
+                   MICA_MIN_START_S="2", STUB_MODEL_CIF=self.cif, MPLBACKEND="module://matplotlib_inline.backend_inline")
+        env.update(extra_env)
+        r = subprocess.run([sys.executable, script], cwd=tmp, env=env, capture_output=True, text=True, timeout=900)
+        work = os.path.join(tmp, "work")
+        zips = sorted(os.path.join(work, f) for f in os.listdir(work) if f.endswith(".zip")) if os.path.isdir(work) else []
+        return r, zips, tmp, env_dir
+
+    def test_a_complete_run_with_two_gpus_without_the_alphafold_dataset(self):
+        r, zips, tmp, env_dir = self.run_notebook(STUB_SLOW_CRYOZETA="0.8")
+        out = r.stdout + r.stderr
+        self.assertEqual(r.returncode, 0, out[-3000:])
+        self.assertIn("RESULT: OK", out)
+        files = EndToEndTests.zip_files(zips[-1])
+        status = EndToEndTests.csv_rows(files, "method_status.csv")
+        self.assertEqual(sorted((s["entry"], s["method"], s["status"]) for s in status), sorted((e, "cryozeta", "ok") for e in self.ENTRIES), out[-2500:])
+        self.assertEqual({s["limit_s"] for s in status}, {"21600"})
+        metrics = EndToEndTests.csv_rows(files, "metrics_usalign.csv")
+        kinds = ("cryozeta", "cryozeta_s1", "cryozeta_s2", "cryozeta_s3", "cryozeta_s4")
+        self.assertEqual(sorted((m["entry"], m["model_kind"]) for m in metrics), sorted((e, k) for e in self.ENTRIES for k in kinds))
+        self.assertTrue(all(float(m["tm_score"]) > 0.99 for m in metrics), metrics)
+        for e in self.ENTRIES:
+            for i in range(5):
+                self.assertIn("models/cryozeta/%s/%s_sample_%d.cif" % (e, e, i), files)
+            self.assertIn("logs/%s_cryozeta_run.log" % e, files)
+            summary = json.loads(files["method_files/cryozeta/%s/run/driver_summary.json" % e].decode())
+            self.assertEqual((summary["status"], summary["input"]["chains"][0]["n_uniref_hits"]), ("ok", 2))
+        for name in ("cryozeta_hub_files.json", "cryozeta_source_patch.diff"):
+            self.assertIn(name, files)
+        # what the programs were given: the settings of the demo, the weights of the Hub, the environment of the project, one GPU each
+        calls = jsonl(os.path.join(env_dir, "calls.jsonl"))
+        self.assertEqual(sorted(c["prog"] for c in calls), sorted(["cryozeta-detection"] * 4 + ["cryozeta-inference"] * 8 + ["cryozeta-combine"] * 4))
+        for c in calls:
+            self.assertEqual((c["env"]["CONDA_PREFIX"], c["env"]["TEASERPP_DIR"], c["env"]["USE_OPM_CHUNKED"], c["env"]["LAYERNORM_TYPE"]), (env_dir, self.teaser, "1", ""))
+            self.assertEqual(c["env"]["CRYOZETA_ASSETS_DIR"], os.path.join(tmp, "big", "cryozeta_assets"))
+            self.assertEqual(c["env"]["PYTHONPATH"], os.path.join(self.teaser, "build", "python"))
+        inf = [c["args"] for c in calls if c["prog"] == "cryozeta-inference"]
+        for a in inf:
+            self.assertEqual([a[a.index(k) + 1] for k in ("--seeds", "--dtype", "--infer_setting.chunk_size", "--sample_diffusion.N_sample", "--sample_diffusion.N_step", "--model.N_cycle")],
+                             ["101", "bf16", "256", "5", "20", "10"])
+            self.assertEqual(a[a.index("--use_deepspeed_evo_attention") + 1], "false")
+        self.assertEqual(sorted(os.path.basename(a[a.index("--load_checkpoint_path") + 1]) for a in inf),
+                         sorted(["cryozeta-v0.0.1.safetensors"] * 4 + ["cryozeta-interpolate-v0.0.1.safetensors"] * 4))
+        det = next(c["args"] for c in calls if c["prog"] == "cryozeta-detection")
+        self.assertEqual(os.path.basename(det[det.index("--checkpoint-path") + 1]), "cryozeta-detection-v0.0.1.safetensors")
+        # the input of one entry: the recommended contour level, the resolution of the table, the chains with their copies, the alignments
+        with open(os.path.join(tmp, "big", "input", "9T5K", "cryozeta_input.json")) as f:
+            inp = json.load(f)[0]
+        self.assertEqual((inp["contour_level"], inp["resolution"]), (0.123, float(self.rows["9T5K"]["resolution_A"])))
+        jobs = [j for j in self.jobs if j["pdb_id"] == "9T5K"]
+        self.assertEqual([(s["proteinChain"]["sequence"], s["proteinChain"]["count"]) for s in inp["sequences"]], [(j["sequence_submitted"].strip(), int(j["copies_in_entry"])) for j in jobs])
+        self.assertTrue(all(os.path.exists(os.path.join(s["proteinChain"]["msa"]["precomputed_msa_dir"], "mmseqs_other_hits.a3m")) for s in inp["sequences"]))
+        self.assertEqual(self.msa.posts, sum(1 for j in self.jobs if j["pdb_id"] in self.ENTRIES))                 # one query per sequence of each entry
+        # both GPUs, at the same time
+        spans = [s for s in jsonl(os.path.join(env_dir, "spans.jsonl")) if s["prog"] == "cryozeta-inference"]
+        self.assertEqual({s["gpu"] for s in spans}, {"0", "1"}, spans)
+        self.assertTrue(any(a["t0"] < b["t1"] and b["t0"] < a["t1"] for a in spans for b in spans if a["gpu"] != b["gpu"]), "no two programs ran at the same time")
+        # the weights are the ones of the Hub's file list, recorded with their hashes
+        info = json.loads(files["run_info.json"].decode())
+        m = info["state"]["methods"]["cryozeta"]
+        self.assertEqual(m["weights_hub"]["revision"], self.REV)
+        self.assertEqual({v["file"]: v["sha256"] for v in m["weights_hub"]["files"].values()}, {n: hashlib.sha256(b).hexdigest() for n, b in self.blobs.items()})
+        self.assertEqual(len(m["weights"]), 5, m["weights"])                                  # three weights files and the two chemical-components files
+        self.assertEqual(info["state"]["pending"], [])
+
+    def test_a_runner_killed_by_the_system_while_the_other_gpu_runs_is_run_again_alone(self):
+        r, zips, tmp, env_dir = self.run_notebook(tasks=[["9T5K", "cryozeta"], ["9WQ6", "cryozeta"]], scenario={"detection": ["killed", "ok"]}, STUB_SLOW_CRYOZETA="2")
+        out = r.stdout + r.stderr
+        self.assertEqual(r.returncode, 0, out[-3000:])
+        self.assertIn("KILLED while the other GPU ran; it is run again alone at the end", out)
+        self.assertIn("run again alone: CryoZeta on", out)
+        files = EndToEndTests.zip_files(zips[-1])
+        status = {s["entry"]: s for s in EndToEndTests.csv_rows(files, "method_status.csv")}
+        self.assertEqual({e: s["status"] for e, s in status.items()}, {"9T5K": "ok", "9WQ6": "ok"}, out[-2500:])
+        again = [s for s in status.values() if s["attempt"] == "2"]
+        self.assertEqual(len(again), 1, status)
+        self.assertEqual(again[0]["other_gpu_busy"], "False")
+        info = json.loads(files["run_info.json"].decode())
+        first = info["state"]["methods"]["cryozeta"]["entries"][again[0]["entry"]]["first_attempt"]
+        self.assertEqual(first["status"], "killed_corun")
+        self.assertEqual(EndToEndTests.csv_rows(files, "pending.csv"), [])
+
+    def test_a_runner_killed_also_when_alone_is_a_failure_of_the_method_and_not_a_crash_of_the_guard(self):
+        r, zips, tmp, env_dir = self.run_notebook(tasks=[["9T5K", "cryozeta"], ["9WQ6", "cryozeta"], ["22FX", "cryozeta"]], gpus="1", scenario={"detection": ["killed"]})
+        out = r.stdout + r.stderr
+        self.assertEqual(r.returncode, 0, out[-3000:])
+        status = EndToEndTests.csv_rows(EndToEndTests.zip_files(zips[-1]), "method_status.csv")
+        self.assertEqual([s["status"] for s in status], ["failed"] * 3, status)                   # three kills in a row: results, so the guard does not stop the method
+        self.assertTrue(all("exit code -9" in s["note"] and s["attempt"] == "1" for s in status), status)
+        self.assertNotIn("KILLED while the other GPU ran", out)
+
+    def test_a_task_that_runs_first_and_alone_runs_before_the_two_workers_start(self):
+        r, zips, tmp, env_dir = self.run_notebook(tasks=[["9T5K", "cryozeta"], ["9WQ6", "cryozeta"], ["22FX", "cryozeta"]], alone_first=[["9T5K", "cryozeta"]], STUB_SLOW_CRYOZETA="0.8")
+        out = r.stdout + r.stderr
+        self.assertEqual(r.returncode, 0, out[-3000:])
+        self.assertIn("first, alone: CryoZeta on 9T5K", out)
+        status = {s["entry"]: s for s in EndToEndTests.csv_rows(EndToEndTests.zip_files(zips[-1]), "method_status.csv")}
+        self.assertEqual({e: s["status"] for e, s in status.items()}, {"9T5K": "ok", "9WQ6": "ok", "22FX": "ok"}, out[-2500:])
+        self.assertEqual((status["9T5K"]["attempt"], status["9T5K"]["other_gpu_busy"]), ("2", "False"))
+        self.assertLess(out.index("first, alone: CryoZeta on 9T5K"), out.index("CryoZeta 9WQ6"))
+        stamp = lambda s: datetime.datetime.strptime(s, "%Y-%m-%dT%H:%M:%SZ")
+        end_of_first = stamp(status["9T5K"]["started_utc"]) + datetime.timedelta(seconds=int(status["9T5K"]["seconds"]) - 1)
+        self.assertTrue(all(stamp(status[e]["started_utc"]) >= end_of_first for e in ("9WQ6", "22FX")), status)         # nothing else started before it was done
+
+    def test_a_download_that_fails_is_asked_for_again(self):
+        number = self.rows["9T5K"]["emdb_id"].split("-")[-1]
+        path = "/emdb/EMD-%s/map/emd_%s.map.gz" % (number, number)
+        r, zips, tmp, env_dir = self.run_notebook(tasks=[["9T5K", "cryozeta"]], fail={path: 3})            # three refusals: the whole first call of the download helper (three attempts)
+        out = r.stdout + r.stderr
+        self.assertEqual(r.returncode, 0, out[-3000:])
+        self.assertEqual(out.count("a download failed"), 1, out[-2500:])
+        status = EndToEndTests.csv_rows(EndToEndTests.zip_files(zips[-1]), "method_status.csv")
+        self.assertEqual([(s["entry"], s["status"]) for s in status], [("9T5K", "ok")])
+
+    def test_an_input_that_cannot_be_downloaded_after_the_tries_is_not_run_and_not_a_failure(self):
+        number = self.rows["9T5K"]["emdb_id"].split("-")[-1]
+        path = "/emdb/EMD-%s/map/emd_%s.map.gz" % (number, number)
+        r, zips, tmp, env_dir = self.run_notebook(tasks=[["9T5K", "cryozeta"]], routes={path: None})
+        out = r.stdout + r.stderr
+        self.assertEqual(r.returncode, 0, out[-3000:])
+        self.assertEqual(out.count("a download failed"), 3, out[-2500:])                         # four tries, three waits
+        status = EndToEndTests.csv_rows(EndToEndTests.zip_files(zips[-1]), "method_status.csv")
+        self.assertEqual([(s["entry"], s["status"], s["failed_step"]) for s in status], [("9T5K", "not run", "inputs")])
+        self.assertIn("could not download", status[0]["note"])
+
+    def test_an_out_of_gpu_memory_error_on_every_chunk_size_is_a_result_and_does_not_trip_the_guard(self):
+        r, zips, tmp, env_dir = self.run_notebook(tasks=[["9T5K", "cryozeta"], ["9WQ6", "cryozeta"], ["22FX", "cryozeta"]], scenario={"cryozeta": ["oom_out"]}, gpus="1")
+        out = r.stdout + r.stderr
+        self.assertEqual(r.returncode, 0, out[-3000:])
+        files = EndToEndTests.zip_files(zips[-1])
+        status = EndToEndTests.csv_rows(files, "method_status.csv")
+        self.assertEqual([s["status"] for s in status], ["failed"] * 3, status)
+        self.assertTrue(all(s["note"].startswith("out of GPU memory") for s in status), status)
+        inf = [c["args"] for c in jsonl(os.path.join(env_dir, "calls.jsonl")) if c["prog"] == "cryozeta-inference"]
+        self.assertEqual(len(inf), 12)                                                        # four chunk sizes per entry, and the interpolation never starts
+        self.assertEqual([a[a.index("--infer_setting.chunk_size") + 1] for a in inf[:4]], ["256", "64", "16", "4"])
+        self.assertEqual(json.loads(files["method_files/cryozeta/9T5K/run/driver_summary.json"].decode())["failed_stage"], "cryozeta")
+        self.assertEqual(EndToEndTests.csv_rows(files, "metrics_usalign.csv"), [])
+
+    def test_a_server_that_gives_no_alignment_is_a_failed_input_and_two_in_a_row_stop_the_method(self):
+        self.msa.first = "ERROR"
+        self.addCleanup(setattr, self.msa, "first", "PENDING")
+        r, zips, tmp, env_dir = self.run_notebook(tasks=[["9T5K", "cryozeta"], ["9WQ6", "cryozeta"], ["22FX", "cryozeta"]], gpus="1")
+        out = r.stdout + r.stderr
+        self.assertEqual(r.returncode, 0, out[-3000:])
+        files = EndToEndTests.zip_files(zips[-1])
+        status = EndToEndTests.csv_rows(files, "method_status.csv")
+        self.assertEqual([s["status"] for s in status], ["failed", "failed", "not run"], status)
+        self.assertEqual(status[2]["failed_step"], "guard")
+        summary = json.loads(files["method_files/cryozeta/9T5K/run/driver_summary.json"].decode())
+        self.assertEqual(summary["failed_stage"], "input")
+        self.assertIn("MsaError", summary["note"])
+        self.assertFalse(os.path.exists(os.path.join(env_dir, "calls.jsonl")), "no program of CryoZeta may start without its input")
+
+    def test_weights_that_do_not_match_the_hub_stop_the_setup_before_any_run(self):
+        bad = json.loads(json.dumps(self.api))
+        next(s for s in bad["siblings"] if s["rfilename"] == "cryozeta-v0.0.1.safetensors")["lfs"]["sha256"] = "0" * 64
+        r, zips, tmp, env_dir = self.run_notebook(tasks=[["9T5K", "cryozeta"], ["9WQ6", "cryozeta"]], routes={"/hub/api/models/KiharaLab/CryoZeta": json.dumps(bad).encode()})
+        out = r.stdout + r.stderr
+        self.assertIn("STOPPED in its setup: the file cryozeta-v0.0.1.safetensors does not have the sha256 that the Hub lists", out)
+        self.assertFalse(os.path.exists(os.path.join(env_dir, "calls.jsonl")), "the programs must not start")
+        status = EndToEndTests.csv_rows(EndToEndTests.zip_files(zips[-1]), "method_status.csv")
+        self.assertEqual(sorted((s["entry"], s["status"]) for s in status), [("9T5K", "not run"), ("9WQ6", "not run")])
+
+    def test_a_weights_file_that_the_hub_does_not_list_stops_the_setup(self):
+        short = json.loads(json.dumps(self.api))
+        short["siblings"] = [s for s in short["siblings"] if s["rfilename"] != "cryozeta-interpolate-v0.0.1.safetensors"]
+        r, zips, tmp, env_dir = self.run_notebook(tasks=[["9T5K", "cryozeta"]], routes={"/hub/api/models/KiharaLab/CryoZeta": json.dumps(short).encode()})
+        self.assertIn("has no file cryozeta-interpolate-v0.0.1.safetensors", r.stdout + r.stderr)
+        self.assertFalse(os.path.exists(os.path.join(env_dir, "calls.jsonl")))
+
+    def test_a_chemical_components_file_that_the_hub_does_not_list_stops_the_setup(self):
+        for name in ("components.v20240608.cif", "components.v20240608.cif.rdkit_mol.pkl"):
+            short = json.loads(json.dumps(self.api))
+            short["siblings"] = [s for s in short["siblings"] if s["rfilename"] != name]
+            r, zips, tmp, env_dir = self.run_notebook(tasks=[["9T5K", "cryozeta"]], routes={"/hub/api/models/KiharaLab/CryoZeta": json.dumps(short).encode()})
+            self.assertIn("has no file " + name, r.stdout + r.stderr)
+            self.assertFalse(os.path.exists(os.path.join(env_dir, "calls.jsonl")))
+
+    def test_a_program_of_the_environment_that_is_missing_stops_the_setup(self):
+        r, zips, tmp, env_dir = self.run_notebook(tasks=[["9T5K", "cryozeta"]], drop=("cryozeta-combine",))
+        out = r.stdout + r.stderr
+        self.assertIn("CryoZeta STOPPED in its setup: the environment lacks the programs cryozeta-combine", out)
+        self.assertFalse(os.path.exists(os.path.join(env_dir, "calls.jsonl")))
+        self.assertFalse(any(self.msa.posts for _ in [0]), "no alignment is asked for before the setup is complete")
 
 
 if __name__ == "__main__":

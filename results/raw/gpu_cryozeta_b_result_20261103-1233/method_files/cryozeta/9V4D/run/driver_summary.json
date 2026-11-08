@@ -1,0 +1,96 @@
+{
+  "name": "9V4D",
+  "status": "ok",
+  "failed_stage": "",
+  "note": "",
+  "settings": {
+    "seed": 101,
+    "n_sample": 5,
+    "n_step": 20,
+    "n_cycle": 10,
+    "num_select": 5,
+    "dtype": "bf16",
+    "kernels": "off",
+    "chunk_sizes": [
+      256,
+      64,
+      16,
+      4
+    ]
+  },
+  "stages": [
+    {
+      "stage": "detection",
+      "rc": 0,
+      "seconds": 25.9,
+      "gpu_peak_mb": 3355,
+      "gpu_total_mb": 15360,
+      "oom": false
+    },
+    {
+      "stage": "combine",
+      "rc": 0,
+      "seconds": 0.6,
+      "gpu_peak_mb": 0,
+      "gpu_total_mb": 15360,
+      "oom": false
+    }
+  ],
+  "attempts": [
+    {
+      "stage": "cryozeta",
+      "dtype": "bf16",
+      "chunk_size": 256,
+      "rc": 0,
+      "seconds": 2599.0,
+      "gpu_peak_mb": 9775,
+      "oom": false,
+      "predictions": 5,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "stage": "interpolate",
+      "dtype": "bf16",
+      "chunk_size": 256,
+      "rc": 0,
+      "seconds": 2607.2,
+      "gpu_peak_mb": 9785,
+      "oom": false,
+      "predictions": 5,
+      "error": "",
+      "skipped": false
+    }
+  ],
+  "input": {
+    "chains": [
+      {
+        "chain": 1,
+        "length": 393,
+        "copies": 1,
+        "n_uniref_hits": 3968,
+        "n_env_hits": 562,
+        "ticket": "C8RAe0KiU6ElnBuCqrgMNVYKAkua09s_ZzAplA",
+        "msa_dir": "/tmp/mica_pilot/input/9V4D/cryozeta_msa/chain1"
+      },
+      {
+        "chain": 2,
+        "length": 9,
+        "copies": 1,
+        "n_uniref_hits": 0,
+        "n_env_hits": 0,
+        "ticket": "MsrE6ik7bix9gi-Gd_p37sUBL9o2b_m3yrT-Lg",
+        "msa_dir": "/tmp/mica_pilot/input/9V4D/cryozeta_msa/chain2"
+      }
+    ],
+    "contour_level": 0.0586,
+    "contour_level_source": "https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-64777/header/emd-64777.xml"
+  },
+  "seconds": 5384.4,
+  "final_settings": {
+    "dtype": "bf16",
+    "chunk_index": 0,
+    "chunk_size": 256
+  },
+  "gpu_peak_mb": 9785
+}

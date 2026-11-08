@@ -1,0 +1,87 @@
+{
+  "name": "22FX",
+  "status": "ok",
+  "failed_stage": "",
+  "note": "",
+  "settings": {
+    "seed": 101,
+    "n_sample": 5,
+    "n_step": 20,
+    "n_cycle": 10,
+    "num_select": 5,
+    "dtype": "bf16",
+    "kernels": "off",
+    "chunk_sizes": [
+      256,
+      64,
+      16,
+      4
+    ]
+  },
+  "stages": [
+    {
+      "stage": "detection",
+      "rc": 0,
+      "seconds": 198.8,
+      "gpu_peak_mb": 3385,
+      "gpu_total_mb": 15360,
+      "oom": false
+    },
+    {
+      "stage": "combine",
+      "rc": 0,
+      "seconds": 0.5,
+      "gpu_peak_mb": 0,
+      "gpu_total_mb": 15360,
+      "oom": false
+    }
+  ],
+  "attempts": [
+    {
+      "stage": "cryozeta",
+      "dtype": "bf16",
+      "chunk_size": 256,
+      "rc": 0,
+      "seconds": 422.3,
+      "gpu_peak_mb": 6325,
+      "oom": false,
+      "predictions": 5,
+      "error": "",
+      "skipped": false
+    },
+    {
+      "stage": "interpolate",
+      "dtype": "bf16",
+      "chunk_size": 256,
+      "rc": 0,
+      "seconds": 35.2,
+      "gpu_peak_mb": 5323,
+      "oom": false,
+      "predictions": 0,
+      "error": "",
+      "skipped": true
+    }
+  ],
+  "input": {
+    "chains": [
+      {
+        "chain": 1,
+        "length": 182,
+        "copies": 1,
+        "n_uniref_hits": 6589,
+        "n_env_hits": 6813,
+        "ticket": "4F_xznP3ipMYCgD8jVNvgtf7h8BVX4y9Uv2r4g",
+        "msa_dir": "/tmp/mica_pilot/input/22FX/cryozeta_msa/chain1"
+      }
+    ],
+    "contour_level": 0.1,
+    "contour_level_source": "https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-68251/header/emd-68251.xml"
+  },
+  "seconds": 675.2,
+  "final_settings": {
+    "dtype": "bf16",
+    "chunk_index": 0,
+    "chunk_size": 256
+  },
+  "gpu_peak_mb": 6325
+}

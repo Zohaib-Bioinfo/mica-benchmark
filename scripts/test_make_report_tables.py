@@ -314,6 +314,16 @@ class ExtraMacroTests(unittest.TestCase):
         self.assertEqual((m["FailTotal"], m["FailKill"], m["FailTimeout"], m["FailCrash"]), ("4", "2", "1", "1"))                     # the run with a model is not a failure
         self.assertEqual((m["FailKillMica"], m["FailTimeoutMica"], m["FailCrashEthree"], m["FailCrashListEthree"], m["FailKillEmprot"]), ("1", "1", "1", "CCCC", "0"))
 
+    def test_a_run_that_was_not_run_is_not_a_failure_and_the_lists_of_entries_by_outcome(self):
+        out = pd.DataFrame({"entry": ["AAAA", "BBBB", "CCCC", "DDDD", "EEEE", "FFFF"], "method": ["cryozeta"] * 6, "outcome": ["model", "failed", "failed", "not_run", "not_run", "model"],
+                            "reason": ["", "run: killed by the system (exit code -9, probably out of memory; also when it ran alone)", "run: out of GPU memory (exit code 2)",
+                                       "not run: not started: not enough time left in the session", "killed_corun: killed by the system (exit code -9)", ""]})
+        m = self.macros(outcomes=out)
+        self.assertEqual((m["FailTotal"], m["FailKill"], m["FailCrash"]), ("2", "1", "1"))                                           # the two entries not run are not counted
+        self.assertEqual((m["FailKillListCryozeta"], m["FailCrashListCryozeta"], m["FailTimeoutListCryozeta"]), ("BBBB", "CCCC", "none"))
+        self.assertEqual((m["ModelListCryozeta"], m["FailedListCryozeta"], m["NotRunListCryozeta"]), ("AAAA and FFFF", "BBBB and CCCC", "DDDD and EEEE"))
+        self.assertEqual(m["ModelListMica"], "none")                                                                                   # a method without rows gets "none", not a missing macro
+
     def test_alphafold_prediction_macros(self):
         import tempfile
         with tempfile.TemporaryDirectory() as d:
@@ -423,6 +433,16 @@ class SessionTests(unittest.TestCase):
             m = T.Macros()
             T.session_macros(m, raw)
             self.assertEqual((m.items["NSessions"], m.items["GpuSessionHours"], m.items["CpuSessionHours"]), ("3", "3.0", "0.5"))
+
+    def test_a_session_that_stopped_at_a_check_is_not_called_cut_by_the_time_budget(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            raw = make_raw(tmp, [("scoring_x", "20261108-0459_INCOMPLETE", {"run_info.json": {"elapsed_minutes": 13, "complete": False, "gpu": "", "problem": "the inputs hold no model"}}),
+                                 ("gpu_y", "20261108-0417_INCOMPLETE", {"mica_status.csv": pd.DataFrame({"entry": ["A"], "status": ["interrupted"]}),
+                                                                       "run_info.json": {"elapsed_minutes": 60, "complete": False, "gpu": "Tesla T4"}})])
+            text = T.sessions_table(raw)
+            self.assertIn("-- (stopped by a check of the notebook)", text)
+            self.assertIn("interrupted 1 (cut by the time budget)", text)
+            self.assertEqual(text.count("cut by the time budget"), 1)
 
     def test_no_zip_gives_a_sentence_and_no_macro(self):
         self.assertIn("No result zip", T.sessions_table(""))

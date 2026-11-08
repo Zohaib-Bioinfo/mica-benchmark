@@ -1,0 +1,177 @@
+platform kaggle | python 3.13.15 | Linux-6.18.55+-x86_64-with-glibc2.39 | 4 CPU cores (Intel(R) Xeon(R) CPU @ 2.00GHz) | 31.3 GB RAM
+large files go to /tmp/mica_pilot (1126 GB free); results to /kaggle/working/pilot (21 GB free)
+GPU: Tesla T4, 15360 MiB, 580.178.04 | Tesla T4, 15360 MiB, 580.178.04
+checking the internet:
+  reachable: PyPI      200
+  reachable: conda-forge 200
+  reachable: GitHub    200
+  reachable: Hugging Face (CryoZeta weights) 200
+  NOT reachable: ColabFold server HTTP Error 404: Not Found
+  reachable: EBI FTP   200
+  reachable: RCSB      200
+all 7 files written and checked (hashes match)
+processors: os.cpu_count 4 | multiprocessing.cpu_count 4 | usable 4 | nproc 4 | cgroup 400000 100000 | cgroup cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory | MICA's 2
+progress lines, state.json and the partial zip (/kaggle/working/gpu_cryozeta_a_partial.zip) are ready
+tools ready; methods: cryozeta; 20 tasks; budget 11.0 hours (the programs are stopped 10 minutes before the end)
+US-align: /tmp/mica_pilot/USalign_src/USalign (* US-align (Version 20261012)                                      *)
+
+##############################################################################
+# setup of CryoZeta (commit c544c6bbd0)
+##############################################################################
+source: https://github.com/kiharalab/CryoZeta at commit c544c6bbd0366951d8b4e0bc4c0da547836f7b8f
+downloading pixi 0.41.1 from https://github.com/prefix-dev/pixi/releases/download/v0.41.1/pixi-x86_64-unknown-linux-musl
+pixi 0.41.1: 44 MB in 0 s
+pixi: pixi 0.41.1
+installing the environment of CryoZeta with pixi, from the lock file of the repository (10 to 25 minutes) ...
+the CryoZeta environment imports: torch 2.4.1
+the CryoZeta environment imports: torch 2.4.1
+cuda available: True
+gpu: Tesla T4 | 14.6 GB | capability 7.5
+3D convolution and matrix product on the GPU work (torch 2.4.1, cuda 11.8)
+TEASER++: configure ...
+TEASER++: build ...
+downloading CryoZeta weights cryozeta-detection-v0.0.1.safetensors from https://huggingface.co/KiharaLab/CryoZeta/resolve/6fdba93a5f3af71c61760723438ff05f48e033db/cryozeta-detection-v0.0.1.safetensors
+CryoZeta weights cryozeta-detection-v0.0.1.safetensors: 39 MB in 1 s
+cryozeta-detection-v0.0.1.safetensors: 39 MB, sha256 677ea35f308d6d14 (the Hub's value)
+downloading CryoZeta weights cryozeta-v0.0.1.safetensors from https://huggingface.co/KiharaLab/CryoZeta/resolve/6fdba93a5f3af71c61760723438ff05f48e033db/cryozeta-v0.0.1.safetensors
+CryoZeta weights cryozeta-v0.0.1.safetensors: 2680 MB in 25 s
+cryozeta-v0.0.1.safetensors: 2680 MB, sha256 da7153b024d5eaeb (the Hub's value)
+downloading CryoZeta weights cryozeta-interpolate-v0.0.1.safetensors from https://huggingface.co/KiharaLab/CryoZeta/resolve/6fdba93a5f3af71c61760723438ff05f48e033db/cryozeta-interpolate-v0.0.1.safetensors
+CryoZeta weights cryozeta-interpolate-v0.0.1.safetensors: 2680 MB in 23 s
+cryozeta-interpolate-v0.0.1.safetensors: 2680 MB, sha256 1a0b2f3e53953af4 (the Hub's value)
+the modules of the three programs and TEASER++ import
+GPU test of the CryoZeta environment: {"torch": "2.4.1", "cuda": "11.8", "cuda_available": true, "gpu": "Tesla T4", "memory_gb": 14.56, "capability": "7.5", "bf16_matmul": "ok", "bf16_conv3d": "ok", "bf16_autocast_conv3d": "ok"}
+weights files of cryozeta: 3 files, 5400 MB {'cryozeta_assets/cryozeta-interpolate-v0.0.1.safetensors': 2680, 'cryozeta_assets/cryozeta-v0.0.1.safetensors': 2680, 'cryozeta_assets/cryozeta-detection-v0.0.1.safetensors': 39}
+CryoZeta is ready (285 s)
+GPU 0: a PyTorch computation works
+GPU 1: a PyTorch computation works
+
+GPUs used: [0, 1]; queue: 20 waiting, 0 ok, 0 failed; 0.1 of 11.0 hours used
+
+------------------------------------------------------------------------
+GPU0 CryoZeta 9T5K (attempt 1)
+queue: 19 waiting, 0 ok, 0 failed; 0.1 of 11.0 hours used
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+GPU1 CryoZeta 9WQ6 (attempt 1)
+queue: 18 waiting, 0 ok, 0 failed; 0.1 of 11.0 hours used
+------------------------------------------------------------------------
+9T5K: map emd_55586.mrc (256 MB, sha256 429037b122b08a1c), 1 sequence(s): [{'job': '9T5K_E1', 'length': 453, 'copies': 1}]
+
+=== GPU0 CryoZeta 9T5K, run: /kaggle/working/pilot/scripts/cryozeta_tools.py run /tmp/mica_pilot/input/9T5K/cryozeta_config.json
+9WQ6: map emd_66160.mrc (131 MB, sha256 f30f55491161af18), 1 sequence(s): [{'job': '9WQ6_E1', 'length': 339, 'copies': 1}]
+
+=== GPU1 CryoZeta 9WQ6, run: /kaggle/working/pilot/scripts/cryozeta_tools.py run /tmp/mica_pilot/input/9WQ6/cryozeta_config.json
+[GPU0 CryoZeta 9T5K] running for 2 min | load 0.3 | free RAM 28.6 GB | busiest: pt_main_thread 120% (4s), pt_main_thread 119% (1s), python3 3.9% (535s) | 9T5K_cryozeta_run.log: 1612 bytes, changed 2 s ago, last line: 2026-11-02 09:21:27.429 | INFO     | cryozeta.runner.inference_detection:preprocess_map:391 - Using contour level for 9T5K: 0.15 | progress.txt: 124 bytes, changed 3 s ago, last line: detection: 1 s | 2026-11-02 09:21:26.524 | INFO     | cryozeta.runner.inference_detection:__init__:359 - Using device: cuda
+[GPU1 CryoZeta 9WQ6] running for 2 min | load 2.5 | free RAM 25.7 GB | busiest: pt_main_thread 152% (27s), pt_main_thread 127% (98s), pt_main_thread 19.7% (20s) | 9WQ6_cryozeta_run.log: 9086 bytes, changed 14 s ago, last line: inference scheduler 16.0 | progress.txt: 173 bytes, changed 14 s ago, last line: cryozeta_try2: 12 s | 2026-11-02 09:22:48.837 | INFO     | cryozeta.runner.inference:init_env:53 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN ve
+GPU1 CryoZeta 9WQ6 run finished: exit code 3, 131 s, GPU memory peak 5423 MB, lowest free RAM 21.14 GB, other GPU busy: True
+GPU1 CryoZeta 9WQ6: FAILED: exit code 3; the model file 9WQ6_sample_0.cif was not written. The last lines of the program:
+    with open(file, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif'
+...
+2026-11-02 09:23:12.079 | INFO     | cryozeta.runner.inference:main:214 - [Rank 0] 9WQ6: skipping CryoZeta-Interpolate (no interpolation features)
+
+DRIVER RESULT failed: cryozeta: no predictions after 2 attempt(s) (exit code 0). The last lines of the stage:
+      File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 101, in get_component_atom_array
+        ccd_cif = biotite_load_ccd_cif()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+      File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 48, in biotite_load_ccd_cif
+        return pdbx.CIFFile.read(COMPONENTS_FILE)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/biotite/structure/io/pdbx/cif.py", line 844, in read
+        with open(file, "r") as f:
+             ^^^^^^^^^^^^^^^
+    FileNotFoundError: [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif'
+    ...
+    2026-11-02 09:23:12.079 | INFO     | cryozeta.runner.inference:main:214 - [Rank 0] 9WQ6: skipping CryoZeta-Interpolate (no interpolation features)
+DRIVER RESULT failed: cryozeta: no predictions after 2 attempt(s) (exit code 0)
+CryoZeta wrote: driver_summary.json (3825 bytes), progress.txt (13 bytes), logs/cryozeta_try1.log (4417 bytes), logs/cryozeta_try2.log (4417 bytes), logs/detection.log (4108 bytes), summary_files/detection_timing.txt (205 bytes), 9WQ6/CryoZeta-Detection/9WQ6.pt (52481784 bytes), 9WQ6/CryoZeta-Detection/9WQ6_CA.pdb (73812 bytes), 9WQ6/CryoZeta-Detection/9WQ6_timing.txt (205 bytes)
+
+------------------------------------------------------------------------
+GPU1 CryoZeta 22FX (attempt 1)
+queue: 17 waiting, 0 ok, 1 failed; 0.2 of 11.0 hours used
+------------------------------------------------------------------------
+[GPU0 CryoZeta 9T5K] running for 4 min | load 2.5 | free RAM 27.2 GB | busiest: pt_main_thread 157% (23s), pt_main_thread 19.8% (18s), python3 3.2% (655s) | 9T5K_cryozeta_run.log: 4968 bytes, changed 13 s ago, last line: inference scheduler 16.0 | progress.txt: 173 bytes, changed 13 s ago, last line: cryozeta_try1: 10 s | 2026-11-02 09:23:15.672 | INFO     | cryozeta.runner.inference:init_env:53 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN ve
+GPU0 CryoZeta 9T5K run finished: exit code 3, 275 s, GPU memory peak 4617 MB, lowest free RAM 21.84 GB, other GPU busy: True
+GPU0 CryoZeta 9T5K: FAILED: exit code 3; the model file 9T5K_sample_0.cif was not written. The last lines of the program:
+    with open(file, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif'
+...
+2026-11-02 09:24:02.688 | INFO     | cryozeta.runner.inference:main:214 - [Rank 0] 9T5K: skipping CryoZeta-Interpolate (no interpolation features)
+
+DRIVER RESULT failed: cryozeta: no predictions after 2 attempt(s) (exit code 0). The last lines of the stage:
+      File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 101, in get_component_atom_array
+        ccd_cif = biotite_load_ccd_cif()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+      File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 48, in biotite_load_ccd_cif
+        return pdbx.CIFFile.read(COMPONENTS_FILE)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/biotite/structure/io/pdbx/cif.py", line 844, in read
+        with open(file, "r") as f:
+             ^^^^^^^^^^^^^^^
+    FileNotFoundError: [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif'
+    ...
+    2026-11-02 09:24:02.688 | INFO     | cryozeta.runner.inference:main:214 - [Rank 0] 9T5K: skipping CryoZeta-Interpolate (no interpolation features)
+DRIVER RESULT failed: cryozeta: no predictions after 2 attempt(s) (exit code 0)
+CryoZeta wrote: driver_summary.json (3824 bytes), progress.txt (13 bytes), logs/cryozeta_try1.log (4417 bytes), logs/cryozeta_try2.log (4417 bytes), logs/detection.log (6000 bytes), summary_files/detection_timing.txt (205 bytes), 9T5K/CryoZeta-Detection/9T5K.pt (518655 bytes), 9T5K/CryoZeta-Detection/9T5K_CA.pdb (277237 bytes), 9T5K/CryoZeta-Detection/9T5K_timing.txt (205 bytes)
+
+CryoZeta: two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session
+GPU 0: nothing more to start in this session
+22FX: map emd_68251.mrc (340 MB, sha256 2ace449877cf4fb4), 1 sequence(s): [{'job': '22FX_E1', 'length': 182, 'copies': 1}]
+
+=== GPU1 CryoZeta 22FX, run: /kaggle/working/pilot/scripts/cryozeta_tools.py run /tmp/mica_pilot/input/22FX/cryozeta_config.json
+[GPU1 CryoZeta 22FX] running for 2 min | load 1.0 | free RAM 26.4 GB | busiest: pt_main_thread 114% (67s), python3 2.8% (905s), python3 0.5% (912s) | 22FX_cryozeta_run.log: 2212 bytes, changed 58 s ago, last line: Processing inference:   0%|          | 0/53 [00:00<?, ?it/s] | progress.txt: 78 bytes, changed 58 s ago, last line: detection: 8 s | Processing inference:   0%|          | 0/53 [00:00<?, ?it/s]
+[GPU1 CryoZeta 22FX] running for 4 min | load 1.8 | free RAM 28.7 GB | busiest: pt_main_thread 105% (7s), pt_main_thread 88.9% (2s), python3 2.4% (1025s) | 22FX_cryozeta_run.log: 4523 bytes, changed 8 s ago, last line: === stage cryozeta_try1: cryozeta-inference --seeds 101 --load_checkpoint_path /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors --em_file_dir /tmp/mi | progress.txt: 19 bytes, changed 8 s ago, last line: cryozeta: starting
+GPU1 CryoZeta 22FX run finished: exit code 3, 291 s, GPU memory peak 3385 MB, lowest free RAM 9.92 GB, other GPU busy: False
+GPU1 CryoZeta 22FX: FAILED: exit code 3; the model file 22FX_sample_0.cif was not written. The last lines of the program:
+    with open(file, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif'
+...
+2026-11-02 09:30:28.952 | INFO     | cryozeta.runner.inference:main:214 - [Rank 0] 22FX: skipping CryoZeta-Interpolate (no interpolation features)
+
+DRIVER RESULT failed: cryozeta: no predictions after 2 attempt(s) (exit code 0). The last lines of the stage:
+      File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 101, in get_component_atom_array
+        ccd_cif = biotite_load_ccd_cif()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+      File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 48, in biotite_load_ccd_cif
+        return pdbx.CIFFile.read(COMPONENTS_FILE)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/biotite/structure/io/pdbx/cif.py", line 844, in read
+        with open(file, "r") as f:
+             ^^^^^^^^^^^^^^^
+    FileNotFoundError: [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif'
+    ...
+    2026-11-02 09:30:28.952 | INFO     | cryozeta.runner.inference:main:214 - [Rank 0] 22FX: skipping CryoZeta-Interpolate (no interpolation features)
+DRIVER RESULT failed: cryozeta: no predictions after 2 attempt(s) (exit code 0)
+CryoZeta wrote: driver_summary.json (3826 bytes), progress.txt (13 bytes), logs/cryozeta_try1.log (4417 bytes), logs/cryozeta_try2.log (4417 bytes), logs/detection.log (8100 bytes), summary_files/detection_timing.txt (208 bytes), 22FX/CryoZeta-Detection/22FX.pt (617151 bytes), 22FX/CryoZeta-Detection/22FX_CA.pdb (327560 bytes), 22FX/CryoZeta-Detection/22FX_timing.txt (208 bytes)
+GPU 1: nothing more to start in this session
+
+entry  CryoZeta                
+9T5K   failed 5min             
+9WQ6   failed 2min             
+22FX   failed 5min             
+9V4D   not run                 
+9JKK   not run                 
+9OTA   not run                 
+9TKA   not run                 
+9KQM   not run                 
+9WFL   not run                 
+9WME   not run                 
+9VI4   not run                 
+9VBD   not run                 
+9ZLH   not run                 
+9RWS   not run                 
+9VUH   not run                 
+9WTX   not run                 
+9OC0   not run                 
+9Z24   not run                 
+13BD   not run                 
+26DK   not run                 
+
+CryoZeta       DISABLED      setup 285 s; two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method ar
+
+3 tasks are finished (ok or failed), 17 are left for the next session (pending.csv)

@@ -1,0 +1,420 @@
+{
+ "ok": true,
+ "problem": "",
+ "t0": 1793610755.6264024,
+ "started": "2026-11-02T09:12:35.626404+00:00",
+ "phenix_env": null,
+ "phenix_version": "",
+ "installer_sha256": "",
+ "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+ "usalign_version": "* US-align (Version 20261012)                                      *",
+ "weights": {},
+ "env": {},
+ "entries": {},
+ "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+ "cpu_facts": {
+  "os.cpu_count": 4,
+  "multiprocessing.cpu_count": 4,
+  "usable (sched_getaffinity)": 4,
+  "nproc": "4",
+  "cgroup v2 cpu.max": "400000 100000",
+  "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+  "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+ },
+ "methods": {
+  "cryozeta": {
+   "key": "cryozeta",
+   "label": "CryoZeta",
+   "commit": "c544c6bbd0366951d8b4e0bc4c0da547836f7b8f",
+   "status": "disabled",
+   "failed_step": "guard",
+   "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session",
+   "setup_seconds": 285,
+   "entries": {
+    "9T5K": {
+     "entry": "9T5K",
+     "method": "cryozeta",
+     "status": "failed",
+     "failed_step": "run",
+     "note": "exit code 3; the model file 9T5K_sample_0.cif was not written",
+     "runs": {
+      "run": {
+       "peak_gpu_mb": 4617,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 21.84,
+       "samples": 55,
+       "rc": 3,
+       "seconds": 275,
+       "timed_out": false,
+       "started": 1793611169.1293952,
+       "ended": 1793611444.2829738,
+       "gpu": 0,
+       "limit_s": 21600,
+       "other_gpu_busy": true,
+       "started_utc": "2026-11-02T09:19:29Z",
+       "ended_utc": "2026-11-02T09:24:04Z"
+      }
+     },
+     "models": [],
+     "gpu": 0,
+     "attempt": 1,
+     "started_utc": "2026-11-02T09:17:58Z",
+     "seconds": 366
+    },
+    "9WQ6": {
+     "entry": "9WQ6",
+     "method": "cryozeta",
+     "status": "failed",
+     "failed_step": "run",
+     "note": "exit code 3; the model file 9WQ6_sample_0.cif was not written",
+     "runs": {
+      "run": {
+       "peak_gpu_mb": 5423,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 21.14,
+       "samples": 26,
+       "rc": 3,
+       "seconds": 131,
+       "timed_out": false,
+       "started": 1793611263.1276968,
+       "ended": 1793611393.9947991,
+       "gpu": 1,
+       "limit_s": 21600,
+       "other_gpu_busy": true,
+       "started_utc": "2026-11-02T09:21:03Z",
+       "ended_utc": "2026-11-02T09:23:13Z"
+      }
+     },
+     "models": [],
+     "gpu": 1,
+     "attempt": 1,
+     "started_utc": "2026-11-02T09:17:58Z",
+     "seconds": 315
+    },
+    "22FX": {
+     "entry": "22FX",
+     "method": "cryozeta",
+     "status": "failed",
+     "failed_step": "run",
+     "note": "exit code 3; the model file 22FX_sample_0.cif was not written",
+     "runs": {
+      "run": {
+       "peak_gpu_mb": 3385,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 9.92,
+       "samples": 58,
+       "rc": 3,
+       "seconds": 291,
+       "timed_out": false,
+       "started": 1793611539.631867,
+       "ended": 1793611830.603922,
+       "gpu": 1,
+       "limit_s": 21600,
+       "other_gpu_busy": false,
+       "started_utc": "2026-11-02T09:25:39Z",
+       "ended_utc": "2026-11-02T09:30:30Z"
+      }
+     },
+     "models": [],
+     "gpu": 1,
+     "attempt": 1,
+     "started_utc": "2026-11-02T09:23:14Z",
+     "seconds": 437
+    },
+    "9V4D": {
+     "entry": "9V4D",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9JKK": {
+     "entry": "9JKK",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9OTA": {
+     "entry": "9OTA",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9TKA": {
+     "entry": "9TKA",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9KQM": {
+     "entry": "9KQM",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9WFL": {
+     "entry": "9WFL",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9WME": {
+     "entry": "9WME",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9VI4": {
+     "entry": "9VI4",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9VBD": {
+     "entry": "9VBD",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9ZLH": {
+     "entry": "9ZLH",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9RWS": {
+     "entry": "9RWS",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9VUH": {
+     "entry": "9VUH",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9WTX": {
+     "entry": "9WTX",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9OC0": {
+     "entry": "9OC0",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "9Z24": {
+     "entry": "9Z24",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "13BD": {
+     "entry": "13BD",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    },
+    "26DK": {
+     "entry": "26DK",
+     "method": "cryozeta",
+     "runs": {},
+     "models": [],
+     "status": "not run",
+     "failed_step": "guard",
+     "note": "two runs in a row ended in a crash within 60 minutes: probably a problem of the installation or of the inputs, not a result; the other entries of this method are left for the next session"
+    }
+   },
+   "weights_hub": {
+    "repo": "KiharaLab/CryoZeta",
+    "revision": "6fdba93a5f3af71c61760723438ff05f48e033db",
+    "files": {
+     "detection": {
+      "file": "cryozeta-detection-v0.0.1.safetensors",
+      "hub_path": "cryozeta-detection-v0.0.1.safetensors",
+      "bytes": 39547664,
+      "sha256": "677ea35f308d6d14f02cf841437b9c2f5a4490ee03df69a81d41acc73b9c76cc",
+      "hub_sha256": "677ea35f308d6d14f02cf841437b9c2f5a4490ee03df69a81d41acc73b9c76cc"
+     },
+     "cryozeta": {
+      "file": "cryozeta-v0.0.1.safetensors",
+      "hub_path": "cryozeta-v0.0.1.safetensors",
+      "bytes": 2680248116,
+      "sha256": "da7153b024d5eaebfcea7a0a0a55c1da72833cc9688df0976ca33678280c57c5",
+      "hub_sha256": "da7153b024d5eaebfcea7a0a0a55c1da72833cc9688df0976ca33678280c57c5"
+     },
+     "interpolate": {
+      "file": "cryozeta-interpolate-v0.0.1.safetensors",
+      "hub_path": "cryozeta-interpolate-v0.0.1.safetensors",
+      "bytes": 2680255796,
+      "sha256": "1a0b2f3e53953af47e95c36d7a6a84ec9af4ba0296e458f83c5093a2a1263285",
+      "hub_sha256": "1a0b2f3e53953af47e95c36d7a6a84ec9af4ba0296e458f83c5093a2a1263285"
+     }
+    }
+   },
+   "preflight": {
+    "gpu_test": {
+     "torch": "2.4.1",
+     "cuda": "11.8",
+     "cuda_available": true,
+     "gpu": "Tesla T4",
+     "memory_gb": 14.56,
+     "capability": "7.5",
+     "bf16_matmul": "ok",
+     "bf16_conv3d": "ok",
+     "bf16_autocast_conv3d": "ok"
+    },
+    "detection_patched": false,
+    "dtype_start": "bf16"
+   },
+   "version": "commit c544c6bbd0, pixi 0.41.1, environment cu11, weights revision 6fdba93a5f",
+   "teaser": {
+    "commit": "52a9c52ee7d4c838c5e8a75458c33178be5bfb70",
+    "folder": "/tmp/mica_pilot/teaser_plusplus"
+   },
+   "weights": {
+    "cryozeta_assets/cryozeta-interpolate-v0.0.1.safetensors": 2680255796,
+    "cryozeta_assets/cryozeta-v0.0.1.safetensors": 2680248116,
+    "cryozeta_assets/cryozeta-detection-v0.0.1.safetensors": 39547664
+   }
+  }
+ },
+ "complete": true,
+ "pending": [
+  [
+   "9V4D",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9JKK",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9OTA",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9TKA",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9KQM",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9WFL",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9WME",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9VI4",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9VBD",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9ZLH",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9RWS",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9VUH",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9WTX",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9OC0",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "9Z24",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "13BD",
+   "cryozeta",
+   "not run"
+  ],
+  [
+   "26DK",
+   "cryozeta",
+   "not run"
+  ]
+ ]
+}

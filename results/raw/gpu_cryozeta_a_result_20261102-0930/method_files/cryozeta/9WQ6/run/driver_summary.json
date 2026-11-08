@@ -1,0 +1,107 @@
+{
+  "name": "9WQ6",
+  "status": "failed",
+  "failed_stage": "cryozeta",
+  "note": "cryozeta: no predictions after 2 attempt(s) (exit code 0)",
+  "settings": {
+    "seed": 101,
+    "n_sample": 5,
+    "n_step": 20,
+    "n_cycle": 10,
+    "num_select": 5,
+    "dtype": "bf16",
+    "kernels": "off",
+    "chunk_sizes": [
+      256,
+      64,
+      16,
+      4
+    ]
+  },
+  "stages": [
+    {
+      "stage": "detection",
+      "rc": 0,
+      "seconds": 30.6,
+      "gpu_peak_mb": 3355,
+      "gpu_total_mb": 15360,
+      "oom": false
+    }
+  ],
+  "attempts": [
+    {
+      "stage": "cryozeta",
+      "dtype": "bf16",
+      "chunk_size": 256,
+      "rc": 0,
+      "seconds": 37.7,
+      "gpu_peak_mb": 5423,
+      "oom": false,
+      "predictions": 0,
+      "error": "",
+      "skipped": false,
+      "tail": [
+        "  File \"/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py\", line 101, in get_component_atom_array",
+        "    ccd_cif = biotite_load_ccd_cif()",
+        "              ^^^^^^^^^^^^^^^^^^^^^^",
+        "  File \"/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py\", line 48, in biotite_load_ccd_cif",
+        "    return pdbx.CIFFile.read(COMPONENTS_FILE)",
+        "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "  File \"/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/biotite/structure/io/pdbx/cif.py\", line 844, in read",
+        "    with open(file, \"r\") as f:",
+        "         ^^^^^^^^^^^^^^^",
+        "FileNotFoundError: [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif'",
+        "...",
+        "2026-11-02 09:22:34.469 | INFO     | cryozeta.runner.inference:main:214 - [Rank 0] 9WQ6: skipping CryoZeta-Interpolate (no interpolation features)"
+      ]
+    },
+    {
+      "stage": "cryozeta",
+      "dtype": "fp32",
+      "chunk_size": 256,
+      "rc": 0,
+      "seconds": 37.9,
+      "gpu_peak_mb": 5423,
+      "oom": false,
+      "predictions": 0,
+      "error": "",
+      "skipped": false,
+      "tail": [
+        "  File \"/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py\", line 101, in get_component_atom_array",
+        "    ccd_cif = biotite_load_ccd_cif()",
+        "              ^^^^^^^^^^^^^^^^^^^^^^",
+        "  File \"/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py\", line 48, in biotite_load_ccd_cif",
+        "    return pdbx.CIFFile.read(COMPONENTS_FILE)",
+        "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+        "  File \"/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/biotite/structure/io/pdbx/cif.py\", line 844, in read",
+        "    with open(file, \"r\") as f:",
+        "         ^^^^^^^^^^^^^^^",
+        "FileNotFoundError: [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif'",
+        "...",
+        "2026-11-02 09:23:12.079 | INFO     | cryozeta.runner.inference:main:214 - [Rank 0] 9WQ6: skipping CryoZeta-Interpolate (no interpolation features)"
+      ]
+    }
+  ],
+  "input": {
+    "chains": [
+      {
+        "chain": 1,
+        "length": 339,
+        "copies": 1,
+        "n_uniref_hits": 6064,
+        "n_env_hits": 5127,
+        "ticket": "SJkXwp81aJtyWF0dgIo7GOttoyxj71o7y5irpA",
+        "msa_dir": "/tmp/mica_pilot/input/9WQ6/cryozeta_msa/chain1"
+      }
+    ],
+    "contour_level": 0.2,
+    "contour_level_source": "https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-66160/header/emd-66160.xml"
+  },
+  "seconds": 130.7,
+  "final_settings": {
+    "dtype": "fp32",
+    "chunk_index": 0,
+    "chunk_size": 256
+  },
+  "gpu_peak_mb": 5423
+}

@@ -1,0 +1,64 @@
+---------------------------- CryoAtom -----------------------------
+By Baoquan Su, Yang lab.
+--------------------- CryoAtom Stage1 (Predict C-alpha atoms by U-Net) ---------------------
+
+  0%|          | 0/64.0 [00:00<?, ?it/s]
+  8%|▊         | 5/64.0 [00:04<00:57,  1.02it/s]
+ 16%|█▌        | 10/64.0 [00:09<00:51,  1.05it/s]
+ 23%|██▎       | 15/64.0 [00:14<00:46,  1.05it/s]
+ 31%|███▏      | 20/64.0 [00:19<00:41,  1.05it/s]
+ 39%|███▉      | 25/64.0 [00:23<00:37,  1.05it/s]
+ 47%|████▋     | 30/64.0 [00:28<00:32,  1.05it/s]
+ 55%|█████▍    | 35/64.0 [00:33<00:27,  1.05it/s]
+ 62%|██████▎   | 40/64.0 [00:38<00:23,  1.04it/s]
+ 70%|███████   | 45/64.0 [00:43<00:18,  1.04it/s]
+ 78%|███████▊  | 50/64.0 [00:47<00:13,  1.04it/s]
+ 86%|████████▌ | 55/64.0 [00:52<00:08,  1.03it/s]
+ 94%|█████████▍| 60/64.0 [00:57<00:03,  1.03it/s]
+65it [01:02,  1.03it/s]                          
+70it [01:07,  1.03it/s]
+75it [01:12,  1.02it/s]
+80it [01:17,  1.02it/s]
+85it [01:22,  1.02it/s]
+90it [01:27,  1.01it/s]
+95it [01:32,  1.01it/s]
+100it [01:37,  1.01it/s]
+105it [01:42,  1.00it/s]
+110it [01:47,  1.00s/it]
+115it [01:52,  1.00s/it]
+120it [01:57,  1.01s/it]
+125it [02:02,  1.01s/it]
+125it [02:02,  1.02it/s]
+------------------ CryoAtom Stage2 (Build Protein Model by Cry-Net), round 1 / 3 ------------------
+Traceback (most recent call last):
+  File "/tmp/mica_pilot/uv_python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/tmp/mica_pilot/uv_python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/tmp/mica_pilot/src_cryoatom1/CryoAtom/__main__.py", line 54, in <module>
+    main()
+  File "/tmp/mica_pilot/src_cryoatom1/CryoAtom/__main__.py", line 48, in main
+    args.func(args)
+  File "/tmp/mica_pilot/env_cryoatom1/lib/python3.8/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/tmp/mica_pilot/src_cryoatom1/CryoAtom/build.py", line 210, in main
+    CryNet_output = CryNet_infer(CryNet_args)
+  File "/tmp/mica_pilot/src_cryoatom1/CryoAtom/CryNet/inference.py", line 219, in infer
+    protein = get_lm_embeddings_for_protein(protein,device=device)
+  File "/tmp/mica_pilot/src_cryoatom1/CryoAtom/utils/protein.py", line 909, in get_lm_embeddings_for_protein
+    result = run_transformer_on_fasta(
+  File "/tmp/mica_pilot/env_cryoatom1/lib/python3.8/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/tmp/mica_pilot/src_cryoatom1/CryoAtom/utils/sequence_transformer.py", line 183, in run_transformer_on_fasta
+    model(batch_tokens, repr_layers=repr_layers, return_contacts=True),
+  File "/tmp/mica_pilot/env_cryoatom1/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/tmp/mica_pilot/env_cryoatom1/lib/python3.8/site-packages/esm/model/esm2.py", line 141, in forward
+    contacts = self.contact_head(tokens, attentions)
+  File "/tmp/mica_pilot/env_cryoatom1/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/tmp/mica_pilot/env_cryoatom1/lib/python3.8/site-packages/esm/modules.py", line 355, in forward
+    attentions = apc(symmetrize(attentions))
+  File "/tmp/mica_pilot/env_cryoatom1/lib/python3.8/site-packages/esm/modules.py", line 40, in apc
+    normalized = x - avg
+RuntimeError: CUDA out of memory. Tried to allocate 1.96 GiB (GPU 0; 14.56 GiB total capacity; 12.55 GiB already allocated; 508.81 MiB free; 13.11 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

@@ -22,9 +22,9 @@ import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
-METHODS = ["mica", "modelangelo", "emodelx", "emprot", "e3"]
-NAMES = {"mica": "MICA", "modelangelo": "ModelAngelo", "emodelx": "EModelX(+AF)", "emprot": "EMProt", "e3": "E3-CryoFold"}
-METHOD_KEYS = {"mica": "Mica", "modelangelo": "Angelo", "emodelx": "Emodelx", "emprot": "Emprot", "e3": "Ethree"}
+METHODS = ["mica", "modelangelo", "emodelx", "emprot", "e3", "cryoatom1", "cryozeta"]
+NAMES = {"mica": "MICA", "modelangelo": "ModelAngelo", "emodelx": "EModelX(+AF)", "emprot": "EMProt", "e3": "E3-CryoFold", "cryoatom1": "CryoAtom", "cryozeta": "CryoZeta"}
+METHOD_KEYS = {"mica": "Mica", "modelangelo": "Angelo", "emodelx": "Emodelx", "emprot": "Emprot", "e3": "Ethree", "cryoatom1": "Cryoatom", "cryozeta": "Cryozeta"}
 METRIC_KEYS = {"tm_score": "Tm", "ca_match": "Cam", "seq_match": "Sqm", "coverage": "Cov", "ca_quality": "Caq", "seq_identity": "Sid", "ca_rmsd": "Rmsd", "aligned_ca_length": "Ali"}
 METRIC_LABEL = {"tm_score": "TM-score", "ca_match": "C$\\alpha$ match (\\%)", "seq_match": "Sequence match (\\%)", "coverage": "Coverage", "ca_quality": "C$\\alpha$ quality (\\%)",
                 "seq_identity": "Aligned sequence identity (\\%)", "ca_rmsd": "RMSD (\\AA)", "aligned_ca_length": "Aligned length"}
@@ -346,7 +346,7 @@ def dock_mode(docked, domains):
     return "none" if docked == 0 else ("full" if docked >= domains else "partial")
 
 
-PIN_KEYS = {"MICA": "Mica", "ModelAngelo": "Angelo", "EModelX(+AF)": "Emodelx", "EMProt": "Emprot", "E3-CryoFold": "Ethree", "US-align": "Usalign"}
+PIN_KEYS = {"MICA": "Mica", "ModelAngelo": "Angelo", "EModelX(+AF)": "Emodelx", "EMProt": "Emprot", "E3-CryoFold": "Ethree", "CryoAtom": "Cryoatom", "CryoZeta": "Cryozeta", "US-align": "Usalign"}
 
 
 def collect_pins(raw):
@@ -375,7 +375,7 @@ def collect_pins(raw):
 def pins_table(raw):
     pins = collect_pins(raw) if raw else {}
     rows = []
-    for name in ["MICA", "ModelAngelo", "EModelX(+AF)", "EMProt", "E3-CryoFold", "Phenix", "US-align"]:
+    for name in ["MICA", "ModelAngelo", "EModelX(+AF)", "EMProt", "E3-CryoFold", "CryoAtom", "CryoZeta", "Phenix", "US-align"]:
         if name in pins:
             v = pins[name]
             rows.append([esc(name), "\\texttt{%s}" % esc(v[:40] + ("..." if len(v) > 40 else ""))])
@@ -543,6 +543,12 @@ def dataset_macros(m, data):
     entries = read(os.path.join(data, "entries_2026.csv"))
     if not entries.empty:
         m.add("NEntries", len(entries))
+        words = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine"}
+        m.add("NMethods", len(METHODS))                                  # the methods of the analysis, MICA included
+        m.add("NMethodsWord", words[len(METHODS)])
+        m.add("NMethodsWordCap", words[len(METHODS)].capitalize())
+        m.add("NFamily", len(METHODS) - 1)                               # the method pairs of the Holm correction
+        m.add("NFamilyWord", words[len(METHODS) - 1])
         m.add("ResMin", plain(entries["resolution_A"].min(), 2))
         m.add("ResMax", plain(entries["resolution_A"].max(), 2))
         m.add("ResiduesMin", int(entries["modeled_residues"].min()))
@@ -567,6 +573,7 @@ def result_macros(m, res, prefix=""):
                 m.add(prefix + "CompAtt" + k, pct(r["completion_of_attempted"]))
                 for col, tag in (("n_model", "NModel"), ("n_failed", "NFailed"), ("n_unscorable", "NUnusable"), ("n_not_run", "NNotRun")):
                     m.add(prefix + tag + k, int(r[col]))
+                m.add(prefix + "NRan" + k, int(r["n_model"] + r["n_failed"] + r["n_unscorable"]))      # the entries on which the method was run (not the ones that were not run)
     if not summ.empty:
         for _, r in summ.iterrows():
             mk, k, g = METRIC_KEYS.get(r["metric"]), METHOD_KEYS.get(r["method"]), GROUPS.get(r["group"])
@@ -635,7 +642,9 @@ def listing(items):
 OUTPUT_KINDS = {"mica_all_atom": "MICA, all-atom model (scored)", "mica_ca": "MICA, C$\\alpha$ model after chain building", "mica_init_ca": "MICA, initial C$\\alpha$ model of the network",
                 "modelangelo": "ModelAngelo, sequence-assigned model (scored)", "modelangelo_raw": "ModelAngelo, model without sequence assignment",
                 "emodelx_af_all_atom": "EModelX(+AF), all-atom model (scored)", "emodelx_af_ca": "EModelX(+AF), C$\\alpha$ model", "emprot": "EMProt, build with the AF3 models (scored)",
-                "emprot_denovo": "EMProt, de novo model", "e3_prealign": "E3-CryoFold, \\texttt{pre\\_align} model (scored)"}
+                "emprot_denovo": "EMProt, de novo model", "e3_prealign": "E3-CryoFold, \\texttt{pre\\_align} model (scored)",
+                "cryoatom1": "CryoAtom v1.0.0, pruned model (scored)", "cryoatom1_raw": "CryoAtom v1.0.0, model before pruning", "cryozeta": "CryoZeta, top-ranked sample 0 (scored)", "cryozeta_s1": "CryoZeta, sample 1 (ranked second)", "cryozeta_s2": "CryoZeta, sample 2 (ranked third)",
+                "cryozeta_s3": "CryoZeta, sample 3 (ranked fourth)", "cryozeta_s4": "CryoZeta, sample 4 (ranked fifth)"}
 
 
 def variants_table(var):
@@ -687,7 +696,7 @@ def extra_macros(m, res, dom=None):
     summ, paired, metrics, runtime = res["summary"], res["paired"], res["metrics"], res["runtime"]
     out = res.get("outcomes", pd.DataFrame())
     if not out.empty and "outcome" in out.columns:                                  # why the runs without a model ended: the system killed them, a limit, or the program stopped
-        f = out[out["outcome"] != "model"].copy()
+        f = out[out["outcome"].isin(("failed", "unscorable"))].copy()                  # a run that was not run (no time left in the session) is not a failure
         reason = f["reason"].fillna("").astype(str) if "reason" in f.columns else pd.Series([""] * len(f), index=f.index)
         kill = reason.str.contains("exit code -9|killed by the system", regex=True)
         limit = reason.str.contains("timeout", case=False) & ~kill
@@ -702,6 +711,11 @@ def extra_macros(m, res, dom=None):
             m.add("FailTimeout" + key, int((limit & sel).sum()))
             m.add("FailCrash" + key, int((crash & sel).sum()))
             m.add("FailCrashList" + key, listing(sorted(f.loc[crash & sel, "entry"])))
+            m.add("FailKillList" + key, listing(sorted(f.loc[kill & sel, "entry"])))
+            m.add("FailTimeoutList" + key, listing(sorted(f.loc[limit & sel, "entry"])))
+        for method, key in METHOD_KEYS.items():                                  # which entries have a model, failed, or were not run
+            for outcome, tag in (("model", "ModelList"), ("failed", "FailedList"), ("not_run", "NotRunList")):
+                m.add(tag + key, listing(sorted(out.loc[(out["method"] == method) & (out["outcome"] == outcome), "entry"])))
     if not summ.empty:
         for _, r in summ[summ["group"] == "pooled"].iterrows():
             mk, k = METRIC_KEYS.get(r["metric"]), METHOD_KEYS.get(r["method"])
@@ -733,7 +747,7 @@ def extra_macros(m, res, dom=None):
                 m.add("MicaVar" + tag + "TmMed", plain(r["tm_score_median"], 2))
                 m.add("MicaVar" + tag + "CovMed", plain(r["coverage_median"], 2))
                 m.add("MicaVar" + tag + "N", int(r["n_models"]))
-        for kind, name in (("modelangelo_raw", "AngeloRaw"), ("emprot_denovo", "EmprotDenovo")):
+        for kind, name in (("modelangelo_raw", "AngeloRaw"), ("emprot_denovo", "EmprotDenovo"), ("cryoatom1_raw", "CryoatomRaw")):
             r = var[var["model_kind"] == kind]
             if len(r):
                 m.add("Var" + name + "TmMed", plain(r.iloc[0]["tm_score_median"], 2))
@@ -776,6 +790,12 @@ def extra_macros(m, res, dom=None):
                 m.add("RtMax" + k, plain(r["max_min"], 0))
                 m.add("RtTot" + k, plain(r["total_h"], 1))
                 m.add("RtN" + k, int(r["n_runs"]))
+    if not metrics.empty and "runtime_min" in metrics.columns:                      # models that took more than the 3 h that the baselines had (a longer limit was given to CryoAtom and CryoZeta)
+        over = metrics[(metrics["status"] == "model") & (metrics["runtime_min"] > 180)]
+        for method, k in METHOD_KEYS.items():
+            g = over[over["method"] == method].sort_values("pdb_id")
+            m.add("NOverThreeH" + k, len(g))
+            m.add("OverThreeHList" + k, listing(["%s (%s\\,min)" % (r["pdb_id"], plain(r["runtime_min"], 0)) for _, r in g.iterrows()]) if len(g) else "none")
     if not metrics.empty and "tm_score" in metrics.columns:
         got = metrics[metrics["status"] == "model"]
         for method, k in METHOD_KEYS.items():
@@ -859,7 +879,7 @@ def session_rows(raw):
         except (TypeError, ValueError):
             minutes = math.nan
         rows.append({"notebook": notebook, "stamp": stamp, "started": str(info.get("started_utc", ""))[:16].replace("T", " "), "minutes": minutes, "gpu": bool(info.get("gpu")),
-                     "complete": info.get("complete", True) is not False, "counts": counts, "scored": len(scored)})
+                     "complete": info.get("complete", True) is not False, "problem": str(info.get("problem") or ""), "counts": counts, "scored": len(scored)})
     return rows
 
 
@@ -871,7 +891,7 @@ def sessions_table(raw):
     for r in rows:
         parts = ["%s %d" % (k, r["counts"][k]) for k in STATUS_ORDER if r["counts"].get(k)] + ["%s %d" % (k, v) for k, v in sorted(r["counts"].items()) if k not in STATUS_ORDER and k]
         what = ", ".join(parts) if parts else ("%d models scored" % r["scored"] if r["scored"] else "--")
-        out.append(["\\texttt{%s}" % esc(r["notebook"]), r["started"] or "--", plain(r["minutes"], 0) if ok(r["minutes"]) else "--", "yes" if r["gpu"] else "no", esc(what) + ("" if r["complete"] else " (cut by the time budget)")])
+        out.append(["\\texttt{%s}" % esc(r["notebook"]), r["started"] or "--", plain(r["minutes"], 0) if ok(r["minutes"]) else "--", "yes" if r["gpu"] else "no", esc(what) + ("" if r["complete"] else (" (stopped by a check of the notebook)" if r["problem"] else " (cut by the time budget)"))])
     return booktabs("llrcl", ["Notebook", "Started (UTC)", "Minutes", "GPU", "Entries by status, or models scored"], out)
 
 

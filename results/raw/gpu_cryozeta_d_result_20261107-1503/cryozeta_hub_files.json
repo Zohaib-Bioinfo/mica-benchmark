@@ -1,0 +1,187 @@
+{
+ "repo": "KiharaLab/CryoZeta",
+ "revision": "6fdba93a5f3af71c61760723438ff05f48e033db",
+ "last_modified": "2026-04-22T17:23:56.000Z",
+ "files": [
+  {
+   "path": ".gitattributes",
+   "size": 1906,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "LICENSE.md",
+   "size": 6494,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "README.md",
+   "size": 1055,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "apptainer/CryoZeta.sif",
+   "size": 9623916544,
+   "lfs_sha256": "bff5f716227db0b7da90f29ae9526216d6ef595a66d729f4e4d98b73eb9b14d3"
+  },
+  {
+   "path": "apptainer/README.md",
+   "size": 2360,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "apptainer/run_cryozeta.sh",
+   "size": 13976,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "apptainer/run_cryozeta_large.sh",
+   "size": 15114,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "components.v20240608.cif",
+   "size": 427767290,
+   "lfs_sha256": "7240b17369ccfbbcc86e2d02dc8c9db59f46c32e0420f58889c6c121c60bfef0"
+  },
+  {
+   "path": "components.v20240608.cif.rdkit_mol.pkl",
+   "size": 125903802,
+   "lfs_sha256": "2d6caced2d26c62015115a1d0a50f4106755a300e0c2a2d2b5c101c9038dcbcd"
+  },
+  {
+   "path": "cryozeta-detection-v0.0.1.safetensors",
+   "size": 39547664,
+   "lfs_sha256": "677ea35f308d6d14f02cf841437b9c2f5a4490ee03df69a81d41acc73b9c76cc"
+  },
+  {
+   "path": "cryozeta-interpolate-v0.0.1.safetensors",
+   "size": 2680255796,
+   "lfs_sha256": "1a0b2f3e53953af47e95c36d7a6a84ec9af4ba0296e458f83c5093a2a1263285"
+  },
+  {
+   "path": "cryozeta-v0.0.1.safetensors",
+   "size": 2680248116,
+   "lfs_sha256": "da7153b024d5eaebfcea7a0a0a55c1da72833cc9688df0976ca33678280c57c5"
+  },
+  {
+   "path": "examples/example.json",
+   "size": 2236,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/large_examples.json",
+   "size": 6853,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/map/39256.map.gz",
+   "size": 115091813,
+   "lfs_sha256": "be4e409397fe68125e170a33846dbbb5717d7b2c3ab646be84de8949024f4584"
+  },
+  {
+   "path": "examples/map/44046.map.gz",
+   "size": 788124,
+   "lfs_sha256": "f073d13e1b9fce9fb7a6a74db6274f4d1668aed3fcc297fc8c612a1819e41bb0"
+  },
+  {
+   "path": "examples/map/49213.map.gz",
+   "size": 136066770,
+   "lfs_sha256": "40e56554c843c831571136460e26a6eba746a16179bcaf0920ad271c79bab333"
+  },
+  {
+   "path": "examples/map/50050.map.gz",
+   "size": 1996608,
+   "lfs_sha256": "7615be8d22975f4783b32c62d5af2203154e869d70be19202edd3bdff189b9fe"
+  },
+  {
+   "path": "examples/map/9317.map.gz",
+   "size": 29931754,
+   "lfs_sha256": "f55c19fba4233df8f1805c03e208d827e25a6942ff19f3545955cc03581f11ce"
+  },
+  {
+   "path": "examples/msa/.DS_Store",
+   "size": 6148,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/prot/24ee4eb8f30911b98ae173d19225440514a110ba50da1d89327c9c74ca0ac7fe/mmseqs_other_hits.a3m",
+   "size": 8479923,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/prot/24ee4eb8f30911b98ae173d19225440514a110ba50da1d89327c9c74ca0ac7fe/uniref100_hits.a3m",
+   "size": 13836056,
+   "lfs_sha256": "944b5114134036db83eee0fd7109ac79a1e739fb52c88b4e7ff8f24834c8e928"
+  },
+  {
+   "path": "examples/msa/prot/25f22673fce350faec8d7b35b843dc8857a828493b9a983e9ef2e9e7a39f8bf0/mmseqs_other_hits.a3m",
+   "size": 6225397,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/prot/25f22673fce350faec8d7b35b843dc8857a828493b9a983e9ef2e9e7a39f8bf0/uniref100_hits.a3m",
+   "size": 5453171,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/prot/37892504ee980fd328015aac25738a4d34825fdaadf3d8521ffd2b32fb46269a/mmseqs_other_hits.a3m",
+   "size": 3186145,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/prot/37892504ee980fd328015aac25738a4d34825fdaadf3d8521ffd2b32fb46269a/uniref100_hits.a3m",
+   "size": 2512781,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/prot/42e5ee12c1203232498a149fbfad89a89bd56539cfd24c9f2490d1256175cefd/mmseqs_other_hits.a3m",
+   "size": 2989091,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/prot/42e5ee12c1203232498a149fbfad89a89bd56539cfd24c9f2490d1256175cefd/uniref100_hits.a3m",
+   "size": 2841119,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/prot/9edca26fc9dc27d0c20bad2e40e8ff3cb1d360f9b87daff391ed46383f9cc821/mmseqs_other_hits.a3m",
+   "size": 511717,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/prot/9edca26fc9dc27d0c20bad2e40e8ff3cb1d360f9b87daff391ed46383f9cc821/uniref100_hits.a3m",
+   "size": 1074571,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/prot/cc660538edf834e925b9c27b4d729f90b45726fae5379ca9fea961584a1900fe/mmseqs_other_hits.a3m",
+   "size": 4618853,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/prot/cc660538edf834e925b9c27b4d729f90b45726fae5379ca9fea961584a1900fe/uniref100_hits.a3m",
+   "size": 3929052,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/prot/e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944/mmseqs_other_hits.a3m",
+   "size": 25330,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/prot/e2a1e44bf404d80667d2a67af1489abb62e09d7756b230d2f8882b178d00d944/uniref100_hits.a3m",
+   "size": 26517,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/rna/615ee634ed5bcba2af15514c9b0a45ebc04a5d44511f1b5e55249670d7b48f58/rnacentral.a3m",
+   "size": 2704,
+   "lfs_sha256": ""
+  },
+  {
+   "path": "examples/msa/rna/f253b03152470b1d821f486998f7fd1112ef5eed7a65f78f719b827e0a721b7f/rnacentral.a3m",
+   "size": 213405,
+   "lfs_sha256": ""
+  }
+ ]
+}

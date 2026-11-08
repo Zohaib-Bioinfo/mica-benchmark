@@ -1,0 +1,44 @@
+$ /tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/bin/cryozeta-inference --seeds 101 --load_checkpoint_path /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors --em_file_dir /tmp/mica_pilot/runs/cryozeta/9WQ6 --dump_dir /tmp/mica_pilot/runs/cryozeta/9WQ6 --input_json_path /tmp/mica_pilot/input/9WQ6/cryozeta_input.json --use_deepspeed_evo_attention false --use_cuequivariance_attention false --use_cuequivariance_multiplicative_update false --use_cuequivariance_attention_pair_bias false --use_opm_tilelang false --model.N_cycle 10 --sample_diffusion.N_sample 5 --sample_diffusion.N_step 20 --data.num_dl_workers 1 --use_interpolation false --overwrite true --dtype bf16 --infer_setting.chunk_size 256
+2026-11-02 09:22:09.033 | INFO     | cryozeta.runner.inference:init_env:53 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-02 09:22:09.033 | INFO     | cryozeta.runner.inference:print:161 - Distributed environment: world size: 1, global rank: 0, local rank: 0
+2026-11-02 09:22:09.033 | INFO     | cryozeta.runner.inference:init_env:72 - LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]
+2026-11-02 09:22:09.034 | INFO     | cryozeta.runner.inference:init_env:96 - Finished init ENV.
+inference scheduler 16.0
+Diffusion Module has 16.0
+2026-11-02 09:22:32.285 | INFO     | cryozeta.runner.inference:print:161 - Loading from /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors
+2026-11-02 09:22:34.445 | INFO     | cryozeta.runner.inference:print:161 - Finish loading checkpoint.
+2026-11-02 09:22:34.465 | INFO     | cryozeta.runner.inference:main:200 - Loading data from
+/tmp/mica_pilot/input/9WQ6/cryozeta_input.json
+2026-11-02 09:22:34.467 | INFO     | cryozeta.data.infer_data_pipeline:__getitem__:269 - Featurizing 9WQ6...
+2026-11-02 09:22:34.469 | INFO     | cryozeta.data.infer_data_pipeline:__getitem__:277 - Error [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif':
+Traceback (most recent call last):
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/infer_data_pipeline.py", line 270, in __getitem__
+    data, atom_array, _ = self.process_one(
+                          ^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/infer_data_pipeline.py", line 152, in process_one
+    sample2feat = SampleDictToFeatures(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/json_to_feature.py", line 37, in __init__
+    self.input_dict = add_entity_atom_array(single_sample_dict)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/json_parser.py", line 589, in add_entity_atom_array
+    atom_info = build_polymer(entity_info)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/json_parser.py", line 344, in build_polymer
+    chain_array = _build_polymer_atom_array(ccd_seqs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/json_parser.py", line 289, in _build_polymer_atom_array
+    residue = ccd.get_component_atom_array(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 101, in get_component_atom_array
+    ccd_cif = biotite_load_ccd_cif()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 48, in biotite_load_ccd_cif
+    return pdbx.CIFFile.read(COMPONENTS_FILE)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/biotite/structure/io/pdbx/cif.py", line 844, in read
+    with open(file, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif'
+...
+2026-11-02 09:22:34.469 | INFO     | cryozeta.runner.inference:main:214 - [Rank 0] 9WQ6: skipping CryoZeta-Interpolate (no interpolation features)

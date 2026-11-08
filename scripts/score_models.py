@@ -43,9 +43,9 @@ CUTOFF = 3.0                 # phenix.chain_comparison max_dist (its default) an
 USALIGN_TIMEOUT = 900
 PHENIX_TIMEOUT = 900
 CHAIN_IDS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-PRIMARY_KINDS = {"modelangelo", "e3_prealign", "emprot", "emodelx_af_all_atom", "mica_all_atom"}
+PRIMARY_KINDS = {"modelangelo", "e3_prealign", "emprot", "emodelx_af_all_atom", "mica_all_atom", "cryoatom1", "cryozeta"}
 METHOD_OF_KIND = {"modelangelo": "modelangelo", "modelangelo_raw": "modelangelo", "e3_prealign": "e3", "emprot": "emprot", "emprot_denovo": "emprot", "emprot_fit": "emprot",
-                  "emodelx_af_all_atom": "emodelx", "emodelx_af_ca": "emodelx"}
+                  "emodelx_af_all_atom": "emodelx", "emodelx_af_ca": "emodelx", "cryoatom1": "cryoatom1", "cryoatom1_raw": "cryoatom1", "cryozeta": "cryozeta"}
 MODEL_SUFFIXES = (".pdb", ".cif", ".ent", ".mmcif")
 CC_COLUMNS = ["rmsd", "close_n", "far_n", "forward", "reverse", "mixed", "found_pct", "ca_score", "seq_match_pct", "seq_score", "mean_length", "fragments", "bad_connections"]
 
@@ -399,6 +399,13 @@ def model_kind(method, filename):
         if low.endswith("_ca_model.pdb"):
             return "emodelx_af_ca"
         return "emodelx_other"
+    if method == "cryoatom1":                                   # added 2026-11-01 (Prof. Cheng's request): <ENTRY>_cryoatom1.cif is the model, <ENTRY>_cryoatom1_raw.cif the one before pruning
+        return "cryoatom1_raw" if low.endswith("_raw.cif") else "cryoatom1"
+    if method == "cryozeta":                                    # CryoZeta-Final/<ENTRY>_sample_<i>.cif, ranked best first by the program: sample 0 is the model of the benchmark
+        m = re.search(r"_sample_(\d+)\.cif$", low)
+        if not m:
+            return "cryozeta_other"
+        return "cryozeta" if int(m.group(1)) == 0 else "cryozeta_s%d" % int(m.group(1))
     return method + "_other"
 
 

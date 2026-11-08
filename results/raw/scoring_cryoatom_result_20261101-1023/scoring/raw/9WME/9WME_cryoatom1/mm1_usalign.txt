@@ -1,0 +1,5 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WME/9WME_cryoatom1.cif /kaggle/working/pilot/native/ca/9WME_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/9WME/9WME_cryoatom1/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot/models/cryoatom1/9WME/9WME_cryoatom1.cif:Aa:Ab:	/kaggle/working/pilot/native/ca/9WME_native_ca.pdb:A::B	0.8113	0.7845	1.34	0.831	0.803	0.997	431	446	359
+
+Warning! Duplicated residue 375 

@@ -9,7 +9,7 @@ This appendix holds the longer tables and the further figures. Every one of them
 Table~\ref{tab:screen} lists every method that the screen of the newer methods considered, Table~\ref{tab:flow} the filters that led to the pool of candidates, Table~\ref{tab:entries} the twenty entries and Table~\ref{tab:pins} the pinned versions.
 
 \begin{center}\small
-\captionof{table}{Screen of newer methods (spec decision~2). \emph{Included}: \emph{baseline}, the method under test or one of the two baselines of its paper; \emph{passed}, passed the screen (CryoAtom was then dropped by the first scope cut, Section~\ref{sec:screen}); \emph{reserve}, kept in reserve and not used; \emph{no}, excluded for the reason given. The reasons are the notes written at the time of the search (to 11~October 2026).}\label{tab:screen}
+\captionof{table}{Screen of newer methods (spec decision~2). \emph{Included}: \emph{baseline}, the method under test or one of the two baselines of its paper; \emph{passed}, passed the screen (CryoAtom was then dropped by the first scope cut and added after the first version, Sections~\ref{sec:screen} and~\ref{sec:added}); \emph{reserve}, kept in reserve (CryoZeta was added from the reserve after the first version, Section~\ref{sec:added}; the other reserve was not used); \emph{no}, excluded for the reason given. The reasons are the notes written at the time of the search (to 11~October 2026).}\label{tab:screen}
 \input{generated/tab_methods_screen.tex}
 \end{center}
 \addtocounter{table}{-1}% the longtable steps the table counter once more
@@ -40,7 +40,7 @@ Table~\ref{tab:sessions} lists the sessions, Table~\ref{tab:docking} the docking
 
 \begin{table}[tbp]
 \centering\small
-\caption{The \NSessions{} Kaggle sessions that produced results (CPU sessions have no GPU). Status of the entries of a session: \emph{ok}, finished with its output; \emph{docked}, programs 1 and 2 of MICA finished and the docked state was saved for a GPU session; \emph{failed}, ended without the output of its step; \emph{deferred}, program 3 of MICA was switched off after two failures in a row and the entry waits; \emph{interrupted}, cut by the end of the session; \emph{killed\_corun}, a baseline killed by the system while the other GPU was busy (it ran again alone, Section~\ref{sec:procedure}); \emph{not run}, no work was started. The baseline sessions count runs (method $\times$ entry), the MICA sessions count entries, and the scoring sessions the models that they scored. The result of \texttt{mica\_cpu\_c} for 9VUH (pass~1) is not used: every MICA result comes from the pass-3 set-up.}
+\caption{The \NSessions{} Kaggle sessions (CPU sessions have no GPU). Status of the entries of a session: \emph{ok}, finished with its output; \emph{docked}, programs 1 and 2 of MICA finished and the docked state was saved for a GPU session; \emph{failed}, ended without the output of its step; \emph{deferred}, program 3 of MICA was switched off after two failures in a row and the entry waits; \emph{interrupted}, cut by the end of the session; \emph{killed\_corun}, a baseline killed by the system while the other GPU was busy (it ran again alone if there was time, Section~\ref{sec:procedure}; 9VI4 of CryoZeta did not, and 9OC0 of CryoZeta was run again alone in the next session); \emph{not run}, no work was started. The baseline sessions count runs (method $\times$ entry), the MICA sessions count entries, and the scoring sessions the models that they scored. The result of \texttt{mica\_cpu\_c} for 9VUH (pass~1) is not used: every MICA result comes from the pass-3 set-up. In \texttt{gpu\_cryozeta\_a} (CryoZeta, added after the first version) the set-up ended in an error before any entry was run: the program could not find two of its data files, which the notebook had not downloaded. Its rows \emph{failed} are not runs of CryoZeta, are not in Table~\ref{tab:failures} and are not used in any analysis; the session is listed for its GPU time, the notebook was corrected and the run was made again in \texttt{gpu\_cryozeta\_b}, \texttt{gpu\_cryozeta\_c}, \texttt{gpu\_cryozeta\_d} and \texttt{gpu\_cryozeta\_e}. In these sessions the entries that were not started for lack of time are \emph{not run}; 9WME was \emph{interrupted} by the end of the session after 4.9~hours in the first one, 4.1 in the third and 4.7 in the fourth, and 9WFL after 4.4 and 4.7 hours in the last two; the map of 9ZLH could not be downloaded from the EMDB in the first one (the notebook now asks again after 2, 4 and 6 minutes). The first start of \texttt{gpu\_cryozeta\_d} stopped after 25~seconds, because the check of the internet at the start of the notebook counted one TLS time-out of the EBI server as a missing site; no program was started (the check now asks up to four times). \texttt{gpu\_cryozeta\_e} is the notebook of \texttt{gpu\_cryozeta\_d} started again with the list 9VUH, 9WFL, 9WME; 9VUH, which had reached the 6-hour limit in the third session, ran first and alone and reached it again. \texttt{scoring\_cryozeta\_d} and \texttt{scoring\_cryozeta\_e} stopped by themselves, because the sessions that they were to score had built no model. These three stopped sessions are listed for their time and are not used in any analysis.}
 \label{tab:sessions}
 \fitwidth{\input{generated/tab_sessions.tex}}
 \end{table}
@@ -71,7 +71,7 @@ Tables~\ref{tab:zero} and~\ref{tab:dockeffect} belong to Sections~\ref{sec:resul
 
 \begin{table}[tbp]
 \centering\small
-\caption{Failed runs scored as zero: mean TM-score over all 20 entries and the paired comparison with MICA. The two policies give the same means and tests because every run was either scored or failed; the intervals can differ in the last digit because the bootstrap draws differ.}
+\caption{Failed runs scored as zero: mean TM-score and the paired comparison with MICA. The two policies give the same means and tests for the methods that were run on all 20 entries, because every run was either scored or failed (the intervals can differ in the last digit because the bootstrap draws differ); they differ for CryoZeta, whose entries not run are left out in the first policy, because they are not failures, and counted as zero in the second.}
 \label{tab:zero}
 \fitwidth{\input{generated/tab_zero.tex}}
 \end{table}
@@ -85,7 +85,7 @@ Tables~\ref{tab:zero} and~\ref{tab:dockeffect} belong to Sections~\ref{sec:resul
 
 \begin{table}[tbp]
 \centering\small
-\caption{TM-score of every method on every entry (normalised by the deposited model; F: failed run).}
+\caption{TM-score of every method on every entry (normalised by the deposited model; F: failed run; N: not run).}
 \label{tab:perentry}
 \fitwidth{\input{generated/tab_per_entry.tex}}
 \end{table}
@@ -106,7 +106,7 @@ Tables~\ref{tab:zero} and~\ref{tab:dockeffect} belong to Sections~\ref{sec:resul
 
 \begin{table}[tbp]
 \centering\small
-\caption{Fragment-agnostic TM-score (US-align \texttt{-mm 5}): median (interquartile range) over the scored models, and the paired comparison with MICA on the entries where both built a model (method minus MICA; Wilcoxon $p$ and its Holm correction over the four methods).}
+\caption{Fragment-agnostic TM-score (US-align \texttt{-mm 5}): median (interquartile range) over the scored models, and the paired comparison with MICA on the entries where both built a model (method minus MICA; Wilcoxon $p$ and its Holm correction over the \NFamilyWord{} methods). $n$ is the number of models with this score; for CryoAtom it is 15, not 16, because the model of 9VI4 has more residues than the PDB format can number (Section~\ref{sec:metrics}).}
 \label{tab:fns}
 \fitwidth{\input{generated/tab_fns.tex}}
 \end{table}
@@ -159,7 +159,7 @@ The figures show the distributions of the measures (Figures~\ref{fig:dist} and~\
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.85\textwidth]{figures/fig5_outcomes.pdf}
-\caption{Outcome of the 20 runs of each method.}
+\caption{Outcome of the 20 runs of each method (not run: no result, because the run was not started, was cut by the end of a session or was killed without time for a second run).}
 \label{fig:outcomes}
 \end{figure}
 

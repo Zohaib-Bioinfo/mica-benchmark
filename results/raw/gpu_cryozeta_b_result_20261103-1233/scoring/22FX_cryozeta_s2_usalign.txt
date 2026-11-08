@@ -1,0 +1,27 @@
+# USalign /tmp/mica_pilot/runs/cryozeta/22FX/22FX/CryoZeta-Final/22FX_sample_2.cif /kaggle/working/pilot/native/22FX.cif -mol protein
+
+ ********************************************************************
+ * US-align (Version 20261012)                                      *
+ * Universal Structure Alignment of Proteins and Nucleic Acids      *
+ * Reference: C Zhang, L Freddolino, Y Zhang. (2026) Nat Protoc     *
+ *            C Zhang, M Shine, AM Pyle, Y Zhang. (2022) Nat Methods*
+ *            C Zhang, AM Pyle (2022) iScience.                     *
+ * Please email comments and suggestions to zhanglab@zhanggroup.org *
+ ********************************************************************
+
+Name of Structure_1: /tmp/mica_pilot/runs/cryozeta/22FX/22FX/CryoZeta-Final/22FX_sample_2.cif:A0 (to be superimposed onto Structure_2)
+Name of Structure_2: /kaggle/working/pilot/native/22FX.cif:A
+Length of Structure_1: 182 residues
+Length of Structure_2: 173 residues
+
+Aligned length= 173, RMSD=   0.70, Seq_ID=n_identical/n_aligned= 1.000
+TM-score= 0.93509 (normalized by length of Structure_1: L=182, d0=5.03)
+TM-score= 0.98300 (normalized by length of Structure_2: L=173, d0=4.90)
+(You should use TM-score normalized by length of the reference structure)
+
+(":" denotes residue pairs of d < 5.0 Angstrom, "." denotes other aligned residues)
+MTTASPSQVRQNYHQDAEAAINRQINLELYASYVYLSMSCYFDRDDVALKNFAKYFLHQSHEEREHAEKLMKLQNQRGGRIFLQDIKKPDRDDWESGLNAMECALHLEKSVNQSLLELHKLATDKNDPHLCDFIETYYLSEQVKSIKELGDHVTNLRKMGAPEAGMAEYLFDKHTLGHGDES
+    :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::     
+----SPSQVRQNYHQDAEAAINRQINLELYASYVYLSMSCYFDRDDVALKNFAKYFLHQSHEEREHAEKLMKLQNQRGGRIFLQDIKKPDRDDWESGLNAMECALHLEKSVNQSLLELHKLATDKNDPHLCDFIETYYLSEQVKSIKELGDHVTNLRKMGAPEAGMAEYLFDKHTLG-----
+
+#Total CPU time is  0.05 seconds

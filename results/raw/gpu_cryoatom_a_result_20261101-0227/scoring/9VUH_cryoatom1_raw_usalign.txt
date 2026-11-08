@@ -1,0 +1,27 @@
+# USalign /tmp/mica_pilot/runs/cryoatom1/9VUH_cryoatom1/9VUH_cryoatom1_raw.cif /kaggle/working/pilot/native/9VUH.cif -mol protein
+
+ ********************************************************************
+ * US-align (Version 20261012)                                      *
+ * Universal Structure Alignment of Proteins and Nucleic Acids      *
+ * Reference: C Zhang, L Freddolino, Y Zhang. (2026) Nat Protoc     *
+ *            C Zhang, M Shine, AM Pyle, Y Zhang. (2022) Nat Methods*
+ *            C Zhang, AM Pyle (2022) iScience.                     *
+ * Please email comments and suggestions to zhanglab@zhanggroup.org *
+ ********************************************************************
+
+Name of Structure_1: /tmp/mica_pilot/runs/cryoatom1/9VUH_cryoatom1/9VUH_cryoatom1_raw.cif:A (to be superimposed onto Structure_2)
+Name of Structure_2: /kaggle/working/pilot/native/9VUH.cif:A
+Length of Structure_1: 226 residues
+Length of Structure_2: 296 residues
+
+Aligned length= 133, RMSD=   5.80, Seq_ID=n_identical/n_aligned= 0.068
+TM-score= 0.33101 (normalized by length of Structure_1: L=226, d0=5.58)
+TM-score= 0.27496 (normalized by length of Structure_2: L=296, d0=6.32)
+(You should use TM-score normalized by length of the reference structure)
+
+(":" denotes residue pairs of d < 5.0 Angstrom, "." denotes other aligned residues)
+SS--------------------------------------------------------------------------------------------ETDLRILGCELIQAAGILL--RL----PQVAMATGQVLFHRFFYSKKGSFVKHSFEIVAMACINLASKIEEAPRRIRDVINVFHHLRQLRGKRTPSGGSPLILDQNYINTKNQVIKAERRVLKELGFCAVH-------------VKHPHKIIVMYLQVLECERNQTLVQTAWNYMNDSL-RT----NVFVRFQPE-TIACACI--YLAARALQIP-LPTRP---HWFLLFGTTEEEIQEICIETLRLYT-RK--K-----------------------------PNT--------
+                                                                                              ...:.....::::::::::  ::    ..:..:: ::..               ..:..:. :: :: ::..                                                                        .:....:::::::. . .. .  .. .....:::: ::    :::.:::.: ::..::.  .:.:..:::. ..      ......  ... ... .::..::.. ::  .                             .::        
+--CRSVEEFQCLNRIEEGTYGVVYRAKDKKTDEIVALKRLKMPITSLREINTILKAQHPNIVTVREIVVGSNMDKIYIVMNYVEHDLKSLMETMKQPFLPGEVKTLMIQLLRGVKHLHDNWILHRDLK-TSNL---------------LLSHAGI-LK-VG-DFGL-----------------------------------------------------------AREYGPLKAYPVVVTLWYRAPELLLGA-K-EY-S--TA-VDMWSVGCIFGELLTQKPLFPGKSEIDQINKVFKDLGTPSEKIWPGYS---ELPAVKKMT--FSE-HPY-NNLRKRFGALLSDQGFDLMNKFLTYFPGRRISAEDGLKHEYFRETPLPIDPSMFP
+
+#Total CPU time is  0.13 seconds

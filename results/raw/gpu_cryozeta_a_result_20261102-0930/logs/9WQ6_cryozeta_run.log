@@ -1,0 +1,138 @@
+contour level of 9WQ6: 0.2 (https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-66160/header/emd-66160.xml)
+MSA of 339 residues from the ColabFold server: 6064 UniRef and 5127 environmental hits (13 s)
+
+=== stage detection: cryozeta-detection json-run /tmp/mica_pilot/input/9WQ6/cryozeta_input.json /tmp/mica_pilot/runs/cryozeta/9WQ6 --device cuda --checkpoint-path /tmp/mica_pilot/cryozeta_assets/cryozeta-detection-v0.0.1.safetensors
+2026-11-02 09:21:29.726 | INFO     | cryozeta.runner.inference_detection:__init__:359 - Using device: cuda
+2026-11-02 09:21:29.727 | INFO     | cryozeta.runner.inference_detection:__init__:360 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-02 09:21:29.727 | INFO     | cryozeta.runner.inference_detection:__init__:367 - Loading models...
+2026-11-02 09:21:30.142 | INFO     | cryozeta.runner.inference_detection:__init__:375 - Models loaded successfully
+2026-11-02 09:21:30.143 | INFO     | cryozeta.runner.inference_detection:json_run:817 - [batch 1/1] Processing /tmp/mica_pilot/input/9WQ6/emd_66160.mrc
+2026-11-02 09:21:30.143 | INFO     | cryozeta.runner.inference_detection:run_inference:441 - Running inference for 9WQ6
+2026-11-02 09:21:30.143 | INFO     | cryozeta.runner.inference_detection:run_inference:446 - Using resolution for 9WQ6: 3.4
+2026-11-02 09:21:30.143 | INFO     | cryozeta.runner.inference_detection:preprocess_map:379 - Preprocessing map from /tmp/mica_pilot/input/9WQ6/emd_66160.mrc
+2026-11-02 09:21:30.370 | INFO     | cryozeta.runner.inference_detection:preprocess_map:391 - Using contour level for 9WQ6: 0.2
+2026-11-02 09:21:33.277 | INFO     | cryozeta.runner.inference_detection:preprocess_map:410 - Finished preprocessing, shape: torch.Size([1, 1, 132, 115, 91])
+2026-11-02 09:21:33.283 | INFO     | cryozeta.runner.inference_detection:run_inference:460 - Start inference for 9WQ6
+2026-11-02 09:21:33.323 | INFO     | cryozeta.em.utils:sliding_window_inference:282 - Input tensor shape: 132/115/91
+2026-11-02 09:21:33.648 | INFO     | cryozeta.em.utils:sliding_window_inference:334 - Number of non-empty ROIs / All possible ROIs: 24 / 24
+
+Processing inference:   0%|          | 0/6 [00:00<?, ?it/s]
+2026-11-02 09:21:53.973 | INFO     | cryozeta.runner.inference_detection:post_process:144 - Post-processing 9WQ6...
+MeanShift++ Converged at 5 steps.
+2026-11-02 09:21:57.174 | INFO     | cryozeta.runner.inference_detection:post_process:207 - [9WQ6] Number of CA indices: 934
+MeanShift++ Converged at 23 steps.
+2026-11-02 09:21:57.210 | INFO     | cryozeta.runner.inference_detection:post_process:261 - [9WQ6] Number of protein CA clusters: 5
+2026-11-02 09:21:57.210 | WARNING  | cryozeta.runner.inference_detection:post_process:272 - No R/DNA C1P indices found for 9WQ6
+2026-11-02 09:21:57.210 | INFO     | cryozeta.runner.inference_detection:post_process:274 - [9WQ6] Number of clusters: 5
+2026-11-02 09:21:57.220 | INFO     | cryozeta.runner.inference_detection:post_process:284 - [9WQ6] Main atom prob shape: torch.Size([3, 132, 115, 91])
+2026-11-02 09:21:57.220 | INFO     | cryozeta.runner.inference_detection:post_process:288 - [9WQ6] voxel_size: [1. 1. 1.], global_origin: [82. 76. 70.]
+2026-11-02 09:21:57.221 | INFO     | cryozeta.runner.inference_detection:post_process:292 - [9WQ6] main_atom_coords shape: (934, 3)
+2026-11-02 09:21:57.786 | INFO     | cryozeta.runner.inference_detection:post_process:350 - [9WQ6] Saved output to /tmp/mica_pilot/runs/cryozeta/9WQ6/9WQ6/CryoZeta-Detection/9WQ6.pt
+2026-11-02 09:21:57.789 | INFO     | cryozeta.runner.inference_detection:run_inference:586 - Completed inference for 9WQ6
+Batch inference completed. Results saved to /tmp/mica_pilot/runs/cryozeta/9WQ6
+
+=== stage cryozeta_try1: cryozeta-inference --seeds 101 --load_checkpoint_path /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors --em_file_dir /tmp/mica_pilot/runs/cryozeta/9WQ6 --dump_dir /tmp/mica_pilot/runs/cryozeta/9WQ6 --input_json_path /tmp/mica_pilot/input/9WQ6/cryozeta_input.json --use_deepspeed_evo_attention false --use_cuequivariance_attention false --use_cuequivariance_multiplicative_update false --use_cuequivariance_attention_pair_bias false --use_opm_tilelang false --model.N_cycle 10 --sample_diff
+2026-11-02 09:22:09.033 | INFO     | cryozeta.runner.inference:init_env:53 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-02 09:22:09.033 | INFO     | cryozeta.runner.inference:print:161 - Distributed environment: world size: 1, global rank: 0, local rank: 0
+2026-11-02 09:22:09.033 | INFO     | cryozeta.runner.inference:init_env:72 - LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]
+2026-11-02 09:22:09.034 | INFO     | cryozeta.runner.inference:init_env:96 - Finished init ENV.
+inference scheduler 16.0
+Diffusion Module has 16.0
+2026-11-02 09:22:32.285 | INFO     | cryozeta.runner.inference:print:161 - Loading from /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors
+2026-11-02 09:22:34.445 | INFO     | cryozeta.runner.inference:print:161 - Finish loading checkpoint.
+2026-11-02 09:22:34.465 | INFO     | cryozeta.runner.inference:main:200 - Loading data from
+/tmp/mica_pilot/input/9WQ6/cryozeta_input.json
+2026-11-02 09:22:34.467 | INFO     | cryozeta.data.infer_data_pipeline:__getitem__:269 - Featurizing 9WQ6...
+2026-11-02 09:22:34.469 | INFO     | cryozeta.data.infer_data_pipeline:__getitem__:277 - Error [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif':
+Traceback (most recent call last):
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/infer_data_pipeline.py", line 270, in __getitem__
+    data, atom_array, _ = self.process_one(
+                          ^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/infer_data_pipeline.py", line 152, in process_one
+    sample2feat = SampleDictToFeatures(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/json_to_feature.py", line 37, in __init__
+    self.input_dict = add_entity_atom_array(single_sample_dict)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/json_parser.py", line 589, in add_entity_atom_array
+    atom_info = build_polymer(entity_info)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/json_parser.py", line 344, in build_polymer
+    chain_array = _build_polymer_atom_array(ccd_seqs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/json_parser.py", line 289, in _build_polymer_atom_array
+    residue = ccd.get_component_atom_array(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 101, in get_component_atom_array
+    ccd_cif = biotite_load_ccd_cif()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 48, in biotite_load_ccd_cif
+    return pdbx.CIFFile.read(COMPONENTS_FILE)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/biotite/structure/io/pdbx/cif.py", line 844, in read
+    with open(file, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif'
+...
+2026-11-02 09:22:34.469 | INFO     | cryozeta.runner.inference:main:214 - [Rank 0] 9WQ6: skipping CryoZeta-Interpolate (no interpolation features)
+cryozeta: failed (not for memory); the next attempt computes in float32
+
+=== stage cryozeta_try2: cryozeta-inference --seeds 101 --load_checkpoint_path /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors --em_file_dir /tmp/mica_pilot/runs/cryozeta/9WQ6 --dump_dir /tmp/mica_pilot/runs/cryozeta/9WQ6 --input_json_path /tmp/mica_pilot/input/9WQ6/cryozeta_input.json --use_deepspeed_evo_attention false --use_cuequivariance_attention false --use_cuequivariance_multiplicative_update false --use_cuequivariance_attention_pair_bias false --use_opm_tilelang false --model.N_cycle 10 --sample_diff
+2026-11-02 09:22:48.837 | INFO     | cryozeta.runner.inference:init_env:53 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-02 09:22:48.837 | INFO     | cryozeta.runner.inference:print:161 - Distributed environment: world size: 1, global rank: 0, local rank: 0
+2026-11-02 09:22:48.838 | INFO     | cryozeta.runner.inference:init_env:72 - LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]
+2026-11-02 09:22:48.838 | INFO     | cryozeta.runner.inference:init_env:96 - Finished init ENV.
+inference scheduler 16.0
+Diffusion Module has 16.0
+2026-11-02 09:23:09.976 | INFO     | cryozeta.runner.inference:print:161 - Loading from /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors
+2026-11-02 09:23:12.055 | INFO     | cryozeta.runner.inference:print:161 - Finish loading checkpoint.
+2026-11-02 09:23:12.075 | INFO     | cryozeta.runner.inference:main:200 - Loading data from
+/tmp/mica_pilot/input/9WQ6/cryozeta_input.json
+2026-11-02 09:23:12.077 | INFO     | cryozeta.data.infer_data_pipeline:__getitem__:269 - Featurizing 9WQ6...
+2026-11-02 09:23:12.079 | INFO     | cryozeta.data.infer_data_pipeline:__getitem__:277 - Error [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif':
+Traceback (most recent call last):
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/infer_data_pipeline.py", line 270, in __getitem__
+    data, atom_array, _ = self.process_one(
+                          ^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/infer_data_pipeline.py", line 152, in process_one
+    sample2feat = SampleDictToFeatures(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/json_to_feature.py", line 37, in __init__
+    self.input_dict = add_entity_atom_array(single_sample_dict)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/json_parser.py", line 589, in add_entity_atom_array
+    atom_info = build_polymer(entity_info)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/json_parser.py", line 344, in build_polymer
+    chain_array = _build_polymer_atom_array(ccd_seqs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/json_parser.py", line 289, in _build_polymer_atom_array
+    residue = ccd.get_component_atom_array(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 101, in get_component_atom_array
+    ccd_cif = biotite_load_ccd_cif()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 48, in biotite_load_ccd_cif
+    return pdbx.CIFFile.read(COMPONENTS_FILE)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/biotite/structure/io/pdbx/cif.py", line 844, in read
+    with open(file, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif'
+...
+2026-11-02 09:23:12.079 | INFO     | cryozeta.runner.inference:main:214 - [Rank 0] 9WQ6: skipping CryoZeta-Interpolate (no interpolation features)
+
+DRIVER RESULT failed: cryozeta: no predictions after 2 attempt(s) (exit code 0). The last lines of the stage:
+      File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 101, in get_component_atom_array
+        ccd_cif = biotite_load_ccd_cif()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+      File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/data/ccd.py", line 48, in biotite_load_ccd_cif
+        return pdbx.CIFFile.read(COMPONENTS_FILE)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/biotite/structure/io/pdbx/cif.py", line 844, in read
+        with open(file, "r") as f:
+             ^^^^^^^^^^^^^^^
+    FileNotFoundError: [Errno 2] No such file or directory: '/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/assets/components.v20240608.cif'
+    ...
+    2026-11-02 09:23:12.079 | INFO     | cryozeta.runner.inference:main:214 - [Rank 0] 9WQ6: skipping CryoZeta-Interpolate (no interpolation features)
+DRIVER RESULT failed: cryozeta: no predictions after 2 attempt(s) (exit code 0)

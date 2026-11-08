@@ -1,0 +1,21 @@
+method,entry,status,failed_step,note,attempt,gpu,started_utc,seconds,peak_gpu_mb,min_ram_gb,other_gpu_busy,limit_s
+cryozeta,9T5K,ok,,,1,0,2026-11-03T01:49:02Z,3757,9515,20.03,True,21600
+cryozeta,9WQ6,ok,,,1,1,2026-11-03T01:49:02Z,3200,8513,21.34,True,21600
+cryozeta,22FX,ok,,,1,1,2026-11-03T02:44:55Z,675,6325,10.91,True,21600
+cryozeta,9V4D,ok,,,1,0,2026-11-03T02:53:05Z,5385,9785,9.47,True,21600
+cryozeta,9JKK,ok,,,1,1,2026-11-03T03:01:42Z,13416,14537,9.01,True,21600
+cryozeta,9OTA,ok,,,1,0,2026-11-03T04:22:55Z,11768,12923,9.88,True,21600
+cryozeta,9TKA,ok,,,1,1,2026-11-03T06:46:27Z,2297,7215,19.68,True,20721
+cryozeta,9KQM,ok,,,1,1,2026-11-03T07:26:24Z,10337,14469,10.73,True,18360
+cryozeta,9WME,interrupted,run,stopped by the end of the session after 17576 s; run again in the next session,1,0,2026-11-03T07:40:05Z,17576,14819,2.53,True,17576
+cryozeta,9ZLH,not run,inputs,"could not download https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-74403/map/emd_74403.map.gz: HTTPSConnectionPool(host='ftp.ebi.ac.uk', port=443): Max retries exceeded with url: /pub/databases/emdb/structures/EMD-74403/map/emd_74403.map.gz (Caused by NewConnectionError(""HTTPSConnection(host='f",1,1,2026-11-03T10:19:50Z,,,,,
+cryozeta,26DK,failed,run,exit code 3; the model file 26DK_sample_0.cif was not written,1,1,2026-11-03T10:20:50Z,436,3413,4.56,True,7873
+cryozeta,9WFL,not run,,not started: not enough time left in the session,,,,,,,,
+cryozeta,9VI4,not run,,not started: not enough time left in the session,,,,,,,,
+cryozeta,9VBD,not run,,not started: not enough time left in the session,,,,,,,,
+cryozeta,9RWS,not run,,not started: not enough time left in the session,,,,,,,,
+cryozeta,9VUH,not run,,not started: not enough time left in the session,,,,,,,,
+cryozeta,9WTX,not run,,not started: not enough time left in the session,,,,,,,,
+cryozeta,9OC0,not run,,not started: not enough time left in the session,,,,,,,,
+cryozeta,9Z24,not run,,not started: not enough time left in the session,,,,,,,,
+cryozeta,13BD,not run,,not started: not enough time left in the session,,,,,,,,

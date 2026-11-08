@@ -1,0 +1,21 @@
+method,entry,status,failed_step,note,attempt,gpu,started_utc,seconds,peak_gpu_mb,min_ram_gb,other_gpu_busy,limit_s
+cryoatom1,9T5K,ok,,,1,0,2026-10-31T17:43:17Z,5132,13459,14.28,True,36000
+cryoatom1,9WQ6,ok,,,1,1,2026-10-31T17:43:17Z,1183,13267,14.39,True,36000
+cryoatom1,22FX,ok,,,1,1,2026-10-31T18:05:53Z,2780,13267,14.29,True,36000
+cryoatom1,9V4D,ok,,,1,1,2026-10-31T18:57:39Z,738,13267,14.4,True,34361
+cryoatom1,9JKK,ok,,,1,0,2026-10-31T19:09:59Z,536,14107,14.34,True,33584
+cryoatom1,9OTA,ok,,,1,1,2026-10-31T19:10:00Z,641,13139,14.33,True,33549
+cryoatom1,9TKA,ok,,,1,0,2026-10-31T19:19:36Z,522,13267,14.36,True,32918
+cryoatom1,9KQM,ok,,,1,1,2026-10-31T19:21:55Z,595,14149,14.36,True,32860
+cryoatom1,9WFL,ok,,,1,0,2026-10-31T19:30:27Z,701,13065,14.34,True,32357
+cryoatom1,9WME,ok,,,1,1,2026-10-31T19:32:38Z,652,14213,14.33,True,32245
+cryoatom1,9VI4,ok,,,1,0,2026-10-31T19:42:49Z,23697,13723,9.98,True,31071
+cryoatom1,9VBD,failed,build,out of GPU memory (exit code 1; the error message of the program); the model file 9VBD_cryoatom1.cif was not written,1,1,2026-10-31T19:43:50Z,144,10357,17.69,True,30977
+cryoatom1,9ZLH,ok,,,1,1,2026-10-31T19:56:30Z,2493,13139,12.46,True,30804
+cryoatom1,9RWS,ok,,,1,1,2026-10-31T20:38:32Z,498,13905,14.3,True,28234
+cryoatom1,9VUH,ok,,,1,1,2026-10-31T20:48:10Z,773,13145,14.29,True,27688
+cryoatom1,9WTX,ok,,,1,1,2026-10-31T21:01:50Z,777,14033,14.27,True,26831
+cryoatom1,9OC0,failed,build,out of GPU memory (exit code 1; the error message of the program); the model file 9OC0_cryoatom1.cif was not written,1,1,2026-10-31T21:16:10Z,253,13787,15.11,True,25891
+cryoatom1,9Z24,failed,build,out of GPU memory (exit code 1; the error message of the program); the model file 9Z24_cryoatom1.cif was not written,1,1,2026-10-31T21:23:05Z,252,10549,14.54,True,25615
+cryoatom1,13BD,failed,build,out of GPU memory (exit code 1; the error message of the program); the model file 13BD_cryoatom1.cif was not written,1,1,2026-10-31T21:27:40Z,259,10563,14.35,True,25332
+cryoatom1,26DK,ok,,,1,1,2026-10-31T21:32:30Z,13861,13267,10.17,True,25060

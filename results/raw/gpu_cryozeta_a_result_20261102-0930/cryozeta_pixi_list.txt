@@ -1,0 +1,7 @@
+pixi list failed (exit code 1)
+Error: 
+  × failed to solve the pypi requirements of 'default' 'linux-64'
+  ├─▶ Failed to download and build `shot-fpfh @ git+https://github.com/aubin-
+  │   tchoi/shot-fpfh`
+  ╰─▶ installation of conda environment is required to solve PyPI source
+      dependencies but `--no-install` flag has been set

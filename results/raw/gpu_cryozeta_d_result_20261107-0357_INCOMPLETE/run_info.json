@@ -1,0 +1,142 @@
+{
+  "notebook": "gpu_cryozeta_d",
+  "started_utc": "2026-11-07T03:56:35.497243+00:00",
+  "finished_utc": "2026-11-07T03:57:00.431368+00:00",
+  "elapsed_minutes": 0,
+  "problem": "the internet is off, or a site that this notebook needs cannot be reached (EBI FTP). Kaggle: open Session options on the right and switch Internet on (the account must be phone-verified), then Run all again. If Internet is on, the site may be down: run again in a few minutes.",
+  "complete": false,
+  "platform": "kaggle",
+  "python": "3.13.16",
+  "os": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+  "cpu_cores": 4,
+  "ram_gb": 31.3,
+  "state": {
+    "ok": false,
+    "problem": "the internet is off, or a site that this notebook needs cannot be reached (EBI FTP). Kaggle: open Session options on the right and switch Internet on (the account must be phone-verified), then Run all again. If Internet is on, the site may be down: run again in a few minutes.",
+    "t0": 1794023795.4972413,
+    "started": "2026-11-07T03:56:35.497243+00:00",
+    "phenix_env": null,
+    "phenix_version": "",
+    "installer_sha256": "",
+    "usalign": "",
+    "usalign_version": "",
+    "weights": {},
+    "env": {},
+    "entries": {},
+    "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+    "cpu_facts": {
+      "os.cpu_count": 4,
+      "multiprocessing.cpu_count": 4,
+      "usable (sched_getaffinity)": 4,
+      "nproc": "4",
+      "cgroup v2 cpu.max": "400000 100000",
+      "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+      "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+    },
+    "methods": {}
+  },
+  "methods": {},
+  "specs": {
+    "cryozeta": {
+      "key": "cryozeta",
+      "label": "CryoZeta",
+      "repo": "https://github.com/kiharalab/CryoZeta",
+      "commit": "c544c6bbd0366951d8b4e0bc4c0da547836f7b8f",
+      "python": "3.12",
+      "req": null,
+      "timeout": 21600,
+      "s_per_residue": 18.0,
+      "oom_is_result": true,
+      "killed_rc": 4,
+      "uses_af3": false,
+      "bundle": null,
+      "weights_url": null,
+      "weights_min_bytes": 0,
+      "gdrive_id": null,
+      "import_test": "import importlib.util, torch, safetensors; assert importlib.util.find_spec('cryozeta') is not None; print('the CryoZeta environment imports: torch ' + torch.__version__)",
+      "pixi": {
+        "version": "0.41.1",
+        "url": "https://github.com/prefix-dev/pixi/releases/download/v0.41.1/pixi-x86_64-unknown-linux-musl",
+        "min_bytes": 30000000,
+        "sha256": "f4e98919053c099c6839602c3334e1b7802d4db445a2ffa9282ff6abac6c0418",
+        "env": "cu11"
+      },
+      "teaser": {
+        "repo": "https://github.com/MIT-SPARK/TEASER-plusplus",
+        "commit": "52a9c52ee7d4c838c5e8a75458c33178be5bfb70",
+        "cmake": "3.31.6",
+        "pybind11": "3.0.1",
+        "prebuilt": null
+      },
+      "hub": {
+        "repo": "KiharaLab/CryoZeta",
+        "api": "https://huggingface.co/api/models/KiharaLab/CryoZeta?blobs=true",
+        "resolve": "https://huggingface.co/KiharaLab/CryoZeta/resolve/{rev}/{path}",
+        "min_bytes": 1000000,
+        "files": {
+          "detection": "cryozeta-detection-v0.0.1.safetensors",
+          "cryozeta": "cryozeta-v0.0.1.safetensors",
+          "interpolate": "cryozeta-interpolate-v0.0.1.safetensors"
+        },
+        "data_files": {
+          "ccd": "components.v20240608.cif",
+          "ccd_rdkit": "components.v20240608.cif.rdkit_mol.pkl"
+        }
+      },
+      "colabfold": "https://api.colabfold.com",
+      "msa_poll_s": 8.0,
+      "msa_tries": 3,
+      "run": {
+        "seed": 101,
+        "n_sample": 5,
+        "n_step": 20,
+        "n_cycle": 10,
+        "num_select": 5,
+        "dtype": "bf16",
+        "kernels": "off"
+      },
+      "main_kind": "cryozeta"
+    }
+  },
+  "usalign_commit": "746ad8a2a4dea9f317075cc482df0ecb5440bdea",
+  "usalign_version": "",
+  "input_sha256": {
+    "scripts/nbtools.py": "9bda95fce7f7fbe0c373e315740f555fc27942a08971ce2fe1b5cae6af6d748d",
+    "scripts/mica_inputs.py": "87b7f5e43b86671e09e673e8bb07abb20496ad92264528dfd9994b88bded417f",
+    "scripts/evaluate_models.py": "8c235732d2595f8ad2014d70a278b44097205aff2417c9b5761f55dfe4974250",
+    "data/af3/af3_jobs.csv": "b43068ffed7e3843d0d9c5cfa509d8f1ba9900527a1a0cad9e74aa69573cd4b0",
+    "data/af3/af3_files_sha256.txt": "c131836802f9469c2073cc8c0bbb495e906854ffb223100cf30750714e2e3a4f",
+    "data/entries_2026.csv": "cb695bb04ef09bf48f8c2848f91a2580c0b3c15f2a8f1e580659d86f0097a5da",
+    "scripts/cryozeta_tools.py": "5e0e4249100ddd76ea3ec87c1f24622ff2966e9a5f5de5a2e843c9b85337dfb4"
+  },
+  "tasks": [
+    [
+      "9OC0",
+      "cryozeta"
+    ],
+    [
+      "9VI4",
+      "cryozeta"
+    ],
+    [
+      "9VBD",
+      "cryozeta"
+    ],
+    [
+      "9VUH",
+      "cryozeta"
+    ],
+    [
+      "9WFL",
+      "cryozeta"
+    ],
+    [
+      "9WME",
+      "cryozeta"
+    ]
+  ],
+  "hours_setting": 11.0,
+  "run_limit_s": 10800,
+  "lanes": []
+}

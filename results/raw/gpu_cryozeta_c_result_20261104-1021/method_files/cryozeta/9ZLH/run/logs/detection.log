@@ -1,0 +1,45 @@
+$ /tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/bin/cryozeta-detection json-run /tmp/mica_pilot/input/9ZLH/cryozeta_input.json /tmp/mica_pilot/runs/cryozeta/9ZLH --device cuda --checkpoint-path /tmp/mica_pilot/cryozeta_assets/cryozeta-detection-v0.0.1.safetensors
+2026-11-04 03:22:26.173 | INFO     | cryozeta.runner.inference_detection:__init__:359 - Using device: cuda
+2026-11-04 03:22:26.186 | INFO     | cryozeta.runner.inference_detection:__init__:360 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-04 03:22:26.186 | INFO     | cryozeta.runner.inference_detection:__init__:367 - Loading models...
+2026-11-04 03:22:26.922 | INFO     | cryozeta.runner.inference_detection:__init__:375 - Models loaded successfully
+2026-11-04 03:22:26.922 | INFO     | cryozeta.runner.inference_detection:json_run:817 - [batch 1/1] Processing /tmp/mica_pilot/input/9ZLH/emd_74403.mrc
+2026-11-04 03:22:26.923 | INFO     | cryozeta.runner.inference_detection:run_inference:441 - Running inference for 9ZLH
+2026-11-04 03:22:26.923 | INFO     | cryozeta.runner.inference_detection:run_inference:446 - Using resolution for 9ZLH: 2.14
+2026-11-04 03:22:26.923 | INFO     | cryozeta.runner.inference_detection:preprocess_map:379 - Preprocessing map from /tmp/mica_pilot/input/9ZLH/emd_74403.mrc
+2026-11-04 03:22:27.046 | INFO     | cryozeta.runner.inference_detection:preprocess_map:391 - Using contour level for 9ZLH: 0.8
+2026-11-04 03:22:28.879 | INFO     | cryozeta.runner.inference_detection:preprocess_map:410 - Finished preprocessing, shape: torch.Size([1, 1, 117, 149, 165])
+2026-11-04 03:22:28.882 | INFO     | cryozeta.runner.inference_detection:run_inference:460 - Start inference for 9ZLH
+2026-11-04 03:22:28.930 | INFO     | cryozeta.em.utils:sliding_window_inference:282 - Input tensor shape: 117/149/165
+2026-11-04 03:22:29.315 | INFO     | cryozeta.em.utils:sliding_window_inference:334 - Number of non-empty ROIs / All possible ROIs: 60 / 60
+
+Processing inference:   0%|          | 0/15 [00:00<?, ?it/s]
+Processing inference:   7%|▋         | 1/15 [00:02<00:37,  2.70s/it]
+Processing inference:  13%|█▎        | 2/15 [00:04<00:31,  2.45s/it]
+Processing inference:  20%|██        | 3/15 [00:07<00:28,  2.37s/it]
+Processing inference:  27%|██▋       | 4/15 [00:09<00:25,  2.34s/it]
+Processing inference:  33%|███▎      | 5/15 [00:11<00:23,  2.34s/it]
+Processing inference:  40%|████      | 6/15 [00:14<00:21,  2.35s/it]
+Processing inference:  47%|████▋     | 7/15 [00:16<00:18,  2.34s/it]
+Processing inference:  53%|█████▎    | 8/15 [00:18<00:16,  2.35s/it]
+Processing inference:  60%|██████    | 9/15 [00:21<00:14,  2.36s/it]
+Processing inference:  67%|██████▋   | 10/15 [00:23<00:11,  2.37s/it]
+Processing inference:  73%|███████▎  | 11/15 [00:26<00:09,  2.38s/it]
+Processing inference:  80%|████████  | 12/15 [00:28<00:07,  2.39s/it]
+Processing inference:  87%|████████▋ | 13/15 [00:30<00:04,  2.40s/it]
+Processing inference:  93%|█████████▎| 14/15 [00:33<00:02,  2.41s/it]
+Processing inference: 100%|██████████| 15/15 [00:35<00:00,  2.43s/it]
+Processing inference: 100%|██████████| 15/15 [00:35<00:00,  2.39s/it]
+2026-11-04 03:23:14.770 | INFO     | cryozeta.runner.inference_detection:post_process:144 - Post-processing 9ZLH...
+MeanShift++ Converged at 5 steps.
+2026-11-04 03:23:17.992 | INFO     | cryozeta.runner.inference_detection:post_process:207 - [9ZLH] Number of CA indices: 962
+MeanShift++ Converged at 43 steps.
+2026-11-04 03:23:18.050 | INFO     | cryozeta.runner.inference_detection:post_process:261 - [9ZLH] Number of protein CA clusters: 9
+2026-11-04 03:23:18.050 | WARNING  | cryozeta.runner.inference_detection:post_process:272 - No R/DNA C1P indices found for 9ZLH
+2026-11-04 03:23:18.050 | INFO     | cryozeta.runner.inference_detection:post_process:274 - [9ZLH] Number of clusters: 9
+2026-11-04 03:23:18.067 | INFO     | cryozeta.runner.inference_detection:post_process:284 - [9ZLH] Main atom prob shape: torch.Size([3, 117, 149, 165])
+2026-11-04 03:23:18.068 | INFO     | cryozeta.runner.inference_detection:post_process:288 - [9ZLH] voxel_size: [1. 1. 1.], global_origin: [38.  9. 62.]
+2026-11-04 03:23:18.068 | INFO     | cryozeta.runner.inference_detection:post_process:292 - [9ZLH] main_atom_coords shape: (962, 3)
+2026-11-04 03:23:18.444 | INFO     | cryozeta.runner.inference_detection:post_process:350 - [9ZLH] Saved output to /tmp/mica_pilot/runs/cryozeta/9ZLH/9ZLH/CryoZeta-Detection/9ZLH.pt
+2026-11-04 03:23:18.451 | INFO     | cryozeta.runner.inference_detection:run_inference:586 - Completed inference for 9ZLH
+Batch inference completed. Results saved to /tmp/mica_pilot/runs/cryozeta/9ZLH

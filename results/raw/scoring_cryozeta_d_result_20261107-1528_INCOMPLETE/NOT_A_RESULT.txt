@@ -1,0 +1,6 @@
+Not a result (scoring session scoring_cryozeta_d, 7 November 2026, 20:15 PKT; notebook scripts/as_run/scoring_cryozeta_d.ipynb).
+
+The notebook was built to score the CryoZeta models of gpu_cryozeta_d. That session built no model: its result zip holds no models/ folder (9OC0 failed, 9VBD and 9VUH reached
+the run limit, 9VI4 was killed while the other GPU ran and could not run again alone, 9WFL and 9WME were cut by the end of the session; LOG.md, 2026-11-07). The scoring notebook
+therefore stopped after the installation of Phenix and US-align with "the inputs hold no model" and packed this INCOMPLETE zip. The stop is correct and there is nothing to
+score, so no score is missing.

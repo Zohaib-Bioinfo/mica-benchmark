@@ -1,0 +1,3 @@
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t33_650M_UR50D.pt" to /tmp/mica_pilot/torch_home/hub/checkpoints/esm2_t33_650M_UR50D.pt
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/regression/esm2_t33_650M_UR50D-contact-regression.pt" to /tmp/mica_pilot/torch_home/hub/checkpoints/esm2_t33_650M_UR50D-contact-regression.pt
+the ESM-2 weights are in place

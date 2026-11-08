@@ -92,7 +92,11 @@ class StructureTests(unittest.TestCase):
                 "nodock": (["mica_gpu_nodock"], ["gpu_batch1", "gpu_batch3", "mica_gpu"]),
                 "mica2": (["mica_gpu2_a", "mica_gpu2_b"], ["gpu_batch1", "mica_gpu", "mica_gpu_nodock", "mica_gpu2_nodock_a"]),
                 "mica3": (["mica_gpu3"], ["gpu_batch1", "mica_gpu", "mica_gpu2_a", "mica_gpu2_b", "mica_gpu_nodock"]),
-                "nodock2": (["mica_gpu2_nodock_a", "mica_gpu2_nodock_b"], ["gpu_batch1", "mica_gpu", "mica_gpu_nodock", "mica_gpu2_a"])}
+                "nodock2": (["mica_gpu2_nodock_a", "mica_gpu2_nodock_b"], ["gpu_batch1", "mica_gpu", "mica_gpu_nodock", "mica_gpu2_a"]),
+                "cryoatom": (["gpu_cryoatom_a"], ["gpu_batch1", "mica_gpu", "mica_gpu3", "gpu_cryozeta_b"]),
+                "cryozeta_b": (["gpu_cryozeta_b"], ["gpu_batch1", "mica_gpu", "mica_gpu3", "gpu_cryoatom_a", "gpu_cryozeta_a", "gpu_cryozeta_c"]),
+                "cryozeta_c": (["gpu_cryozeta_c"], ["gpu_batch1", "mica_gpu", "gpu_cryoatom_a", "gpu_cryozeta_a", "gpu_cryozeta_b", "gpu_cryozeta_d"]),
+                "cryozeta_d": (["gpu_cryozeta_d"], ["gpu_batch1", "mica_gpu", "gpu_cryoatom_a", "gpu_cryozeta_a", "gpu_cryozeta_b", "gpu_cryozeta_c"])}
         for scope, (named, not_named) in want.items():
             path = os.path.join(self.tmp, "scoring_%s.ipynb" % scope)
             ms.build(path, name="scoring_" + scope, scope=scope)

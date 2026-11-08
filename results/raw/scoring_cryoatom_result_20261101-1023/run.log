@@ -1,0 +1,244 @@
+platform kaggle | python 3.13.15 | Linux-6.18.55+-x86_64-with-glibc2.39 | 4 CPU cores (Intel(R) Xeon(R) CPU @ 2.20GHz) | 31.3 GB RAM
+large files go to /tmp/mica_pilot (1126 GB free); results to /kaggle/working/pilot (21 GB free)
+checking the internet:
+  reachable: PyPI      200
+  reachable: GitHub    200
+  reachable: RCSB      200
+  reachable: Phenix    200
+all 3 files written and checked (hashes match)
+processors: os.cpu_count 4 | multiprocessing.cpu_count 4 | usable 4 | nproc 4 | cgroup 400000 100000 | cgroup cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory | MICA's 2
+progress lines, state.json and the partial zip (/kaggle/working/scoring_cryoatom_partial.zip) are ready
+  downloaded 0 MB
+  downloaded 250 MB
+  downloaded 500 MB
+  downloaded 750 MB
+  downloaded 1000 MB
+  downloaded 1250 MB
+  downloaded 1500 MB
+  downloaded 1750 MB
+  downloaded 2000 MB
+  downloaded 2250 MB
+  downloaded 2500 MB
+  downloaded 2750 MB
+  downloaded 3000 MB
+  downloaded 3250 MB
+  downloaded 3500 MB
+installer sha256: e2c76600fd4bf4d8506f0dbe36b4d17dcd9a052107c3f3b84ab43b28915a5885
+installing Phenix (15 to 25 minutes; a line is printed now and then) ...
+PREFIX=/tmp/mica_pilot/phenix-2.2.1-6174
+Unpacking bootstrapper...
+Unpacking payload...
+
+Installing base environment...
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/boost_adaptbx.show_platform_info created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.riso created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.xfel.merge created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx_website.extract_script_from_html_cctbx_doc created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/csegment_library created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.get_next_trial_id created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.stream_to_pickle created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.cluster_unit_cell created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.import_xds created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.rs_mapper created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/diffBragg.hopper_process created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dxtbx.show_dist_paths created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/elbow.mogul created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/hopper created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.get_pubmed_citation created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.reflection_file_reader created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.grep_adsc created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.spot_index_xds created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.create_install_script_bat created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.latex created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.sh created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.wait_for_file created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.pdb_statistics created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.verify_mon_lib_data created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/muscle.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser.benchmark_score_suite created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser_regression.show_build_path created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phasertng.xtricorder created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.build_index_html created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.development.carbo_load created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.fake_f_obs created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.get_cc_mtz_mtz created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.ligandfit created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.model_model_distances created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.pathwalker created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.replace_side_chains created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.setup_tutorial created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.twin_map_utils created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.voyager.rmsd_to_bfactor created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix_regression.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/prime.mpi_run created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/qr.fqm_mopac created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/rstbx.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/smtbx.benchmark_refinement created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/wxtbx.python created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xia2.html created
+  /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xpp.jobs_sentinel created
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx_website.python already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.hist_finalise already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.combine_experiments already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.scale already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dxtbx.show_mask_info already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iota already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.shelx.as_cif already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.spotfinder_adsc already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.line_count already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.TAAM_minus_IAM already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.where_is_that_cif_file already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser.benchmark_score_test already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.development.gainful already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.get_cc_mtz_pdb already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.model_statistics already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.query_docs already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.shift_model_to_match_map already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.voyager.scotty already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/prime.mpi_scale already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/rstbx.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/wxtbx.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xpp.progress_bar already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cctbx.space_group_info already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cextract_segment already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/cxi.lsf already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.correlation_matrix already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/dials.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/elbow.become_novice already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iota.show_build_path already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/iotbx.show_distances already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/labelit.store_crystal_orientation already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/libtbx.make_sphinx_html already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/mmtbx.clashscore2 already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/molprobity.cbetadev already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phaser.extract_alignments already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.TAAM_minus_IAM already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.development.phi_psi_2 already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.get_solution already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.models_as_chains already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.read_ncs_from_pdb already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.simple_ncs_from_pdb already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.where_mon_lib_list_cif already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/prime.python already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/rstbx.simage.wx_display already exists, skipping
+/tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/xcif.show_build_path already exists, skipping
+
+    reciprocal_space_arrays.txt
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/density_modification.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/reference/density_modification.html
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/guess_molecular_centers.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/reference/guess_molecular_centers.html
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/reference/phaser_ep.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/reference/phaser_ep.html
+    converting /tmp/mica_pilot/phenix-2.2.1-6174/lib/python3.11/site-packages/phenix_html/rst_files/tutorials/cryo_fit_gui.txt to /tmp/mica_pilot/phenix-2.2.1-6174/share/phenix/doc/tutorials/cryo_fit_gui.html
+
+Phenix installed in 10 minutes: ------------------------------------------------------------------------------- | Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography | Version: 2.2.1
+phenix.dock_in_map: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.dock_in_map
+phenix.real_space_refine: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.real_space_refine
+phenix.chain_comparison: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.chain_comparison
+phenix.version: /tmp/mica_pilot/phenix-2.2.1-6174/phenix_bin/phenix.version
+
+-------------------------------------------------------------------------------
+  Phenix: Python-based Hierarchical ENvironment for Integrated Xtallography
+  Version: 2.2.1
+gemmi 0.7.5, numpy 2.1.3, scipy 1.16.3
+US-align: /tmp/mica_pilot/USalign_src/USalign (* US-align (Version 20261012)                                      *)
+input folders: /kaggle/input
+result zips found: 1, result folders found: 1
+  zip    kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/gpu_cryoatom_a_result_20261101-0227.zip: 32 model files
+  folder /kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot: 32 model files
+WARNING: cryoatom1 22FX 22FX_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 22FX 22FX_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 26DK 26DK_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 26DK 26DK_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9JKK 9JKK_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9JKK 9JKK_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9KQM 9KQM_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9KQM 9KQM_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9OTA 9OTA_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9OTA 9OTA_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9RWS 9RWS_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9RWS 9RWS_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9T5K 9T5K_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9T5K 9T5K_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9TKA 9TKA_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9TKA 9TKA_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9V4D 9V4D_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9V4D 9V4D_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9VI4 9VI4_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9VI4 9VI4_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9VUH 9VUH_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9VUH 9VUH_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9WFL 9WFL_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9WFL 9WFL_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9WME 9WME_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9WME 9WME_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9WQ6 9WQ6_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9WQ6 9WQ6_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9WTX 9WTX_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9WTX 9WTX_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9ZLH 9ZLH_cryoatom1.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+WARNING: cryoatom1 9ZLH 9ZLH_cryoatom1_raw.cif: in gpu_cryoatom_a_result_20261101-0227 and in pilot (the last one is used)
+
+method         kind                   entries
+cryoatom1      cryoatom1                   16
+cryoatom1      cryoatom1_raw               16
+
+32 model files of 16 entries; 16 of them are the primary file of their method
+  9V4D: 275 amino-acid residues with a CA atom, entries table says 276
+self-test on 22FX (173 residues): TM-score 1.0, fNS 1.0, own match 100.0, Phenix match 100.0 found 100.0 sequence 100.0
+[4/32] 26DK  cryoatom1    cryoatom1_raw          ok         TM 0.9792  fNS         CAmatch 0.865   25.8s
+[2/32] 22FX  cryoatom1    cryoatom1_raw          ok         TM 0.9995  fNS 0.9995  CAmatch 4.1     27.2s
+[1/32] 22FX  cryoatom1    cryoatom1              ok         TM 0.9995  fNS 0.9995  CAmatch 4.143   28.9s
+[3/32] 26DK  cryoatom1    cryoatom1              ok         TM 0.9766  fNS 0.9766  CAmatch 5.052   29.9s
+[7/32] 9KQM  cryoatom1    cryoatom1              ok         TM 0.6338  fNS 0.9664  CAmatch 98.485  8.5s
+[6/32] 9JKK  cryoatom1    cryoatom1_raw          ok         TM 0.7642  fNS 0.997   CAmatch 85.46   12.6s
+[5/32] 9JKK  cryoatom1    cryoatom1              ok         TM 0.9954  fNS 0.9959  CAmatch 96.35   16.9s
+[8/32] 9KQM  cryoatom1    cryoatom1_raw          ok         TM 0.281   fNS 0.9928  CAmatch 59.851  21.1s
+[9/32] 9OTA  cryoatom1    cryoatom1              ok         TM 0.9675  fNS 0.9687  CAmatch 43.803  13.6s
+[11/32] 9RWS  cryoatom1    cryoatom1              ok         TM 0.9921  fNS 0.9921  CAmatch 96.923  13.9s
+[10/32] 9OTA  cryoatom1    cryoatom1_raw          ok         TM 0.7699  fNS 0.9908  CAmatch 29.231  22.6s
+[12/32] 9RWS  cryoatom1    cryoatom1_raw          ok         TM 0.7866  fNS 0.9945  CAmatch 83.69   16.3s
+[15/32] 9TKA  cryoatom1    cryoatom1              ok         TM 0.9981  fNS 0.9981  CAmatch 49.105  10.1s
+[16/32] 9TKA  cryoatom1    cryoatom1_raw          ok         TM 0.9981  fNS 0.9981  CAmatch 42.66   9.2s
+[17/32] 9V4D  cryoatom1    cryoatom1              ok         TM 0.9569  fNS 0.9619  CAmatch 78.209  7.0s
+[18/32] 9V4D  cryoatom1    cryoatom1_raw          ok         TM 0.5581  fNS 0.9874  CAmatch 30.656  9.2s
+[13/32] 9T5K  cryoatom1    cryoatom1              ok         TM 0.9957  fNS 0.9969  CAmatch 11.446  50.8s
+[21/32] 9VUH  cryoatom1    cryoatom1              ok         TM 0.8581  fNS 0.9139  CAmatch 96.154  14.6s
+[19/32] 9VI4  cryoatom1    cryoatom1              ok         TM 0.9996  fNS         CAmatch 1.669   41.0s
+[20/32] 9VI4  cryoatom1    cryoatom1_raw          ok         TM 0.9996  fNS         CAmatch 1.634   39.7s
+[22/32] 9VUH  cryoatom1    cryoatom1_raw          ok         TM 0.6644  fNS 0.9861  CAmatch 83.646  17.8s
+[23/32] 9WFL  cryoatom1    cryoatom1              ok         TM 0.9966  fNS 0.9966  CAmatch 95.378  16.6s
+[25/32] 9WME  cryoatom1    cryoatom1              ok         TM 0.7845  fNS 0.9384  CAmatch 95.128  8.9s
+[24/32] 9WFL  cryoatom1    cryoatom1_raw          ok         TM 0.891   fNS 0.9977  CAmatch 78.911  21.5s
+[26/32] 9WME  cryoatom1    cryoatom1_raw          ok         TM 0.4052  fNS 0.9854  CAmatch 77.257  10.5s
+[27/32] 9WQ6  cryoatom1    cryoatom1              ok         TM 0.5322  fNS 0.9857  CAmatch 75.219  5.4s
+[29/32] 9WTX  cryoatom1    cryoatom1              ok         TM 0.6057  fNS 0.9509  CAmatch 91.535  14.2s
+[30/32] 9WTX  cryoatom1    cryoatom1_raw          ok         TM 0.4324  fNS 0.987   CAmatch 57.39   17.0s
+[28/32] 9WQ6  cryoatom1    cryoatom1_raw          ok         TM 0.5322  fNS 0.9866  CAmatch 16.984  18.9s
+[31/32] 9ZLH  cryoatom1    cryoatom1              ok         TM 0.9977  fNS 0.9977  CAmatch 35.702  5.7s
+[14/32] 9T5K  cryoatom1    cryoatom1_raw          ok         TM 0.9068  fNS 0.9971  CAmatch 6.135   119.8s
+[32/32] 9ZLH  cryoatom1    cryoatom1_raw          ok         TM 0.9977  fNS 0.9977  CAmatch 5.445   21.8s
+
+32 models scored in 3 minutes
+
+primary models: TM-score (-mm 1) / fragment-agnostic TM-score / Calpha match / coverage
+entry cryoatom1                         
+22FX  0.9995 / 0.9995 / 4.143 / 24.1387 
+26DK  0.9766 / 0.9766 / 5.052 / 19.7958 
+9JKK  0.9954 / 0.9959 / 96.35 / 1.034   
+9KQM  0.6338 / 0.9664 / 98.485 / 0.9826 
+9OTA  0.9675 / 0.9687 / 43.803 / 1.103  
+9RWS  0.9921 / 0.9921 / 96.923 / 1.0156 
+9T5K  0.9957 / 0.9969 / 11.446 / 8.7139 
+9TKA  0.9981 / 0.9981 / 49.105 / 2.0364 
+9V4D  0.9569 / 0.9619 / 78.209 / 1.2182 
+9VI4  0.9996 /  / 1.669 / 59.905        
+9VUH  0.8581 / 0.9139 / 96.154 / 0.9432 
+9WFL  0.9966 / 0.9966 / 95.378 / 1.0469 
+9WME  0.7845 / 0.9384 / 95.128 / 0.9664 
+9WQ6  0.5322 / 0.9857 / 75.219 / 1.3142 
+9WTX  0.6057 / 0.9509 / 91.535 / 1.016  
+9ZLH  0.9977 / 0.9977 / 35.702 / 2.801  
+
+status of the 32 models: ok 32

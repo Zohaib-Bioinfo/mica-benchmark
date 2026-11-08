@@ -19,7 +19,7 @@ import analyze_results as A
 IDS = ["1A%02d" % i for i in range(1, 13)]
 STRATA = ["le3.0"] * 6 + ["gt3.0_le4.0"] * 6
 NOVELTY = [1.0, 0.0, 0.5, 1.0, 1.0, 0.9, 1.0, 0.2, 1.0, 1.0, 0.8, 1.0]       # 1A02 and 1A08 are at most 30%
-OFFSET = {"mica": 0.0, "modelangelo": 0.10, "emodelx": 0.0, "emprot": -0.05, "e3": -0.20}
+OFFSET = {"mica": 0.0, "modelangelo": 0.10, "emodelx": 0.0, "emprot": -0.05, "e3": -0.20, "cryoatom1": -0.10, "cryozeta": 0.04}
 
 
 def noise(i, k):
@@ -39,11 +39,18 @@ def baseline_rows():
     """gpu_batch1 (first file) and gpu_batch2 (second file)."""
     cols = ["method", "entry", "status", "failed_step", "note", "attempt", "gpu", "started_utc", "seconds", "peak_gpu_mb", "min_ram_gb", "other_gpu_busy", "limit_s"]
     one, two = [], []
-    for m in ("modelangelo", "emodelx", "emprot", "e3"):
+    for m in ("modelangelo", "emodelx", "emprot", "e3", "cryoatom1", "cryozeta"):
         for i, e in enumerate(IDS):
             row = [m, e, "ok", "", "", 1, i % 2, "2026-10-23T%02d:00:00Z" % (5 + i), 600 + 10 * i, 5000, 8.0, True, 10800]
+            if m == "cryoatom1" and e == "1A07":                                  # the real session: four entries ran out of GPU memory (a result, not a crash)
+                row[2:5] = ["failed", "build", "out of GPU memory (exit code 1; the error message of the program); the model file was not written"]
             if m == "e3" and e == "1A03":
                 row[2:5] = ["failed", "prealign", "exit code 1; the model file was not written"]
+            if m == "cryozeta" and e == "1A06":                                   # out of GPU memory in every attempt: a failure of the method
+                row[2:5] = ["failed", "run", "out of GPU memory (exit code 2; the error message of the program); the model file was not written"]
+            if m == "cryozeta" and e in ("1A10", "1A11", "1A12"):                 # the free GPU time ran out: not run is not a failure
+                row[2:5] = ["not run", "", "not started: not enough time left in the session"]
+                row[7], row[8] = "", ""
             if m == "emprot" and e == "1A05":
                 row[2:5] = ["killed_corun", "build", "killed by the system (exit code -9)"]
             if (m, e) in (("e3", "1A12"), ("modelangelo", "1A12"), ("emprot", "1A12"), ("emodelx", "1A12")):
@@ -83,8 +90,9 @@ def score_rows(drop=(), extra=()):
     """One primary row per method and entry that is ok, with TM-score = base + offset + noise."""
     cols = ["entry", "method", "model_kind", "primary", "model_file", "source", "status", "note", "pred_residues", "native_residues", "coverage", "tm_score", "tm_score_fns",
             "ca_rmsd", "aligned_ca_length", "seq_identity", "ca_match", "seq_match", "ca_quality", "ca_found", "ca_match_ff", "ca_quality_ff", "own_ca_match"]
-    kinds = {"mica": "mica_all_atom", "modelangelo": "modelangelo", "emodelx": "emodelx_af_all_atom", "emprot": "emprot", "e3": "e3_prealign"}
-    ok_entries = {"mica": [e for e in IDS if e not in ("1A02", "1A12")], "modelangelo": IDS, "emodelx": IDS, "emprot": IDS, "e3": [e for e in IDS if e not in ("1A03", "1A12")]}
+    kinds = {"mica": "mica_all_atom", "modelangelo": "modelangelo", "emodelx": "emodelx_af_all_atom", "emprot": "emprot", "e3": "e3_prealign", "cryoatom1": "cryoatom1", "cryozeta": "cryozeta"}
+    ok_entries = {"mica": [e for e in IDS if e not in ("1A02", "1A12")], "modelangelo": IDS, "emodelx": IDS, "emprot": IDS, "e3": [e for e in IDS if e not in ("1A03", "1A12")],
+                  "cryoatom1": [e for e in IDS if e != "1A07"], "cryozeta": [e for e in IDS if e not in ("1A06", "1A10", "1A11", "1A12")]}
     rows = []
     for k, m in enumerate(A.METHODS):
         for i, e in enumerate(IDS):
@@ -285,6 +293,8 @@ class MergeAndOutcomeTests(unittest.TestCase):
         self.assertEqual(self.outcome("e3", "1A03")["outcome"], "failed")
         self.assertIn("prealign", self.outcome("e3", "1A03")["reason"])
         self.assertEqual(self.outcome("e3", "1A12")["outcome"], "not_run")
+        self.assertEqual(self.outcome("cryozeta", "1A06")["outcome"], "failed")                     # out of GPU memory in every attempt: a result of the method
+        self.assertEqual(self.outcome("cryozeta", "1A10")["outcome"], "not_run")                    # no time left in the session: not a failure
         self.assertEqual(self.outcome("emprot", "1A05")["outcome"], "model")
         c = self.res["completion"]
         row = c[(c["group"] == "pooled") & (c["method"] == "mica")].iloc[0]
@@ -306,7 +316,7 @@ class MergeAndOutcomeTests(unittest.TestCase):
 
     def test_a_metric_table_has_no_numbers_for_runs_without_a_model(self):
         m = self.res["metrics"]
-        self.assertEqual(len(m), 60)
+        self.assertEqual(len(m), 12 * len(A.METHODS))
         self.assertEqual(m["tm_score"].notna().sum(), (m["outcome"] == "model").sum())
         self.assertTrue(m.loc[m["outcome"] != "model", "tm_score"].isna().all())
         self.assertEqual(set(m["outcome"]), {"model", "failed", "not_run"})
@@ -405,15 +415,19 @@ class TablesTests(unittest.TestCase):
         self.assertLess(abs(self.paired("pooled", "emodelx")["mean_diff"]), 0.01)
 
     def test_exact_p_values_and_holm(self):
-        ma, e3, ep, ex = (self.paired("pooled", m) for m in ("modelangelo", "e3", "emprot", "emodelx"))
+        ma, e3, ep, ex, ca, cz = (self.paired("pooled", m) for m in ("modelangelo", "e3", "emprot", "emodelx", "cryoatom1", "cryozeta"))
         self.assertAlmostEqual(ma["wilcoxon_p"], 2 / 2 ** 10)
         self.assertAlmostEqual(e3["wilcoxon_p"], 2 / 2 ** 9)
         self.assertAlmostEqual(ep["wilcoxon_p"], 2 / 2 ** 10)
-        self.assertAlmostEqual(ma["wilcoxon_p_holm"], 4 * 2 / 2 ** 10)                # the smallest p (tied) times the four pairs compared
-        self.assertAlmostEqual(ep["wilcoxon_p_holm"], 4 * 2 / 2 ** 10)
-        self.assertAlmostEqual(e3["wilcoxon_p_holm"], max(4 * 2 / 2 ** 10, 2 * 2 / 2 ** 9))   # the step-down maximum
+        self.assertAlmostEqual(ca["wilcoxon_p"], 2 / 2 ** 9)                          # CryoAtom: nine pairs (it failed on 1A07, MICA on 1A02 and 1A12), all lower than MICA
+        self.assertAlmostEqual(cz["wilcoxon_p"], 2 / 2 ** 7)                          # CryoZeta: seven pairs (it failed on 1A06 and was not run on 1A10 to 1A12; MICA failed on 1A02), all higher than MICA
+        self.assertAlmostEqual(ma["wilcoxon_p_holm"], 6 * 2 / 2 ** 10)                # the smallest p (tied) times the six pairs compared
+        self.assertAlmostEqual(ep["wilcoxon_p_holm"], 6 * 2 / 2 ** 10)
+        self.assertAlmostEqual(e3["wilcoxon_p_holm"], max(6 * 2 / 2 ** 10, 4 * 2 / 2 ** 9))   # the step-down maximum (E3-CryoFold and CryoAtom are tied)
+        self.assertAlmostEqual(cz["wilcoxon_p_holm"], 2 * 2 / 2 ** 7)                 # fifth in the order of the p-values: two pairs are left to compare
+        self.assertAlmostEqual(ca["wilcoxon_p_holm"], e3["wilcoxon_p_holm"])
         self.assertGreater(ex["wilcoxon_p"], 0.05)
-        for r in (ma, e3, ep, ex):
+        for r in (ma, e3, ep, ex, ca, cz):
             self.assertGreaterEqual(r["wilcoxon_p_holm"], r["wilcoxon_p"])
             self.assertLessEqual(r["wilcoxon_p_holm"], 1.0)
         self.assertEqual((ma["n_method_higher"], ma["n_method_lower"]), (10, 0))
@@ -436,9 +450,9 @@ class TablesTests(unittest.TestCase):
 
     def test_every_group_metric_and_method_has_a_row(self):
         p = self.res["paired"]
-        self.assertEqual(len(p), 4 * len(A.ALL_METRICS) * 4)                       # 4 groups, metrics, 4 methods compared with MICA
+        self.assertEqual(len(p), 4 * len(A.ALL_METRICS) * (len(A.METHODS) - 1))   # 4 groups, metrics, every other method compared with MICA
         s = self.res["summary"]
-        self.assertEqual(len(s), 4 * 5 * len(A.ALL_METRICS))
+        self.assertEqual(len(s), 4 * len(A.METHODS) * len(A.ALL_METRICS))
 
     def test_summary_values(self):
         s = self.res["summary"]
@@ -473,6 +487,14 @@ class TablesTests(unittest.TestCase):
         self.assertEqual(pair["n"], 11)
         self.assertLess(pair["mean_diff"], 0)
         self.assertEqual(get("all_missing", "e3", role="paired_vs_mica")["n"], 12)
+        # CryoZeta (partial method): the three entries that were not run are not failures. They are left out in the strict policy and count as zero in the other one
+        cz_models = [base_tm(i) + 0.04 + noise(i, 6) for i in range(9) if i != 5]
+        czs, cza = get("strict", "cryozeta"), get("all_missing", "cryozeta")
+        self.assertEqual((czs["n"], cza["n"]), (9, 12))                             # eight models and the failure on 1A06 / the same and the three entries not run
+        self.assertAlmostEqual(czs["mean"], sum(cz_models) / 9, places=3)
+        self.assertAlmostEqual(cza["mean"], sum(cz_models) / 12, places=3)
+        self.assertEqual(get("strict", "cryozeta", role="paired_vs_mica")["n"], 9)
+        self.assertEqual(get("all_missing", "cryozeta", role="paired_vs_mica")["n"], 12)
 
     def test_variants_and_correlations_and_runtime(self):
         v = self.res["variants"]
@@ -507,7 +529,7 @@ class EndToEndTests(unittest.TestCase):
                 self.assertTrue(os.path.exists(os.path.join(out, name)), name)
             m = pd.read_csv(os.path.join(out, "metrics_per_entry.csv"))
             self.assertEqual(list(m.columns[:len(A.SPEC_COLUMNS)]), A.SPEC_COLUMNS)    # the header that the repo has had since decision 7
-            self.assertEqual(len(m), 60)
+            self.assertEqual(len(m), 12 * len(A.METHODS))
             self.assertEqual(set(m["status"]), {"model", "failed", "not_run"})
             row = m[(m["method"] == "modelangelo") & (m["pdb_id"] == "1A01")].iloc[0]
             self.assertAlmostEqual(row["tm_score"], round(base_tm(0) + 0.10 + noise(0, 1), 4), places=4)
@@ -544,7 +566,7 @@ class EndToEndTests(unittest.TestCase):
             entries = A.load_entries(fx.entries)
             res = A.analyse(entries, A.load_status(fx.status), A.load_scores([]), n_boot=100, log=lambda *a: None)
             self.assertEqual(set(res["outcomes"]["outcome"]), {"unscorable", "failed", "not_run"})
-            self.assertEqual(len(res["metrics"]), 60)
+            self.assertEqual(len(res["metrics"]), 12 * len(A.METHODS))
             A.write_all(res, os.path.join(tmp, "out"), {"entries": [fx.entries], "status": fx.status, "scores": []})
 
 

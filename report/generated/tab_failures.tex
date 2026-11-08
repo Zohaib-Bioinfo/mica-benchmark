@@ -3,16 +3,29 @@
 Entry & Method & Outcome & Reason (from the status table) \\
 \midrule
 13BD & E3-CryoFold & failed & prealign: exit code 1; the model file 13BD\_e3\_prealign.pdb was not written \\
+13BD & CryoAtom & failed & build: out of GPU memory (exit code 1; the error message of the program); the model file 13BD\_cryoatom1.cif was not written \\
+13BD & CryoZeta & failed & run: out of GPU memory (exit code 2; the error message of the program); the model file 13BD\_sample\_0.cif was not written \\
 26DK & MICA & failed & 3\_build: exit code -9; the output of 3\_build was not written \\
 26DK & EModelX(+AF) & failed & temp\_flex: killed by the system (exit code -9, probably out of memory); the model file 26dk\_EModelX(+AF)\_all\_atom\_model.pdb was not written \\
 26DK & E3-CryoFold & failed & prealign: killed by the system (exit code -9, probably out of memory); the model file 26DK\_e3\_prealign.pdb was not written \\
+26DK & CryoZeta & failed & run: killed by the system (exit code -9, probably out of memory; also when it ran alone); the model file 26DK\_sample\_0.cif was not written \\
 9OC0 & MICA & failed & 3\_build: timeout after 7200 s; the output of 3\_build was not written \\
 9OC0 & E3-CryoFold & failed & prealign: exit code 1; the model file 9OC0\_e3\_prealign.pdb was not written \\
+9OC0 & CryoAtom & failed & build: out of GPU memory (exit code 1; the error message of the program); the model file 9OC0\_cryoatom1.cif was not written \\
+9OC0 & CryoZeta & failed & run: killed by the system (exit code -9, probably out of memory; also when it ran alone); the model file 9OC0\_sample\_0.cif was not written \\
 9OTA & E3-CryoFold & failed & prealign: exit code 1; the model file 9OTA\_e3\_prealign.pdb was not written \\
+9VBD & CryoAtom & failed & build: out of GPU memory (exit code 1; the error message of the program); the model file 9VBD\_cryoatom1.cif was not written \\
+9VBD & CryoZeta & failed & run: timeout: the run limit of 21600 s; the model file 9VBD\_sample\_0.cif was not written \\
 9VI4 & MICA & failed & 3\_build: exit code -9; the output of 3\_build was not written \\
 9VI4 & ModelAngelo & failed & build: timeout: the run limit of 10800 s; the model file 9VI4\_modelangelo.cif was not written \\
 9VI4 & EModelX(+AF) & failed & temp\_flex: killed by the system (exit code -9, probably out of memory); the model file 9vi4\_EModelX(+AF)\_all\_atom\_model.pdb was not written \\
 9VI4 & EMProt & failed & build: killed by the system (exit code -9, probably out of memory); the model file output.cif was not written \\
 9VI4 & E3-CryoFold & failed & prealign: killed by the system (exit code -9, probably out of memory); the model file 9VI4\_e3\_prealign.pdb was not written \\
+9VI4 & CryoZeta & not run & killed\_corun: killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone \\
+9VUH & CryoZeta & failed & run: timeout: the run limit of 21600 s; the model file 9VUH\_sample\_0.cif was not written \\
+9WFL & CryoZeta & not run & interrupted: stopped by the end of the session after 17039 s; run again in the next session \\
+9WME & CryoZeta & not run & interrupted: stopped by the end of the session after 17022 s; run again in the next session \\
+9Z24 & CryoAtom & failed & build: out of GPU memory (exit code 1; the error message of the program); the model file 9Z24\_cryoatom1.cif was not written \\
+9Z24 & CryoZeta & failed & run: timeout: the run limit of 21600 s; the model file 9Z24\_sample\_0.cif was not written \\
 \bottomrule
 \end{tabular}

@@ -5,9 +5,11 @@
     python scripts/ingest_results.py --list method_status results/raw       # the status tables, oldest first (the order that analyze_results.py wants)
 
 A result zip is named `<notebook>_result_<YYYYMMDD-HHMM>[_INCOMPLETE].zip`. Its folder is unpacked to `results/raw/<zip name without .zip>/`. Only small text files are kept
-(.csv .json .txt .log .md .tsv): the tables, the logs of the programs and the raw output of the scoring tools. Coordinate files (models of the methods and of MICA), maps, weights
+(.csv .json .txt .log .md .tsv .diff): the tables, the logs of the programs and the raw output of the scoring tools. Coordinate files (models of the methods and of MICA), maps, weights
 and archives are never written to the repository: they are listed in the index as skipped, with their suffix. A name that would leave the folder (`..`, an absolute path) is refused.
 `INDEX.csv` has one line per zip: the folder, the notebook, the time stamp, whether the zip is incomplete, the sha256 of the zip, the number of files kept and skipped.
+A folder that holds a file `NOT_A_RESULT.txt` (the reason, in words) is a session whose runs did not test the method (an error of the set-up, for example a notebook that lacked a data file of the
+method): it stays in the repository as part of the record, but `--list` does not give its status tables to the analysis.
 """
 from __future__ import annotations
 
@@ -19,10 +21,11 @@ import re
 import sys
 import zipfile
 
-ALLOWED_SUFFIXES = (".csv", ".json", ".txt", ".log", ".md", ".tsv")
+ALLOWED_SUFFIXES = (".csv", ".json", ".txt", ".log", ".md", ".tsv", ".diff")        # .diff: the changes that a notebook made to the source of a method (added 2026-11-01)
 MAX_FILE_BYTES = 80 * 1000 * 1000
 MAX_TOTAL_BYTES = 800 * 1000 * 1000
 NAME = re.compile(r"^(?P<notebook>.+)_result_(?P<stamp>\d{8}-\d{4})(?P<incomplete>_INCOMPLETE)?\.zip$")
+NOT_A_RESULT = "NOT_A_RESULT.txt"
 INDEX_COLUMNS = ["folder", "notebook", "stamp", "incomplete", "zip_sha256", "zip_bytes", "files_kept", "files_skipped", "skipped_suffixes"]
 
 
@@ -99,8 +102,9 @@ def write_index(out_root, rows):
 
 
 def status_files(out_root, name):
-    """The paths of `name` (method_status.csv or mica_status.csv) in every unpacked result folder, oldest first."""
+    """The paths of `name` (method_status.csv or mica_status.csv) in every unpacked result folder, oldest first; the folders that hold a `NOT_A_RESULT.txt` are left out."""
     rows = sorted(read_index(out_root), key=lambda r: (r["stamp"], r["notebook"]))
+    rows = [r for r in rows if not os.path.exists(os.path.join(out_root, r["folder"], NOT_A_RESULT))]
     paths = [os.path.join(out_root, r["folder"], name) for r in rows]
     return [p for p in paths if os.path.exists(p)]
 

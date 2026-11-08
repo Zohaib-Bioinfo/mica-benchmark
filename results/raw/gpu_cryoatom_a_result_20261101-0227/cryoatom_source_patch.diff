@@ -1,0 +1,16 @@
+diff --git a/CryoAtom/utils/USalign b/CryoAtom/utils/USalign
+old mode 100644
+new mode 100755
+diff --git a/CryoAtom/utils/aa_probs_to_hmm.py b/CryoAtom/utils/aa_probs_to_hmm.py
+index 43c4693..e15ab91 100644
+--- a/CryoAtom/utils/aa_probs_to_hmm.py
++++ b/CryoAtom/utils/aa_probs_to_hmm.py
+@@ -176,7 +176,7 @@ def aa_probs_to_hhm_file(
+ 
+ def aa_logits_to_hmm(aa_logits: np.ndarray, base_dir: str = "/tmp") -> HMM:
+     aa_probs = torch.from_numpy(aa_logits).softmax(dim=-1).numpy()
+-    tmp_path = os.path.join(base_dir, f"CryoAtom_temp.hmm")
++    tmp_path = os.path.join(base_dir, f"CryoAtom_temp_{os.getpid()}.hmm")
+     aa_probs_to_hmm_file("CryoAtom_search", aa_probs, tmp_path)
+ 
+     with HMMFile(tmp_path) as hmm_file:

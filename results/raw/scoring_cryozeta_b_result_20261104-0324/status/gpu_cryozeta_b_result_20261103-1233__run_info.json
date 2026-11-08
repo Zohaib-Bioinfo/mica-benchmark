@@ -1,0 +1,1386 @@
+{
+  "notebook": "gpu_cryozeta_b",
+  "started_utc": "2026-11-03T01:43:26.844161+00:00",
+  "finished_utc": "2026-11-03T12:33:29.313258+00:00",
+  "elapsed_minutes": 650,
+  "problem": "",
+  "complete": true,
+  "platform": "kaggle",
+  "python": "3.13.16",
+  "os": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+  "cpu_cores": 4,
+  "ram_gb": 31.3,
+  "state": {
+    "ok": true,
+    "problem": "",
+    "t0": 1793670206.8441598,
+    "started": "2026-11-03T01:43:26.844161+00:00",
+    "phenix_env": null,
+    "phenix_version": "",
+    "installer_sha256": "",
+    "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+    "usalign_version": "* US-align (Version 20261012)                                      *",
+    "weights": {},
+    "env": {},
+    "entries": {},
+    "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+    "cpu_facts": {
+      "os.cpu_count": 4,
+      "multiprocessing.cpu_count": 4,
+      "usable (sched_getaffinity)": 4,
+      "nproc": "4",
+      "cgroup v2 cpu.max": "400000 100000",
+      "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+      "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+    },
+    "methods": {
+      "cryozeta": {
+        "key": "cryozeta",
+        "label": "CryoZeta",
+        "commit": "c544c6bbd0366951d8b4e0bc4c0da547836f7b8f",
+        "status": "ready",
+        "failed_step": "",
+        "note": "",
+        "setup_seconds": 296,
+        "entries": {
+          "9T5K": {
+            "entry": "9T5K",
+            "method": "cryozeta",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "run": {
+                "peak_gpu_mb": 9515,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 20.03,
+                "samples": 744,
+                "rc": 0,
+                "seconds": 3757,
+                "timed_out": false,
+                "started": 1793670624.470941,
+                "ended": 1793674381.4132175,
+                "gpu": 0,
+                "limit_s": 21600,
+                "other_gpu_busy": true,
+                "started_utc": "2026-11-03T01:50:24Z",
+                "ended_utc": "2026-11-03T02:53:01Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9355,
+                "tm_score_pred_norm": 0.7922,
+                "ca_rmsd": 2.22,
+                "aligned_ca_length": 381,
+                "seq_identity": 0.99,
+                "pred_residues": 453,
+                "native_residues": 381,
+                "coverage": 1.189,
+                "method": "cryozeta",
+                "entry": "9T5K",
+                "model_kind": "cryozeta",
+                "model_file": "9T5K_sample_0.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9347,
+                "tm_score_pred_norm": 0.7916,
+                "ca_rmsd": 2.2,
+                "aligned_ca_length": 381,
+                "seq_identity": 0.984,
+                "pred_residues": 453,
+                "native_residues": 381,
+                "coverage": 1.189,
+                "method": "cryozeta",
+                "entry": "9T5K",
+                "model_kind": "cryozeta_s1",
+                "model_file": "9T5K_sample_1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9381,
+                "tm_score_pred_norm": 0.7944,
+                "ca_rmsd": 2.11,
+                "aligned_ca_length": 381,
+                "seq_identity": 0.984,
+                "pred_residues": 453,
+                "native_residues": 381,
+                "coverage": 1.189,
+                "method": "cryozeta",
+                "entry": "9T5K",
+                "model_kind": "cryozeta_s2",
+                "model_file": "9T5K_sample_2.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9397,
+                "tm_score_pred_norm": 0.7956,
+                "ca_rmsd": 2.13,
+                "aligned_ca_length": 381,
+                "seq_identity": 0.976,
+                "pred_residues": 453,
+                "native_residues": 381,
+                "coverage": 1.189,
+                "method": "cryozeta",
+                "entry": "9T5K",
+                "model_kind": "cryozeta_s3",
+                "model_file": "9T5K_sample_3.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9351,
+                "tm_score_pred_norm": 0.7922,
+                "ca_rmsd": 2.15,
+                "aligned_ca_length": 381,
+                "seq_identity": 0.984,
+                "pred_residues": 453,
+                "native_residues": 381,
+                "coverage": 1.189,
+                "method": "cryozeta",
+                "entry": "9T5K",
+                "model_kind": "cryozeta_s4",
+                "model_file": "9T5K_sample_4.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-11-03T01:49:02Z",
+            "seconds": 3843
+          },
+          "9WQ6": {
+            "entry": "9WQ6",
+            "method": "cryozeta",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "run": {
+                "peak_gpu_mb": 8513,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 21.34,
+                "samples": 634,
+                "rc": 0,
+                "seconds": 3200,
+                "timed_out": false,
+                "started": 1793670694.1599762,
+                "ended": 1793673894.5653067,
+                "gpu": 1,
+                "limit_s": 21600,
+                "other_gpu_busy": true,
+                "started_utc": "2026-11-03T01:51:34Z",
+                "ended_utc": "2026-11-03T02:44:54Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.983,
+                "tm_score_pred_norm": 0.7593,
+                "ca_rmsd": 0.86,
+                "aligned_ca_length": 261,
+                "seq_identity": 0.897,
+                "pred_residues": 339,
+                "native_residues": 261,
+                "coverage": 1.2989,
+                "method": "cryozeta",
+                "entry": "9WQ6",
+                "model_kind": "cryozeta",
+                "model_file": "9WQ6_sample_0.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.983,
+                "tm_score_pred_norm": 0.7593,
+                "ca_rmsd": 0.86,
+                "aligned_ca_length": 261,
+                "seq_identity": 0.897,
+                "pred_residues": 339,
+                "native_residues": 261,
+                "coverage": 1.2989,
+                "method": "cryozeta",
+                "entry": "9WQ6",
+                "model_kind": "cryozeta_s1",
+                "model_file": "9WQ6_sample_1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.983,
+                "tm_score_pred_norm": 0.7593,
+                "ca_rmsd": 0.86,
+                "aligned_ca_length": 261,
+                "seq_identity": 0.897,
+                "pred_residues": 339,
+                "native_residues": 261,
+                "coverage": 1.2989,
+                "method": "cryozeta",
+                "entry": "9WQ6",
+                "model_kind": "cryozeta_s2",
+                "model_file": "9WQ6_sample_2.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.983,
+                "tm_score_pred_norm": 0.7593,
+                "ca_rmsd": 0.86,
+                "aligned_ca_length": 261,
+                "seq_identity": 0.897,
+                "pred_residues": 339,
+                "native_residues": 261,
+                "coverage": 1.2989,
+                "method": "cryozeta",
+                "entry": "9WQ6",
+                "model_kind": "cryozeta_s3",
+                "model_file": "9WQ6_sample_3.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9828,
+                "tm_score_pred_norm": 0.7591,
+                "ca_rmsd": 0.87,
+                "aligned_ca_length": 261,
+                "seq_identity": 0.897,
+                "pred_residues": 339,
+                "native_residues": 261,
+                "coverage": 1.2989,
+                "method": "cryozeta",
+                "entry": "9WQ6",
+                "model_kind": "cryozeta_s4",
+                "model_file": "9WQ6_sample_4.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-11-03T01:49:02Z",
+            "seconds": 3353
+          },
+          "22FX": {
+            "entry": "22FX",
+            "method": "cryozeta",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "run": {
+                "peak_gpu_mb": 6325,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 10.91,
+                "samples": 134,
+                "rc": 0,
+                "seconds": 675,
+                "timed_out": false,
+                "started": 1793674226.810562,
+                "ended": 1793674902.1892905,
+                "gpu": 1,
+                "limit_s": 21600,
+                "other_gpu_busy": true,
+                "started_utc": "2026-11-03T02:50:26Z",
+                "ended_utc": "2026-11-03T03:01:42Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.977,
+                "tm_score_pred_norm": 0.9294,
+                "ca_rmsd": 0.94,
+                "aligned_ca_length": 173,
+                "seq_identity": 1.0,
+                "pred_residues": 182,
+                "native_residues": 173,
+                "coverage": 1.052,
+                "method": "cryozeta",
+                "entry": "22FX",
+                "model_kind": "cryozeta",
+                "model_file": "22FX_sample_0.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9848,
+                "tm_score_pred_norm": 0.9367,
+                "ca_rmsd": 0.65,
+                "aligned_ca_length": 173,
+                "seq_identity": 1.0,
+                "pred_residues": 182,
+                "native_residues": 173,
+                "coverage": 1.052,
+                "method": "cryozeta",
+                "entry": "22FX",
+                "model_kind": "cryozeta_s1",
+                "model_file": "22FX_sample_1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.983,
+                "tm_score_pred_norm": 0.9351,
+                "ca_rmsd": 0.7,
+                "aligned_ca_length": 173,
+                "seq_identity": 1.0,
+                "pred_residues": 182,
+                "native_residues": 173,
+                "coverage": 1.052,
+                "method": "cryozeta",
+                "entry": "22FX",
+                "model_kind": "cryozeta_s2",
+                "model_file": "22FX_sample_2.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9838,
+                "tm_score_pred_norm": 0.9358,
+                "ca_rmsd": 0.67,
+                "aligned_ca_length": 173,
+                "seq_identity": 1.0,
+                "pred_residues": 182,
+                "native_residues": 173,
+                "coverage": 1.052,
+                "method": "cryozeta",
+                "entry": "22FX",
+                "model_kind": "cryozeta_s3",
+                "model_file": "22FX_sample_3.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9862,
+                "tm_score_pred_norm": 0.938,
+                "ca_rmsd": 0.62,
+                "aligned_ca_length": 173,
+                "seq_identity": 1.0,
+                "pred_residues": 182,
+                "native_residues": 173,
+                "coverage": 1.052,
+                "method": "cryozeta",
+                "entry": "22FX",
+                "model_kind": "cryozeta_s4",
+                "model_file": "22FX_sample_4.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-11-03T02:44:55Z",
+            "seconds": 1007
+          },
+          "9V4D": {
+            "entry": "9V4D",
+            "method": "cryozeta",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "run": {
+                "peak_gpu_mb": 9785,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 9.47,
+                "samples": 1066,
+                "rc": 0,
+                "seconds": 5385,
+                "timed_out": false,
+                "started": 1793674389.604394,
+                "ended": 1793679774.1271486,
+                "gpu": 0,
+                "limit_s": 21600,
+                "other_gpu_busy": true,
+                "started_utc": "2026-11-03T02:53:09Z",
+                "ended_utc": "2026-11-03T04:22:54Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9837,
+                "tm_score_pred_norm": 0.671,
+                "ca_rmsd": 0.88,
+                "aligned_ca_length": 267,
+                "seq_identity": 0.989,
+                "pred_residues": 393,
+                "native_residues": 267,
+                "coverage": 1.4239,
+                "method": "cryozeta",
+                "entry": "9V4D",
+                "model_kind": "cryozeta",
+                "model_file": "9V4D_sample_0.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9881,
+                "tm_score_pred_norm": 0.6734,
+                "ca_rmsd": 0.72,
+                "aligned_ca_length": 267,
+                "seq_identity": 1.0,
+                "pred_residues": 393,
+                "native_residues": 267,
+                "coverage": 1.4239,
+                "method": "cryozeta",
+                "entry": "9V4D",
+                "model_kind": "cryozeta_s1",
+                "model_file": "9V4D_sample_1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9837,
+                "tm_score_pred_norm": 0.671,
+                "ca_rmsd": 0.88,
+                "aligned_ca_length": 267,
+                "seq_identity": 0.989,
+                "pred_residues": 393,
+                "native_residues": 267,
+                "coverage": 1.4239,
+                "method": "cryozeta",
+                "entry": "9V4D",
+                "model_kind": "cryozeta_s2",
+                "model_file": "9V4D_sample_2.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9837,
+                "tm_score_pred_norm": 0.671,
+                "ca_rmsd": 0.88,
+                "aligned_ca_length": 267,
+                "seq_identity": 0.989,
+                "pred_residues": 393,
+                "native_residues": 267,
+                "coverage": 1.4239,
+                "method": "cryozeta",
+                "entry": "9V4D",
+                "model_kind": "cryozeta_s3",
+                "model_file": "9V4D_sample_3.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9802,
+                "tm_score_pred_norm": 0.6691,
+                "ca_rmsd": 1.02,
+                "aligned_ca_length": 267,
+                "seq_identity": 1.0,
+                "pred_residues": 393,
+                "native_residues": 267,
+                "coverage": 1.4239,
+                "method": "cryozeta",
+                "entry": "9V4D",
+                "model_kind": "cryozeta_s4",
+                "model_file": "9V4D_sample_4.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-11-03T02:53:05Z",
+            "seconds": 5390
+          },
+          "9JKK": {
+            "entry": "9JKK",
+            "method": "cryozeta",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "run": {
+                "peak_gpu_mb": 14537,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 9.01,
+                "samples": 2656,
+                "rc": 0,
+                "seconds": 13416,
+                "timed_out": false,
+                "started": 1793674961.922966,
+                "ended": 1793688378.331757,
+                "gpu": 1,
+                "limit_s": 21600,
+                "other_gpu_busy": true,
+                "started_utc": "2026-11-03T03:02:41Z",
+                "ended_utc": "2026-11-03T06:46:18Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9971,
+                "tm_score_pred_norm": 0.8527,
+                "ca_rmsd": 0.44,
+                "aligned_ca_length": 530,
+                "seq_identity": 1.0,
+                "pred_residues": 620,
+                "native_residues": 530,
+                "coverage": 1.1698,
+                "method": "cryozeta",
+                "entry": "9JKK",
+                "model_kind": "cryozeta",
+                "model_file": "9JKK_sample_0.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9971,
+                "tm_score_pred_norm": 0.8527,
+                "ca_rmsd": 0.44,
+                "aligned_ca_length": 530,
+                "seq_identity": 1.0,
+                "pred_residues": 620,
+                "native_residues": 530,
+                "coverage": 1.1698,
+                "method": "cryozeta",
+                "entry": "9JKK",
+                "model_kind": "cryozeta_s1",
+                "model_file": "9JKK_sample_1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9971,
+                "tm_score_pred_norm": 0.8527,
+                "ca_rmsd": 0.44,
+                "aligned_ca_length": 530,
+                "seq_identity": 1.0,
+                "pred_residues": 620,
+                "native_residues": 530,
+                "coverage": 1.1698,
+                "method": "cryozeta",
+                "entry": "9JKK",
+                "model_kind": "cryozeta_s2",
+                "model_file": "9JKK_sample_2.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9972,
+                "tm_score_pred_norm": 0.8528,
+                "ca_rmsd": 0.43,
+                "aligned_ca_length": 530,
+                "seq_identity": 0.998,
+                "pred_residues": 620,
+                "native_residues": 530,
+                "coverage": 1.1698,
+                "method": "cryozeta",
+                "entry": "9JKK",
+                "model_kind": "cryozeta_s3",
+                "model_file": "9JKK_sample_3.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9972,
+                "tm_score_pred_norm": 0.8528,
+                "ca_rmsd": 0.43,
+                "aligned_ca_length": 530,
+                "seq_identity": 0.998,
+                "pred_residues": 620,
+                "native_residues": 530,
+                "coverage": 1.1698,
+                "method": "cryozeta",
+                "entry": "9JKK",
+                "model_kind": "cryozeta_s4",
+                "model_file": "9JKK_sample_4.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-11-03T03:01:42Z",
+            "seconds": 13484
+          },
+          "9OTA": {
+            "entry": "9OTA",
+            "method": "cryozeta",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "run": {
+                "peak_gpu_mb": 12923,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 9.88,
+                "samples": 2329,
+                "rc": 0,
+                "seconds": 11768,
+                "timed_out": false,
+                "started": 1793679835.2427416,
+                "ended": 1793691603.6234353,
+                "gpu": 0,
+                "limit_s": 21600,
+                "other_gpu_busy": true,
+                "started_utc": "2026-11-03T04:23:55Z",
+                "ended_utc": "2026-11-03T07:40:03Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9707,
+                "tm_score_pred_norm": 0.9601,
+                "ca_rmsd": 1.33,
+                "aligned_ca_length": 267,
+                "seq_identity": 0.974,
+                "pred_residues": 270,
+                "native_residues": 267,
+                "coverage": 0.5056,
+                "method": "cryozeta",
+                "entry": "9OTA",
+                "model_kind": "cryozeta",
+                "model_file": "9OTA_sample_0.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9693,
+                "tm_score_pred_norm": 0.9587,
+                "ca_rmsd": 1.41,
+                "aligned_ca_length": 267,
+                "seq_identity": 0.974,
+                "pred_residues": 270,
+                "native_residues": 267,
+                "coverage": 0.5056,
+                "method": "cryozeta",
+                "entry": "9OTA",
+                "model_kind": "cryozeta_s1",
+                "model_file": "9OTA_sample_1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.978,
+                "tm_score_pred_norm": 0.9673,
+                "ca_rmsd": 1.06,
+                "aligned_ca_length": 267,
+                "seq_identity": 0.981,
+                "pred_residues": 270,
+                "native_residues": 267,
+                "coverage": 0.5056,
+                "method": "cryozeta",
+                "entry": "9OTA",
+                "model_kind": "cryozeta_s2",
+                "model_file": "9OTA_sample_2.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9662,
+                "tm_score_pred_norm": 0.9557,
+                "ca_rmsd": 1.43,
+                "aligned_ca_length": 267,
+                "seq_identity": 0.978,
+                "pred_residues": 270,
+                "native_residues": 267,
+                "coverage": 0.5056,
+                "method": "cryozeta",
+                "entry": "9OTA",
+                "model_kind": "cryozeta_s3",
+                "model_file": "9OTA_sample_3.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9717,
+                "tm_score_pred_norm": 0.9611,
+                "ca_rmsd": 1.27,
+                "aligned_ca_length": 267,
+                "seq_identity": 0.981,
+                "pred_residues": 270,
+                "native_residues": 267,
+                "coverage": 0.5056,
+                "method": "cryozeta",
+                "entry": "9OTA",
+                "model_kind": "cryozeta_s4",
+                "model_file": "9OTA_sample_4.cif"
+              }
+            ],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-11-03T04:22:55Z",
+            "seconds": 11829
+          },
+          "9TKA": {
+            "entry": "9TKA",
+            "method": "cryozeta",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "run": {
+                "peak_gpu_mb": 7215,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 19.68,
+                "samples": 455,
+                "rc": 0,
+                "seconds": 2297,
+                "timed_out": false,
+                "started": 1793688485.8080568,
+                "ended": 1793690782.989729,
+                "gpu": 1,
+                "limit_s": 20721,
+                "other_gpu_busy": true,
+                "started_utc": "2026-11-03T06:48:05Z",
+                "ended_utc": "2026-11-03T07:26:22Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9948,
+                "tm_score_pred_norm": 0.8392,
+                "ca_rmsd": 0.43,
+                "aligned_ca_length": 247,
+                "seq_identity": 1.0,
+                "pred_residues": 293,
+                "native_residues": 247,
+                "coverage": 1.1862,
+                "method": "cryozeta",
+                "entry": "9TKA",
+                "model_kind": "cryozeta",
+                "model_file": "9TKA_sample_0.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9951,
+                "tm_score_pred_norm": 0.8394,
+                "ca_rmsd": 0.41,
+                "aligned_ca_length": 247,
+                "seq_identity": 1.0,
+                "pred_residues": 293,
+                "native_residues": 247,
+                "coverage": 1.1862,
+                "method": "cryozeta",
+                "entry": "9TKA",
+                "model_kind": "cryozeta_s1",
+                "model_file": "9TKA_sample_1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9945,
+                "tm_score_pred_norm": 0.839,
+                "ca_rmsd": 0.44,
+                "aligned_ca_length": 247,
+                "seq_identity": 1.0,
+                "pred_residues": 293,
+                "native_residues": 247,
+                "coverage": 1.1862,
+                "method": "cryozeta",
+                "entry": "9TKA",
+                "model_kind": "cryozeta_s2",
+                "model_file": "9TKA_sample_2.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9941,
+                "tm_score_pred_norm": 0.8388,
+                "ca_rmsd": 0.46,
+                "aligned_ca_length": 247,
+                "seq_identity": 1.0,
+                "pred_residues": 293,
+                "native_residues": 247,
+                "coverage": 1.1862,
+                "method": "cryozeta",
+                "entry": "9TKA",
+                "model_kind": "cryozeta_s3",
+                "model_file": "9TKA_sample_3.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9945,
+                "tm_score_pred_norm": 0.839,
+                "ca_rmsd": 0.44,
+                "aligned_ca_length": 247,
+                "seq_identity": 1.0,
+                "pred_residues": 293,
+                "native_residues": 247,
+                "coverage": 1.1862,
+                "method": "cryozeta",
+                "entry": "9TKA",
+                "model_kind": "cryozeta_s4",
+                "model_file": "9TKA_sample_4.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-11-03T06:46:27Z",
+            "seconds": 2397
+          },
+          "9KQM": {
+            "entry": "9KQM",
+            "method": "cryozeta",
+            "status": "ok",
+            "failed_step": "",
+            "note": "",
+            "runs": {
+              "run": {
+                "peak_gpu_mb": 14469,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 10.73,
+                "samples": 2047,
+                "rc": 0,
+                "seconds": 10337,
+                "timed_out": false,
+                "started": 1793690847.320712,
+                "ended": 1793701184.3803477,
+                "gpu": 1,
+                "limit_s": 18360,
+                "other_gpu_busy": true,
+                "started_utc": "2026-11-03T07:27:27Z",
+                "ended_utc": "2026-11-03T10:19:44Z"
+              }
+            },
+            "models": [
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9872,
+                "tm_score_pred_norm": 0.6263,
+                "ca_rmsd": 1.14,
+                "aligned_ca_length": 403,
+                "seq_identity": 0.978,
+                "pred_residues": 637,
+                "native_residues": 403,
+                "coverage": 1.5806,
+                "method": "cryozeta",
+                "entry": "9KQM",
+                "model_kind": "cryozeta",
+                "model_file": "9KQM_sample_0.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9941,
+                "tm_score_pred_norm": 0.63,
+                "ca_rmsd": 0.6,
+                "aligned_ca_length": 403,
+                "seq_identity": 0.98,
+                "pred_residues": 637,
+                "native_residues": 403,
+                "coverage": 1.5806,
+                "method": "cryozeta",
+                "entry": "9KQM",
+                "model_kind": "cryozeta_s1",
+                "model_file": "9KQM_sample_1.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9956,
+                "tm_score_pred_norm": 0.6307,
+                "ca_rmsd": 0.5,
+                "aligned_ca_length": 403,
+                "seq_identity": 0.985,
+                "pred_residues": 637,
+                "native_residues": 403,
+                "coverage": 1.5806,
+                "method": "cryozeta",
+                "entry": "9KQM",
+                "model_kind": "cryozeta_s2",
+                "model_file": "9KQM_sample_2.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9902,
+                "tm_score_pred_norm": 0.628,
+                "ca_rmsd": 0.88,
+                "aligned_ca_length": 403,
+                "seq_identity": 0.985,
+                "pred_residues": 637,
+                "native_residues": 403,
+                "coverage": 1.5806,
+                "method": "cryozeta",
+                "entry": "9KQM",
+                "model_kind": "cryozeta_s3",
+                "model_file": "9KQM_sample_3.cif"
+              },
+              {
+                "status": "ok",
+                "note": "",
+                "tm_score": 0.9872,
+                "tm_score_pred_norm": 0.6263,
+                "ca_rmsd": 1.14,
+                "aligned_ca_length": 403,
+                "seq_identity": 0.978,
+                "pred_residues": 637,
+                "native_residues": 403,
+                "coverage": 1.5806,
+                "method": "cryozeta",
+                "entry": "9KQM",
+                "model_kind": "cryozeta_s4",
+                "model_file": "9KQM_sample_4.cif"
+              }
+            ],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-11-03T07:26:24Z",
+            "seconds": 10406
+          },
+          "9WME": {
+            "entry": "9WME",
+            "method": "cryozeta",
+            "status": "interrupted",
+            "failed_step": "run",
+            "note": "stopped by the end of the session after 17576 s; run again in the next session",
+            "runs": {
+              "run": {
+                "peak_gpu_mb": 14819,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 2.53,
+                "samples": 3483,
+                "rc": -9,
+                "seconds": 17576,
+                "timed_out": true,
+                "started": 1793691630.4790795,
+                "ended": 1793709206.8568962,
+                "gpu": 0,
+                "limit_s": 17576,
+                "other_gpu_busy": true,
+                "started_utc": "2026-11-03T07:40:30Z",
+                "ended_utc": "2026-11-03T12:33:26Z"
+              }
+            },
+            "models": [],
+            "gpu": 0,
+            "attempt": 1,
+            "started_utc": "2026-11-03T07:40:05Z"
+          },
+          "9ZLH": {
+            "entry": "9ZLH",
+            "method": "cryozeta",
+            "status": "not run",
+            "failed_step": "inputs",
+            "note": "could not download https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-74403/map/emd_74403.map.gz: HTTPSConnectionPool(host='ftp.ebi.ac.uk', port=443): Max retries exceeded with url: /pub/databases/emdb/structures/EMD-74403/map/emd_74403.map.gz (Caused by NewConnectionError(\"HTTPSConnection(host='f",
+            "runs": {},
+            "models": [],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-11-03T10:19:50Z"
+          },
+          "26DK": {
+            "entry": "26DK",
+            "method": "cryozeta",
+            "status": "failed",
+            "failed_step": "run",
+            "note": "exit code 3; the model file 26DK_sample_0.cif was not written",
+            "runs": {
+              "run": {
+                "peak_gpu_mb": 3413,
+                "peak_gpu_util_pct": 100,
+                "min_ram_available_gb": 4.56,
+                "samples": 87,
+                "rc": 3,
+                "seconds": 436,
+                "timed_out": false,
+                "started": 1793701333.5437822,
+                "ended": 1793701769.8529763,
+                "gpu": 1,
+                "limit_s": 7873,
+                "other_gpu_busy": true,
+                "started_utc": "2026-11-03T10:22:13Z",
+                "ended_utc": "2026-11-03T10:29:29Z"
+              }
+            },
+            "models": [],
+            "gpu": 1,
+            "attempt": 1,
+            "started_utc": "2026-11-03T10:20:50Z",
+            "seconds": 520
+          },
+          "9WFL": {
+            "entry": "9WFL",
+            "method": "cryozeta",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "9VI4": {
+            "entry": "9VI4",
+            "method": "cryozeta",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "9VBD": {
+            "entry": "9VBD",
+            "method": "cryozeta",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "9RWS": {
+            "entry": "9RWS",
+            "method": "cryozeta",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "9VUH": {
+            "entry": "9VUH",
+            "method": "cryozeta",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "9WTX": {
+            "entry": "9WTX",
+            "method": "cryozeta",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "9OC0": {
+            "entry": "9OC0",
+            "method": "cryozeta",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "9Z24": {
+            "entry": "9Z24",
+            "method": "cryozeta",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          },
+          "13BD": {
+            "entry": "13BD",
+            "method": "cryozeta",
+            "runs": {},
+            "models": [],
+            "status": "not run",
+            "failed_step": "",
+            "note": "not started: not enough time left in the session"
+          }
+        },
+        "weights_hub": {
+          "repo": "KiharaLab/CryoZeta",
+          "revision": "6fdba93a5f3af71c61760723438ff05f48e033db",
+          "files": {
+            "detection": {
+              "file": "cryozeta-detection-v0.0.1.safetensors",
+              "hub_path": "cryozeta-detection-v0.0.1.safetensors",
+              "bytes": 39547664,
+              "sha256": "677ea35f308d6d14f02cf841437b9c2f5a4490ee03df69a81d41acc73b9c76cc",
+              "hub_sha256": "677ea35f308d6d14f02cf841437b9c2f5a4490ee03df69a81d41acc73b9c76cc"
+            },
+            "cryozeta": {
+              "file": "cryozeta-v0.0.1.safetensors",
+              "hub_path": "cryozeta-v0.0.1.safetensors",
+              "bytes": 2680248116,
+              "sha256": "da7153b024d5eaebfcea7a0a0a55c1da72833cc9688df0976ca33678280c57c5",
+              "hub_sha256": "da7153b024d5eaebfcea7a0a0a55c1da72833cc9688df0976ca33678280c57c5"
+            },
+            "interpolate": {
+              "file": "cryozeta-interpolate-v0.0.1.safetensors",
+              "hub_path": "cryozeta-interpolate-v0.0.1.safetensors",
+              "bytes": 2680255796,
+              "sha256": "1a0b2f3e53953af47e95c36d7a6a84ec9af4ba0296e458f83c5093a2a1263285",
+              "hub_sha256": "1a0b2f3e53953af47e95c36d7a6a84ec9af4ba0296e458f83c5093a2a1263285"
+            },
+            "ccd": {
+              "file": "components.v20240608.cif",
+              "hub_path": "components.v20240608.cif",
+              "bytes": 427767290,
+              "sha256": "7240b17369ccfbbcc86e2d02dc8c9db59f46c32e0420f58889c6c121c60bfef0",
+              "hub_sha256": "7240b17369ccfbbcc86e2d02dc8c9db59f46c32e0420f58889c6c121c60bfef0"
+            },
+            "ccd_rdkit": {
+              "file": "components.v20240608.cif.rdkit_mol.pkl",
+              "hub_path": "components.v20240608.cif.rdkit_mol.pkl",
+              "bytes": 125903802,
+              "sha256": "2d6caced2d26c62015115a1d0a50f4106755a300e0c2a2d2b5c101c9038dcbcd",
+              "hub_sha256": "2d6caced2d26c62015115a1d0a50f4106755a300e0c2a2d2b5c101c9038dcbcd"
+            }
+          }
+        },
+        "preflight": {
+          "gpu_test": {
+            "torch": "2.4.1",
+            "cuda": "11.8",
+            "cuda_available": true,
+            "gpu": "Tesla T4",
+            "memory_gb": 14.56,
+            "capability": "7.5",
+            "bf16_matmul": "ok",
+            "bf16_conv3d": "ok",
+            "bf16_autocast_conv3d": "ok"
+          },
+          "detection_patched": false,
+          "dtype_start": "bf16"
+        },
+        "version": "commit c544c6bbd0, pixi 0.41.1, environment cu11, weights revision 6fdba93a5f",
+        "teaser": {
+          "commit": "52a9c52ee7d4c838c5e8a75458c33178be5bfb70",
+          "folder": "/tmp/mica_pilot/teaser_plusplus"
+        },
+        "weights": {
+          "cryozeta_assets/components.v20240608.cif.rdkit_mol.pkl": 125903802,
+          "cryozeta_assets/cryozeta-interpolate-v0.0.1.safetensors": 2680255796,
+          "cryozeta_assets/components.v20240608.cif": 427767290,
+          "cryozeta_assets/cryozeta-v0.0.1.safetensors": 2680248116,
+          "cryozeta_assets/cryozeta-detection-v0.0.1.safetensors": 39547664
+        }
+      }
+    },
+    "complete": true,
+    "pending": [
+      [
+        "9WME",
+        "cryozeta",
+        "interrupted"
+      ],
+      [
+        "9ZLH",
+        "cryozeta",
+        "not run"
+      ],
+      [
+        "9WFL",
+        "cryozeta",
+        "not run"
+      ],
+      [
+        "9VI4",
+        "cryozeta",
+        "not run"
+      ],
+      [
+        "9VBD",
+        "cryozeta",
+        "not run"
+      ],
+      [
+        "9RWS",
+        "cryozeta",
+        "not run"
+      ],
+      [
+        "9VUH",
+        "cryozeta",
+        "not run"
+      ],
+      [
+        "9WTX",
+        "cryozeta",
+        "not run"
+      ],
+      [
+        "9OC0",
+        "cryozeta",
+        "not run"
+      ],
+      [
+        "9Z24",
+        "cryozeta",
+        "not run"
+      ],
+      [
+        "13BD",
+        "cryozeta",
+        "not run"
+      ]
+    ]
+  },
+  "methods": {
+    "cryozeta": {
+      "label": "CryoZeta",
+      "commit": "c544c6bbd0366951d8b4e0bc4c0da547836f7b8f",
+      "status": "ready",
+      "setup_seconds": 296,
+      "version": "commit c544c6bbd0, pixi 0.41.1, environment cu11, weights revision 6fdba93a5f"
+    }
+  },
+  "specs": {
+    "cryozeta": {
+      "key": "cryozeta",
+      "label": "CryoZeta",
+      "repo": "https://github.com/kiharalab/CryoZeta",
+      "commit": "c544c6bbd0366951d8b4e0bc4c0da547836f7b8f",
+      "python": "3.12",
+      "req": null,
+      "timeout": 21600,
+      "s_per_residue": 15,
+      "oom_is_result": true,
+      "uses_af3": false,
+      "bundle": null,
+      "weights_url": null,
+      "weights_min_bytes": 0,
+      "gdrive_id": null,
+      "import_test": "import importlib.util, torch, safetensors; assert importlib.util.find_spec('cryozeta') is not None; print('the CryoZeta environment imports: torch ' + torch.__version__)",
+      "pixi": {
+        "version": "0.41.1",
+        "url": "https://github.com/prefix-dev/pixi/releases/download/v0.41.1/pixi-x86_64-unknown-linux-musl",
+        "min_bytes": 30000000,
+        "sha256": "f4e98919053c099c6839602c3334e1b7802d4db445a2ffa9282ff6abac6c0418",
+        "env": "cu11"
+      },
+      "teaser": {
+        "repo": "https://github.com/MIT-SPARK/TEASER-plusplus",
+        "commit": "52a9c52ee7d4c838c5e8a75458c33178be5bfb70",
+        "cmake": "3.31.6",
+        "pybind11": "3.0.1",
+        "prebuilt": null
+      },
+      "hub": {
+        "repo": "KiharaLab/CryoZeta",
+        "api": "https://huggingface.co/api/models/KiharaLab/CryoZeta?blobs=true",
+        "resolve": "https://huggingface.co/KiharaLab/CryoZeta/resolve/{rev}/{path}",
+        "min_bytes": 1000000,
+        "files": {
+          "detection": "cryozeta-detection-v0.0.1.safetensors",
+          "cryozeta": "cryozeta-v0.0.1.safetensors",
+          "interpolate": "cryozeta-interpolate-v0.0.1.safetensors"
+        },
+        "data_files": {
+          "ccd": "components.v20240608.cif",
+          "ccd_rdkit": "components.v20240608.cif.rdkit_mol.pkl"
+        }
+      },
+      "colabfold": "https://api.colabfold.com",
+      "msa_poll_s": 8.0,
+      "msa_tries": 3,
+      "run": {
+        "seed": 101,
+        "n_sample": 5,
+        "n_step": 20,
+        "n_cycle": 10,
+        "num_select": 5,
+        "dtype": "bf16",
+        "kernels": "off"
+      },
+      "main_kind": "cryozeta"
+    }
+  },
+  "usalign_commit": "746ad8a2a4dea9f317075cc482df0ecb5440bdea",
+  "usalign_version": "* US-align (Version 20261012)                                      *",
+  "input_sha256": {
+    "scripts/nbtools.py": "9bda95fce7f7fbe0c373e315740f555fc27942a08971ce2fe1b5cae6af6d748d",
+    "scripts/mica_inputs.py": "87b7f5e43b86671e09e673e8bb07abb20496ad92264528dfd9994b88bded417f",
+    "scripts/evaluate_models.py": "8c235732d2595f8ad2014d70a278b44097205aff2417c9b5761f55dfe4974250",
+    "data/af3/af3_jobs.csv": "b43068ffed7e3843d0d9c5cfa509d8f1ba9900527a1a0cad9e74aa69573cd4b0",
+    "data/af3/af3_files_sha256.txt": "c131836802f9469c2073cc8c0bbb495e906854ffb223100cf30750714e2e3a4f",
+    "data/entries_2026.csv": "cb695bb04ef09bf48f8c2848f91a2580c0b3c15f2a8f1e580659d86f0097a5da",
+    "scripts/cryozeta_tools.py": "5f2871f3ce17899846fe5c5381979a638b1cbf98a290e44d4f225f325480cef0"
+  },
+  "tasks": [
+    [
+      "9T5K",
+      "cryozeta"
+    ],
+    [
+      "9WQ6",
+      "cryozeta"
+    ],
+    [
+      "22FX",
+      "cryozeta"
+    ],
+    [
+      "9V4D",
+      "cryozeta"
+    ],
+    [
+      "9JKK",
+      "cryozeta"
+    ],
+    [
+      "9OTA",
+      "cryozeta"
+    ],
+    [
+      "9TKA",
+      "cryozeta"
+    ],
+    [
+      "9KQM",
+      "cryozeta"
+    ],
+    [
+      "9WFL",
+      "cryozeta"
+    ],
+    [
+      "9WME",
+      "cryozeta"
+    ],
+    [
+      "9VI4",
+      "cryozeta"
+    ],
+    [
+      "9VBD",
+      "cryozeta"
+    ],
+    [
+      "9ZLH",
+      "cryozeta"
+    ],
+    [
+      "9RWS",
+      "cryozeta"
+    ],
+    [
+      "9VUH",
+      "cryozeta"
+    ],
+    [
+      "9WTX",
+      "cryozeta"
+    ],
+    [
+      "9OC0",
+      "cryozeta"
+    ],
+    [
+      "9Z24",
+      "cryozeta"
+    ],
+    [
+      "13BD",
+      "cryozeta"
+    ],
+    [
+      "26DK",
+      "cryozeta"
+    ]
+  ],
+  "hours_setting": 11.0,
+  "run_limit_s": 10800,
+  "lanes": [
+    0,
+    1
+  ]
+}

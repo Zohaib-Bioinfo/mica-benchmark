@@ -1,0 +1,52 @@
+contour level of 9OC0: 0.066 (https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-70305/header/emd-70305.xml)
+MSA of 847 residues from the ColabFold server: 5037 UniRef and 2850 environmental hits (2 s)
+MSA of 862 residues from the ColabFold server: 5728 UniRef and 2443 environmental hits (1 s)
+
+=== stage detection: cryozeta-detection json-run /tmp/mica_pilot/input/9OC0/cryozeta_input.json /tmp/mica_pilot/runs/cryozeta/9OC0 --device cuda --checkpoint-path /tmp/mica_pilot/cryozeta_assets/cryozeta-detection-v0.0.1.safetensors
+2026-11-07 04:21:22.771 | INFO     | cryozeta.runner.inference_detection:__init__:359 - Using device: cuda
+2026-11-07 04:21:22.772 | INFO     | cryozeta.runner.inference_detection:__init__:360 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-07 04:21:22.772 | INFO     | cryozeta.runner.inference_detection:__init__:367 - Loading models...
+2026-11-07 04:21:23.207 | INFO     | cryozeta.runner.inference_detection:__init__:375 - Models loaded successfully
+2026-11-07 04:21:23.207 | INFO     | cryozeta.runner.inference_detection:json_run:817 - [batch 1/1] Processing /tmp/mica_pilot/input/9OC0/emd_70305.mrc
+2026-11-07 04:21:23.208 | INFO     | cryozeta.runner.inference_detection:run_inference:441 - Running inference for 9OC0
+2026-11-07 04:21:23.208 | INFO     | cryozeta.runner.inference_detection:run_inference:446 - Using resolution for 9OC0: 2.97
+2026-11-07 04:21:23.208 | INFO     | cryozeta.runner.inference_detection:preprocess_map:379 - Preprocessing map from /tmp/mica_pilot/input/9OC0/emd_70305.mrc
+2026-11-07 04:21:23.805 | INFO     | cryozeta.runner.inference_detection:preprocess_map:391 - Using contour level for 9OC0: 0.066
+2026-11-07 04:21:30.454 | INFO     | cryozeta.runner.inference_detection:preprocess_map:410 - Finished preprocessing, shape: torch.Size([1, 1, 345, 337, 342])
+2026-11-07 04:21:30.469 | INFO     | cryozeta.runner.inference_detection:run_inference:460 - Start inference for 9OC0
+2026-11-07 04:21:30.692 | INFO     | cryozeta.em.utils:sliding_window_inference:282 - Input tensor shape: 345/337/342
+2026-11-07 04:21:34.583 | INFO     | cryozeta.em.utils:sliding_window_inference:334 - Number of non-empty ROIs / All possible ROIs: 930 / 1000
+
+Processing inference:   0%|          | 0/233 [00:00<?, ?it/s]
+Processing inference:  21%|██▏       | 50/233 [02:07<09:11,  3.01s/it]
+Processing inference:  43%|████▎     | 100/233 [04:27<06:19,  2.85s/it]
+Processing inference:  64%|██████▍   | 150/233 [06:48<03:53,  2.82s/it]
+Processing inference:  86%|████████▌ | 200/233 [09:09<01:33,  2.82s/it]
+
+DRIVER RESULT failed: detection: exit code -9. The last lines of the stage:
+    Processing inference:  90%|█████████ | 210/233 [09:37<01:04,  2.82s/it]
+    Processing inference:  91%|█████████ | 211/233 [09:40<01:01,  2.81s/it]
+    Processing inference:  91%|█████████ | 212/233 [09:43<00:59,  2.81s/it]
+    Processing inference:  91%|█████████▏| 213/233 [09:45<00:56,  2.81s/it]
+    Processing inference:  92%|█████████▏| 214/233 [09:48<00:53,  2.80s/it]
+    Processing inference:  92%|█████████▏| 215/233 [09:51<00:50,  2.80s/it]
+    Processing inference:  93%|█████████▎| 216/233 [09:54<00:47,  2.80s/it]
+    Processing inference:  93%|█████████▎| 217/233 [09:57<00:44,  2.81s/it]
+    Processing inference:  94%|█████████▎| 218/233 [09:59<00:42,  2.80s/it]
+    Processing inference:  94%|█████████▍| 219/233 [10:02<00:39,  2.80s/it]
+    Processing inference:  94%|█████████▍| 220/233 [10:05<00:36,  2.81s/it]
+    Processing inference:  95%|█████████▍| 221/233 [10:08<00:33,  2.81s/it]
+    Processing inference:  95%|█████████▌| 222/233 [10:11<00:30,  2.81s/it]
+    Processing inference:  96%|█████████▌| 223/233 [10:13<00:28,  2.81s/it]
+    Processing inference:  96%|█████████▌| 224/233 [10:16<00:25,  2.81s/it]
+    Processing inference:  97%|█████████▋| 225/233 [10:19<00:22,  2.81s/it]
+    Processing inference:  97%|█████████▋| 226/233 [10:22<00:19,  2.82s/it]
+    Processing inference:  97%|█████████▋| 227/233 [10:25<00:16,  2.82s/it]
+    Processing inference:  98%|█████████▊| 228/233 [10:28<00:14,  2.82s/it]
+    Processing inference:  98%|█████████▊| 229/233 [10:30<00:11,  2.82s/it]
+    Processing inference:  99%|█████████▊| 230/233 [10:33<00:08,  2.82s/it]
+    Processing inference:  99%|█████████▉| 231/233 [10:36<00:05,  2.82s/it]
+    Processing inference: 100%|█████████▉| 232/233 [10:39<00:02,  2.83s/it]
+    Processing inference: 100%|██████████| 233/233 [10:42<00:00,  2.81s/it]
+    Processing inference: 100%|██████████| 233/233 [10:42<00:00,  2.76s/it]
+DRIVER RESULT failed: detection: exit code -9

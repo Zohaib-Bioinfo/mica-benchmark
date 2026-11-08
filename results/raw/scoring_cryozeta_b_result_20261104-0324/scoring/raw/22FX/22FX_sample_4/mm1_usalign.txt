@@ -1,0 +1,3 @@
+# /tmp/mica_pilot/USalign_src/USalign /kaggle/input/notebooks/faltuaccounts/gpu-cryozeta-b/pilot/models/cryozeta/22FX/22FX_sample_4.cif /kaggle/working/pilot/native/ca/22FX_native_ca.pdb -mol protein -mm 1 -ter 1 -outfmt 2 -m /kaggle/working/pilot/scoring/raw/22FX/22FX_sample_4/mm1_matrix.txt
+#PDBchain1	PDBchain2	TM1	TM2	RMSD	ID1	ID2	IDali	L1	L2	Lali
+/kaggle/input/notebooks/faltuaccounts/gpu-cryozeta-b/pilot/models/cryozeta/22FX/22FX_sample_4.cif:A0	/kaggle/working/pilot/native/ca/22FX_native_ca.pdb:A	0.9380	0.9862	0.62	0.951	1.000	1.000	182	173	173

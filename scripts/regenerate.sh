@@ -20,11 +20,16 @@ MICA_STATUS=$(python3 scripts/ingest_results.py --list mica_status "$RAW" | grep
 NODOCK_STATUS=$(ls "$RAW"/mica_gpu_nodock_result_*/mica_status.csv)
 
 # scores, oldest session first (a later file replaces the rows of an earlier one with the same entry, method and model file)
+scoring_folders() {   # the scoring sessions that hold scores: a folder without scoring/scores_long.csv (a stop before any model was scored) or with a NOT_A_RESULT.txt is left out
+    for d in "$RAW"/scoring_*_result_*; do
+        if [ -f "$d/scoring/scores_long.csv" ] && [ ! -f "$d/NOT_A_RESULT.txt" ]; then echo "$d"; fi
+    done
+}
 scores() {   # $1: grep pattern for the folders to keep (-v: to drop)
-    ls -d "$RAW"/scoring_*_result_* | "$@" | sed -E 's#^(.*_result_)([0-9]{8}-[0-9]{4})$#\2 \1\2#' | sort | cut -d' ' -f2- | sed 's#$#/scoring/scores_long.csv#'
+    scoring_folders | "$@" | sed -E 's#^(.*_result_)([0-9]{8}-[0-9]{4})$#\2 \1\2#' | sort | cut -d' ' -f2- | sed 's#$#/scoring/scores_long.csv#'
 }
 SCORES_MAIN=$(scores grep -v nodock)
-SCORES_NODOCK=$(scores grep -E "scoring_base|scoring_nodock")
+SCORES_NODOCK=$(scores grep -E "scoring_base|scoring_nodock|scoring_cryo")      # the baselines that were added later (CryoAtom, CryoZeta) are baselines of this analysis too
 
 analyze() {  # $1: output folder, $2: status files, $3: score files
     # shellcheck disable=SC2086

@@ -1,0 +1,539 @@
+contour level of 9VUH: 0.0144 (https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-65363/header/emd-65363.xml)
+MSA of 332 residues from the ColabFold server: 9140 UniRef and 9721 environmental hits (3 s)
+MSA of 365 residues from the ColabFold server: 3979 UniRef and 2918 environmental hits (1 s)
+MSA of 318 residues from the ColabFold server: 1730 UniRef and 1170 environmental hits (1 s)
+
+=== stage detection: cryozeta-detection json-run /tmp/mica_pilot/input/9VUH/cryozeta_input.json /tmp/mica_pilot/runs/cryozeta/9VUH --device cuda --checkpoint-path /tmp/mica_pilot/cryozeta_assets/cryozeta-detection-v0.0.1.safetensors
+2026-11-07 17:32:36.886 | INFO     | cryozeta.runner.inference_detection:__init__:359 - Using device: cuda
+2026-11-07 17:32:36.887 | INFO     | cryozeta.runner.inference_detection:__init__:360 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-07 17:32:36.887 | INFO     | cryozeta.runner.inference_detection:__init__:367 - Loading models...
+2026-11-07 17:32:37.317 | INFO     | cryozeta.runner.inference_detection:__init__:375 - Models loaded successfully
+2026-11-07 17:32:37.317 | INFO     | cryozeta.runner.inference_detection:json_run:817 - [batch 1/1] Processing /tmp/mica_pilot/input/9VUH/emd_65363.mrc
+2026-11-07 17:32:37.317 | INFO     | cryozeta.runner.inference_detection:run_inference:441 - Running inference for 9VUH
+2026-11-07 17:32:37.318 | INFO     | cryozeta.runner.inference_detection:run_inference:446 - Using resolution for 9VUH: 2.7
+2026-11-07 17:32:37.318 | INFO     | cryozeta.runner.inference_detection:preprocess_map:379 - Preprocessing map from /tmp/mica_pilot/input/9VUH/emd_65363.mrc
+2026-11-07 17:32:37.533 | INFO     | cryozeta.runner.inference_detection:preprocess_map:391 - Using contour level for 9VUH: 0.0144
+2026-11-07 17:32:38.456 | INFO     | cryozeta.runner.inference_detection:preprocess_map:410 - Finished preprocessing, shape: torch.Size([1, 1, 91, 92, 102])
+2026-11-07 17:32:38.459 | INFO     | cryozeta.runner.inference_detection:run_inference:460 - Start inference for 9VUH
+2026-11-07 17:32:38.475 | INFO     | cryozeta.em.utils:sliding_window_inference:282 - Input tensor shape: 91/92/102
+2026-11-07 17:32:38.608 | INFO     | cryozeta.em.utils:sliding_window_inference:334 - Number of non-empty ROIs / All possible ROIs: 12 / 12
+
+Processing inference:   0%|          | 0/3 [00:00<?, ?it/s]
+2026-11-07 17:32:47.932 | INFO     | cryozeta.runner.inference_detection:post_process:144 - Post-processing 9VUH...
+MeanShift++ Converged at 11 steps.
+2026-11-07 17:32:50.518 | INFO     | cryozeta.runner.inference_detection:post_process:207 - [9VUH] Number of CA indices: 638
+MeanShift++ Converged at 51 steps.
+2026-11-07 17:32:50.583 | INFO     | cryozeta.runner.inference_detection:post_process:261 - [9VUH] Number of protein CA clusters: 3
+2026-11-07 17:32:50.583 | WARNING  | cryozeta.runner.inference_detection:post_process:272 - No R/DNA C1P indices found for 9VUH
+2026-11-07 17:32:50.583 | INFO     | cryozeta.runner.inference_detection:post_process:274 - [9VUH] Number of clusters: 3
+2026-11-07 17:32:50.589 | INFO     | cryozeta.runner.inference_detection:post_process:284 - [9VUH] Main atom prob shape: torch.Size([3, 91, 92, 102])
+2026-11-07 17:32:50.589 | INFO     | cryozeta.runner.inference_detection:post_process:288 - [9VUH] voxel_size: [1. 1. 1.], global_origin: [46. 49. 46.]
+2026-11-07 17:32:50.589 | INFO     | cryozeta.runner.inference_detection:post_process:292 - [9VUH] main_atom_coords shape: (638, 3)
+2026-11-07 17:32:50.737 | INFO     | cryozeta.runner.inference_detection:post_process:350 - [9VUH] Saved output to /tmp/mica_pilot/runs/cryozeta/9VUH/9VUH/CryoZeta-Detection/9VUH.pt
+2026-11-07 17:32:50.742 | INFO     | cryozeta.runner.inference_detection:run_inference:586 - Completed inference for 9VUH
+Batch inference completed. Results saved to /tmp/mica_pilot/runs/cryozeta/9VUH
+
+=== stage cryozeta_try1: cryozeta-inference --seeds 101 --load_checkpoint_path /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors --em_file_dir /tmp/mica_pilot/runs/cryozeta/9VUH --dump_dir /tmp/mica_pilot/runs/cryozeta/9VUH --input_json_path /tmp/mica_pilot/input/9VUH/cryozeta_input.json --use_deepspeed_evo_attention false --use_cuequivariance_attention false --use_cuequivariance_multiplicative_update false --use_cuequivariance_attention_pair_bias false --use_opm_tilelang false --model.N_cycle 10 --sample_diff
+2026-11-07 17:32:59.701 | INFO     | cryozeta.runner.inference:init_env:53 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-07 17:32:59.702 | INFO     | cryozeta.runner.inference:print:161 - Distributed environment: world size: 1, global rank: 0, local rank: 0
+2026-11-07 17:32:59.702 | INFO     | cryozeta.runner.inference:init_env:72 - LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+2026-11-07 17:32:59.702 | INFO     | cryozeta.runner.inference:init_env:96 - Finished init ENV.
+inference scheduler 16.0
+Diffusion Module has 16.0
+2026-11-07 17:33:15.814 | INFO     | cryozeta.runner.inference:print:161 - Loading from /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors
+2026-11-07 17:33:17.875 | INFO     | cryozeta.runner.inference:print:161 - Finish loading checkpoint.
+2026-11-07 17:33:17.901 | INFO     | cryozeta.runner.inference:main:200 - Loading data from
+/tmp/mica_pilot/input/9VUH/cryozeta_input.json
+2026-11-07 17:33:17.903 | INFO     | cryozeta.data.infer_data_pipeline:__getitem__:269 - Featurizing 9VUH...
+2026-11-07 17:33:28.160 | INFO     | cryozeta.data.data_transforms_em:parse_mrc:132 - has_interpolate_confidence: True
+2026-11-07 17:33:36.347 | INFO     | cryozeta.runner.inference:main:243 - [Rank 0 (1/1)] 9VUH: N_asym 3, N_token 1015, N_atom 7953, N_msa 16384
+
+EMPairformer cycles:   0%|          | 0/10 [00:00<?, ?it/s]
+                                                           
+2026-11-07 17:34:01.307 | INFO     | cryozeta.runner.inference:main:276 - [Rank 0]9VUH CUDA out of memory. Tried to allocate 3.93 GiB. GPU 0 has a total capacity of 14.56 GiB of which 3.03 GiB is free. Including non-PyTorch memory, this process has 11.53 GiB memory in use. Of the allocated memory 10.16 GiB is allocated by PyTorch, and 1.22 GiB is reserved by PyTorch but unallocated. If reserved bu
+Traceback (most recent call last):
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/runner/inference.py", line 261, in main
+    prediction = runner.predict(data)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/runner/inference.py", line 153, in predict
+    prediction, _, _ = self.model(
+                       ^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/model/cryozeta.py", line 890, in forward
+    pred_dict, log_dict, time_tracker = self.main_inference_loop(
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/model/cryozeta.py", line 397, in main_inference_loop
+    pred_dict, log_dict, time_tracker = self._main_inference_loop(
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/model/cryozeta.py", line 489, in _main_inference_loop
+    s_inputs, s, z, pz, _p = self.get_empairformer_output(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/model/cryozeta.py", line 299, in get_empairformer_output
+    s, z, pz, p = self.empairformer_stack(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/model/modules/empairformer.py", line 1386, in forward
+    s, z, pz, p = checkpoint_blocks(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/utils/checkpointing.py", line 85, in checkpoint_blocks
+    return exec(blocks, args)
+           ^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/utils/checkpointing.py", line 72, in exec
+    a = wrap(block(*a))
+             ^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/model/modules/empairformer.py", line 1070, in forward
+    self.residue_row_attn(
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/model/msa.py", line 265, in forward
+    m = self._chunk(
+        ^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/model/msa.py", line 120, in _chunk
+    return chunk_layer(
+           ^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/utils/chunk_utils.py", line 291, in chunk_layer
+    output_chunk = layer(**chunks)
+                   ^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/model/msa.py", line 99, in fn
+    return self.mha(
+           ^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/model/primitives.py", line 658, in forward
+    o = _attention(q, k, v, biases)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/model/primitives.py", line 365, in _attention
+    a = softmax_no_cast(a, -1)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/model/primitives.py", line 290, in softmax_no_cast
+    s = torch.nn.functional.softmax(t, dim=dim)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/functional.py", line 1888, in softmax
+    ret = input.softmax(dim)
+          ^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.93 GiB. GPU 0 has a total capacity of 14.56 GiB of which 3.03 GiB is free. Including non-PyTorch memory, this process has 11.53 GiB memory in use. Of the allocated memory 10.16 GiB is allocated by PyTorch, and 1.22 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CO
+
+cryozeta: out of GPU memory; the next attempt uses attention chunk size 64
+
+=== stage cryozeta_try2: cryozeta-inference --seeds 101 --load_checkpoint_path /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors --em_file_dir /tmp/mica_pilot/runs/cryozeta/9VUH --dump_dir /tmp/mica_pilot/runs/cryozeta/9VUH --input_json_path /tmp/mica_pilot/input/9VUH/cryozeta_input.json --use_deepspeed_evo_attention false --use_cuequivariance_attention false --use_cuequivariance_multiplicative_update false --use_cuequivariance_attention_pair_bias false --use_opm_tilelang false --model.N_cycle 10 --sample_diff
+2026-11-07 17:34:12.970 | INFO     | cryozeta.runner.inference:init_env:53 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-07 17:34:12.971 | INFO     | cryozeta.runner.inference:print:161 - Distributed environment: world size: 1, global rank: 0, local rank: 0
+2026-11-07 17:34:12.971 | INFO     | cryozeta.runner.inference:init_env:72 - LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+2026-11-07 17:34:12.971 | INFO     | cryozeta.runner.inference:init_env:96 - Finished init ENV.
+inference scheduler 16.0
+Diffusion Module has 16.0
+2026-11-07 17:34:29.013 | INFO     | cryozeta.runner.inference:print:161 - Loading from /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors
+2026-11-07 17:34:30.923 | INFO     | cryozeta.runner.inference:print:161 - Finish loading checkpoint.
+2026-11-07 17:34:30.944 | INFO     | cryozeta.runner.inference:main:200 - Loading data from
+/tmp/mica_pilot/input/9VUH/cryozeta_input.json
+2026-11-07 17:34:30.946 | INFO     | cryozeta.data.infer_data_pipeline:__getitem__:269 - Featurizing 9VUH...
+2026-11-07 17:34:40.925 | INFO     | cryozeta.data.data_transforms_em:parse_mrc:132 - has_interpolate_confidence: True
+2026-11-07 17:34:49.007 | INFO     | cryozeta.runner.inference:main:243 - [Rank 0 (1/1)] 9VUH: N_asym 3, N_token 1015, N_atom 7953, N_msa 16384
+
+EMPairformer cycles:   0%|          | 0/10 [00:00<?, ?it/s]
+                                                                        
+2026-11-07 21:59:18.150 | INFO     | cryozeta.model.cryozeta:_main_inference_loop:518 - EMPairformer done in 15868.8s. Starting diffusion sampling...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    [A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Diffusion denoising:  80%|████████  | 16/20 [00:14<00:03,  1.08it/s][A
+
+
+
+
+
+                                                                    [A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    [A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    [A
+
+Diffusion denoising:   0%|          | 0/20 [00:00<?, ?it/s][A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                    [A
+                                                                      
+2026-11-07 22:00:50.652 | INFO     | cryozeta.model.cryozeta:_main_inference_loop:544 - Diffusion sampling done in 92.5s. Starting model fitting...
+2026-11-07 22:01:00.564 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.632, OVR_mask: 1.000
+2026-11-07 22:01:01.236 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.629, OVR_box: 1.000
+2026-11-07 22:01:08.191 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.624, OVR_mask: 1.000
+2026-11-07 22:01:08.812 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.621, OVR_box: 0.999
+2026-11-07 22:01:15.772 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.630, OVR_mask: 1.000
+2026-11-07 22:01:16.379 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.627, OVR_box: 0.999
+2026-11-07 22:01:23.325 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.631, OVR_mask: 1.000
+2026-11-07 22:01:23.933 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.629, OVR_box: 1.000
+2026-11-07 22:01:30.869 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.624, OVR_mask: 1.000
+2026-11-07 22:01:31.488 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.621, OVR_box: 0.999
+2026-11-07 22:01:38.511 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.632, OVR_mask: 1.000
+2026-11-07 22:01:39.136 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.630, OVR_box: 1.000
+2026-11-07 22:01:46.127 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.626, OVR_mask: 1.000
+2026-11-07 22:01:46.748 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.622, OVR_box: 0.999
+2026-11-07 22:01:53.725 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.630, OVR_mask: 1.000
+2026-11-07 22:01:54.359 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.628, OVR_box: 0.999
+2026-11-07 22:02:01.357 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.629, OVR_mask: 1.000
+2026-11-07 22:02:01.969 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.627, OVR_box: 1.000
+2026-11-07 22:02:08.972 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.625, OVR_mask: 1.000
+2026-11-07 22:02:09.589 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.621, OVR_box: 0.999
+2026-11-07 22:02:09.592 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:208 - Reference points (original): 638
+2026-11-07 22:02:09.592 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:215 - Sample 0: Query points: 1015
+2026-11-07 22:02:09.592 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:218 - Sample 0: Estimating normals for reference...
+2026-11-07 22:02:09.597 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:227 - Sample 0: Estimating normals for query...
+2026-11-07 22:02:09.605 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:237 - Sample 0: Computing shot_bi_scale descriptors for reference...
+
+
+2026-11-07 22:02:12.805 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:251 - Sample 0:   Descriptor shape: (638, 352)
+2026-11-07 22:02:12.806 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:253 - Sample 0: Computing shot_bi_scale descriptors for query...
+
+
+2026-11-07 22:02:16.553 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:267 - Sample 0:   Descriptor shape: (1015, 352)
+2026-11-07 22:02:16.553 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:272 - Sample 0: Finding correspondences...
+2026-11-07 22:02:16.663 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:276 - Sample 0:   Found 177 correspondences
+2026-11-07 22:02:16.664 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:289 - Sample 0: Running TEASER++...
+Starting scale solver (only selecting inliers if scale estimation has been disabled).
+Scale estimation complete.
+Max core number: 39
+Num vertices: 178
+Max Clique of scale estimation inliers: 
+Using chain graph for GNC rotation.
+Starting rotation solver.
+GNC rotation estimation noise bound:2
+GNC rotation estimation noise bound squared:4
+GNC-TLS solver terminated due to cost convergence.
+Cost diff: 0
+Iterations: 1
+Rotation estimation complete.
+Starting translation solver.
+Translation estimation complete.
+2026-11-07 22:02:16.669 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:318 - Sample 0: TEASER++ query recall: 0.6296
+2026-11-07 22:02:16.669 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:321 - Sample 0: TEASER++ reference recall: 0.9890
+2026-11-07 22:02:16.669 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:324 - Sample 0: TEASER++ F1: 0.7694
+2026-11-07 22:02:16.669 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:327 - Sample 0: Running GICP refinement...
+2026-11-07 22:02:16.679 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:358 - Sample 0: Final query recall (after GICP): 0.6276
+2026-11-07 22:02:16.679 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:361 - Sample 0: Final reference recall (after GICP): 0.9890
+2026-11-07 22:02:16.679 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:364 - Sample 0: Final F1 (after GICP): 0.7679
+2026-11-07 22:02:16.679 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:367 - Sample 0: ========== Comparison ==========
+2026-11-07 22:02:16.679 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:368 - Sample 0: TEASER++ - Query: 0.6296, Ref: 0.9890, F1: 0.7694
+2026-11-07 22:02:16.679 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:371 - Sample 0: TEASER++ + GICP - Query: 0.6276, Ref: 0.9890, F1: 0.7679
+2026-11-07 22:02:16.679 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:375 - Sample 0: Best method: TEASER++ (F1 diff: 0.0015)
+2026-11-07 22:02:16.679 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:382 - Sample 0: ================================
+2026-11-07 22:02:24.871 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.633, OVR_mask: 1.000
+2026-11-07 22:02:25.518 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.631, OVR_box: 1.000
+2026-11-07 22:02:25.522 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:215 - Sample 1: Query points: 1015
+2026-11-07 22:02:25.522 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:218 - Sample 1: Estimating normals for reference...
+2026-11-07 22:02:25.528 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:227 - Sample 1: Estimating normals for query...
+2026-11-07 22:02:25.536 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:237 - Sample 1: Computing shot_bi_scale descriptors for reference...
+
+
+2026-11-07 22:02:28.768 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:251 - Sample 1:   Descriptor shape: (638, 352)
+2026-11-07 22:02:28.768 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:253 - Sample 1: Computing shot_bi_scale descriptors for query...
+
+
+SHOT desc with radius 30.0:   0%|          | 0/1015 [00:00<?, ?it/s]
+2026-11-07 22:02:32.204 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:267 - Sample 1:   Descriptor shape: (1015, 352)
+2026-11-07 22:02:32.205 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:272 - Sample 1: Finding correspondences...
+2026-11-07 22:02:32.315 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:276 - Sample 1:   Found 221 correspondences
+2026-11-07 22:02:32.315 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:289 - Sample 1: Running TEASER++...
+Starting scale solver (only selecting inliers if scale estimation has been disabled).
+Scale estimation complete.
+Max core number: 58
+Num vertices: 222
+Max Clique of scale estimation inliers: 
+Using chain graph for GNC rotation.
+Starting rotation solver.
+GNC rotation estimation noise bound:2
+GNC rotation estimation noise bound squared:4
+GNC-TLS solver terminated due to cost convergence.
+Cost diff: 0
+Iterations: 1
+Rotation estimation complete.
+Starting translation solver.
+Translation estimation complete.
+2026-11-07 22:02:32.321 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:318 - Sample 1: TEASER++ query recall: 0.6276
+2026-11-07 22:02:32.321 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:321 - Sample 1: TEASER++ reference recall: 0.9843
+2026-11-07 22:02:32.321 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:324 - Sample 1: TEASER++ F1: 0.7665
+2026-11-07 22:02:32.321 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:327 - Sample 1: Running GICP refinement...
+2026-11-07 22:02:32.329 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:358 - Sample 1: Final query recall (after GICP): 0.6276
+2026-11-07 22:02:32.329 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:361 - Sample 1: Final reference recall (after GICP): 0.9843
+2026-11-07 22:02:32.329 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:364 - Sample 1: Final F1 (after GICP): 0.7665
+2026-11-07 22:02:32.329 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:367 - Sample 1: ========== Comparison ==========
+2026-11-07 22:02:32.329 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:368 - Sample 1: TEASER++ - Query: 0.6276, Ref: 0.9843, F1: 0.7665
+2026-11-07 22:02:32.329 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:371 - Sample 1: TEASER++ + GICP - Query: 0.6276, Ref: 0.9843, F1: 0.7665
+2026-11-07 22:02:32.329 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:379 - Sample 1: Best method: TEASER++ + GICP (F1 diff: 0.0000)
+2026-11-07 22:02:32.329 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:382 - Sample 1: ================================
+2026-11-07 22:02:40.337 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.626, OVR_mask: 1.000
+2026-11-07 22:02:40.974 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.623, OVR_box: 0.999
+2026-11-07 22:02:40.976 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:215 - Sample 2: Query points: 1015
+2026-11-07 22:02:40.976 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:218 - Sample 2: Estimating normals for reference...
+2026-11-07 22:02:40.980 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:227 - Sample 2: Estimating normals for query...
+2026-11-07 22:02:40.988 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:237 - Sample 2: Computing shot_bi_scale descriptors for reference...
+
+
+2026-11-07 22:02:44.375 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:251 - Sample 2:   Descriptor shape: (638, 352)
+2026-11-07 22:02:44.375 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:253 - Sample 2: Computing shot_bi_scale descriptors for query...
+
+
+2026-11-07 22:02:48.125 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:267 - Sample 2:   Descriptor shape: (1015, 352)
+2026-11-07 22:02:48.126 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:272 - Sample 2: Finding correspondences...
+2026-11-07 22:02:48.237 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:276 - Sample 2:   Found 200 correspondences
+2026-11-07 22:02:48.238 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:289 - Sample 2: Running TEASER++...
+Starting scale solver (only selecting inliers if scale estimation has been disabled).
+Scale estimation complete.
+Max core number: 38
+Num vertices: 201
+Max Clique of scale estimation inliers: 
+Using chain graph for GNC rotation.
+Starting rotation solver.
+GNC rotation estimation noise bound:2
+GNC rotation estimation noise bound squared:4
+GNC-TLS solver terminated due to cost convergence.
+Cost diff: 0
+Iterations: 1
+Rotation estimation complete.
+Starting translation solver.
+Translation estimation complete.
+2026-11-07 22:02:48.243 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:318 - Sample 2: TEASER++ query recall: 0.6305
+2026-11-07 22:02:48.243 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:321 - Sample 2: TEASER++ reference recall: 0.9890
+2026-11-07 22:02:48.243 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:324 - Sample 2: TEASER++ F1: 0.7701
+2026-11-07 22:02:48.243 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:327 - Sample 2: Running GICP refinement...
+2026-11-07 22:02:48.250 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:358 - Sample 2: Final query recall (after GICP): 0.6305
+2026-11-07 22:02:48.251 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:361 - Sample 2: Final reference recall (after GICP): 0.9890
+2026-11-07 22:02:48.251 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:364 - Sample 2: Final F1 (after GICP): 0.7701
+2026-11-07 22:02:48.251 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:367 - Sample 2: ========== Comparison ==========
+2026-11-07 22:02:48.251 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:368 - Sample 2: TEASER++ - Query: 0.6305, Ref: 0.9890, F1: 0.7701
+2026-11-07 22:02:48.251 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:371 - Sample 2: TEASER++ + GICP - Query: 0.6305, Ref: 0.9890, F1: 0.7701
+2026-11-07 22:02:48.251 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:379 - Sample 2: Best method: TEASER++ + GICP (F1 diff: 0.0000)
+2026-11-07 22:02:48.251 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:382 - Sample 2: ================================
+2026-11-07 22:02:56.347 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.632, OVR_mask: 1.000
+2026-11-07 22:02:56.980 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.629, OVR_box: 0.999
+2026-11-07 22:02:56.982 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:215 - Sample 3: Query points: 1015
+2026-11-07 22:02:56.982 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:218 - Sample 3: Estimating normals for reference...
+2026-11-07 22:02:56.987 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:227 - Sample 3: Estimating normals for query...
+2026-11-07 22:02:56.996 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:237 - Sample 3: Computing shot_bi_scale descriptors for reference...
+
+
+2026-11-07 22:03:00.264 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:251 - Sample 3:   Descriptor shape: (638, 352)
+2026-11-07 22:03:00.264 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:253 - Sample 3: Computing shot_bi_scale descriptors for query...
+
+
+2026-11-07 22:03:03.837 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:267 - Sample 3:   Descriptor shape: (1015, 352)
+2026-11-07 22:03:03.837 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:272 - Sample 3: Finding correspondences...
+2026-11-07 22:03:03.968 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:276 - Sample 3:   Found 189 correspondences
+2026-11-07 22:03:03.968 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:289 - Sample 3: Running TEASER++...
+Starting scale solver (only selecting inliers if scale estimation has been disabled).
+Scale estimation complete.
+Max core number: 50
+Num vertices: 190
+Max Clique of scale estimation inliers: 
+Using chain graph for GNC rotation.
+Starting rotation solver.
+GNC rotation estimation noise bound:2
+GNC rotation estimation noise bound squared:4
+GNC-TLS solver terminated due to cost convergence.
+Cost diff: 0
+Iterations: 5
+Rotation estimation complete.
+Starting translation solver.
+Translation estimation complete.
+2026-11-07 22:03:03.977 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:318 - Sample 3: TEASER++ query recall: 0.6325
+2026-11-07 22:03:03.978 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:321 - Sample 3: TEASER++ reference recall: 0.9906
+2026-11-07 22:03:03.978 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:324 - Sample 3: TEASER++ F1: 0.7721
+2026-11-07 22:03:03.978 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:327 - Sample 3: Running GICP refinement...
+2026-11-07 22:03:03.992 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:358 - Sample 3: Final query recall (after GICP): 0.6315
+2026-11-07 22:03:03.993 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:361 - Sample 3: Final reference recall (after GICP): 0.9890
+2026-11-07 22:03:03.993 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:364 - Sample 3: Final F1 (after GICP): 0.7708
+2026-11-07 22:03:03.993 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:367 - Sample 3: ========== Comparison ==========
+2026-11-07 22:03:03.993 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:368 - Sample 3: TEASER++ - Query: 0.6325, Ref: 0.9906, F1: 0.7721
+2026-11-07 22:03:03.993 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:371 - Sample 3: TEASER++ + GICP - Query: 0.6315, Ref: 0.9890, F1: 0.7708
+2026-11-07 22:03:03.993 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:375 - Sample 3: Best method: TEASER++ (F1 diff: 0.0012)
+2026-11-07 22:03:03.993 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:382 - Sample 3: ================================
+2026-11-07 22:03:11.702 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.632, OVR_mask: 1.000
+2026-11-07 22:03:12.344 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.630, OVR_box: 1.000
+2026-11-07 22:03:12.346 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:215 - Sample 4: Query points: 1015
+2026-11-07 22:03:12.346 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:218 - Sample 4: Estimating normals for reference...
+2026-11-07 22:03:12.351 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:227 - Sample 4: Estimating normals for query...
+2026-11-07 22:03:12.358 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:237 - Sample 4: Computing shot_bi_scale descriptors for reference...
+
+
+2026-11-07 22:03:15.631 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:251 - Sample 4:   Descriptor shape: (638, 352)
+2026-11-07 22:03:15.631 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:253 - Sample 4: Computing shot_bi_scale descriptors for query...
+
+Local RFs with radius 10: 100%|██████████| 1015/1015 [00:00<00:00, 4924.21it/s]
+
+2026-11-07 22:03:19.164 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:267 - Sample 4:   Descriptor shape: (1015, 352)
+2026-11-07 22:03:19.164 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:272 - Sample 4: Finding correspondences...
+2026-11-07 22:03:19.272 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:276 - Sample 4:   Found 166 correspondences
+2026-11-07 22:03:19.272 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:289 - Sample 4: Running TEASER++...
+Starting scale solver (only selecting inliers if scale estimation has been disabled).
+Scale estimation complete.
+Max core number: 27
+Num vertices: 167
+Max Clique of scale estimation inliers: 
+Using chain graph for GNC rotation.
+Starting rotation solver.
+GNC rotation estimation noise bound:2
+GNC rotation estimation noise bound squared:4
+GNC-TLS terminated because maximum residual at initialization is very small.
+Rotation estimation complete.
+Starting translation solver.
+Translation estimation complete.
+2026-11-07 22:03:19.277 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:318 - Sample 4: TEASER++ query recall: 0.6286
+2026-11-07 22:03:19.277 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:321 - Sample 4: TEASER++ reference recall: 0.9906
+2026-11-07 22:03:19.277 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:324 - Sample 4: TEASER++ F1: 0.7691
+2026-11-07 22:03:19.277 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:327 - Sample 4: Running GICP refinement...
+2026-11-07 22:03:19.285 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:358 - Sample 4: Final query recall (after GICP): 0.6266
+2026-11-07 22:03:19.285 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:361 - Sample 4: Final reference recall (after GICP): 0.9890
+2026-11-07 22:03:19.285 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:364 - Sample 4: Final F1 (after GICP): 0.7672
+2026-11-07 22:03:19.285 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:367 - Sample 4: ========== Comparison ==========
+2026-11-07 22:03:19.286 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:368 - Sample 4: TEASER++ - Query: 0.6286, Ref: 0.9906, F1: 0.7691
+2026-11-07 22:03:19.286 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:371 - Sample 4: TEASER++ + GICP - Query: 0.6266, Ref: 0.9890, F1: 0.7672
+2026-11-07 22:03:19.286 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:375 - Sample 4: Best method: TEASER++ (F1 diff: 0.0019)
+2026-11-07 22:03:19.286 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:382 - Sample 4: ================================
+2026-11-07 22:03:27.342 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.626, OVR_mask: 1.000
+2026-11-07 22:03:27.968 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.623, OVR_box: 0.999
+2026-11-07 22:03:28.565 | INFO     | cryozeta.model.cryozeta:_main_inference_loop:804 - Model fitting done in 157.9s. Running confidence head...
+2026-11-07 22:04:31.556 | INFO     | cryozeta.model.cryozeta:_main_inference_loop:832 - Confidence head done in 63.0s. Total model forward: 16182.2s (empairformer=15868.8s, diffusion=92.5s, fitting=157.9s, confidence=63.0s)
+2026-11-07 22:04:43.937 | INFO     | cryozeta.runner.inference:main:270 - [Rank 0] 9VUH succeeded.
+Results saved to /tmp/mica_pilot/runs/cryozeta/9VUH/9VUH/CryoZeta
+
+=== stage interpolate_try1: cryozeta-inference --seeds 101 --load_checkpoint_path /tmp/mica_pilot/cryozeta_assets/cryozeta-interpolate-v0.0.1.safetensors --em_file_dir /tmp/mica_pilot/runs/cryozeta/9VUH --dump_dir /tmp/mica_pilot/runs/cryozeta/9VUH --input_json_path /tmp/mica_pilot/input/9VUH/cryozeta_input.json --use_deepspeed_evo_attention false --use_cuequivariance_attention false --use_cuequivariance_multiplicative_update false --use_cuequivariance_attention_pair_bias false --use_opm_tilelang false --model.N_cycle 10 -
+2026-11-07 22:04:56.530 | INFO     | cryozeta.runner.inference:init_env:53 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-07 22:04:56.530 | INFO     | cryozeta.runner.inference:print:161 - Distributed environment: world size: 1, global rank: 0, local rank: 0
+2026-11-07 22:04:56.530 | INFO     | cryozeta.runner.inference:init_env:72 - LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+2026-11-07 22:04:56.530 | INFO     | cryozeta.runner.inference:init_env:96 - Finished init ENV.
+inference scheduler 16.0
+Diffusion Module has 16.0
+2026-11-07 22:05:12.663 | INFO     | cryozeta.runner.inference:print:161 - Loading from /tmp/mica_pilot/cryozeta_assets/cryozeta-interpolate-v0.0.1.safetensors
+2026-11-07 22:05:14.843 | INFO     | cryozeta.runner.inference:print:161 - Finish loading checkpoint.
+2026-11-07 22:05:14.863 | INFO     | cryozeta.runner.inference:main:200 - Loading data from
+/tmp/mica_pilot/input/9VUH/cryozeta_input.json
+2026-11-07 22:05:14.865 | INFO     | cryozeta.data.infer_data_pipeline:__getitem__:269 - Featurizing 9VUH...
+2026-11-07 22:05:25.062 | INFO     | cryozeta.data.data_transforms_em:parse_mrc:132 - has_interpolate_confidence: True
+2026-11-07 22:05:32.851 | INFO     | cryozeta.runner.inference:main:243 - [Rank 0 (1/1)] 9VUH: N_asym 3, N_token 1015, N_atom 7953, N_msa 16384
+
+EMPairformer cycles:   0%|          | 0/10 [00:00<?, ?it/s]

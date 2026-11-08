@@ -1,0 +1,12 @@
+Not a result of CryoZeta (session of 2 November 2026, notebook scripts/as_run/gpu_cryozeta_a.ipynb).
+
+What happened: the notebook did not download the two chemical-components files that cryozeta-inference reads (components.v20240608.cif and its RDKit cache
+components.v20240608.cif.rdkit_mol.pkl, 428 MB and 126 MB, both in the Hugging Face repository KiharaLab/CryoZeta) and did not set CRYOZETA_ASSETS_DIR. The installation
+(pixi, lock file), the TEASER++ build, the weights, the alignments from the ColabFold server and the detection stage all worked (about 3 minutes and 3.4 to 5.4 GB of GPU memory
+per entry). cryozeta-inference then logged "FileNotFoundError: ... python3.12/assets/components.v20240608.cif" for every entry, and ended with exit code 0 and no model. The runs of
+9T5K, 9WQ6 and 22FX are therefore recorded as failed in method_status.csv, and the guard of the notebook stopped CryoZeta after two failures in a row (the other 17 entries are "not run").
+
+These rows are an error of the set-up, not a failure of the method: the program never got to its network. scripts/ingest_results.py --list leaves this folder out, so the analysis
+does not read its status table. The folder stays as part of the record (its GPU time counts in the session table).
+Correction: scripts/gpu_cryozeta_b.ipynb downloads both files, points CRYOZETA_ASSETS_DIR at them and reads the components file with the package's own function in its setup check
+(LOG.md, 2026-11-03).

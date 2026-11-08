@@ -1,0 +1,180 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Enable printing of diagnostic messages.
+CMake Warning (dev) at /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1953 (message):
+  Calling FetchContent_Populate(pmc) is deprecated, call
+  FetchContent_MakeAvailable(pmc) instead.  Policy CMP0169 can be set to OLD
+  to allow FetchContent_Populate(pmc) to be called directly for now, but the
+  ability to call it with declared details will be removed completely in a
+  future version.
+Call Stack (most recent call first):
+  teaser/CMakeLists.txt:10 (FetchContent_Populate)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found OpenMP_C: -fopenmp (found version "4.5")
+-- Found OpenMP_CXX: -fopenmp (found version "4.5")
+-- Found OpenMP: TRUE (found version "4.5")
+CMake Warning (dev) at /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1953 (message):
+  Calling FetchContent_Populate(tinyply) is deprecated, call
+  FetchContent_MakeAvailable(tinyply) instead.  Policy CMP0169 can be set to
+  OLD to allow FetchContent_Populate(tinyply) to be called directly for now,
+  but the ability to call it with declared details will be removed completely
+  in a future version.
+Call Stack (most recent call first):
+  teaser/CMakeLists.txt:21 (FetchContent_Populate)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1564 (cmake_parse_arguments):
+  The BUILD_COMMAND keyword was followed by an empty string or no value at
+  all.  Policy CMP0174 is not set, so cmake_parse_arguments() will unset the
+  ARG_BUILD_COMMAND variable rather than setting it to an empty string.
+Call Stack (most recent call first):
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:2145:EVAL:2 (__FetchContent_doPopulation)
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:2145 (cmake_language)
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1978:EVAL:1 (__FetchContent_Populate)
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1978 (cmake_language)
+  teaser/CMakeLists.txt:21 (FetchContent_Populate)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1564 (cmake_parse_arguments):
+  The INSTALL_COMMAND keyword was followed by an empty string or no value at
+  all.  Policy CMP0174 is not set, so cmake_parse_arguments() will unset the
+  ARG_INSTALL_COMMAND variable rather than setting it to an empty string.
+Call Stack (most recent call first):
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:2145:EVAL:2 (__FetchContent_doPopulation)
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:2145 (cmake_language)
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1978:EVAL:1 (__FetchContent_Populate)
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1978 (cmake_language)
+  teaser/CMakeLists.txt:21 (FetchContent_Populate)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1953 (message):
+  Calling FetchContent_Populate(spectra) is deprecated, call
+  FetchContent_MakeAvailable(spectra) instead.  Policy CMP0169 can be set to
+  OLD to allow FetchContent_Populate(spectra) to be called directly for now,
+  but the ability to call it with declared details will be removed completely
+  in a future version.
+Call Stack (most recent call first):
+  teaser/CMakeLists.txt:31 (FetchContent_Populate)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1564 (cmake_parse_arguments):
+  The BUILD_COMMAND keyword was followed by an empty string or no value at
+  all.  Policy CMP0174 is not set, so cmake_parse_arguments() will unset the
+  ARG_BUILD_COMMAND variable rather than setting it to an empty string.
+Call Stack (most recent call first):
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:2145:EVAL:2 (__FetchContent_doPopulation)
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:2145 (cmake_language)
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1978:EVAL:1 (__FetchContent_Populate)
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1978 (cmake_language)
+  teaser/CMakeLists.txt:31 (FetchContent_Populate)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1564 (cmake_parse_arguments):
+  The INSTALL_COMMAND keyword was followed by an empty string or no value at
+  all.  Policy CMP0174 is not set, so cmake_parse_arguments() will unset the
+  ARG_INSTALL_COMMAND variable rather than setting it to an empty string.
+Call Stack (most recent call first):
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:2145:EVAL:2 (__FetchContent_doPopulation)
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:2145 (cmake_language)
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1978:EVAL:1 (__FetchContent_Populate)
+  /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1978 (cmake_language)
+  teaser/CMakeLists.txt:31 (FetchContent_Populate)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at /tmp/mica_pilot/teaser_tools/cmake/data/share/cmake-3.31/Modules/FetchContent.cmake:1953 (message):
+  Calling FetchContent_Populate(googletest) is deprecated, call
+  FetchContent_MakeAvailable(googletest) instead.  Policy CMP0169 can be set
+  to OLD to allow FetchContent_Populate(googletest) to be called directly for
+  now, but the ability to call it with declared details will be removed
+  completely in a future version.
+Call Stack (most recent call first):
+  test/CMakeLists.txt:10 (FetchContent_Populate)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE
+-- TEASER++ Python binding will be built.
+CMake Warning (dev) at /tmp/mica_pilot/teaser_tools/pybind11/share/cmake/pybind11/FindPythonLibsNew.cmake:101 (message):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning, or
+  preferably upgrade to using FindPython, either by calling it explicitly
+  before pybind11, or by setting PYBIND11_FINDPYTHON ON before pybind11.
+Call Stack (most recent call first):
+  /tmp/mica_pilot/teaser_tools/pybind11/share/cmake/pybind11/pybind11Tools.cmake:44 (find_package)
+  /tmp/mica_pilot/teaser_tools/pybind11/share/cmake/pybind11/pybind11Common.cmake:226 (include)
+  /tmp/mica_pilot/teaser_tools/pybind11/share/cmake/pybind11/pybind11Config.cmake:257 (include)
+  python/CMakeLists.txt:1 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found PythonInterp: /tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/bin/python (found suitable version "3.12.12", minimum required is "3.8")
+-- Found PythonLibs: /tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/libpython3.12.so
+-- Found pybind11: /tmp/mica_pilot/teaser_tools/pybind11/include (found version "3.0.1")
+-- Configuring done (11.7s)
+-- Generating done (0.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    BUILD_TESTS
+
+
+-- Build files have been written to: /tmp/mica_pilot/teaser_plusplus/build
+[  5%] Building CXX object _deps/pmc-build/CMakeFiles/pmc.dir/pmc_heu.cpp.o
+[  5%] Building CXX object teaser/CMakeFiles/teaser_io.dir/src/ply_io.cc.o
+[  8%] Building CXX object _deps/pmc-build/CMakeFiles/pmc.dir/pmc_maxclique.cpp.o
+[ 10%] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[ 13%] Building CXX object _deps/pmc-build/CMakeFiles/pmc.dir/pmcx_maxclique.cpp.o
+[ 16%] Building CXX object _deps/pmc-build/CMakeFiles/pmc.dir/pmcx_maxclique_basic.cpp.o
+[ 18%] Building CXX object _deps/pmc-build/CMakeFiles/pmc.dir/pmc_cores.cpp.o
+[ 21%] Building CXX object _deps/pmc-build/CMakeFiles/pmc.dir/pmc_utils.cpp.o
+[ 24%] Building CXX object _deps/pmc-build/CMakeFiles/pmc.dir/pmc_graph.cpp.o
+[ 27%] Linking CXX shared library libteaser_io.so
+[ 27%] Built target teaser_io
+[ 29%] Building CXX object _deps/pmc-build/CMakeFiles/pmc.dir/pmc_clique_utils.cpp.o
+[ 32%] Linking CXX static library libpmc.a
+[ 32%] Built target pmc
+[ 35%] Building CXX object teaser/CMakeFiles/teaser_registration.dir/src/certification.cc.o
+[ 37%] Building CXX object teaser/CMakeFiles/teaser_registration.dir/src/registration.cc.o
+[ 40%] Building CXX object teaser/CMakeFiles/teaser_registration.dir/src/graph.cc.o
+[ 43%] Linking CXX shared library ../../../lib/libgtest.so
+[ 43%] Built target gtest
+[ 45%] Building CXX object _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+[ 48%] Linking CXX shared library ../../../lib/libgmock.so
+[ 48%] Built target gmock
+[ 51%] Linking CXX shared library libteaser_registration.so
+[ 51%] Built target teaser_registration
+[ 54%] Building CXX object test/benchmark/CMakeFiles/all_benchmarks.dir/main.cc.o
+[ 59%] Building CXX object test/teaser/CMakeFiles/all_tests.dir/main.cc.o
+[ 59%] Building CXX object python/CMakeFiles/teaserpp_python.dir/teaserpp_python/teaserpp_python.cc.o
+[ 62%] Building CXX object test/benchmark/CMakeFiles/all_benchmarks.dir/registration-benchmark.cc.o
+[ 64%] Building CXX object test/teaser/CMakeFiles/all_tests.dir/utils-test.cc.o
+[ 67%] Building CXX object test/teaser/CMakeFiles/all_tests.dir/io-test.cc.o
+[ 70%] Building CXX object test/teaser/CMakeFiles/all_tests.dir/geometry-test.cc.o
+[ 72%] Linking CXX executable all_benchmarks
+[ 72%] Built target all_benchmarks
+[ 75%] Building CXX object test/teaser/CMakeFiles/all_tests.dir/tls-test.cc.o
+[ 78%] Building CXX object test/teaser/CMakeFiles/all_tests.dir/scale-solver-test.cc.o
+[ 81%] Building CXX object test/teaser/CMakeFiles/all_tests.dir/rotation-solver-test.cc.o
+[ 83%] Building CXX object test/teaser/CMakeFiles/all_tests.dir/translation-solver-test.cc.o
+[ 86%] Building CXX object test/teaser/CMakeFiles/all_tests.dir/registration-test.cc.o
+[ 89%] Building CXX object test/teaser/CMakeFiles/all_tests.dir/graph-test.cc.o
+[ 91%] Building CXX object test/teaser/CMakeFiles/all_tests.dir/certification-test.cc.o
+[ 94%] Building CXX object test/teaser/CMakeFiles/all_tests.dir/linalg-test.cc.o
+[ 97%] Linking CXX shared module teaserpp_python/_teaserpp.cpython-312-x86_64-linux-gnu.so
+[ 97%] Built target teaserpp_python
+[100%] Linking CXX executable all_tests
+[100%] Built target all_tests

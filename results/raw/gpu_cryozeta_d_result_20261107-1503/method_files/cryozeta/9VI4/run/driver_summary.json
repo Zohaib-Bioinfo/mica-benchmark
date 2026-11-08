@@ -1,0 +1,54 @@
+{
+  "name": "9VI4",
+  "status": "failed",
+  "failed_stage": "detection",
+  "note": "detection: exit code -9",
+  "settings": {
+    "seed": 101,
+    "n_sample": 5,
+    "n_step": 20,
+    "n_cycle": 10,
+    "num_select": 5,
+    "dtype": "bf16",
+    "kernels": "off",
+    "chunk_sizes": [
+      256,
+      64,
+      16,
+      4
+    ]
+  },
+  "stages": [
+    {
+      "stage": "detection",
+      "rc": -9,
+      "seconds": 1027.1,
+      "gpu_peak_mb": 3517,
+      "gpu_total_mb": 15360,
+      "oom": false
+    }
+  ],
+  "attempts": [],
+  "input": {
+    "chains": [
+      {
+        "chain": 1,
+        "length": 516,
+        "copies": 1,
+        "n_uniref_hits": 611,
+        "n_env_hits": 80,
+        "ticket": "oMFZZa-8akULvxU_x6fwod80patvHgAikKuL4A",
+        "msa_dir": "/tmp/mica_pilot/input/9VI4/cryozeta_msa/chain1"
+      }
+    ],
+    "contour_level": 0.35,
+    "contour_level_source": "https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-65077/header/emd-65077.xml"
+  },
+  "seconds": 1120.6,
+  "final_settings": {
+    "dtype": "bf16",
+    "chunk_index": 0,
+    "chunk_size": 256
+  },
+  "gpu_peak_mb": 3517
+}

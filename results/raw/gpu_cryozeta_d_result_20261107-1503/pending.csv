@@ -1,0 +1,4 @@
+entry,method,status,note
+9VI4,cryozeta,killed_corun,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone"
+9WFL,cryozeta,interrupted,stopped by the end of the session after 15850 s; run again in the next session
+9WME,cryozeta,interrupted,stopped by the end of the session after 14774 s; run again in the next session

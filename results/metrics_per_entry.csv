@@ -4,98 +4,138 @@ pdb_id,emdb_id,method,status,runtime_min,gpu,tm_score,aligned_ca_length,ca_rmsd,
 9T5K,EMD-55586,emodelx,model,30.55,1,0.9922,381,0.79,99.7,92.233,99.5,99.741,1.0814,le3.0,2.6,,emodelx_af_all_atom,9t5k_EModelX(+AF)_all_atom_model.pdb,0.9943,92.233,99.741,99.7,92.476,412,381,1,1,1,0.614
 9T5K,EMD-55586,emprot,model,31.47,1,0.9988,381,0.24,100,17.461,98.7,99.999,5.727,le3.0,2.6,,emprot,output.cif,0.9988,17.461,99.999,100,17.874,2182,381,1,1,1,0.614
 9T5K,EMD-55586,e3,model,19.48,1,0.68,267,1.75,98.1,62.085,99.6,68.766,1.1076,le3.0,2.6,,e3_prealign,9T5K_e3_prealign.pdb,0.69,62.085,68.766,68.8,62.559,422,381,1,1,1,0.614
+9T5K,EMD-55586,cryoatom1,model,85.53,0,0.9957,380,0.29,100,11.446,99.7,99.737,8.7139,le3.0,2.6,,cryoatom1,9T5K_cryoatom1.cif,0.9969,11.446,99.737,99.7,11.476,3320,381,31,1,1,0.614
+9T5K,EMD-55586,cryozeta,model,62.62,0,0.9355,381,2.22,99,74.834,94.1,88.978,1.189,le3.0,2.6,,cryozeta,9T5K_sample_0.cif,0.9416,73.289,87.141,89,76.159,453,381,1,1,1,0.614
 22FX,EMD-68251,mica,model,78.95,cuda,0.9753,171,1.08,100,94.944,100,97.688,1.0289,le3.0,1.24,,mica_all_atom,68251_22fx_MICA_all_atom_model.pdb,0.9749,0,0,97.7,94.944,178,173,1,1,1,1
 22FX,EMD-68251,modelangelo,model,33.05,1,0.9989,173,0.16,100,4.193,100,100,23.8497,le3.0,1.24,,modelangelo,22FX_modelangelo.cif,0.9989,4.169,99.422,100,4.193,4126,173,24,1,1,1
 22FX,EMD-68251,emodelx,model,7.23,0,0.9723,170,0.76,100,93.889,100,97.691,1.0405,le3.0,1.24,,emodelx_af_all_atom,22fx_EModelX(+AF)_all_atom_model.pdb,0.9723,0,0,97.7,93.889,180,173,1,1,1,1
 22FX,EMD-68251,emprot,model,27.62,0,0.9975,173,0.26,100,3.983,100,100,25.1098,le3.0,1.24,,emprot,output.cif,0.9975,3.983,100,100,3.983,4344,173,2,1,1,1
 22FX,EMD-68251,e3,model,5.18,0,0.9692,173,0.88,100,97.74,100,99.998,1.0231,le3.0,1.24,,e3_prealign,22FX_e3_prealign.pdb,0.9692,97.74,99.998,100,98.305,177,173,1,1,1,1
+22FX,EMD-68251,cryoatom1,model,46.33,1,0.9995,173,0.11,100,4.143,100,100,24.1387,le3.0,1.24,,cryoatom1,22FX_cryoatom1.cif,0.9995,4.143,100,100,4.143,4176,173,24,1,1,1
+22FX,EMD-68251,cryozeta,model,11.25,1,0.977,173,0.94,100,93.407,98.8,98.264,1.052,le3.0,1.24,,cryozeta,22FX_sample_0.cif,0.9816,0,0,98.3,93.407,182,173,1,1,1,1
 9JKK,EMD-61564,mica,model,76.22,cuda,0.9945,530,0.67,98.7,95.826,98.7,99.62,1.0396,le3.0,3,,mica_all_atom,61564_9jkk_MICA_all_atom_model.pdb,0.9945,96.007,99.809,99.6,96.915,551,530,1,1,1,1
 9JKK,EMD-61564,modelangelo,model,10.7,0,0.9934,528,0.44,100,98.874,100,99.438,1.0057,le3.0,3,,modelangelo,9JKK_modelangelo.cif,0.9934,98.874,99.438,99.4,98.874,533,530,1,1,1,1
 9JKK,EMD-61564,emodelx,model,4.1,0,0.9908,529,0.77,99.6,97.778,98.9,99.626,1.0189,le3.0,3,,emodelx_af_all_atom,9jkk_EModelX(+AF)_all_atom_model.pdb,0.9918,97.778,99.626,99.6,98.519,540,530,1,1,1,1
 9JKK,EMD-61564,emprot,model,11.12,1,0.9958,529,0.4,100,90.738,100,99.811,1.1,le3.0,3,,emprot,output.cif,0.9958,90.738,99.811,99.8,90.738,583,530,1,1,1,1
 9JKK,EMD-61564,e3,model,2.03,1,0.9811,528,1.03,99.6,96.52,98.7,99.435,1.0302,le3.0,3,,e3_prealign,9JKK_e3_prealign.pdb,0.9823,96.52,99.435,99.4,97.985,546,530,1,1,1,1
+9JKK,EMD-61564,cryoatom1,model,8.93,0,0.9954,529,0.44,100,96.35,100,99.626,1.034,le3.0,3,,cryoatom1,9JKK_cryoatom1.cif,0.9959,96.35,99.626,99.6,96.715,548,530,1,1,1,1
+9JKK,EMD-61564,cryozeta,model,223.6,1,0.9971,530,0.44,100,85.484,100,99.999,1.1698,le3.0,3,,cryozeta,9JKK_sample_0.cif,0.9971,85.484,99.999,100,85.968,620,530,1,1,1,1
 9TKA,EMD-56022,mica,model,49.68,cuda,0.9932,247,0.49,100,95.367,100,100.002,1.0486,le3.0,2.7,,mica_all_atom,56022_9tka_MICA_all_atom_model.pdb,0.9932,0,0,100,95.753,259,247,1,1,1,0
 9TKA,EMD-56022,modelangelo,model,13.85,1,0.9978,247,0.28,100,49.499,100,99.998,2.0202,le3.0,2.7,,modelangelo,9TKA_modelangelo.cif,0.9978,49.499,99.998,100,49.699,499,247,2,1,1,0
 9TKA,EMD-56022,emodelx,model,4.58,1,0.9944,247,0.44,99.6,98.016,99.6,99.996,1.0202,le3.0,2.7,,emodelx_af_all_atom,9tka_EModelX(+AF)_all_atom_model.pdb,0.9944,0,0,100,98.413,252,247,1,1,1,0
 9TKA,EMD-56022,emprot,model,14.23,0,0.998,247,0.27,100,42.295,100,100.001,2.3644,le3.0,2.7,,emprot,output.cif,0.998,42.295,100.001,100,42.295,584,247,1,1,1,0
 9TKA,EMD-56022,e3,model,2.87,0,0.9799,247,0.84,99.6,97.628,99.6,100.001,1.0243,le3.0,2.7,,e3_prealign,9TKA_e3_prealign.pdb,0.9799,97.233,99.596,100,98.814,253,247,1,1,1,0
+9TKA,EMD-56022,cryoatom1,model,8.7,0,0.9981,247,0.26,100,49.105,100,99.998,2.0364,le3.0,2.7,,cryoatom1,9TKA_cryoatom1.cif,0.9981,49.105,99.998,100,49.304,503,247,2,1,1,0
+9TKA,EMD-56022,cryozeta,model,38.28,1,0.9948,247,0.43,100,84.3,100,99.997,1.1862,le3.0,2.7,,cryozeta,9TKA_sample_0.cif,0.9948,84.3,99.997,100,84.3,293,247,1,1,1,0
 9WFL,EMD-65930,mica,model,124.4,cuda,0.954,653,0.55,100,97.754,100,95.751,0.9795,le3.0,2.75,,mica_all_atom,65930_9wfl_MICA_all_atom_model.pdb,0.954,97.754,95.751,95.7,97.754,668,682,1,2,1,1
 9WFL,EMD-65930,modelangelo,model,9.82,0,0.9949,681,0.56,99.4,97.839,99.6,99.561,1.0176,le3.0,2.75,,modelangelo,9WFL_modelangelo.cif,0.9953,97.839,99.561,99.6,97.839,694,682,2,2,2,1
 9WFL,EMD-65930,emodelx,model,5.87,0,0.9539,653,0.55,99.8,96.313,99.5,95.744,0.9941,le3.0,2.75,,emodelx_af_all_atom,9wfl_EModelX(+AF)_all_atom_model.pdb,0.954,96.313,95.744,95.7,96.46,678,682,1,2,1,1
 9WFL,EMD-65930,emprot,model,12.78,1,0.992,678,0.42,99.9,93.906,99.9,99.418,1.0587,le3.0,2.75,,emprot,output.cif,0.992,93.906,99.418,99.4,93.906,722,682,2,2,2,1
 9WFL,EMD-65930,e3,model,2.2,1,0.9828,682,1.2,99.9,94.922,95.5,98.681,1.0396,le3.0,2.75,,e3_prealign,9WFL_e3_prealign.pdb,0.9829,94.781,98.535,98.7,96.897,709,682,2,2,2,1
+9WFL,EMD-65930,cryoatom1,model,11.68,0,0.9966,681,0.4,99.4,95.378,99.4,99.851,1.0469,le3.0,2.75,,cryoatom1,9WFL_cryoatom1.cif,0.9966,95.378,99.851,99.9,95.518,714,682,2,2,2,1
+9WFL,EMD-65930,cryozeta,not_run,,0,,,,,,,,,le3.0,2.75,interrupted: stopped by the end of the session after 17039 s; run again in the next session,,,,,,,,,,,,,1
 9VI4,EMD-65077,mica,failed,70.55,cuda,,,,,,,,,le3.0,1.8,3_build: exit code -9; the output of 3_build was not written,,,,,,,,,,,,,0.984
 9VI4,EMD-65077,modelangelo,failed,180,0,,,,,,,,,le3.0,1.8,build: timeout: the run limit of 10800 s; the model file 9VI4_modelangelo.cif was not written,,,,,,,,,,,,,0.984
 9VI4,EMD-65077,emodelx,failed,12.62,0,,,,,,,,,le3.0,1.8,"temp_flex: killed by the system (exit code -9, probably out of memory); the model file 9vi4_EModelX(+AF)_all_atom_model.pdb was not written",,,,,,,,,,,,,0.984
 9VI4,EMD-65077,emprot,failed,47.07,0,,,,,,,,,le3.0,1.8,"build: killed by the system (exit code -9, probably out of memory); the model file output.cif was not written",,,,,,,,,,,,,0.984
 9VI4,EMD-65077,e3,failed,20.27,0,,,,,,,,,le3.0,1.8,"prealign: killed by the system (exit code -9, probably out of memory); the model file 9VI4_e3_prealign.pdb was not written",,,,,,,,,,,,,0.984
+9VI4,EMD-65077,cryoatom1,model,394.95,0,0.9996,516,0.15,100,1.669,100,100,59.905,le3.0,1.8,,cryoatom1,9VI4_cryoatom1.cif,,1.669,100,100,1.669,30911,516,68,1,1,0.984
+9VI4,EMD-65077,cryozeta,not_run,,0,,,,,,,,,le3.0,1.8,"killed_corun: killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",,,,,,,,,,,,,0.984
 9ZLH,EMD-74403,mica,model,39.07,cuda,0.994,206,0.41,100,100,100,100,1,le3.0,2.14,,mica_all_atom,74403_9zlh_MICA_all_atom_model.pdb,0.994,100,100,100,100,206,206,1,1,1,1
 9ZLH,EMD-74403,modelangelo,model,10.32,1,0.9972,206,0.29,100,90.351,100,100,1.1068,le3.0,2.14,,modelangelo,9ZLH_modelangelo.cif,0.9972,90.351,100,100,90.351,228,206,4,1,1,1
 9ZLH,EMD-74403,emodelx,model,7.03,0,0.9931,206,0.45,100,100,100,100,1,le3.0,2.14,,emodelx_af_all_atom,9zlh_EModelX(+AF)_all_atom_model.pdb,0.9931,100,100,100,100,206,206,1,1,1,1
 9ZLH,EMD-74403,emprot,model,10.6,1,0.9928,205,0.26,100,100,100,99.51,0.9951,le3.0,2.14,,emprot,output.cif,0.9928,100,99.51,99.5,100,205,206,1,1,1,1
 9ZLH,EMD-74403,e3,model,3.88,0,0.9636,206,1.06,100,99.029,98,99.029,1,le3.0,2.14,,e3_prealign,9ZLH_e3_prealign.pdb,0.9636,99.029,99.029,99,100,206,206,1,1,1,1
+9ZLH,EMD-74403,cryoatom1,model,41.55,1,0.9977,206,0.26,100,35.702,100,100.001,2.801,le3.0,2.14,,cryoatom1,9ZLH_cryoatom1.cif,0.9977,35.702,100.001,100,35.702,577,206,21,1,1,1
+9ZLH,EMD-74403,cryozeta,model,18.47,0,0.9896,206,0.63,100,99.515,100,99.515,1,le3.0,2.14,,cryozeta,9ZLH_sample_0.cif,0.9896,99.515,99.515,99.5,99.515,206,206,1,1,1,1
 9VUH,EMD-65363,mica,model,84.23,cuda,0.9555,615,1.13,96.4,93.354,94.2,95.268,1.0205,le3.0,2.7,,mica_all_atom,65363_9vuh_MICA_all_atom_model.pdb,0.9594,93.045,94.952,95.3,95.827,647,634,3,3,3,1
 9VUH,EMD-65363,modelangelo,model,8.9,1,0.7537,481,0.75,99.2,98.551,98.1,75.076,0.7618,le3.0,2.7,,modelangelo,9VUH_modelangelo.cif,0.7545,98.551,75.076,75.1,99.172,483,634,3,3,3,1
 9VUH,EMD-65363,emodelx,model,7.35,1,0.9108,587,1.22,97.1,95.153,92.9,92.898,0.9763,le3.0,2.7,,emodelx_af_all_atom,9vuh_EModelX(+AF)_all_atom_model.pdb,0.9345,94.992,92.741,92.9,97.577,619,634,3,3,3,1
 9VUH,EMD-65363,emprot,model,12.95,0,0.9742,629,1.54,97,67.857,99.2,95.896,1.4132,le3.0,2.7,,emprot,output.cif,0.9777,67.857,95.896,95.9,68.415,896,634,3,3,3,1
 9VUH,EMD-65363,e3,model,1.92,0,0.6297,434,3.41,83.9,80.882,61,78.076,0.9653,le3.0,2.7,,e3_prealign,9VUH_e3_prealign.pdb,0.8392,80.392,77.603,78.1,95.588,612,634,3,3,3,1
+9VUH,EMD-65363,cryoatom1,model,12.88,1,0.8581,553,1.49,98.6,96.154,97.6,90.692,0.9432,le3.0,2.7,,cryoatom1,9VUH_cryoatom1.cif,0.9139,95.987,90.535,90.7,97.157,598,634,5,3,3,1
+9VUH,EMD-65363,cryozeta,failed,360,0,,,,,,,,,le3.0,2.7,run: timeout: the run limit of 21600 s; the model file 9VUH_sample_0.cif was not written,,,,,,,,,,,,,1
 9OC0,EMD-70305,mica,failed,557.53,cuda,,,,,,,,,le3.0,2.97,3_build: timeout after 7200 s; the output of 3_build was not written,,,,,,,,,,,,,1
 9OC0,EMD-70305,modelangelo,model,71.13,0,0.7819,407,1.55,94.8,46.432,98.2,97.851,2.1074,le3.0,2.97,,modelangelo,9OC0_modelangelo.cif,0.9841,46.432,97.851,97.9,46.895,1079,512,11,4,4,1
 9OC0,EMD-70305,emodelx,model,96.77,0,0.8552,491,3.2,29.9,12.549,31.1,74.804,5.9609,le3.0,2.97,,emodelx_af_all_atom,9oc0_EModelX(+AF)_all_atom_model.pdb,0.9817,8.191,48.828,74.8,13.86,3052,512,4,4,4,1
 9OC0,EMD-70305,emprot,model,58.47,0,0.6675,377,2.83,29.2,13.282,30.5,76.758,5.7793,le3.0,2.97,,emprot,output.cif,0.9887,8.516,49.219,76.8,14.093,2959,512,4,4,3,1
 9OC0,EMD-70305,e3,failed,8.03,1,,,,,,,,,le3.0,2.97,prealign: exit code 1; the model file 9OC0_e3_prealign.pdb was not written,,,,,,,,,,,,,1
+9OC0,EMD-70305,cryoatom1,failed,4.22,1,,,,,,,,,le3.0,2.97,build: out of GPU memory (exit code 1; the error message of the program); the model file 9OC0_cryoatom1.cif was not written,,,,,,,,,,,,,1
+9OC0,EMD-70305,cryozeta,failed,11.22,0,,,,,,,,,le3.0,2.97,"run: killed by the system (exit code -9, probably out of memory; also when it ran alone); the model file 9OC0_sample_0.cif was not written",,,,,,,,,,,,,1
 13BD,EMD-76936,mica,model,268.6,cuda,0.8768,409,1.1,99.3,20.52,97.6,97.613,4.757,le3.0,2.65,,mica_all_atom,76936_13bd_MICA_all_atom_model.pdb,0.9812,20.474,97.396,97.6,20.611,2193,461,2,2,2,0.954
 13BD,EMD-76936,modelangelo,model,66.98,0,0.9799,454,0.57,99.8,22.376,98.2,98.048,4.3818,le3.0,2.65,,modelangelo,13BD_modelangelo.cif,0.9832,22.376,98.048,98,22.475,2020,461,9,2,2,0.954
 13BD,EMD-76936,emodelx,model,55.13,0,0.9223,455,2.38,93.6,18.77,82.2,90.022,4.7961,le3.0,2.65,,emodelx_af_all_atom,13bd_EModelX(+AF)_all_atom_model.pdb,0.9362,9.995,47.939,90,20.85,2211,461,2,2,2,0.954
 13BD,EMD-76936,emprot,model,38.87,0,0.9915,460,0.72,98,15.979,98.5,99.132,6.2039,le3.0,2.65,,emprot,output.cif,0.9926,15.944,98.915,99.1,16.049,2860,461,4,2,2,0.954
 13BD,EMD-76936,e3,failed,6.83,0,,,,,,,,,le3.0,2.65,prealign: exit code 1; the model file 13BD_e3_prealign.pdb was not written,,,,,,,,,,,,,0.954
+13BD,EMD-76936,cryoatom1,failed,4.32,1,,,,,,,,,le3.0,2.65,build: out of GPU memory (exit code 1; the error message of the program); the model file 13BD_cryoatom1.cif was not written,,,,,,,,,,,,,0.954
+13BD,EMD-76936,cryozeta,failed,22.82,0,,,,,,,,,le3.0,2.65,run: out of GPU memory (exit code 2; the error message of the program); the model file 13BD_sample_0.cif was not written,,,,,,,,,,,,,0.954
 9WQ6,EMD-66160,mica,model,48.17,cuda,0.9042,252,2.19,81.3,80.519,77,95.021,1.1801,gt3.0_le4.0,3.4,,mica_all_atom,66160_9wq6_MICA_all_atom_model.pdb,0.9507,80.844,95.404,95,84.74,308,261,1,1,1,1
 9WQ6,EMD-66160,modelangelo,model,27.33,0,0.4469,141,3.06,21.3,59.677,10.1,56.705,0.9502,gt3.0_le4.0,3.4,,modelangelo,9WQ6_modelangelo.cif,0.7787,81.855,77.778,56.7,69.355,248,261,5,1,1,1
 9WQ6,EMD-66160,emodelx,model,6.82,1,0.8939,246,1.71,82.9,77.419,77.5,91.951,1.1877,gt3.0_le4.0,3.4,,emodelx_af_all_atom,9wq6_EModelX(+AF)_all_atom_model.pdb,0.9312,77.419,91.951,92,80,310,261,1,1,1,1
 9WQ6,EMD-66160,emprot,model,13.95,1,0.9399,253,1.21,89.7,90.741,84.5,93.871,1.0345,gt3.0_le4.0,3.4,,emprot,output.cif,0.9434,90.741,93.871,93.9,94.815,270,261,1,1,1,1
 9WQ6,EMD-66160,e3,model,2.98,1,0.7993,229,2.41,75.1,67.722,64,81.99,1.2107,gt3.0_le4.0,3.4,,e3_prealign,9WQ6_e3_prealign.pdb,0.8416,66.772,80.841,82,80.38,316,261,1,1,1,1
+9WQ6,EMD-66160,cryoatom1,model,19.72,1,0.5322,142,1.01,79.6,75.219,87.2,98.852,1.3142,gt3.0_le4.0,3.4,,cryoatom1,9WQ6_cryoatom1.cif,0.9857,74.927,98.469,98.9,77.259,343,261,7,1,1,1
+9WQ6,EMD-66160,cryozeta,model,53.33,1,0.983,261,0.86,89.7,76.106,87.6,98.854,1.2989,gt3.0_le4.0,3.4,,cryozeta,9WQ6_sample_0.cif,0.9836,75.811,98.471,98.9,77.581,339,261,1,1,1,1
 9V4D,EMD-64777,mica,model,39.32,cuda,0.936,265,1.44,97.4,94.182,98.5,94.182,1,gt3.0_le4.0,3.07,,mica_all_atom,64777_9v4d_MICA_all_atom_model.pdb,0.9386,94.182,94.182,94.2,95.636,275,275,1,2,1,0.503
 9V4D,EMD-64777,modelangelo,model,19.38,1,0.5783,162,0.94,98.8,91.065,98.1,96.365,1.0582,gt3.0_le4.0,3.07,,modelangelo,9V4D_modelangelo.cif,0.9632,91.065,96.365,96.4,91.753,291,275,5,2,2,0.503
 9V4D,EMD-64777,emodelx,model,2.35,0,0.9416,265,1.07,98.5,97.378,96.2,94.545,0.9709,gt3.0_le4.0,3.07,,emodelx_af_all_atom,9v4d_EModelX(+AF)_all_atom_model.pdb,0.9441,97.378,94.545,94.5,98.127,267,275,1,2,1,0.503
 9V4D,EMD-64777,emprot,model,4.62,0,0.951,267,1.08,98.5,66.583,96.6,96.365,1.4473,gt3.0_le4.0,3.07,,emprot,output.cif,0.9725,66.583,96.365,96.4,67.588,398,275,1,2,1,0.503
 9V4D,EMD-64777,e3,model,1,0,0.9073,258,1.19,98.4,70.083,97.2,91.998,1.3127,gt3.0_le4.0,3.07,,e3_prealign,9V4D_e3_prealign.pdb,0.9105,0,0,92,71.191,361,275,1,2,1,0.503
+9V4D,EMD-64777,cryoatom1,model,12.3,1,0.9569,268,0.95,98.1,78.209,95.4,95.274,1.2182,gt3.0_le4.0,3.07,,cryoatom1,9V4D_cryoatom1.cif,0.9619,78.209,95.274,95.3,79.104,335,275,7,2,2,0.503
+9V4D,EMD-64777,cryozeta,model,89.75,0,0.9842,275,0.87,98.9,67.164,97.8,98.181,1.4618,gt3.0_le4.0,3.07,,cryozeta,9V4D_sample_0.cif,0.9858,67.164,98.181,98.2,67.413,402,275,2,2,2,0.503
 9OTA,EMD-70828,mica,model,70.5,cuda,0.9133,495,1.13,97.8,50.403,96.8,46.815,0.9288,gt3.0_le4.0,3.2,,mica_all_atom,70828_9ota_MICA_all_atom_model.pdb,0.9171,49.798,46.253,93.6,99.194,496,534,2,2,2,1
 9OTA,EMD-70828,modelangelo,model,10.63,0,0.9089,489,0.75,97.5,98.364,97.7,90.072,0.9157,gt3.0_le4.0,3.2,,modelangelo,9OTA_modelangelo.cif,0.9092,98.364,90.072,90.1,99.387,489,534,2,2,2,1
 9OTA,EMD-70828,emodelx,model,3.48,0,0.9283,502,0.98,98.8,50.099,97.2,47.189,0.9419,gt3.0_le4.0,3.2,,emodelx_af_all_atom,9ota_EModelX(+AF)_all_atom_model.pdb,0.9323,49.901,47.001,94.4,99.801,503,534,2,2,2,1
 9OTA,EMD-70828,emprot,model,9.53,1,0.9764,532,1.34,96.2,47.77,96.1,48.128,1.0075,gt3.0_le4.0,3.2,,emprot,output.cif,0.9791,48.141,48.502,96.3,97.77,538,534,2,2,2,1
 9OTA,EMD-70828,e3,failed,1.73,1,,,,,,,,,gt3.0_le4.0,3.2,prealign: exit code 1; the model file 9OTA_e3_prealign.pdb was not written,,,,,,,,,,,,,1
+9OTA,EMD-70828,cryoatom1,model,10.68,1,0.9675,523,0.99,96.6,43.803,93.4,48.315,1.103,gt3.0_le4.0,3.2,,cryoatom1,9OTA_cryoatom1.cif,0.9687,43.803,48.315,96.6,87.776,589,534,4,2,2,1
+9OTA,EMD-70828,cryozeta,model,196.13,0,0.9812,534,1.31,97.6,47.407,98,47.938,1.0112,gt3.0_le4.0,3.2,,cryozeta,9OTA_sample_0.cif,0.9826,47.593,48.126,95.9,95.741,540,534,2,2,2,1
 9KQM,EMD-62507,mica,model,53.13,cuda,0.9287,385,1.51,93.8,96.269,89.7,96.028,0.9975,gt3.0_le4.0,3.5,,mica_all_atom,62507_9kqm_MICA_all_atom_model.pdb,0.9561,96.269,96.028,96,97.761,402,403,1,1,1,0.997
 9KQM,EMD-62507,modelangelo,model,7.93,0,0.7881,319,0.48,99.7,100,99.7,85.86,0.8586,gt3.0_le4.0,3.5,,modelangelo,9KQM_modelangelo.cif,0.855,100,85.86,85.9,100,346,403,2,1,1,0.997
 9KQM,EMD-62507,emodelx,model,4.83,0,0.8588,356,1.49,96.1,92.271,86.1,94.79,1.0273,gt3.0_le4.0,3.5,,emodelx_af_all_atom,9kqm_EModelX(+AF)_all_atom_model.pdb,0.9505,92.271,94.79,94.8,94.928,414,403,1,1,1,0.997
 9KQM,EMD-62507,emprot,model,10.93,1,0.9568,393,1.26,99.5,74.902,97.4,94.788,1.2655,gt3.0_le4.0,3.5,,emprot,output.cif,0.9567,75.098,95.037,94.8,76.078,510,403,1,1,1,0.997
 9KQM,EMD-62507,e3,model,2.17,1,0.8998,384,2.38,88.5,75,80.5,91.56,1.2208,gt3.0_le4.0,3.5,,e3_prealign,9KQM_e3_prealign.pdb,0.9325,75.203,91.808,91.6,96.341,492,403,1,1,1,0.997
+9KQM,EMD-62507,cryoatom1,model,9.92,1,0.6338,259,1.02,99.6,98.485,99,96.771,0.9826,gt3.0_le4.0,3.5,,cryoatom1,9KQM_cryoatom1.cif,0.9664,98.485,96.771,96.8,98.99,396,403,3,1,1,0.997
+9KQM,EMD-62507,cryozeta,model,172.28,1,0.9872,403,1.14,97.8,62.48,99.2,98.756,1.5806,gt3.0_le4.0,3.5,,cryozeta,9KQM_sample_0.cif,0.993,62.48,98.756,98.8,62.794,637,403,1,1,1,0.997
 9WME,EMD-66088,mica,model,138.62,cuda,0.9413,430,1.28,99.5,97.748,96.5,97.308,0.9955,gt3.0_le4.0,3.2,,mica_all_atom,66088_9wme_MICA_all_atom_model.pdb,0.9641,97.973,97.532,97.3,98.649,444,446,1,2,1,1
 9WME,EMD-66088,modelangelo,model,9.42,1,0.559,253,0.95,96,98.507,93.2,59.193,0.6009,gt3.0_le4.0,3.2,,modelangelo,9WME_modelangelo.cif,0.5917,98.507,59.193,59.2,99.627,268,446,4,2,1,1
 9WME,EMD-66088,emodelx,model,9.13,1,0.841,400,2.83,92.2,94.213,85.7,91.255,0.9686,gt3.0_le4.0,3.2,,emodelx_af_all_atom,9wme_EModelX(+AF)_all_atom_model.pdb,0.9274,94.907,91.927,91.3,96.991,432,446,1,2,1,1
 9WME,EMD-66088,emprot,model,16.05,0,0.9535,440,1.66,99.3,43.047,91.7,94.394,2.1928,gt3.0_le4.0,3.2,,emprot,output.cif,0.9599,43.252,94.842,94.4,48.262,978,446,2,2,2,1
 9WME,EMD-66088,e3,model,2.03,0,0.5989,309,4.13,79.3,79.268,51.4,72.871,0.9193,gt3.0_le4.0,3.2,,e3_prealign,9WME_e3_prealign.pdb,0.7796,79.756,73.32,72.9,97.805,410,446,1,2,1,1
+9WME,EMD-66088,cryoatom1,model,10.87,1,0.7845,359,1.34,99.7,95.128,97.3,91.931,0.9664,gt3.0_le4.0,3.2,,cryoatom1,9WME_cryoatom1.cif,0.9384,95.36,92.156,91.9,97.68,431,446,2,2,1,1
+9WME,EMD-66088,cryozeta,not_run,,1,,,,,,,,,gt3.0_le4.0,3.2,interrupted: stopped by the end of the session after 17022 s; run again in the next session,,,,,,,,,,,,,1
 9VBD,EMD-64920,mica,model,117.77,cuda,0.9792,518,1.07,99.6,95.865,98.6,97.887,1.0211,gt3.0_le4.0,3.26,,mica_all_atom,64920_9vbd_MICA_all_atom_model.pdb,0.9806,95.677,97.695,97.9,96.992,532,521,1,1,1,0
 9VBD,EMD-64920,modelangelo,model,21.3,1,0.2367,125,1.03,99.2,98.319,98.9,67.368,0.6852,gt3.0_le4.0,3.26,,modelangelo,9VBD_modelangelo.cif,0.6786,98.319,67.368,67.4,99.16,357,521,6,1,1,0
 9VBD,EMD-64920,emodelx,model,7.2,1,0.9854,520,0.96,99.2,97.71,98.2,98.277,1.0058,gt3.0_le4.0,3.26,,emodelx_af_all_atom,9vbd_EModelX(+AF)_all_atom_model.pdb,0.9861,97.71,98.277,98.3,98.855,524,521,1,1,1,0
 9VBD,EMD-64920,emprot,model,19.03,0,0.9861,519,0.85,98.7,57.366,98.1,98.658,1.7198,gt3.0_le4.0,3.26,,emprot,output.cif,0.9868,57.366,98.658,98.7,58.817,896,521,2,1,1,0
 9VBD,EMD-64920,e3,model,3.43,0,0.968,520,1.49,98.3,68.163,92.4,96.158,1.4107,gt3.0_le4.0,3.26,,e3_prealign,9VBD_e3_prealign.pdb,0.9723,68.163,96.158,96.2,97.687,735,521,1,1,1,0
+9VBD,EMD-64920,cryoatom1,failed,2.4,1,,,,,,,,,gt3.0_le4.0,3.26,build: out of GPU memory (exit code 1; the error message of the program); the model file 9VBD_cryoatom1.cif was not written,,,,,,,,,,,,,0
+9VBD,EMD-64920,cryozeta,failed,360,1,,,,,,,,,gt3.0_le4.0,3.26,run: timeout: the run limit of 21600 s; the model file 9VBD_sample_0.cif was not written,,,,,,,,,,,,,0
 9RWS,EMD-54346,mica,model,88.48,cuda,0.9429,489,1.09,99.4,98.819,95.6,98.048,0.9922,gt3.0_le4.0,3.28,,mica_all_atom,54346_9rws_MICA_all_atom_model.pdb,0.9805,98.819,98.048,98,99.606,508,512,1,1,1,0.441
 9RWS,EMD-54346,modelangelo,model,8.7,0,0.9673,498,0.63,99.6,99,98.8,96.683,0.9766,gt3.0_le4.0,3.28,,modelangelo,9RWS_modelangelo.cif,0.9692,98.8,96.488,96.7,99.6,500,512,1,1,1,0.441
 9RWS,EMD-54346,emodelx,model,4.22,0,0.9611,499,1.21,98.4,98.608,97.6,96.873,0.9824,gt3.0_le4.0,3.28,,emodelx_af_all_atom,9rws_EModelX(+AF)_all_atom_model.pdb,0.9704,98.608,96.873,96.9,99.205,503,512,1,1,1,0.441
 9RWS,EMD-54346,emprot,model,8.32,1,0.9821,507,0.92,100,97.471,98.4,97.851,1.0039,gt3.0_le4.0,3.28,,emprot,output.cif,0.9859,97.471,97.851,97.9,98.638,514,512,1,1,1,0.441
 9RWS,EMD-54346,e3,model,2.15,1,0.9628,505,1.44,98.2,97.25,96,96.676,0.9941,gt3.0_le4.0,3.28,,e3_prealign,9RWS_e3_prealign.pdb,0.968,97.25,96.676,96.7,99.411,509,512,1,1,1,0.441
+9RWS,EMD-54346,cryoatom1,model,8.3,1,0.9921,511,0.66,98.8,96.923,98.4,98.435,1.0156,gt3.0_le4.0,3.28,,cryoatom1,9RWS_cryoatom1.cif,0.9921,96.923,98.435,98.4,97.885,520,512,1,1,1,0.441
+9RWS,EMD-54346,cryozeta,model,166.02,0,0.9944,512,0.66,99,92.015,98.4,99.026,1.0762,gt3.0_le4.0,3.28,,cryozeta,9RWS_sample_0.cif,0.9952,92.015,99.026,99,92.74,551,512,1,1,1,0.441
 9WTX,EMD-66226,mica,model,85.03,cuda,0.9299,477,1.44,99,88.571,96.6,93,1.05,gt3.0_le4.0,3.37,,mica_all_atom,66226_9wtx_MICA_all_atom_model.pdb,0.9358,88.571,93,93,91.619,525,500,1,1,1,0.763
 9WTX,EMD-66226,modelangelo,model,22.65,0,0.2723,138,0.97,97.8,99.029,97.1,61.2,0.618,gt3.0_le4.0,3.37,,modelangelo,9WTX_modelangelo.cif,0.6118,99.029,61.2,61.2,99.676,309,500,6,1,1,0.763
 9WTX,EMD-66226,emodelx,model,6.45,1,0.9305,483,1.99,97.5,89.423,91,93,1.04,gt3.0_le4.0,3.37,,emodelx_af_all_atom,9wtx_EModelX(+AF)_all_atom_model.pdb,0.9414,89.423,93,93,92.885,520,500,1,1,1,0.763
 9WTX,EMD-66226,emprot,model,14.53,1,0.9805,498,1.07,99.8,89.762,99.4,98.2,1.094,gt3.0_le4.0,3.37,,emprot,output.cif,0.9808,89.762,98.2,98.2,89.945,547,500,1,1,1,0.763
 9WTX,EMD-66226,e3,model,3.08,1,0.7337,396,2.91,82.6,68.343,70.6,73.4,1.074,gt3.0_le4.0,3.37,,e3_prealign,9WTX_e3_prealign.pdb,0.8087,68.156,73.2,73.4,95.345,537,500,1,1,1,0.763
+9WTX,EMD-66226,cryoatom1,model,12.95,1,0.6057,309,1.26,99.7,91.535,96.3,93,1.016,gt3.0_le4.0,3.37,,cryoatom1,9WTX_cryoatom1.cif,0.9509,91.535,93,93,94.882,508,500,2,1,1,0.763
+9WTX,EMD-66226,cryozeta,model,177.17,0,0.9889,500,0.94,99.4,89.292,99,98.4,1.102,gt3.0_le4.0,3.37,,cryozeta,9WTX_sample_0.cif,0.99,89.292,98.4,98.4,90.2,551,500,1,1,1,0.763
 9Z24,EMD-73762,mica,model,207.5,cuda,0.9032,308,0.68,99.7,85.994,99.7,90.827,1.0562,gt3.0_le4.0,3.1,,mica_all_atom,73762_9z24_MICA_all_atom_model.pdb,0.9053,85.994,90.827,90.8,86.555,357,338,1,1,1,1
 9Z24,EMD-73762,modelangelo,model,38.67,1,0.9031,306,0.33,99.7,89.213,99.7,90.533,1.0148,gt3.0_le4.0,3.1,,modelangelo,9Z24_modelangelo.cif,0.9031,89.213,90.533,90.5,89.504,343,338,4,1,1,1
 9Z24,EMD-73762,emodelx,model,5.28,0,0.9054,309,0.79,99.4,92.192,99,90.828,0.9852,gt3.0_le4.0,3.1,,emodelx_af_all_atom,9z24_EModelX(+AF)_all_atom_model.pdb,0.9054,92.192,90.828,90.8,93.393,333,338,1,1,1,1
 9Z24,EMD-73762,emprot,model,14.18,0,0.9099,324,2.41,94.1,26.154,96.4,90.532,3.4615,gt3.0_le4.0,3.1,,emprot,output.cif,0.9216,26.239,90.827,90.5,27.949,1170,338,1,1,1,1
 9Z24,EMD-73762,e3,model,1.43,0,0.8913,308,1.05,100,91.369,97.7,90.83,0.9941,gt3.0_le4.0,3.1,,e3_prealign,9Z24_e3_prealign.pdb,0.8945,0,0,90.8,93.155,336,338,1,1,1,1
+9Z24,EMD-73762,cryoatom1,failed,4.2,1,,,,,,,,,gt3.0_le4.0,3.1,build: out of GPU memory (exit code 1; the error message of the program); the model file 9Z24_cryoatom1.cif was not written,,,,,,,,,,,,,1
+9Z24,EMD-73762,cryozeta,failed,360,1,,,,,,,,,gt3.0_le4.0,3.1,run: timeout: the run limit of 21600 s; the model file 9Z24_sample_0.cif was not written,,,,,,,,,,,,,1
 26DK,EMD-80558,mica,failed,32.83,cuda,,,,,,,,,gt3.0_le4.0,3.5,3_build: exit code -9; the output of 3_build was not written,,,,,,,,,,,,,0
 26DK,EMD-80558,modelangelo,model,82.67,0,0.9502,185,0.73,99.5,5.981,98.4,96.859,16.1937,gt3.0_le4.0,3.5,,modelangelo,26DK_modelangelo.cif,0.9527,0,0,96.9,5.981,3093,191,67,1,1,0
 26DK,EMD-80558,emodelx,failed,8.78,0,,,,,,,,,gt3.0_le4.0,3.5,"temp_flex: killed by the system (exit code -9, probably out of memory); the model file 26dk_EModelX(+AF)_all_atom_model.pdb was not written",,,,,,,,,,,,,0
 26DK,EMD-80558,emprot,model,44.43,0,0.9828,191,0.7,100,5.829,99.5,100,17.1571,gt3.0_le4.0,3.5,,emprot,output.cif,0.9828,5.829,100,100,5.89,3277,191,7,1,1,0
 26DK,EMD-80558,e3,failed,8.22,0,,,,,,,,,gt3.0_le4.0,3.5,"prealign: killed by the system (exit code -9, probably out of memory); the model file 26DK_e3_prealign.pdb was not written",,,,,,,,,,,,,0
+26DK,EMD-80558,cryoatom1,model,231.02,1,0.9766,191,0.83,100,5.052,100,100,19.7958,gt3.0_le4.0,3.5,,cryoatom1,26DK_cryoatom1.cif,0.9766,4.893,96.859,100,5.052,3781,191,69,1,1,0
+26DK,EMD-80558,cryozeta,failed,5.92,0,,,,,,,,,gt3.0_le4.0,3.5,"run: killed by the system (exit code -9, probably out of memory; also when it ran alone); the model file 26DK_sample_0.cif was not written",,,,,,,,,,,,,0

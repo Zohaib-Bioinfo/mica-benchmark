@@ -1,0 +1,25 @@
+{
+ "ok": false,
+ "problem": "the internet is off, or a site that this notebook needs cannot be reached (EBI FTP). Kaggle: open Session options on the right and switch Internet on (the account must be phone-verified), then Run all again. If Internet is on, the site may be down: run again in a few minutes.",
+ "t0": 1794023795.4972413,
+ "started": "2026-11-07T03:56:35.497243+00:00",
+ "phenix_env": null,
+ "phenix_version": "",
+ "installer_sha256": "",
+ "usalign": "",
+ "usalign_version": "",
+ "weights": {},
+ "env": {},
+ "entries": {},
+ "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+ "cpu_facts": {
+  "os.cpu_count": 4,
+  "multiprocessing.cpu_count": 4,
+  "usable (sched_getaffinity)": 4,
+  "nproc": "4",
+  "cgroup v2 cpu.max": "400000 100000",
+  "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+  "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+ },
+ "methods": {}
+}

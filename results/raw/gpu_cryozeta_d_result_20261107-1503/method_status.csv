@@ -1,0 +1,7 @@
+method,entry,status,failed_step,note,attempt,gpu,started_utc,seconds,peak_gpu_mb,min_ram_gb,other_gpu_busy,limit_s
+cryozeta,9OC0,failed,run,"killed by the system (exit code -9, probably out of memory; also when it ran alone); the model file 9OC0_sample_0.cif was not written",2,0,2026-11-07T04:18:31Z,673,3443,1.96,False,21600
+cryozeta,9VI4,killed_corun,run,"killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",1,0,2026-11-07T04:32:30Z,1121,3517,2.24,True,21600
+cryozeta,9VBD,failed,run,timeout: the run limit of 21600 s; the model file 9VBD_sample_0.cif was not written,1,1,2026-11-07T04:32:30Z,21600,14837,2.27,True,21600
+cryozeta,9VUH,failed,run,timeout: the run limit of 21600 s; the model file 9VUH_sample_0.cif was not written,1,0,2026-11-07T04:56:09Z,21600,14543,14.76,True,21600
+cryozeta,9WFL,interrupted,run,stopped by the end of the session after 15850 s; run again in the next session,1,1,2026-11-07T10:38:33Z,15850,13143,13.96,True,15850
+cryozeta,9WME,interrupted,run,stopped by the end of the session after 14774 s; run again in the next session,1,0,2026-11-07T10:56:46Z,14774,14819,21.3,True,14774

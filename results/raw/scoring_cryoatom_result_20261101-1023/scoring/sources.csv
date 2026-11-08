@@ -1,0 +1,3 @@
+label,kind,path,bytes,sha256,model_files
+gpu_cryoatom_a_result_20261101-0227,zip,/kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/gpu_cryoatom_a_result_20261101-0227.zip,17727757,eb094030bf843bf3bc7bb4cbd212aa1d04230eee2f0a6cba50cc47048a06bb52,32
+pilot,folder,/kaggle/input/notebooks/faltuaccounts/gpu-cryoatom-a/pilot,,,32

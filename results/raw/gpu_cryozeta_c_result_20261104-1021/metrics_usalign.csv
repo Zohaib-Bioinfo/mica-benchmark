@@ -1,0 +1,16 @@
+method,entry,model_kind,model_file,status,note,tm_score,tm_score_pred_norm,ca_rmsd,aligned_ca_length,seq_identity,pred_residues,native_residues,coverage
+cryozeta,9ZLH,cryozeta,9ZLH_sample_0.cif,ok,,0.9896,0.9896,0.63,206,1.0,206,206,1.0
+cryozeta,9ZLH,cryozeta_s1,9ZLH_sample_1.cif,ok,,0.9899,0.9899,0.62,206,1.0,206,206,1.0
+cryozeta,9ZLH,cryozeta_s2,9ZLH_sample_2.cif,ok,,0.9894,0.9894,0.63,206,1.0,206,206,1.0
+cryozeta,9ZLH,cryozeta_s3,9ZLH_sample_3.cif,ok,,0.9896,0.9896,0.61,206,1.0,206,206,1.0
+cryozeta,9ZLH,cryozeta_s4,9ZLH_sample_4.cif,ok,,0.9893,0.9893,0.64,206,1.0,206,206,1.0
+cryozeta,9WTX,cryozeta,9WTX_sample_0.cif,ok,,0.9889,0.898,0.94,500,0.994,551,500,1.102
+cryozeta,9WTX,cryozeta_s1,9WTX_sample_1.cif,ok,,0.9882,0.8974,0.97,500,0.996,551,500,1.102
+cryozeta,9WTX,cryozeta_s2,9WTX_sample_2.cif,ok,,0.9881,0.8973,1.01,500,0.994,551,500,1.102
+cryozeta,9WTX,cryozeta_s3,9WTX_sample_3.cif,ok,,0.9881,0.8973,1.01,500,0.994,551,500,1.102
+cryozeta,9WTX,cryozeta_s4,9WTX_sample_4.cif,ok,,0.9881,0.8973,1.01,500,0.994,551,500,1.102
+cryozeta,9RWS,cryozeta,9RWS_sample_0.cif,ok,,0.9944,0.9243,0.66,512,0.99,551,512,1.0762
+cryozeta,9RWS,cryozeta_s1,9RWS_sample_1.cif,ok,,0.9944,0.9243,0.66,512,0.99,551,512,1.0762
+cryozeta,9RWS,cryozeta_s2,9RWS_sample_2.cif,ok,,0.9941,0.924,0.68,512,0.99,551,512,1.0762
+cryozeta,9RWS,cryozeta_s3,9RWS_sample_3.cif,ok,,0.9946,0.9245,0.63,512,0.988,551,512,1.0762
+cryozeta,9RWS,cryozeta_s4,9RWS_sample_4.cif,ok,,0.9941,0.924,0.68,512,0.99,551,512,1.0762

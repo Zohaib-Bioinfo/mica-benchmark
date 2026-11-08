@@ -1,0 +1,5 @@
+Not a result (scoring session scoring_cryozeta_e, 8 November 2026, 09:46 PKT; the notebook was not kept in scripts/as_run/).
+
+The notebook was made to score the CryoZeta models of gpu_cryozeta_e. That session built no model: its result zip holds no models/ folder (9VUH reached the 6-hour run limit again, 9WFL and 9WME
+were cut by the end of the session; LOG.md, 2026-11-08). The scoring notebook therefore stopped after the installation of Phenix and US-align with "the inputs hold no model" and packed this
+INCOMPLETE zip. The stop is correct and there is nothing to score, so no score is missing. The hashes of its input files are those of scoring_cryozeta_d.

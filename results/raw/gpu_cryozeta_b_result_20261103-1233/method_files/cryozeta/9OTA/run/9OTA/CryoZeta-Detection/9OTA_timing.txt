@@ -1,0 +1,6 @@
+Map dimension: torch.Size([211, 207, 211])
+Preprocessing time: 1.62 seconds
+UNet Inference time: 196.47 seconds
+Saving outputs time: 2.41 seconds
+Post-processing time: 2.63 seconds
+Total time: 203.14 seconds

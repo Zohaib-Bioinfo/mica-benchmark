@@ -13,5 +13,7 @@ INFO  ModelAngelo  model 19, failed  1, unscorable  0, not run  0
 INFO  EModelX(+AF) model 18, failed  2, unscorable  0, not run  0
 INFO  EMProt       model 19, failed  1, unscorable  0, not run  0
 INFO  E3-CryoFold  model 15, failed  5, unscorable  0, not run  0
+INFO  CryoAtom     model 16, failed  4, unscorable  0, not run  0
+INFO  CryoZeta     model 11, failed  6, unscorable  0, not run  3
 
 1 point(s) to look at

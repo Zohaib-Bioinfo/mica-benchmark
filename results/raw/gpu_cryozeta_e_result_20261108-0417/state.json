@@ -1,0 +1,206 @@
+{
+ "ok": true,
+ "problem": "",
+ "t0": 1794072420.3296452,
+ "started": "2026-11-07T17:27:00.329647+00:00",
+ "phenix_env": null,
+ "phenix_version": "",
+ "installer_sha256": "",
+ "usalign": "/tmp/mica_pilot/USalign_src/USalign",
+ "usalign_version": "* US-align (Version 20261012)                                      *",
+ "weights": {},
+ "env": {},
+ "entries": {},
+ "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+ "cpu_facts": {
+  "os.cpu_count": 4,
+  "multiprocessing.cpu_count": 4,
+  "usable (sched_getaffinity)": 4,
+  "nproc": "4",
+  "cgroup v2 cpu.max": "400000 100000",
+  "cgroup v1 quota": "cat: /sys/fs/cgroup/cpu/cpu.cfs_quota_us: No such file or directory",
+  "MICA's nproc formula min(max(int(0.6 * cpu_count), 1), 48)": 2
+ },
+ "methods": {
+  "cryozeta": {
+   "key": "cryozeta",
+   "label": "CryoZeta",
+   "commit": "c544c6bbd0366951d8b4e0bc4c0da547836f7b8f",
+   "status": "ready",
+   "failed_step": "",
+   "note": "",
+   "setup_seconds": 272,
+   "entries": {
+    "9VUH": {
+     "entry": "9VUH",
+     "method": "cryozeta",
+     "status": "failed",
+     "failed_step": "run",
+     "note": "timeout: the run limit of 21600 s; the model file 9VUH_sample_0.cif was not written",
+     "runs": {
+      "run": {
+       "peak_gpu_mb": 14543,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 24.29,
+       "samples": 4286,
+       "rc": -9,
+       "seconds": 21600,
+       "timed_out": true,
+       "started": 1794072749.5188217,
+       "ended": 1794094349.533893,
+       "gpu": 0,
+       "limit_s": 21600,
+       "other_gpu_busy": false,
+       "started_utc": "2026-11-07T17:32:29Z",
+       "ended_utc": "2026-11-07T23:32:29Z"
+      }
+     },
+     "models": [],
+     "gpu": 0,
+     "attempt": 2,
+     "started_utc": "2026-11-07T17:32:09Z",
+     "seconds": 21620
+    },
+    "9WFL": {
+     "entry": "9WFL",
+     "method": "cryozeta",
+     "status": "interrupted",
+     "failed_step": "run",
+     "note": "stopped by the end of the session after 17039 s; run again in the next session",
+     "runs": {
+      "run": {
+       "peak_gpu_mb": 13143,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 16.15,
+       "samples": 3375,
+       "rc": -9,
+       "seconds": 17039,
+       "timed_out": true,
+       "started": 1794094381.4822297,
+       "ended": 1794111420.3634663,
+       "gpu": 0,
+       "limit_s": 17039,
+       "other_gpu_busy": true,
+       "started_utc": "2026-11-07T23:33:01Z",
+       "ended_utc": "2026-11-08T04:17:00Z"
+      }
+     },
+     "models": [],
+     "gpu": 0,
+     "attempt": 1,
+     "started_utc": "2026-11-07T23:32:29Z"
+    },
+    "9WME": {
+     "entry": "9WME",
+     "method": "cryozeta",
+     "status": "interrupted",
+     "failed_step": "run",
+     "note": "stopped by the end of the session after 17022 s; run again in the next session",
+     "runs": {
+      "run": {
+       "peak_gpu_mb": 14829,
+       "peak_gpu_util_pct": 100,
+       "min_ram_available_gb": 15.86,
+       "samples": 3372,
+       "rc": -9,
+       "seconds": 17022,
+       "timed_out": true,
+       "started": 1794094397.9085007,
+       "ended": 1794111420.3456964,
+       "gpu": 1,
+       "limit_s": 17022,
+       "other_gpu_busy": true,
+       "started_utc": "2026-11-07T23:33:17Z",
+       "ended_utc": "2026-11-08T04:17:00Z"
+      }
+     },
+     "models": [],
+     "gpu": 1,
+     "attempt": 1,
+     "started_utc": "2026-11-07T23:32:29Z"
+    }
+   },
+   "weights_hub": {
+    "repo": "KiharaLab/CryoZeta",
+    "revision": "6fdba93a5f3af71c61760723438ff05f48e033db",
+    "files": {
+     "detection": {
+      "file": "cryozeta-detection-v0.0.1.safetensors",
+      "hub_path": "cryozeta-detection-v0.0.1.safetensors",
+      "bytes": 39547664,
+      "sha256": "677ea35f308d6d14f02cf841437b9c2f5a4490ee03df69a81d41acc73b9c76cc",
+      "hub_sha256": "677ea35f308d6d14f02cf841437b9c2f5a4490ee03df69a81d41acc73b9c76cc"
+     },
+     "cryozeta": {
+      "file": "cryozeta-v0.0.1.safetensors",
+      "hub_path": "cryozeta-v0.0.1.safetensors",
+      "bytes": 2680248116,
+      "sha256": "da7153b024d5eaebfcea7a0a0a55c1da72833cc9688df0976ca33678280c57c5",
+      "hub_sha256": "da7153b024d5eaebfcea7a0a0a55c1da72833cc9688df0976ca33678280c57c5"
+     },
+     "interpolate": {
+      "file": "cryozeta-interpolate-v0.0.1.safetensors",
+      "hub_path": "cryozeta-interpolate-v0.0.1.safetensors",
+      "bytes": 2680255796,
+      "sha256": "1a0b2f3e53953af47e95c36d7a6a84ec9af4ba0296e458f83c5093a2a1263285",
+      "hub_sha256": "1a0b2f3e53953af47e95c36d7a6a84ec9af4ba0296e458f83c5093a2a1263285"
+     },
+     "ccd": {
+      "file": "components.v20240608.cif",
+      "hub_path": "components.v20240608.cif",
+      "bytes": 427767290,
+      "sha256": "7240b17369ccfbbcc86e2d02dc8c9db59f46c32e0420f58889c6c121c60bfef0",
+      "hub_sha256": "7240b17369ccfbbcc86e2d02dc8c9db59f46c32e0420f58889c6c121c60bfef0"
+     },
+     "ccd_rdkit": {
+      "file": "components.v20240608.cif.rdkit_mol.pkl",
+      "hub_path": "components.v20240608.cif.rdkit_mol.pkl",
+      "bytes": 125903802,
+      "sha256": "2d6caced2d26c62015115a1d0a50f4106755a300e0c2a2d2b5c101c9038dcbcd",
+      "hub_sha256": "2d6caced2d26c62015115a1d0a50f4106755a300e0c2a2d2b5c101c9038dcbcd"
+     }
+    }
+   },
+   "preflight": {
+    "gpu_test": {
+     "torch": "2.4.1",
+     "cuda": "11.8",
+     "cuda_available": true,
+     "gpu": "Tesla T4",
+     "memory_gb": 14.56,
+     "capability": "7.5",
+     "bf16_matmul": "ok",
+     "bf16_conv3d": "ok",
+     "bf16_autocast_conv3d": "ok"
+    },
+    "detection_patched": false,
+    "dtype_start": "bf16"
+   },
+   "version": "commit c544c6bbd0, pixi 0.41.1, environment cu11, weights revision 6fdba93a5f",
+   "teaser": {
+    "commit": "52a9c52ee7d4c838c5e8a75458c33178be5bfb70",
+    "folder": "/tmp/mica_pilot/teaser_plusplus"
+   },
+   "weights": {
+    "cryozeta_assets/components.v20240608.cif.rdkit_mol.pkl": 125903802,
+    "cryozeta_assets/cryozeta-interpolate-v0.0.1.safetensors": 2680255796,
+    "cryozeta_assets/components.v20240608.cif": 427767290,
+    "cryozeta_assets/cryozeta-v0.0.1.safetensors": 2680248116,
+    "cryozeta_assets/cryozeta-detection-v0.0.1.safetensors": 39547664
+   }
+  }
+ },
+ "complete": true,
+ "pending": [
+  [
+   "9WFL",
+   "cryozeta",
+   "interrupted"
+  ],
+  [
+   "9WME",
+   "cryozeta",
+   "interrupted"
+  ]
+ ]
+}

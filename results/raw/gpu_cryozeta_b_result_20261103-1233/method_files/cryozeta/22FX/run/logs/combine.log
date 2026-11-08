@@ -1,0 +1,2 @@
+$ /tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/bin/cryozeta-combine --dump-dir /tmp/mica_pilot/runs/cryozeta/22FX --input-json-path /tmp/mica_pilot/input/22FX/cryozeta_input.json --seeds 101 --num-select 5
+Ensemble selection completed. Results saved to /tmp/mica_pilot/runs/cryozeta/22FX

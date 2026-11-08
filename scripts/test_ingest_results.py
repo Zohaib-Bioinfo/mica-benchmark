@@ -91,6 +91,15 @@ class IngestTests(unittest.TestCase):
         with open(os.path.join(self.out, "INDEX.csv"), newline="") as f:
             self.assertEqual(next(csv.reader(f)), I.INDEX_COLUMNS)
 
+    def test_a_session_that_is_marked_as_not_a_result_stays_in_the_record_but_not_in_the_status_list(self):
+        zs = [self.zip("gpu_cryozeta_a_result_20261102-0930.zip", {"method_status.csv": "a\n"}), self.zip("gpu_cryozeta_b_result_20261104-0900.zip", {"method_status.csv": "b\n"})]
+        I.main(zs + ["--out", self.out])
+        self.assertEqual([os.path.basename(os.path.dirname(p)) for p in I.status_files(self.out, "method_status.csv")], ["gpu_cryozeta_a_result_20261102-0930", "gpu_cryozeta_b_result_20261104-0900"])
+        with open(os.path.join(self.out, "gpu_cryozeta_a_result_20261102-0930", I.NOT_A_RESULT), "w") as f:
+            f.write("the notebook lacked a data file of the method\n")
+        self.assertEqual([os.path.basename(os.path.dirname(p)) for p in I.status_files(self.out, "method_status.csv")], ["gpu_cryozeta_b_result_20261104-0900"])
+        self.assertEqual(len(I.read_index(self.out)), 2)                                      # still in the index
+
     def test_a_large_text_file_is_not_kept(self):
         old = I.MAX_FILE_BYTES
         I.MAX_FILE_BYTES = 10

@@ -99,3 +99,43 @@ entry,method,outcome,reason,status_raw,runtime_s,gpu,history
 9WTX,e3,model,,ok,185,1,ok
 9Z24,e3,model,,ok,86,0,ok
 26DK,e3,failed,"prealign: killed by the system (exit code -9, probably out of memory); the model file 26DK_e3_prealign.pdb was not written",failed,493,0,not run; not run; failed
+9T5K,cryoatom1,model,,ok,5132,0,ok
+22FX,cryoatom1,model,,ok,2780,1,ok
+9JKK,cryoatom1,model,,ok,536,0,ok
+9TKA,cryoatom1,model,,ok,522,0,ok
+9WFL,cryoatom1,model,,ok,701,0,ok
+9VI4,cryoatom1,model,,ok,23697,0,ok
+9ZLH,cryoatom1,model,,ok,2493,1,ok
+9VUH,cryoatom1,model,,ok,773,1,ok
+9OC0,cryoatom1,failed,build: out of GPU memory (exit code 1; the error message of the program); the model file 9OC0_cryoatom1.cif was not written,failed,253,1,failed
+13BD,cryoatom1,failed,build: out of GPU memory (exit code 1; the error message of the program); the model file 13BD_cryoatom1.cif was not written,failed,259,1,failed
+9WQ6,cryoatom1,model,,ok,1183,1,ok
+9V4D,cryoatom1,model,,ok,738,1,ok
+9OTA,cryoatom1,model,,ok,641,1,ok
+9KQM,cryoatom1,model,,ok,595,1,ok
+9WME,cryoatom1,model,,ok,652,1,ok
+9VBD,cryoatom1,failed,build: out of GPU memory (exit code 1; the error message of the program); the model file 9VBD_cryoatom1.cif was not written,failed,144,1,failed
+9RWS,cryoatom1,model,,ok,498,1,ok
+9WTX,cryoatom1,model,,ok,777,1,ok
+9Z24,cryoatom1,failed,build: out of GPU memory (exit code 1; the error message of the program); the model file 9Z24_cryoatom1.cif was not written,failed,252,1,failed
+26DK,cryoatom1,model,,ok,13861,1,ok
+9T5K,cryozeta,model,,ok,3757,0,ok
+22FX,cryozeta,model,,ok,675,1,ok
+9JKK,cryozeta,model,,ok,13416,1,ok
+9TKA,cryozeta,model,,ok,2297,1,ok
+9WFL,cryozeta,not_run,interrupted: stopped by the end of the session after 17039 s; run again in the next session,interrupted,,0,not run; not run; interrupted; interrupted
+9VI4,cryozeta,not_run,"killed_corun: killed by the system (exit code -9, probably out of memory) while the other GPU's program ran; run again alone",killed_corun,,0,not run; not run; killed_corun
+9ZLH,cryozeta,model,,ok,1108,0,not run; ok
+9VUH,cryozeta,failed,run: timeout: the run limit of 21600 s; the model file 9VUH_sample_0.cif was not written,failed,21600,0,not run; not run; failed; failed
+9OC0,cryozeta,failed,"run: killed by the system (exit code -9, probably out of memory; also when it ran alone); the model file 9OC0_sample_0.cif was not written",failed,673,0,not run; killed_corun; failed
+13BD,cryozeta,failed,run: out of GPU memory (exit code 2; the error message of the program); the model file 13BD_sample_0.cif was not written,failed,1369,0,not run; failed
+9WQ6,cryozeta,model,,ok,3200,1,ok
+9V4D,cryozeta,model,,ok,5385,0,ok
+9OTA,cryozeta,model,,ok,11768,0,ok
+9KQM,cryozeta,model,,ok,10337,1,ok
+9WME,cryozeta,not_run,interrupted: stopped by the end of the session after 17022 s; run again in the next session,interrupted,,1,interrupted; not run; interrupted; interrupted
+9VBD,cryozeta,failed,run: timeout: the run limit of 21600 s; the model file 9VBD_sample_0.cif was not written,failed,21600,1,not run; not run; failed
+9RWS,cryozeta,model,,ok,9961,0,not run; ok
+9WTX,cryozeta,model,,ok,10630,0,not run; ok
+9Z24,cryozeta,failed,run: timeout: the run limit of 21600 s; the model file 9Z24_sample_0.cif was not written,failed,21600,1,not run; failed
+26DK,cryozeta,failed,"run: killed by the system (exit code -9, probably out of memory; also when it ran alone); the model file 26DK_sample_0.cif was not written",failed,355,0,failed; failed

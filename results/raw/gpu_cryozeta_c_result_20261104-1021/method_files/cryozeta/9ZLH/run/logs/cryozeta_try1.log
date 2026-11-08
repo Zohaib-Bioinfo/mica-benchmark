@@ -1,0 +1,527 @@
+$ /tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/bin/cryozeta-inference --seeds 101 --load_checkpoint_path /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors --em_file_dir /tmp/mica_pilot/runs/cryozeta/9ZLH --dump_dir /tmp/mica_pilot/runs/cryozeta/9ZLH --input_json_path /tmp/mica_pilot/input/9ZLH/cryozeta_input.json --use_deepspeed_evo_attention false --use_cuequivariance_attention false --use_cuequivariance_multiplicative_update false --use_cuequivariance_attention_pair_bias false --use_opm_tilelang false --model.N_cycle 10 --sample_diffusion.N_sample 5 --sample_diffusion.N_step 20 --data.num_dl_workers 1 --use_interpolation false --overwrite true --dtype bf16 --infer_setting.chunk_size 256
+2026-11-04 03:23:33.111 | INFO     | cryozeta.runner.inference:init_env:53 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-04 03:23:33.111 | INFO     | cryozeta.runner.inference:print:161 - Distributed environment: world size: 1, global rank: 0, local rank: 0
+2026-11-04 03:23:33.111 | INFO     | cryozeta.runner.inference:init_env:72 - LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+2026-11-04 03:23:33.111 | INFO     | cryozeta.runner.inference:init_env:96 - Finished init ENV.
+inference scheduler 16.0
+Diffusion Module has 16.0
+2026-11-04 03:23:49.932 | INFO     | cryozeta.runner.inference:print:161 - Loading from /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors
+2026-11-04 03:24:01.020 | INFO     | cryozeta.runner.inference:print:161 - Finish loading checkpoint.
+2026-11-04 03:24:01.044 | INFO     | cryozeta.runner.inference:main:200 - Loading data from
+/tmp/mica_pilot/input/9ZLH/cryozeta_input.json
+2026-11-04 03:24:01.049 | INFO     | cryozeta.data.infer_data_pipeline:__getitem__:269 - Featurizing 9ZLH...
+2026-11-04 03:24:10.348 | INFO     | cryozeta.data.data_transforms_em:parse_mrc:132 - has_interpolate_confidence: True
+2026-11-04 03:24:11.202 | INFO     | cryozeta.runner.inference:main:243 - [Rank 0 (1/1)] 9ZLH: N_asym 1, N_token 206, N_atom 1658, N_msa 4995
+
+EMPairformer cycles:   0%|          | 0/10 [00:00<?, ?it/s]
+EMPairformer cycles:  10%|█         | 1/10 [00:36<05:26, 36.26s/it]
+EMPairformer cycles:  20%|██        | 2/10 [01:12<04:50, 36.31s/it]
+EMPairformer cycles:  30%|███       | 3/10 [01:48<04:12, 36.06s/it]
+EMPairformer cycles:  40%|████      | 4/10 [02:24<03:36, 36.04s/it]
+EMPairformer cycles:  50%|█████     | 5/10 [03:00<02:59, 35.96s/it]
+EMPairformer cycles:  60%|██████    | 6/10 [03:36<02:23, 35.91s/it]
+EMPairformer cycles:  70%|███████   | 7/10 [04:11<01:47, 35.87s/it]
+EMPairformer cycles:  80%|████████  | 8/10 [04:47<01:11, 35.86s/it]
+EMPairformer cycles:  90%|█████████ | 9/10 [05:23<00:35, 35.85s/it]
+EMPairformer cycles: 100%|██████████| 10/10 [05:59<00:00, 35.84s/it]
+                                                                    
+2026-11-04 03:30:12.807 | INFO     | cryozeta.model.cryozeta:_main_inference_loop:518 - EMPairformer done in 361.6s. Starting diffusion sampling...
+
+Diffusion sample chunks:   0%|          | 0/5 [00:00<?, ?it/s]
+
+Diffusion denoising:   0%|          | 0/20 [00:00<?, ?it/s][A
+
+Diffusion denoising:   5%|▌         | 1/20 [00:00<00:04,  4.67it/s][A
+
+Diffusion denoising:  10%|█         | 2/20 [00:00<00:02,  6.59it/s][A
+
+Diffusion denoising:  15%|█▌        | 3/20 [00:00<00:02,  7.54it/s][A
+
+Diffusion denoising:  20%|██        | 4/20 [00:00<00:01,  8.19it/s][A
+
+Diffusion denoising:  25%|██▌       | 5/20 [00:00<00:01,  8.19it/s][A
+
+Diffusion denoising:  35%|███▌      | 7/20 [00:00<00:01,  8.07it/s][A
+
+Diffusion denoising:  40%|████      | 8/20 [00:01<00:01,  8.25it/s][A
+
+Diffusion denoising:  50%|█████     | 10/20 [00:01<00:01,  8.99it/s][A
+
+Diffusion denoising:  55%|█████▌    | 11/20 [00:01<00:00,  9.20it/s][A
+
+Diffusion denoising:  60%|██████    | 12/20 [00:01<00:00,  9.36it/s][A
+
+Diffusion denoising:  65%|██████▌   | 13/20 [00:01<00:00,  9.47it/s][A
+
+Diffusion denoising:  75%|███████▌  | 15/20 [00:01<00:00,  9.76it/s][A
+
+Diffusion denoising:  80%|████████  | 16/20 [00:01<00:00,  9.64it/s][A
+
+Diffusion denoising:  90%|█████████ | 18/20 [00:02<00:00,  9.75it/s][A
+
+Diffusion denoising: 100%|██████████| 20/20 [00:02<00:00,  9.80it/s][A
+
+                                                                    [A
+Diffusion sample chunks:  20%|██        | 1/5 [00:02<00:08,  2.25s/it]
+
+Diffusion denoising:   0%|          | 0/20 [00:00<?, ?it/s][A
+
+Diffusion denoising:   5%|▌         | 1/20 [00:00<00:01,  9.71it/s][A
+
+Diffusion denoising:  15%|█▌        | 3/20 [00:00<00:01,  9.79it/s][A
+
+Diffusion denoising:  25%|██▌       | 5/20 [00:00<00:01,  9.86it/s][A
+
+Diffusion denoising:  30%|███       | 6/20 [00:00<00:01,  9.78it/s][A
+
+Diffusion denoising:  35%|███▌      | 7/20 [00:00<00:01,  9.75it/s][A
+
+Diffusion denoising:  40%|████      | 8/20 [00:00<00:01,  9.76it/s][A
+
+Diffusion denoising:  45%|████▌     | 9/20 [00:00<00:01,  9.82it/s][A
+
+Diffusion denoising:  50%|█████     | 10/20 [00:01<00:01,  9.75it/s][A
+
+Diffusion denoising:  55%|█████▌    | 11/20 [00:01<00:00,  9.79it/s][A
+
+Diffusion denoising:  60%|██████    | 12/20 [00:01<00:00,  9.71it/s][A
+
+Diffusion denoising:  70%|███████   | 14/20 [00:01<00:00,  9.85it/s][A
+
+Diffusion denoising:  80%|████████  | 16/20 [00:01<00:00,  9.86it/s][A
+
+Diffusion denoising:  85%|████████▌ | 17/20 [00:01<00:00,  9.84it/s][A
+
+Diffusion denoising:  90%|█████████ | 18/20 [00:01<00:00,  9.87it/s][A
+
+Diffusion denoising:  95%|█████████▌| 19/20 [00:01<00:00,  9.84it/s][A
+
+Diffusion denoising: 100%|██████████| 20/20 [00:02<00:00,  9.84it/s][A
+
+                                                                    [A
+Diffusion sample chunks:  40%|████      | 2/5 [00:04<00:06,  2.12s/it]
+
+Diffusion denoising:   0%|          | 0/20 [00:00<?, ?it/s][A
+
+Diffusion denoising:  10%|█         | 2/20 [00:00<00:01,  9.99it/s][A
+
+Diffusion denoising:  15%|█▌        | 3/20 [00:00<00:01,  9.96it/s][A
+
+Diffusion denoising:  20%|██        | 4/20 [00:00<00:01,  9.92it/s][A
+
+Diffusion denoising:  25%|██▌       | 5/20 [00:00<00:01,  9.92it/s][A
+
+Diffusion denoising:  30%|███       | 6/20 [00:00<00:01,  9.81it/s][A
+
+Diffusion denoising:  35%|███▌      | 7/20 [00:00<00:01,  9.73it/s][A
+
+Diffusion denoising:  40%|████      | 8/20 [00:00<00:01,  9.75it/s][A
+
+Diffusion denoising:  45%|████▌     | 9/20 [00:00<00:01,  9.63it/s][A
+
+Diffusion denoising:  50%|█████     | 10/20 [00:01<00:01,  9.60it/s][A
+
+Diffusion denoising:  55%|█████▌    | 11/20 [00:01<00:00,  9.66it/s][A
+
+Diffusion denoising:  60%|██████    | 12/20 [00:01<00:00,  9.51it/s][A
+
+Diffusion denoising:  65%|██████▌   | 13/20 [00:01<00:00,  9.65it/s][A
+
+Diffusion denoising:  75%|███████▌  | 15/20 [00:01<00:00,  9.77it/s][A
+
+Diffusion denoising:  80%|████████  | 16/20 [00:01<00:00,  9.67it/s][A
+
+Diffusion denoising:  85%|████████▌ | 17/20 [00:01<00:00,  9.66it/s][A
+
+Diffusion denoising:  90%|█████████ | 18/20 [00:01<00:00,  9.74it/s][A
+
+Diffusion denoising:  95%|█████████▌| 19/20 [00:01<00:00,  9.70it/s][A
+
+Diffusion denoising: 100%|██████████| 20/20 [00:02<00:00,  9.76it/s][A
+
+                                                                    [A
+Diffusion sample chunks:  60%|██████    | 3/5 [00:06<00:04,  2.09s/it]
+
+Diffusion denoising:   0%|          | 0/20 [00:00<?, ?it/s][A
+
+Diffusion denoising:  10%|█         | 2/20 [00:00<00:01, 10.05it/s][A
+
+Diffusion denoising:  20%|██        | 4/20 [00:00<00:01,  9.96it/s][A
+
+Diffusion denoising:  25%|██▌       | 5/20 [00:00<00:01,  9.82it/s][A
+
+Diffusion denoising:  30%|███       | 6/20 [00:00<00:01,  9.71it/s][A
+
+Diffusion denoising:  35%|███▌      | 7/20 [00:00<00:01,  9.71it/s][A
+
+Diffusion denoising:  40%|████      | 8/20 [00:00<00:01,  9.69it/s][A
+
+Diffusion denoising:  45%|████▌     | 9/20 [00:00<00:01,  9.65it/s][A
+
+Diffusion denoising:  50%|█████     | 10/20 [00:01<00:01,  9.70it/s][A
+
+Diffusion denoising:  55%|█████▌    | 11/20 [00:01<00:00,  9.68it/s][A
+
+Diffusion denoising:  60%|██████    | 12/20 [00:01<00:00,  9.67it/s][A
+
+Diffusion denoising:  65%|██████▌   | 13/20 [00:01<00:00,  9.71it/s][A
+
+Diffusion denoising:  70%|███████   | 14/20 [00:01<00:00,  9.68it/s][A
+
+Diffusion denoising:  75%|███████▌  | 15/20 [00:01<00:00,  9.65it/s][A
+
+Diffusion denoising:  80%|████████  | 16/20 [00:01<00:00,  9.59it/s][A
+
+Diffusion denoising:  85%|████████▌ | 17/20 [00:01<00:00,  9.68it/s][A
+
+Diffusion denoising:  95%|█████████▌| 19/20 [00:01<00:00,  9.74it/s][A
+
+Diffusion denoising: 100%|██████████| 20/20 [00:02<00:00,  9.73it/s][A
+
+                                                                    [A
+Diffusion sample chunks:  80%|████████  | 4/5 [00:08<00:02,  2.08s/it]
+
+Diffusion denoising:   0%|          | 0/20 [00:00<?, ?it/s][A
+
+Diffusion denoising:   5%|▌         | 1/20 [00:00<00:01,  9.99it/s][A
+
+Diffusion denoising:  10%|█         | 2/20 [00:00<00:01,  9.99it/s][A
+
+Diffusion denoising:  15%|█▌        | 3/20 [00:00<00:01,  9.98it/s][A
+
+Diffusion denoising:  20%|██        | 4/20 [00:00<00:01,  9.90it/s][A
+
+Diffusion denoising:  25%|██▌       | 5/20 [00:00<00:01,  9.91it/s][A
+
+Diffusion denoising:  30%|███       | 6/20 [00:00<00:01,  9.78it/s][A
+
+Diffusion denoising:  35%|███▌      | 7/20 [00:00<00:01,  9.83it/s][A
+
+Diffusion denoising:  45%|████▌     | 9/20 [00:00<00:01,  9.81it/s][A
+
+Diffusion denoising:  50%|█████     | 10/20 [00:01<00:01,  9.84it/s][A
+
+Diffusion denoising:  55%|█████▌    | 11/20 [00:01<00:00,  9.82it/s][A
+
+Diffusion denoising:  65%|██████▌   | 13/20 [00:01<00:00,  9.91it/s][A
+
+Diffusion denoising:  70%|███████   | 14/20 [00:01<00:00,  9.87it/s][A
+
+Diffusion denoising:  80%|████████  | 16/20 [00:01<00:00,  9.83it/s][A
+
+Diffusion denoising:  85%|████████▌ | 17/20 [00:01<00:00,  9.77it/s][A
+
+Diffusion denoising:  90%|█████████ | 18/20 [00:01<00:00,  9.74it/s][A
+
+Diffusion denoising:  95%|█████████▌| 19/20 [00:01<00:00,  9.76it/s][A
+
+Diffusion denoising: 100%|██████████| 20/20 [00:02<00:00,  9.76it/s][A
+
+                                                                    [A
+Diffusion sample chunks: 100%|██████████| 5/5 [00:10<00:00,  2.06s/it]
+                                                                      
+2026-11-04 03:30:23.268 | INFO     | cryozeta.model.cryozeta:_main_inference_loop:544 - Diffusion sampling done in 10.5s. Starting model fitting...
+2026-11-04 03:30:26.616 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.653, OVR_mask: 1.000
+2026-11-04 03:30:26.946 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.429, OVR_box: 0.515
+2026-11-04 03:30:27.897 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.647, OVR_mask: 1.000
+2026-11-04 03:30:28.259 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.425, OVR_box: 0.513
+2026-11-04 03:30:29.216 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.653, OVR_mask: 1.000
+2026-11-04 03:30:29.552 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.430, OVR_box: 0.515
+2026-11-04 03:30:30.459 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.642, OVR_mask: 1.000
+2026-11-04 03:30:30.783 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.421, OVR_box: 0.512
+2026-11-04 03:30:31.670 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.652, OVR_mask: 1.000
+2026-11-04 03:30:32.000 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.428, OVR_box: 0.515
+2026-11-04 03:30:32.902 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.706, OVR_mask: 1.000
+2026-11-04 03:30:33.244 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.465, OVR_box: 0.515
+2026-11-04 03:30:34.208 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.711, OVR_mask: 1.000
+2026-11-04 03:30:34.557 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.469, OVR_box: 0.515
+2026-11-04 03:30:35.453 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.701, OVR_mask: 1.000
+2026-11-04 03:30:35.779 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.462, OVR_box: 0.518
+2026-11-04 03:30:36.669 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.712, OVR_mask: 1.000
+2026-11-04 03:30:36.987 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.469, OVR_box: 0.514
+2026-11-04 03:30:37.916 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.700, OVR_mask: 1.000
+2026-11-04 03:30:38.246 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.461, OVR_box: 0.517
+2026-11-04 03:30:38.249 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:208 - Reference points (original): 962
+2026-11-04 03:30:38.249 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:215 - Sample 0: Query points: 206
+2026-11-04 03:30:38.249 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:218 - Sample 0: Estimating normals for reference...
+2026-11-04 03:30:38.263 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:227 - Sample 0: Estimating normals for query...
+2026-11-04 03:30:38.265 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:237 - Sample 0: Computing shot_bi_scale descriptors for reference...
+
+Local RFs with radius 10:   0%|          | 0/962 [00:00<?, ?it/s]
+Local RFs with radius 10:  19%|█▊        | 179/962 [00:00<00:00, 1762.43it/s]
+Local RFs with radius 10:  80%|████████  | 774/962 [00:00<00:00, 4128.23it/s]
+Local RFs with radius 10: 100%|██████████| 962/962 [00:00<00:00, 3901.74it/s]
+
+SHOT desc with radius 30.0:   0%|          | 0/962 [00:00<?, ?it/s]
+SHOT desc with radius 30.0:   3%|▎         | 33/962 [00:00<00:02, 327.12it/s]
+SHOT desc with radius 30.0:   8%|▊         | 81/962 [00:00<00:02, 390.14it/s]
+SHOT desc with radius 30.0:  35%|███▌      | 337/962 [00:00<00:00, 1183.61it/s]
+SHOT desc with radius 30.0:  60%|█████▉    | 577/962 [00:00<00:00, 1370.69it/s]
+SHOT desc with radius 30.0: 100%|██████████| 962/962 [00:00<00:00, 1901.53it/s]
+2026-11-04 03:30:41.942 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:251 - Sample 0:   Descriptor shape: (962, 352)
+2026-11-04 03:30:41.942 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:253 - Sample 0: Computing shot_bi_scale descriptors for query...
+
+Local RFs with radius 10:   0%|          | 0/206 [00:00<?, ?it/s]
+Local RFs with radius 10: 100%|██████████| 206/206 [00:00<00:00, 2383.58it/s]
+
+SHOT desc with radius 30.0:   0%|          | 0/206 [00:00<?, ?it/s]
+SHOT desc with radius 30.0:  65%|██████▍   | 133/206 [00:00<00:00, 1173.25it/s]
+SHOT desc with radius 30.0: 100%|██████████| 206/206 [00:00<00:00, 1587.55it/s]
+2026-11-04 03:30:45.005 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:267 - Sample 0:   Descriptor shape: (206, 352)
+2026-11-04 03:30:45.006 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:272 - Sample 0: Finding correspondences...
+2026-11-04 03:30:45.064 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:276 - Sample 0:   Found 128 correspondences
+2026-11-04 03:30:45.064 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:289 - Sample 0: Running TEASER++...
+Starting scale solver (only selecting inliers if scale estimation has been disabled).
+Scale estimation complete.
+Max core number: 32
+Num vertices: 129
+Max Clique of scale estimation inliers: 
+Using chain graph for GNC rotation.
+Starting rotation solver.
+GNC rotation estimation noise bound:2
+GNC rotation estimation noise bound squared:4
+GNC-TLS terminated because maximum residual at initialization is very small.
+Rotation estimation complete.
+Starting translation solver.
+Translation estimation complete.
+2026-11-04 03:30:45.072 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:318 - Sample 0: TEASER++ query recall: 0.9951
+2026-11-04 03:30:45.072 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:321 - Sample 0: TEASER++ reference recall: 0.2131
+2026-11-04 03:30:45.072 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:324 - Sample 0: TEASER++ F1: 0.3510
+2026-11-04 03:30:45.072 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:327 - Sample 0: Running GICP refinement...
+2026-11-04 03:30:45.078 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:358 - Sample 0: Final query recall (after GICP): 0.9951
+2026-11-04 03:30:45.079 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:361 - Sample 0: Final reference recall (after GICP): 0.2131
+2026-11-04 03:30:45.079 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:364 - Sample 0: Final F1 (after GICP): 0.3510
+2026-11-04 03:30:45.079 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:367 - Sample 0: ========== Comparison ==========
+2026-11-04 03:30:45.079 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:368 - Sample 0: TEASER++ - Query: 0.9951, Ref: 0.2131, F1: 0.3510
+2026-11-04 03:30:45.079 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:371 - Sample 0: TEASER++ + GICP - Query: 0.9951, Ref: 0.2131, F1: 0.3510
+2026-11-04 03:30:45.079 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:379 - Sample 0: Best method: TEASER++ + GICP (F1 diff: 0.0000)
+2026-11-04 03:30:45.079 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:382 - Sample 0: ================================
+2026-11-04 03:30:46.062 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.722, OVR_mask: 1.000
+2026-11-04 03:30:46.401 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.476, OVR_box: 0.517
+2026-11-04 03:30:46.403 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:215 - Sample 1: Query points: 206
+2026-11-04 03:30:46.403 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:218 - Sample 1: Estimating normals for reference...
+2026-11-04 03:30:46.414 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:227 - Sample 1: Estimating normals for query...
+2026-11-04 03:30:46.416 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:237 - Sample 1: Computing shot_bi_scale descriptors for reference...
+
+Local RFs with radius 10:   0%|          | 0/962 [00:00<?, ?it/s]
+Local RFs with radius 10:   9%|▊         | 84/962 [00:00<00:01, 707.09it/s]
+Local RFs with radius 10:  64%|██████▍   | 614/962 [00:00<00:00, 3076.24it/s]
+Local RFs with radius 10: 100%|██████████| 962/962 [00:00<00:00, 3818.60it/s]
+
+SHOT desc with radius 30.0:   0%|          | 0/962 [00:00<?, ?it/s]
+SHOT desc with radius 30.0:   3%|▎         | 33/962 [00:00<00:02, 324.05it/s]
+SHOT desc with radius 30.0:  18%|█▊        | 177/962 [00:00<00:00, 844.99it/s]
+SHOT desc with radius 30.0:  45%|████▌     | 433/962 [00:00<00:00, 1267.36it/s]
+SHOT desc with radius 30.0:  73%|███████▎  | 705/962 [00:00<00:00, 1457.76it/s]
+SHOT desc with radius 30.0: 100%|██████████| 962/962 [00:00<00:00, 1752.87it/s]
+2026-11-04 03:30:50.121 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:251 - Sample 1:   Descriptor shape: (962, 352)
+2026-11-04 03:30:50.121 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:253 - Sample 1: Computing shot_bi_scale descriptors for query...
+
+Local RFs with radius 10:   0%|          | 0/206 [00:00<?, ?it/s]
+Local RFs with radius 10: 100%|██████████| 206/206 [00:00<00:00, 2420.41it/s]
+
+SHOT desc with radius 30.0:   0%|          | 0/206 [00:00<?, ?it/s]
+SHOT desc with radius 30.0:  78%|███████▊  | 161/206 [00:00<00:00, 1572.24it/s]
+SHOT desc with radius 30.0: 100%|██████████| 206/206 [00:00<00:00, 1632.68it/s]
+2026-11-04 03:30:53.091 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:267 - Sample 1:   Descriptor shape: (206, 352)
+2026-11-04 03:30:53.091 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:272 - Sample 1: Finding correspondences...
+2026-11-04 03:30:53.149 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:276 - Sample 1:   Found 126 correspondences
+2026-11-04 03:30:53.150 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:289 - Sample 1: Running TEASER++...
+Starting scale solver (only selecting inliers if scale estimation has been disabled).
+Scale estimation complete.
+Max core number: 66
+Num vertices: 127
+Max Clique of scale estimation inliers: 
+Using chain graph for GNC rotation.
+Starting rotation solver.
+GNC rotation estimation noise bound:2
+GNC rotation estimation noise bound squared:4
+GNC-TLS terminated because maximum residual at initialization is very small.
+Rotation estimation complete.
+Starting translation solver.
+Translation estimation complete.
+2026-11-04 03:30:53.156 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:318 - Sample 1: TEASER++ query recall: 0.9951
+2026-11-04 03:30:53.156 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:321 - Sample 1: TEASER++ reference recall: 0.2131
+2026-11-04 03:30:53.156 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:324 - Sample 1: TEASER++ F1: 0.3510
+2026-11-04 03:30:53.156 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:327 - Sample 1: Running GICP refinement...
+2026-11-04 03:30:53.164 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:358 - Sample 1: Final query recall (after GICP): 0.9951
+2026-11-04 03:30:53.164 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:361 - Sample 1: Final reference recall (after GICP): 0.2131
+2026-11-04 03:30:53.164 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:364 - Sample 1: Final F1 (after GICP): 0.3510
+2026-11-04 03:30:53.164 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:367 - Sample 1: ========== Comparison ==========
+2026-11-04 03:30:53.164 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:368 - Sample 1: TEASER++ - Query: 0.9951, Ref: 0.2131, F1: 0.3510
+2026-11-04 03:30:53.164 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:371 - Sample 1: TEASER++ + GICP - Query: 0.9951, Ref: 0.2131, F1: 0.3510
+2026-11-04 03:30:53.165 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:379 - Sample 1: Best method: TEASER++ + GICP (F1 diff: 0.0000)
+2026-11-04 03:30:53.165 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:382 - Sample 1: ================================
+2026-11-04 03:30:54.201 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.718, OVR_mask: 1.000
+2026-11-04 03:30:54.533 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.473, OVR_box: 0.518
+2026-11-04 03:30:54.535 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:215 - Sample 2: Query points: 206
+2026-11-04 03:30:54.535 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:218 - Sample 2: Estimating normals for reference...
+2026-11-04 03:30:54.549 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:227 - Sample 2: Estimating normals for query...
+2026-11-04 03:30:54.551 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:237 - Sample 2: Computing shot_bi_scale descriptors for reference...
+
+Local RFs with radius 10:   0%|          | 0/962 [00:00<?, ?it/s]
+Local RFs with radius 10:   6%|▌         | 53/962 [00:00<00:02, 390.71it/s]
+Local RFs with radius 10:  55%|█████▍    | 528/962 [00:00<00:00, 2611.43it/s]
+Local RFs with radius 10: 100%|██████████| 962/962 [00:00<00:00, 3744.75it/s]
+
+SHOT desc with radius 30.0:   0%|          | 0/962 [00:00<?, ?it/s]
+SHOT desc with radius 30.0:   3%|▎         | 33/962 [00:00<00:04, 187.52it/s]
+SHOT desc with radius 30.0:  30%|███       | 289/962 [00:00<00:00, 1128.33it/s]
+SHOT desc with radius 30.0:  63%|██████▎   | 609/962 [00:00<00:00, 1750.59it/s]
+SHOT desc with radius 30.0: 100%|██████████| 962/962 [00:00<00:00, 1877.34it/s]
+2026-11-04 03:30:58.225 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:251 - Sample 2:   Descriptor shape: (962, 352)
+2026-11-04 03:30:58.225 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:253 - Sample 2: Computing shot_bi_scale descriptors for query...
+
+Local RFs with radius 10:   0%|          | 0/206 [00:00<?, ?it/s]
+Local RFs with radius 10: 100%|██████████| 206/206 [00:00<00:00, 2664.90it/s]
+
+SHOT desc with radius 30.0:   0%|          | 0/206 [00:00<?, ?it/s]
+SHOT desc with radius 30.0:  39%|███▉      | 81/206 [00:00<00:00, 776.80it/s]
+SHOT desc with radius 30.0: 100%|██████████| 206/206 [00:00<00:00, 1669.19it/s]
+2026-11-04 03:31:01.254 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:267 - Sample 2:   Descriptor shape: (206, 352)
+2026-11-04 03:31:01.254 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:272 - Sample 2: Finding correspondences...
+2026-11-04 03:31:01.316 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:276 - Sample 2:   Found 130 correspondences
+2026-11-04 03:31:01.316 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:289 - Sample 2: Running TEASER++...
+Starting scale solver (only selecting inliers if scale estimation has been disabled).
+Scale estimation complete.
+Max core number: 86
+Num vertices: 131
+Max Clique of scale estimation inliers: 
+Using chain graph for GNC rotation.
+Starting rotation solver.
+GNC rotation estimation noise bound:2
+GNC rotation estimation noise bound squared:4
+GNC-TLS terminated because maximum residual at initialization is very small.
+Rotation estimation complete.
+Starting translation solver.
+Translation estimation complete.
+2026-11-04 03:31:01.324 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:318 - Sample 2: TEASER++ query recall: 0.9951
+2026-11-04 03:31:01.324 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:321 - Sample 2: TEASER++ reference recall: 0.2131
+2026-11-04 03:31:01.324 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:324 - Sample 2: TEASER++ F1: 0.3510
+2026-11-04 03:31:01.324 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:327 - Sample 2: Running GICP refinement...
+2026-11-04 03:31:01.331 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:358 - Sample 2: Final query recall (after GICP): 0.9951
+2026-11-04 03:31:01.331 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:361 - Sample 2: Final reference recall (after GICP): 0.2131
+2026-11-04 03:31:01.331 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:364 - Sample 2: Final F1 (after GICP): 0.3510
+2026-11-04 03:31:01.331 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:367 - Sample 2: ========== Comparison ==========
+2026-11-04 03:31:01.331 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:368 - Sample 2: TEASER++ - Query: 0.9951, Ref: 0.2131, F1: 0.3510
+2026-11-04 03:31:01.331 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:371 - Sample 2: TEASER++ + GICP - Query: 0.9951, Ref: 0.2131, F1: 0.3510
+2026-11-04 03:31:01.331 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:379 - Sample 2: Best method: TEASER++ + GICP (F1 diff: 0.0000)
+2026-11-04 03:31:01.331 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:382 - Sample 2: ================================
+2026-11-04 03:31:02.289 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.716, OVR_mask: 1.000
+2026-11-04 03:31:02.633 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.472, OVR_box: 0.519
+2026-11-04 03:31:02.635 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:215 - Sample 3: Query points: 206
+2026-11-04 03:31:02.636 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:218 - Sample 3: Estimating normals for reference...
+2026-11-04 03:31:02.648 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:227 - Sample 3: Estimating normals for query...
+2026-11-04 03:31:02.649 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:237 - Sample 3: Computing shot_bi_scale descriptors for reference...
+
+Local RFs with radius 10:   0%|          | 0/962 [00:00<?, ?it/s]
+Local RFs with radius 10:  37%|███▋      | 352/962 [00:00<00:00, 3497.73it/s]
+Local RFs with radius 10:  73%|███████▎  | 702/962 [00:00<00:00, 3436.94it/s]
+Local RFs with radius 10: 100%|██████████| 962/962 [00:00<00:00, 4323.01it/s]
+
+SHOT desc with radius 30.0:   0%|          | 0/962 [00:00<?, ?it/s]
+SHOT desc with radius 30.0:   5%|▌         | 49/962 [00:00<00:02, 335.76it/s]
+SHOT desc with radius 30.0:  27%|██▋       | 257/962 [00:00<00:00, 1162.20it/s]
+SHOT desc with radius 30.0:  40%|████      | 386/962 [00:00<00:00, 1183.85it/s]
+SHOT desc with radius 30.0:  63%|██████▎   | 609/962 [00:00<00:00, 1458.67it/s]
+SHOT desc with radius 30.0: 100%|██████████| 962/962 [00:00<00:00, 1893.35it/s]
+2026-11-04 03:31:06.467 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:251 - Sample 3:   Descriptor shape: (962, 352)
+2026-11-04 03:31:06.467 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:253 - Sample 3: Computing shot_bi_scale descriptors for query...
+
+Local RFs with radius 10:   0%|          | 0/206 [00:00<?, ?it/s]
+Local RFs with radius 10: 100%|██████████| 206/206 [00:00<00:00, 2589.52it/s]
+
+SHOT desc with radius 30.0:   0%|          | 0/206 [00:00<?, ?it/s]
+SHOT desc with radius 30.0:  59%|█████▊    | 121/206 [00:00<00:00, 1112.04it/s]
+SHOT desc with radius 30.0: 100%|██████████| 206/206 [00:00<00:00, 1561.30it/s]
+2026-11-04 03:31:09.562 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:267 - Sample 3:   Descriptor shape: (206, 352)
+2026-11-04 03:31:09.563 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:272 - Sample 3: Finding correspondences...
+2026-11-04 03:31:09.627 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:276 - Sample 3:   Found 129 correspondences
+2026-11-04 03:31:09.627 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:289 - Sample 3: Running TEASER++...
+Starting scale solver (only selecting inliers if scale estimation has been disabled).
+Scale estimation complete.
+Max core number: 67
+Num vertices: 130
+Max Clique of scale estimation inliers: 
+Using chain graph for GNC rotation.
+Starting rotation solver.
+GNC rotation estimation noise bound:2
+GNC rotation estimation noise bound squared:4
+GNC-TLS terminated because maximum residual at initialization is very small.
+Rotation estimation complete.
+Starting translation solver.
+Translation estimation complete.
+2026-11-04 03:31:09.633 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:318 - Sample 3: TEASER++ query recall: 0.9951
+2026-11-04 03:31:09.633 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:321 - Sample 3: TEASER++ reference recall: 0.2131
+2026-11-04 03:31:09.633 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:324 - Sample 3: TEASER++ F1: 0.3510
+2026-11-04 03:31:09.633 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:327 - Sample 3: Running GICP refinement...
+2026-11-04 03:31:09.639 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:358 - Sample 3: Final query recall (after GICP): 0.9951
+2026-11-04 03:31:09.639 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:361 - Sample 3: Final reference recall (after GICP): 0.2131
+2026-11-04 03:31:09.639 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:364 - Sample 3: Final F1 (after GICP): 0.3510
+2026-11-04 03:31:09.639 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:367 - Sample 3: ========== Comparison ==========
+2026-11-04 03:31:09.639 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:368 - Sample 3: TEASER++ - Query: 0.9951, Ref: 0.2131, F1: 0.3510
+2026-11-04 03:31:09.639 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:371 - Sample 3: TEASER++ + GICP - Query: 0.9951, Ref: 0.2131, F1: 0.3510
+2026-11-04 03:31:09.639 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:379 - Sample 3: Best method: TEASER++ + GICP (F1 diff: 0.0000)
+2026-11-04 03:31:09.639 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:382 - Sample 3: ================================
+2026-11-04 03:31:10.585 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.721, OVR_mask: 1.000
+2026-11-04 03:31:10.919 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.475, OVR_box: 0.516
+2026-11-04 03:31:10.922 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:215 - Sample 4: Query points: 206
+2026-11-04 03:31:10.922 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:218 - Sample 4: Estimating normals for reference...
+2026-11-04 03:31:10.936 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:227 - Sample 4: Estimating normals for query...
+2026-11-04 03:31:10.938 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:237 - Sample 4: Computing shot_bi_scale descriptors for reference...
+
+Local RFs with radius 10:   0%|          | 0/962 [00:00<?, ?it/s]
+Local RFs with radius 10:  12%|█▏        | 118/962 [00:00<00:00, 1154.10it/s]
+Local RFs with radius 10:  48%|████▊     | 464/962 [00:00<00:00, 2498.04it/s]
+Local RFs with radius 10: 100%|██████████| 962/962 [00:00<00:00, 3859.35it/s]
+
+SHOT desc with radius 30.0:   0%|          | 0/962 [00:00<?, ?it/s]
+SHOT desc with radius 30.0:   3%|▎         | 33/962 [00:00<00:03, 240.03it/s]
+SHOT desc with radius 30.0:  15%|█▌        | 145/962 [00:00<00:01, 581.77it/s]
+SHOT desc with radius 30.0:  40%|████      | 385/962 [00:00<00:00, 1209.73it/s]
+SHOT desc with radius 30.0:  65%|██████▍   | 625/962 [00:00<00:00, 1301.17it/s]
+SHOT desc with radius 30.0: 100%|██████████| 962/962 [00:00<00:00, 1591.82it/s]
+2026-11-04 03:31:14.792 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:251 - Sample 4:   Descriptor shape: (962, 352)
+2026-11-04 03:31:14.792 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:253 - Sample 4: Computing shot_bi_scale descriptors for query...
+
+Local RFs with radius 10:   0%|          | 0/206 [00:00<?, ?it/s]
+Local RFs with radius 10: 100%|██████████| 206/206 [00:00<00:00, 2953.07it/s]
+
+SHOT desc with radius 30.0:   0%|          | 0/206 [00:00<?, ?it/s]
+SHOT desc with radius 30.0:  59%|█████▊    | 121/206 [00:00<00:00, 1153.35it/s]
+SHOT desc with radius 30.0: 100%|██████████| 206/206 [00:00<00:00, 1520.10it/s]
+2026-11-04 03:31:17.878 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:267 - Sample 4:   Descriptor shape: (206, 352)
+2026-11-04 03:31:17.878 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:272 - Sample 4: Finding correspondences...
+2026-11-04 03:31:17.934 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:276 - Sample 4:   Found 130 correspondences
+2026-11-04 03:31:17.935 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:289 - Sample 4: Running TEASER++...
+Starting scale solver (only selecting inliers if scale estimation has been disabled).
+Scale estimation complete.
+Max core number: 63
+Num vertices: 131
+Max Clique of scale estimation inliers: 
+Using chain graph for GNC rotation.
+Starting rotation solver.
+GNC rotation estimation noise bound:2
+GNC rotation estimation noise bound squared:4
+GNC-TLS terminated because maximum residual at initialization is very small.
+Rotation estimation complete.
+Starting translation solver.
+Translation estimation complete.
+2026-11-04 03:31:17.941 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:318 - Sample 4: TEASER++ query recall: 0.9951
+2026-11-04 03:31:17.941 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:321 - Sample 4: TEASER++ reference recall: 0.2131
+2026-11-04 03:31:17.941 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:324 - Sample 4: TEASER++ F1: 0.3510
+2026-11-04 03:31:17.941 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:327 - Sample 4: Running GICP refinement...
+2026-11-04 03:31:17.949 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:358 - Sample 4: Final query recall (after GICP): 0.9951
+2026-11-04 03:31:17.950 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:361 - Sample 4: Final reference recall (after GICP): 0.2131
+2026-11-04 03:31:17.950 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:364 - Sample 4: Final F1 (after GICP): 0.3510
+2026-11-04 03:31:17.950 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:367 - Sample 4: ========== Comparison ==========
+2026-11-04 03:31:17.950 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:368 - Sample 4: TEASER++ - Query: 0.9951, Ref: 0.2131, F1: 0.3510
+2026-11-04 03:31:17.950 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:371 - Sample 4: TEASER++ + GICP - Query: 0.9951, Ref: 0.2131, F1: 0.3510
+2026-11-04 03:31:17.950 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:379 - Sample 4: Best method: TEASER++ + GICP (F1 diff: 0.0000)
+2026-11-04 03:31:17.950 | INFO     | cryozeta.model.modules.fitting:FitModelPointsTeaser:382 - Sample 4: ================================
+2026-11-04 03:31:18.914 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:468 - All Atoms CC_mask: 0.722, OVR_mask: 1.000
+2026-11-04 03:31:19.258 | INFO     | cryozeta.em.strucblur:calculate_ccc_ovr:473 - All Atoms CC_box: 0.475, OVR_box: 0.517
+2026-11-04 03:31:20.000 | INFO     | cryozeta.model.cryozeta:_main_inference_loop:804 - Model fitting done in 56.7s. Running confidence head...
+2026-11-04 03:31:20.994 | INFO     | cryozeta.model.cryozeta:_main_inference_loop:832 - Confidence head done in 1.0s. Total model forward: 429.8s (empairformer=361.6s, diffusion=10.5s, fitting=56.7s, confidence=1.0s)
+2026-11-04 03:31:24.573 | INFO     | cryozeta.runner.inference:main:270 - [Rank 0] 9ZLH succeeded.
+Results saved to /tmp/mica_pilot/runs/cryozeta/9ZLH/9ZLH/CryoZeta

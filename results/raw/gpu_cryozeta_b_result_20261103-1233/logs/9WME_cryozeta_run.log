@@ -1,0 +1,166 @@
+contour level of 9WME: 0.26 (https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-66088/header/emd-66088.xml)
+MSA of 453 residues from the ColabFold server: 3212 UniRef and 2086 environmental hits (105 s)
+MSA of 657 residues from the ColabFold server: 2824 UniRef and 1623 environmental hits (102 s)
+
+=== stage detection: cryozeta-detection json-run /tmp/mica_pilot/input/9WME/cryozeta_input.json /tmp/mica_pilot/runs/cryozeta/9WME --device cuda --checkpoint-path /tmp/mica_pilot/cryozeta_assets/cryozeta-detection-v0.0.1.safetensors
+2026-11-03 07:44:15.382 | INFO     | cryozeta.runner.inference_detection:__init__:359 - Using device: cuda
+2026-11-03 07:44:15.383 | INFO     | cryozeta.runner.inference_detection:__init__:360 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-03 07:44:15.383 | INFO     | cryozeta.runner.inference_detection:__init__:367 - Loading models...
+2026-11-03 07:44:15.817 | INFO     | cryozeta.runner.inference_detection:__init__:375 - Models loaded successfully
+2026-11-03 07:44:15.817 | INFO     | cryozeta.runner.inference_detection:json_run:817 - [batch 1/1] Processing /tmp/mica_pilot/input/9WME/emd_66088.mrc
+2026-11-03 07:44:15.817 | INFO     | cryozeta.runner.inference_detection:run_inference:441 - Running inference for 9WME
+2026-11-03 07:44:15.817 | INFO     | cryozeta.runner.inference_detection:run_inference:446 - Using resolution for 9WME: 3.2
+2026-11-03 07:44:15.818 | INFO     | cryozeta.runner.inference_detection:preprocess_map:379 - Preprocessing map from /tmp/mica_pilot/input/9WME/emd_66088.mrc
+2026-11-03 07:44:15.860 | INFO     | cryozeta.runner.inference_detection:preprocess_map:391 - Using contour level for 9WME: 0.26
+2026-11-03 07:44:16.895 | INFO     | cryozeta.runner.inference_detection:preprocess_map:410 - Finished preprocessing, shape: torch.Size([1, 1, 154, 76, 64])
+2026-11-03 07:44:16.898 | INFO     | cryozeta.runner.inference_detection:run_inference:460 - Start inference for 9WME
+2026-11-03 07:44:16.905 | INFO     | cryozeta.em.utils:sliding_window_inference:282 - Input tensor shape: 154/76/64
+2026-11-03 07:44:17.041 | INFO     | cryozeta.em.utils:sliding_window_inference:334 - Number of non-empty ROIs / All possible ROIs: 8 / 8
+
+Processing inference:   0%|          | 0/2 [00:00<?, ?it/s]
+2026-11-03 07:44:25.632 | INFO     | cryozeta.runner.inference_detection:post_process:144 - Post-processing 9WME...
+MeanShift++ Converged at 14 steps.
+2026-11-03 07:44:27.885 | INFO     | cryozeta.runner.inference_detection:post_process:207 - [9WME] Number of CA indices: 455
+MeanShift++ Converged at 21 steps.
+2026-11-03 07:44:27.914 | INFO     | cryozeta.runner.inference_detection:post_process:261 - [9WME] Number of protein CA clusters: 3
+2026-11-03 07:44:27.914 | WARNING  | cryozeta.runner.inference_detection:post_process:272 - No R/DNA C1P indices found for 9WME
+2026-11-03 07:44:27.915 | INFO     | cryozeta.runner.inference_detection:post_process:274 - [9WME] Number of clusters: 3
+2026-11-03 07:44:27.920 | INFO     | cryozeta.runner.inference_detection:post_process:284 - [9WME] Main atom prob shape: torch.Size([3, 154, 76, 64])
+2026-11-03 07:44:27.921 | INFO     | cryozeta.runner.inference_detection:post_process:288 - [9WME] voxel_size: [1. 1. 1.], global_origin: [67. 59. 14.]
+2026-11-03 07:44:27.922 | INFO     | cryozeta.runner.inference_detection:post_process:292 - [9WME] main_atom_coords shape: (455, 3)
+2026-11-03 07:44:28.050 | INFO     | cryozeta.runner.inference_detection:post_process:350 - [9WME] Saved output to /tmp/mica_pilot/runs/cryozeta/9WME/9WME/CryoZeta-Detection/9WME.pt
+2026-11-03 07:44:28.058 | INFO     | cryozeta.runner.inference_detection:run_inference:586 - Completed inference for 9WME
+Batch inference completed. Results saved to /tmp/mica_pilot/runs/cryozeta/9WME
+
+=== stage cryozeta_try1: cryozeta-inference --seeds 101 --load_checkpoint_path /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors --em_file_dir /tmp/mica_pilot/runs/cryozeta/9WME --dump_dir /tmp/mica_pilot/runs/cryozeta/9WME --input_json_path /tmp/mica_pilot/input/9WME/cryozeta_input.json --use_deepspeed_evo_attention false --use_cuequivariance_attention false --use_cuequivariance_multiplicative_update false --use_cuequivariance_attention_pair_bias false --use_opm_tilelang false --model.N_cycle 10 --sample_diff
+2026-11-03 07:44:39.527 | INFO     | cryozeta.runner.inference:init_env:53 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-03 07:44:39.527 | INFO     | cryozeta.runner.inference:print:161 - Distributed environment: world size: 1, global rank: 0, local rank: 0
+2026-11-03 07:44:39.527 | INFO     | cryozeta.runner.inference:init_env:72 - LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+2026-11-03 07:44:39.527 | INFO     | cryozeta.runner.inference:init_env:96 - Finished init ENV.
+inference scheduler 16.0
+Diffusion Module has 16.0
+2026-11-03 07:45:01.828 | INFO     | cryozeta.runner.inference:print:161 - Loading from /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors
+2026-11-03 07:45:04.015 | INFO     | cryozeta.runner.inference:print:161 - Finish loading checkpoint.
+2026-11-03 07:45:04.040 | INFO     | cryozeta.runner.inference:main:200 - Loading data from
+/tmp/mica_pilot/input/9WME/cryozeta_input.json
+2026-11-03 07:45:04.042 | INFO     | cryozeta.data.infer_data_pipeline:__getitem__:269 - Featurizing 9WME...
+2026-11-03 07:45:16.616 | INFO     | cryozeta.data.data_transforms_em:parse_mrc:132 - has_interpolate_confidence: True
+2026-11-03 07:45:21.142 | INFO     | cryozeta.runner.inference:main:243 - [Rank 0 (1/1)] 9WME: N_asym 2, N_token 1110, N_atom 8770, N_msa 5149
+
+EMPairformer cycles:   0%|          | 0/10 [00:00<?, ?it/s]
+                                                           
+2026-11-03 07:45:34.051 | INFO     | cryozeta.runner.inference:main:276 - [Rank 0]9WME CUDA out of memory. Tried to allocate 2.35 GiB. GPU 0 has a total capacity of 14.56 GiB of which 2.01 GiB is free. Including non-PyTorch memory, this process has 12.55 GiB memory in use. Of the allocated memory 9.87 GiB is allocated by PyTorch, and 2.54 GiB is reserved by PyTorch but unallocated. If reserved but
+Traceback (most recent call last):
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/runner/inference.py", line 261, in main
+    prediction = runner.predict(data)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/runner/inference.py", line 153, in predict
+    prediction, _, _ = self.model(
+                       ^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/model/cryozeta.py", line 890, in forward
+    pred_dict, log_dict, time_tracker = self.main_inference_loop(
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/model/cryozeta.py", line 397, in main_inference_loop
+    pred_dict, log_dict, time_tracker = self._main_inference_loop(
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/model/cryozeta.py", line 489, in _main_inference_loop
+    s_inputs, s, z, pz, _p = self.get_empairformer_output(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/model/cryozeta.py", line 251, in get_empairformer_output
+    z = self.msa_module(
+        ^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/model/modules/empairformer.py", line 793, in forward
+    msa_sample, z = checkpoint_blocks(
+                    ^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/utils/checkpointing.py", line 85, in checkpoint_blocks
+    return exec(blocks, args)
+           ^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/utils/checkpointing.py", line 72, in exec
+    a = wrap(block(*a))
+             ^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/model/modules/empairformer.py", line 564, in forward
+    _, z = self.pair_stack(
+           ^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/model/modules/empairformer.py", line 147, in forward
+    z += self.tri_att_start(
+         ^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/model/triangular_attention.py", line 135, in forward
+    x = self._chunk(
+        ^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/model/triangular_attention.py", line 74, in _chunk
+    return chunk_layer(
+           ^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/utils/chunk_utils.py", line 291, in chunk_layer
+    output_chunk = layer(**chunks)
+                   ^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/model/primitives.py", line 658, in forward
+    o = _attention(q, k, v, biases)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/model/primitives.py", line 365, in _attention
+    a = softmax_no_cast(a, -1)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/cryozeta/openfold_local/model/primitives.py", line 290, in softmax_no_cast
+    s = torch.nn.functional.softmax(t, dim=dim)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mica_pilot/src_cryozeta/.pixi/envs/cu11/lib/python3.12/site-packages/torch/nn/functional.py", line 1888, in softmax
+    ret = input.softmax(dim)
+          ^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.35 GiB. GPU 0 has a total capacity of 14.56 GiB of which 2.01 GiB is free. Including non-PyTorch memory, this process has 12.55 GiB memory in use. Of the allocated memory 9.87 GiB is allocated by PyTorch, and 2.54 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CON
+
+cryozeta: out of GPU memory; the next attempt uses attention chunk size 64
+
+=== stage cryozeta_try2: cryozeta-inference --seeds 101 --load_checkpoint_path /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors --em_file_dir /tmp/mica_pilot/runs/cryozeta/9WME --dump_dir /tmp/mica_pilot/runs/cryozeta/9WME --input_json_path /tmp/mica_pilot/input/9WME/cryozeta_input.json --use_deepspeed_evo_attention false --use_cuequivariance_attention false --use_cuequivariance_multiplicative_update false --use_cuequivariance_attention_pair_bias false --use_opm_tilelang false --model.N_cycle 10 --sample_diff
+2026-11-03 07:45:48.346 | INFO     | cryozeta.runner.inference:init_env:53 - PyTorch version: 2.4.1, CUDA compiled version: 11.8, cuDNN version: 91001
+2026-11-03 07:45:48.346 | INFO     | cryozeta.runner.inference:print:161 - Distributed environment: world size: 1, global rank: 0, local rank: 0
+2026-11-03 07:45:48.346 | INFO     | cryozeta.runner.inference:init_env:72 - LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+2026-11-03 07:45:48.346 | INFO     | cryozeta.runner.inference:init_env:96 - Finished init ENV.
+inference scheduler 16.0
+Diffusion Module has 16.0
+2026-11-03 07:46:12.692 | INFO     | cryozeta.runner.inference:print:161 - Loading from /tmp/mica_pilot/cryozeta_assets/cryozeta-v0.0.1.safetensors
+2026-11-03 07:46:14.879 | INFO     | cryozeta.runner.inference:print:161 - Finish loading checkpoint.
+2026-11-03 07:46:14.910 | INFO     | cryozeta.runner.inference:main:200 - Loading data from
+/tmp/mica_pilot/input/9WME/cryozeta_input.json
+2026-11-03 07:46:14.914 | INFO     | cryozeta.data.infer_data_pipeline:__getitem__:269 - Featurizing 9WME...
+2026-11-03 07:46:27.412 | INFO     | cryozeta.data.data_transforms_em:parse_mrc:132 - has_interpolate_confidence: True
+2026-11-03 07:46:31.871 | INFO     | cryozeta.runner.inference:main:243 - [Rank 0 (1/1)] 9WME: N_asym 2, N_token 1110, N_atom 8770, N_msa 5149
+
+EMPairformer cycles:   0%|          | 0/10 [00:00<?, ?it/s]
