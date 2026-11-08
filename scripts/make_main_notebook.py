@@ -17,8 +17,13 @@ What it adds to the pilot notebooks (make_methods_notebook.py, make_modelangelo_
 
     python make_main_notebook.py --batch batch1                          # all entries, all four methods
     python make_main_notebook.py --batch batch2 --done <result folder>/method_status.csv ...   # what is left after earlier sessions
+    python make_main_notebook.py --batch cryoatom_a --methods cryoatom1 --hours 11             # CryoAtom v1.0.0 alone (see below)
 
 Run it on Kaggle with the GPU "T4 x2" and the private AlphaFold dataset attached, as "Save & Run All (Commit)".
+
+CryoAtom v1.0.0 (added on 2026-10-31 at Prof. Cheng's request) has a notebook of its own, with the same scheduler, scoring and zips: it needs no AlphaFold dataset, a run may take 10 hours
+instead of 3 (its pilot did not finish in 2), the time of a run grows with the size of the entry (the budget check uses the residues of the entry and the seconds per residue of the runs that
+finished in the session) and the ESM-2 weights are fetched once, before the two GPUs start. The four other methods are not changed by any of this.
 """
 from __future__ import annotations
 
@@ -37,7 +42,10 @@ import make_pilot_notebook as P  # noqa: E402
 import nbkit  # noqa: E402
 
 RUN_LIMIT_S = 3 * 3600                          # per run, the same for every method (LOG.md, 2026-10-22)
+CRYOATOM_LIMIT_S = 10 * 3600                    # per run of CryoAtom v1.0.0 (LOG.md, 2026-10-31): its pilot did not finish in 2 hours
+CRYOATOM_S_PER_RESIDUE = 51                     # the pilot on 26DK: about 2.7 hours for 191 deposited residues on a T4 (LOG.md, 2026-10-22); used until a run of the session has finished
 ORDER = ["modelangelo", "e3", "emprot", "emodelx"]
+ORDER_ALL = ORDER + ["cryoatom1"]
 EXPLOSIVE = ("e3", "emodelx")
 
 MODELANGELO_SPEC = {
@@ -55,10 +63,23 @@ def make_specs():
 
 
 SPECS = make_specs()
+
+
+def cryoatom_spec():
+    """CryoAtom v1.0.0, the code of the paper: the spec of the methods pilot with this notebook's run limit, its time model (seconds per residue) and the ESM-2 weights that the program
+    fetches by torch.hub at its first run (here they are fetched once, before the two GPUs start)."""
+    s = copy.deepcopy(MM.SPECS["cryoatom1"])
+    s.update(timeout=CRYOATOM_LIMIT_S, s_per_residue=CRYOATOM_S_PER_RESIDUE, oom_is_result=True,
+             esm={"call": "esm2_t33_650M_UR50D", "file": "esm2_t33_650M_UR50D.pt", "min_bytes": 500000000})     # the file is about 2.5 GB; the call itself loads it, so a short file fails there
+    return s
+
+
+SPECS_ALL = dict(SPECS, cryoatom1=cryoatom_spec())
 ENV_FILES = [SPECS[k]["req"] for k in ORDER]
-FILES = tuple([("scripts/nbtools.py", "scripts/nbtools.py"), ("scripts/mica_inputs.py", "scripts/mica_inputs.py"), ("scripts/evaluate_models.py", "scripts/evaluate_models.py"),
-               ("data/af3/af3_jobs.csv", "data/af3/af3_jobs.csv"), ("data/af3/af3_files_sha256.txt", "data/af3/af3_files_sha256.txt"),
-               ("data/entries_2026.csv", "data/entries_2026.csv")] + [(f, f) for f in ENV_FILES])
+BASE_FILES = (("scripts/nbtools.py", "scripts/nbtools.py"), ("scripts/mica_inputs.py", "scripts/mica_inputs.py"), ("scripts/evaluate_models.py", "scripts/evaluate_models.py"),
+              ("data/af3/af3_jobs.csv", "data/af3/af3_jobs.csv"), ("data/af3/af3_files_sha256.txt", "data/af3/af3_files_sha256.txt"),
+              ("data/entries_2026.csv", "data/entries_2026.csv"))
+FILES = BASE_FILES + tuple((f, f) for f in ENV_FILES)
 NET_HOSTS = (("PyPI", "https://pypi.org/simple/uv/", True),
              ("GitHub", "https://github.com/3dem/model-angelo", True),
              ("GitHub files", "https://github.com/A4Bio/E3-CryoFold/releases/download/checkpoint/models.zip", False),
@@ -68,6 +89,12 @@ NET_HOSTS = (("PyPI", "https://pypi.org/simple/uv/", True),
              ("Google Drive", "https://drive.google.com/uc?id=13BKzEBfL0uubYgcJJTGSZ-PkO9hXAB9X", False),
              ("EBI FTP", "https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-80558/header/emd-80558.xml", True),
              ("RCSB", "https://files.rcsb.org/header/26DK.cif", True))
+NET_HOSTS_CRYOATOM = (("PyPI", "https://pypi.org/simple/uv/", True),
+                      ("GitHub", "https://github.com/YangLab-SDU/CryoAtom", True),
+                      ("SDU (CryoAtom weights)", "https://yanglab.qd.sdu.edu.cn/CryoAtom/download/checkpoints_v1.0.zip", False),
+                      ("Meta ESM weights", "https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t33_650M_UR50D.pt", False),
+                      ("EBI FTP", "https://ftp.ebi.ac.uk/pub/databases/emdb/structures/EMD-80558/header/emd-80558.xml", True),
+                      ("RCSB", "https://files.rcsb.org/header/26DK.cif", True))
 
 
 # ---------------------------------------------------------------------------------------------------------- the list of tasks
@@ -223,7 +250,7 @@ SETUPS, PLANS, READY = {}, {}, {}
 
 
 # ---- the time budget, the limits and the rules of the schedule
-RUN_LIMIT = @RUN_LIMIT@                                           # seconds per run, the same for every method (LOG.md)
+RUN_LIMIT = @RUN_LIMIT@                                           # seconds per run, the same for every method unless the spec of a method has its own `timeout` (LOG.md)
 HOURS_SETTING = float(globals().get("HOURS", 9.0))
 SESSION_S = min(HOURS_SETTING, 11.0) * 3600
 RESERVE_S = float(os.environ.get("MICA_RESERVE_S", "600"))        # the end of the budget is kept for the summary and the zip
@@ -241,6 +268,8 @@ PENDING = [tuple(t) for t in TASKS if t[1] in RUN_METHODS]
 BUSY = {}                                                         # gpu -> what runs on it now
 INTERVALS = []                                                    # (gpu, start, end) of the programs that finished
 DURATIONS = {}                                                    # method -> seconds of its successful runs
+SIZES = @SIZES@                                                   # entry -> residues of the deposited model (data/entries_2026.csv)
+RATES = {}                                                        # method -> seconds per residue of its successful runs (only for a method whose spec has `s_per_residue`)
 CRASH_STREAK = {}
 RETRY_ALONE = []
 LANES = []
@@ -251,8 +280,14 @@ def utc_iso(t):
     return datetime.datetime.fromtimestamp(t, datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def need_s(key):
-    """Seconds that must be left in the budget to start a run of this method."""
+def need_s(key, entry=None):
+    """Seconds that must be left in the budget to start a run of this method (on this entry): 1.25 times its usual time, at least MIN_START_S. The usual time of a method is the mean of its
+    successful runs in this session. For a method whose time grows with the size of the entry (`s_per_residue` in its spec) it is the residues of the entry times the largest seconds per
+    residue seen in this session, or the rate of the pilot until a run has finished."""
+    rate = SPECS[key].get("s_per_residue")
+    if rate and entry in SIZES:
+        seen = RATES.get(key) or []
+        return max(MIN_START_S, 1.25 * (max(seen) if seen else rate) * SIZES[entry])
     d = DURATIONS.get(key) or []
     return max(MIN_START_S, 1.25 * sum(d) / len(d)) if d else MIN_START_S
 
@@ -289,8 +324,8 @@ def take_task(gpu):
             entry, key = t
             if STATE["methods"][key]["status"] != "ready":
                 continue
-            if HARD_STOP - now < need_s(key):
-                continue                                                  # too late for this method; a shorter one may still fit
+            if HARD_STOP - now < need_s(key, entry):
+                continue                                                  # too late for this method (or this entry); a shorter one may still fit
             if key in EXPLOSIVE and any(b["key"] in EXPLOSIVE for g, b in BUSY.items() if g != gpu):
                 blocked = True
                 continue
@@ -327,12 +362,13 @@ def run_task(gpu, entry, key, attempt=1):
         log("%s: NOT RUN, the inputs could not be prepared: %s" % (tag, ex))
         return "inputs"
     verdict = "ok"
+    run_limit = spec.get("timeout") or RUN_LIMIT                          # the limit of one run of this method (the same for every method unless its spec says otherwise)
     for r in runs:
-        limit = min(RUN_LIMIT, HARD_STOP - time.time())
+        limit = min(run_limit, HARD_STOP - time.time())
         if limit < min(60, MIN_START_S):
             e.update(status="not run", failed_step="", note="no time left in the session")
             return "time"
-        cut = limit < RUN_LIMIT - 1
+        cut = limit < run_limit - 1
         env = dict(r["env"], CUDA_VISIBLE_DEVICES=str(gpu))
         shutil.rmtree(r["out_dir"], ignore_errors=True)
         os.makedirs(r["out_dir"], exist_ok=True)
@@ -364,12 +400,15 @@ def run_task(gpu, entry, key, attempt=1):
             return "killed_corun"
         keep_results(key, entry, r["variant"], r["out_dir"], produced)
         if rc != 0 or timed_out or not main_ok:
-            crashed = (rc not in (0, -9) or (rc == 0 and not main_ok)) and not timed_out                         # an out-of-memory kill (-9) is a result, a crash is a suspect
+            gpu_oom = bool(spec.get("oom_is_result")) and any("out of memory" in line.lower() for line in last)    # CryoAtom: 15 GB of GPU memory may be too little for an entry; that is a result
+            crashed = (rc not in (0, -9) or (rc == 0 and not main_ok)) and not timed_out and not gpu_oom          # an out-of-memory kill (-9) is a result, a crash is a suspect
             verdict = "quick_crash" if (crashed and info["ended"] - info["started"] < QUICK_CRASH_S) else "failed"
             if timed_out:
                 note = "timeout: the run limit of %d s" % limit
             elif rc == -9:
                 note = "killed by the system (exit code -9, probably out of memory%s)" % ("; also when it ran alone" if attempt > 1 else "")
+            elif gpu_oom:
+                note = "out of GPU memory (exit code %s; the error message of the program)" % rc
             else:
                 note = "exit code %s" % rc
             if not main_ok:
@@ -390,7 +429,10 @@ def run_task(gpu, entry, key, attempt=1):
     e["seconds"] = round(time.time() - t_task)
     if verdict == "ok":
         e["status"] = "ok"
-        DURATIONS.setdefault(key, []).append(sum(v["seconds"] for v in e["runs"].values()))
+        spent = sum(v["seconds"] for v in e["runs"].values())
+        DURATIONS.setdefault(key, []).append(spent)
+        if spec.get("s_per_residue") and entry in SIZES:
+            RATES.setdefault(key, []).append(spent / SIZES[entry])
     return verdict
 
 
@@ -583,7 +625,7 @@ def run_schedule():
     for w in workers:
         w.join()
     for entry, key in list(RETRY_ALONE):                      # killed while the other GPU ran: once more, alone
-        if STATE["methods"][key]["status"] == "ready" and HARD_STOP - time.time() >= need_s(key):
+        if STATE["methods"][key]["status"] == "ready" and HARD_STOP - time.time() >= need_s(key, entry):
             log("\nrun again alone: %s on %s" % (SPECS[key]["label"], entry))
             with SCHED:
                 BUSY[LANES[0]] = {"entry": entry, "key": key, "start": time.time(), "program_start": None}
@@ -665,7 +707,7 @@ def summary_table(rows):
 
 
 for _k, _s in SPECS.items():
-    _s["main_kind"] = {"modelangelo": "modelangelo", "e3": "e3_prealign", "emprot": "emprot", "emodelx": "emodelx_af_all_atom"}[_k]
+    _s["main_kind"] = {"modelangelo": "modelangelo", "e3": "e3_prealign", "emprot": "emprot", "emodelx": "emodelx_af_all_atom", "cryoatom1": "cryoatom1"}[_k]
 if STATE["ok"]:
     rows = status_rows()
     write_csv("metrics_usalign.csv", METRIC_COLUMNS, ROWS)
@@ -683,6 +725,94 @@ else:
     log("skipped: an earlier step stopped")
 '''
 
+# ---------------------------------------------------------------------------------------------------------- the notebook of CryoAtom v1.0.0 (alone)
+INTRO_CRYOATOM = """\
+# MICA benchmark: GPU session `@BATCH@` (CryoAtom v1.0.0)
+
+This notebook builds atomic models from the cryo-EM maps of the benchmark with **CryoAtom v1.0.0** (the code of the Nature Structural & Molecular Biology paper, commit `e2a31f2b`), one entry
+after the other, and scores every model with US-align, the same scoring as for the other methods. CryoAtom gets the map and the sequence only, like ModelAngelo and E3-CryoFold, so
+**no AlphaFold dataset is needed**. The method was added to the benchmark after Prof. Cheng's request of 31 October 2026; the other methods are not run here.
+
+@LANES_TEXT@
+* The list has @N_TASKS@ entries, in the order of the seeded selection (the two resolution classes interleaved). The time of a run grows with the size of the entry (the pilot on 26DK needed about
+  2.7 hours on a T4). Before an entry starts, the notebook checks that its estimated time (1.25 x the residues of the entry x the largest seconds per residue seen in this session, or the
+  rate of the pilot until the first run has finished) fits in what is left of the budget (`HOURS` in the first cell). When the budget is nearly used up, no new run starts; what is not done is
+  written to `pending.csv` and is run in the next session.
+* A run that crashes is a result and stays in the tables (with the reason); a run that the end of the session cuts is **not** a result: it is run again.
+* Every run has a time limit of @LIMIT_TEXT@ hours (the four other methods of the benchmark have 3 hours; the pilot of CryoAtom did not finish in 2).
+
+**What you do (Kaggle, background mode)**: accelerator **GPU T4 x2** (not P100), Internet **On**, no input dataset and no secret, `HOURS` in the first cell (the hours of GPU time you allow), then
+*Save Version -> Save & Run All (Commit)*. It runs on Kaggle's servers; you can close the tab and your Wi-Fi does not matter. When the version shows *Succeeded*, open it and download the zip
+`@NOTEBOOK@_result_....zip` from its Output. Send it to me. **Do not stop or cancel the run**: a cancelled run keeps nothing.
+"""
+SETTINGS_CRYOATOM = SETTINGS.replace("If you have less than 9 hours left this week,", "If you have less than 12 hours left this week,")
+assert SETTINGS_CRYOATOM != SETTINGS
+
+CRYOATOM_MD = """\
+## Step 5. CryoAtom v1.0.0
+
+`python -m CryoAtom build -s <fasta> -v <map> -o <folder>` from the source folder at the pinned commit: the README's example of v1.0.0, the code of the paper (the same program as the `cryoatom` command
+that `setup.py` installs). The weights are the zip of the authors' server (certificate check off, as in their own `wget --no-check-certificate`). The ESM-2 language model (about 2.5 GB, from Meta) is
+fetched once here: the program would otherwise fetch it at its first run, on both GPUs at the same time. **One line of the source is changed** (file `CryoAtom/utils/aa_probs_to_hmm.py`): the
+program writes the profile of every chain to the single file `/tmp/CryoAtom_temp.hmm`, so two programs at the same time would overwrite and delete each other's file; the process number is added
+to the name. Nothing else is changed; `cryoatom_source_patch.diff` in the zip shows the change. The model is `<folder name>.cif`; `<folder name>_raw.cif` is the model before pruning. Both are
+scored; the first one is the model of the benchmark."""
+CRYOATOM_REGISTER_OLD = 'for _k in ("cryoatom2", "cryoatom1"):\n    SETUPS[_k], PLANS[_k] = setup_cryoatom, plan_cryoatom\n'
+CRYOATOM_SESSION = r'''
+
+def patch_cryoatom_tempfile(spec, repo):
+    """CryoAtom v1.0.0 writes the profile of every chain to ONE file, /tmp/CryoAtom_temp.hmm, reads it and deletes it. Two programs at the same time (one per GPU) would read and delete each other's
+    file: a missing file stops a run, and the profile of the other program would align the wrong sequence without any message. The only change to the source of the method: the process number
+    is part of the file name. The line must exist exactly once (otherwise the session stops: the source is not the pinned commit); `git diff` of the change goes into the zip."""
+    path = os.path.join(repo, "CryoAtom", "utils", "aa_probs_to_hmm.py")
+    old = 'tmp_path = os.path.join(base_dir, f"CryoAtom_temp.hmm")'
+    new = 'tmp_path = os.path.join(base_dir, f"CryoAtom_temp_{os.getpid()}.hmm")'
+    with open(path, encoding="utf-8") as f:
+        text = f.read()
+    if text.count(old) == 1:
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(text.replace(old, new))
+        log("changed one line of %s: the temporary profile file is named after the process, so that two programs at the same time do not share it" % os.path.relpath(path, repo))
+    elif text.count(new) != 1:
+        raise RuntimeError("the line of CryoAtom that names its temporary profile file was not found in %s: the source is not the pinned commit, and two programs at the same time could share the file" % path)
+    with open(os.path.join(WORK, "cryoatom_source_patch.diff"), "w", encoding="utf-8") as f:
+        f.write(sh("git -C %s diff" % repo, timeout=60) + "\n")
+    STATE["methods"][spec["key"]]["source_patch"] = {"file": os.path.relpath(path, repo), "line_before": old, "line_after": new, "file_sha256": sha256_file(path)}
+
+
+def setup_cryoatom_session(spec, repo, env_py):
+    """The setup of the methods pilot (source, weights), the one-line change of the temporary file, then the ESM-2 weights: the program fetches them by torch.hub at its first run, and two programs
+    on two GPUs would both do it."""
+    setup_cryoatom(spec, repo, env_py)
+    patch_cryoatom_tempfile(spec, repo)
+    esm = spec.get("esm")
+    if not esm:
+        return
+    ckpt = os.path.join(TORCH_HOME, "hub", "checkpoints")
+    path = os.path.join(ckpt, esm["file"])
+    if not (os.path.exists(path) and os.path.getsize(path) >= esm["min_bytes"]):
+        logf = os.path.join(WORK, "logs", "cryoatom_esm2_weights.log")
+        code = "import esm; esm.pretrained.%s(); print('the ESM-2 weights are in place')" % esm["call"]
+        for attempt in (1, 2):
+            log("downloading the ESM-2 weights: esm.pretrained.%s() (attempt %d)" % (esm["call"], attempt))
+            rc, last, timed_out = run_watched([env_py, "-c", code], "ESM-2 weights", watch=[logf], env=env_vars(env_py), cwd=repo, log_file=logf, timeout=1800, every=1)
+            if rc == 0 and not timed_out and os.path.exists(path) and os.path.getsize(path) >= esm["min_bytes"]:
+                break
+        else:
+            log("\n".join(last[-12:]))
+            raise RuntimeError("the ESM-2 weights could not be downloaded (%s)" % ("timeout" if timed_out else "exit code %s" % rc))
+    record_files(spec["key"], [ckpt], "esm_weights")
+
+
+SETUPS["cryoatom1"], PLANS["cryoatom1"] = setup_cryoatom_session, plan_cryoatom
+'''
+RUN_MD_CRYOATOM = """\
+## Step 6. The runs
+
+First the setup of CryoAtom (source, environment, weights, ESM-2), then one worker per GPU takes entries from the list until the time budget says stop. A progress line of every running
+program appears every two minutes (the last line of CryoAtom's own `running_time.log`); the program's output is in `logs/` of the zip. Everything is packed into a zip after every run."""
+
+
 EXTRA_INFO = ('{"methods": {k: {"label": m["label"], "commit": m["commit"], "status": m["status"], "setup_seconds": m["setup_seconds"], "version": m.get("version", "")} for k, m in STATE["methods"].items()}, '
               '"specs": globals().get("SPECS", {}), "usalign_commit": globals().get("USALIGN_COMMIT", ""), "usalign_version": STATE["usalign_version"], "input_sha256": globals().get("EXPECTED", {}), '
               '"tasks": globals().get("TASKS"), "hours_setting": globals().get("HOURS_SETTING"), "run_limit_s": globals().get("RUN_LIMIT"), "lanes": globals().get("LANES")}')
@@ -697,11 +827,19 @@ LANES_TEXT = {1: "* The notebook runs **one program at a time** (on the first GP
 def build(out_path, batch="batch1", entries=None, tasks=None, hours=9.0, guard_minutes=60, max_lanes=2, usalign_repo=P.USALIGN_REPO, usalign_commit=P.USALIGN_COMMIT, entries_path=None, env_python=None,
           usalign_bin=None, net_hosts=NET_HOSTS, require_gpu=True, import_tests=None, specs=None, run_methods=None):
     """Writes the notebook. `tasks` ([entry, method] pairs) overrides `entries`; the keyword arguments after `hours` exist for the tests."""
-    specs = copy.deepcopy(specs or SPECS)
     run_methods = list(run_methods or ORDER)
+    cryo = "cryoatom1" in run_methods                                     # CryoAtom v1.0.0 has a notebook of its own
+    if cryo and run_methods != ["cryoatom1"]:
+        raise ValueError("CryoAtom v1.0.0 is built into its own notebook: run_methods must be ['cryoatom1'] alone")
+    specs = copy.deepcopy(specs or (SPECS_ALL if cryo else SPECS))
+    if cryo:
+        specs = {"cryoatom1": specs["cryoatom1"]}
+        if net_hosts is NET_HOSTS:
+            net_hosts = NET_HOSTS_CRYOATOM
     rows = read_entries(entries_path)
     entries = list(entries or seeded_order(rows))
-    tasks = [list(t) for t in (tasks if tasks is not None else all_tasks(entries))]
+    tasks = [list(t) for t in (tasks if tasks is not None else all_tasks(entries, ["cryoatom1"] if cryo else ORDER))]
+    sizes = {r["pdb_id"]: int(r["modeled_residues"]) for r in rows}
     known = {r["pdb_id"] for r in rows}
     for e, m in tasks:
         if e not in known or m not in specs:
@@ -709,7 +847,8 @@ def build(out_path, batch="batch1", entries=None, tasks=None, hours=9.0, guard_m
     wanted = {m for _e, m in tasks}
     run_methods = [m for m in run_methods if m in wanted]                 # only the methods that have a task are set up (a session that finishes one method's leftovers must not install the others)
     notebook = "gpu_" + batch
-    file_cells, expected = nbkit.file_cells(FILES, entries_path)
+    files = FILES if not cryo else BASE_FILES + ((specs["cryoatom1"]["req"], specs["cryoatom1"]["req"]),)
+    file_cells, expected = nbkit.file_cells(files, entries_path)
     step5 = nbkit.fill(P.STEP5, {"@USALIGN_REPO@": usalign_repo, "@USALIGN_COMMIT@": usalign_commit, "@MICA_REPO@": "x", "@MICA_COMMIT@": "x", "@WEIGHTS_URL@": "x", "@ZENODO_API@": "x", "@USALIGN_BIN@": "None"})
     git_and_usalign = nbkit.function_sources(step5, ["git_checkout", "build_usalign"]).rstrip("\n")
     step6 = nbkit.fill(P.STEP6, {"@ENTRIES@": "[]"})
@@ -719,7 +858,7 @@ def build(out_path, batch="batch1", entries=None, tasks=None, hours=9.0, guard_m
                "@ENTRIES@": repr(entries), "@ENTRY_LIST@": ", ".join(entries), "@USALIGN_REPO@": usalign_repo, "@USALIGN_COMMIT@": usalign_commit,
                "@USALIGN_BIN@": repr(usalign_bin), "@REQUIRE_GPU@": repr(bool(require_gpu)), "@NET_HOSTS@": repr(tuple(net_hosts)), "@EXPECTED@": repr(expected),
                "@NOTEBOOK@": notebook, "@EXTRA_INFO@": EXTRA_INFO, "@BATCH@": batch, "@HOURS@": repr(float(hours)), "@GUARD_MINUTES@": repr(int(guard_minutes)), "@HOURS_TEXT@": ("%g" % hours),
-               "@MAX_LANES@": str(int(max_lanes)), "@LANES_TEXT@": LANES_TEXT[1 if int(max_lanes) <= 1 else 2].replace("@HOURS_TEXT@", "%g" % hours), "@N_TASKS@": str(len(tasks)), "@LIMIT_TEXT@": ("%g" % (RUN_LIMIT_S / 3600)), "@RUN_LIMIT@": repr(RUN_LIMIT_S), "@EXPLOSIVE@": repr(EXPLOSIVE), "@TASKS@": repr(tasks)}
+               "@MAX_LANES@": str(int(max_lanes)), "@LANES_TEXT@": LANES_TEXT[1 if int(max_lanes) <= 1 else 2].replace("@HOURS_TEXT@", "%g" % hours), "@N_TASKS@": str(len(tasks)), "@LIMIT_TEXT@": ("%g" % ((specs["cryoatom1"]["timeout"] if cryo else RUN_LIMIT_S) / 3600)), "@SIZES@": repr(sizes), "@RUN_LIMIT@": repr(RUN_LIMIT_S), "@EXPLOSIVE@": repr(EXPLOSIVE), "@TASKS@": repr(tasks)}
     fl = lambda text: nbkit.fill(text, mapping).strip("\n") + "\n"
     # the cells of the methods notebook that are reused: the head of its tools cell (up to run_program), five of its functions, and the cells of the three methods without the lines that ran them
     head = nbkit.cut_before(MM.TOOLS, "def run_program").replace("@READ_WRITE_DOWNLOAD@", read_write_download).replace("@GIT_AND_USALIGN@", git_and_usalign).replace("@FIND_AF3@", find_af3)
@@ -729,8 +868,16 @@ def build(out_path, batch="batch1", entries=None, tasks=None, hours=9.0, guard_m
     marker = 'if STATE["ok"] and STATE["usalign"]:'
     e3 = nbkit.replace_once(nbkit.cut_before(MM.E3, marker), '(("prealign", "pre_align"), ("denovo", "denovo"))', '(("prealign", "pre_align"),)')
     emprot, emodelx = nbkit.cut_before(MM.EMPROT, marker), nbkit.cut_before(MM.EMODELX, marker)
-    cells = [("intro", nbkit.md(nbkit.fill(INTRO, mapping))),
-             ("settings-title", nbkit.md(SETTINGS_MD)), ("settings", nbkit.code(fl(SETTINGS))),
+    if cryo:
+        cryoatom = nbkit.replace_once(nbkit.cut_before(MM.CRYOATOM, marker), CRYOATOM_REGISTER_OLD, "").rstrip("\n") + "\n" + CRYOATOM_SESSION
+        method_cells = [("cryoatom-title", nbkit.md(CRYOATOM_MD)), ("cryoatom", nbkit.code(fl(cryoatom)))]
+    else:
+        method_cells = [("modelangelo-title", nbkit.md(MODELANGELO_MD)), ("modelangelo", nbkit.code(fl(MODELANGELO))),
+                        ("e3-title", nbkit.md(E3_MD)), ("e3", nbkit.code(fl(e3))),
+                        ("emprot-title", nbkit.md(EMPROT_MD)), ("emprot", nbkit.code(fl(emprot))),
+                        ("emodelx-title", nbkit.md(EMODELX_MD)), ("emodelx", nbkit.code(fl(emodelx)))]
+    cells = [("intro", nbkit.md(nbkit.fill(INTRO_CRYOATOM if cryo else INTRO, mapping))),
+             ("settings-title", nbkit.md(SETTINGS_MD)), ("settings", nbkit.code(fl(SETTINGS_CRYOATOM if cryo else SETTINGS))),
              ("step1-title", nbkit.md(P.STEP1_MD)), ("step1", nbkit.code(fl(P.STEP1))),
              ("step2-title", nbkit.md(P.STEP2_MD)), ("step2-dirs", nbkit.code(P.STEP2_DIRS.strip("\n") + "\n"))]
     cells += file_cells
@@ -738,12 +885,9 @@ def build(out_path, batch="batch1", entries=None, tasks=None, hours=9.0, guard_m
               ("robust-title", nbkit.md(nbkit.fill(nbkit.ROBUST_MD, mapping))), ("robust", nbkit.code(fl(nbkit.ROBUST))),
               ("tools-title", nbkit.md(TOOLS_MD)), ("tools", nbkit.code(fl(tools))),
               ("step4-title", nbkit.md(MM.STEP4_MD)), ("step4", nbkit.code(fl(MM.STEP4))),
-              ("modelangelo-title", nbkit.md(MODELANGELO_MD)), ("modelangelo", nbkit.code(fl(MODELANGELO))),
-              ("e3-title", nbkit.md(E3_MD)), ("e3", nbkit.code(fl(e3))),
-              ("emprot-title", nbkit.md(EMPROT_MD)), ("emprot", nbkit.code(fl(emprot))),
-              ("emodelx-title", nbkit.md(EMODELX_MD)), ("emodelx", nbkit.code(fl(emodelx))),
-              ("run-title", nbkit.md(RUN_MD)), ("run", nbkit.code(fl(RUN))),
-              ("summary-title", nbkit.md(SUMMARY_MD)), ("summary", nbkit.code(fl(SUMMARY))),
+              ] + method_cells + [
+              ("run-title", nbkit.md(RUN_MD_CRYOATOM if cryo else RUN_MD)), ("run", nbkit.code(fl(RUN))),
+              ("summary-title", nbkit.md(SUMMARY_MD.replace("Step 10", "Step 7") if cryo else SUMMARY_MD)), ("summary", nbkit.code(fl(SUMMARY))),
               ("final-title", nbkit.md(nbkit.FINAL_MD)), ("final", nbkit.code(fl(nbkit.FINAL)))]
     nbkit.assemble(out_path, "gpu_%s.ipynb" % batch, cells)
     return expected
@@ -754,10 +898,10 @@ def main(argv=None):
     p.add_argument("--batch", default="batch1", help="the name of the batch (the notebook is scripts/gpu_<batch>.ipynb and its zip gpu_<batch>_result_....zip)")
     p.add_argument("--out", default=None)
     p.add_argument("--entries", nargs="+", default=None, help="the entries (default: all, in the seeded order)")
-    p.add_argument("--methods", nargs="+", default=ORDER)
+    p.add_argument("--methods", nargs="+", default=ORDER, choices=ORDER_ALL, help="the four methods of the first batches, or cryoatom1 alone (its own notebook)")
     p.add_argument("--done", nargs="*", default=[], help="method_status.csv files of earlier sessions: their finished tasks (ok or failed) are not run again")
     p.add_argument("--redo", nargs="*", default=[], help="ENTRY:method pairs to run again although an earlier session finished them")
-    p.add_argument("--hours", type=float, default=9.0)
+    p.add_argument("--hours", type=float, default=None, help="the budget of the session in hours (default 9; 11 for CryoAtom)")
     p.add_argument("--lanes", type=int, default=2, help="GPUs used at the same time (1 for entries that were killed for lack of RAM while another program ran)")
     p.add_argument("--guard-minutes", type=int, default=60, help="a crash sooner than this on two entries in a row pauses the method for the session (0: no guard)")
     args = p.parse_args(argv)
@@ -765,7 +909,8 @@ def main(argv=None):
     entries = args.entries or seeded_order(rows)
     tasks = pending_tasks(all_tasks(entries, args.methods), args.done, args.redo)
     out = args.out or os.path.join(HERE, "gpu_%s.ipynb" % args.batch)
-    expected = build(out, batch=args.batch, entries=entries, tasks=tasks, hours=args.hours, guard_minutes=args.guard_minutes, run_methods=args.methods, max_lanes=args.lanes)
+    hours = args.hours if args.hours is not None else (11.0 if "cryoatom1" in args.methods else 9.0)
+    expected = build(out, batch=args.batch, entries=entries, tasks=tasks, hours=hours, guard_minutes=args.guard_minutes, run_methods=args.methods, max_lanes=args.lanes)
     print("wrote %s: %d tasks (%d entries), %d embedded files" % (out, len(tasks), len({t[0] for t in tasks}), len(expected)))
     return 0
 

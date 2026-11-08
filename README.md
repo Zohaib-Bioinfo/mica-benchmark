@@ -39,7 +39,7 @@ Scripts:
 | --- | --- |
 | Candidate pool and selection (Colab) | `pull_pool.py`, `select_entries.py`, `compute_cc_mask.py`, `novelty_check.py`; the notebooks `pull_pool_colab.ipynb` and `select_colab.ipynb` (built by `make_colab_notebook.py` and `make_select_notebook.py`) |
 | AlphaFold Server inputs | `make_af3_jobs.py`, `check_af3_results.py` |
-| Runs on Kaggle (notebook generators) | `make_main_notebook.py` (ModelAngelo, E3-CryoFold, EMProt, EModelX(+AF)), `make_mica_notebook.py` (MICA: docking on CPU sessions, programs 2 and 3 on GPU sessions), `mica_dock_driver.py` (the docking driver), `mica_inputs.py` (MICA's input folder); pilots and diagnostics: `make_pilot_notebook.py`, `make_dockdiag_notebook.py`, `make_modelangelo_notebook.py`, `make_methods_notebook.py`, `make_survey_notebook.py`, `map_survey.py`; shared parts: `nbkit.py`, `nbtools.py` |
+| Runs on Kaggle (notebook generators) | `make_main_notebook.py` (ModelAngelo, E3-CryoFold, EMProt, EModelX(+AF); with `--methods cryoatom1` CryoAtom v1.0.0 in a notebook of its own, added on 2026-10-31 at the request of Prof. Cheng), `make_mica_notebook.py` (MICA: docking on CPU sessions, programs 2 and 3 on GPU sessions), `mica_dock_driver.py` (the docking driver), `mica_inputs.py` (MICA's input folder); pilots and diagnostics: `make_pilot_notebook.py`, `make_dockdiag_notebook.py`, `make_modelangelo_notebook.py`, `make_methods_notebook.py`, `make_survey_notebook.py`, `map_survey.py`; shared parts: `nbkit.py`, `nbtools.py` |
 | Scoring | `make_scoring_notebook.py`, `score_models.py`, `evaluate_models.py` (US-align and Phenix `chain_comparison`) |
 | Analysis and report | `ingest_results.py`, `analyze_results.py`, `make_figures.py`, `make_report_tables.py`, `build_report.py`, `regenerate.sh` |
 
